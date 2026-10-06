@@ -1,0 +1,99 @@
+P15 第二模型訓練檢查與結果報告
+
+一、檢查結論
+本次檢查的第二模型輸出位於：
+experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or
+
+整體判斷：訓練流程完整，10 組模型皆完成 CP 與 OR 各 100 epochs，且 CP 與 OR checkpoint 均已依 validation FITB Accuracy 選擇最佳模型。此結果可以作為論文中的補充模型驗證，但不建議取代主模型 Hybrid Attention Layer 的主要結果。
+
+需要保守說明的一點是：第二模型在 CP test AUC 與 OR/CIR retrieval 指標上支持情境感知描述的改善趨勢，但 CP FITB Accuracy 並未改善，且 95% 信賴區間跨越 0。因此論文中不能寫成第二模型在所有任務皆改善，而應寫成「在另一個較簡化的 CP→OR 兩階段模型中，情境感知描述於 CP AUC 與 retrieval 端仍呈現一致改善，CP FITB 則未呈現穩定優勢」。
+
+二、實驗目的與定位
+此實驗是因應口試建議而補充的第二模型驗證，目的不是重新提出更強模型，而是檢查本研究的情境感知文字描述是否只在原 Hybrid Attention 架構有效。第二模型採用與主模型相同的 PO-D 資料切分與 5 個隨機種子，並改為較容易解釋的兩塔式架構，以觀察改善趨勢是否可在不同架構下重現。
+
+三、資料與文字條件
+資料集採用 Polyvore Outfits Disjoint 版本。正式切分為 train 16,995、valid 3,000、test 15,145，共 35,140 筆 outfit。
+第二模型使用兩種文字條件分開訓練：
+1. original_text：原始 url_name + title 的 outfit-level 文字表示，檔案為 encoded_outfitUrlTitle_en_fashionClip.pkl。
+2. context_aware_description：本研究生成之情境感知描述，檔案為 encoded_NewoutfitUrlTitle_en_fashionClip.pkl。
+
+使用的特徵包含：
+1. item image features：img_feats_fashionClip.pkl。
+2. item text features：encoded_title_description_distiluse-base-multilingual-cased-v2.pkl。
+3. category features：encoded_category_distiluse-base-multilingual-cased-v2.pkl。
+4. outfit-level text embedding：依文字條件分別載入 original_text 或 context_aware_description。
+
+評估樣本數：CP test pairs 為 30,290；FITB test questions 為 15,145；OR/CIR Recall 可評估 query-target pairs 為 9,311。OR/CIR 少於 15,145 是因為 recall 評估要求 target fine-category candidate pool 可建立到至少 3,000 個候選單品，未符合者被排除。
+
+四、模型架構
+第二模型是 CP→OR 兩階段的 Two-Tower / MLP retrieval baseline。它不重新訓練大型影像或語言編碼器，而是使用已抽取好的 item image、item text、category 與 outfit text embedding，再訓練輕量神經網路。
+
+共同編碼器 MLPEncoder 結構如下：Linear(input_dim, 512) → LayerNorm → GELU → Dropout(0.15) → Linear(512, 256)。
+
+CP binary compatibility model：
+1. 每個單品向量為 1024 維，由 512 維影像特徵與 512 維單品文字特徵串接。
+2. 套裝最多保留 16 個 item，經 item encoder 後用 mask mean pooling 形成 outfit item representation。
+3. outfit-level text embedding 為 512 維，經 outfit text encoder 投影到 256 維。
+4. 將 item-pooled representation 與 text representation 串接後，送入 classifier：Linear(512, 512) → GELU → Dropout → Linear(512, 1)。
+5. 訓練目標為 binary cross entropy，用於判斷一組 outfit 是否相容。
+
+OR retrieval model：
+1. 將 partial outfit items、outfit-level text embedding、target category embedding 分別投影到 256 維。
+2. 三者串接為 768 維後，經 query_net：Linear(768, 512) → LayerNorm → GELU → Dropout → Linear(512, 256)。
+3. query 與 candidate item embedding 皆做 L2 normalization。
+4. 候選單品分數為 normalized query 與 normalized candidate 的 dot product，再乘上可學習 logit scale。
+5. OR 訓練使用 FITB ranking 的 cross entropy；測試時在目標子類別候選池中計算 target item rank 與 Recall@K。
+
+CP→OR 遷移方式：OR model 初始化時會載入 CP model 的 item_encoder 與 outfit_text_encoder 權重，category_encoder 與 query_net 則由 OR 階段訓練。
+
+五、訓練設定
+Seeds：1, 2, 3, 4, 5。
+Batch size：256。Learning rate：1e-3。Optimizer：AdamW。Weight decay：1e-4。Dropout：0.15。Hidden dimension：512。Embedding dimension：256。
+CP_EPOCHS = 100，OR_EPOCHS = 100。CP 與 OR 皆不使用 early stopping，均跑滿 100 epochs。
+Checkpoint selection：CP 與 OR 都以 validation FITB Accuracy 更新最佳 checkpoint。CP 階段仍額外記錄 validation AUC，但不再使用 validation AUC 選模型。
+
+六、訓練完整性檢查
+CP log 檢查：所有模型皆記錄 100 epochs；epoch 組合為 [(100, '100')]。
+OR log 檢查：所有模型皆記錄 100 epochs；epoch 組合為 [(100, '100')]。
+CP 最佳 epoch 範圍：10 到 28。
+OR 最佳 epoch 範圍：1 到 7。
+觀察上，CP 最佳點多出現在前 10 到 28 epochs；OR 最佳點多出現在前 1 到 7 epochs。後續 epoch 雖仍持續訓練，但 validation FITB 未再提升，這表示模型後段可能開始過度貼合訓練資料。因為本實驗是依 validation FITB 儲存最佳 checkpoint，所以這不構成流程錯誤，但論文中可說明第二模型使用 validation-based model selection，以避免引用最後一個 epoch 的過擬合結果。
+
+七、CP 任務結果
+Metric	Original text	Context-aware description	Δ	95% CI of Δ
+Validation AUC at best CP FITB	0.9134 ± 0.0037	0.9400 ± 0.0029	+0.0265	[0.0225, 0.0305]
+Best validation FITB Accuracy	0.5780 ± 0.0072	0.5619 ± 0.0088	-0.0161	[-0.0290, -0.0031]
+Test AUC	0.8796 ± 0.0029	0.9174 ± 0.0033	+0.0378	[0.0337, 0.0420]
+Test FITB Accuracy	0.5460 ± 0.0051	0.5382 ± 0.0050	-0.0077	[-0.0180, 0.0025]
+
+CP 解讀：context-aware description 在 validation AUC 與 test AUC 明顯高於 original text，表示在 binary compatibility prediction 的排序分離能力上，情境感知描述提供了較有利的套裝層級語意。然而，CP FITB Accuracy 未呈現同方向改善；test FITB 的平均差異為負，且信賴區間跨越 0。這表示第二模型的 CP 分類能力與四選一 FITB 選擇能力並不完全一致，因此 CP FITB 不能作為支持改善的證據。
+
+八、OR/CIR 任務結果
+Metric	Original text	Context-aware description	Δ	95% CI of Δ
+Best OR validation FITB Accuracy	0.6136 ± 0.0047	0.6311 ± 0.0062	+0.0175	[0.0078, 0.0271]
+OR test FITB Accuracy	0.5908 ± 0.0019	0.6065 ± 0.0058	+0.0157	[0.0065, 0.0249]
+Recall@1	0.0048 ± 0.0009	0.0067 ± 0.0012	+0.0019	[0.0010, 0.0028]
+Recall@3	0.0126 ± 0.0008	0.0173 ± 0.0011	+0.0047	[0.0039, 0.0055]
+Recall@5	0.0204 ± 0.0010	0.0273 ± 0.0015	+0.0069	[0.0053, 0.0084]
+Recall@10	0.0378 ± 0.0008	0.0479 ± 0.0017	+0.0102	[0.0087, 0.0117]
+Recall@30	0.0950 ± 0.0017	0.1103 ± 0.0030	+0.0153	[0.0127, 0.0179]
+Recall@50	0.1419 ± 0.0026	0.1589 ± 0.0046	+0.0170	[0.0139, 0.0200]
+Mean rank	601.3589 ± 7.0359	572.4678 ± 10.5809	-28.8911	[-44.8960, -12.8863]
+Median rank	361.2000 ± 6.2209	329.8000 ± 9.7826	-31.4000	[-44.0808, -18.7192]
+
+OR/CIR 解讀：context-aware description 在 OR validation FITB、OR test FITB、Recall@1、Recall@3、Recall@5、Recall@10、Recall@30 與 Recall@50 皆高於 original text，且 mean rank 與 median rank 下降。因 rank 越低代表目標單品排序越前，平均排名下降約 28.89、median rank 下降約 31.40，表示情境感知描述在 retrieval 排序中能更穩定地將正確單品推向前方。
+
+九、整體判斷
+本次第二模型訓練流程整體沒有明顯錯誤：每個 seed 與每個文字條件都有完整 CP/OR log、checkpoint 與 seed-level summary；CP 與 OR 都依 validation FITB 更新最佳 checkpoint；A30/A32/A33 結果檔也已修正編碼問號。
+
+此實驗最適合放在論文中作為「補充模型驗證」或「穩健性檢查」，用來回應第二模型或不同架構的一致性問題。可主張的重點是：即使改用較簡化的 Two-Tower CP→OR 架構，情境感知描述在 retrieval 端仍穩定提升 Recall@K，且 CP AUC 也有提升。需要避免的說法是：不可宣稱第二模型在所有 CP/FITB 指標皆提升，因為 CP FITB 並未呈現穩定改善。
+
+十、建議論文寫法
+建議寫法：為檢查情境感知描述的改善是否依賴特定模型架構，本研究另建置一個使用預抽取多模態特徵的 Two-Tower CP→OR 補充模型。此模型先以相容性預測任務訓練 item 與 outfit text encoder，再將其遷移至 outfit retrieval 任務，並以 validation FITB Accuracy 選擇最佳 checkpoint。五個隨機種子的結果顯示，情境感知描述在 CP AUC 與 OR/CIR Recall@K 上皆優於原始文字，且平均排名下降；然而 CP FITB Accuracy 未呈現穩定提升。因此，本補充實驗支持情境感知描述對 retrieval 排序具有跨架構的一致效益，但其效果仍受任務形式與模型容量影響。
+
+十一、相關檔案路徑
+程式碼 notebook：/home/ester/valid_description/experiment data/journal_figures_tables_20260629/source_programs/P15_fashionclip_text_conditioned_retrieval_baseline.ipynb
+Seed-level summary：/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/results/A30_second_model_two_tower_seed_summary.csv
+Mean/std summary：/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/results/A32_second_model_two_tower_mean_std.csv
+Interpretation note：/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/results/A33_second_model_two_tower_interpretation.txt
+本報告：/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/results/A34_second_model_training_report.txt

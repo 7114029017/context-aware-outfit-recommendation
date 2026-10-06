@@ -1,0 +1,62 @@
+{
+  "classification": "reproducibly reconstructed fair-subset membership; NOT the archived original ID file",
+  "candidate_rule": "Select WOS v5 merged-retry rows whose weather, occasion, AND style fragment lists each contain at least one non-blank string.",
+  "rule_provenance": "Rule inferred from archived WOS fragment schema and 21,903/9,930 historical cardinality checks; the original ID-generation source and historical ID-file SHA256 are not preserved, so exact historical membership is NOT established.",
+  "wos_records_unique": 35140,
+  "wos_all_rows_valid": true,
+  "wos_invalid_rows": 0,
+  "wos_malformed_fragment_rows": 0,
+  "wos_factor_presence_patterns": {
+    "100": 3,
+    "101": 13192,
+    "110": 42,
+    "111": 21903
+  },
+  "ablation_description_count": 35140,
+  "ablation_mismatch_by_field": {},
+  "wos_id_membership_equals_split_union": true,
+  "ablation_id_membership_equals_wos": true,
+  "candidate_unique_ids": 21903,
+  "candidate_overlap_by_split": {
+    "train": 10225,
+    "valid": 1748,
+    "test": 9930
+  },
+  "historical_reference_counts": {
+    "wos_all": 35140,
+    "fair_subset_total": 21903,
+    "fair_subset_test_overlap": 9930,
+    "fair_subset_cir_evaluable_pairs": 3432
+  },
+  "cir_evaluable_pairs": "NOT MEASURED: requires original subset-specific CIR candidate-pool/evaluation scope",
+  "gates_passed": true,
+  "source_files": [
+    {
+      "path": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction/01_資料建構_data_construction/generated_descriptions/02_三因子拆分_wos_factor_split/wos_split_results_v5_merged_retry_round3.jsonl",
+      "bytes": 16778208,
+      "sha256": "d77d13c231b61a85c827a78456bd2571e752a20eb9b2f96a3a4bb7457aeed1cb"
+    },
+    {
+      "path": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction/01_資料建構_data_construction/generated_descriptions/01_生成結果_generation_results/new_polyvore_outfit_titles_with_ablation.json",
+      "bytes": 10136766,
+      "sha256": "7365ce6b5f99d64c7b45051f39d853b87e1ea5d4fd3e25b39add2934978a85b3"
+    },
+    {
+      "path": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction/_external/uiuc-polyvore-hf/disjoint/train.json",
+      "bytes": 9654112,
+      "sha256": "0a7c0f8dc60f420d133881f68fab7132966a09ed2102312e60ee603e96e4667c"
+    },
+    {
+      "path": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction/_external/uiuc-polyvore-hf/disjoint/valid.json",
+      "bytes": 1715690,
+      "sha256": "e3b3e2dca09333f84be8106d7922066c484605c301300314ae8e3c2ec46c7304"
+    },
+    {
+      "path": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction/_external/uiuc-polyvore-hf/disjoint/test.json",
+      "bytes": 8364949,
+      "sha256": "df650429c987d73b5d089f80f33ae33904dc03078d11091ca0f33f7c05bef076"
+    }
+  ],
+  "id_file_order": "WOS JSONL source order, not claimed to match the missing historical file order",
+  "training_warning": "Do not treat this audit as proof of historical fair-subset identity or train models until train/validation filtering and CIR subset evaluation semantics are independently checked."
+}

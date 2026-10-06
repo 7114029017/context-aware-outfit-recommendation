@@ -1,0 +1,39 @@
+{
+  "variant": "context_aware_description",
+  "seed": 2,
+  "pipeline": "CP binary compatibility pretraining -> OR retrieval fine-tuning",
+  "checkpoint_selection": "CP and OR checkpoints selected by validation FITB accuracy; train up to 100 epochs without early stopping",
+  "cp_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/context_aware_description/seed_2/cp_best_model.pt",
+  "or_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/context_aware_description/seed_2/best_model.pt",
+  "text_feature_file": "encoded_NewoutfitUrlTitle_en_fashionClip.pkl",
+  "splits": {
+    "train": "PO-D train",
+    "valid": "PO-D valid",
+    "test": "PO-D test"
+  },
+  "seed_summary": {
+    "variant": "context_aware_description",
+    "seed": 2,
+    "cp_best_epoch": 20,
+    "cp_best_valid_fitb_acc": 0.5636666666666666,
+    "cp_valid_auc_at_best_fitb": 0.9432805555555555,
+    "cp_test_auc": 0.9202698597174599,
+    "cp_test_fitb_acc": 0.5396500495212941,
+    "or_best_epoch": 3,
+    "or_best_valid_fitb_acc": 0.6293333333333333,
+    "or_test_fitb_acc": 0.6136018487949818,
+    "cp_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/context_aware_description/seed_2/cp_best_model.pt",
+    "or_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/context_aware_description/seed_2/best_model.pt",
+    "test_fitb_questions": 15145,
+    "or_recall_evaluable_pairs": 9311,
+    "or_recall_skipped_questions": 5834,
+    "mean_rank": 557.9240683063043,
+    "median_rank": 314.0,
+    "recall@1": 0.00859198797121684,
+    "recall@3": 0.01911717323595747,
+    "recall@5": 0.02985715819997852,
+    "recall@10": 0.05047792933089894,
+    "recall@30": 0.11212544302437977,
+    "recall@50": 0.16442916979916228
+  }
+}

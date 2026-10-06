@@ -1,0 +1,12 @@
+{
+ "outfits": 35140,
+ "equation_2_matching_stored_reference": 35140,
+ "largest_difference_after_rounding": 0.0,
+ "metabolic_rate_w_m2": "MET x 58.2",
+ "outside_mcintyre_range": {
+  "M_at_least_150": 524,
+  "Icl_at_least_1_5": 5934,
+  "either": 6348,
+  "share": 0.1806
+ }
+}

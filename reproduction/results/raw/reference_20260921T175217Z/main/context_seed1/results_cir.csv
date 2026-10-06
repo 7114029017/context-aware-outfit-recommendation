@@ -1,0 +1,2 @@
+seed,variant,subset_tag,outfit_feat_name,run_tag,recall_at_1,recall_at_3,recall_at_5,recall_at_10,recall_at_30,recall_at_50
+1,NewoutfitUrlTitle,all,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,full_retrain,0.015895177746751154,0.03898614541939641,0.056277521211470304,0.08967887444957577,0.18590913972720438,0.25324884545161636

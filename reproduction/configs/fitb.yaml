@@ -1,0 +1,43 @@
+schema_version: 1
+artifact_role: TORS_A5_experiment_config
+task: fill_in_the_blank
+task_short_name: FITB
+status: evidence_backed_evaluation_config
+inherits_training_from: reproduction/configs/cp.yaml
+
+provenance:
+  primary_source:
+    - 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cp.py
+  note: FITB is an evaluation of the CP model/checkpoint; it is not a separately trained model in this handoff
+
+dataset:
+  name: Polyvore Outfits Disjoint
+  split: disjoint
+  test_questions: 15145
+  manifest: reproduction/splits/fitb_ids.csv
+
+model:
+  checkpoint_family: CP
+  config: reproduction/configs/cp.yaml
+  conditions:
+    original:
+      outfit_feature: encoded_outfitUrlTitle_en_fashionClip.pkl
+    context_aware:
+      outfit_feature: encoded_NewoutfitUrlTitle_en_fashionClip.pkl
+
+evaluation:
+  unit: fill_in_blank_question
+  candidate_source: dataset_fitb_questions
+  scoring: CP compatibility logit for each candidate-completed outfit
+  selection: argmax_candidate_score
+  metric:
+    name: fitb_accuracy
+    direction: maximize
+  batch_training_loader_note: evaluation code constructs train/test datasets but FITB scoring is performed question-wise
+  precision: float16_autocast_when_cuda
+  test_shuffle: false
+  seeds: [1, 2, 3, 4, 5]
+  expected_questions: 15145
+
+expected_results_document: reproduction/docs/expected_results.md
+acceptance_matrix: reproduction/docs/tors_compliance.md

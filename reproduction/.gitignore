@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local runtime state
+.local/
+.work/
+
+# Future check / smoke / full runs stay local.
+# Preserved release/reference evidence belongs under results/.
+runs/*
+!runs/.gitignore

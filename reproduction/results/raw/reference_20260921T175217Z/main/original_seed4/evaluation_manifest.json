@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "variant_label": "original",
+  "source_variant": "outfitUrlTitle",
+  "outfit_feat_name": "encoded_outfitUrlTitle_en_fashionClip.pkl",
+  "seed": 4,
+  "training_manifest": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/_reproduction_runs/full_20260921T175217Z/main/original_seed4/full_train_manifest.json",
+  "training_manifest_sha256": "c4796a640053d9042eb7c9e0432108eae730a048137cc626b34f5638884e1903",
+  "cp_checkpoint_sha256": "b02b5cfa0923704b93db300efb8df28a062bee4625f46783b7880e9104765323",
+  "cir_checkpoint_sha256": "2833368f7b624ecc50d3ebe6ba8d14518cfbf110aa4a338c462fcf6439f6169a",
+  "eval_device": "cuda",
+  "archived_source_root": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code",
+  "source_modified_in_repository": false,
+  "cp_decoder_runtime_note": "Evaluation uses a temporary copy of the handoff source with DecoderLayerWithCrossAttn constructor replaced by torch.nn.TransformerDecoderLayer; the archived repository source is untouched.",
+  "cp": {
+    "auc": 0.9285814173782412,
+    "fitb_acc": 0.6382304390888082
+  },
+  "cir": {
+    "recall_at_1": 0.013102781656105681,
+    "recall_at_3": 0.03340135323810547,
+    "recall_at_5": 0.048115132638814305,
+    "recall_at_10": 0.07893888948555472,
+    "recall_at_30": 0.1688325636344109,
+    "recall_at_50": 0.22983567823005047
+  },
+  "results_cp_sha256": "2b52786f5e5c53f1d3c81e3b879759d59ded8d12d8de01f9ca86736b1895a1e1",
+  "results_cir_sha256": "b933f310602b382c48e3aa3d515b7c02c44497ab466954f3fbd52a1f401017da"
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "variant_label": "context",
+  "source_variant": "NewoutfitUrlTitle",
+  "outfit_feat_name": "encoded_NewoutfitUrlTitle_en_fashionClip.pkl",
+  "seed": 4,
+  "training_manifest": "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/main/context_seed4/full_train_manifest.json",
+  "training_manifest_sha256": "ac6865def544616bc37163c538ebfa71f9b153df8d74f5e62fd7bb47e7a713e4",
+  "cp_checkpoint_sha256": "43915eb585974f8c1b83522a0de22b2962c5852b12deea04b16a01c59ff11c35",
+  "cir_checkpoint_sha256": "272a9721716001fd3baec289d3edc592411320206b87e61f087468f05cc29230",
+  "eval_device": "cuda",
+  "archived_source_root": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code",
+  "source_modified_in_repository": false,
+  "cp_decoder": {
+    "implementation": "torch.nn.TransformerDecoderLayer inside torch.nn.TransformerDecoder",
+    "label": "standardized decoder implementation (torch.nn.TransformerDecoderLayer)",
+    "constructor_arguments": "d_model=img_emb_size+txt_emb_size, nhead=nhead, batch_first=True, dropout=dropout",
+    "replaces_archived_symbol": "DecoderLayerWithCrossAttn (definition not preserved in the handoff)",
+    "archived_source_modified": false,
+    "documentation": "reproduction/docs/standardized_decoder.md"
+  },
+  "cp": {
+    "auc": 0.9443499020854966,
+    "fitb_acc": 0.6472103004291846
+  },
+  "cir": {
+    "recall_at_1": 0.013210181505745893,
+    "recall_at_3": 0.035334550531629254,
+    "recall_at_5": 0.05412952421866609,
+    "recall_at_10": 0.09182687144237998,
+    "recall_at_30": 0.18590913972720438,
+    "recall_at_50": 0.25002684996241004
+  },
+  "results_cp_sha256": "e78795e18533c118cb16afa107ff2934a8ef66be665b75cf0e7db9e113fa397c",
+  "results_cir_sha256": "b0833256c30a673b6d07a9c9447471bf77bf72fa53fbe2bc46d989fdd23e1f23"
+}

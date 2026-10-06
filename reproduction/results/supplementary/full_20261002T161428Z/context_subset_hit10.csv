@@ -1,0 +1,10 @@
+subset,rule,observations,original_hit10,full_hit10,delta_hit10,observations_2025,delta_hit10_2025
+Cold,temperature <= 22.90 °C,9920,0.0730,0.0789,+0.0059,9920,+0.0078
+Warm,temperature > 22.90 °C,7240,0.0624,0.0704,+0.0080,7240,+0.0120
+Formal,formal keyword in occasion or title,2330,0.0755,0.0811,+0.0056,2330,+0.0090
+Casual,casual keyword in occasion or title,2020,0.0673,0.0787,+0.0114,2020,+0.0099
+High style,>= 2 style terms,13260,0.0666,0.0733,+0.0067,13260,+0.0095
+Low style,<= 1 style term,3900,0.0751,0.0823,+0.0072,3900,+0.0097
+Clothing-led,"target in all body, bottoms, tops or outerwear",2735,0.0878,0.1038,+0.0161,2735,+0.0234
+Accessory-led,"target in bags, shoes, accessories, hats, jewellery, scarves or sunglasses",14425,0.0649,0.0699,+0.0051,14425,+0.0069
+All,all fair-subset queries,17160,0.0685,0.0753,+0.0068,17160,+0.0096

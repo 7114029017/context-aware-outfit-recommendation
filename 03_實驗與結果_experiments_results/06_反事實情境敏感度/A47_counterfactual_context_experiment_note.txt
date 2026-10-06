@@ -1,0 +1,16 @@
+Counterfactual context consistency check
+
+Sampling frame: official PO-D CIR evaluable query-target pairs, n=9311.
+Selected pairs: 24 pairs = 3 factors x 2 directions x 4 cases.
+Factors: weather, occasion, and style, aligned with existing no_weather/no_occasion/no_style ablation experiments.
+Model: existing context-aware Hybrid Attention / Outfit Transformer CIR model, seed 1.
+Controlled variable: same set_id, same partial outfit, same target item, same target category, and same 3000-item same-category candidate pool.
+Changed variable: one textual factor only. The non-target core is taken from the corresponding title_ablation.no_* field.
+Sampling note: each direction prioritizes both clothing-led and accessory-led target categories to avoid examples concentrated in shoes or accessories.
+Figure note: representative examples are separated into F34a and F34b to avoid vertical compression in manuscript layout.
+Interpretation: use A46 for manual review. This experiment is a qualitative robustness/sanity check connected to the three-factor ablation, not a new main performance benchmark.
+
+Recommended manuscript use:
+1. Main text: describe the controlled replacement design and summarize manual review results in one compact table.
+2. Figure: include F34a and/or F34b only if representative visual examples are needed.
+3. Appendix: place A44-A46 for traceability.

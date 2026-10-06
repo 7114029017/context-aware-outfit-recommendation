@@ -1,0 +1,14 @@
+# Minimal environment for preserved Hybrid Attention checkpoint evaluation.
+# Versions are copied from the archived root requirements.txt; this file is a
+# derived execution subset, not a claim that the 2025 training environment was
+# created from this exact file.
+--extra-index-url https://download.pytorch.org/whl/nightly/cu129
+numpy==2.0.2
+torch==2.9.1
+torchvision==0.24.1
+transformers==4.57.1
+scikit-learn==1.6.1
+einops==0.8.1
+Pillow==11.3.0
+tqdm==4.67.1
+ipdb==0.13.13

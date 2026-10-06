@@ -1,0 +1,11 @@
+seed,variant,subset_tag,outfit_feat_name,auc,fitb_acc
+1,outfitUrlTitle,all,encoded_outfitUrlTitle_en_fashionClip.pkl,0.928783674834256,0.6367117860680093
+1,NewoutfitUrlTitle,all,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,0.946274903292602,0.6491251238032354
+2,outfitUrlTitle,all,encoded_outfitUrlTitle_en_fashionClip.pkl,0.9295546527727293,0.6385605810498515
+2,NewoutfitUrlTitle,all,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,0.9461279034699348,0.644305051172004
+3,outfitUrlTitle,all,encoded_outfitUrlTitle_en_fashionClip.pkl,0.9273271525904373,0.6349950478705844
+3,NewoutfitUrlTitle,all,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,0.9447134920376279,0.6521624298448333
+4,outfitUrlTitle,all,encoded_outfitUrlTitle_en_fashionClip.pkl,0.9285814173782412,0.6382304390888082
+4,NewoutfitUrlTitle,all,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,0.9443499020854966,0.6472103004291846
+5,outfitUrlTitle,all,encoded_outfitUrlTitle_en_fashionClip.pkl,0.9197668319265697,0.6298448332783096
+5,NewoutfitUrlTitle,all,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,0.9467162450008669,0.6479366127434797

@@ -1,0 +1,13 @@
+P15 第二模型補充驗證說明
+
+本實驗將第二模型改為 CP→OR 兩階段流程，並與主模型設定對齊為最多訓練 100 epochs。
+第一階段使用 compatibility_train.txt 訓練 binary compatibility prediction model；每個 epoch 監控 validation AUC，但以 validation FITB Accuracy 更新 cp_best_model.pt。
+CP 最佳 checkpoint 於 compatibility_test.txt 回報 AUC，並於 fill_in_blank_test.json 回報 FITB Accuracy。
+第二階段將 CP model 的 item encoder 與 outfit text encoder 遷移至 OR retrieval model，再以 validation FITB Accuracy 更新最佳 OR checkpoint，並於 OR/CIR candidate pool 回報 Recall@K。
+original_text 與 context_aware_description 兩組條件分開訓練，checkpoint 與結果皆儲存在 second_model_runs/fashionclip_two_tower_fitb_or。
+
+CP test pairs：30,290
+FITB test questions：15,145
+OR/CIR Recall evaluable query-target pairs：9,311
+
+論文定位：此模型作為跨架構補充驗證，用來檢查情境感知描述的改善趨勢是否仍存在於另一個 CP→OR 訓練流程中；主結果仍以 Hybrid Attention Layer 為準。

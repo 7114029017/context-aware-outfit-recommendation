@@ -1,0 +1,41 @@
+{
+  "classification": "full single-seed retraining reproduction run",
+  "variant_label": "original",
+  "variant": "outfitUrlTitle",
+  "outfit_feat_name": "encoded_outfitUrlTitle_en_fashionClip.pkl",
+  "seed": 4,
+  "full_train_split": true,
+  "full_valid_split": true,
+  "epochs": 100,
+  "torch": "2.9.1+cu130",
+  "torch_cuda_version": "13.0",
+  "cuda_available": true,
+  "gpu": "NVIDIA GB10",
+  "gpu_capability": [
+    12,
+    1
+  ],
+  "cp_decoder": {
+    "implementation": "torch.nn.TransformerDecoderLayer inside torch.nn.TransformerDecoder",
+    "label": "standardized decoder implementation (torch.nn.TransformerDecoderLayer)",
+    "constructor_arguments": "d_model=img_emb_size+txt_emb_size, nhead=nhead, batch_first=True, dropout=dropout",
+    "replaces_archived_symbol": "DecoderLayerWithCrossAttn (definition not preserved in the handoff)",
+    "archived_source_modified": false,
+    "documentation": "reproduction/docs/standardized_decoder.md"
+  },
+  "source_modified_in_repository": false,
+  "preserve_handoff_training_behavior": true,
+  "provenance_caveat": "The historical DecoderLayerWithCrossAttn definition was not preserved; all 2026 experiments use the standardized decoder implementation (reproduction/docs/standardized_decoder.md).",
+  "runtime_caveat": "This run uses the current GPU environment and is not claimed to be byte-identical to the 2025 runtime.",
+  "status": "passed",
+  "cp_best_epoch": 92,
+  "cp_best_acc": 0.663,
+  "cir_best_epoch": 68,
+  "cir_best_acc": 0.6836666666666666,
+  "cp_checkpoint_sha256": "b02b5cfa0923704b93db300efb8df28a062bee4625f46783b7880e9104765323",
+  "cir_checkpoint_sha256": "2833368f7b624ecc50d3ebe6ba8d14518cfbf110aa4a338c462fcf6439f6169a",
+  "cp_checkpoint": "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/main/original_seed4/cp_best_ckpt.pt",
+  "cir_checkpoint": "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/main/original_seed4/cir_best_ckpt.pt",
+  "cp_stdout_log": "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/main/original_seed4/cp_full_train.log",
+  "cir_stdout_log": "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/main/original_seed4/cir_full_train.log"
+}

@@ -1,0 +1,3 @@
+﻿Metric,Proposed (mean±std),No-weather (mean±std),Δ_weather,No-occasion (mean±std),Δ_occasion,No-style (mean±std),Δ_style
+AUC,0.9271 ± 0.0015,0.9256 ± 0.0007,-0.0015,0.9223 ± 0.0038,-0.0048,0.9136 ± 0.0014,-0.0135
+FITB Acc,0.6226 ± 0.0031,0.6196 ± 0.0024,-0.0031,0.6203 ± 0.0029,-0.0024,0.6101 ± 0.0044,-0.0126

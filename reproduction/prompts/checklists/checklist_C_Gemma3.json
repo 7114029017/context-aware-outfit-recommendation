@@ -1,0 +1,64 @@
+{
+  "checklist": [
+    {
+      "id": "c1",
+      "text": "Does the description mention key colors present in the outfit?"
+    },
+    {
+      "id": "c2",
+      "text": "Does the description identify the overall style or aesthetic of the outfit (e.g., casual, formal, bohemian)?"
+    },
+    {
+      "id": "c3",
+      "text": "Does the description include a temperature or season that aligns with the outfit's suitability?"
+    },
+    {
+      "id": "c4",
+      "text": "Does the description use adjectives that accurately reflect the outfit's mood or vibe?"
+    },
+    {
+      "id": "c5",
+      "text": "Does the description avoid making claims about the outfit that aren't visually apparent?"
+    },
+    {
+      "id": "c6",
+      "text": "Does the description use language a user would employ when searching for similar outfits?"
+    },
+    {
+      "id": "c7",
+      "text": "Does the description highlight any prominent textures or patterns in the outfit?"
+    },
+    {
+      "id": "c8",
+      "text": "Does the description suggest a potential occasion or activity suitable for the outfit?"
+    },
+    {
+      "id": "c9",
+      "text": "Is the description concise and avoids unnecessary details?"
+    },
+    {
+      "id": "c10",
+      "text": "Is the description grammatically correct and easy to understand?"
+    },
+    {
+      "id": "c11",
+      "text": "Does the description focus on the outfit as a whole, rather than individual items?"
+    },
+    {
+      "id": "c12",
+      "text": "Does the description avoid overly generic terms that could apply to many outfits?"
+    },
+    {
+      "id": "c13",
+      "text": "Does the description use descriptive words that are relevant to fashion and clothing?"
+    },
+    {
+      "id": "c14",
+      "text": "Does the description avoid subjective opinions (e.g., 'beautiful', 'ugly') and focus on observable features?"
+    },
+    {
+      "id": "c15",
+      "text": "Does the description accurately represent the overall impression of the outfit in the image?"
+    }
+  ]
+}

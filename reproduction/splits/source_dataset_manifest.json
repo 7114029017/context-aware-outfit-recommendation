@@ -1,0 +1,49 @@
+{
+  "polyvore_root": "uiuc-polyvore-hf",
+  "polyvore_root_note": "Runtime absolute path intentionally omitted; source identity is established by relative paths, byte sizes, SHA-256 digests, and counts.",
+  "counts": {
+    "train": 16995,
+    "valid": 3000,
+    "test": 15145,
+    "compatibility_test": 30290,
+    "fitb_test": 15145,
+    "or_test": 9311
+  },
+  "source_files": [
+    {
+      "path": "disjoint/train.json",
+      "bytes": 9654112,
+      "sha256": "0a7c0f8dc60f420d133881f68fab7132966a09ed2102312e60ee603e96e4667c"
+    },
+    {
+      "path": "disjoint/valid.json",
+      "bytes": 1715690,
+      "sha256": "e3b3e2dca09333f84be8106d7922066c484605c301300314ae8e3c2ec46c7304"
+    },
+    {
+      "path": "disjoint/test.json",
+      "bytes": 8364949,
+      "sha256": "df650429c987d73b5d089f80f33ae33904dc03078d11091ca0f33f7c05bef076"
+    },
+    {
+      "path": "disjoint/compatibility_test.txt",
+      "bytes": 1837218,
+      "sha256": "7464ef2cd5502ae2e3ac7e80a0981da131137c52c9a191a93e5fb1bf08172c0e"
+    },
+    {
+      "path": "disjoint/fill_in_blank_test.json",
+      "bytes": 2536094,
+      "sha256": "0d12e1747d60565f78d8ba38c4626c9bc2ab19d8fd0c4c536a92e716027a46a5"
+    },
+    {
+      "path": "polyvore_item_metadata.json",
+      "bytes": 105137208,
+      "sha256": "d5e7a3ce1506bc3e64eacfcb29c26f360c39bba96522f7d316ae8ee9f2d2ea58"
+    }
+  ],
+  "notes": [
+    "Manifest order preserves source file order.",
+    "OR eligibility reproduces evaluate_cir.py candidate-pool construction, including its archived early-break behavior.",
+    "Ablation/fair-subset IDs are not inferred because the canonical historical no-missing ID file is not archived in this handoff."
+  ]
+}

@@ -1,0 +1,658 @@
+{
+  "classification": "independent preserved-output Table 4-3 distribution audit",
+  "git_commit": "eb081e7a426cf5bd91acd8bb0f92a8398f08f45e",
+  "historical_source": "01_資料建構_data_construction/clo_met_temperature/temperature_results/temperature.ipynb, step1_make_tsub.py cell",
+  "primary_sample": "One unique set_id per outfit from the three preserved *_temperature.json split files; only identical duplicate records may be collapsed and are explicitly inventoried.",
+  "primary_sample_note": "Both raw-record and unique-outfit summaries are preserved to show duplicate-count sensitivity. The archived temperature rows contain CLO, MET, Tsub in one aligned set_id record; standalone CLO/MET files are cross-checked, not used to silently fill or replace missing source rows.",
+  "percentile_method": "numpy.quantile(method='linear'), explicitly declared audit choice",
+  "source_files": [
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/train_temperature.json",
+      "sha256": "83b064d123bba04308ac3dc8916d1b319244acacd15b3c30b4a19b47c94ac81c",
+      "raw_records": 17011,
+      "unique_set_ids": 16995
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/valid_temperature.json",
+      "sha256": "1439f9bb77304082fd4792961215e8c25e39de1c03b8eeea94bc2be6bad85483",
+      "raw_records": 3001,
+      "unique_set_ids": 3000
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/test_temperature.json",
+      "sha256": "5f1e7ebf709e948db5e81dcce354aa3841b81ac8a0e605de31c152d5a1a91061",
+      "raw_records": 15145,
+      "unique_set_ids": 15145
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/CLO_results/train_clo_results.jsonl",
+      "sha256": "3db437df5ffb4247521da0307d4519d5ff662c10f1e387d2bbafc21778618d72",
+      "raw_records": 16995,
+      "unique_set_ids": 16995
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/MET_results/train_met.json",
+      "sha256": "fa9e09c2e4110643009b590b7065bd236f35f4046a5d6cbcdcd220e9084bac9e",
+      "raw_records": 17011,
+      "unique_set_ids": 16995
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/CLO_results/valid_clo_results.jsonl",
+      "sha256": "4e61b43a88afb5b193bdae35ecde2cbfcf3207a69ff60bfc597fa9c4668da66e",
+      "raw_records": 3000,
+      "unique_set_ids": 3000
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/MET_results/valid_met.json",
+      "sha256": "9bfbaced337234e0eaadaabad7381973f7e679563cda7c58ff7190bcdc57d8b5",
+      "raw_records": 304,
+      "unique_set_ids": 304
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/CLO_results/test_clo_results.jsonl",
+      "sha256": "f0ccbd559dafbb486d57cddcf1afb7bcada7e5471899b7ca43f8e048ca13337f",
+      "raw_records": 15145,
+      "unique_set_ids": 15145
+    },
+    {
+      "path": "01_資料建構_data_construction/clo_met_temperature/MET_results/test_met.json",
+      "sha256": "12a263dba4406dae21d4b7e7ff6f2ac1758fe1773d15d1a72d2b6bcda0747234",
+      "raw_records": 15145,
+      "unique_set_ids": 15145
+    }
+  ],
+  "split_scope": {
+    "train": {
+      "expected_unique_set_ids": 16995,
+      "temperature_rows": 16995,
+      "temperature_raw_records": 17011,
+      "duplicate_audit": {
+        "raw_records": 17011,
+        "unique_set_ids": 16995,
+        "identical_duplicate_ids": 4,
+        "extra_identical_records": 16,
+        "duplicated_id_multiplicities": {
+          "222345297": 5,
+          "218424258": 5,
+          "223565762": 5,
+          "166034920": 5
+        },
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "matches_frozen_split_ids": true
+    },
+    "valid": {
+      "expected_unique_set_ids": 3000,
+      "temperature_rows": 3000,
+      "temperature_raw_records": 3001,
+      "duplicate_audit": {
+        "raw_records": 3001,
+        "unique_set_ids": 3000,
+        "identical_duplicate_ids": 1,
+        "extra_identical_records": 1,
+        "duplicated_id_multiplicities": {
+          "223856814": 2
+        },
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "matches_frozen_split_ids": true
+    },
+    "test": {
+      "expected_unique_set_ids": 15145,
+      "temperature_rows": 15145,
+      "temperature_raw_records": 15145,
+      "duplicate_audit": {
+        "raw_records": 15145,
+        "unique_set_ids": 15145,
+        "identical_duplicate_ids": 0,
+        "extra_identical_records": 0,
+        "duplicated_id_multiplicities": {},
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "matches_frozen_split_ids": true
+    }
+  },
+  "standalone_CLO_MET_source_audits": {
+    "CLO_train": {
+      "file": "01_資料建構_data_construction/clo_met_temperature/CLO_results/train_clo_results.jsonl",
+      "rows": 16995,
+      "duplicate_audit": {
+        "raw_records": 16995,
+        "unique_set_ids": 16995,
+        "identical_duplicate_ids": 0,
+        "extra_identical_records": 0,
+        "duplicated_id_multiplicities": {},
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "overlap_with_temperature": 16995,
+      "missing_relative_to_temperature": 0,
+      "extra_relative_to_temperature": 0,
+      "value_mismatch_with_temperature": 0,
+      "first_five_mismatched_ids": []
+    },
+    "MET_train": {
+      "file": "01_資料建構_data_construction/clo_met_temperature/MET_results/train_met.json",
+      "rows": 16995,
+      "duplicate_audit": {
+        "raw_records": 17011,
+        "unique_set_ids": 16995,
+        "identical_duplicate_ids": 4,
+        "extra_identical_records": 16,
+        "duplicated_id_multiplicities": {
+          "222345297": 5,
+          "218424258": 5,
+          "223565762": 5,
+          "166034920": 5
+        },
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "overlap_with_temperature": 16995,
+      "missing_relative_to_temperature": 0,
+      "extra_relative_to_temperature": 0,
+      "value_mismatch_with_temperature": 0,
+      "first_five_mismatched_ids": []
+    },
+    "CLO_valid": {
+      "file": "01_資料建構_data_construction/clo_met_temperature/CLO_results/valid_clo_results.jsonl",
+      "rows": 3000,
+      "duplicate_audit": {
+        "raw_records": 3000,
+        "unique_set_ids": 3000,
+        "identical_duplicate_ids": 0,
+        "extra_identical_records": 0,
+        "duplicated_id_multiplicities": {},
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "overlap_with_temperature": 3000,
+      "missing_relative_to_temperature": 0,
+      "extra_relative_to_temperature": 0,
+      "value_mismatch_with_temperature": 0,
+      "first_five_mismatched_ids": []
+    },
+    "MET_valid": {
+      "file": "01_資料建構_data_construction/clo_met_temperature/MET_results/valid_met.json",
+      "rows": 304,
+      "duplicate_audit": {
+        "raw_records": 304,
+        "unique_set_ids": 304,
+        "identical_duplicate_ids": 0,
+        "extra_identical_records": 0,
+        "duplicated_id_multiplicities": {},
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "overlap_with_temperature": 304,
+      "missing_relative_to_temperature": 2696,
+      "extra_relative_to_temperature": 0,
+      "value_mismatch_with_temperature": 0,
+      "first_five_mismatched_ids": []
+    },
+    "CLO_test": {
+      "file": "01_資料建構_data_construction/clo_met_temperature/CLO_results/test_clo_results.jsonl",
+      "rows": 15145,
+      "duplicate_audit": {
+        "raw_records": 15145,
+        "unique_set_ids": 15145,
+        "identical_duplicate_ids": 0,
+        "extra_identical_records": 0,
+        "duplicated_id_multiplicities": {},
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "overlap_with_temperature": 15145,
+      "missing_relative_to_temperature": 0,
+      "extra_relative_to_temperature": 0,
+      "value_mismatch_with_temperature": 0,
+      "first_five_mismatched_ids": []
+    },
+    "MET_test": {
+      "file": "01_資料建構_data_construction/clo_met_temperature/MET_results/test_met.json",
+      "rows": 15145,
+      "duplicate_audit": {
+        "raw_records": 15145,
+        "unique_set_ids": 15145,
+        "identical_duplicate_ids": 0,
+        "extra_identical_records": 0,
+        "duplicated_id_multiplicities": {},
+        "duplicate_policy": "Only byte-equivalent-in-content JSON record objects with the same set_id are collapsed for unique-outfit statistics; any conflicting record is a blocking error. Original files are never rewritten."
+      },
+      "overlap_with_temperature": 15145,
+      "missing_relative_to_temperature": 0,
+      "extra_relative_to_temperature": 0,
+      "value_mismatch_with_temperature": 0,
+      "first_five_mismatched_ids": []
+    }
+  },
+  "n_unique_primary_rows": 35140,
+  "n_raw_primary_records": 35157,
+  "n_extra_identical_primary_records": 17,
+  "summary": [
+    {
+      "proxy": "CLO",
+      "n": 35140,
+      "p05": 0.25,
+      "q25": 0.63,
+      "median": 0.93,
+      "q75": 1.2125,
+      "p95": 2.07,
+      "min": 0.0,
+      "max": 5.2,
+      "count_gt_4": 20
+    },
+    {
+      "proxy": "MET",
+      "n": 35140,
+      "p05": 1.0,
+      "q25": 1.0,
+      "median": 1.0,
+      "q75": 1.3,
+      "p95": 1.5,
+      "min": 1.0,
+      "max": 15.0,
+      "count_eq_1": 25786,
+      "count_gt_10": 8,
+      "pct_eq_1_1dp": 73.4
+    },
+    {
+      "proxy": "Tsub",
+      "n": 35140,
+      "p05": 13.5,
+      "q25": 19.9,
+      "median": 22.9,
+      "q75": 24.5,
+      "p95": 27.1,
+      "min": -163.2,
+      "max": 28.8,
+      "count_lt_0": 257,
+      "count_lt_minus_20": 51,
+      "pct_lt_0_2dp": 0.73,
+      "pct_lt_minus_20_2dp": 0.15
+    }
+  ],
+  "paper_field_comparison": [
+    {
+      "proxy": "CLO",
+      "field": "median",
+      "paper": 0.93,
+      "preserved_recomputed": 0.93,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "q25",
+      "paper": 0.63,
+      "preserved_recomputed": 0.63,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "q75",
+      "paper": 1.21,
+      "preserved_recomputed": 1.2125,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "p05",
+      "paper": 0.25,
+      "preserved_recomputed": 0.25,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "p95",
+      "paper": 2.07,
+      "preserved_recomputed": 2.07,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "max",
+      "paper": 5.2,
+      "preserved_recomputed": 5.2,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "count_gt_4",
+      "paper": 20,
+      "preserved_recomputed": 20,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "median",
+      "paper": 1.0,
+      "preserved_recomputed": 1.0,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "q25",
+      "paper": 1.0,
+      "preserved_recomputed": 1.0,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "q75",
+      "paper": 1.3,
+      "preserved_recomputed": 1.3,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "p05",
+      "paper": 1.0,
+      "preserved_recomputed": 1.0,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "p95",
+      "paper": 1.5,
+      "preserved_recomputed": 1.5,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "count_eq_1",
+      "paper": 25786,
+      "preserved_recomputed": 25786,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "count_gt_10",
+      "paper": 8,
+      "preserved_recomputed": 8,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "pct_eq_1_1dp",
+      "paper": 73.4,
+      "preserved_recomputed": 73.4,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "median",
+      "paper": 22.9,
+      "preserved_recomputed": 22.9,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "q25",
+      "paper": 19.9,
+      "preserved_recomputed": 19.9,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "q75",
+      "paper": 24.5,
+      "preserved_recomputed": 24.5,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "p05",
+      "paper": 13.5,
+      "preserved_recomputed": 13.5,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "p95",
+      "paper": 27.1,
+      "preserved_recomputed": 27.1,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "count_lt_0",
+      "paper": 257,
+      "preserved_recomputed": 257,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "count_lt_minus_20",
+      "paper": 51,
+      "preserved_recomputed": 51,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "pct_lt_0_2dp",
+      "paper": 0.73,
+      "preserved_recomputed": 0.73,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "pct_lt_minus_20_2dp",
+      "paper": 0.15,
+      "preserved_recomputed": 0.15,
+      "paper_display_match": true
+    }
+  ],
+  "raw_record_sensitivity_summary": [
+    {
+      "proxy": "CLO",
+      "n": 35157,
+      "p05": 0.25,
+      "q25": 0.63,
+      "median": 0.93,
+      "q75": 1.22,
+      "p95": 2.08,
+      "min": 0.0,
+      "max": 5.2,
+      "count_gt_4": 20
+    },
+    {
+      "proxy": "MET",
+      "n": 35157,
+      "p05": 1.0,
+      "q25": 1.0,
+      "median": 1.0,
+      "q75": 1.3,
+      "p95": 1.5,
+      "min": 1.0,
+      "max": 15.0,
+      "count_eq_1": 25790,
+      "count_gt_10": 8,
+      "pct_eq_1_1dp": 73.4
+    },
+    {
+      "proxy": "Tsub",
+      "n": 35157,
+      "p05": 13.5,
+      "q25": 19.9,
+      "median": 22.9,
+      "q75": 24.5,
+      "p95": 27.1,
+      "min": -163.2,
+      "max": 28.8,
+      "count_lt_0": 258,
+      "count_lt_minus_20": 52,
+      "pct_lt_0_2dp": 0.73,
+      "pct_lt_minus_20_2dp": 0.15
+    }
+  ],
+  "raw_record_sensitivity_paper_comparison": [
+    {
+      "proxy": "CLO",
+      "field": "median",
+      "paper": 0.93,
+      "preserved_recomputed": 0.93,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "q25",
+      "paper": 0.63,
+      "preserved_recomputed": 0.63,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "q75",
+      "paper": 1.21,
+      "preserved_recomputed": 1.22,
+      "paper_display_match": false
+    },
+    {
+      "proxy": "CLO",
+      "field": "p05",
+      "paper": 0.25,
+      "preserved_recomputed": 0.25,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "p95",
+      "paper": 2.07,
+      "preserved_recomputed": 2.08,
+      "paper_display_match": false
+    },
+    {
+      "proxy": "CLO",
+      "field": "max",
+      "paper": 5.2,
+      "preserved_recomputed": 5.2,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "CLO",
+      "field": "count_gt_4",
+      "paper": 20,
+      "preserved_recomputed": 20,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "median",
+      "paper": 1.0,
+      "preserved_recomputed": 1.0,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "q25",
+      "paper": 1.0,
+      "preserved_recomputed": 1.0,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "q75",
+      "paper": 1.3,
+      "preserved_recomputed": 1.3,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "p05",
+      "paper": 1.0,
+      "preserved_recomputed": 1.0,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "p95",
+      "paper": 1.5,
+      "preserved_recomputed": 1.5,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "count_eq_1",
+      "paper": 25786,
+      "preserved_recomputed": 25790,
+      "paper_display_match": false
+    },
+    {
+      "proxy": "MET",
+      "field": "count_gt_10",
+      "paper": 8,
+      "preserved_recomputed": 8,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "MET",
+      "field": "pct_eq_1_1dp",
+      "paper": 73.4,
+      "preserved_recomputed": 73.4,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "median",
+      "paper": 22.9,
+      "preserved_recomputed": 22.9,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "q25",
+      "paper": 19.9,
+      "preserved_recomputed": 19.9,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "q75",
+      "paper": 24.5,
+      "preserved_recomputed": 24.5,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "p05",
+      "paper": 13.5,
+      "preserved_recomputed": 13.5,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "p95",
+      "paper": 27.1,
+      "preserved_recomputed": 27.1,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "count_lt_0",
+      "paper": 257,
+      "preserved_recomputed": 258,
+      "paper_display_match": false
+    },
+    {
+      "proxy": "Tsub",
+      "field": "count_lt_minus_20",
+      "paper": 51,
+      "preserved_recomputed": 52,
+      "paper_display_match": false
+    },
+    {
+      "proxy": "Tsub",
+      "field": "pct_lt_0_2dp",
+      "paper": 0.73,
+      "preserved_recomputed": 0.73,
+      "paper_display_match": true
+    },
+    {
+      "proxy": "Tsub",
+      "field": "pct_lt_minus_20_2dp",
+      "paper": 0.15,
+      "preserved_recomputed": 0.15,
+      "paper_display_match": true
+    }
+  ],
+  "raw_record_sensitivity_not_official": true,
+  "all_listed_paper_fields_match_display_precision": true,
+  "standalone_source_values_consistent_on_overlap": true,
+  "historical_2025_runtime_or_selection_rule_exact": false,
+  "interpretation": "A displayed-value match reproduces Table 4-3 from preserved aligned proxy outputs; it does not prove identical historical 2025 execution or fill gaps in standalone CLO/MET files."
+}

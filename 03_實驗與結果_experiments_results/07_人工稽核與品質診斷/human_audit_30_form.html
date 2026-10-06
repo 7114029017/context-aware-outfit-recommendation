@@ -1,0 +1,1753 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30-case Human Audit</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #64748b;
+      --line: #d8dee8;
+      --soft: #f8fafc;
+      --panel: #ffffff;
+      --blue: #2f77b4;
+      --orange: #f28e2b;
+      --green: #15803d;
+      --red: #b91c1c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px 12px;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 18px;
+      align-items: center;
+    }
+    h1 { margin: 0 0 4px; font-size: 22px; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .progress-text { font-size: 13px; color: var(--muted); text-align: right; margin-bottom: 7px; }
+    .progress-track {
+      width: 100%; height: 10px; border-radius: 999px;
+      background: #e2e8f0; overflow: hidden; border: 1px solid #cbd5e1;
+    }
+    .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--blue), var(--orange)); transition: width 0.18s ease; }
+    main { max-width: 1120px; margin: 0 auto; padding: 18px 20px 28px; }
+    .toolbar, .question-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+    .toolbar { padding: 14px; display: grid; grid-template-columns: 220px minmax(0, 1fr) auto auto; gap: 12px; align-items: end; margin-bottom: 14px; }
+    label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 800; color: #334155; }
+    input { width: 100%; border: 1px solid #cbd5e1; border-radius: 6px; padding: 9px 10px; font: inherit; outline: none; }
+    input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(47, 119, 180, 0.12); }
+    button { min-height: 38px; border: 1px solid transparent; border-radius: 6px; padding: 8px 12px; font: inherit; font-weight: 850; cursor: pointer; background: var(--blue); color: #fff; }
+    button.secondary { background: #fff; color: #334155; border-color: var(--line); }
+    button.orange { background: var(--orange); }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    .count-box { color: var(--muted); font-size: 13px; line-height: 1.55; align-self: center; }
+    .question-card { padding: 16px; }
+    .case-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px; }
+    .case-title { margin: 0; font-size: 18px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .badge { border-radius: 999px; padding: 4px 8px; background: #e2e8f0; color: #334155; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .badge.conflict { background: #ffedd5; color: #9a3412; }
+    .badge.high { background: #dcfce7; color: #166534; }
+    .badge.low { background: #fee2e2; color: #991b1b; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; margin: 12px 0 14px; }
+    .image-tile { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+    .image-tile img { display: block; width: 100%; height: 108px; object-fit: contain; background: #f8fafc; }
+    .image-label { padding: 6px 7px; font-size: 12px; color: var(--muted); text-align: center; border-top: 1px solid #eef2f7; }
+    .description { margin: 12px 0 14px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); line-height: 1.65; font-size: 15px; }
+    .desc-label { display: block; color: var(--muted); font-size: 12px; font-weight: 800; margin-bottom: 6px; }
+    .desc-zh { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+    .desc-en { font-size: 13px; color: var(--muted); }
+    .lists { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .list-panel { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+    .list-panel h2 { margin: 0; padding: 11px 13px; background: #f8fafc; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .check-row { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 8px; align-items: start; padding: 10px 12px; border-bottom: 1px solid #eef2f7; cursor: pointer; }
+    .check-row:last-child { border-bottom: 0; }
+    .check-row input { width: 18px; height: 18px; margin: 1px 0 0; }
+    .check-text { display: grid; gap: 4px; }
+    .question-zh { font-size: 13px; line-height: 1.45; font-weight: 800; color: var(--ink); }
+    .question-en { font-size: 12px; line-height: 1.45; color: var(--muted); }
+    .nav-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; }
+    .last-count { color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) {
+      .header-inner { grid-template-columns: 1fr; }
+      .progress-text { text-align: left; }
+      .toolbar { grid-template-columns: 1fr; }
+      .lists { grid-template-columns: 1fr; }
+      .case-head { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1>30-case Human Audit</h1>
+        <p class="subtitle">Left and right columns show Qwen and Gemma C* checklists. Checked means YES; unchecked means NO.</p>
+      </div>
+      <div>
+        <div class="progress-text" id="progressText">0 / 30 completed</div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <div>
+        <label for="reviewer">Reviewer name</label>
+        <input id="reviewer" value="reviewer1">
+      </div>
+      <div class="count-box" id="currentCount">Current case: checked 0, unchecked 0</div>
+      <button class="secondary" type="button" onclick="clearSaved()">Clear saved answers</button>
+      <button class="orange" type="button" onclick="exportCsv()">Export A38 CSV</button>
+    </div>
+
+    <section class="question-card">
+      <div class="case-head">
+        <div>
+          <h2 class="case-title" id="caseTitle"></h2>
+          <div class="badges" id="caseBadges"></div>
+        </div>
+        <div class="count-box" id="pageIndex"></div>
+      </div>
+      <div class="image-grid" id="outfitImages"></div>
+      <div class="description">
+        <span class="desc-label">Generated description / 生成描述</span>
+        <div class="desc-zh" id="descriptionTextZh"></div>
+        <div class="desc-en" id="descriptionText"></div>
+      </div>
+      <div class="lists">
+        <div class="list-panel"><h2>Qwen C* checklist</h2><div id="qwenList"></div></div>
+        <div class="list-panel"><h2>Gemma C* checklist</h2><div id="gemmaList"></div></div>
+      </div>
+      <div class="nav-row">
+        <button class="secondary" type="button" id="prevBtn" onclick="goPrev()">Previous</button>
+        <div class="last-count" id="lastCount">Press Next to record checked / unchecked counts for this case.</div>
+        <button type="button" id="nextBtn" onclick="goNext()">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const cases = [
+  {
+    "set_id": "175762493",
+    "sample_order": 1,
+    "audit_stratum": "conflict",
+    "temp_bin": "cold (<12 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "other/unclear",
+    "generated_title": "1.7000000000000002° C, Cozy winter city stroll with friends in luxe layers",
+    "generated_title_zh": "1.7°C，適合與朋友冬季城市漫步的舒適奢華層次穿搭",
+    "items": [
+      {
+        "item_id": "146042259",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/146042259.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "141846029",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/141846029.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "147246121",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/147246121.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "141658555",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/141658555.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "145620972",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/145620972.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "146842027",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/146842027.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "187045406",
+    "sample_order": 2,
+    "audit_stratum": "conflict",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "outdoor/travel",
+    "style_bin": "minimal/classic",
+    "generated_title": "-10.0° C, Preppy & Cozy Layered Look for a Chic City Walk",
+    "generated_title_zh": "-10.0°C，適合時髦城市散步的學院風保暖層次造型",
+    "items": [
+      {
+        "item_id": "156470070",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/156470070.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "158541711",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/158541711.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "154919593",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/154919593.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "157843253",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/157843253.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "157639312",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/157639312.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "151847530",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/151847530.jpg",
+        "display_label": "Item 6"
+      },
+      {
+        "item_id": "155647098",
+        "index": 7,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/155647098.jpg",
+        "display_label": "Item 7"
+      },
+      {
+        "item_id": "155415966",
+        "index": 8,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/155415966.jpg",
+        "display_label": "Item 8"
+      },
+      {
+        "item_id": "147895455",
+        "index": 9,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/147895455.jpg",
+        "display_label": "Item 9"
+      }
+    ]
+  },
+  {
+    "set_id": "206997605",
+    "sample_order": 3,
+    "audit_stratum": "conflict",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "elegant/romantic",
+    "generated_title": "22.9° C, Evening Glam: A Velvet Dress & Statement Jewelry Look",
+    "generated_title_zh": "22.9°C，晚間華麗風：天鵝絨洋裝與醒目珠寶造型",
+    "items": [
+      {
+        "item_id": "178209921",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/178209921.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "169712704",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/169712704.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "77275576",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/77275576.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "98233996",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/98233996.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "180811790",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/180811790.jpg",
+        "display_label": "Item 5"
+      }
+    ]
+  },
+  {
+    "set_id": "212444422",
+    "sample_order": 4,
+    "audit_stratum": "conflict",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "casual/daily",
+    "style_bin": "casual/street",
+    "generated_title": "21.9° C, Effortless Street Style - Cozy Joggers for a Relaxed Day",
+    "generated_title_zh": "21.9°C，輕鬆街頭風格：適合放鬆日常的舒適慢跑褲造型",
+    "items": [
+      {
+        "item_id": "185796758",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/185796758.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "188607901",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/188607901.jpg",
+        "display_label": "Item 2"
+      }
+    ]
+  },
+  {
+    "set_id": "213569484",
+    "sample_order": 5,
+    "audit_stratum": "conflict",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "dark/edgy",
+    "generated_title": "22.0° C, Dark Star Movie Night Ensemble – Cozy layers for a cinematic evening",
+    "generated_title_zh": "22.0°C，暗黑星光電影夜套裝：適合電影感夜晚的舒適層次穿搭",
+    "items": [
+      {
+        "item_id": "157191274",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/157191274.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "187348461",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/187348461.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "12969814",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/12969814.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "193578256",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/193578256.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "193994466",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/193994466.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "156844928",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/156844928.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "218370600",
+    "sample_order": 6,
+    "audit_stratum": "conflict",
+    "temp_bin": "warm/hot (>=24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "outdoor/travel",
+    "style_bin": "elegant/romantic",
+    "generated_title": "25.8° C, Dark Caribbean Mystery – A lace and corset vacation ensemble",
+    "generated_title_zh": "25.8°C，暗黑加勒比神祕風：蕾絲與束身元素的度假套裝",
+    "items": [
+      {
+        "item_id": "164977810",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/164977810.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "192277978",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/192277978.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "103589816",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/103589816.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "179771617",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/179771617.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "138989873",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/138989873.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "181754351",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/181754351.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "225175559",
+    "sample_order": 7,
+    "audit_stratum": "conflict",
+    "temp_bin": "cool (12-18 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "boho/beach",
+    "generated_title": "17°C, dreamy floral dress and fringe details for a festive summer evening",
+    "generated_title_zh": "17°C，適合節慶夏日晚間的夢幻花卉洋裝與流蘇細節造型",
+    "items": [
+      {
+        "item_id": "214883088",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/214883088.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "212625576",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/212625576.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "215410268",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/215410268.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "207500045",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/207500045.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "214782999",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/214782999.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "214209891",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/214209891.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "53820793",
+    "sample_order": 8,
+    "audit_stratum": "conflict",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "formal/work",
+    "style_bin": "sporty/active",
+    "generated_title": "21.1° C, Effortless Pilates Style – Cozy Layers for a Relaxed Workout",
+    "generated_title_zh": "21.1°C，輕鬆皮拉提斯風格：適合放鬆運動的舒適層次穿搭",
+    "items": [
+      {
+        "item_id": "51204348",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/51204348.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "55752255",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/55752255.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "57769259",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/57769259.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "27168708",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/27168708.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "45625150",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/45625150.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "60253146",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/60253146.jpg",
+        "display_label": "Item 6"
+      },
+      {
+        "item_id": "50482081",
+        "index": 7,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/50482081.jpg",
+        "display_label": "Item 7"
+      },
+      {
+        "item_id": "50874873",
+        "index": 8,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/50874873.jpg",
+        "display_label": "Item 8"
+      },
+      {
+        "item_id": "21996088",
+        "index": 9,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/21996088.jpg",
+        "display_label": "Item 9"
+      }
+    ]
+  },
+  {
+    "set_id": "82006848",
+    "sample_order": 9,
+    "audit_stratum": "conflict",
+    "temp_bin": "cool (12-18 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "other/unclear",
+    "generated_title": "15.1° C, Vibrant Holiday Run Outfit – Bright Colors & Comfortable Layers",
+    "generated_title_zh": "15.1°C，鮮明假日跑步穿搭：亮色與舒適層次造型",
+    "items": [
+      {
+        "item_id": "74805002",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/74805002.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "72336206",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/72336206.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "78523755",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/78523755.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "73710881",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/73710881.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "74770144",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/74770144.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "81140445",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/81140445.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "86012987",
+    "sample_order": 10,
+    "audit_stratum": "conflict",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "casual/street",
+    "generated_title": "21.7° C, Dreamy Quinceañera Guest Look with Denim and Pearls",
+    "generated_title_zh": "21.7°C，搭配丹寧與珍珠的夢幻成年禮賓客造型",
+    "items": [
+      {
+        "item_id": "84670721",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/84670721.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "83705753",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/83705753.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "84010850",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/84010850.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "85336241",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/85336241.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "95325792",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/95325792.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "74561673",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/74561673.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "178417522",
+    "sample_order": 11,
+    "audit_stratum": "high",
+    "temp_bin": "cool (12-18 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "casual/daily",
+    "style_bin": "casual/street",
+    "generated_title": "16°C, Cozy Corn Maze Vibes – Hipster Casual with Delicate Details",
+    "generated_title_zh": "16°C，舒適玉米迷宮氛圍：帶有精緻細節的嬉皮休閒造型",
+    "items": [
+      {
+        "item_id": "110348936",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/110348936.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "126884091",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/126884091.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "98327697",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/98327697.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "114264906",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/114264906.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "180525625",
+    "sample_order": 12,
+    "audit_stratum": "high",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "dark/edgy",
+    "generated_title": "22.3° C, Evening Noir: Leather Gloves and a Dramatic Slip Dress",
+    "generated_title_zh": "22.3°C，夜晚黑色電影感：皮手套與戲劇感細肩帶洋裝造型",
+    "items": [
+      {
+        "item_id": "82639586",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/82639586.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "152848977",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/152848977.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "23738533",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/23738533.jpg",
+        "display_label": "Item 3"
+      }
+    ]
+  },
+  {
+    "set_id": "182550457",
+    "sample_order": 13,
+    "audit_stratum": "high",
+    "temp_bin": "cold (<12 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "formal/work",
+    "style_bin": "other/unclear",
+    "generated_title": "11.0° C, Cozy Coffee Meeting Style – Leopard Heels & Checked Blazer",
+    "generated_title_zh": "11.0°C，舒適咖啡會面風格：豹紋高跟鞋與格紋西裝外套",
+    "items": [
+      {
+        "item_id": "152717874",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/152717874.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "147384208",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/147384208.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "153958615",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/153958615.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "137710146",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/137710146.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "138328509",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/138328509.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "153712306",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/153712306.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "202122212",
+    "sample_order": 14,
+    "audit_stratum": "high",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "outdoor/travel",
+    "style_bin": "minimal/classic",
+    "generated_title": "5°C, preppy travel ensemble for a sophisticated afternoon stroll",
+    "generated_title_zh": "5°C，適合精緻午後散步的學院風旅行套裝",
+    "items": [
+      {
+        "item_id": "132266633",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/132266633.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "65590693",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/65590693.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "138966460",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/138966460.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "140684890",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/140684890.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "172305526",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/172305526.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "154021864",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/154021864.jpg",
+        "display_label": "Item 6"
+      },
+      {
+        "item_id": "141751387",
+        "index": 7,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/141751387.jpg",
+        "display_label": "Item 7"
+      },
+      {
+        "item_id": "152882443",
+        "index": 8,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/152882443.jpg",
+        "display_label": "Item 8"
+      }
+    ]
+  },
+  {
+    "set_id": "206715568",
+    "sample_order": 15,
+    "audit_stratum": "high",
+    "temp_bin": "warm/hot (>=24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "sporty/active",
+    "generated_title": "25.0° C, Effortless Activewear for a Warm-Weather Run",
+    "generated_title_zh": "25.0°C，適合暖天跑步的輕鬆運動服造型",
+    "items": [
+      {
+        "item_id": "180875698",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/180875698.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "180885873",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/180885873.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "182518046",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/182518046.jpg",
+        "display_label": "Item 3"
+      }
+    ]
+  },
+  {
+    "set_id": "211237284",
+    "sample_order": 16,
+    "audit_stratum": "high",
+    "temp_bin": "warm/hot (>=24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "casual/daily",
+    "style_bin": "elegant/romantic",
+    "generated_title": "25.0° C, Effortless off-the-shoulder style with a chic crossbody bag for a relaxed day out.",
+    "generated_title_zh": "25.0°C，輕鬆露肩風格，搭配時髦斜背包，適合放鬆外出日",
+    "items": [
+      {
+        "item_id": "185006402",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/185006402.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "187579953",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/187579953.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "187579981",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/187579981.jpg",
+        "display_label": "Item 3"
+      }
+    ]
+  },
+  {
+    "set_id": "222746237",
+    "sample_order": 17,
+    "audit_stratum": "high",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "outdoor/travel",
+    "style_bin": "boho/beach",
+    "generated_title": "22.7° C, breezy beach vibes with a playful swimsuit and straw accessories",
+    "generated_title_zh": "22.7°C，微風海灘氛圍，搭配俏皮泳裝與草編配件",
+    "items": [
+      {
+        "item_id": "204564534",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/204564534.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "208874275",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/208874275.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "208982322",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/208982322.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "211125853",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/211125853.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "224932383",
+    "sample_order": 18,
+    "audit_stratum": "high",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "casual/daily",
+    "style_bin": "elegant/romantic",
+    "generated_title": "23°C, playful polka dot vibes with a feline touch for a chic, breezy day out",
+    "generated_title_zh": "23°C，帶有貓咪元素的俏皮圓點氛圍，適合時髦微風外出日",
+    "items": [
+      {
+        "item_id": "212470710",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/212470710.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "209065724",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/209065724.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "206506356",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/206506356.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "164423156",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/164423156.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "225133485",
+    "sample_order": 19,
+    "audit_stratum": "high",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "elegant/romantic",
+    "generated_title": "21°C, dreamy purple evening look for a sophisticated soirée",
+    "generated_title_zh": "21°C，適合精緻晚宴場合的夢幻紫色晚間造型",
+    "items": [
+      {
+        "item_id": "187221424",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/187221424.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "193550292",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/193550292.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "213272815",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/213272815.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "182353683",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/182353683.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "212436063",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/212436063.jpg",
+        "display_label": "Item 5"
+      }
+    ]
+  },
+  {
+    "set_id": "225246911",
+    "sample_order": 20,
+    "audit_stratum": "high",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "casual/street",
+    "generated_title": "23°C, effortlessly cool denim jacket and playful prints for a breezy city stroll",
+    "generated_title_zh": "23°C，輕鬆有型的丹寧外套與俏皮印花，適合微風城市漫步",
+    "items": [
+      {
+        "item_id": "215328011",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/215328011.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "215520196",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/215520196.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "210472448",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/210472448.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "215459902",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/215459902.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "215210725",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/215210725.jpg",
+        "display_label": "Item 5"
+      }
+    ]
+  },
+  {
+    "set_id": "146086172",
+    "sample_order": 21,
+    "audit_stratum": "low",
+    "temp_bin": "cold (<12 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "elegant/romantic",
+    "generated_title": "-38.0° C, Cozy Velvet Nights: A Dramatic Winter Ensemble",
+    "generated_title_zh": "-38.0°C，舒適天鵝絨夜晚：戲劇感冬季套裝",
+    "items": [
+      {
+        "item_id": "98524176",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/98524176.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "120496701",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/120496701.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "125626411",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/125626411.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "125841502",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/125841502.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "158633248",
+    "sample_order": 22,
+    "audit_stratum": "low",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "other/unclear",
+    "generated_title": "6°C, Sunset stroll in a vibrant, flowing dress – perfect for a warm evening adventure.",
+    "generated_title_zh": "6°C，夕陽漫步中的鮮明飄逸洋裝，適合溫暖夜晚冒險",
+    "items": [
+      {
+        "item_id": "128970500",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/128970500.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "100295861",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/100295861.jpg",
+        "display_label": "Item 2"
+      }
+    ]
+  },
+  {
+    "set_id": "184137277",
+    "sample_order": 23,
+    "audit_stratum": "low",
+    "temp_bin": "cold (<12 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "sporty/active",
+    "generated_title": "55°C, Running through a frosty fairytale in leggings and a tutu",
+    "generated_title_zh": "55°C，穿著內搭褲與蓬蓬裙，在冰霜童話感中奔跑的造型",
+    "items": [
+      {
+        "item_id": "143313065",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/143313065.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "142458783",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/142458783.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "155681533",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/155681533.jpg",
+        "display_label": "Item 3"
+      }
+    ]
+  },
+  {
+    "set_id": "193231221",
+    "sample_order": 24,
+    "audit_stratum": "low",
+    "temp_bin": "cold (<12 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "dark/edgy",
+    "generated_title": "1.4° C, Cozy Winter Vibes: Dark denim, floral accents, and a comfy tee for chilly days",
+    "generated_title_zh": "1.4°C，舒適冬季氛圍：深色丹寧、花卉點綴與寒冷日子的舒適 T 恤",
+    "items": [
+      {
+        "item_id": "149195947",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/149195947.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "165290236",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/165290236.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "163568164",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/163568164.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "159163200",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/159163200.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "195054948",
+    "sample_order": 25,
+    "audit_stratum": "low",
+    "temp_bin": "cold (<12 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "evening/event",
+    "style_bin": "other/unclear",
+    "generated_title": "-36.7° C, A Jedi’s Winter Wardrobe: Layered warmth for a galactic adventure",
+    "generated_title_zh": "-36.7°C，絕地武士的冬季衣櫥：適合銀河冒險的保暖層次穿搭",
+    "items": [
+      {
+        "item_id": "62353983",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/62353983.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "44131887",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/44131887.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "80458289",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/80458289.jpg",
+        "display_label": "Item 3"
+      }
+    ]
+  },
+  {
+    "set_id": "198494269",
+    "sample_order": 26,
+    "audit_stratum": "low",
+    "temp_bin": "cool (12-18 degC)",
+    "met_bin": "higher activity (>=1.6 MET)",
+    "occasion_bin": "casual/daily",
+    "style_bin": "elegant/romantic",
+    "generated_title": "16°C, Effortless Gray Pantsuit Chic for a Cool Day Out",
+    "generated_title_zh": "16°C，適合涼爽外出日的輕鬆灰色褲裝套裝時尚",
+    "items": [
+      {
+        "item_id": "157507418",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/157507418.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "171919482",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/171919482.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "169778182",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/169778182.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "166974075",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/166974075.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "161804000",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/161804000.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "171029266",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/171029266.jpg",
+        "display_label": "Item 6"
+      },
+      {
+        "item_id": "126299109",
+        "index": 7,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/126299109.jpg",
+        "display_label": "Item 7"
+      },
+      {
+        "item_id": "162486449",
+        "index": 8,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/162486449.jpg",
+        "display_label": "Item 8"
+      },
+      {
+        "item_id": "169703340",
+        "index": 9,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/169703340.jpg",
+        "display_label": "Item 9"
+      }
+    ]
+  },
+  {
+    "set_id": "203011830",
+    "sample_order": 27,
+    "audit_stratum": "low",
+    "temp_bin": "warm/hot (>=24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "minimal/classic",
+    "generated_title": "5°C, Effortless Chic for Warm Days - A Modern Minimalist Look",
+    "generated_title_zh": "5°C，適合暖天的輕鬆時髦：現代極簡造型",
+    "items": [
+      {
+        "item_id": "175141653",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/175141653.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "178226174",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/178226174.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "174010242",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/174010242.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "204105355",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/204105355.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "204669155",
+    "sample_order": 28,
+    "audit_stratum": "low",
+    "temp_bin": "mild (18-24 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "other/unclear",
+    "style_bin": "boho/beach",
+    "generated_title": "5°C, Breezy Summer Day with Floral Prints and Sunshine Hues",
+    "generated_title_zh": "5°C，帶有花卉印花與陽光色調的微風夏日穿搭",
+    "items": [
+      {
+        "item_id": "169938208",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/169938208.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "167424910",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/167424910.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "127716593",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/127716593.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "176219367",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/176219367.jpg",
+        "display_label": "Item 4"
+      },
+      {
+        "item_id": "176369734",
+        "index": 5,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/176369734.jpg",
+        "display_label": "Item 5"
+      },
+      {
+        "item_id": "172851485",
+        "index": 6,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/172851485.jpg",
+        "display_label": "Item 6"
+      }
+    ]
+  },
+  {
+    "set_id": "222196303",
+    "sample_order": 29,
+    "audit_stratum": "low",
+    "temp_bin": "warm/hot (>=24 degC)",
+    "met_bin": "low activity (<1.3 MET)",
+    "occasion_bin": "outdoor/travel",
+    "style_bin": "boho/beach",
+    "generated_title": "5°C, Effortless summer vibes with striped linen for a relaxed beach day.",
+    "generated_title_zh": "5°C，條紋亞麻帶來輕鬆夏日氛圍，適合放鬆海灘日",
+    "items": [
+      {
+        "item_id": "209809531",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/209809531.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "210499458",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/210499458.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "210498921",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/210498921.jpg",
+        "display_label": "Item 3"
+      },
+      {
+        "item_id": "207065275",
+        "index": 4,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/207065275.jpg",
+        "display_label": "Item 4"
+      }
+    ]
+  },
+  {
+    "set_id": "222964487",
+    "sample_order": 30,
+    "audit_stratum": "low",
+    "temp_bin": "cool (12-18 degC)",
+    "met_bin": "moderate activity (1.3-1.6 MET)",
+    "occasion_bin": "formal/work",
+    "style_bin": "casual/street",
+    "generated_title": "17.2° C, Effortless Office Layers for a Cool, Comfortable Day",
+    "generated_title_zh": "17.2°C，適合涼爽舒適日子的輕鬆辦公室層次穿搭",
+    "items": [
+      {
+        "item_id": "193876476",
+        "index": 1,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/193876476.jpg",
+        "display_label": "Item 1"
+      },
+      {
+        "item_id": "211759833",
+        "index": 2,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/211759833.jpg",
+        "display_label": "Item 2"
+      },
+      {
+        "item_id": "209144660",
+        "index": 3,
+        "image_src": "../../../polyvore_data/polyvore_outfits/images/209144660.jpg",
+        "display_label": "Item 3"
+      }
+    ]
+  }
+];
+    const checklists = {
+  "qwen": [
+    {
+      "id": "c8",
+      "text": "Does the description avoid introducing elements or details not visually present in the outfit collage?",
+      "weight": 4,
+      "category": "grounding",
+      "text_zh": "描述是否避免加入套裝拼貼圖中沒有出現的元素或細節？"
+    },
+    {
+      "id": "c1",
+      "text": "Does the description include the temperature in °C and a qualitative thermal feeling (e.g., cool, warm, hot) relevant to the outfit?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否包含攝氏溫度與符合套裝的冷暖感受，例如涼爽、溫暖或炎熱？"
+    },
+    {
+      "id": "c2",
+      "text": "Does the description specify the overall style or theme of the outfit (e.g., beach chic, gothic, sporty)?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否指出整體穿搭風格或主題，例如海灘時尚、哥德風或運動風？"
+    },
+    {
+      "id": "c4",
+      "text": "Does the description indicate the occasion or context for which the outfit is suitable (e.g., date, wedding, night out)?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否指出此套裝適合的場合或情境，例如約會、婚禮或夜晚外出？"
+    },
+    {
+      "id": "c3",
+      "text": "Does the description mention the primary color scheme or key colors present in the outfit?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否提到套裝中的主要配色或關鍵顏色？"
+    },
+    {
+      "id": "c5",
+      "text": "Does the description capture the mood or aesthetic tone (e.g., effortless, glamorous, sophisticated)?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否捕捉到整體氛圍或美感語氣，例如輕鬆、華麗或精緻？"
+    },
+    {
+      "id": "c7",
+      "text": "Does the description use concise, query-style language appropriate for a search or request?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否使用精簡、適合作為搜尋或請求的查詢式語言？"
+    },
+    {
+      "id": "c6",
+      "text": "Does the description reference the main garment or item that defines the outfit (e.g., dress, bikini, vest)?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否提到定義此套裝的主要服飾或單品，例如洋裝、比基尼或背心？"
+    },
+    {
+      "id": "c9",
+      "text": "Does the description logically connect the visual elements into a coherent outfit narrative?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否能將視覺元素合理連結成一致的穿搭敘事？"
+    },
+    {
+      "id": "c10",
+      "text": "Is the description grammatically correct and fluent, with natural phrasing for a user query?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否文法正確、語句流暢，且像自然的使用者查詢？"
+    }
+  ],
+  "gemma": [
+    {
+      "id": "c5",
+      "text": "Does the description avoid making claims about the outfit that aren't visually apparent?",
+      "weight": 4,
+      "category": "grounding",
+      "text_zh": "描述是否避免對套裝做出圖片中無法直接觀察到的主張？"
+    },
+    {
+      "id": "c15",
+      "text": "Does the description accurately represent the overall impression of the outfit in the image?",
+      "weight": 4,
+      "category": "grounding",
+      "text_zh": "描述是否準確呈現圖片中套裝的整體印象？"
+    },
+    {
+      "id": "c3",
+      "text": "Does the description include a temperature or season that aligns with the outfit's suitability?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否包含符合套裝適穿性的溫度或季節資訊？"
+    },
+    {
+      "id": "c8",
+      "text": "Does the description suggest a potential occasion or activity suitable for the outfit?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否提出適合此套裝的可能場合或活動？"
+    },
+    {
+      "id": "c2",
+      "text": "Does the description identify the overall style or aesthetic of the outfit (e.g., casual, formal, bohemian)?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否辨識出套裝的整體風格或美感，例如休閒、正式或波希米亞風？"
+    },
+    {
+      "id": "c6",
+      "text": "Does the description use language a user would employ when searching for similar outfits?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否使用使用者搜尋相似套裝時可能會使用的語言？"
+    },
+    {
+      "id": "c1",
+      "text": "Does the description mention key colors present in the outfit?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否提到套裝中的關鍵顏色？"
+    },
+    {
+      "id": "c7",
+      "text": "Does the description highlight any prominent textures or patterns in the outfit?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否突顯套裝中明顯的材質或圖案？"
+    },
+    {
+      "id": "c4",
+      "text": "Does the description use adjectives that accurately reflect the outfit's mood or vibe?",
+      "weight": 2,
+      "category": "query_register",
+      "text_zh": "描述是否使用能準確反映套裝情緒或氛圍的形容詞？"
+    },
+    {
+      "id": "c10",
+      "text": "Is the description grammatically correct and easy to understand?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否文法正確且容易理解？"
+    },
+    {
+      "id": "c9",
+      "text": "Is the description concise and avoids unnecessary details?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否精簡，並避免不必要的細節？"
+    },
+    {
+      "id": "c11",
+      "text": "Does the description focus on the outfit as a whole, rather than individual items?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否聚焦於套裝整體，而不是只描述個別單品？"
+    },
+    {
+      "id": "c13",
+      "text": "Does the description use descriptive words that are relevant to fashion and clothing?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否使用與時尚和服裝相關的描述詞？"
+    },
+    {
+      "id": "c12",
+      "text": "Does the description avoid overly generic terms that could apply to many outfits?",
+      "weight": 1,
+      "category": "clarity_fluency",
+      "text_zh": "描述是否避免使用可套用於許多套裝的過度籠統詞彙？"
+    },
+    {
+      "id": "c16",
+      "text": "Does the description mention a specific temperature in °C?",
+      "weight": 3,
+      "category": "weather_style_occasion",
+      "text_zh": "描述是否提到明確的攝氏溫度？"
+    }
+  ]
+};
+    const storageKey = "human_audit_30_paginated_v1";
+    let currentIndex = 0;
+    let state = loadState();
+
+    function loadState() {
+      try { return JSON.parse(localStorage.getItem(storageKey)) || { answers: {}, visited: {} }; }
+      catch (err) { return { answers: {}, visited: {} }; }
+    }
+    function saveState() { localStorage.setItem(storageKey, JSON.stringify(state)); }
+    function answerKey(setId, checklist, itemId) { return `${setId}__${checklist}__${itemId}`; }
+    function checkedValue(setId, checklist, itemId) { return Boolean(state.answers[answerKey(setId, checklist, itemId)]); }
+    function escapeHtml(value) {
+      return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+    }
+    function checklistItems(name) { return checklists[name] || []; }
+    function renderImages(c) {
+      const el = document.getElementById("outfitImages");
+      const items = c.items || [];
+      el.innerHTML = items.map(item => `
+        <div class="image-tile">
+          <img src="${escapeHtml(item.image_src)}" alt="${escapeHtml(item.display_label || 'Outfit item')}">
+          <div class="image-label">${escapeHtml(item.display_label || 'Item')}</div>
+        </div>`).join("");
+    }
+    function renderList(containerId, checklistName, setId) {
+      const el = document.getElementById(containerId);
+      el.innerHTML = checklistItems(checklistName).map(item => {
+        const key = answerKey(setId, checklistName, item.id);
+        const checked = checkedValue(setId, checklistName, item.id) ? "checked" : "";
+        return `<label class="check-row"><input type="checkbox" data-key="${escapeHtml(key)}" ${checked} onchange="onCheckChange(event)"><span class="check-text"><span class="question-zh">${escapeHtml(item.text_zh || '')}</span><span class="question-en">${escapeHtml(item.text)}</span></span></label>`;
+      }).join("");
+    }
+    function renderBadges(c) {
+      const badgeClass = c.audit_stratum || "";
+      return [
+        `<span class="badge ${escapeHtml(badgeClass)}">${escapeHtml(c.audit_stratum)}</span>`,
+        `<span class="badge">${escapeHtml(c.temp_bin)}</span>`,
+        `<span class="badge">${escapeHtml(c.met_bin)}</span>`,
+        `<span class="badge">${escapeHtml(c.occasion_bin)}</span>`,
+        `<span class="badge">${escapeHtml(c.style_bin)}</span>`
+      ].join("");
+    }
+    function countCase(c) {
+      let checked = 0;
+      let total = 0;
+      for (const checklistName of ["qwen", "gemma"]) {
+        for (const item of checklistItems(checklistName)) {
+          total += 1;
+          if (checkedValue(c.set_id, checklistName, item.id)) checked += 1;
+        }
+      }
+      return { checked, unchecked: total - checked, total };
+    }
+    function updateProgress() {
+      const visitedCount = Object.keys(state.visited || {}).filter(setId => state.visited[setId]).length;
+      const pct = cases.length ? (visitedCount / cases.length) * 100 : 0;
+      document.getElementById("progressText").textContent = `${visitedCount} / ${cases.length} completed`;
+      document.getElementById("progressFill").style.width = `${pct}%`;
+    }
+    function renderCase() {
+      const c = cases[currentIndex];
+      document.getElementById("caseTitle").textContent = `Case ${c.sample_order} - set_id=${c.set_id}`;
+      document.getElementById("pageIndex").textContent = `Page ${currentIndex + 1} / ${cases.length}`;
+      document.getElementById("caseBadges").innerHTML = renderBadges(c);
+      renderImages(c);
+      document.getElementById("descriptionTextZh").textContent = c.generated_title_zh || "";
+      document.getElementById("descriptionText").textContent = c.generated_title || "";
+      renderList("qwenList", "qwen", c.set_id);
+      renderList("gemmaList", "gemma", c.set_id);
+      document.getElementById("prevBtn").disabled = currentIndex === 0;
+      document.getElementById("nextBtn").textContent = currentIndex === cases.length - 1 ? "Finish" : "Next";
+      updateCurrentCount();
+      updateProgress();
+    }
+    function onCheckChange(event) {
+      state.answers[event.target.dataset.key] = event.target.checked;
+      saveState();
+      updateCurrentCount();
+    }
+    function updateCurrentCount() {
+      const counts = countCase(cases[currentIndex]);
+      document.getElementById("currentCount").textContent = `Current case: checked ${counts.checked}, unchecked ${counts.unchecked}`;
+    }
+    function markCurrentVisited() {
+      const c = cases[currentIndex];
+      state.visited[c.set_id] = true;
+      saveState();
+      const counts = countCase(c);
+      document.getElementById("lastCount").textContent = `Recorded: checked ${counts.checked}, unchecked ${counts.unchecked}`;
+      updateProgress();
+      return counts;
+    }
+    function goNext() {
+      markCurrentVisited();
+      if (currentIndex < cases.length - 1) { currentIndex += 1; renderCase(); }
+      else { alert("All cases have been recorded. You can export A38 CSV now, or go back to revise answers."); }
+    }
+    function goPrev() {
+      markCurrentVisited();
+      if (currentIndex > 0) { currentIndex -= 1; renderCase(); }
+    }
+    function clearSaved() {
+      if (!confirm("Clear all saved checkbox states?")) return;
+      state = { answers: {}, visited: {} };
+      saveState();
+      currentIndex = 0;
+      document.getElementById("lastCount").textContent = "Saved answers cleared.";
+      renderCase();
+    }
+    function csvEscape(value) {
+      const s = String(value ?? "");
+      if (/[",\n\r]/.test(s)) return `"${s.replaceAll('"', '""')}"`;
+      return s;
+    }
+    function exportCsv() {
+      markCurrentVisited();
+      const reviewer = document.getElementById("reviewer").value || "reviewer1";
+      const visitedCount = Object.keys(state.visited || {}).filter(setId => state.visited[setId]).length;
+      if (visitedCount < cases.length && !confirm(`Only ${visitedCount} / ${cases.length} cases were visited. Export anyway?`)) return;
+      const headers = ["reviewer", "set_id", "sample_order", "audit_stratum", "checklist", "item_id", "question_zh", "question_en", "weight", "human_answer", "human_answer_yes", "note"];
+      const rows = [headers];
+      for (const c of cases) {
+        for (const checklistName of ["qwen", "gemma"]) {
+          for (const item of checklistItems(checklistName)) {
+            const isChecked = checkedValue(c.set_id, checklistName, item.id);
+            rows.push([reviewer, c.set_id, c.sample_order, c.audit_stratum, checklistName, item.id, item.text_zh || "", item.text, item.weight ?? 1, isChecked ? "YES" : "NO", isChecked ? "1" : "0", ""]);
+          }
+        }
+      }
+      const csv = rows.map(row => row.map(csvEscape).join(",")).join("\n");
+      const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "A38_human_audit_30_manual_results.csv";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+    renderCase();
+  </script>
+</body>
+</html>

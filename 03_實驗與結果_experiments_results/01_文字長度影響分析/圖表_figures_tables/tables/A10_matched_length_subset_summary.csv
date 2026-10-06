@@ -1,0 +1,6 @@
+matching_rule,group,n_seed_rows,n_unique_set_target_pairs,original_hit10,full_hit10,delta_hit10,original_mean_rank,full_mean_rank,mean_rank_improvement,mean_original_query_len,mean_generated_query_len,mean_length_delta
+abs(generated_query_len - original_query_len) <= 0 tokens,abs_delta_le_0,315,63,0.0698,0.0762,0.0063,572.83,550.22,22.62,7.76,7.76,0.00
+abs(generated_query_len - original_query_len) <= 1 tokens,abs_delta_le_1,1115,223,0.0646,0.0753,0.0108,549.16,539.15,10.00,7.63,8.18,0.56
+abs(generated_query_len - original_query_len) <= 2 tokens,abs_delta_le_2,2865,573,0.0667,0.0729,0.0063,513.11,500.27,12.84,7.35,8.74,1.39
+abs(generated_query_len - original_query_len) <= 3 tokens,abs_delta_le_3,5790,1158,0.0772,0.0879,0.0107,482.40,471.20,11.21,6.91,9.11,2.20
+abs(generated_query_len - original_query_len) <= 5 tokens,abs_delta_le_5,15070,3014,0.0790,0.0896,0.0106,461.28,439.81,21.47,6.28,9.95,3.67

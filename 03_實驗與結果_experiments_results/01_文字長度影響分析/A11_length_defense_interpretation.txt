@@ -1,0 +1,22 @@
+Length defense audit
+Generated: 2026-07-06 16:30:34
+
+Scope:
+- Main CIR experiment only: experiments/detail_cir_cir_old_featold_seed*.csv vs detail_cir_cir_new_featnew_seed*.csv.
+- Original query follows url_name + title; generated query uses generated title only.
+- No new descriptions, no no-image rewrite baseline, and no retraining are introduced here.
+
+How to answer the length-confound question:
+- The method effect and the length-confound test are different hypotheses.
+- The proposed method may be statistically better than the original baseline.
+- If improvement were merely caused by longer text, length_delta should have a meaningful association with Hit@10 or rank improvement.
+- With thousands of rows, p-values can be significant even when the correlation is practically tiny; report r/effect size together with p-value, bucket analysis, and matched-length subsets.
+
+Pair-mean correlation across the 9,311 CIR query-target pairs:
+- length_delta_tokens vs Hit@10 improvement: Pearson r=0.027647, p=0.007632; Spearman r=0.023836, p=0.021444.
+- length_delta_tokens vs rank improvement: Pearson r=0.043384, p=0.000028; Spearman r=0.032185, p=0.001896.
+
+Writing guidance:
+- Do not write that length has absolutely no statistical signal if p-values are significant under large N.
+- Write that the association is practically negligible and is not sufficient to explain the retrieval gains.
+- A true masked-query performance claim requires a separate masked-query CIR rerun.

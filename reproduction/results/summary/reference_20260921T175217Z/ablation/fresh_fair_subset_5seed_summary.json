@@ -1,0 +1,333 @@
+{
+  "classification": "fresh five-seed fair-subset candidate ablation recomputation; not historical source-exact certificate",
+  "source_input_dir": "_reproduction_runs/full_20260921T175217Z/ablation/runs",
+  "batch_report": "_reproduction_runs/full_20260921T175217Z/ablation/fair_subset_batch_status.json",
+  "batch_report_sha256": "e5423b0b6cf2d461c15967272da8589a3b54f2e1ec23a6d6795250f835084367",
+  "batch_status": "PASSED_CANDIDATE_SOURCE",
+  "units_verified": 25,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "variants": [
+    "original",
+    "context",
+    "no_weather",
+    "no_occasion",
+    "no_style"
+  ],
+  "cir_evaluable_per_unit": 3432,
+  "evaluation_query_membership_sha256": "a7cf547b88c27d46d1c620d421bfd1df9f687f4a11614ddd47ddb2e88860a851",
+  "provenance": {
+    "candidate_id_sha256": "bd1d24067b8d5021d3dc1e90651855e9821b1df7b7bf7683ff55ee61c5a298e7",
+    "candidate_reconstruction_manifest_sha256": "2f8368099e44b120156c3e4a567ce7aced848de0598c2b6dadca65483ea64aec",
+    "cir_3432_scope_report_sha256": "75d34c57877f26b712069f176339725c35c8fa3794f3741d7fd90e4bc4b8f505",
+    "source_py_sha256": {
+      "CIR_evaluate.py": "564275a9c8bc9c75e72aaadc9b853e13d0bd48c5e09c3a2a552ed8332eaaa524",
+      "CP_evaluate.py": "f7e9237717ded122321c55ecca675df88af679b7533cf7a3cca22e15e66186a6",
+      "config/base_config.py": "bfe8f791ac4374298849bb98bfc5dcc0e8454039c1880597a22b3fd4fc99463e",
+      "config/cir_cond_hardneg.py": "542a6aa21cd2193fb3e765d348936e12122e9d55ca5723ff4ddfbc7dc62d8873",
+      "config/cp_cond_hardneg.py": "4091326cb6e88bc211b77058f5a1217b69b3150ae8dd7adba0ba6b5575211d51",
+      "dataset.py": "6b9c751327d9d9504360c4ee8332a2ca6dc7c0f7c97e408635d81133f8621eca",
+      "evaluate_cir.py": "650bbf62c25bb5496e738ac05612a195d4bb36ca0f9a2a254c3b399e5697a60e",
+      "evaluate_cp.py": "2f395ffa8d62d240e60bd83f110675766d5d70081c42c73eee07e9a25601b6ec",
+      "outfit_transformer.py": "07ea3051a9993f7b8cf93ad2dcaf7c97cc101df7ac5baa9276790eed0752ce91",
+      "train_cir.py": "7c1f07f90b35977434bbff8f1eeba55521b4658175fa6a8bf46e02e762c1941d",
+      "train_cp.py": "e479efb38891a540a7ee35677dfbddcd25be372bf4a7755342f87080ec4286fb",
+      "utils.py": "922414e24f1dbce439ef2407065e1d75182652f6ddb8ef2762d06b8f5c4f9210"
+    },
+    "candidate_source_label": "WOS fragment-based fair-subset candidate; NOT recovered original historical ID file",
+    "decoder_label": "temporary torch.nn.TransformerDecoderLayer candidate; historical forward not proven",
+    "training_semantics": "100 epochs CP -> pretrained CP best initializes same-seed CIR; full original split indexes retained for negative sampling; fair subset filtered in dat.data/questions"
+  },
+  "metrics": {
+    "original": {
+      "auc": {
+        "task": "CP",
+        "metric": "AUC",
+        "mean": 0.912093905187314,
+        "std": 0.0018221796506964496
+      },
+      "fitb_acc": {
+        "task": "CP",
+        "metric": "FITB Acc",
+        "mean": 0.6120644511581068,
+        "std": 0.0018696976974943514
+      },
+      "recall_at_1": {
+        "task": "CIR",
+        "metric": "Recall@1",
+        "mean": 0.010955710955710957,
+        "std": 0.002416834656565002
+      },
+      "recall_at_3": {
+        "task": "CIR",
+        "metric": "Recall@3",
+        "mean": 0.026282051282051282,
+        "std": 0.0032011524398536757
+      },
+      "recall_at_5": {
+        "task": "CIR",
+        "metric": "Recall@5",
+        "mean": 0.03991841491841492,
+        "std": 0.0024980227563348263
+      },
+      "recall_at_10": {
+        "task": "CIR",
+        "metric": "Recall@10",
+        "mean": 0.06853146853146852,
+        "std": 0.005177141221356447
+      },
+      "recall_at_30": {
+        "task": "CIR",
+        "metric": "Recall@30",
+        "mean": 0.15116550116550115,
+        "std": 0.004214378725353045
+      },
+      "recall_at_50": {
+        "task": "CIR",
+        "metric": "Recall@50",
+        "mean": 0.21433566433566434,
+        "std": 0.004324739664004657
+      }
+    },
+    "context": {
+      "auc": {
+        "task": "CP",
+        "metric": "AUC",
+        "mean": 0.9271004769778133,
+        "std": 0.0015175813023005217
+      },
+      "fitb_acc": {
+        "task": "CP",
+        "metric": "FITB Acc",
+        "mean": 0.6226384692849949,
+        "std": 0.003120553281742219
+      },
+      "recall_at_1": {
+        "task": "CIR",
+        "metric": "Recall@1",
+        "mean": 0.011713286713286713,
+        "std": 0.0010383758555481044
+      },
+      "recall_at_3": {
+        "task": "CIR",
+        "metric": "Recall@3",
+        "mean": 0.02872960372960373,
+        "std": 0.002494621770746387
+      },
+      "recall_at_5": {
+        "task": "CIR",
+        "metric": "Recall@5",
+        "mean": 0.04382284382284383,
+        "std": 0.003182533198348055
+      },
+      "recall_at_10": {
+        "task": "CIR",
+        "metric": "Recall@10",
+        "mean": 0.07534965034965034,
+        "std": 0.00430506376730555
+      },
+      "recall_at_30": {
+        "task": "CIR",
+        "metric": "Recall@30",
+        "mean": 0.16934731934731934,
+        "std": 0.004599670690133128
+      },
+      "recall_at_50": {
+        "task": "CIR",
+        "metric": "Recall@50",
+        "mean": 0.23082750582750583,
+        "std": 0.006571788674912418
+      }
+    },
+    "no_weather": {
+      "auc": {
+        "task": "CP",
+        "metric": "AUC",
+        "mean": 0.9255719992876866,
+        "std": 0.0007020553750924211
+      },
+      "fitb_acc": {
+        "task": "CP",
+        "metric": "FITB Acc",
+        "mean": 0.6195770392749245,
+        "std": 0.002410195416177528
+      },
+      "recall_at_1": {
+        "task": "CIR",
+        "metric": "Recall@1",
+        "mean": 0.011713286713286714,
+        "std": 0.0014771319179063605
+      },
+      "recall_at_3": {
+        "task": "CIR",
+        "metric": "Recall@3",
+        "mean": 0.02972027972027972,
+        "std": 0.002985708265139743
+      },
+      "recall_at_5": {
+        "task": "CIR",
+        "metric": "Recall@5",
+        "mean": 0.04522144522144522,
+        "std": 0.0043774228477158695
+      },
+      "recall_at_10": {
+        "task": "CIR",
+        "metric": "Recall@10",
+        "mean": 0.0754079254079254,
+        "std": 0.0033565118304974837
+      },
+      "recall_at_30": {
+        "task": "CIR",
+        "metric": "Recall@30",
+        "mean": 0.16923076923076924,
+        "std": 0.006345027309088414
+      },
+      "recall_at_50": {
+        "task": "CIR",
+        "metric": "Recall@50",
+        "mean": 0.236013986013986,
+        "std": 0.004161671578404926
+      }
+    },
+    "no_occasion": {
+      "auc": {
+        "task": "CP",
+        "metric": "AUC",
+        "mean": 0.9223203027001536,
+        "std": 0.003759875127690807
+      },
+      "fitb_acc": {
+        "task": "CP",
+        "metric": "FITB Acc",
+        "mean": 0.620281973816717,
+        "std": 0.0029399977343088444
+      },
+      "recall_at_1": {
+        "task": "CIR",
+        "metric": "Recall@1",
+        "mean": 0.01317016317016317,
+        "std": 0.0016144399973420825
+      },
+      "recall_at_3": {
+        "task": "CIR",
+        "metric": "Recall@3",
+        "mean": 0.030361305361305362,
+        "std": 0.0014481088158262443
+      },
+      "recall_at_5": {
+        "task": "CIR",
+        "metric": "Recall@5",
+        "mean": 0.044930069930069934,
+        "std": 0.0015055956506717736
+      },
+      "recall_at_10": {
+        "task": "CIR",
+        "metric": "Recall@10",
+        "mean": 0.07902097902097902,
+        "std": 0.001190723586346303
+      },
+      "recall_at_30": {
+        "task": "CIR",
+        "metric": "Recall@30",
+        "mean": 0.17103729603729603,
+        "std": 0.004079254079254077
+      },
+      "recall_at_50": {
+        "task": "CIR",
+        "metric": "Recall@50",
+        "mean": 0.23496503496503496,
+        "std": 0.0029899705203648725
+      }
+    },
+    "no_style": {
+      "auc": {
+        "task": "CP",
+        "metric": "AUC",
+        "mean": 0.913635270883083,
+        "std": 0.0014183642964188687
+      },
+      "fitb_acc": {
+        "task": "CP",
+        "metric": "FITB Acc",
+        "mean": 0.6100503524672709,
+        "std": 0.00440945039886982
+      },
+      "recall_at_1": {
+        "task": "CIR",
+        "metric": "Recall@1",
+        "mean": 0.010256410256410256,
+        "std": 0.000883785016789225
+      },
+      "recall_at_3": {
+        "task": "CIR",
+        "metric": "Recall@3",
+        "mean": 0.025990675990675994,
+        "std": 0.0035351400671569003
+      },
+      "recall_at_5": {
+        "task": "CIR",
+        "metric": "Recall@5",
+        "mean": 0.038578088578088574,
+        "std": 0.00548451586361421
+      },
+      "recall_at_10": {
+        "task": "CIR",
+        "metric": "Recall@10",
+        "mean": 0.06474358974358975,
+        "std": 0.005744602609129962
+      },
+      "recall_at_30": {
+        "task": "CIR",
+        "metric": "Recall@30",
+        "mean": 0.1460955710955711,
+        "std": 0.008057988819321023
+      },
+      "recall_at_50": {
+        "task": "CIR",
+        "metric": "Recall@50",
+        "mean": 0.20442890442890443,
+        "std": 0.01055928940340619
+      }
+    }
+  },
+  "outputs": [
+    "fresh_25unit_metrics.csv",
+    "fresh_5variant_8metric_summary.csv",
+    "T01_main_overall_baseline_and_ablation.csv",
+    "T02_main_significance_tests.csv",
+    "T03_stage1_cp_original_vs_full.csv",
+    "T04_stage1_cir_original_vs_full.csv",
+    "T05_stage2_cp_ablation.csv",
+    "T06_stage2_cir_ablation.csv",
+    "T07_stage2_factor_contribution_ratio.csv",
+    "T10_stage2_cp_seed_detail.csv",
+    "T11_stage2_cir_seed_detail.csv",
+    "archived_vs_fresh_T01_numeric_comparison.csv"
+  ],
+  "historical_comparison": {
+    "archived_T01": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T01_main_overall_baseline_and_ablation.csv",
+    "rows_compared": 25,
+    "max_abs_mean_difference": 0.006571095571095559,
+    "note": "No acceptance tolerance is imposed here; report numeric differences with provenance caveats."
+  },
+  "statistical_method": {
+    "mean_std": "five seeds; sample standard deviation ddof=1",
+    "paired_test": "two-sided scipy.stats.ttest_rel on seed-paired values",
+    "T03_T04_multiple_testing": "Benjamini-Hochberg correction across the five CP+OR core metrics, matching archived published table convention",
+    "T03_T04_ci": "unadjusted two-sided 95% Student-t CI on paired seed differences",
+    "effect_size": "Cohen's dz = mean(paired differences) / sample SD(paired differences)",
+    "T10_T11_difference_sign": "NoFactor - Proposed, matching archived table convention",
+    "T02_difference_sign": "Full - comparison baseline",
+    "significance_stars": "*** p<.001; ** p<.01; * p<.05; otherwise n.s."
+  },
+  "limits": [
+    "Historical 2025 fair-subset memberwise ID source/hash has not been recovered.",
+    "Training uses a temporary torch.nn.TransformerDecoderLayer candidate; historical DecoderLayerWithCrossAttn forward is not proven.",
+    "Therefore the fresh tables are a controlled candidate reproduction, not proof of byte/source-exact historical reproduction."
+  ]
+}

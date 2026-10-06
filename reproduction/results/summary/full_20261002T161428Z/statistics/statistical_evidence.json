@@ -1,0 +1,51 @@
+{
+  "classification": "post-training statistical analysis; no models trained",
+  "main_scope": "full-data main CP/OR Original vs Context seeds 1..5",
+  "test": "two-sided paired t-test on context-original per seed, df=4",
+  "confidence_interval": "95% two-sided t confidence interval on mean paired difference",
+  "bh_family": [
+    "cp_auc",
+    "cp_fitb",
+    "or_r1",
+    "or_r3",
+    "or_r5",
+    "or_r10",
+    "or_r30",
+    "or_r50"
+  ],
+  "alpha": 0.05,
+  "ablation_scope": "fresh 5-seed reconstructed fair subset",
+  "ablation_delta_definition": "full_context_minus_without_factor",
+  "ablation_reference": "archived T01 aggregate; not paper Tables 4-13 through 4-16 cellwise proof",
+  "thesis_tables": {
+    "4-11": "statistics/table_4_11_cp_main.csv",
+    "4-12": "statistics/table_4_12_or_main.csv",
+    "4-13": "ablation/summary/T03_stage1_cp_original_vs_full.csv",
+    "4-14": "ablation/summary/T04_stage1_cir_original_vs_full.csv",
+    "4-15": "ablation/summary/T05_stage2_cp_ablation.csv",
+    "4-16": "ablation/summary/T06_stage2_cir_ablation.csv"
+  },
+  "thesis_tables_note": "Paths are relative to the run root. Tables 4-13/4-14 BH-adjust the five reported fair-subset metrics as one family (archived convention), computed by summarize_fair_subset_5seed.py.",
+  "input_sha256": {
+    "main/summary/main_reproduction_summary.csv": "20f6173feedf3781ee5bb096ce13121d1e9c0201b70d5d9fe4d9ac9b975e4596",
+    "ablation/summary/fresh_5variant_8metric_summary.csv": "71c471f1bc214b13d628a5fa5e356cc5dcc5a1b617924cac3e23952253d93647",
+    "ablation/summary/archived_vs_fresh_T01_numeric_comparison.csv": "8274d56df2cc62945370ee13157037a1ed4f717bba5dc61ed82f1570041d9537"
+  },
+  "source_run_git_commit": "b9bf5aac7d07cb39cacc7f73eb28166848c19fe4",
+  "analysis_script_sha256": "3e771f0a1a26d89c74252d12a7c9d1ebd529d449a52812bb3b0e2c63378c89a6",
+  "full_main_R1_R3": {
+    "or_r1": {
+      "delta_mean": 0.001288798195682526,
+      "p_value": 0.09474267756176159,
+      "bh_adjusted_p_8_main": 0.09474267756176159,
+      "significant_bh_0_05": false
+    },
+    "or_r3": {
+      "delta_mean": 0.003823434647191494,
+      "p_value": 0.003325329545801671,
+      "bh_adjusted_p_8_main": 0.004433772727735561,
+      "significant_bh_0_05": true
+    }
+  },
+  "note": "Mean-positive is not synonymous with statistically significant; no source-exact historical ablation claim."
+}

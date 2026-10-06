@@ -1,0 +1,99 @@
+{
+  "classification": "fresh thesis reproduction run summary",
+  "run_root": "_reproduction_runs/full_20260921T175217Z",
+  "main": {
+    "overall": "numerically_close_or_exact",
+    "all_primary_context_deltas_positive": true,
+    "all_condition_means_within_numeric_threshold": true,
+    "summary_csv": "main/summary/main_reproduction_summary.csv"
+  },
+  "ablation": {
+    "classification": "fresh five-seed fair-subset candidate ablation recomputation; not historical source-exact certificate",
+    "units_verified": 25,
+    "batch_status": "PASSED_CANDIDATE_SOURCE",
+    "max_abs_archived_vs_fresh_mean_difference": 0.006571095571095559,
+    "historical_memberwise_identity": "not recovered; candidate reconstruction",
+    "summary_dir": "ablation/summary"
+  },
+  "secondary": {
+    "overall": "partial",
+    "modules": [
+      {
+        "module": "length",
+        "status": "exact",
+        "evidence": "Recomputed length correlations/buckets/matched subsets from 46,555 archived seed-level rows (9311 unique pairs)."
+      },
+      {
+        "module": "target_clue",
+        "status": "partial",
+        "evidence": "Recomputed target-clue leakage on the exact OR scope N=9311. The historical P12 intermediate source reliability_meta_from_subset.csv is not archived in the repository, so current reconstruction uses preserved OR IDs plus available WOS/Polyvore metadata. Scope and bigram count reproduce exactly, while several lexical-count rows differ."
+      },
+      {
+        "module": "judge_preserved_outputs",
+        "status": "exact",
+        "evidence": "Recomputed Judge T19 agreement, T21 threshold agreement, bottom-p overlaps, and preserved P0-R2/P1/P2 robustness outputs. The module's 'exact' status applies to verified preserved-output T19/T21 and archived-robustness consistency; thesis Table 4-7 bottom-p overlaps are NOT exact (paper 668/1323/2833 vs current 669/1338/2877). Archived robustness original_score values match the preserved formal outputs; historical sample regeneration provenance is partial."
+      },
+      {
+        "module": "human_audit",
+        "status": "exact",
+        "evidence": "Seed-42 30-case selection match=True; manual judgments=750 (300 Qwen + 450 Gemma)."
+      },
+      {
+        "module": "case_analysis",
+        "status": "partial",
+        "evidence": "Archived subgroup/case tables present=True; candidate fair-subset row-level details=25/25. Historical memberwise fair-subset identity remains unresolved."
+      },
+      {
+        "module": "two_tower",
+        "status": "exact",
+        "evidence": "Recomputed A30 five-seed summary; A32 matched cells=44, max abs diff=1.14e-13; loadable checkpoints=20/20."
+      },
+      {
+        "module": "judge_robustness_sampling_provenance",
+        "status": "partial",
+        "evidence": "Historical robustness sample regeneration does not reproduce the archived 150 IDs: intersection=3/150, archived-only=147, current-only=147. All six archived robustness files use the same 150 IDs and their original_score fields match the preserved formal outputs exactly; the unresolved component is historical sample-generation provenance."
+      },
+      {
+        "module": "judge_exact_generation",
+        "status": "partial",
+        "evidence": "Exact Judge generation requires archived P0/P1/P2 prompt text; preserved-output recomputation is reported separately."
+      },
+      {
+        "module": "case_visuals",
+        "status": "partial",
+        "evidence": "Image-dependent qualitative figure regeneration requires Polyvore images/."
+      }
+    ],
+    "summary_md": "secondary/results/remaining_reproduction_matrix.md"
+  },
+  "chapter4": {
+    "classification": "new single integrated full-run outputs",
+    "total_chapter4_tables": 20,
+    "numeric_comparison_rows": 112,
+    "paper_display_match_4_3": 24,
+    "paper_display_match_4_8": 30,
+    "main_condition_means_within_retrain_tolerance": {
+      "within_retrain_tolerance": 16,
+      "total_condition_means": 16
+    },
+    "ablation_comparison_reference": "archived T01 aggregate; not each individual printed thesis table",
+    "report_md": "chapter4/chapter4_report.md",
+    "numeric_comparison_csv": "chapter4/chapter4_numeric_comparison.csv",
+    "overview_csv": "chapter4/chapter4_table_overview.csv",
+    "evidence_json": "chapter4/chapter4_report.json"
+  },
+  "table_4_3": {
+    "source": "preserved aligned train/valid/test temperature.json outputs",
+    "n_unique_primary_rows": 35140,
+    "all_listed_paper_fields_match_display_precision": true,
+    "standalone_source_values_consistent_on_overlap": true,
+    "report": "secondary/results/environment_proxy/table_4_3_manifest.json",
+    "historical_2025_runtime_or_selection_rule_exact": false
+  },
+  "interpretation": [
+    "The fresh main five-seed run is the primary independent numerical reproduction.",
+    "The fair-subset ablation is a controlled candidate reconstruction because the original memberwise fair-subset ID file was not archived.",
+    "Secondary preserved-output analyses keep their own exact/partial provenance labels.",
+    "Historical source/runtime provenance is not upgraded merely because numerical results agree."
+  ]
+}

@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite it as below."
+type: software
+title: "Context-Aware Semantic Construction for Multimodal Outfit Recommendation: reproducibility artifact"
+version: v1.0.0-tors-reproduction
+repository-code: "https://github.com/7114029017/context-aware-outfit-recommendation"
+license: MIT
+authors:
+  - family-names: Lin
+    given-names: Kuan-Cheng
+    affiliation: "Department of Management Information Systems, National Chung Hsing University"
+  - family-names: Wu
+    given-names: Min-Chen
+    affiliation: "Department of Management Information Systems, National Chung Hsing University"
+  - family-names: Zhao
+    given-names: Guo-You
+    affiliation: "Department of Management Information Systems, National Chung Hsing University"
+  - family-names: Ku
+    given-names: Fu-Yu
+    affiliation: "Department of Management Information Systems, National Chung Hsing University"
+  - family-names: Wu
+    given-names: Jun-yi
+    affiliation: "Department of Management Information Systems, National Chung Hsing University"
+keywords:
+  - multimodal recommendation
+  - outfit recommendation
+  - context-aware semantic construction
+  - reproducibility

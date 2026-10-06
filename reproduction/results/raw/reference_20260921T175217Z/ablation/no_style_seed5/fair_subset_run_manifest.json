@@ -1,0 +1,71 @@
+{
+  "identity": {
+    "candidate_id_sha256": "bd1d24067b8d5021d3dc1e90651855e9821b1df7b7bf7683ff55ee61c5a298e7",
+    "candidate_reconstruction_manifest_sha256": "2f8368099e44b120156c3e4a567ce7aced848de0598c2b6dadca65483ea64aec",
+    "cir_3432_scope_report_sha256": "75d34c57877f26b712069f176339725c35c8fa3794f3741d7fd90e4bc4b8f505",
+    "input_paths": {
+      "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/_external/uiuc-polyvore-hf/disjoint/train.json": "0a7c0f8dc60f420d133881f68fab7132966a09ed2102312e60ee603e96e4667c",
+      "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/_external/uiuc-polyvore-hf/disjoint/valid.json": "e3b3e2dca09333f84be8106d7922066c484605c301300314ae8e3c2ec46c7304",
+      "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/_external/uiuc-polyvore-hf/disjoint/test.json": "df650429c987d73b5d089f80f33ae33904dc03078d11091ca0f33f7c05bef076",
+      "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/_external/uiuc-polyvore-hf/polyvore_item_metadata.json": "d5e7a3ce1506bc3e64eacfcb29c26f360c39bba96522f7d316ae8ee9f2d2ea58"
+    },
+    "source_py_sha256": {
+      "CIR_evaluate.py": "564275a9c8bc9c75e72aaadc9b853e13d0bd48c5e09c3a2a552ed8332eaaa524",
+      "CP_evaluate.py": "f7e9237717ded122321c55ecca675df88af679b7533cf7a3cca22e15e66186a6",
+      "config/base_config.py": "bfe8f791ac4374298849bb98bfc5dcc0e8454039c1880597a22b3fd4fc99463e",
+      "config/cir_cond_hardneg.py": "542a6aa21cd2193fb3e765d348936e12122e9d55ca5723ff4ddfbc7dc62d8873",
+      "config/cp_cond_hardneg.py": "4091326cb6e88bc211b77058f5a1217b69b3150ae8dd7adba0ba6b5575211d51",
+      "dataset.py": "6b9c751327d9d9504360c4ee8332a2ca6dc7c0f7c97e408635d81133f8621eca",
+      "evaluate_cir.py": "650bbf62c25bb5496e738ac05612a195d4bb36ca0f9a2a254c3b399e5697a60e",
+      "evaluate_cp.py": "2f395ffa8d62d240e60bd83f110675766d5d70081c42c73eee07e9a25601b6ec",
+      "outfit_transformer.py": "07ea3051a9993f7b8cf93ad2dcaf7c97cc101df7ac5baa9276790eed0752ce91",
+      "train_cir.py": "7c1f07f90b35977434bbff8f1eeba55521b4658175fa6a8bf46e02e762c1941d",
+      "train_cp.py": "e479efb38891a540a7ee35677dfbddcd25be372bf4a7755342f87080ec4286fb",
+      "utils.py": "922414e24f1dbce439ef2407065e1d75182652f6ddb8ef2762d06b8f5c4f9210"
+    },
+    "feature_sha256": {
+      "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_no_style_outfitUrlTitle_en_fashionClip.pkl": "e54733fdd6a262d796b7d96749435e8c55a8ca1e2de726b0335d5b0f1ae72fcf"
+    },
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "candidate_source_label": "WOS fragment-based fair-subset candidate; NOT recovered original historical ID file",
+    "decoder_label": "temporary torch.nn.TransformerDecoderLayer candidate; historical forward not proven",
+    "training_semantics": "100 epochs CP -> pretrained CP best initializes same-seed CIR; full original split indexes retained for negative sampling; fair subset filtered in dat.data/questions",
+    "subset_id_file": "/home/nchu5503/Documents/course/context-aware-outfit-reproduction-clean/_reproduction_runs/full_20260921T175217Z/ablation/fair_subset_reconstruction/no_missing_none_ids_RECONSTRUCTED_CANDIDATE.txt",
+    "variant": "no_style",
+    "source_variant": "no_style",
+    "feature_file": "encoded_no_style_outfitUrlTitle_en_fashionClip.pkl",
+    "seed": 5
+  },
+  "status": "passed_candidate_source",
+  "cp": {
+    "sha256": "42f230185c24fdd7f8a4c5e369266833cad66ad5d4fa9fd7f09048679578b1b2",
+    "best_epoch": 64,
+    "best_acc": 0.6441647597254004
+  },
+  "cir": {
+    "sha256": "8a9479bb5c63fc2045b576cd127d2883f134c7d518c099546f467223f63f0c77",
+    "best_epoch": 31,
+    "best_acc": 0.6596109839816934
+  },
+  "evaluation": {
+    "cp": {
+      "auc": 0.9152199195020074,
+      "fitb_acc": 0.6122860020140987
+    },
+    "cir": {
+      "recall_at_1": 0.011072261072261072,
+      "recall_at_3": 0.030011655011655012,
+      "recall_at_5": 0.04428904428904429,
+      "recall_at_10": 0.0675990675990676,
+      "recall_at_30": 0.14772727272727273,
+      "recall_at_50": 0.20104895104895104
+    },
+    "cir_evaluable": 3432,
+    "sha256": {
+      "results_cp_fresh_subset.csv": "7ac75fb56ba17f7804df11e105be502a1afac840c882ec569d0db00ed422ab2e",
+      "results_cir_fresh_subset.csv": "f90e78dc3d9ee38c4f5c9cb056cd68ed1e291ee58c24acf63b044d017674b67a",
+      "detail_cir_fresh_subset.csv": "e2cff6e81d2756517bfe7d0f41e3a8222aa387347cf6be4c09c51f50f5514851"
+    }
+  },
+  "active_stage": null
+}

@@ -1,0 +1,1522 @@
+[
+  {
+    "set_id": "63015201",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221315952",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223155745",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219036415",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "181377531",
+    "activity": "Standing watching television",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "222143249",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "212649641",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "217900001",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "48261691",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222836805",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221748682",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "156508815",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "210635241",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "217583797",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221001144",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222153349",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "208180828",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223755359",
+    "activity": "Boating, power, passenger, light",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "223758621",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "218953823",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "218057303",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "71172799",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "217842129",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "223800563",
+    "activity": "Apple Harvesting",
+    "met_value": 4.8
+  },
+  {
+    "set_id": "147323149",
+    "activity": "Ballet, modern, or jazz general, rehearsal or class",
+    "met_value": 5.0
+  },
+  {
+    "set_id": "221713858",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "210908211",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "192199290",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "222867317",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "224262008",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "177957122",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "218368116",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "158249961",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "71668428",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "224474225",
+    "activity": "Apple Harvesting",
+    "met_value": 4.8
+  },
+  {
+    "set_id": "219017523",
+    "activity": "Apple Harvesting",
+    "met_value": 4.8
+  },
+  {
+    "set_id": "221844094",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "223856814",
+    "activity": "Aquatic cycling, 25 W, 60-70 RPM",
+    "met_value": 4.8
+  },
+  {
+    "set_id": "220753201",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "208884491",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "182935518",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "201665295",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "75526536",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "224253404",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "193718482",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "225130735",
+    "activity": "Backpacking (Taylor Code 050)",
+    "met_value": 7.0
+  },
+  {
+    "set_id": "223906911",
+    "activity": "Aquatic cycling, 25 W, 60-70 RPM",
+    "met_value": 4.8
+  },
+  {
+    "set_id": "221324848",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "222001326",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "221759670",
+    "activity": "Ballet, modern, or jazz general, rehearsal or class",
+    "met_value": 5.0
+  },
+  {
+    "set_id": "212064539",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "216692598",
+    "activity": "Bicycling, 12 mph, seated, hands on brake hoods or bar drops, 80 rpm",
+    "met_value": 8.5
+  },
+  {
+    "set_id": "130778999",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "223213159",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "213244113",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "204043663",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "208760856",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "217688666",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "223904358",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "220661455",
+    "activity": "Backpacking (Taylor Code 050)",
+    "met_value": 7.0
+  },
+  {
+    "set_id": "221741994",
+    "activity": "Aquatic cycling, 25 W, 40-50 RPM",
+    "met_value": 2.8
+  },
+  {
+    "set_id": "216166329",
+    "activity": "Ballet, modern, or jazz general, rehearsal or class",
+    "met_value": 5.0
+  },
+  {
+    "set_id": "181863843",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "222544323",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "224958465",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "157719420",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "212647219",
+    "activity": "Ballet, modern, or jazz general, rehearsal or class",
+    "met_value": 5.0
+  },
+  {
+    "set_id": "222132702",
+    "activity": "Aquatic cycling, 25 W, 60-70 RPM",
+    "met_value": 4.8
+  },
+  {
+    "set_id": "212836462",
+    "activity": "Ballet, modern, or jazz general, rehearsal or class",
+    "met_value": 5.0
+  },
+  {
+    "set_id": "224213390",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "221027196",
+    "activity": "Aquatic cycling, 25 W, 40-50 RPM",
+    "met_value": 2.8
+  },
+  {
+    "set_id": "87771038",
+    "activity": "Backpacking,  hiking with a daypack, organized walking with daypack",
+    "met_value": 7.8
+  },
+  {
+    "set_id": "224563707",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "213055559",
+    "activity": "Ballet, modern, or jazz general, rehearsal or class",
+    "met_value": 5.0
+  },
+  {
+    "set_id": "207268052",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "188749542",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "215183598",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "196427070",
+    "activity": "Active video game, motion sensing game/using total body (moderate effort)",
+    "met_value": 4.0
+  },
+  {
+    "set_id": "224785647",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "222850291",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "223648758",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "144525428",
+    "activity": "Bicycling, leisure 5.5 mph",
+    "met_value": 3.5
+  },
+  {
+    "set_id": "221836606",
+    "activity": "Activities in a boat, lifting, lowering",
+    "met_value": 3.3
+  },
+  {
+    "set_id": "217947695",
+    "activity": "Airline flight attendant",
+    "met_value": 3.0
+  },
+  {
+    "set_id": "221888324",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "201698033",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "186347050",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "218678238",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224736205",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "211684096",
+    "activity": "Sitting meetings, light effort, general, and/or with talking involved (e.g., eating at a business meeting)",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "219849644",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "208264087",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "135005113",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "216934649",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "213647311",
+    "activity": "Sitting in church, talking or singing, attending a ceremony, sitting, active participation",
+    "met_value": 1.8
+  },
+  {
+    "set_id": "224937918",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "201941341",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223690855",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "191633508",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "156821607",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224346907",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "194784192",
+    "activity": "Mail delivery, motorbike",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "221977365",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "222329413",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225225233",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222716050",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "169348059",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "213157547",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "217524836",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220208935",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "135039991",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222313602",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215384772",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "161414454",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221091530",
+    "activity": "Sitting, meeting, general, and/or with talking involved",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "222563709",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222462209",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "216725341",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215045726",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "217376940",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "135039392",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "75881094",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "207447417",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "198657807",
+    "activity": "Riding in a car or truck",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "175844094",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "211529924",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "218646048",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224906153",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "198519184",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "210443189",
+    "activity": "Pilates, traditional, mat",
+    "met_value": 1.8
+  },
+  {
+    "set_id": "225242952",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224692627",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "208316852",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "133363752",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "200334641",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221050342",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "212426726",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223725411",
+    "activity": "Boating, power, passenger, light",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "223880805",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223564502",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224750106",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222893779",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "171204474",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "225327585",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "207050660",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "223147901",
+    "activity": "Tubing, floating on a river, general",
+    "met_value": 2.3
+  },
+  {
+    "set_id": "173198415",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "201306453",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "218027162",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "213915550",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "96163130",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "218006973",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221144422",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "218523959",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224160605",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215097866",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215272270",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "50890046",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "187773239",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223400086",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "222648456",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223449935",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220255632",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223579064",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "210117203",
+    "activity": "Sitting, fidget feet",
+    "met_value": 1.8
+  },
+  {
+    "set_id": "222165462",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221400891",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220280400",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "217457025",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "217153430",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "217087248",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "127762043",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221710546",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223479029",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222857003",
+    "activity": "Riding in a car or truck",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "213590321",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225139101",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223775376",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "173072505",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221651682",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "211356513",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "207399467",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224758820",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221028614",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "214577279",
+    "activity": "Standing quietly in church, attending a ceremony",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "194783639",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225319846",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "135126410",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "214329525",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "193834691",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "98150271",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "217126895",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "207610218",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "137577259",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "203336808",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "209953710",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215184277",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222515668",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219386176",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224653614",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "221895169",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225163815",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "202622471",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221162937",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "210867262",
+    "activity": "Pilates, traditional, mat",
+    "met_value": 1.8
+  },
+  {
+    "set_id": "188312388",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "99990075",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219069081",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "174644256",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "110667826",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "154037067",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "76146160",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221564805",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225239568",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "200432974",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "211897358",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222005114",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "208981568",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222043457",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "214014220",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219814805",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222729911",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222247156",
+    "activity": "Riding in a car or truck",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "222892147",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "197260063",
+    "activity": "Standing quietly in church, attending a ceremony",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "206143001",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219403746",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "165442138",
+    "activity": "Sitting, playing an instrument at church",
+    "met_value": 2.0
+  },
+  {
+    "set_id": "194676781",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220166275",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "147504377",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "214564378",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215265426",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "216825786",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224507721",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220480024",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221961496",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "207152962",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "141856780",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221211807",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "218686547",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221900981",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "118154307",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "73525502",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219296190",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224974272",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222518421",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "209546981",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "210703239",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "215651744",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "168087928",
+    "activity": "Lying quietly and watching television",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "176289174",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "213600364",
+    "activity": "Mail delivery, motorbike",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "224456650",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221834314",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "198989039",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "49450531",
+    "activity": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade",
+    "met_value": 1.5
+  },
+  {
+    "set_id": "60455968",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221926877",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222811721",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224994714",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225332964",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222522738",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "205165910",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224932732",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223015189",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220020518",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222889461",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222778892",
+    "activity": "Casino gambling, standing",
+    "met_value": 2.5
+  },
+  {
+    "set_id": "222082609",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222813579",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "223770218",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221238969",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "163714470",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "198626769",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225332155",
+    "activity": "Standing quietly in church, attending a ceremony",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "224920408",
+    "activity": "Automobile or light truck (not a semi) driving",
+    "met_value": 2.0
+  },
+  {
+    "set_id": "194778133",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "121609279",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220687741",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224534145",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "134983976",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "133605338",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221054301",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "181418692",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "218489887",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "191518403",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "222892275",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225169846",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "224849725",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "225225521",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221549898",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "216598882",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "206997605",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "219892302",
+    "activity": "Sitting, meeting, general, and/or with talking involved",
+    "met_value": 1.3
+  },
+  {
+    "set_id": "212346052",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "221196829",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "213402508",
+    "activity": "Sitting in boat, passenger",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "220618768",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "212643281",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "140199212",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "212342085",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  },
+  {
+    "set_id": "131067974",
+    "activity": "Carpentry, general, light effort",
+    "met_value": 2.5
+  },
+  {
+    "set_id": "215962492",
+    "activity": "Sitting in church, in service, attending a ceremony, sitting quietly",
+    "met_value": 1.0
+  }
+]

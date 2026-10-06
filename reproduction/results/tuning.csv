@@ -1,0 +1,33 @@
+model,task,parameter,value,category,source,note
+Hybrid Attention,CP/CIR,item_image_encoder,FashionCLIP 512-d features mapped to 64,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; §III-A; base_config img_emb_size,
+Hybrid Attention,CP/CIR,item_text_encoder,SentenceBERT distiluse-base-multilingual-cased-v2 mapped to 64,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config txt_emb_size,
+Hybrid Attention,CP/CIR,outfit_text_embedding_dim,128,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B,same as OutfitTransformer per the paper
+Hybrid Attention,CP/CIR,max_item_len,16,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config,PO-D
+Hybrid Attention,CP/CIR,decoder,"torch.nn.TransformerDecoderLayer x3, 16 heads",fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; upstream code WangXin93/text-conditioned-outfit-recommendation@91ed4fa outfit_transformer.py,paper: model capacity is enough
+Hybrid Attention,CP/CIR,dropout,0.1,fixed_by_upstream_code,upstream code WangXin93/text-conditioned-outfit-recommendation@91ed4fa base_config,not stated in the paper
+Hybrid Attention,CP/CIR,epochs,100,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config,
+Hybrid Attention,CP/CIR,batch_size,50,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config,"50 for float16, 30 otherwise"
+Hybrid Attention,CP/CIR,optimizer,Adam,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; train_cp.py/train_cir.py,
+Hybrid Attention,CP/CIR,learning_rate,5e-05,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config,
+Hybrid Attention,CP/CIR,lr_decay,StepLR gamma 0.5 every 10 epochs,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; train scripts,
+Hybrid Attention,CP/CIR,weight_decay,0.0,fixed_by_upstream_code,upstream code WangXin93/text-conditioned-outfit-recommendation@91ed4fa train scripts,Adam default; not stated in the paper
+Hybrid Attention,CP/CIR,gradient_clip_norm,0.5,fixed_by_upstream_code,upstream code WangXin93/text-conditioned-outfit-recommendation@91ed4fa train scripts,not stated in the paper
+Hybrid Attention,CP/CIR,precision,float16 with GradScaler; TF32 allowed,fixed_by_upstream_code,upstream code WangXin93/text-conditioned-outfit-recommendation@91ed4fa base_config,not stated in the paper
+Hybrid Attention,CP/CIR,num_negative,10,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; dataset.py,
+Hybrid Attention,CP/CIR,hard_negative_start_epoch,40,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config,"easy negatives before, hard negatives after"
+Hybrid Attention,CIR,margin,0.3,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B; base_config,MarginRankingLoss
+Hybrid Attention,CIR,initialization,same-seed CP best checkpoint,fixed_by_literature,Wang & Zhong 2024 IEEE Access §IV-B item 1 pretraining by compatibility prediction,
+Hybrid Attention,CIR,scoring,cosine similarity,fixed_by_literature,Wang & Zhong 2024 §III,
+Hybrid Attention,CIR,candidate_pool,fine-grained categories with >= 3000 candidates,fixed_by_upstream_code,upstream code WangXin93/text-conditioned-outfit-recommendation@91ed4fa evaluate_cir.py,thesis 4.1.1
+Hybrid Attention,CP/CIR,checkpoint_epoch,best of epochs 1-100,validation_selected,training logs,"metric: validation FITB accuracy, maximize"
+Hybrid Attention,FITB,training,evaluates the CP checkpoint,not_applicable,handoff evaluate scripts,FITB is not trained separately
+Hybrid Attention,CP/CIR,historical_tuning_trials,none found,history_missing,"search of 01-04 text files, 20 historical logs, P01/P12/A14, second-model folder (2026-10-03)",all ten historical CP logs show one identical configuration
+Two-Tower (second model),CP/OR,batch_size,256,history_missing,P15 notebook cell 2,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,learning_rate,1e-03,history_missing,P15 notebook cell 2,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,optimizer,AdamW,history_missing,P15 notebook cells 9-10,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,weight_decay,1e-04,history_missing,P15 notebook cell 2,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,dropout,0.15,history_missing,P15 notebook cell 2,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,hidden_dim / embedding_dim,512 / 256,history_missing,A34_second_model_training_report.txt,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,epochs,100 per stage,history_missing,P15 notebook cell 2,value recorded; selection rationale and any trials not recorded
+Two-Tower (second model),CP/OR,checkpoint_epoch,best of epochs 1-100,validation_selected,A34_second_model_training_report.txt,"validation FITB accuracy; best CP 10-28, OR 1-7"
+all,all,retrospective_sensitivity_analysis,none performed,supplementary_analysis,,"would be labeled retrospective, not original tuning"

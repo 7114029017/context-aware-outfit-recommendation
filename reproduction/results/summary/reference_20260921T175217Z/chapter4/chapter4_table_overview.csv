@@ -1,0 +1,21 @@
+table,scope,checked_numeric_rows,result,limitation
+4-1,environment,0,provenance_only_or_not_independently_verified,Runtime of this reproduction is recorded separately; exact 2025 environment is not proven.
+4-2,method,0,provenance_only_or_not_independently_verified,Archived model code invoked via temporary compatibility patch; historical CP decoder source not recovered.
+4-3,preserved_numeric,24,all_checked_display_fields_match,24 checked PDF-display fields from aligned saved CLO/MET/Tsub proxy outputs; independent MET valid source incomplete.
+4-4,preserved_numeric,0,archived_length_reanalysis_exact,Length correlations recalculated from archived seed-level rows; module-level archived-table comparison.
+4-5,preserved_numeric,0,archived_length_reanalysis_exact,Length matched-subset/bucket tables recalculated from archived outputs; module-level archived-table comparison.
+4-6,partial,6,checked_counts_differ,Historical P12 reliability_meta_from_subset.csv missing; present-day category reconstruction differs.
+4-7,partial,3,checked_counts_differ,Saved-output bottom-p intersections differ from thesis; cutoff ties and historical input/runtime identity unresolved.
+4-8,preserved_numeric,30,all_checked_display_fields_match,30 checked PDF-display fields from six saved Judge comparison files; no LLM rerun and historical 150-ID selection not recovered.
+4-9,preserved_numeric,0,archived_human_audit_reanalysis_exact,30-case coverage recomputed from selected archived records; source label-generation provenance not proven.
+4-10,preserved_numeric,0,archived_human_audit_reanalysis_exact,750 archived human judgments recomputed and compared to archived T30; no new human judgments.
+4-11,main_numeric,6,main_condition_means_within_retrain_tolerance,Fresh main CP condition means versus paper; paper SD/CI/p/effect sizes are NOT fully verified by this output.
+4-12,main_numeric,18,main_condition_means_within_retrain_tolerance,Fresh main OR condition means versus paper; paper SD/CI/p/significance stars are NOT fully verified.
+4-13,candidate_numeric,4,candidate_ablation_vs_archived_T01_only_not_paper_table_exact,CP Original/Context metrics compared ONLY against archived T01 aggregate; this is NOT the individual published Table 4-13 cell comparison.
+4-14,candidate_numeric,6,candidate_ablation_vs_archived_T01_only_not_paper_table_exact,OR Original/Context metrics compared ONLY against archived T01 aggregate; historical fair-subset membership not recovered.
+4-15,candidate_numeric,6,candidate_ablation_vs_archived_T01_only_not_paper_table_exact,CP factor-removal metrics compared ONLY against archived T01 aggregate; not a published Table 4-15 cell-by-cell test.
+4-16,candidate_numeric,9,candidate_ablation_vs_archived_T01_only_not_paper_table_exact,OR factor-removal metrics compared ONLY against archived T01 aggregate; some factor directions differ; historical subset ID missing.
+4-17,archived_only,0,provenance_only_or_not_independently_verified,Fresh rankings for identical set_id/target/seed/pool not independently matched against published examples.
+4-18,archived_only,0,provenance_only_or_not_independently_verified,Fresh rankings for identical set_id/target/seed/pool not independently matched against published examples.
+4-19,archived_only,0,provenance_only_or_not_independently_verified,Image-dependent human visual/color judgments not independently re-executed.
+4-20,archived_only,0,provenance_only_or_not_independently_verified,Identical-case fresh ranking comparison not independently verified.

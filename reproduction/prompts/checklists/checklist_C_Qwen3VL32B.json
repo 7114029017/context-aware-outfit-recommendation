@@ -1,0 +1,44 @@
+{
+  "checklist": [
+    {
+      "id": "c1",
+      "text": "Does the description include the temperature or weather condition relevant to the outfit?"
+    },
+    {
+      "id": "c2",
+      "text": "Does the description specify the overall style or theme of the outfit (e.g., beach chic, gothic, sporty)?"
+    },
+    {
+      "id": "c3",
+      "text": "Does the description mention the primary color scheme or key colors present in the outfit?"
+    },
+    {
+      "id": "c4",
+      "text": "Does the description indicate the occasion or context for which the outfit is suitable (e.g., date, wedding, night out)?"
+    },
+    {
+      "id": "c5",
+      "text": "Does the description capture the mood or aesthetic tone (e.g., effortless, glamorous, sophisticated)?"
+    },
+    {
+      "id": "c6",
+      "text": "Does the description reference the main garment or item that defines the outfit (e.g., dress, bikini, vest)?"
+    },
+    {
+      "id": "c7",
+      "text": "Does the description use concise, query-style language appropriate for a search or request?"
+    },
+    {
+      "id": "c8",
+      "text": "Does the description avoid introducing elements or details not visually present in the outfit collage?"
+    },
+    {
+      "id": "c9",
+      "text": "Does the description logically connect the visual elements into a coherent outfit narrative?"
+    },
+    {
+      "id": "c10",
+      "text": "Is the description grammatically correct and fluent, with natural phrasing for a user query?"
+    }
+  ]
+}

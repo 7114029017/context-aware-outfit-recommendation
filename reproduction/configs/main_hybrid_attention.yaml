@@ -1,0 +1,76 @@
+schema_version: 1
+audit_baseline_commit: 7a5cc9cd8f884865e1e27a234c18dd132f949598
+status: recovered_from_archived_code_and_logs
+
+dataset:
+  name: Polyvore Outfits Disjoint
+  split: disjoint
+  train_outfits: 16995
+  validation_outfits: 3000
+  test_outfits: 15145
+  cp_compatibility_pairs: 30290
+  fitb_questions: 15145
+  cir_or_evaluable_pairs: 9311
+
+seeds: [1, 2, 3, 4, 5]
+
+model:
+  image_input_dim: 512
+  image_embedding_dim: 64
+  item_text_input_dim: 512
+  item_text_embedding_dim: 64
+  outfit_text_input_dim: 512
+  outfit_text_embedding_dim: 128
+  attention_heads: 16
+  transformer_layers: 3
+  dropout: 0.1
+  max_outfit_items: 16
+  use_outfit_text: true
+  unresolved_decoder: DecoderLayerWithCrossAttn
+
+training:
+  epochs: 100
+  batch_size: 50
+  optimizer: Adam
+  learning_rate: 0.00005
+  weight_decay: 0.0
+  gradient_clip_norm: 0.5
+  hard_negative_start_epoch_inclusive: 40
+  mixed_precision: float16
+  grad_scaler: true
+  train_shuffle: true
+  validation_shuffle: false
+  early_stopping: false
+  best_checkpoint_metric: validation_fitb_accuracy
+  scheduler:
+    class: StepLR
+    configured_step_size: 1
+    gamma: 0.5
+    scheduler_step_called_every_epochs: 10
+    effective_behavior: halve_learning_rate_after_each_10_epoch_step
+  determinism:
+    python_random_seed: run_seed
+    numpy_seed: run_seed
+    torch_seed: run_seed
+    torch_cuda_seed_all: run_seed
+    cudnn_deterministic: true
+    cudnn_benchmark: false
+    tf32_matmul: true
+    tf32_cudnn: true
+
+loss:
+  cp: BCEWithLogitsLoss
+  cir_or: MarginRankingLoss
+  margin: 0.3
+
+historical_conditions:
+  original:
+    expected_outfit_feature: encoded_outfitUrlTitle_en_fashionClip.pkl
+  context_aware:
+    expected_outfit_feature: encoded_NewoutfitUrlTitle_en_fashionClip.pkl
+    historical_feature_lineage_status: unresolved_from_2025_training_source
+
+implementation_notes:
+  - Preserve archived CIR hard-negative behavior in the first original-behavior reproduction.
+  - A corrected CIR hard-negative implementation must use a separate experiment tag.
+  - Do not replace DecoderLayerWithCrossAttn without historical evidence.

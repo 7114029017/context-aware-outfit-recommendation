@@ -1,0 +1,6 @@
+{
+ "feature_file": "encoded_NewoutfitUrlTitle_en_fashionClip.pkl",
+ "pairs_with_identical_text_and_different_reference": 219,
+ "pairs_with_identical_vectors": 219,
+ "conclusion": "the features encode the stored descriptions as written"
+}

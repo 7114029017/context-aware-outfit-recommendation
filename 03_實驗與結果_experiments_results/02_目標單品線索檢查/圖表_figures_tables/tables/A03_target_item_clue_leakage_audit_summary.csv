@@ -1,0 +1,7 @@
+metric,count,rate_pct,interpretation
+audited_unique_main_cir_queries,9311,100.00,"Main CIR query-target pairs, not no_missing subset."
+generated_fine_category_lexical_match,419,4.50,Static category-token check; category mentions can be semantically natural and are not automatically answer leakage.
+generated_any_category_lexical_match,454,4.88,Fine or major category mention in generated query.
+generated_target_item_distinctive_token_overlap,1030,11.06,Potential direct target-item lexical clue; inspect examples.
+generated_target_item_distinctive_bigram_overlap,81,0.87,Stricter phrase-level clue check.
+original_target_item_distinctive_token_overlap,1155,12.40,Baseline reference: original url_name + title can also contain item-like tokens.

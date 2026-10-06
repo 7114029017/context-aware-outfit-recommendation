@@ -1,0 +1,38 @@
+Captured: 2026-09-24
+
+Python 3.12.3
+
+platform: Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39
+torch: 2.9.1+cu130
+torch_cuda: 13.0
+cudnn: 91300
+cuda_available: True
+gpu: NVIDIA GB10
+gpu_capability: (12, 1)
+
+Thu Sep 24 14:20:50 2026
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GB10                    On  |   0000000F:01:00.0  On |                  N/A |
+| N/A   38C    P8              6W /  N/A  | Not Supported          |      3%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            4694      G   /usr/lib/xorg/Xorg                      606MiB |
+|    0   N/A  N/A            4849      G   /usr/bin/gnome-shell                    347MiB |
+|    0   N/A  N/A            5475      G   ...exec/xdg-desktop-portal-gnome        121MiB |
+|    0   N/A  N/A            5822      G   .../8815/usr/lib/firefox/firefox       1402MiB |
+|    0   N/A  N/A           10361      G   ...rack-uuid=3190708988185955192        192MiB |
+|    0   N/A  N/A          363441      G   /usr/bin/gnome-control-center            37MiB |
+|    0   N/A  N/A         3834469      G   /usr/bin/nautilus                        44MiB |
++-----------------------------------------------------------------------------------------+

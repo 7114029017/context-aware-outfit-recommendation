@@ -1,0 +1,359 @@
+{
+  "classification": "remaining thesis analyses integrated reproduction",
+  "git_branch": "thesis-full-reproduction",
+  "git_commit": "eb081e7a426cf5bd91acd8bb0f92a8398f08f45e",
+  "dataset_root_name": "uiuc-polyvore-hf",
+  "overall": "partial",
+  "modules": [
+    {
+      "module": "length",
+      "status": "exact",
+      "evidence": "Recomputed length correlations/buckets/matched subsets from 46,555 archived seed-level rows (9311 unique pairs).",
+      "outputs": [
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/length/A08_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/length/A09_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/length/A10_recomputed.csv"
+      ],
+      "details": {
+        "comparisons": {
+          "A08": {
+            "same": true,
+            "mismatched_cells": 0,
+            "max_numeric_abs_diff": 0.0
+          },
+          "A09": {
+            "same": true,
+            "mismatched_cells": 0,
+            "max_numeric_abs_diff": 0.0
+          },
+          "A10": {
+            "same": true,
+            "mismatched_cells": 0,
+            "max_numeric_abs_diff": 0.0
+          }
+        }
+      }
+    },
+    {
+      "module": "target_clue",
+      "status": "partial",
+      "evidence": "Recomputed target-clue leakage on the exact OR scope N=9311. The historical P12 intermediate source reliability_meta_from_subset.csv is not archived in the repository, so current reconstruction uses preserved OR IDs plus available WOS/Polyvore metadata. Scope and bigram count reproduce exactly, while several lexical-count rows differ.",
+      "outputs": [
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/target_clue/A03_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/target_clue/A04_recomputed_examples.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/target_clue/A03_current_rowlevel_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/target_clue/A04_archived_example_provenance_comparison.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/target_clue/A04_archived_example_provenance_summary.json"
+      ],
+      "details": {
+        "comparison": {
+          "same": false,
+          "mismatched_cells": 8,
+          "max_numeric_abs_diff": 130.0
+        },
+        "archived_example_provenance_diagnostic": {
+          "historical_P12_input": "subset_analysis_results/reliability_meta_from_subset.csv",
+          "historical_P12_input_archived": false,
+          "historical_A04_example_count": 80,
+          "historical_A04_example_source_sha256": "47c112f2310ec0794082203f767df30cd2520ca04a0ae98c8e093b7f769e0cbc",
+          "archived_examples_found_in_current_9311_scope": 80,
+          "field_exact_matches_among_archived_examples": {
+            "fine_category": 40,
+            "major_category": 80,
+            "generated_text": 80,
+            "original_text": 80,
+            "target_item_title_or_url": 80,
+            "generated_fine_category_match": 73,
+            "generated_any_category_match": 73,
+            "generated_target_token_overlap_count": 76,
+            "generated_target_bigram_overlap_count": 80,
+            "original_target_token_overlap_count": 78
+          },
+          "field_first_10_mismatched_pairs": {
+            "fine_category": [
+              [
+                "164870966",
+                "139526742"
+              ],
+              [
+                "206647176",
+                "181955459"
+              ],
+              [
+                "34904768",
+                "23242820"
+              ],
+              [
+                "73718092",
+                "75205775"
+              ],
+              [
+                "104939196",
+                "60795913"
+              ],
+              [
+                "112293296",
+                "102319057"
+              ],
+              [
+                "117469790",
+                "103600645"
+              ],
+              [
+                "135106714",
+                "110054320"
+              ],
+              [
+                "142338970",
+                "123189249"
+              ],
+              [
+                "168810096",
+                "141477316"
+              ]
+            ],
+            "major_category": [],
+            "generated_text": [],
+            "original_text": [],
+            "target_item_title_or_url": [],
+            "generated_fine_category_match": [
+              [
+                "206647176",
+                "181955459"
+              ],
+              [
+                "223485420",
+                "203454842"
+              ],
+              [
+                "224072536",
+                "213683775"
+              ],
+              [
+                "225330749",
+                "213259769"
+              ],
+              [
+                "121246173",
+                "81005024"
+              ],
+              [
+                "193127417",
+                "148600741"
+              ],
+              [
+                "205454082",
+                "145610158"
+              ]
+            ],
+            "generated_any_category_match": [
+              [
+                "206647176",
+                "181955459"
+              ],
+              [
+                "223485420",
+                "203454842"
+              ],
+              [
+                "224072536",
+                "213683775"
+              ],
+              [
+                "225330749",
+                "213259769"
+              ],
+              [
+                "121246173",
+                "81005024"
+              ],
+              [
+                "193127417",
+                "148600741"
+              ],
+              [
+                "205454082",
+                "145610158"
+              ]
+            ],
+            "generated_target_token_overlap_count": [
+              [
+                "206647176",
+                "181955459"
+              ],
+              [
+                "223485420",
+                "203454842"
+              ],
+              [
+                "224072536",
+                "213683775"
+              ],
+              [
+                "225330749",
+                "213259769"
+              ]
+            ],
+            "generated_target_bigram_overlap_count": [],
+            "original_target_token_overlap_count": [
+              [
+                "223485420",
+                "203454842"
+              ],
+              [
+                "224072536",
+                "213683775"
+              ]
+            ]
+          },
+          "limitation": "Archived A04 contains a selected historical top-example subset, not the missing 9,311-row historical P12 input. An observed difference demonstrates field-level drift on that example only; agreement cannot establish identity of unarchived rows or fully attribute the aggregate count mismatch."
+        },
+        "historical_intermediate_source_archived": false,
+        "historical_intermediate_source": "subset_analysis_results/reliability_meta_from_subset.csv",
+        "archived_counts": {
+          "audited_unique_main_cir_queries": 9311,
+          "generated_fine_category_lexical_match": 419,
+          "generated_any_category_lexical_match": 454,
+          "generated_target_item_distinctive_token_overlap": 1030,
+          "generated_target_item_distinctive_bigram_overlap": 81,
+          "original_target_item_distinctive_token_overlap": 1155
+        },
+        "recomputed_counts": {
+          "audited_unique_main_cir_queries": 9311,
+          "generated_fine_category_lexical_match": 549,
+          "generated_any_category_lexical_match": 560,
+          "generated_target_item_distinctive_token_overlap": 999,
+          "generated_target_item_distinctive_bigram_overlap": 81,
+          "original_target_item_distinctive_token_overlap": 1132
+        }
+      }
+    },
+    {
+      "module": "judge_preserved_outputs",
+      "status": "exact",
+      "evidence": "Recomputed Judge T19 agreement, T21 threshold agreement, bottom-p overlaps, and preserved P0-R2/P1/P2 robustness outputs. The module's 'exact' status applies to verified preserved-output T19/T21 and archived-robustness consistency; thesis Table 4-7 bottom-p overlaps are NOT exact (paper 668/1323/2833 vs current 669/1338/2877). Archived robustness original_score values match the preserved formal outputs; historical sample regeneration provenance is partial.",
+      "outputs": [
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/judge/T19_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/judge/T21_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/judge/bottomp_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/judge/prompt_robustness_summary.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/judge/table_4_8_paper_field_comparison.csv"
+      ],
+      "details": {
+        "formal_intersection": 35140,
+        "table_4_7_paper_intersections": [
+          668,
+          1323,
+          2833
+        ],
+        "table_4_7_recomputed_intersections": [
+          669,
+          1338,
+          2877
+        ],
+        "table_4_7_matches_paper": false,
+        "T19_comparison": {
+          "same": true,
+          "mismatched_cells": 0,
+          "max_numeric_abs_diff": 9.992007221626409e-16
+        },
+        "T21_comparison": {
+          "same": true,
+          "mismatched_cells": 0,
+          "max_numeric_abs_diff": 0.0
+        },
+        "table_4_8_paper_display_match_from_preserved_6x150": true,
+        "table_4_8_paper_display_compared_fields": 30,
+        "table_4_8_preserved_score_files_not_llm_rerun": true,
+        "table_4_8_paper_comparison_csv": "_reproduction_runs/full_20260921T175217Z/secondary/results/judge/table_4_8_paper_field_comparison.csv",
+        "robustness_all_six_same_150_ids": true,
+        "robustness_missing_formal": 0,
+        "robustness_original_score_mismatch": 0,
+        "historical_sample_regeneration_match": false,
+        "historical_sample_regeneration_intersection": 3,
+        "historical_sample_regeneration_archived_only": 147,
+        "historical_sample_regeneration_current_only": 147
+      }
+    },
+    {
+      "module": "human_audit",
+      "status": "exact",
+      "evidence": "Seed-42 30-case selection match=True; manual judgments=750 (300 Qwen + 450 Gemma).",
+      "outputs": [
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/human_audit/T30_recomputed.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/human_audit/A42_coverage_recomputed.csv"
+      ],
+      "details": {
+        "sample_selection_exact": true,
+        "T30_comparison": {
+          "same": true,
+          "mismatched_cells": 0,
+          "max_numeric_abs_diff": 0.0
+        },
+        "table_4_9_coverage_recomputed_from_selected_cases": true,
+        "table_4_9_coverage_exact_against_archived_A42": true,
+        "table_4_9_coverage_comparison": {
+          "same": true,
+          "mismatched_cells": 0,
+          "max_numeric_abs_diff": 0.0
+        }
+      }
+    },
+    {
+      "module": "case_analysis",
+      "status": "partial",
+      "evidence": "Archived subgroup/case tables present=True; candidate fair-subset row-level details=25/25. Historical memberwise fair-subset identity remains unresolved.",
+      "outputs": [
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/case_analysis/fresh_fair_subset_rowlevel_summary.csv"
+      ],
+      "details": {
+        "archived_tables_present": true,
+        "fresh_fair_subset_detail_files": 25,
+        "qualitative_notebook_materialized": true,
+        "images_available": false,
+        "historical_memberwise_fair_subset_identity_recovered": false
+      }
+    },
+    {
+      "module": "two_tower",
+      "status": "exact",
+      "evidence": "Recomputed A30 five-seed summary; A32 matched cells=44, max abs diff=1.14e-13; loadable checkpoints=20/20.",
+      "outputs": [
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/two_tower/recomputed_key_mean_std.csv",
+        "_reproduction_runs/full_20260921T175217Z/secondary/results/two_tower/checkpoint_inventory.json"
+      ],
+      "details": {
+        "matched_A32_cells": 44,
+        "max_abs_difference": 1.1368683772161603e-13,
+        "all_20_checkpoints_load": true
+      }
+    },
+    {
+      "module": "judge_robustness_sampling_provenance",
+      "status": "partial",
+      "evidence": "Historical robustness sample regeneration does not reproduce the archived 150 IDs: intersection=3/150, archived-only=147, current-only=147. All six archived robustness files use the same 150 IDs and their original_score fields match the preserved formal outputs exactly; the unresolved component is historical sample-generation provenance.",
+      "outputs": [],
+      "details": {}
+    },
+    {
+      "module": "judge_exact_generation",
+      "status": "partial",
+      "evidence": "Exact Judge generation requires archived P0/P1/P2 prompt text; preserved-output recomputation is reported separately.",
+      "outputs": [],
+      "details": {}
+    },
+    {
+      "module": "case_visuals",
+      "status": "partial",
+      "evidence": "Image-dependent qualitative figure regeneration requires Polyvore images/.",
+      "outputs": [],
+      "details": {}
+    }
+  ],
+  "important": [
+    "Archived research files are read-only references and are not overwritten.",
+    "Judge preserved-output recomputation is distinct from exact LLM generation reproduction.",
+    "Human/Judge sampling seed 42 is distinct from model-training seeds 1-5.",
+    "Fresh fair-subset case/subgroup evidence remains a controlled candidate reconstruction because historical memberwise fair-subset identity is unresolved."
+  ]
+}

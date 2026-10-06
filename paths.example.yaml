@@ -1,0 +1,4 @@
+project_root: /home/ester/context-aware-outfit-recommendation
+original_workspace: /home/ester/valid_description
+polyvore_data: /path/to/polyvore_data
+fashionclip_features: /path/to/fashionclip_data

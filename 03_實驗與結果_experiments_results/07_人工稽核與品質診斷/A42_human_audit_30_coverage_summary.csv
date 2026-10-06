@@ -1,0 +1,23 @@
+﻿dimension,value,n_samples,ratio
+audit_stratum,conflict,10,0.3333
+audit_stratum,high,10,0.3333
+audit_stratum,low,10,0.3333
+temp_bin,cold (<12 degC),6,0.2000
+temp_bin,cool (12-18 degC),5,0.1667
+temp_bin,mild (18-24 degC),14,0.4667
+temp_bin,warm/hot (>=24 degC),5,0.1667
+met_bin,higher activity (>=1.6 MET),7,0.2333
+met_bin,low activity (<1.3 MET),16,0.5333
+met_bin,moderate activity (1.3-1.6 MET),7,0.2333
+occasion_bin,casual/daily,5,0.1667
+occasion_bin,evening/event,8,0.2667
+occasion_bin,formal/work,3,0.1000
+occasion_bin,other/unclear,9,0.3000
+occasion_bin,outdoor/travel,5,0.1667
+style_bin,boho/beach,4,0.1333
+style_bin,casual/street,5,0.1667
+style_bin,dark/edgy,3,0.1000
+style_bin,elegant/romantic,7,0.2333
+style_bin,minimal/classic,3,0.1000
+style_bin,other/unclear,5,0.1667
+style_bin,sporty/active,3,0.1000

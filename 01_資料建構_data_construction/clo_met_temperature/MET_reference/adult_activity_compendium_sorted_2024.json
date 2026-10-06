@@ -1,0 +1,2744 @@
+[
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04160",
+    "METValue": 1.0,
+    "ActivityDescription": "Sitting in boat, passenger"
+  },
+  {
+    "MajorHeading": "Inactivity",
+    "ActivityCode": "07009",
+    "METValue": 1.0,
+    "ActivityDescription": "Lying quietly and watching television"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09025",
+    "METValue": 1.0,
+    "ActivityDescription": "Laughter, sitting"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20000",
+    "METValue": 1.0,
+    "ActivityDescription": "Sitting in church, in service, attending a ceremony, sitting quietly"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02135",
+    "METValue": 1.3,
+    "ActivityDescription": "Whirlpool, sitting"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05080",
+    "METValue": 1.3,
+    "ActivityDescription": "Knitting, sewing, light effort, wrapping presents, sitting"
+  },
+  {
+    "MajorHeading": "Inactivity",
+    "ActivityCode": "07024",
+    "METValue": 1.3,
+    "ActivityDescription": "Sitting smoking"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09000",
+    "METValue": 1.3,
+    "ActivityDescription": "Board game playing, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11220",
+    "METValue": 1.3,
+    "ActivityDescription": "Farming, milking by machine, light effort"
+  },
+  {
+    "MajorHeading": "Self Care",
+    "ActivityCode": "13046",
+    "METValue": 1.3,
+    "ActivityDescription": "Having hair or nails done by someone else,  sitting"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16015",
+    "METValue": 1.3,
+    "ActivityDescription": "Riding in a car or truck"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18012",
+    "METValue": 1.3,
+    "ActivityDescription": "Boating, power, passenger, light"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20015",
+    "METValue": 1.3,
+    "ActivityDescription": "Standing quietly in church, attending a ceremony"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21000",
+    "METValue": 1.3,
+    "ActivityDescription": "Sitting, meeting, general, and/or with talking involved"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22040",
+    "METValue": 1.3,
+    "ActivityDescription": "Seated, video game, handheld controller (inactive)"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04164",
+    "METValue": 1.5,
+    "ActivityDescription": "Standing in boat"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05188",
+    "METValue": 1.5,
+    "ActivityDescription": "Reclining with baby"
+  },
+  {
+    "MajorHeading": "Inactivity",
+    "ActivityCode": "07022",
+    "METValue": 1.5,
+    "ActivityDescription": "Sitting quietly, fidgeting, general, fidgeting hands"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09010",
+    "METValue": 1.5,
+    "ActivityDescription": "Card playing, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11487",
+    "METValue": 1.5,
+    "ActivityDescription": "Mail delivery, motorbike"
+  },
+  {
+    "MajorHeading": "Self Care",
+    "ActivityCode": "13010",
+    "METValue": 1.5,
+    "ActivityDescription": "Bathing, sitting"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15672",
+    "METValue": 1.5,
+    "ActivityDescription": "Tai chi, qi gong, sitting, light effort"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17492",
+    "METValue": 1.5,
+    "ActivityDescription": "Walking, with a walker or step-to gait on treadmill, 0.7 mph (1.1 km/h), 0% grade"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20010",
+    "METValue": 1.5,
+    "ActivityDescription": "Sitting, reading religious materials at home"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21005",
+    "METValue": 1.5,
+    "ActivityDescription": "Sitting, light office work, in general"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22120",
+    "METValue": 1.5,
+    "ActivityDescription": "Video game, handheld controller (light effort)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02103",
+    "METValue": 1.8,
+    "ActivityDescription": "Pilates, traditional, mat"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04061",
+    "METValue": 1.8,
+    "ActivityDescription": "Fishing, jig or line, standing, general"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05070",
+    "METValue": 1.8,
+    "ActivityDescription": "Ironing"
+  },
+  {
+    "MajorHeading": "Inactivity",
+    "ActivityCode": "07023",
+    "METValue": 1.8,
+    "ActivityDescription": "Sitting, fidget feet"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09020",
+    "METValue": 1.8,
+    "ActivityDescription": "Drawing, writing, painting, standing"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10010",
+    "METValue": 1.8,
+    "ActivityDescription": "Accordion, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11135",
+    "METValue": 1.8,
+    "ActivityDescription": "Engineer (e.g., mechanical or electrical)"
+  },
+  {
+    "MajorHeading": "Sexual Activity",
+    "ActivityCode": "14030",
+    "METValue": 1.8,
+    "ActivityDescription": "Passive, light effort, kissing, hugging"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15408",
+    "METValue": 1.8,
+    "ActivityDescription": "Horse cart, driving, standing or sitting"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16020",
+    "METValue": 1.8,
+    "ActivityDescription": "Flying airplane or helicoptor"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20005",
+    "METValue": 1.8,
+    "ActivityDescription": "Sitting in church, talking or singing, attending a ceremony, sitting, active participation"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21015",
+    "METValue": 1.8,
+    "ActivityDescription": "Standing, light work (filing, talking, assembling)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02116",
+    "METValue": 2.0,
+    "ActivityDescription": "Arm Ergometer, hand bike, 15W"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04030",
+    "METValue": 2.0,
+    "ActivityDescription": "Fishing from boat or canoe, sitting"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05041",
+    "METValue": 2.0,
+    "ActivityDescription": "Wash dishes, standing or in general (not broken into stand/walk components)"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06205",
+    "METValue": 2.0,
+    "ActivityDescription": "Sharpening tools"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08066",
+    "METValue": 2.0,
+    "ActivityDescription": "gardening, general"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09036",
+    "METValue": 2.0,
+    "ActivityDescription": "watching tv, stepping during commercial breaks"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10050",
+    "METValue": 2.0,
+    "ActivityDescription": "Flute, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11000",
+    "METValue": 2.0,
+    "ActivityDescription": "Active workstation, Pedal desk, balance chair/ball, General, light effort"
+  },
+  {
+    "MajorHeading": "Self Care",
+    "ActivityCode": "13035",
+    "METValue": 2.0,
+    "ActivityDescription": "Talking and eating or eating only, standing"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16010",
+    "METValue": 2.0,
+    "ActivityDescription": "Automobile or light truck (not a semi) driving"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18142",
+    "METValue": 2.0,
+    "ActivityDescription": "Sailing, dingy"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19011",
+    "METValue": 2.0,
+    "ActivityDescription": "Ice fishing"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20001",
+    "METValue": 2.0,
+    "ActivityDescription": "Sitting, playing an instrument at church"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21016",
+    "METValue": 2.0,
+    "ActivityDescription": "Sitting, child care, only active periods"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15406",
+    "METValue": 2.1,
+    "ActivityDescription": "Horseback riding, simulator"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17340",
+    "METValue": 2.1,
+    "ActivityDescription": "Walking, treadmill, less than 1.0 mph, 0% grade"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01262",
+    "METValue": 2.3,
+    "ActivityDescription": "Bicycling, eccentric only, 100 to 149 W2024 Adult Compendium of Physical Activities"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02101",
+    "METValue": 2.3,
+    "ActivityDescription": "Stretching, mild"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04065",
+    "METValue": 2.3,
+    "ActivityDescription": "Fishing with a spear, standing"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05011",
+    "METValue": 2.3,
+    "ActivityDescription": "Cleaning, sweeping, slow, light effort"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06074",
+    "METValue": 2.3,
+    "ActivityDescription": "Carpentry, home remodeling tasks, light effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08260",
+    "METValue": 2.3,
+    "ActivityDescription": "Yardwork, general, light effort"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10020",
+    "METValue": 2.3,
+    "ActivityDescription": "Cello, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11020",
+    "METValue": 2.3,
+    "ActivityDescription": "Bookbinding"
+  },
+  {
+    "MajorHeading": "Self Care",
+    "ActivityCode": "13000",
+    "METValue": 2.3,
+    "ActivityDescription": "Getting ready for bed, general, standing"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17021",
+    "METValue": 2.3,
+    "ActivityDescription": "Carrying ~10 lb child, slow walking"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18352",
+    "METValue": 2.3,
+    "ActivityDescription": "Tubing, floating on a river, general"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20045",
+    "METValue": 2.3,
+    "ActivityDescription": "Serving food at church"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21040",
+    "METValue": 2.3,
+    "ActivityDescription": "Walking, less than 2.0 mph, very slow"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22160",
+    "METValue": 2.3,
+    "ActivityDescription": "Video game, light effort (Wii Fit, yoga, bowling, etc)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02140",
+    "METValue": 2.5,
+    "ActivityDescription": "Video, exercise workouts, TV conditioning programs (e.g., yoga, stretching, seated), light effort"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04070",
+    "METValue": 2.5,
+    "ActivityDescription": "Hunting, bow and arrow or crossbow"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05023",
+    "METValue": 2.5,
+    "ActivityDescription": "Mopping, standing, light effort"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06126",
+    "METValue": 2.5,
+    "ActivityDescription": "Home repair, general, light effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08100",
+    "METValue": 2.5,
+    "ActivityDescription": "Mowing lawn, riding mower (Taylor Code 550)"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09005",
+    "METValue": 2.5,
+    "ActivityDescription": "Casino gambling, standing"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10035",
+    "METValue": 2.5,
+    "ActivityDescription": "Double bass, standing"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11038",
+    "METValue": 2.5,
+    "ActivityDescription": "Carpentry, general, light effort"
+  },
+  {
+    "MajorHeading": "Self Care",
+    "ActivityCode": "13045",
+    "METValue": 2.5,
+    "ActivityDescription": "Hairstyling, standing"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15080",
+    "METValue": 2.5,
+    "ActivityDescription": "Billiards"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16050",
+    "METValue": 2.5,
+    "ActivityDescription": "Truck, semi, tractor, ≥1 ton, or bus, driving"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17085",
+    "METValue": 2.5,
+    "ActivityDescription": "Bird watching, walking and stopping"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18010",
+    "METValue": 2.5,
+    "ActivityDescription": "Boating, power, driving"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19006",
+    "METValue": 2.5,
+    "ActivityDescription": "Dog sledding, passenger"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21010",
+    "METValue": 2.5,
+    "ActivityDescription": "Sitting, moderate work"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08135",
+    "METValue": 2.6,
+    "ActivityDescription": "Planting, potting, transplanting seedlings or plants, light effort"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02185",
+    "METValue": 2.7,
+    "ActivityDescription": "Yoga, Vinyasa"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02024",
+    "METValue": 2.8,
+    "ActivityDescription": "Calisthenics (e.g., curl ups, abdominal crunches, plank),  light effort"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04150",
+    "METValue": 2.8,
+    "ActivityDescription": "Foraging, 0-9.9kg backpack"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05025",
+    "METValue": 2.8,
+    "ActivityDescription": "Multiple household tasks all at once, light effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08055",
+    "METValue": 2.8,
+    "ActivityDescription": "Driving tractor"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11004",
+    "METValue": 2.8,
+    "ActivityDescription": "Active workstation, treadmill desk, walking  1.0 - 2.0 mph"
+  },
+  {
+    "MajorHeading": "Self Care",
+    "ActivityCode": "13020",
+    "METValue": 2.8,
+    "ActivityDescription": "Dressing, undressing, standing or sitting"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16030",
+    "METValue": 2.8,
+    "ActivityDescription": "Motor scooter, motorcycle"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17152",
+    "METValue": 2.8,
+    "ActivityDescription": "Walking, 2.0 to 2.4 mph, level, slow pace, firm surface"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18040",
+    "METValue": 2.8,
+    "ActivityDescription": "Canoeing, rowing, 2.0-3.9 mph, light effort"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02056",
+    "METValue": 3.0,
+    "ActivityDescription": "Body weight resistance exercises (e.g., squat, lunge, push-up, crunch), general"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03040",
+    "METValue": 3.0,
+    "ActivityDescription": "Ballroom, slow, examples: waltz, foxtrot, slow dancing, samba tango, rumba, 19th century dance, mambo, cha cha"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04064",
+    "METValue": 3.0,
+    "ActivityDescription": "Fishing, fishing wheel, setting net and retrieving fish, general"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05043",
+    "METValue": 3.0,
+    "ActivityDescription": "Vacuuming, general, moderate effort"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06010",
+    "METValue": 3.0,
+    "ActivityDescription": "Airplane repair"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08180",
+    "METValue": 3.0,
+    "ActivityDescription": "Riding snow blower"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09080",
+    "METValue": 3.0,
+    "ActivityDescription": "Sitting: arts and crafts, carving wood, weaving, spinning wool, moderate effort"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10045",
+    "METValue": 3.0,
+    "ActivityDescription": "Drumming (e.g., bongo, conga, benbe), moderate, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11006",
+    "METValue": 3.0,
+    "ActivityDescription": "Airline flight attendant"
+  },
+  {
+    "MajorHeading": "Sexual Activity",
+    "ActivityCode": "14020",
+    "METValue": 3.0,
+    "ActivityDescription": "General, moderate effort"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15090",
+    "METValue": 3.0,
+    "ActivityDescription": "Bowling (Taylor Code 390)"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17165",
+    "METValue": 3.0,
+    "ActivityDescription": "Walking the dog"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18090",
+    "METValue": 3.0,
+    "ActivityDescription": "Diving, springboard or platform"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21070",
+    "METValue": 3.0,
+    "ActivityDescription": "Walk/stand combination, for volunteer purposes"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22200",
+    "METValue": 3.0,
+    "ActivityDescription": "Active video game, motion sensing game/using upper body (light to moderate effort)"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04115",
+    "METValue": 3.3,
+    "ActivityDescription": "Hunting birds"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05010",
+    "METValue": 3.3,
+    "ActivityDescription": "Cleaning, sweeping carpet or floors, general"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06030",
+    "METValue": 3.3,
+    "ActivityDescription": "Automobile repair, light or moderate effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08215",
+    "METValue": 3.3,
+    "ActivityDescription": "Trimming shrubs or trees, power cutter, using leaf blower, edger, moderate effort"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09090",
+    "METValue": 3.3,
+    "ActivityDescription": "Standing - arts and crafts, sand painting, carving, weaving, moderate effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11130",
+    "METValue": 3.3,
+    "ActivityDescription": "Electrical work (e.g., hook up wire, tapping splicing); plumbing moved to11516"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12026",
+    "METValue": 3.3,
+    "ActivityDescription": "Jogging 2.6 to 3.7 mph"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15160",
+    "METValue": 3.3,
+    "ActivityDescription": "Croquet"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17180",
+    "METValue": 3.3,
+    "ActivityDescription": "Walking, 2.5 mph, downhill"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18025",
+    "METValue": 3.3,
+    "ActivityDescription": "Canoeing, harvesting wild rice, knocking rice off the stalks"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20047",
+    "METValue": 3.3,
+    "ActivityDescription": "Washing dishes, cleaning kitchen at church"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21020",
+    "METValue": 3.3,
+    "ActivityDescription": "Standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01018",
+    "METValue": 3.5,
+    "ActivityDescription": "Bicycling, leisure 5.5 mph"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02030",
+    "METValue": 3.5,
+    "ActivityDescription": "Calisthenics, light or moderate effort, general (e.g., back exercises), going up & down from floor (Taylor Code 150)"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04001",
+    "METValue": 3.5,
+    "ActivityDescription": "Fishing, general"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05020",
+    "METValue": 3.5,
+    "ActivityDescription": "Cleaning  heavy or major (e.g., wash car, clean garage), moderate effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08025",
+    "METValue": 3.5,
+    "ActivityDescription": "Clearing light brush, thinning garden, moderate effort"
+  },
+  {
+    "MajorHeading": "Miscellaneous",
+    "ActivityCode": "09095",
+    "METValue": 3.5,
+    "ActivityDescription": "Standing - arts and crafts, sand painting, carving, weaving, vigorous effort"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10080",
+    "METValue": 3.5,
+    "ActivityDescription": "Trombone, standing"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11001",
+    "METValue": 3.5,
+    "ActivityDescription": "Active workstation, Pedal desk (40 watts)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15270",
+    "METValue": 3.5,
+    "ActivityDescription": "Golf, miniature, driving range"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16060",
+    "METValue": 3.5,
+    "ActivityDescription": "Walking for transportation, 2.8-3.2 mph, level, moderate pace, firm surface"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17011",
+    "METValue": 3.5,
+    "ActivityDescription": "Walking with a day pack, level ground, assumed in the city"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18070",
+    "METValue": 3.5,
+    "ActivityDescription": "Canoeing, rowing, for pleasure, general (Taylor Code 250)"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21017",
+    "METValue": 3.5,
+    "ActivityDescription": "Standing, child care, only active periods"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02022",
+    "METValue": 3.8,
+    "ActivityDescription": "Calisthenics (e.g., pushups, sit ups, pull-ups, lunges), moderate effort"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03070",
+    "METValue": 3.8,
+    "ActivityDescription": "Contemporary dancing, general"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04063",
+    "METValue": 3.8,
+    "ActivityDescription": "Fishing, set net, setting net and retrieving fish, general"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05012",
+    "METValue": 3.8,
+    "ActivityDescription": "Cleaning, sweeping, fast, moderate effort"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06052",
+    "METValue": 3.8,
+    "ActivityDescription": "Carpentry, outside house, building a fence"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08210",
+    "METValue": 3.8,
+    "ActivityDescription": "Trimming shrubs or trees, manual cutter"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10040",
+    "METValue": 3.8,
+    "ActivityDescription": "Drums, sitting"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11195",
+    "METValue": 3.8,
+    "ActivityDescription": "Farming, rice, planting, grain milling activities"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15092",
+    "METValue": 3.8,
+    "ActivityDescription": "Bowling, indoor, bowling alley"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17031",
+    "METValue": 3.8,
+    "ActivityDescription": "Loading  and/or unloading a car, implied walking"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18226",
+    "METValue": 3.8,
+    "ActivityDescription": "Stand up Paddleboard, standing, 20-29 strokes/min"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19200",
+    "METValue": 3.8,
+    "ActivityDescription": "Snowmobiling, driving, moderate pace, flat land"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20037",
+    "METValue": 3.8,
+    "ActivityDescription": "Walking, 2.8 to 3.4 mph, moderate speed, not carrying anything"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21045",
+    "METValue": 3.8,
+    "ActivityDescription": "Walking, 2.8 to 3.4 mph, moderate speed, not carrying anything"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01010",
+    "METValue": 4.0,
+    "ActivityDescription": "Bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02143",
+    "METValue": 4.0,
+    "ActivityDescription": "Video, exercise workouts, TV conditioning programs (e.g., cardio-resistance training), moderate"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04007",
+    "METValue": 4.0,
+    "ActivityDescription": "Fishing, catching fish with hands"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05048",
+    "METValue": 4.0,
+    "ActivityDescription": "Tanning hides, general"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06020",
+    "METValue": 4.0,
+    "ActivityDescription": "Automobile body work"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08070",
+    "METValue": 4.0,
+    "ActivityDescription": "Irrigation channels, opening and closing ports"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10130",
+    "METValue": 4.0,
+    "ActivityDescription": "Marching band, baton twirling, walking, moderate pace, general"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11010",
+    "METValue": 4.0,
+    "ActivityDescription": "Bakery, general, moderate effort"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15140",
+    "METValue": 4.0,
+    "ActivityDescription": "Coaching, football, soccer, basketball, baseball, swimming, etc."
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17016",
+    "METValue": 4.0,
+    "ActivityDescription": "Carrying 5 to 14 lb (2.3 to 6.4 kg) load (e.g. suitcase, boxes, groceries), level ground, moderate pace"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18020",
+    "METValue": 4.0,
+    "ActivityDescription": "Canoeing, on camping trip (Taylor Code 270)"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20061",
+    "METValue": 4.0,
+    "ActivityDescription": "General yard work at church"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22240",
+    "METValue": 4.0,
+    "ActivityDescription": "Active video game, motion sensing game/using total body (moderate effort)"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08009",
+    "METValue": 4.1,
+    "ActivityDescription": "Carrying, loading or stacking wood, loading/unloading or carrying lumber, light-to- moderate effort"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01015",
+    "METValue": 4.3,
+    "ActivityDescription": "Bicycling, self-selected easy pace"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02119",
+    "METValue": 4.3,
+    "ActivityDescription": "Upper body exercise, stationary bicycle - Airdyne (arms only) 40 rpm, moderate intensity"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03072",
+    "METValue": 4.3,
+    "ActivityDescription": "Contemporary dancing, nightclub"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04010",
+    "METValue": 4.3,
+    "ActivityDescription": "Fishing related, digging worms, with shovel"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05027",
+    "METValue": 4.3,
+    "ActivityDescription": "Multiple household tasks all at once, vigorous effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08140",
+    "METValue": 4.3,
+    "ActivityDescription": "Planting seedlings, shrubs, stooping, moderate effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11040",
+    "METValue": 4.3,
+    "ActivityDescription": "Carpentry, general, moderate effort"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15010",
+    "METValue": 4.3,
+    "ActivityDescription": "Archery (non-hunting)"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17145",
+    "METValue": 4.3,
+    "ActivityDescription": "Using medical knee scooter"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19150",
+    "METValue": 4.3,
+    "ActivityDescription": "Skiing, downhill, alpine or snowboarding, light effort, active time only"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02108",
+    "METValue": 4.5,
+    "ActivityDescription": "Pole dancing, exercise class"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03025",
+    "METValue": 4.5,
+    "ActivityDescription": "Ethnic or cultural dancing (e.g. Greek, Middle Eastern, hula, salsa, merengue, bamba y plena,  flamenco, belly, and swing)"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04005",
+    "METValue": 4.5,
+    "ActivityDescription": "Fishing, crab fishing"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05024",
+    "METValue": 4.5,
+    "ActivityDescription": "Polishing floors, standing, walking slowly, using electric polishing machine"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06090",
+    "METValue": 4.5,
+    "ActivityDescription": "Caulking, except log cabin"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08019",
+    "METValue": 4.5,
+    "ActivityDescription": "Chopping wood, splitting logs, moderate effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11383",
+    "METValue": 4.5,
+    "ActivityDescription": "Horseback riding, working, cutting cows"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12027",
+    "METValue": 4.5,
+    "ActivityDescription": "Jogging on a mini-tramp"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15255",
+    "METValue": 4.5,
+    "ActivityDescription": "Golf, general"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17018",
+    "METValue": 4.5,
+    "ActivityDescription": "Carrying 15 - 155 lb (6.8 - 70.4 kg) load (e.g. suitcase, boxes, furniture), level ground or downstairs, slow pace"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18130",
+    "METValue": 4.5,
+    "ActivityDescription": "Sailing, in competition, general"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20095",
+    "METValue": 4.5,
+    "ActivityDescription": "Standing, moderate-to-heavy effort, manual labor, lifting ≥ 50 lbs, heavy maintenance"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21030",
+    "METValue": 4.5,
+    "ActivityDescription": "Standing, moderate/heavy work"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02005",
+    "METValue": 4.8,
+    "ActivityDescription": "Aerobic dance, low impact, moderate effort"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03014",
+    "METValue": 4.8,
+    "ActivityDescription": "Tap"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05125",
+    "METValue": 4.8,
+    "ActivityDescription": "Organizing a room"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08255",
+    "METValue": 4.8,
+    "ActivityDescription": "Wheel barrow, pushing garden cart or wheelbarrow, general"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11008",
+    "METValue": 4.8,
+    "ActivityDescription": "Apple Harvesting"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12025",
+    "METValue": 4.8,
+    "ActivityDescription": "Jogging, in place"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15150",
+    "METValue": 4.8,
+    "ActivityDescription": "Cricket, batting, bowling, fielding"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17200",
+    "METValue": 4.8,
+    "ActivityDescription": "Walking, 3.5 to 3.9 mph, level, brisk, firm surface, walking for exercise"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18255",
+    "METValue": 4.8,
+    "ActivityDescription": "Swimming, backstroke, recreational"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20038",
+    "METValue": 4.8,
+    "ActivityDescription": "Walking, 3.5 to 3.9 mph, brisk speed, not carrying anything"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21050",
+    "METValue": 4.8,
+    "ActivityDescription": "Walking, 3.5 to 3.9 mph, brisk speed, not carrying anything"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01070",
+    "METValue": 5.0,
+    "ActivityDescription": "Unicycling"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02008",
+    "METValue": 5.0,
+    "ActivityDescription": "Army type obstacle course exercise, boot camp training program"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03010",
+    "METValue": 5.0,
+    "ActivityDescription": "Ballet, modern, or jazz general, rehearsal or class"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04100",
+    "METValue": 5.0,
+    "ActivityDescription": "Hunting, general"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05110",
+    "METValue": 5.0,
+    "ActivityDescription": "Maple syruping/sugar bushing (including carrying buckets, carrying wood)"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06080",
+    "METValue": 5.0,
+    "ActivityDescription": "Caulking, chinking log cabin"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08040",
+    "METValue": 5.0,
+    "ActivityDescription": "Digging sandbox, shoveling sand"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11090",
+    "METValue": 5.0,
+    "ActivityDescription": "Coal mining, erecting supports"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15070",
+    "METValue": 5.0,
+    "ActivityDescription": "Basketball, shooting baskets"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17032",
+    "METValue": 5.0,
+    "ActivityDescription": "Climbing hills, no load, 5 to 20% grade, very slow pace"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18100",
+    "METValue": 5.0,
+    "ActivityDescription": "Kayaking, moderate effort"
+  },
+  {
+    "MajorHeading": "Religious Activities",
+    "ActivityCode": "20040",
+    "METValue": 5.0,
+    "ActivityDescription": "Praise with dance or run, spiritual dancing in church"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22280",
+    "METValue": 5.0,
+    "ActivityDescription": "Active video game, motion sensing game/using total body (moderate-to-vigorous effort)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02120",
+    "METValue": 5.3,
+    "ActivityDescription": "Water aerobics, water calisthenics, water exercise"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05056",
+    "METValue": 5.3,
+    "ActivityDescription": "Carrying groceries upstairs"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08058",
+    "METValue": 5.3,
+    "ActivityDescription": "Felling trees, small-medium size"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11002",
+    "METValue": 5.3,
+    "ActivityDescription": "Active workstation, Pedal desk (80 watts)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12405",
+    "METValue": 5.3,
+    "ActivityDescription": "Running/jogging, curved treadmill, 3.0 to 3.9 mph"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15425",
+    "METValue": 5.3,
+    "ActivityDescription": "Martial Arts, different types, slower pace, novice performers, practice"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17034",
+    "METValue": 5.3,
+    "ActivityDescription": "Climbing hills, no load, 1 to 5% grade, moderate-to-brisk pace"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18202",
+    "METValue": 5.3,
+    "ActivityDescription": "Scuba diving, general, light effort"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19190",
+    "METValue": 5.3,
+    "ActivityDescription": "Snow shoeing, moderate effort"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01252",
+    "METValue": 5.5,
+    "ActivityDescription": "Bicycling, concentric only, 100 W"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02001",
+    "METValue": 5.5,
+    "ActivityDescription": "Aerobic, step, with 4-inch step"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03028",
+    "METValue": 5.5,
+    "ActivityDescription": "Chinese square dance, Ballet & Tibetan dance"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08010",
+    "METValue": 5.5,
+    "ActivityDescription": "Carrying, loading or stacking wood, loading/unloading or carrying lumber, moderate effort"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10131",
+    "METValue": 5.5,
+    "ActivityDescription": "Marching band, playing an instrument, walking, brisk pace, general"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11100",
+    "METValue": 5.5,
+    "ActivityDescription": "Coal mining, general"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15000",
+    "METValue": 5.5,
+    "ActivityDescription": "Alaska Native Games, Eskimo Olympics, general"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17026",
+    "METValue": 5.5,
+    "ActivityDescription": "Carrying load, 1 to 15 lb load, upstairs"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18206",
+    "METValue": 5.5,
+    "ActivityDescription": "Scuba diving, professional diver"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19020",
+    "METValue": 5.5,
+    "ActivityDescription": "Skating, ice, 9 mph or less"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01013",
+    "METValue": 5.8,
+    "ActivityDescription": "Bicycling, on dirt or farm road, moderate pace"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02055",
+    "METValue": 5.8,
+    "ActivityDescription": "Resistance Training, circuit, reciprocol supersets, peripheral hear action training"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03085",
+    "METValue": 5.8,
+    "ActivityDescription": "Polynesian dance, Hawaiian hula slow, Maori haka, Tongan"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05120",
+    "METValue": 5.8,
+    "ActivityDescription": "Moving furniture, household items, carrying boxes"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08060",
+    "METValue": 5.8,
+    "ActivityDescription": "Gardening with heavy power tools, using chain saw, tilling a garden"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12352",
+    "METValue": 5.8,
+    "ActivityDescription": "Running downhill, 5.0 to 5.9 mph, -10% to -15%"
+  },
+  {
+    "MajorHeading": "Sexual Activity",
+    "ActivityCode": "14010",
+    "METValue": 5.8,
+    "ActivityDescription": "Active, vigorous effort"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15062",
+    "METValue": 5.8,
+    "ActivityDescription": "Basketball, officiating"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17361",
+    "METValue": 5.8,
+    "ActivityDescription": "Walking, treadmill, 4.0 to 4.4 mph (6.4 to 7.1 km/h), 0% grade"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18050",
+    "METValue": 5.8,
+    "ActivityDescription": "Canoeing, rowing, 4.0-5.9 mph, moderate effort"
+  },
+  {
+    "MajorHeading": "Volunteer Activities",
+    "ActivityCode": "21019",
+    "METValue": 5.8,
+    "ActivityDescription": "Walk/run play with children, vigorous, only active periods"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01084",
+    "METValue": 6.0,
+    "ActivityDescription": "E-bike (electrically assisted) with light electronic support"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02032",
+    "METValue": 6.0,
+    "ActivityDescription": "Circuit training, body weight exercises"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03005",
+    "METValue": 6.0,
+    "ActivityDescription": "Afro-Cuban salsa (Cuban cha-cha-cha, mambo, Afro rumba, contratiempo son steps, orisha/santo movements)"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04050",
+    "METValue": 6.0,
+    "ActivityDescription": "Fishing in stream, in waders (Taylor Code 670)"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05045",
+    "METValue": 6.0,
+    "ActivityDescription": "Butchering animals, large, vigorous effort"
+  },
+  {
+    "MajorHeading": "Home Repair",
+    "ActivityCode": "06050",
+    "METValue": 6.0,
+    "ActivityDescription": "Carpentry, outside house, (Taylor Code 640)"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08110",
+    "METValue": 6.0,
+    "ActivityDescription": "Mowing lawn, hand mower, vigorous effort (Taylor Code 570)"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11030",
+    "METValue": 6.0,
+    "ActivityDescription": "Building road, driving heavy machinery"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12010",
+    "METValue": 6.0,
+    "ActivityDescription": "Jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15050",
+    "METValue": 6.0,
+    "ActivityDescription": "Basketball, non-game, general (Taylor Code 480)"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16040",
+    "METValue": 6.0,
+    "ActivityDescription": "Pushing plane in and out of hangar"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17027",
+    "METValue": 6.0,
+    "ActivityDescription": "Carrying load, 16 to 24 lb load, upstairs"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18150",
+    "METValue": 6.0,
+    "ActivityDescription": "Skiing, water or wake boarding (Taylor Code 220)"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19010",
+    "METValue": 6.0,
+    "ActivityDescription": "Moving icehouse, set up/drill holes"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03011",
+    "METValue": 6.3,
+    "ActivityDescription": "Ballet exercises (plie, tendus, jetes, rond de Jambes, fondus, grand battement, grand adage, sautes, temp Leve's)"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08030",
+    "METValue": 6.3,
+    "ActivityDescription": "Clearing land, haul brush, undergrowth, or ground, vigorous effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11110",
+    "METValue": 6.3,
+    "ActivityDescription": "Coal mining, shoveling coal, by hand"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15562",
+    "METValue": 6.3,
+    "ActivityDescription": "Rugby, touch, non-competitive"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16035",
+    "METValue": 6.3,
+    "ActivityDescription": "Pulling rickshaw"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18424",
+    "METValue": 6.3,
+    "ActivityDescription": "Aquatic cycling, 75 W, 60-70 RPM"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19160",
+    "METValue": 6.3,
+    "ActivityDescription": "Skiing, downhill, alpine or snowboarding, moderate effort, general, active time only"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02057",
+    "METValue": 6.5,
+    "ActivityDescription": "Body weight resistance exercises (e.g., squat, lunge, push-up, crunch), high intensity"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05132",
+    "METValue": 6.5,
+    "ActivityDescription": "Scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, vigorous effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08020",
+    "METValue": 6.5,
+    "ActivityDescription": "Chopping wood, splitting logs, vigorous effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11477",
+    "METValue": 6.5,
+    "ActivityDescription": "Manual or unskilled labor, general, vigorous effort"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12028",
+    "METValue": 6.5,
+    "ActivityDescription": "Running, 4 to 4.2 mph (13 min/mile)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15444",
+    "METValue": 6.5,
+    "ActivityDescription": "Kendo, kihon-keiko style, moderate intensity"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17019",
+    "METValue": 6.5,
+    "ActivityDescription": "Carrying 50 to 150 pound load (e.g., equine or bovine feed, fence pipes, furniture), level ground, moderate pace"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18224",
+    "METValue": 6.5,
+    "ActivityDescription": "Stand up paddle boarding, general"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01011",
+    "METValue": 6.8,
+    "ActivityDescription": "Bicycling, to/from work, self selected pace"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02080",
+    "METValue": 6.8,
+    "ActivityDescription": "Ski machine, general"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03012",
+    "METValue": 6.8,
+    "ActivityDescription": "Ballet, modern, or jazz, performance, vigorous effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11244",
+    "METValue": 6.8,
+    "ActivityDescription": "Fire fighter, rescue victim, automobile  accident, using pike pole"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15595",
+    "METValue": 6.8,
+    "ActivityDescription": "Skateboard, longboard, 13.3 km/h, slow speed"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16002",
+    "METValue": 6.8,
+    "ActivityDescription": "Bicycling for transportation, moderate effort"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17131",
+    "METValue": 6.8,
+    "ActivityDescription": "Stair climbing, general"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18208",
+    "METValue": 6.8,
+    "ActivityDescription": "Scuba diving, recreational diver"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19080",
+    "METValue": 6.8,
+    "ActivityDescription": "Skiing, cross country, 2.5 mph, slow or light effort, ski walking"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01014",
+    "METValue": 7.0,
+    "ActivityDescription": "Bicycling, general"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02210",
+    "METValue": 7.0,
+    "ActivityDescription": "High intensity interval exercise,  moderate effort"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03086",
+    "METValue": 7.0,
+    "ActivityDescription": "Polynesian dance, Hawaiian hula fast, Samoan sasa, Fijian style fast, Filipino Tinikling"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11042",
+    "METValue": 7.0,
+    "ActivityDescription": "Carpentry, general, heavy or vigorous effort"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15020",
+    "METValue": 7.0,
+    "ActivityDescription": "Badminton, competitive (Taylor Code 450)"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17010",
+    "METValue": 7.0,
+    "ActivityDescription": "Backpacking (Taylor Code 050)"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18030",
+    "METValue": 7.0,
+    "ActivityDescription": "Canoeing, portaging"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19030",
+    "METValue": 7.0,
+    "ActivityDescription": "Skating, ice, general (Taylor Code 360)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02000",
+    "METValue": 7.3,
+    "ActivityDescription": "Aerobic, general"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03029",
+    "METValue": 7.3,
+    "ActivityDescription": "Chinese square dance, aerobic dance"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08052",
+    "METValue": 7.3,
+    "ActivityDescription": "Digging, spading, filling garden, composting, vigorous effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11380",
+    "METValue": 7.3,
+    "ActivityDescription": "Horse grooming, including feeding, cleaning  stalls, bathing, brushing, clipping, longeing and  exercising horses."
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15395",
+    "METValue": 7.3,
+    "ActivityDescription": "Horseback riding, canter or gallop"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19174",
+    "METValue": 7.3,
+    "ActivityDescription": "Skiing, Alpine skiing high-intensity training"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02020",
+    "METValue": 7.5,
+    "ActivityDescription": "Calisthenics (e.g., pushups, sit ups, pull-ups, jumping jacks, burpees, battling ropes), vigorous effort"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08202",
+    "METValue": 7.5,
+    "ActivityDescription": "Shoveling snow, by hand, vigorous effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11490",
+    "METValue": 7.5,
+    "ActivityDescription": "Moving, carrying or pushing heavy objects, 75  lbs or more, only active time (e.g., desks,  moving van work)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12020",
+    "METValue": 7.5,
+    "ActivityDescription": "Jogging, general, self-selected pace"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15055",
+    "METValue": 7.5,
+    "ActivityDescription": "Basketball, general"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17050",
+    "METValue": 7.5,
+    "ActivityDescription": "Climbing hills, 21 to 40 lb load, 3 to 10% grade, moderate-to-brisk pace"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18358",
+    "METValue": 7.5,
+    "ActivityDescription": "Water aerobics, high intensity"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19005",
+    "METValue": 7.5,
+    "ActivityDescription": "Dog sledding, mushing"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22320",
+    "METValue": 7.5,
+    "ActivityDescription": "Active video game, motion sensing game/using total body, exergames, workouts, dancing (vigorous effort)"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02004",
+    "METValue": 7.8,
+    "ActivityDescription": "Bench step class, general"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11145",
+    "METValue": 7.8,
+    "ActivityDescription": "Farming, vigorous effort (e.g., baling hay,  cleaning barn), includes former code 11200"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12029",
+    "METValue": 7.8,
+    "ActivityDescription": "Running 4.3 to 4.8 mph"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15120",
+    "METValue": 7.8,
+    "ActivityDescription": "Boxing, sparring"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17012",
+    "METValue": 7.8,
+    "ActivityDescription": "Backpacking,  hiking with a daypack, organized walking with daypack"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02280",
+    "METValue": 7.9,
+    "ActivityDescription": "Virtual Reality Fitness,  Supernatural™ “Flow”, “Boxing\" vigorous intensity"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01030",
+    "METValue": 8.0,
+    "ActivityDescription": "Bicycling, 12-13.9 mph, leisure, moderate effort"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02006",
+    "METValue": 8.0,
+    "ActivityDescription": "Aerobic dance, high impact, vigorous effort"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11050",
+    "METValue": 8.0,
+    "ActivityDescription": "Carrying heavy loads (e.g., bricks, tools)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12150",
+    "METValue": 8.0,
+    "ActivityDescription": "Running (Taylor Code 200)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15040",
+    "METValue": 8.0,
+    "ActivityDescription": "Basketball, game (Taylor Code 490)"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17028",
+    "METValue": 8.0,
+    "ActivityDescription": "Carrying load, 25 to 49 lb load, upstairs"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18290",
+    "METValue": 8.0,
+    "ActivityDescription": "Swimming, crawl, medium speed, ~50 yards/minute, vigorous effort"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19170",
+    "METValue": 8.0,
+    "ActivityDescription": "Skiing, downhill, alpine or snowboarding, vigorous effort, active time only"
+  },
+  {
+    "MajorHeading": "Lawn & Garden",
+    "ActivityCode": "08057",
+    "METValue": 8.3,
+    "ActivityDescription": "Felling trees, large size"
+  },
+  {
+    "MajorHeading": "Music Playing",
+    "ActivityCode": "10048",
+    "METValue": 8.3,
+    "ActivityDescription": "Drumming, concert/live show"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11710",
+    "METValue": 8.3,
+    "ActivityDescription": "Steel mill, vigorous effort (e.g., hand rolling,  merchant mill rolling, removing slag, tending  furnace)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15552",
+    "METValue": 8.3,
+    "ActivityDescription": "Rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17025",
+    "METValue": 8.3,
+    "ActivityDescription": "Carrying load upstairs, general"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19315",
+    "METValue": 8.3,
+    "ActivityDescription": "Rollerskiing, 17 - 19.9 km/h, no incline"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01008",
+    "METValue": 8.5,
+    "ActivityDescription": "Bicycling, BMX"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02107",
+    "METValue": 8.5,
+    "ActivityDescription": "Pound, combination of Pilates and body movements with drumming"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03075",
+    "METValue": 8.5,
+    "ActivityDescription": "Flamenco dance"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11493",
+    "METValue": 8.5,
+    "ActivityDescription": "Mining, general services, drilling, mining support jobs (mechanical, welding, pipe installation, general construction)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12030",
+    "METValue": 8.5,
+    "ActivityDescription": "Running, 5.0 to 5.2 mph (12 min/mile)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15115",
+    "METValue": 8.5,
+    "ActivityDescription": "Boxing, punching bag, 120 b/min"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17038",
+    "METValue": 8.5,
+    "ActivityDescription": "Climbing hills, no load, steep grade (30%), slow pace (less than 1.2 mph)"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18376",
+    "METValue": 8.5,
+    "ActivityDescription": "Water running, 50 steps/min, fast"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19090",
+    "METValue": 8.5,
+    "ActivityDescription": "Skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01290",
+    "METValue": 8.8,
+    "ActivityDescription": "Bicycling, interactive virtual cycling, indoor cycle ergometer"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03087",
+    "METValue": 8.8,
+    "ActivityDescription": "Polynesian dance, Samoan slap, Tahitian"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11550",
+    "METValue": 8.8,
+    "ActivityDescription": "Shoveling, more than 16 lbs/minute, deep  digging, vigorous effort"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12335",
+    "METValue": 8.8,
+    "ActivityDescription": "Running uphill, 0.6 to 0.79 mph, 30% incline"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15534",
+    "METValue": 8.8,
+    "ActivityDescription": "Rock climbing, free boulder"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17036",
+    "METValue": 8.8,
+    "ActivityDescription": "Climbing hills, no load, 11 to 20% grade, slow-to-moderate pace"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01017",
+    "METValue": 9.0,
+    "ActivityDescription": "Bicycling, self-selected vigorous pace"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02003",
+    "METValue": 9.0,
+    "ActivityDescription": "Aerobic, step, with 10 – 12 inch step"
+  },
+  {
+    "MajorHeading": "Home Activities",
+    "ActivityCode": "05150",
+    "METValue": 9.0,
+    "ActivityDescription": "Moving household items upstairs, carrying boxes or furniture"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11246",
+    "METValue": 9.0,
+    "ActivityDescription": "Fire fighter, hauling hoses on ground,  carrying/hoisting equipment, breaking down  walls etc., wearing full gear"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12045",
+    "METValue": 9.0,
+    "ActivityDescription": "Running, 5.5 -5.8 mph"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15025",
+    "METValue": 9.0,
+    "ActivityDescription": "Badminton, competitive, match play"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18106",
+    "METValue": 9.0,
+    "ActivityDescription": "Kayaking, slalom, flat water"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19040",
+    "METValue": 9.0,
+    "ActivityDescription": "Skating, ice, rapidly, more than 9 mph but not competitive"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02065",
+    "METValue": 9.3,
+    "ActivityDescription": "Stair treadmill ergometer, general"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12050",
+    "METValue": 9.3,
+    "ActivityDescription": "Running, 6-6.3 mph (10 min/mile)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15072",
+    "METValue": 9.3,
+    "ActivityDescription": "Basketball, drills, practice"
+  },
+  {
+    "MajorHeading": "Transportation",
+    "ActivityCode": "16004",
+    "METValue": 9.3,
+    "ActivityDescription": "Bicycling for transportation, high effort"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17134",
+    "METValue": 9.3,
+    "ActivityDescription": "Stair climbing, fast pace, one step at a time"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18132",
+    "METValue": 9.3,
+    "ActivityDescription": "Sailing, in competition, high effort"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19146",
+    "METValue": 9.3,
+    "ActivityDescription": "Skiing, slalom"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02114",
+    "METValue": 9.5,
+    "ActivityDescription": "Therapeutic exercise ball, Fitball exercise, high intensity"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04125",
+    "METValue": 9.5,
+    "ActivityDescription": "Hunting - hiking with hunting gear"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12510",
+    "METValue": 9.5,
+    "ActivityDescription": "Running, 6.0 - 6.9 mph, 1.0 to 3.0 kg backpack"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15605",
+    "METValue": 9.5,
+    "ActivityDescription": "Soccer, competitive"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18250",
+    "METValue": 9.5,
+    "ActivityDescription": "Swimming, backstroke, training or competition"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19115",
+    "METValue": 9.5,
+    "ActivityDescription": "Skiing, cross-country skiing high-intensity training"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15445",
+    "METValue": 9.6,
+    "ActivityDescription": "Kendo, kirikaeshi style, high intensity"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02058",
+    "METValue": 9.8,
+    "ActivityDescription": "Kettle bell swings"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03031",
+    "METValue": 9.8,
+    "ActivityDescription": "Nightclub or folk dancing, vigorous effort (e.g., nightclub, disco, folk, line dancing, Irish step dancing, polka, contra)"
+  },
+  {
+    "MajorHeading": "Fishing & Hunting",
+    "ActivityCode": "04081",
+    "METValue": 9.8,
+    "ActivityDescription": "Hunting large game, dragging carcass"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12512",
+    "METValue": 9.8,
+    "ActivityDescription": "Running, 7.0 - 7.9 mph, 1.0 to 3.0 kg backpack"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15203",
+    "METValue": 9.8,
+    "ActivityDescription": "Fencing, epee, competitive"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18228",
+    "METValue": 9.8,
+    "ActivityDescription": "Stand up Paddleboard, standing, 40-49 strokes/min"
+  },
+  {
+    "MajorHeading": "Video Games",
+    "ActivityCode": "22360",
+    "METValue": 9.8,
+    "ActivityDescription": "Conditioning/exercise virtual reality fitness, vigorous intensity"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01040",
+    "METValue": 10.0,
+    "ActivityDescription": "Bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02007",
+    "METValue": 10.0,
+    "ActivityDescription": "Aerobic dance wearing 10-15 lb weights"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12180",
+    "METValue": 10.0,
+    "ActivityDescription": "Running, on a track, team practice"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15362",
+    "METValue": 10.0,
+    "ActivityDescription": "Hockey, ice, competitive"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17029",
+    "METValue": 10.0,
+    "ActivityDescription": "Carrying load, 50 to 74 lb load, upstairs"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18360",
+    "METValue": 10.0,
+    "ActivityDescription": "Water polo"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19046",
+    "METValue": 10.0,
+    "ActivityDescription": "Skating Treadmill, 7 - 7.9 mph, 2% grade"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01232",
+    "METValue": 10.3,
+    "ActivityDescription": "Bicycling, stationary, 151-199 watts"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03080",
+    "METValue": 10.3,
+    "ActivityDescription": "Musical Theater, Singing/dancing"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12255",
+    "METValue": 10.3,
+    "ActivityDescription": "Running uphill, 4.5mph, 5% incline"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15430",
+    "METValue": 10.3,
+    "ActivityDescription": "Martial Arts, different types, moderate pace (e.g., judo, jujitsu, karate, kick boxing, tae kwon do, tai-bo, Muay Thai boxing)"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18260",
+    "METValue": 10.3,
+    "ActivityDescription": "Swimming, breaststroke, general, training or  competition"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19405",
+    "METValue": 10.3,
+    "ActivityDescription": "Mountaineering, downhill climbing/cross-country skiing"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02082",
+    "METValue": 10.5,
+    "ActivityDescription": "Ski ergometer, cross country, double poling, slow to moderate speed"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12060",
+    "METValue": 10.5,
+    "ActivityDescription": "Running, 6.7 mph (9 min/mile)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15205",
+    "METValue": 10.5,
+    "ActivityDescription": "Floorball"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18280",
+    "METValue": 10.5,
+    "ActivityDescription": "Swimming, crawl, fast speed, ~75 yards/minute,  vigorous effort"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19047",
+    "METValue": 10.5,
+    "ActivityDescription": "Skating Treadmill, 8 - 8.9 mph, 2% grade"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01236",
+    "METValue": 10.8,
+    "ActivityDescription": "Bicycling, stationary, 200-229 watts, vigorous"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15118",
+    "METValue": 10.8,
+    "ActivityDescription": "Boxing, punching bag, 180 b/min"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17313",
+    "METValue": 10.8,
+    "ActivityDescription": "Walking, for exercise, with ski poles, Nordic walking, level ground, carrying 20 to 30 lb load (9.0 to 15.0 kg)"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01254",
+    "METValue": 11.0,
+    "ActivityDescription": "Bicycling, concentric only, 200 W"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02068",
+    "METValue": 11.0,
+    "ActivityDescription": "Rope skipping exercise, general"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11889",
+    "METValue": 11.0,
+    "ActivityDescription": "Soldiers, walking,  2.8 mph, 15% grade, up to 21.5 kg load"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12070",
+    "METValue": 11.0,
+    "ActivityDescription": "Running, 7 mph (8.5 min/mile)"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18229",
+    "METValue": 11.0,
+    "ActivityDescription": "Stand up Paddleboard, standing, 50-69 strokes/min"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19048",
+    "METValue": 11.0,
+    "ActivityDescription": "Skating Treadmill, 9 - 9.9 mph, 2% grade"
+  },
+  {
+    "MajorHeading": "Dancing",
+    "ActivityCode": "03038",
+    "METValue": 11.3,
+    "ActivityDescription": "Ballroom dancing, competitive, general"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15433",
+    "METValue": 11.3,
+    "ActivityDescription": "Judo"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19100",
+    "METValue": 11.3,
+    "ActivityDescription": "Skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12595",
+    "METValue": 11.5,
+    "ActivityDescription": "Running, jogging stroller, outdoors, 6 mph"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12080",
+    "METValue": 11.8,
+    "ActivityDescription": "Running, 7.5 mph (8 min/mile)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15551",
+    "METValue": 11.8,
+    "ActivityDescription": "Rope jumping, moderate pace, general, 100 to 120 skips/min, 2 foot skip, plain bounce"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18190",
+    "METValue": 11.8,
+    "ActivityDescription": "Skindiving, moderate"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01050",
+    "METValue": 12.0,
+    "ActivityDescription": "Bicycling, 16-19 mph, racing/not drafting or >19 mph drafting, very fast, racing general"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11495",
+    "METValue": 12.0,
+    "ActivityDescription": "Skindiving or SCUBA diving as a frogman,  Navy Seal"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12090",
+    "METValue": 12.0,
+    "ActivityDescription": "Running, 8 mph (7.5 min/mile)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15320",
+    "METValue": 12.0,
+    "ActivityDescription": "Handball, general (Taylor Code 520)"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17030",
+    "METValue": 12.0,
+    "ActivityDescription": "Carrying load, >74 lb load, upstairs"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18080",
+    "METValue": 12.0,
+    "ActivityDescription": "Canoeing or rowing, in competition, crew or sculling (Taylor Code 260)"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15100",
+    "METValue": 12.3,
+    "ActivityDescription": "Boxing, in ring, general"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17315",
+    "METValue": 12.3,
+    "ActivityDescription": "Walking, for exercise, with ski poles, Nordic walking, uphill, carrying 20 to 30 lb load (9.0 to 15.0 kg)"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19340",
+    "METValue": 12.3,
+    "ActivityDescription": "Rollerskiing, 6-9 km/h, 6-10 degree incline"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01240",
+    "METValue": 12.5,
+    "ActivityDescription": "Bicycling, stationary, 230-250 watts, very vigorous"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12100",
+    "METValue": 12.5,
+    "ActivityDescription": "Running, 8.6 mph (7 min/mile)"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18060",
+    "METValue": 12.5,
+    "ActivityDescription": "Canoeing, rowing, kayaking, competition, > 6 mph, vigorous effort"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19300",
+    "METValue": 12.5,
+    "ActivityDescription": "Skiing, roller, elite racers"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19142",
+    "METValue": 12.8,
+    "ActivityDescription": "Biathlon training, 5 degree incline, 8 km/h (5 mph), with/without rifle"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02288",
+    "METValue": 13.0,
+    "ActivityDescription": "Blackbox Immersive virtual reality exergaming system, vigorous intensity"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12110",
+    "METValue": 13.0,
+    "ActivityDescription": "Running, 9 mph (6.5 min/mile)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12200",
+    "METValue": 13.3,
+    "ActivityDescription": "Running, marathon"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19135",
+    "METValue": 13.3,
+    "ActivityDescription": "Skiing, cross-country, skating"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12341",
+    "METValue": 13.5,
+    "ActivityDescription": "Running uphill, 1.2 to 1.39 mph, 30-40% incline"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18104",
+    "METValue": 13.5,
+    "ActivityDescription": "Kayaking, competition"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19140",
+    "METValue": 13.5,
+    "ActivityDescription": "Skiing, cross-country, biathlon, skating technique"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01244",
+    "METValue": 13.8,
+    "ActivityDescription": "Bicycling, stationary, 270-305 watts, very vigorous"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12361",
+    "METValue": 13.8,
+    "ActivityDescription": "Running downhill, 8.0 to 10.5 mph, -3% to -9%"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15527",
+    "METValue": 13.8,
+    "ActivityDescription": "Race Walking, 3.7 m/s (8.3 mph)"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18270",
+    "METValue": 13.8,
+    "ActivityDescription": "Swimming, butterfly, general"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19050",
+    "METValue": 13.8,
+    "ActivityDescription": "Skating, speed, competitive"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01003",
+    "METValue": 14.0,
+    "ActivityDescription": "Bicycling, mountain, uphill, vigorous"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02074",
+    "METValue": 14.0,
+    "ActivityDescription": "Rowing, stationary, ≥ 200 watts, very vigorous effort"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12414",
+    "METValue": 14.0,
+    "ActivityDescription": "Running curved treadmill, 8.0 to 8.9 mph"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18390",
+    "METValue": 14.0,
+    "ActivityDescription": "Windsurfing, competition, pumping for speed"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19018",
+    "METValue": 14.0,
+    "ActivityDescription": "Skating, ice dancing"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15432",
+    "METValue": 14.3,
+    "ActivityDescription": "Taekwondo, combat simulation"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19335",
+    "METValue": 14.3,
+    "ActivityDescription": "Rollerskiing, 16-22 km/h, 2-5 degree incline"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18294",
+    "METValue": 14.5,
+    "ActivityDescription": "Swimming, crawl, elite swimmers, competition, >90 yards/minute"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12115",
+    "METValue": 14.8,
+    "ActivityDescription": "Running, 9.3 to 9.6 mph"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12170",
+    "METValue": 15.0,
+    "ActivityDescription": "Running, stairs, up"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19325",
+    "METValue": 15.0,
+    "ActivityDescription": "Rollerskiing, 24 - 27.9 km/h, no incline"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12265",
+    "METValue": 15.5,
+    "ActivityDescription": "Running uphill, 7.0 mph, 5% incline"
+  },
+  {
+    "MajorHeading": "Sports",
+    "ActivityCode": "15528",
+    "METValue": 15.5,
+    "ActivityDescription": "Race Walking, racing speed, 4.0 m/s (8.95 mph)"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17039",
+    "METValue": 15.5,
+    "ActivityDescription": "Climbing hills, no load, very steep grade (30-40%), 1.2 to 1.8 mph"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18112",
+    "METValue": 15.5,
+    "ActivityDescription": "Rowing, simulated crew in a water tank, single oar, 33 strokes/min,"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19130",
+    "METValue": 15.5,
+    "ActivityDescription": "Skiing, cross country, hard snow, uphill, maximum, snow mountaineering"
+  },
+  {
+    "MajorHeading": "Water Activities",
+    "ActivityCode": "18180",
+    "METValue": 15.8,
+    "ActivityDescription": "Skindiving, fast"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01004",
+    "METValue": 16.0,
+    "ActivityDescription": "Bicycling, mountain, competitive racing"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12350",
+    "METValue": 16.0,
+    "ActivityDescription": "Running, hilly terrain, ±100m change in elevation"
+  },
+  {
+    "MajorHeading": "Winter Activities",
+    "ActivityCode": "19112",
+    "METValue": 16.0,
+    "ActivityDescription": "Skiing, cross country, 12-16 mph, elite skier, racing"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01248",
+    "METValue": 16.3,
+    "ActivityDescription": "Bicycling, stationary, >325 watts, very vigorous"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12345",
+    "METValue": 16.3,
+    "ActivityDescription": "Running uphill, >1.6mph, 10-30% incline"
+  },
+  {
+    "MajorHeading": "Walking",
+    "ActivityCode": "17040",
+    "METValue": 16.3,
+    "ActivityDescription": "Climbing hills, no load, steep grade (10-40%), 1.8 to 5.0 mph"
+  },
+  {
+    "MajorHeading": "Bicycling",
+    "ActivityCode": "01060",
+    "METValue": 16.8,
+    "ActivityDescription": "Bicycling, >20 mph, racing, not drafting"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12130",
+    "METValue": 16.8,
+    "ActivityDescription": "Running, 11 mph (5.5 min/mile)"
+  },
+  {
+    "MajorHeading": "Occupation",
+    "ActivityCode": "11250",
+    "METValue": 17.5,
+    "ActivityDescription": "Forestry, ax chopping, very fast, 1.25 kg axe,  51 blows/min, extremely vigorous effort"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12325",
+    "METValue": 17.5,
+    "ActivityDescription": "Running uphill, 5.0 to 5.9 mph, 15% incline"
+  },
+  {
+    "MajorHeading": "Conditioning Exercise",
+    "ActivityCode": "02084",
+    "METValue": 18.0,
+    "ActivityDescription": "Ski ergometer, cross country, double poling, fast to maximum speed"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12184",
+    "METValue": 18.0,
+    "ActivityDescription": "Running, on track, 500-1500m, competitive"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12132",
+    "METValue": 18.5,
+    "ActivityDescription": "Running, 12 mph (5.0 min/mile)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12186",
+    "METValue": 19.3,
+    "ActivityDescription": "Running, on track, 2000-3000m, competitive"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12134",
+    "METValue": 19.8,
+    "ActivityDescription": "Running, 13 mph (4.6 min/mile)"
+  },
+  {
+    "MajorHeading": "Running",
+    "ActivityCode": "12135",
+    "METValue": 23.0,
+    "ActivityDescription": "Running, 14 mph (4.3 min/mile)"
+  }
+]

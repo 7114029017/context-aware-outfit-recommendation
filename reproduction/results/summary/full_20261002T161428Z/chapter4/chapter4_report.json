@@ -1,0 +1,201 @@
+{
+  "classification": "new single integrated full-run outputs",
+  "source_mode": "full",
+  "new_model_training_or_evaluation_performed_by_this_report": false,
+  "total_chapter4_tables": 20,
+  "numeric_comparison_rows": 112,
+  "numeric_rows_by_table": {
+    "4-11": 6,
+    "4-12": 18,
+    "4-13": 4,
+    "4-14": 6,
+    "4-15": 6,
+    "4-16": 9,
+    "4-3": 24,
+    "4-6": 6,
+    "4-7": 3,
+    "4-8": 30
+  },
+  "paper_display_match_4_3": 24,
+  "paper_display_match_4_8": 30,
+  "main_mean_status": {
+    "within_retrain_tolerance": 16,
+    "total_condition_means": 16
+  },
+  "ablation_reference_is_archived_T01_not_individual_paper_tables": true,
+  "secondary": {
+    "secondary_overall": "partial",
+    "secondary_module_statuses": {
+      "length": "exact",
+      "target_clue": "partial",
+      "judge_preserved_outputs": "exact",
+      "human_audit": "exact",
+      "case_analysis": "partial",
+      "two_tower": "exact",
+      "judge_robustness_sampling_provenance": "partial",
+      "judge_exact_generation": "partial",
+      "case_visuals": "partial"
+    },
+    "proxy_primary_unique_outfits": 35140
+  },
+  "input_evidence_sha256": {
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/main/summary/main_reproduction_summary.csv": "20f6173feedf3781ee5bb096ce13121d1e9c0201b70d5d9fe4d9ac9b975e4596",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/ablation/summary/fresh_fair_subset_5seed_summary.json": "23482b542e5e1eb31d994f83cc6fcbf3df5449c0fa28f02cabe62c1a9aecdae4",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/ablation/summary/archived_vs_fresh_T01_numeric_comparison.csv": "8274d56df2cc62945370ee13157037a1ed4f717bba5dc61ed82f1570041d9537",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/secondary/results/remaining_reproduction_matrix.json": "3e57c090cb1989401f094471cbe702a9358513ea250c67ada2ed42ba182460c4",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/secondary/results/judge/bottomp_recomputed.csv": "7869d26dc359d67fd35081ce3f17c62e80b4b6388a2e7b4b445c1768ccd21459",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/secondary/results/judge/table_4_8_paper_field_comparison.csv": "01678c3613f7b9fee2f6befdf7b8a4727ea7cdf61102eac6037a42ccb6f10583",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/secondary/results/environment_proxy/table_4_3_manifest.json": "b0d1b73562ef781cfa4cf2b93ce4b5385ff01e44adf133f8d025635aba2e79f7",
+    "/home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z/secondary/results/environment_proxy/table_4_3_paper_field_comparison.csv": "6c94a7cc7beec292ce2949afcf41e96b08d3bcce13c2d60a81d78256ba016243"
+  },
+  "overview": [
+    {
+      "table": "4-1",
+      "scope": "environment",
+      "checked_numeric_rows": 0,
+      "result": "provenance_only_or_not_independently_verified",
+      "limitation": "Runtime of this reproduction is recorded separately; exact 2025 environment is not proven."
+    },
+    {
+      "table": "4-2",
+      "scope": "method",
+      "checked_numeric_rows": 0,
+      "result": "provenance_only_or_not_independently_verified",
+      "limitation": "Archived model code runs with the standardized decoder implementation; historical CP decoder source not recovered."
+    },
+    {
+      "table": "4-3",
+      "scope": "preserved_numeric",
+      "checked_numeric_rows": 24,
+      "result": "all_checked_display_fields_match",
+      "limitation": "24 checked PDF-display fields from aligned saved CLO/MET/Tsub proxy outputs; independent MET valid source incomplete."
+    },
+    {
+      "table": "4-4",
+      "scope": "preserved_numeric",
+      "checked_numeric_rows": 0,
+      "result": "archived_length_reanalysis_exact",
+      "limitation": "Length correlations recalculated from archived seed-level rows; module-level archived-table comparison."
+    },
+    {
+      "table": "4-5",
+      "scope": "preserved_numeric",
+      "checked_numeric_rows": 0,
+      "result": "archived_length_reanalysis_exact",
+      "limitation": "Length matched-subset/bucket tables recalculated from archived outputs; module-level archived-table comparison."
+    },
+    {
+      "table": "4-6",
+      "scope": "partial",
+      "checked_numeric_rows": 6,
+      "result": "checked_counts_differ",
+      "limitation": "Historical P12 reliability_meta_from_subset.csv missing; present-day category reconstruction differs."
+    },
+    {
+      "table": "4-7",
+      "scope": "partial",
+      "checked_numeric_rows": 3,
+      "result": "checked_counts_differ",
+      "limitation": "Saved-output bottom-p intersections differ from thesis; cutoff ties and historical input/runtime identity unresolved."
+    },
+    {
+      "table": "4-8",
+      "scope": "preserved_numeric",
+      "checked_numeric_rows": 30,
+      "result": "all_checked_display_fields_match",
+      "limitation": "30 checked PDF-display fields from six saved Judge comparison files; no LLM rerun and historical 150-ID selection not recovered."
+    },
+    {
+      "table": "4-9",
+      "scope": "preserved_numeric",
+      "checked_numeric_rows": 0,
+      "result": "archived_human_audit_reanalysis_exact",
+      "limitation": "30-case coverage recomputed from selected archived records; source label-generation provenance not proven."
+    },
+    {
+      "table": "4-10",
+      "scope": "preserved_numeric",
+      "checked_numeric_rows": 0,
+      "result": "archived_human_audit_reanalysis_exact",
+      "limitation": "750 archived human judgments recomputed and compared to archived T30; no new human judgments."
+    },
+    {
+      "table": "4-11",
+      "scope": "main_numeric",
+      "checked_numeric_rows": 6,
+      "result": "main_condition_means_within_retrain_tolerance",
+      "limitation": "Fresh main CP condition means versus paper; paper SD/CI/p/effect sizes are NOT fully verified by this output."
+    },
+    {
+      "table": "4-12",
+      "scope": "main_numeric",
+      "checked_numeric_rows": 18,
+      "result": "main_condition_means_within_retrain_tolerance",
+      "limitation": "Fresh main OR condition means versus paper; paper SD/CI/p/significance stars are NOT fully verified."
+    },
+    {
+      "table": "4-13",
+      "scope": "candidate_numeric",
+      "checked_numeric_rows": 4,
+      "result": "candidate_ablation_vs_archived_T01_only_not_paper_table_exact",
+      "limitation": "CP Original/Context metrics compared ONLY against archived T01 aggregate; this is NOT the individual published Table 4-13 cell comparison."
+    },
+    {
+      "table": "4-14",
+      "scope": "candidate_numeric",
+      "checked_numeric_rows": 6,
+      "result": "candidate_ablation_vs_archived_T01_only_not_paper_table_exact",
+      "limitation": "OR Original/Context metrics compared ONLY against archived T01 aggregate; historical fair-subset membership not recovered."
+    },
+    {
+      "table": "4-15",
+      "scope": "candidate_numeric",
+      "checked_numeric_rows": 6,
+      "result": "candidate_ablation_vs_archived_T01_only_not_paper_table_exact",
+      "limitation": "CP factor-removal metrics compared ONLY against archived T01 aggregate; not a published Table 4-15 cell-by-cell test."
+    },
+    {
+      "table": "4-16",
+      "scope": "candidate_numeric",
+      "checked_numeric_rows": 9,
+      "result": "candidate_ablation_vs_archived_T01_only_not_paper_table_exact",
+      "limitation": "OR factor-removal metrics compared ONLY against archived T01 aggregate; some factor directions differ; historical subset ID missing."
+    },
+    {
+      "table": "4-17",
+      "scope": "archived_only",
+      "checked_numeric_rows": 0,
+      "result": "provenance_only_or_not_independently_verified",
+      "limitation": "Fresh rankings for identical set_id/target/seed/pool not independently matched against published examples."
+    },
+    {
+      "table": "4-18",
+      "scope": "archived_only",
+      "checked_numeric_rows": 0,
+      "result": "provenance_only_or_not_independently_verified",
+      "limitation": "Fresh rankings for identical set_id/target/seed/pool not independently matched against published examples."
+    },
+    {
+      "table": "4-19",
+      "scope": "archived_only",
+      "checked_numeric_rows": 0,
+      "result": "provenance_only_or_not_independently_verified",
+      "limitation": "Image-dependent human visual/color judgments not independently re-executed."
+    },
+    {
+      "table": "4-20",
+      "scope": "archived_only",
+      "checked_numeric_rows": 0,
+      "result": "provenance_only_or_not_independently_verified",
+      "limitation": "Identical-case fresh ranking comparison not independently verified."
+    }
+  ],
+  "limitations": [
+    "A full pipeline pass does not prove all 20 published tables match cell by cell.",
+    "Table 4-13..4-16 numeric rows refer to the archived T01 aggregate, not each separately printed thesis table.",
+    "Table 4-11..4-12 paper SD/CI/p/effect-size/significance cells are NOT individually compared.",
+    "Tables without independently verified cell-level sources remain explicitly provenance-only.",
+    "The original historical memberwise membership of the fair subset has not been recovered.",
+    "Judge robustness uses preserved compare outputs; no Qwen/Gemma inference is rerun."
+  ]
+}

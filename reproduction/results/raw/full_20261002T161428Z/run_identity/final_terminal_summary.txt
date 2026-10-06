@@ -1,0 +1,104 @@
+
+================================================================================================
+TORS THESIS REPRODUCTION — RESULT SUMMARY
+================================================================================================
+Source:   full_20261002T161428Z
+Status:   PASSED
+Started:  2026-10-02T16:14:28Z
+Finished: 2026-10-04T23:22:08Z
+Seeds:    1, 2, 3, 4, 5
+
+Table 4-11 — CP main experiment
+Metric  Thesis Orig  Repro Orig mean±SD  Thesis Ctx  Repro Ctx mean±SD  Δ Ctx-Orig  Paper check
+------  -----------  ------------------  ----------  -----------------  ----------  -----------
+AUC     0.9292       0.9268 ± 0.0040     0.9454      0.9456 ± 0.0010    +0.0188     OK         
+FITB    0.6374       0.6357 ± 0.0035     0.6478      0.6481 ± 0.0029    +0.0125     OK         
+
+Table 4-12 — OR/CIR main experiment
+Metric  Thesis Orig  Repro Orig mean±SD  Thesis Ctx  Repro Ctx mean±SD  Δ Ctx-Orig  Paper check
+------  -----------  ------------------  ----------  -----------------  ----------  -----------
+R@1     0.0139       0.0138 ± 0.0005     0.0151      0.0151 ± 0.0016    +0.0013     OK         
+R@3     0.0333       0.0333 ± 0.0011     0.0369      0.0372 ± 0.0014    +0.0038     OK         
+R@5     0.0476       0.0481 ± 0.0008     0.0557      0.0560 ± 0.0012    +0.0079     OK         
+R@10    0.0780       0.0782 ± 0.0012     0.0921      0.0927 ± 0.0020    +0.0145     OK         
+R@30    0.1677       0.1684 ± 0.0037     0.1874      0.1885 ± 0.0028    +0.0201     OK         
+R@50    0.2303       0.2303 ± 0.0032     0.2518      0.2532 ± 0.0023    +0.0229     OK         
+
+Teacher-requested significance check — five paired seeds, BH over 8 main metrics
+Metric  Mean Δ     raw p       BH p        Significant @ .05
+------  ---------  ----------  ----------  -----------------
+R@1     +0.001289  0.0947427   0.0947427   NO               
+R@3     +0.003823  0.00332533  0.00443377  YES              
+BH significant main metrics: 7/8
+
+Fair-subset ablation (reconstructed subset) — five-seed mean ± SD
+Metric  Original         Context          NoWeather        NoOccasion       NoStyle        
+------  ---------------  ---------------  ---------------  ---------------  ---------------
+AUC     0.9121 ± 0.0018  0.9271 ± 0.0015  0.9256 ± 0.0007  0.9223 ± 0.0038  0.9136 ± 0.0014
+FITB    0.6121 ± 0.0019  0.6226 ± 0.0031  0.6196 ± 0.0024  0.6203 ± 0.0029  0.6101 ± 0.0044
+R@10    0.0685 ± 0.0052  0.0753 ± 0.0043  0.0754 ± 0.0034  0.0790 ± 0.0012  0.0647 ± 0.0057
+R@30    0.1512 ± 0.0042  0.1693 ± 0.0046  0.1692 ± 0.0063  0.1710 ± 0.0041  0.1461 ± 0.0081
+R@50    0.2143 ± 0.0043  0.2308 ± 0.0066  0.2360 ± 0.0042  0.2350 ± 0.0030  0.2044 ± 0.0106
+Scope: reproducibly reconstructed 2026 fair subset; historical memberwise ID identity was not recovered.
+
+Teacher-requested OR ablation sign check — Without Factor minus Full Context (Table 4-16 convention)
+Factor    Metric     Fresh Δ    Fresh sign  Archived sign  Sign changed?
+--------  ---------  ---------  ----------  -------------  -------------
+Weather   Recall@10  +0.000058  positive    negative       YES          
+Weather   Recall@30  -0.000117  negative    negative       NO           
+Weather   Recall@50  +0.005186  positive    negative       YES          
+Occasion  Recall@10  +0.003671  positive    negative       YES          
+Occasion  Recall@30  +0.001690  positive    negative       YES          
+Occasion  Recall@50  +0.004138  positive    negative       YES          
+Comparable Weather/Occasion OR sign changes: 5/6
+
+Final evidence checks
+Check                                         Result
+--------------------------------------------  ------
+Main thesis-condition means within tolerance  16/16 
+Main Context-Original directions positive     8/8   
+Ablation training units verified              25/25 
+Ablation CIR evaluable queries / unit         3432  
+Chapter 4 table IDs represented               20/20 
+Chapter 4 scoped numeric rows                 112   
+Chapter 4 main means within tolerance         16/16 
+
+Interpretation / provenance
+- Main five-seed numerical reproduction is the primary fresh quantitative reproduction.
+- R@1 is not significant after BH correction; R@3 remains significant.
+- Weather/Occasion OR sign differences are retained rather than adjusted to match the thesis.
+- The fair-subset ablation is not claimed as source-exact because historical fair-subset memberwise IDs are missing.
+- Historical DecoderLayerWithCrossAttn definition was not preserved; all 2026 experiments use the standardized decoder implementation (torch.nn.TransformerDecoderLayer).
+
+================================================================================================
+PROFESSOR REPRODUCIBILITY CHECKLIST — REQUESTED 10 ITEMS
+================================================================================================
+[PASS] 1. Full-run start / finish time
+       Evidence: 2026-10-02T16:14:28Z -> 2026-10-04T23:22:08Z
+[PASS] 2. Explicit successful run status
+       Evidence: RUN_STATUS = PASSED
+[PASS] 3. Five actual seeds for main + ablation
+       Evidence: 1, 2, 3, 4, 5
+[PASS] 4. Per-seed raw results + aggregates
+       Evidence: raw: reproduction/runs/full_20261002T161428Z/main ; reproduction/runs/full_20261002T161428Z/ablation/runs | summary: reproduction/runs/full_20261002T161428Z/main/summary ; reproduction/runs/full_20261002T161428Z/ablation/summary | seed evidence: per-unit manifests inside the fresh run directory
+[PASS] 5. Automatic Table 4-11 / 4-12 / ablation outputs
+       Evidence: printed above; machine-readable main/, ablation/, chapter4/ outputs are preserved
+[PASS] 6. Tested README + one-command flow
+       Evidence: README: reproduction/README.md | command: bash reproduction/scripts/reproduce_all.sh | post-restructure --fresh run full_20260924T102513Z PASSED, bit-identical to reference | docs/post_restructure_fresh_run_verification.md
+[PASS] 7. Python / PyTorch / CUDA / major packages
+       Evidence: Python 3.12.3 | PyTorch 2.9.1+cu130 | CUDA 13.0 | cuDNN 91300 | details: reproduction/runs/full_20261002T161428Z/environment/environment_validation.json
+[PARTIAL] 8. Hyperparameter tuning provenance
+       Evidence: validation FITB accuracy + final settings recovered; historical candidate ranges/search method/trials/full winning rationale NOT RECOVERED | docs/hyperparameter_tuning.md + results/tuning.csv
+[PASS*] 9. Standardized decoder reason + impact
+       Evidence: standardized decoder implementation (torch.nn.TransformerDecoderLayer) because the historical DecoderLayerWithCrossAttn definition is missing; numerical reproduction supported, historical source-exact recovery NOT claimed | docs/standardized_decoder.md
+[READY] 10. GitHub final artifact / public release
+       Evidence: branch: thesis-full-reproduction | artifact commit: b9bf5aac7d07cb39cacc7f73eb28166848c19fe4 | public-access verification + fixed Release/Zenodo DOI remain PENDING RELEASE
+
+Checklist interpretation
+- Items 1-7 and 9 have concrete 2026 reproduction evidence; item 9 keeps its stated source-provenance caveat.
+- Item 8 remains PARTIAL because missing historical tuning trials/candidate ranges are not fabricated.
+- Item 10 is READY as a fixed artifact branch/commit, but public GitHub release / Zenodo DOI are still external release steps.
+- This checklist is printed so the reviewer does not need to manually search the repository for the ten requested items.
+
+Results root: /home/nchu5503/Documents/course/tors-cleanroom-20261003/context-aware-outfit-reproduction/reproduction/runs/full_20261002T161428Z
+================================================================================================

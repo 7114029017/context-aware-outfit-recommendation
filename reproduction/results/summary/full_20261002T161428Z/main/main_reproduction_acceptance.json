@@ -1,0 +1,8 @@
+{
+  "mode": "retrain",
+  "overall": "numerically_close_or_exact",
+  "all_primary_context_deltas_positive": true,
+  "all_condition_means_within_numeric_threshold": true,
+  "cp_input_rows_after_exact_dedup": 10,
+  "cir_input_rows_after_exact_dedup": 10
+}

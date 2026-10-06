@@ -1,0 +1,12 @@
+Category,Statistic,Value
+Dataset,Source,Polyvore Outfits Disjoint version (PO-D)
+Dataset split,Train / validation / test outfits,"16,995 / 3,000 / 15,145"
+Main experiment,Total outfits,"35,140"
+Outfit composition,Item occurrences,"175,485"
+Outfit composition,Unique items,"152,785"
+Outfit composition,Mean / median outfit length,4.99 / 5.00 items
+Original title field,Empty titles,5945 (16.92%)
+Original title field,Mean / median / max length,1.83 / 2.00 / 5 tokens
+Original title field,Titles ≤ 3 tokens,96.49%
+Generated description,Mean / median / max length,10.08 / 10.00 / 27 tokens
+Generated description,Mean / median / max length without temperature prefix,9.08 / 9.00 / 26 tokens

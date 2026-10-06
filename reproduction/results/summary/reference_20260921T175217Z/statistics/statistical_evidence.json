@@ -1,0 +1,42 @@
+{
+  "classification": "post-training statistical analysis; no models trained",
+  "main_scope": "full-data main CP/OR Original vs Context seeds 1..5",
+  "test": "two-sided paired t-test on context-original per seed, df=4",
+  "confidence_interval": "95% two-sided t confidence interval on mean paired difference",
+  "bh_family": [
+    "cp_auc",
+    "cp_fitb",
+    "or_r1",
+    "or_r3",
+    "or_r5",
+    "or_r10",
+    "or_r30",
+    "or_r50"
+  ],
+  "alpha": 0.05,
+  "ablation_scope": "fresh 5-seed reconstructed candidate fair-subset",
+  "ablation_delta_definition": "full_context_minus_without_factor",
+  "ablation_reference": "archived T01 aggregate; not paper Tables 4-13 through 4-16 cellwise proof",
+  "input_sha256": {
+    "main/summary/main_reproduction_summary.csv": "20f6173feedf3781ee5bb096ce13121d1e9c0201b70d5d9fe4d9ac9b975e4596",
+    "ablation/summary/fresh_5variant_8metric_summary.csv": "71c471f1bc214b13d628a5fa5e356cc5dcc5a1b617924cac3e23952253d93647",
+    "ablation/summary/archived_vs_fresh_T01_numeric_comparison.csv": "54562f5ac4c33aeb3b32662828844afabb9cdcc9d58c417183db543bbe4e8ce0"
+  },
+  "source_run_git_commit": "eb081e7a426cf5bd91acd8bb0f92a8398f08f45e",
+  "analysis_script_sha256": "8880e81235a66f84ebe64ab5fc48ecaed50855c76f909d28b979ea7a46c3ed27",
+  "full_main_R1_R3": {
+    "or_r1": {
+      "delta_mean": 0.001288798195682526,
+      "p_value": 0.09474267756176159,
+      "bh_adjusted_p_8_main": 0.09474267756176159,
+      "significant_bh_0_05": false
+    },
+    "or_r3": {
+      "delta_mean": 0.003823434647191494,
+      "p_value": 0.003325329545801671,
+      "bh_adjusted_p_8_main": 0.004433772727735561,
+      "significant_bh_0_05": true
+    }
+  },
+  "note": "Mean-positive is not synonymous with statistically significant; no source-exact historical ablation claim."
+}

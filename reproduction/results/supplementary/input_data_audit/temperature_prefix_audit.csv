@@ -1,0 +1,5 @@
+split,descriptions,matching,mismatching,only the decimal digit kept,minus sign dropped,no pattern,no temperature prefix,integer format,one-decimal format
+train,16995,14918,2077,2036,41,0,0,16982,13
+valid,3000,3000,0,0,0,0,0,0,3000
+test,15145,15105,40,0,0,40,0,0,15145
+all,35140,33023,2117,2036,41,40,0,16982,18158

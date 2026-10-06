@@ -1,0 +1,14 @@
+quantity,value
+train outfits,16995
+validation outfits,3000
+test outfits,15145
+all outfits,35140
+generated descriptions,35140
+CP test pairs,30290
+CP positive pairs,15145
+CP negative pairs,15145
+FITB questions,15145
+CIR evaluable queries,9311
+"CIR excluded queries (no 3,000-item pool)",5834
+CIR target fine-grained categories,19
+original text records,68306

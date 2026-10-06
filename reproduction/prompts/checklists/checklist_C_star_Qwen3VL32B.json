@@ -1,0 +1,64 @@
+{
+  "checklist": [
+    {
+      "id": "c8",
+      "text": "Does the description avoid introducing elements or details not visually present in the outfit collage?",
+      "weight": 4,
+      "category": "grounding"
+    },
+    {
+      "id": "c1",
+      "text": "Does the description include the temperature in °C and a qualitative thermal feeling (e.g., cool, warm, hot) relevant to the outfit?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    },
+    {
+      "id": "c2",
+      "text": "Does the description specify the overall style or theme of the outfit (e.g., beach chic, gothic, sporty)?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    },
+    {
+      "id": "c4",
+      "text": "Does the description indicate the occasion or context for which the outfit is suitable (e.g., date, wedding, night out)?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    },
+    {
+      "id": "c3",
+      "text": "Does the description mention the primary color scheme or key colors present in the outfit?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c5",
+      "text": "Does the description capture the mood or aesthetic tone (e.g., effortless, glamorous, sophisticated)?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c7",
+      "text": "Does the description use concise, query-style language appropriate for a search or request?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c6",
+      "text": "Does the description reference the main garment or item that defines the outfit (e.g., dress, bikini, vest)?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c9",
+      "text": "Does the description logically connect the visual elements into a coherent outfit narrative?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c10",
+      "text": "Is the description grammatically correct and fluent, with natural phrasing for a user query?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    }
+  ]
+}

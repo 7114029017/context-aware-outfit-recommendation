@@ -1,0 +1,10 @@
+# Copy to paths.reproduction.local.yaml if useful.
+# This example is documentation only; current scripts accept CLI paths.
+
+project_root: /home/ester/context-aware-outfit-recommendation
+polyvore_root: /path/to/polyvore_outfits
+historical_workspace: /home/ester/valid_description
+
+# Expected repository paths
+feature_dir: 02_模型訓練和驗證_model_training_validation/fashionclip_data
+checkpoint_dir: 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints

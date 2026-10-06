@@ -1,0 +1,17 @@
+Category,Statistic,Value
+Dataset,Source,Polyvore Outfits Disjoint version (PO-D)
+Dataset split,Train / validation / test / total outfits,"16,995 / 3,000 / 15,145 / 35,140"
+Dataset split,Generated-valid descriptions aligned to PO-D,"35,140 / 35,140 (100.00%)"
+Reference metadata,Original Polyvore title metadata records,"68,306 (metadata pool only; not main experimental N)"
+CP evaluation,Compatibility test pairs,"30,290"
+CP evaluation,FITB test questions,"15,145"
+CIR evaluation,Initial test questions before CIR eligibility filtering,"15,145"
+CIR evaluation,Evaluable query-target pairs per seed,"9,311 (9,311 unique pairs)"
+CIR evaluation,Excluded from CIR recall computation,"5,834 test questions"
+CIR evaluation,"Reason for 9,311 rather than 15,145",CIR keeps only target fine-grained categories with an eligible same-category distractor pool in the original evaluation; skipped cases are not CP cases.
+CIR evaluation,Target fine-grained categories represented in CIR detail,19
+CIR evaluation,Seed-level paired CIR records across 5 seeds,"46,555"
+Supplementary no-missing ablation,no_missing_none_ids total / test overlap,"21,903 / 9,930"
+Supplementary no-missing ablation,CIR evaluable pairs per seed under experiments_none_only,"3,432 (not the main experiment scope)"
+Outfit composition,Item occurrences / unique items,"175,485 / 152,785"
+Outfit composition,Mean / median outfit length,4.99 / 5.00 items

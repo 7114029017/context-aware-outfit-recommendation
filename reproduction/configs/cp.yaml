@@ -1,0 +1,127 @@
+schema_version: 1
+artifact_role: TORS_A5_experiment_config
+task: compatibility_prediction
+task_short_name: CP
+status: evidence_backed_reproduction_config
+audit_baseline_commit: 7a5cc9cd8f884865e1e27a234c18dd132f949598
+
+provenance:
+  primary_sources:
+    - reproduction/configs/main_hybrid_attention.yaml
+    - 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/base_config.py
+    - 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cp.py
+  historical_source_exact: false
+  limitation: exact historical DecoderLayerWithCrossAttn implementation is not archived
+  reproduction_interpretation: standard-decoder candidate is numerical evidence, not source-exact history
+
+dataset:
+  name: Polyvore Outfits Disjoint
+  split: disjoint
+  train_outfits: 16995
+  validation_outfits: 3000
+  test_outfits: 15145
+  test_compatibility_pairs: 30290
+  test_fitb_questions: 15145
+  manifests:
+    train: reproduction/splits/train_ids.csv
+    validation: reproduction/splits/validation_ids.csv
+    test: reproduction/splits/test_ids.csv
+    compatibility: reproduction/splits/cp_ids.csv
+    fitb: reproduction/splits/fitb_ids.csv
+
+conditions:
+  original:
+    outfit_feature: encoded_outfitUrlTitle_en_fashionClip.pkl
+  context_aware:
+    outfit_feature: encoded_NewoutfitUrlTitle_en_fashionClip.pkl
+
+features:
+  image:
+    source: FashionCLIP
+    representation_dim: 512
+    archived_file: img_feats_fashionClip.pkl
+    exact_upstream_revision: null
+    exact_upstream_revision_status: not_established_in_handoff
+  item_text:
+    source: sentence-transformers/distiluse-base-multilingual-cased-v2
+    representation_dim: 512
+    archived_file: encoded_title_description_distiluse-base-multilingual-cased-v2.pkl
+    exact_upstream_revision: null
+    exact_upstream_revision_status: not_established_in_handoff
+  category:
+    archived_file: encoded_category_distiluse-base-multilingual-cased-v2.pkl
+  outfit_text:
+    representation_dim: 512
+
+model:
+  class: OutfitTransformerPrediction
+  image_encoder: LinearImageEncoder
+  text_encoder: LinearTextEncoder
+  image_embedding_dim: 64
+  item_text_embedding_dim: 64
+  outfit_text_embedding_dim: 128
+  attention_heads: 16
+  transformer_layers: 3
+  dropout: 0.1
+  max_outfit_items: 16
+  use_outfit_text: true
+  historical_decoder_symbol: DecoderLayerWithCrossAttn
+  historical_decoder_source_available: false
+
+training:
+  init_from: scratch
+  epochs: 100
+  batch_size: 50
+  optimizer:
+    class: Adam
+    learning_rate: 0.00005
+    weight_decay: 0.0
+  gradient_accumulation_steps: 1
+  gradient_clip_norm: 0.5
+  precision: float16
+  grad_scaler: true
+  compile_model: false
+  loss:
+    base: binary_classification_loss_from_model
+    positive_negative_batches: true
+    hard_negative_loss_added_from_epoch_inclusive: 40
+  hard_negative:
+    enabled_from_epoch_inclusive: 40
+    source: dataset_sample_hard_negative
+  scheduler:
+    class: StepLR
+    constructor_step_size: 1
+    gamma: 0.5
+    scheduler_step_call: every_10_epochs
+    effective_note: scheduler.step() is called when epoch modulo 10 equals 0
+  warmup: none
+  early_stopping: false
+  train_shuffle: true
+  validation_shuffle: false
+  evaluation_interval_epochs: 1
+  checkpoint_selection:
+    metric: validation_fitb_accuracy
+    direction: maximize
+    save_on_improvement: true
+
+reproducibility:
+  seeds: [1, 2, 3, 4, 5]
+  seed_fields:
+    python_random: run_seed
+    numpy: run_seed
+    torch: run_seed
+    torch_cuda_all: run_seed
+  cudnn_deterministic: true
+  cudnn_benchmark: false
+  tf32_matmul: true
+  tf32_cudnn: true
+  gpu_count: 1
+  average_runtime: null
+  average_runtime_status: use_run_manifests_when_available_not_historical_memory
+
+evaluation:
+  metrics:
+    - roc_auc
+    - fitb_accuracy
+  expected_results_document: reproduction/docs/expected_results.md
+  acceptance_matrix: reproduction/docs/tors_compliance.md

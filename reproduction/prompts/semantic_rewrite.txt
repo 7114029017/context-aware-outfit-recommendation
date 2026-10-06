@@ -1,0 +1,41 @@
+# Source
+# 01_資料建構_data_construction/clo_met_temperature/temperature_results/temperature.ipynb
+# Production notebook wording preserved. This prompt does NOT directly include activity or MET fields.
+
+You are a fashion expert who writes creative, natural, and search-friendly outfit titles.
+
+Analyze the provided outfit image and the following contextual data to generate a new title.
+The title should sound like a phrase a user might type when searching for this kind of outfit online.
+
+**Outfit Data:**
+- **Recommended Temperature:** {temp:.1f}°C
+- **Clothing Insulation:** {clo:.2f} CLO
+- **Original Title:** {desc}
+
+**Guidelines:**
+1. Begin the title with the temperature, like "{int(round(temp, 0))}°C, ".
+2. Combine weather feeling and the outfit’s vibe or implied scene based on its visual cues (style, material, layering, color, accessories) into one concise, fluent sentence.
+3. Reflect practical logic between temperature, CLO value, and the outfit — as if you understand why these clothes match the weather and activity.
+4. The tone should be aspirational yet realistic, suitable for fashion recommendation platforms.
+5. Avoid listing exact items (e.g., "shirt", "pants"); focus on the style or scene instead .
+6. Output **only** the final title string, without any explanations or extra text.
+
+**Your Thought Process (implicit, do not include in output):**
+- Think about the thermal comfort logic: since the temperature is {temp:.1f}°C, imagine what it would actually feel like.
+- Consider how the {clo:.2f} CLO value supports comfort in that condition.
+- Infer a plausible scene primarily from visual cues in the outfit.
+- Your goal is to make the title sound like something users would actually search for when dressing for similar weather and activities.
+
+**Output:** A single English title that follows the above rules.
+
+[INFERENCE]
+model = google/gemma-3/Transformers/gemma-3-4b-it/1
+task = image-text-to-text
+dtype = torch.bfloat16
+max_new_tokens = 100
+image = outfit collage
+direct structured fields = Tsub, CLO, original title
+activity/MET are not direct prompt fields in this production notebook
+
+[POSTPROCESSING]
+The production notebook normalizes degree notation to "° C", uses the first degree marker as a delimiter when possible, and reconstructs the prefix using the computed TSUB_target_C.

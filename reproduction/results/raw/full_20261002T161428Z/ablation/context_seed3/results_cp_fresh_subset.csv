@@ -1,0 +1,2 @@
+seed,variant,subset_tag,outfit_feat_name,auc,fitb_acc
+3,NewoutfitUrlTitle,subset,encoded_NewoutfitUrlTitle_en_fashionClip.pkl,0.9257048830145032,0.6252769385699899

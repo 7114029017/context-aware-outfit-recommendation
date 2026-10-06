@@ -1,0 +1,26 @@
+{
+  "reference_id": "reference_20260921T175217Z",
+  "classification": "completed 2026 reproduction reference outputs",
+  "training_commit": "eb081e7a426cf5bd91acd8bb0f92a8398f08f45e",
+  "run_status": "PASSED",
+  "started_utc": "2026-09-21T17:52:17Z",
+  "finished_utc": "2026-09-23T19:34:44Z",
+  "duration_seconds": 178947,
+  "training_units": {
+    "main": 10,
+    "candidate_ablation": 25,
+    "total": 35
+  },
+  "raw_counts": {
+    "main_metric_csv": 20,
+    "main_manifests": 20,
+    "ablation_metric_csv": 50,
+    "ablation_row_detail_csv": 25,
+    "ablation_manifests": 25
+  },
+  "provenance_limits": [
+    "Historical fair-subset memberwise ID file was not recovered; the preserved 2026 subset is an explicitly labeled reconstructed candidate.",
+    "Historical DecoderLayerWithCrossAttn source/forward was not recovered; the completed fresh run used the documented temporary standard PyTorch decoder candidate reconstruction.",
+    "Repository restructuring after this run did not trigger another 35-unit training execution."
+  ]
+}

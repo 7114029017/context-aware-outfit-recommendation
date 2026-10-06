@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="412.00558pt" height="311.312076pt" viewBox="0 0 412.00558 311.312076" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-04T16:19:06.256637</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 311.312076 
+L 412.00558 311.312076 
+L 412.00558 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 73.548438 273.142857 
+L 404.80558 273.142857 
+L 404.80558 7.2 
+L 73.548438 7.2 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 73.548438 273.142857 
+L 73.548438 7.2 
+" clip-path="url(#pf481695f6b)" style="fill: none; stroke-dasharray: 1.665,0.72; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.32; stroke-width: 0.45"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="mfeab90e5ed" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mfeab90e5ed" x="73.548438" y="273.142857" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="73.548438" y="287.337232" transform="rotate(-0 73.548438 287.337232)">0.00</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 140.756915 273.142857 
+L 140.756915 7.2 
+" clip-path="url(#pf481695f6b)" style="fill: none; stroke-dasharray: 1.665,0.72; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.32; stroke-width: 0.45"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mfeab90e5ed" x="140.756915" y="273.142857" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="140.756915" y="287.337232" transform="rotate(-0 140.756915 287.337232)">0.01</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 207.965392 273.142857 
+L 207.965392 7.2 
+" clip-path="url(#pf481695f6b)" style="fill: none; stroke-dasharray: 1.665,0.72; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.32; stroke-width: 0.45"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mfeab90e5ed" x="207.965392" y="273.142857" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 9px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="207.965392" y="287.337232" transform="rotate(-0 207.965392 287.337232)">0.02</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 275.173869 273.142857 
+L 275.173869 7.2 
+" clip-path="url(#pf481695f6b)" style="fill: none; stroke-dasharray: 1.665,0.72; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.32; stroke-width: 0.45"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mfeab90e5ed" x="275.173869" y="273.142857" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 9px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="275.173869" y="287.337232" transform="rotate(-0 275.173869 287.337232)">0.03</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 342.382347 273.142857 
+L 342.382347 7.2 
+" clip-path="url(#pf481695f6b)" style="fill: none; stroke-dasharray: 1.665,0.72; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.32; stroke-width: 0.45"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mfeab90e5ed" x="342.382347" y="273.142857" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 9px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.382347" y="287.337232" transform="rotate(-0 342.382347 287.337232)">0.04</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="239.177009" y="301.568326" transform="rotate(-0 239.177009 301.568326)">Weighted item disagreement rate (0-1)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11">
+      <defs>
+       <path id="m6c7a6faac7" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="252.85908" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="256.05658" transform="rotate(-0 66.548438 256.05658)">Gemma c7</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="232.370416" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="235.567916" transform="rotate(-0 66.548438 235.567916)">Gemma c2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="211.881752" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="215.079252" transform="rotate(-0 66.548438 215.079252)">Gemma c5</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="191.393088" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="194.590588" transform="rotate(-0 66.548438 194.590588)">Gemma c8</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="170.904424" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="174.101924" transform="rotate(-0 66.548438 174.101924)">Gemma c3</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="150.415761" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="153.613261" transform="rotate(-0 66.548438 153.613261)">Qwen c3</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="129.927097" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="133.124597" transform="rotate(-0 66.548438 133.124597)">Qwen c4</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="109.438433" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="112.635933" transform="rotate(-0 66.548438 112.635933)">Qwen c1</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="88.949769" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="92.147269" transform="rotate(-0 66.548438 92.147269)">Gemma c1</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="68.461105" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="71.658605" transform="rotate(-0 66.548438 71.658605)">Qwen c2</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="47.972441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="51.169941" transform="rotate(-0 66.548438 51.169941)">Qwen c8</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m6c7a6faac7" x="73.548438" y="27.483777" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: end" x="66.548438" y="30.681277" transform="rotate(-0 66.548438 30.681277)">Gemma c15</text>
+     </g>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 10px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="15.19375" y="140.171429" transform="rotate(-90 15.19375 140.171429)">Checklist item ID</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 73.548438 261.054545 
+L 236.192953 261.054545 
+L 236.192953 244.663614 
+L 73.548438 244.663614 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 73.548438 240.565882 
+L 236.192953 240.565882 
+L 236.192953 224.17495 
+L 73.548438 224.17495 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 73.548438 220.077218 
+L 236.192953 220.077218 
+L 236.192953 203.686287 
+L 73.548438 203.686287 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 73.548438 199.588554 
+L 257.02758 199.588554 
+L 257.02758 183.197623 
+L 73.548438 183.197623 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 73.548438 179.09989 
+L 257.02758 179.09989 
+L 257.02758 162.708959 
+L 73.548438 162.708959 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 73.548438 158.611226 
+L 277.190124 158.611226 
+L 277.190124 142.220295 
+L 73.548438 142.220295 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #2f77b4; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 73.548438 138.122562 
+L 287.271395 138.122562 
+L 287.271395 121.731631 
+L 73.548438 121.731631 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #2f77b4; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 73.548438 117.633898 
+L 287.271395 117.633898 
+L 287.271395 101.242967 
+L 73.548438 101.242967 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #2f77b4; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 73.548438 97.145234 
+L 304.073515 97.145234 
+L 304.073515 80.754303 
+L 73.548438 80.754303 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 73.548438 76.656571 
+L 318.187295 76.656571 
+L 318.187295 60.265639 
+L 73.548438 60.265639 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #2f77b4; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 73.548438 56.167907 
+L 318.187295 56.167907 
+L 318.187295 39.776976 
+L 73.548438 39.776976 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #2f77b4; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 73.548438 35.679243 
+L 345.070686 35.679243 
+L 345.070686 19.288312 
+L 73.548438 19.288312 
+z
+" clip-path="url(#pf481695f6b)" style="fill: #f28e2b; stroke: #000000; stroke-width: 0.55; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 73.548438 273.142857 
+L 73.548438 7.2 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 404.80558 273.142857 
+L 404.80558 7.2 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 73.548438 273.142857 
+L 404.80558 273.142857 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 73.548438 7.2 
+L 404.80558 7.2 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="241.16181" y="255.062205" transform="rotate(-0 241.16181 255.062205)">0.024</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="241.16181" y="234.573541" transform="rotate(-0 241.16181 234.573541)">0.024</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="241.16181" y="214.084877" transform="rotate(-0 241.16181 214.084877)">0.024</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="261.996438" y="193.596213" transform="rotate(-0 261.996438 193.596213)">0.027</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="261.996438" y="173.107549" transform="rotate(-0 261.996438 173.107549)">0.027</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="282.158981" y="152.618886" transform="rotate(-0 282.158981 152.618886)">0.030</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="292.240252" y="132.130222" transform="rotate(-0 292.240252 132.130222)">0.032</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="292.240252" y="111.641558" transform="rotate(-0 292.240252 111.641558)">0.032</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="309.042372" y="91.152894" transform="rotate(-0 309.042372 91.152894)">0.034</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="323.156152" y="70.66423" transform="rotate(-0 323.156152 70.66423)">0.036</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="323.156152" y="50.175566" transform="rotate(-0 323.156152 50.175566)">0.036</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="350.039543" y="29.686902" transform="rotate(-0 350.039543 29.686902)">0.040</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_19">
+     <path d="M 343.98933 269.142857 
+L 399.20558 269.142857 
+Q 400.80558 269.142857 400.80558 267.542857 
+L 400.80558 243.575357 
+Q 400.80558 241.975357 399.20558 241.975357 
+L 343.98933 241.975357 
+Q 342.38933 241.975357 342.38933 243.575357 
+L 342.38933 267.542857 
+Q 342.38933 269.142857 343.98933 269.142857 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="patch_20">
+     <path d="M 345.58933 251.570357 
+L 361.58933 251.570357 
+L 361.58933 245.970357 
+L 345.58933 245.970357 
+z
+" style="fill: #2f77b4; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_32">
+     <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="367.98933" y="251.570357" transform="rotate(-0 367.98933 251.570357)">Qwen</text>
+    </g>
+    <g id="patch_21">
+     <path d="M 345.58933 263.954107 
+L 361.58933 263.954107 
+L 361.58933 258.354107 
+L 345.58933 258.354107 
+z
+" style="fill: #f28e2b; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_33">
+     <text style="font-size: 8px; font-family: 'Microsoft JhengHei', 'DejaVu Sans', sans-serif; text-anchor: start" x="367.98933" y="263.954107" transform="rotate(-0 367.98933 263.954107)">Gemma</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf481695f6b">
+   <rect x="73.548438" y="7.2" width="331.257143" height="265.942857"/>
+  </clipPath>
+ </defs>
+</svg>

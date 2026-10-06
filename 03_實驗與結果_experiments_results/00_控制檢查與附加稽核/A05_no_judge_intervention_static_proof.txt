@@ -1,0 +1,29 @@
+LLM-as-a-Judge no-intervention proof
+日期：2026-06-29
+
+結論：
+本次靜態檢查沒有在 downstream training/evaluation/result-analysis pipeline 中找到 phase3_scores、Qwen/Gemma judge score、rewrite_qwen、rewrite_gemma 或 checklist_C 等 judge artifact 的引用。
+因此目前證據支持：LLM-as-a-Judge 的 score/rewrite 欄位是 post-hoc quality/usability assessment，不是訓練、評估、篩選或模型選擇的介入條件。
+
+需要在論文避免的寫法：
+- judge 篩選低品質資料後才進入訓練
+- 符合品質控管標準才納入模型訓練與評估
+- judge rewrite 被用於改寫下游描述
+
+建議論文寫法：
+LLM-as-a-Judge was used only for post-hoc quality/usability assessment. The judge score and rewrite fields were not used to modify descriptions, filter samples, train the recommendation models, evaluate retrieval/compatibility performance, or select checkpoints.
+
+被搜尋的 downstream 檔案：
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/train_cp.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/train_cir.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/evaluate_cp.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/evaluate_cir.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/CP_evaluate.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/dataset.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/outfit_transformer.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/utils.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/config/base_config.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/config/cp_cond_hardneg.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/config/cir_cond_hardneg.py :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/5筆資料 t-test.ipynb :: no_judge_artifact_reference_found
+- /home/ester/valid_description/text-conditioned-outfit-recommendation/新描述 t-test.ipynb :: no_judge_artifact_reference_found

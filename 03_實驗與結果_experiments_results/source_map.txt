@@ -1,0 +1,276 @@
+Artifact source map
+
+Each artifact points to source code located inside its own experiment folder.
+
+- T00_dataset_characterization_po_d_main.csv
+  location: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope
+  source program: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/source_programs/P12_dataset_scope_reproducible.ipynb
+  status: placement=OK; code=OK
+- T00_dataset_overview_po_d_main.csv
+  location: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope
+  source program: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/source_programs/P12_dataset_scope_reproducible.ipynb
+  status: placement=OK; code=OK
+- T01_text_field_comparison_po_d_main.csv
+  location: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope
+  source program: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/source_programs/P12_dataset_scope_reproducible.ipynb
+  status: placement=OK; code=OK
+- 套裝描述改寫(含天氣、行程與風格) 的複本 (4).png
+  location: /home/ester/context-aware-outfit-recommendation/01_資料建構_data_construction/generated_descriptions
+  source program: Manual/static explanatory figure
+  status: placement=OK; code=Manual/static explanatory figure
+- F12_reliability_performance_comparison.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb
+  status: placement=OK; code=OK
+- F13_reliability_diagram_comparison.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb
+  status: placement=OK; code=OK
+- F14_reliability_error_slicing_comparison.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb
+  status: placement=OK; code=OK
+- F15_reliability_subgroup_hit10_comparison.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb
+  status: placement=OK; code=OK
+- F16_reliability_subgroup_delta_hit10_heatmap.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb
+  status: placement=OK; code=OK
+- F17_judge_qwen_gemma_score_histogram.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb
+  status: placement=OK; code=OK
+- F18_judge_qwen_gemma_quantile_confusion.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb
+  status: placement=OK; code=OK
+- F19_judge_bottomp_sensitivity_overlap_band.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb
+  status: placement=OK; code=OK
+- F20_prompt_robustness_absolute_difference.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P06_prompt_robustness_reproducible.ipynb
+  status: placement=OK; code=OK
+- T18_reliability_required_fields_compare.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb
+  status: placement=OK; code=OK
+- T19_judge_qwen_gemma_agreement_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb
+  status: placement=OK; code=OK
+- T20_judge_qwen_gemma_correlation_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb
+  status: placement=OK; code=OK
+- T21_judge_qwen_gemma_threshold_agreement.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb
+  status: placement=OK; code=OK
+- A08_length_performance_correlation_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/01_文字長度影響分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/01_文字長度影響分析/source_programs/P12_length_defense_reproducible.ipynb
+  status: placement=OK; code=OK
+- A09_length_bucket_performance_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/01_文字長度影響分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/01_文字長度影響分析/source_programs/P12_length_defense_reproducible.ipynb
+  status: placement=OK; code=OK
+- A10_matched_length_subset_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/01_文字長度影響分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/01_文字長度影響分析/source_programs/P12_length_defense_reproducible.ipynb
+  status: placement=OK; code=OK
+- A03_target_item_clue_leakage_audit_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/02_目標單品線索檢查
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/02_目標單品線索檢查/source_programs/P12_target_clue_leakage_reproducible.ipynb
+  status: placement=OK; code=OK
+- F01_main_factor_contribution_proportion.pdf
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- A14_statistical_rigor_ci_adjusted_p_effect_sizes.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P12_statistical_rigor_reproducible.ipynb
+  status: placement=OK; code=OK
+- T01_main_overall_baseline_and_ablation.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T02_main_significance_tests.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T03_stage1_cp_original_vs_full.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T04_stage1_cir_original_vs_full.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T05_stage2_cp_ablation.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T06_stage2_cir_ablation.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T07_stage2_factor_contribution_ratio.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T08_stage1_cp_seed_detail.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T09_stage1_cir_seed_detail.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T10_stage2_cp_seed_detail.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- T11_stage2_cir_seed_detail.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb
+  status: placement=OK; code=OK
+- F02_subset_hitrate_comparison.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- F03_subset_delta_hit10_heatmap.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- F04_subset_ablation_across_subsets.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- F05_subset_per_dimension_bars.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- F06_subset_rank_improvement_by_subset.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- F07_qualitative_category_original_vs_full.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F08_qualitative_condition_occasion_original_vs_full.png
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F08a_qualitative_category_context_aware_vs_original.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F09_qualitative_category_weather.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F09a_weather_terms_context_aware_vs_original.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F09b_weather_term_contribution_no_weather_vs_full.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F10_qualitative_category_occasion.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F10a_occasion_terms_context_aware_vs_original.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F10b_occasion_term_contribution_no_occasion_vs_full.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F11_qualitative_category_style.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F11a_style_terms_context_aware_vs_original.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F11b_style_term_contribution_no_style_vs_full.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- F21_qualitative_retrieval_case_original_vs_context_aware.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- T12_subset_robustness_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- T13_subset_delta_hit10_pivot.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
+  status: placement=OK; code=OK
+- T14_qualitative_condition_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- T15_qualitative_category_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- T16_qualitative_failure_cases.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- T17_qualitative_user_cases.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb
+  status: placement=OK; code=OK
+- A30_second_model_two_tower_seed_summary.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/05_第二模型驗證
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/05_第二模型驗證/source_programs/P15_fashionclip_text_conditioned_retrieval_baseline.ipynb
+  status: placement=OK; code=OK
+- A32_second_model_two_tower_mean_std.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/05_第二模型驗證
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/05_第二模型驗證/source_programs/P15_fashionclip_text_conditioned_retrieval_baseline.ipynb
+  status: placement=OK; code=OK
+- F34a_counterfactual_context_larger_response_example.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/06_反事實情境敏感度
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/06_反事實情境敏感度/source_programs/P16_counterfactual_context_consistency_check.ipynb
+  status: placement=OK; code=OK
+- F34b_counterfactual_context_limited_response_example.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/06_反事實情境敏感度
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/06_反事實情境敏感度/source_programs/P16_counterfactual_context_consistency_check.ipynb
+  status: placement=OK; code=OK
+- F30_human_audit30_sampling_coverage.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb
+  status: placement=OK; code=OK
+- F31_human_audit30_model_human_error_metrics.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb
+  status: placement=OK; code=OK
+- F32_human_audit30_model_human_score_scatter.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb
+  status: placement=OK; code=OK
+- F33_human_audit30_item_disagreement_ranking.svg
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb
+  status: placement=OK; code=OK
+- T30_human_audit30_model_human_score_metrics.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb
+  status: placement=OK; code=OK
+- T31_human_audit30_item_disagreement.csv
+  location: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷
+  source program: /home/ester/context-aware-outfit-recommendation/03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb
+  status: placement=OK; code=OK

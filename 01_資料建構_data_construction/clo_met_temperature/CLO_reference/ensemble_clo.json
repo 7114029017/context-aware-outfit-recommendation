@@ -1,0 +1,418 @@
+[
+  {
+    "description": "T-shirt 1 + Shorts",
+    "clo": 0.35
+  },
+  {
+    "description": "Walking shorts, short-sleeve shirt",
+    "clo": 0.36
+  },
+  {
+    "description": "T-shirt 2 + Shorts",
+    "clo": 0.37
+  },
+  {
+    "description": "Sports long sleeve 1 + Sweatpants (middle)",
+    "clo": 0.47
+  },
+  {
+    "description": "Knee-length skirt, short-sleeve shirt (sandals)",
+    "clo": 0.54
+  },
+  {
+    "description": "Polo shirt + Light skirt",
+    "clo": 0.54
+  },
+  {
+    "description": "Short-sleeved shirt + Casual pants (thin)",
+    "clo": 0.56
+  },
+  {
+    "description": "Trousers, short-sleeve shirt",
+    "clo": 0.57
+  },
+  {
+    "description": "Trousers, long-sleeve shirt",
+    "clo": 0.61
+  },
+  {
+    "description": "Long-sleeved shirt 1 + Casual pants (middle)",
+    "clo": 0.63
+  },
+  {
+    "description": "Sports long sleeve 2 + Sweatpants (thick)",
+    "clo": 0.66
+  },
+  {
+    "description": "Knee-length skirt, long-sleeve shirt, full slip",
+    "clo": 0.67
+  },
+  {
+    "description": "Long-sleeve coveralls, T-shirt",
+    "clo": 0.72
+  },
+  {
+    "description": "Sweat pants, long-sleeve sweatshirt",
+    "clo": 0.74
+  },
+  {
+    "description": "Suit jacket 1 + Suit pants",
+    "clo": 0.82
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Cap-sleeve top + Short mini skirt (thin) + Shoes",
+    "clo": 0.84
+  },
+  {
+    "description": "Denim jacket + Jeans (thin)",
+    "clo": 0.84
+  },
+  {
+    "description": "Outdoor jacket + Casual pants (middle)",
+    "clo": 0.84
+  },
+  {
+    "description": "Hoodies + Sweatpants (thin)",
+    "clo": 0.85
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Sleeveless print dress + Shoes",
+    "clo": 0.87
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Short sleeve \"fit and flare\" dress + Sandals",
+    "clo": 0.87
+  },
+  {
+    "description": "Overalls, long-sleeve shirt, T-shirt",
+    "clo": 0.89
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve \"fit and flare' print dress + Sandals",
+    "clo": 0.9
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Short-sleeve jacquard dress + Shoes",
+    "clo": 0.91
+  },
+  {
+    "description": "Suit jacket 2 + Coveralls",
+    "clo": 0.91
+  },
+  {
+    "description": "Boxer shorts + Socks + Polo shirt + Chino shorts + Shoes",
+    "clo": 0.92
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Chino shorts + Shoes",
+    "clo": 0.93
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Short-sleeve jacquard dress + Tights (10 denier) + Shoes",
+    "clo": 0.94
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Mini skirt (thick) + Shoes",
+    "clo": 0.95
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Denim Midi Skirt + Shoes",
+    "clo": 0.95
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve tunic top + Leggings + Shoes",
+    "clo": 0.95
+  },
+  {
+    "description": "Trousers, long-sleeve shirt plus suit jacket",
+    "clo": 0.96
+  },
+  {
+    "description": "Long-sleeve pajama tops, long pajama trousers, short 3/4 length robe (slippers, no socks)",
+    "clo": 0.96
+  },
+  {
+    "description": "Boxer shorts + Socks + Polo shirt + Jeans (skinny fit) + Shoes",
+    "clo": 0.97
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Mini skirt (thick) + Tights (10 denier) + Shoes",
+    "clo": 0.97
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Sleeveless print dress + Cardigan + Shoes",
+    "clo": 0.98
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Jeans (skinny fit) + Shoes",
+    "clo": 0.98
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Sleeveless blouse + Pencil skirt + Tights (10 denier) + Shoes",
+    "clo": 1.0
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Mini skirt (thick) + Tights (80 denier) + Shoes",
+    "clo": 1.0
+  },
+  {
+    "description": "Trousers, long-sleeve shirt plus long-sleeve sweater, T-shirt",
+    "clo": 1.01
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Mini skirt (thick) + Tights (200 denier) + Shoes",
+    "clo": 1.01
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Ripped Jeans + Shoes",
+    "clo": 1.02
+  },
+  {
+    "description": "Knee-length skirt, long-sleeve shirt, half slip, suit jacket",
+    "clo": 1.04
+  },
+  {
+    "description": "Boxer shorts + Socks + Short-sleeve shirt + Chino pants + Shoes",
+    "clo": 1.04
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Chino pants + Trainers/sneakers",
+    "clo": 1.04
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Cardigan + Mini skirt (thick) + Tights (10 denier) + Shoes",
+    "clo": 1.04
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Mini skirt (thick) + Leggings + Shoes",
+    "clo": 1.04
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve tunic top + Jeans (skinny fit) + Knee-high boots",
+    "clo": 1.04
+  },
+  {
+    "description": "Boxer shorts + Socks + Polo shirt + Suit pants + Shoes",
+    "clo": 1.05
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Lace-sleeve blouse + Suit pants (tapered fit) + Shoes",
+    "clo": 1.07
+  },
+  {
+    "description": "Briefs + Socks + Polo shirt + Jeans (straight fit) + Shoes",
+    "clo": 1.08
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Jeans (skinny fit) + Knee-high boots",
+    "clo": 1.08
+  },
+  {
+    "description": "Boxer shorts + Socks + Polo shirt + Jeans (straight fit) + Shoes",
+    "clo": 1.09
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Jeans (straight fit) + Shoes",
+    "clo": 1.09
+  },
+  {
+    "description": "Long-sleeve blouse + Pencil skirt + Shoes (without bra)",
+    "clo": 1.09
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Capri pants (cropped) + Shoes",
+    "clo": 1.09
+  },
+  {
+    "description": "Knee-length skirt, long-sleeve shirt, half slip, long-sleeve sweater",
+    "clo": 1.1
+  },
+  {
+    "description": "Ankle-length skirt, long-sleeve shirt, suit jacket",
+    "clo": 1.1
+  },
+  {
+    "description": "Sports jacket + Suit pants",
+    "clo": 1.1
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Pencil skirt + Shoes",
+    "clo": 1.11
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Mini skirt (thick) + Knee-high boots",
+    "clo": 1.11
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Suit pants (tapered) + Shoes",
+    "clo": 1.12
+  },
+  {
+    "description": "Boxer shorts + Socks + Polo shirt + Jeans (loose fit) + Shoes",
+    "clo": 1.13
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Pencil skirt + Shoes",
+    "clo": 1.13
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Suit pants (bootcut fit) + Shoes",
+    "clo": 1.13
+  },
+  {
+    "description": "Trousers, long-sleeve shirt plus suit jacket, vest, T-shirt",
+    "clo": 1.14
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Strap vest top + Long-sleeve blouse + Pencil skirt + Shoes",
+    "clo": 1.14
+  },
+  {
+    "description": "Boxer shorts + Socks + Office shirt + Chino pants + Shoes",
+    "clo": 1.16
+  },
+  {
+    "description": "Boxer shorts + Socks + Office Shirt + Suit pants + Shoes",
+    "clo": 1.17
+  },
+  {
+    "description": "Briefs + Socks + Office Shirt + Suit pants + Shoes",
+    "clo": 1.17
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Sleeveless blouse + Cardigan + Pencil skirt + Shoes",
+    "clo": 1.17
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Suit pants (loose fit) + Shoes",
+    "clo": 1.17
+  },
+  {
+    "description": "Boxer shorts + Socks + KSU shirt + KSU pants + Trainers/sneakers",
+    "clo": 1.2
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Pencil skirt + Cardigan + Shoes",
+    "clo": 1.21
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Pencil skirt + Cardigan + Tights (10 denier) + Shoes",
+    "clo": 1.21
+  },
+  {
+    "description": "Boxer shorts + Socks + Office Shirt + Suit pants + Tweed blazer jacket + Tie + Shoes",
+    "clo": 1.22
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Strap vest top + Long-sleeve blouse + Pencil skirt + Cardigan + Shoes",
+    "clo": 1.22
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Strap vest top + Long-sleeve jumper + Capri pants (cropped) + Shoes",
+    "clo": 1.22
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Office shirt + Suit pants + Shoes",
+    "clo": 1.23
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Strap vest top + Long-sleeve blouse + Pencil skirt + Cardigan + Shoes",
+    "clo": 1.23
+  },
+  {
+    "description": "Boxer shorts + Socks + Office Shirt + Suit pants + V-neck sweater + Shoes",
+    "clo": 1.26
+  },
+  {
+    "description": "Trousers, long-sleeve shirt plus long-sleeve sweater, T-shirt plus suit jacket, long underwear bottoms",
+    "clo": 1.3
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Long-sleeve blouse + Long-sleeve jumper + Suit pants (tapered) + Shoes",
+    "clo": 1.3
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Check cotton shirt (thick) + Jeans (straight fit) + Shoes",
+    "clo": 1.31
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Lace-sleeve blouse + Pencil skirt + Suit jacket + Tights (10 denier) + Shoes",
+    "clo": 1.31
+  },
+  {
+    "description": "Down jacket 2 + Jeans (thick)",
+    "clo": 1.31
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Lace-sleeve blouse + Suit pants (tapered) + Suit jacket + Shoes",
+    "clo": 1.33
+  },
+  {
+    "description": "Down jacket 1 + Casual pants (thick)",
+    "clo": 1.33
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Check cotton shirt (thick) + Jeans (straight fit) + Shoes",
+    "clo": 1.34
+  },
+  {
+    "description": "Bikini style briefs + Non-wired bra + Lace-sleeve blouse + Pencil skirt + Suit jacket + Shoes",
+    "clo": 1.34
+  },
+  {
+    "description": "Boxer shorts + Socks + Office Shirt + Suit pants + Harrington Jacket + Tie + Shoes",
+    "clo": 1.35
+  },
+  {
+    "description": "Boxer shorts + Socks + Office shirt + Suit pants + Suit Jacket + Tie + Shoes",
+    "clo": 1.36
+  },
+  {
+    "description": "Insulated coveralls, long-sleeve thermal underwear tops and bottoms",
+    "clo": 1.37
+  },
+  {
+    "description": "Boxer shorts + Socks + Office Shirt + Suit pants + Waistcoat + Suit Jacket + Tie + Shoes",
+    "clo": 1.37
+  },
+  {
+    "description": "Briefs + Socks + Polo shirt + Jeans (straight fit) + Tweed blazer jacket + Shoes",
+    "clo": 1.37
+  },
+  {
+    "description": "Briefs + Socks + Office shirt + Suit pants + Suit Jacket + Tie + Shoes",
+    "clo": 1.37
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Jeans (straight fit) + Thin hooded jacket (\"Hoodie\") + Shoes",
+    "clo": 1.38
+  },
+  {
+    "description": "Boxer shorts + Socks (sport) + T-shirt + ASTM shirt + ASTM pants + Trainers/sneakers",
+    "clo": 1.39
+  },
+  {
+    "description": "Boxer shorts + Socks + Office shirt + Suit pants + Tweed blazer jacket + Tie + Shoes",
+    "clo": 1.39
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Office Shirt + Suit pants + Suit Jacket + Tie + Shoes",
+    "clo": 1.4
+  },
+  {
+    "description": "Boxer shorts + Socks + Polo shirt + Jeans (straight fit) + Tweed blazer jacket + Shoes",
+    "clo": 1.41
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Check cotton shirt (thick) + Thin hooded jacket (\"Hoodie\") + Jeans (straight fit) + Shoes",
+    "clo": 1.45
+  },
+  {
+    "description": "Boxer shorts + Socks + T-shirt + Jeans (straight fit) + Thick hooded jacket (\"Hoodie\") + Shoes",
+    "clo": 1.55
+  },
+  {
+    "description": "Down jacket 3+ + Casual pants (thick)",
+    "clo": 1.72
+  }
+]

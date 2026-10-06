@@ -1,0 +1,3 @@
+﻿scope,checklist,n,bias_model_minus_human,mae,rmse,pearson,spearman,human_mean,model_mean,human_sd,model_sd
+30_case_human_audit,qwen,30,-0.0576,0.2273,0.3369,0.5988,0.6729,0.7242,0.6667,0.3433,0.4015
+30_case_human_audit,gemma,30,-0.0253,0.2212,0.3085,0.5537,0.4909,0.6818,0.6566,0.3439,0.3160

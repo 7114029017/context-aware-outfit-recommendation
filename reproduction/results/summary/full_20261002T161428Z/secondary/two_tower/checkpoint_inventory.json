@@ -1,0 +1,202 @@
+[
+  {
+    "variant": "original_text",
+    "seed": 1,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268279,
+    "sha256": "e26ce301b96734dd958c1c5cdf6262fa064dced0a2c836cad30e0db574d8c96c",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 1,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "d59593f52034543a544c93e14668209fc106b58ffacae7c380a8a7bd89b7930d",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 2,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268279,
+    "sha256": "ed6fce4aaac34b4693e91e207249b367903cf114bfbc2832a073dd8d7880e60a",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 2,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "532c057c1b937edb07b64747d70ea13478dedb9e650588f4f9bf8403155d914e",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 3,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268279,
+    "sha256": "328c58c4b435b8a0af6dce462147434d4554e770686be9f6c284683dcf8a7f77",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 3,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "22a97cd8226747afdf3db173cc2e68f1054f58b4350fed209a75b5238750d43f",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 4,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268279,
+    "sha256": "d9330c1979f1f56c1606d42364d6167c2bce554b1afc5fb4eb5fc38eb55c1c42",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 4,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "97b06312398883b6b09a1b91fa0b76f5db52812cbfae50a84fee94fc8e5e1bd9",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 5,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268279,
+    "sha256": "aac4a56c523a800f9568a1a72a2d7634898b1e3c786ded884eab4b04eb2f3c7d",
+    "load_ok": true
+  },
+  {
+    "variant": "original_text",
+    "seed": 5,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "c88a5ffcfad149ad99f74ab495b9d48f692bab4ccf652aa33511d007ce716878",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 1,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268343,
+    "sha256": "2f9ba15177d2606cc6e8320c7a73ddfcf1f37f8c385cf6bfcc93389297ace96b",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 1,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "1f92b2d1dd40db24456effb225913a6d941004f5f42ce2a1f3decbbcda1c6e22",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 2,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268343,
+    "sha256": "14eba3cde5a61ce1d01973e249ec7bd785392fee9e9a06f7e1c14d3ad63e051a",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 2,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "18ffe2d427d1a716a4ea41b6db99f6dd931b826ff2a88125b821c94f067497dc",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 3,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268343,
+    "sha256": "c5d1ca06fd8c84fd163c8f67d75d34f2d33e1e1db69c2928038a6b43070c7475",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 3,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "f61b23e8ae3ccf8574da66a77a4b18beb0c68f835474910bef450be74481d249",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 4,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268343,
+    "sha256": "52b3751b4fab6af6aab9a6b4b1bb83ce45a01ac4b7d009f78ced82bbdaade050",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 4,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "6e701fc6b42bbbd2be243686942b95876068c75e1e016f7ddb193721a1521c00",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 5,
+    "role": "cp_best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/cp_best_model.pt",
+    "exists": true,
+    "bytes": 5268343,
+    "sha256": "9485c223570481aac9da4d2a288bd1adeeb929481a8a2a93fbcc8f2010c8a389",
+    "load_ok": true
+  },
+  {
+    "variant": "context_aware_description",
+    "seed": 5,
+    "role": "best_model.pt",
+    "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/best_model.pt",
+    "exists": true,
+    "bytes": 7902965,
+    "sha256": "8bbb30cf39d2b107285d3e37cdb5dc90ba106821b12daaf418354c804a51afd4",
+    "load_ok": true
+  }
+]

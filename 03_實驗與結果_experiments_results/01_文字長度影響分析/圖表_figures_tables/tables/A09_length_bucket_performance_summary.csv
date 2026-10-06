@@ -1,0 +1,14 @@
+bucket_type,group,n_seed_rows,n_unique_set_target_pairs,original_hit10,full_hit10,delta_hit10,original_mean_rank,full_mean_rank,mean_rank_improvement,mean_original_query_len,mean_generated_query_len,mean_length_delta
+generated_query_length_bucket,01_gen_len_0_8,2085,417,0.0710,0.0791,0.0082,462.10,441.52,20.58,5.31,7.44,2.13
+generated_query_length_bucket,02_gen_len_9_12,26660,5332,0.0780,0.0897,0.0117,455.99,432.12,23.87,5.02,10.69,5.67
+generated_query_length_bucket,03_gen_len_13_16,13645,2729,0.0839,0.1007,0.0168,464.18,427.12,37.06,4.91,14.14,9.23
+generated_query_length_bucket,04_gen_len_17_plus,4165,833,0.0617,0.0857,0.0240,527.84,474.45,53.40,5.00,18.08,13.08
+length_delta_bucket,01_delta_le_0,485,97,0.0680,0.0722,0.0041,603.00,581.17,21.84,9.73,8.43,-1.30
+length_delta_bucket,02_delta_1_4,9190,1838,0.0778,0.0894,0.0116,461.05,443.56,17.49,6.54,9.62,3.08
+length_delta_bucket,03_delta_5_8,21535,4307,0.0815,0.0937,0.0121,457.81,433.40,24.41,5.01,11.44,6.43
+length_delta_bucket,04_delta_9_12,11960,2392,0.0769,0.0928,0.0159,462.92,416.18,46.74,4.04,14.21,10.17
+length_delta_bucket,05_delta_13_plus,3385,677,0.0609,0.0895,0.0287,510.35,465.63,44.72,3.43,17.70,14.26
+original_query_length_bucket,01_original_len_0_3,8880,1776,0.0751,0.0940,0.0189,448.76,411.45,37.31,2.45,12.59,10.14
+original_query_length_bucket,02_original_len_4_6,26985,5397,0.0790,0.0919,0.0128,458.17,429.29,28.89,4.86,12.11,7.25
+original_query_length_bucket,03_original_len_7_9,10550,2110,0.0778,0.0916,0.0137,494.85,466.59,28.27,7.36,12.17,4.81
+original_query_length_bucket,04_original_len_10_plus,140,28,0.0643,0.0500,-0.0143,593.14,604.77,-11.63,15.36,12.96,-2.39

@@ -1,0 +1,94 @@
+{
+  "checklist": [
+    {
+      "id": "c5",
+      "text": "Does the description avoid making claims about the outfit that aren't visually apparent?",
+      "weight": 4,
+      "category": "grounding"
+    },
+    {
+      "id": "c15",
+      "text": "Does the description accurately represent the overall impression of the outfit in the image?",
+      "weight": 4,
+      "category": "grounding"
+    },
+    {
+      "id": "c3",
+      "text": "Does the description include a temperature or season that aligns with the outfit's suitability?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    },
+    {
+      "id": "c8",
+      "text": "Does the description suggest a potential occasion or activity suitable for the outfit?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    },
+    {
+      "id": "c2",
+      "text": "Does the description identify the overall style or aesthetic of the outfit (e.g., casual, formal, bohemian)?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    },
+    {
+      "id": "c6",
+      "text": "Does the description use language a user would employ when searching for similar outfits?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c1",
+      "text": "Does the description mention key colors present in the outfit?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c7",
+      "text": "Does the description highlight any prominent textures or patterns in the outfit?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c4",
+      "text": "Does the description use adjectives that accurately reflect the outfit's mood or vibe?",
+      "weight": 2,
+      "category": "query_register"
+    },
+    {
+      "id": "c10",
+      "text": "Is the description grammatically correct and easy to understand?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c9",
+      "text": "Is the description concise and avoids unnecessary details?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c11",
+      "text": "Does the description focus on the outfit as a whole, rather than individual items?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c13",
+      "text": "Does the description use descriptive words that are relevant to fashion and clothing?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c12",
+      "text": "Does the description avoid overly generic terms that could apply to many outfits?",
+      "weight": 1,
+      "category": "clarity_fluency"
+    },
+    {
+      "id": "c16",
+      "text": "Does the description mention a specific temperature in °C?",
+      "weight": 3,
+      "category": "weather_style_occasion"
+    }
+  ]
+}

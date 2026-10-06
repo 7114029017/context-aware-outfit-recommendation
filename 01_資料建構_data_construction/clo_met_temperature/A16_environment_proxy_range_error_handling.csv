@@ -1,0 +1,5 @@
+proxy,n_rows,valid_count,missing_count,invalid_count,observed_range,mean,out_of_reasonable_range_count,reasonable_range_rule,error_handling_note
+temperature_c,9311,9311,0,0,-78.60 to 28.70,21.5311,9,-30 to 50 Celsius sanity range.,"Non-numeric or missing values are counted, not silently imputed."
+weather_group,9311,9311,0,0,cold:5264; warm:4047,,0,"Allowed groups: cold, warm.",Unexpected labels are counted as invalid.
+occasion_group,9311,9311,0,0,casual:1444; formal:1121; unknown:6746,,0,"Allowed groups: formal, casual, unknown.",Unknown is retained as an explicit category rather than guessed from images.
+style_count/style_group,9311,9311,0,0,style_count 0 to 7; high-style:7199; low-style:2112,2.1697,0,Style term count must be non-negative.,Numeric parsing failures are counted as invalid.

@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.Zone.Identifier
+runs/
+ckpt_*.pt
+*.tmp
+*.bak
+
+# Isolated official thesis reproduction artifacts: never commit checkpoints,
+# full logs or workstation-specific absolute input/output paths.
+_reproduction_runs/
+results/raw/reproduction_runs/
+.repro_work/
+.repro_local/
+_external/
+.venv-gpu/
+.venv-repro/

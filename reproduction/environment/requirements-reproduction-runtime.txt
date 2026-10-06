@@ -1,0 +1,19 @@
+# Runtime Python packages shared by full CP/CIR training and report generation.
+# Requires Python 3.12. Install compatible CUDA-enabled torch + torchvision
+# FIRST following reproduction/README.md section 0.3; this file intentionally
+# does not install or replace a GPU-specific PyTorch build.
+#
+# Values copied from the archived workspace requirements are NOT a claim
+# that the original 2025 experiment used this exact runtime.
+# scipy and huggingface_hub are pinned to the versions of the completed
+# 2026-09 reference runs so a clean environment matches them.
+numpy==2.0.2
+transformers==4.57.1
+scikit-learn==1.6.1
+einops==0.8.1
+Pillow==11.3.0
+tqdm==4.67.1
+ipdb==0.13.13
+pandas==2.2.3
+scipy==1.18.1
+huggingface_hub==0.36.2

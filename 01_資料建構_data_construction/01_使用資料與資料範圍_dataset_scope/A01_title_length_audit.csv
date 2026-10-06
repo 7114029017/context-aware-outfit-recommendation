@@ -1,0 +1,4 @@
+dataset,n_records,empty_records,pct_empty,mean_word_count,median_word_count,max_word_count,mean_query_token_count,median_query_token_count,max_query_token_count,pct_word_len_le_3,pct_word_len_le_5,total_word_tokens,unique_word_tokens,type_token_ratio
+Original title field matched to PO-D ids,35140,5945,16.92,1.8311,2.0000,5,1.8318,2.0000,5,96.49,100.00,64344,1523,0.023670
+Original url_name + title query matched to PO-D ids,35140,34,0.10,4.8177,5.0000,25,4.8964,5.0000,29,21.88,64.46,169294,8557,0.050545
+Generated context-aware title-only query,35140,0,0.00,10.0783,10.0000,27,11.5951,11.0000,29,0.00,2.65,354152,3310,0.009346

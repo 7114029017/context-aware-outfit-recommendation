@@ -1,0 +1,16 @@
+case,manuscript_figure,set_id,target_item_id,fine_category,condition,mean_rank,rank_seed1,rank_seed2,rank_seed3,rank_seed4,rank_seed5
+purse,Figure A1,224499261,212715570,purse,Original,20.6,17,21,38,15,12
+purse,Figure A1,224499261,212715570,purse,Full,2.4,8,1,1,1,1
+purse,Figure A1,224499261,212715570,purse,No-Weather,2.4,6,1,2,1,2
+purse,Figure A1,224499261,212715570,purse,No-Occasion,5.4,9,7,7,2,2
+purse,Figure A1,224499261,212715570,purse,No-Style,2.2,1,4,3,1,2
+dress,Figure A2,94771580,90931027,dress,Original,77.0,288,12,64,11,10
+dress,Figure A2,94771580,90931027,dress,Full,4.8,10,5,7,1,1
+dress,Figure A2,94771580,90931027,dress,No-Weather,3.2,8,2,3,1,2
+dress,Figure A2,94771580,90931027,dress,No-Occasion,21.4,83,4,9,3,8
+dress,Figure A2,94771580,90931027,dress,No-Style,125.4,354,55,143,12,63
+sunglasses,Figure A3,200099867,171331353,sunglasses,Original,27.0,47,11,4,66,7
+sunglasses,Figure A3,200099867,171331353,sunglasses,Full,593.4,500,406,87,1935,39
+sunglasses,Figure A3,200099867,171331353,sunglasses,No-Weather,509.4,588,175,48,1670,66
+sunglasses,Figure A3,200099867,171331353,sunglasses,No-Occasion,465.4,420,267,55,1523,62
+sunglasses,Figure A3,200099867,171331353,sunglasses,No-Style,100.6,69,44,26,331,33

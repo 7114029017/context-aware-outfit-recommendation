@@ -1,0 +1,97 @@
+schema_version: 1
+artifact_role: TORS_A5_experiment_config
+task: llm_as_a_judge
+status: preserved_output_analysis_exact_generation_provenance_partial
+
+models:
+  judge_a:
+    display_name: Qwen3-VL-32B-Instruct
+    role: Judge A
+    weights_or_provider_revision: null
+    revision_status: exact_revision_not_archived
+    checklist_C: reproduction/prompts/checklists/checklist_C_Qwen3VL32B.json
+    checklist_C_star: reproduction/prompts/checklists/checklist_C_star_Qwen3VL32B.json
+    formal_output: 01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B.jsonl
+    formal_rows: 35140
+  judge_b:
+    display_name: Gemma-3-27B-it
+    role: Judge B
+    weights_or_provider_revision: null
+    revision_status: exact_revision_not_archived
+    checklist_C: reproduction/prompts/checklists/checklist_C_Gemma3.json
+    checklist_C_star: reproduction/prompts/checklists/checklist_C_star_Gemma3.json
+    formal_output: 01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3.jsonl
+    formal_rows: 35140
+
+generation:
+  input_pairs: 35140
+  temperature: null
+  top_p: null
+  top_k: null
+  max_new_tokens: null
+  repetition_penalty: null
+  precision: null
+  batch_size: null
+  generation_seed: null
+  exact_parameter_status: not_recovered_from_archived_artifacts
+  rule: do_not_guess_missing_generation_parameters
+
+prompts:
+  semantic_rewrite: reproduction/prompts/semantic_rewrite.txt
+  judge_p0_qwen: null
+  judge_p0_gemma: null
+  judge_p1_order: null
+  judge_p2_conservative: null
+  exact_judge_prompt_status: incomplete_historical_provenance
+  note: preserved Judge outputs are analyzable; exact historical generation rerun is not certified
+
+robustness:
+  variants: [P0-R2, P1, P2]
+  archived_sample_size: 150
+  documented_sampling_seed: 42
+  low_group:
+    source: bottom_20_percent_combined_rank
+    rank_gap_max: 0.35
+    sample_n: 75
+  high_group:
+    source: top_20_percent_combined_rank
+    rank_gap_max: 0.35
+    sample_n: 75
+  archived_sampling_regeneration:
+    exact: false
+    intersection_with_documented_rerun: 3
+    archived_only: 147
+    rerun_only: 147
+    interpretation: numerical archived robustness outputs are preserved and internally consistent, but historical sample-generation provenance is unresolved
+  files:
+    qwen_p0_r2: 01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_compare.csv
+    qwen_p1: 01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_compare_change.csv
+    qwen_p2: 01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_compare_conservative.csv
+    gemma_p0_r2: 01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_compare.csv
+    gemma_p1: 01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_compare_change.csv
+    gemma_p2: 01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_compare_conservative.csv
+
+analysis:
+  intersection_rows: 35140
+  bootstrap:
+    iterations: 5000
+    seed: 123
+    pearson_and_spearman_rng_reset_separately: true
+  threshold_checks: [0.8, 0.9, 1.0]
+  bottom_percentile_checks: [0.05, 0.10, 0.20]
+  output_summary:
+    - reproduction/results/summary/reference_20260921T175217Z/secondary/judge/T19_recomputed.csv
+    - reproduction/results/summary/reference_20260921T175217Z/secondary/judge/T21_recomputed.csv
+    - reproduction/results/summary/reference_20260921T175217Z/secondary/judge/bottomp_recomputed.csv
+    - reproduction/results/summary/reference_20260921T175217Z/secondary/judge/prompt_robustness_summary.csv
+
+human_audit:
+  sampling_seed: 42
+  selected_cases: 30
+  judgments_total: 750
+  qwen_C_star_judgments: 300
+  gemma_C_star_judgments: 450
+  selected_cases_file: 03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A36_human_audit_30_selected_cases.csv
+  manual_results_file: 03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A38_human_audit_30_manual_results.csv
+
+acceptance_matrix: reproduction/docs/tors_compliance.md

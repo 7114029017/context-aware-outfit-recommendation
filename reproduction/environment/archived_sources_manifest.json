@@ -1,0 +1,1404 @@
+{
+ "description": "Files of the original research folders 01-03 as published in this repository: the frozen handoff baseline, which the official run used, without the third-party publications removed for the public release and with the embedded Polyvore images removed from three notebooks. Checked by reproduction/scripts/verify_archived_sources.py before a full run starts.",
+ "baseline_commit": "7a5cc9cd8f884865e1e27a234c18dd132f949598",
+ "baseline_repository": "original development repository (not this public repository)",
+ "public_release_changes": "reproduction/docs/public_release_cleanup.md",
+ "folders": [
+  "01_資料建構_data_construction",
+  "02_模型訓練和驗證_model_training_validation",
+  "03_實驗與結果_experiments_results"
+ ],
+ "file_count": 278,
+ "files": [
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/A01_title_length_audit.csv",
+   "bytes": 634,
+   "sha256": "19f0a4e01be997899cdf86ca43eb41b9a85ef9a018aff74835c0472508cc0ffe"
+  },
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/A02_generation_coverage_audit.csv",
+   "bytes": 1674,
+   "sha256": "62e52aed36185d603c19f834b7b78e4e370d7e8da9b9dde6c338491c8f83b28c"
+  },
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/README.md",
+   "bytes": 418,
+   "sha256": "2c3f19d35d9bbaa963e8b1527e3751b1d76a250ddb509f66019b23252cfed9e7"
+  },
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/source_programs/P12_dataset_scope_reproducible.ipynb",
+   "bytes": 21978,
+   "sha256": "1d803a2aee4e256a9290dfe6bb7c6e1153bd6af2ab8bd897bae86a49553f4a89"
+  },
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/圖表_figures_tables/tables/T00_dataset_characterization_po_d_main.csv",
+   "bytes": 701,
+   "sha256": "3a745bc92d9acfcda2200988e41bb87fd68fef5a1d247c569045e90129a9e7a8"
+  },
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/圖表_figures_tables/tables/T00_dataset_overview_po_d_main.csv",
+   "bytes": 1428,
+   "sha256": "1f046445a7ab25f0b3184ec740bc10c7f3fb91d0c1125ca9dfccdfa6febf1e5c"
+  },
+  {
+   "path": "01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/圖表_figures_tables/tables/T01_text_field_comparison_po_d_main.csv",
+   "bytes": 702,
+   "sha256": "334cff4e6338ddf75755c32d669ab9092cd1c1ff0e7919e0c3a7fec5574c0bed"
+  },
+  {
+   "path": "01_資料建構_data_construction/README.md",
+   "bytes": 651,
+   "sha256": "720ab17556504c98987311f772d898e1831bad6244419247102e4a05ee9e731a"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/A16_environment_proxy_range_error_handling.csv",
+   "bytes": 805,
+   "sha256": "a84053c0b6366b36723c9a8779e8b6befe7696a89034acf190b68dc83734e803"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/CLO_reference/Adding_CLO.ipynb",
+   "bytes": 98986,
+   "sha256": "8a171ea811301af730782bcbb38dabdb12f39180039c7a3d5fcc8677f29db091"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/CLO_reference/ensemble_clo.json",
+   "bytes": 12325,
+   "sha256": "74764be71bed51a49c0b5b9c1dc5c56e206fe11d428cf13526831efad8bfa701"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/CLO_reference/single_items_clo.json",
+   "bytes": 4510,
+   "sha256": "03a0781b6737cf27aa8fadb2b045267cb2bf8fa8c829416923534318e6e15b56"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/CLO_results/test_clo_results.jsonl",
+   "bytes": 646455,
+   "sha256": "f0ccbd559dafbb486d57cddcf1afb7bcada7e5471899b7ca43f8e048ca13337f"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/CLO_results/train_clo_results.jsonl",
+   "bytes": 726839,
+   "sha256": "3db437df5ffb4247521da0307d4519d5ff662c10f1e387d2bbafc21778618d72"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/CLO_results/valid_clo_results.jsonl",
+   "bytes": 128237,
+   "sha256": "4e61b43a88afb5b193bdae35ecde2cbfcf3207a69ff60bfc597fa9c4668da66e"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/MET_reference/adult_activity_compendium_sorted_2024.json",
+   "bytes": 80677,
+   "sha256": "d679bbc36280d0e61f4999ecd23c79bfb965e787c10318fb47b5af071a490e65"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/MET_reference/metMapping.ipynb",
+   "bytes": 44878,
+   "sha256": "f85435381d546aff2a622dd392db4eadfaf0135478370729bab1d962263485f5"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/MET_results/test_met.json",
+   "bytes": 2119837,
+   "sha256": "12a263dba4406dae21d4b7e7ff6f2ac1758fe1773d15d1a72d2b6bcda0747234"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/MET_results/train_met.json",
+   "bytes": 2329235,
+   "sha256": "fa9e09c2e4110643009b590b7065bd236f35f4046a5d6cbcdcd220e9084bac9e"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/MET_results/valid_met.json",
+   "bytes": 40796,
+   "sha256": "9bfbaced337234e0eaadaabad7381973f7e679563cda7c58ff7190bcdc57d8b5"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/temperature.ipynb",
+   "bytes": 40218,
+   "sha256": "c11449b98242aceab6e850f459fc41b45578fbd0407e53b1c964907d0d7f5dcb"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/test_temperature.json",
+   "bytes": 2873877,
+   "sha256": "5f1e7ebf709e948db5e81dcce354aa3841b81ac8a0e605de31c152d5a1a91061"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/train_temperature.json",
+   "bytes": 3176236,
+   "sha256": "83b064d123bba04308ac3dc8916d1b319244acacd15b3c30b4a19b47c94ac81c"
+  },
+  {
+   "path": "01_資料建構_data_construction/clo_met_temperature/temperature_results/valid_temperature.json",
+   "bytes": 565706,
+   "sha256": "1439f9bb77304082fd4792961215e8c25e39de1c03b8eeea94bc2be6bad85483"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/01_生成結果_generation_results/README.md",
+   "bytes": 262,
+   "sha256": "b6aac854e4b9e2be4bb0a103278b8cf54747f733e0d5b7e97d8b312b0e00fa45"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/01_生成結果_generation_results/new_polyvore_outfit_titles.json",
+   "bytes": 3640624,
+   "sha256": "1522d2e28b824824366b8959cf3938af284ebb3c8e391ae505324da0dc8750cb"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/01_生成結果_generation_results/new_polyvore_outfit_titles_with_ablation.json",
+   "bytes": 10136766,
+   "sha256": "7365ce6b5f99d64c7b45051f39d853b87e1ea5d4fd3e25b39add2934978a85b3"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/02_三因子拆分_wos_factor_split/A12_po_d_split_item_outfit_stats.csv",
+   "bytes": 306,
+   "sha256": "ea2333a7c6ba8abd9b5244b0f2a6d85546d1a1b6dc2498c3cdcc5444c7609ba8"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/02_三因子拆分_wos_factor_split/A13_po_d_semantic_category_distribution.csv",
+   "bytes": 1716,
+   "sha256": "3ed1140b11fe454bfdf2027896a06bc6ac2ca84a37aa9281295c96e76734ef41"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/02_三因子拆分_wos_factor_split/README.md",
+   "bytes": 226,
+   "sha256": "9b4b073f973530d39e15cfcb98523a41b9ac186e8143418ca99a438dbe20bd05"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/02_三因子拆分_wos_factor_split/wos_split_results_v5_merged_retry_round3.jsonl",
+   "bytes": 16778208,
+   "sha256": "d77d13c231b61a85c827a78456bd2571e752a20eb9b2f96a3a4bb7457aeed1cb"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/README.md",
+   "bytes": 458,
+   "sha256": "4df9dd7769edc1cdca90414dd237fdb9234b7f79ebc2e7a63b3e4b42101274cb"
+  },
+  {
+   "path": "01_資料建構_data_construction/generated_descriptions/圖表_figures_tables/figures/套裝描述改寫(含天氣、行程與風格) 的複本 (4).png",
+   "bytes": 212139,
+   "sha256": "80ece29a3ff693d41c5fef1be30a45fd7ea5f599f1ce31d252f4d9208130eb8d"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/checklist_C_Gemma3.json",
+   "bytes": 2013,
+   "sha256": "68b71bd92bfb17295f898964023d711a0a07217a57d1320d6a2c77ec492105b9"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/checklist_C_star_Gemma3.json",
+   "bytes": 2816,
+   "sha256": "c24367cd0bf6b1afc2b8556a4e3cffebc4a365847913513b2a8e64ce816d9c9d"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3.jsonl",
+   "bytes": 24059648,
+   "sha256": "952ab89d38f45283fae2ed24affe13c2ccea63dae32a2668b341d81e6bc0649c"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1.jsonl",
+   "bytes": 137798,
+   "sha256": "9288f4fc3f47c6bcfdead5e5230cf5bdff01890664627e3ba19e2ad21cb91ea6"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_change.jsonl",
+   "bytes": 136423,
+   "sha256": "2c55e4db493877bf21be7b50721efe0f0bd4f6fd2b70da14778bceda76e62fe5"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_compare.csv",
+   "bytes": 7854,
+   "sha256": "ba8ef939b9fb4f56218b3f1936c89b84e140397b8615641cb14e86e9db9f0efc"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_compare_change.csv",
+   "bytes": 8766,
+   "sha256": "adb3ef7aa776f4c3d3a6d6d540d042f193fcd13d00aae55f544fb67fff881d36"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_compare_conservative.csv",
+   "bytes": 8148,
+   "sha256": "2ac05c07353650fbad9cea03bd0778ab1784be60acc11a9e94a7564d4a791162"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Gemma3/phase3_scores_Gemma3_robustness_run1_conservative.jsonl",
+   "bytes": 127489,
+   "sha256": "b452f5a2e8c29e657d88c2e027339c419ce53b9b0407a02ed1add9d471bbb8aa"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/checklist_C_Qwen3VL32B.json",
+   "bytes": 1494,
+   "sha256": "3910ce107153c70bb74e592256f49f44c552f38eaa5a9e0ae795251cb24b4e16"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/checklist_C_star_Qwen3VL32B.json",
+   "bytes": 2110,
+   "sha256": "f09a45f243963cc52ad7df0dc1d23528fb9854ac2439f08751d36cdb273c8942"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B.jsonl",
+   "bytes": 22721183,
+   "sha256": "dc8899c1d29e91631610b2213d0675219d48b2d0923c26451c0bf84624391179"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1.jsonl",
+   "bytes": 113118,
+   "sha256": "e1d2afd140ca933109a1d73d2311c605b21d770517b2cf6e3fb86dd32d386c7b"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_change.jsonl",
+   "bytes": 134378,
+   "sha256": "18bfbde6605e47e1c653e4f4acd2b12a6e995aece687a039060793d5ea29fb63"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_compare.csv",
+   "bytes": 7880,
+   "sha256": "1182ac33b45348b9e9505abef377714683ee1353ff87c42898296cca9708b944"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_compare_change.csv",
+   "bytes": 9121,
+   "sha256": "83fc3a8fe0a1fe4e2d66093bbd16890c4ddd0499349b73511493f1af50aa3fff"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_compare_conservative.csv",
+   "bytes": 9041,
+   "sha256": "b823821819e22baf4040001e9abbce7d347467a561f62710db3a0abe66cd9204"
+  },
+  {
+   "path": "01_資料建構_data_construction/llm_judge_checklists/Qwen3_Instruct/phase3_scores_Qwen3VL32B_robustness_run1_conservative.jsonl",
+   "bytes": 117570,
+   "sha256": "d2f19b244036a4dbb54dc38d3539fd37f86192051a04bdbb1ed6fcaa26a373cb"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_NewoutfitUrlTitle_en_fashionClip.pkl",
+   "bytes": 73590756,
+   "sha256": "f4d731433ef9182e16518ac7757d3aad530b362a807e0196fd79c4fa6db21ebb"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_category_distiluse-base-multilingual-cased-v2.pkl",
+   "bytes": 525651371,
+   "sha256": "03cb9b3d81c09f54867b00ea7c4c7bd1ccbc842555e19f757288a29f9f0537b8"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_no_occasion_outfitUrlTitle_en_fashionClip.pkl",
+   "bytes": 73590756,
+   "sha256": "474a6f7f1eceaeaacc8fbd173f13148385ae25380fdea1590fbc02543a1beb08"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_no_style_outfitUrlTitle_en_fashionClip.pkl",
+   "bytes": 73590756,
+   "sha256": "e54733fdd6a262d796b7d96749435e8c55a8ca1e2de726b0335d5b0f1ae72fcf"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_no_weather_outfitUrlTitle_en_fashionClip.pkl",
+   "bytes": 73590756,
+   "sha256": "f8be5098f0cd8d660522169dbd32989a76db3f6aa670ec1fb4f962ee9999783b"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_outfitUrlTitle_en_fashionClip.pkl",
+   "bytes": 143049389,
+   "sha256": "fb74f2c5638c175f897d07dcde5e825359127b42b330fe28783b8f50b21494a6"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/encoded_title_description_distiluse-base-multilingual-cased-v2.pkl",
+   "bytes": 525651371,
+   "sha256": "9e425f7e62aed5828d39cf64d4647b973d278f4579c39fccc8011c8660b201c4"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/fashionclip_data/img_feats_fashionClip.pkl",
+   "bytes": 525651371,
+   "sha256": "aa4859f4440e6c96b11314da30435907cf029460352318ba639a8ab41699efce"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/README.md",
+   "bytes": 716,
+   "sha256": "f51c19097f6a9a2cdd1a6be90e79ca5e1e4a4274359d747c193516dea43bc097"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed1/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "0fe754a09b382abcc5b040fe8b57a31f9cacb5ecc1a41dbe2ceb22bb19b5565b"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed1/log.txt",
+   "bytes": 495660,
+   "sha256": "dee2e3313f65e6da443c8a137e2b16e300f33eff9697ce83457b3ffc16fdd105"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed2/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "31a483d470d2db60cb9019e9879f5f81e96e0e5e8a20bb1ae75f88892efb1719"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed2/log.txt",
+   "bytes": 495764,
+   "sha256": "a67ec4742a8b9884c9c2aaea94e523f9858b17513c7e3da2008ab6082b90b11f"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed3/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "76a4fc4e2760de20b310e5e5bace98467ae2062bb396ffede1107d114a659d8f"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed3/log.txt",
+   "bytes": 496108,
+   "sha256": "23f3469293d345e4c48ae35b801dca702f624cab337b72fe61b2aad906a9ca96"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed4/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "5bb0e9fdc7d1149065ebcb7c23d6f4c94eb45e3d847a44d3d3e432959a3c4006"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed4/log.txt",
+   "bytes": 496027,
+   "sha256": "b5e053daa6ee080843a7f8b5558ec2d0daffc4153d5ebe5bae93e9c120af677c"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed5/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "e8a6a480d2809ead69babd58fc096c4e9ba8ca475c9e44d1d455671edd38a06a"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed5/log.txt",
+   "bytes": 496108,
+   "sha256": "4c8acfa5191ed320c642bdbdb2b12c875446b8f7d71c4c81c893bd449dc6818c"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed1/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "30a7c4c573bc598cab1d64ff7b876800611fa4361794f56a548fbbb5080f8b41"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed1/log.txt",
+   "bytes": 481311,
+   "sha256": "1f9af28fb38385016b85dab70136da9273baac49f65d69a56b308a341fbfd851"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed2/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "bf1b745b3920b5e25906a38fc0edeaea4d612f66dee15319acb72b2547992518"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed2/log.txt",
+   "bytes": 481322,
+   "sha256": "71cf2a13385c76072cb815ebba5a3e228197935c6a6083b61c6059acf75297d5"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed3/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "71eae20f111350a69a41e7e04014a7e231bec44bb0a49cde7cc5d9d160f0b714"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed3/log.txt",
+   "bytes": 480757,
+   "sha256": "bb32c7a5151f3b2b8930a3ae16c2010a00dffd71e66bb736d3a9a430591ce059"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed4/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "52b2b954a3a200e1750a816fce44845a0a01b350ca083c75f5129494b2ec4412"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed4/log.txt",
+   "bytes": 478590,
+   "sha256": "147f4fd82146429ea691d4c1b5c113d536cf904b41ad4e1b59a7a80d2f53b8a8"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed5/ckpt.pt",
+   "bytes": 25775577,
+   "sha256": "85140aed6923ebbdf935098e20b123fb97f0e812ac04a72900fb637ba6a97a54"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed5/log.txt",
+   "bytes": 478693,
+   "sha256": "15d11b524aaa43da27ee2b6f6dc4fea59b605307c8cccfe3e046c1e64cf19fb2"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed1/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "759da64527f1f7a9f3c6e33a6bcbe63844bfdd575408f5ed4b1e6f6f09920512"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed1/log.txt",
+   "bytes": 467728,
+   "sha256": "0605d12ddd08cf5e6462e36e4f370c8d7d2574a36096e6bb0bea630e7b948293"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed2/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "363bb2521cf519113f4700e4a34683ddb4412619ae301c0c4074472b9ae439dd"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed2/log.txt",
+   "bytes": 467640,
+   "sha256": "e409d2813c02c5a96eeba1b4264f240f2201781eac62dec6f9d635e059be5518"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed3/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "6e5ecdab734fe9f6612987ad4d758c282f4472932cf8c1576fc86317a7bbb238"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed3/log.txt",
+   "bytes": 467731,
+   "sha256": "2bb10b54d2ce7fed6f9f730dfd34c24348d5e338278bfce99a40038402dc4b4e"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed4/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "0409475fd549e14f11b86e2dc30684918509b4d41c4233bd20b2a9005f8725bd"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed4/log.txt",
+   "bytes": 467832,
+   "sha256": "b76ca662f00c6f7d96759af86e84f0ca300965676e65466b066ec4a291c34423"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed5/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "52f0174548e0fd2a35f6126065c976ccd3f51fe8681d2db508e56c5e750a9f43"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed5/log.txt",
+   "bytes": 467355,
+   "sha256": "ef03c0504686f33b5ec26e9b60c949186e9a667a43746a8fde6bd66995a77524"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed1/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "df4fde5aada1cdde0b735c6ba1f12e10f87e2d59174eb3630a26f203e03151bf"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed1/log.txt",
+   "bytes": 452182,
+   "sha256": "dfad1935a6adab427fc8482231911b002320280341f608bea1d65a3fea9087d0"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed2/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "9d88300fed19e1b6d4ebd03153b56382826070770cae429298feb69383bd88b9"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed2/log.txt",
+   "bytes": 452185,
+   "sha256": "4421d94f8376483f35873d777af617d8c5dc4f9135d10fd26427fb2e87b301f4"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed3/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "327677f01d5b687ef28636ab2f8c3b9c8dd7d2ffcb3d657ba303a040e62d278d"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed3/log.txt",
+   "bytes": 452186,
+   "sha256": "70893897babf56da05873c62ed29dae44cc56fd180b688f31c93cd75ed635e45"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed4/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "09aee4eadec6c4b8031a0c1a404e5ee6c38f003d48011cdb3c447e267fff14be"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed4/log.txt",
+   "bytes": 452808,
+   "sha256": "f4a46d0cd452e84876f477d2ab4c9bd11857a765340538087504997b28044e8b"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed5/ckpt.pt",
+   "bytes": 25580121,
+   "sha256": "3d91d84d858f89b95085b11bebcdc81dacd69eb54831e59ea0e270677c3e5d56"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed5/log.txt",
+   "bytes": 451741,
+   "sha256": "5a32c8bf33a7484f39c0232726b5358d50131e5180079dec924d2ffa6bf20f73"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/CIR_evaluate.py",
+   "bytes": 14833,
+   "sha256": "564275a9c8bc9c75e72aaadc9b853e13d0bd48c5e09c3a2a552ed8332eaaa524"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/CP_evaluate.py",
+   "bytes": 9447,
+   "sha256": "f7e9237717ded122321c55ecca675df88af679b7533cf7a3cca22e15e66186a6"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/LICENSE",
+   "bytes": 1062,
+   "sha256": "7386caa8454559ebbd552a8fa6a30b946e1f8886f502f41fc3ea3bb9787e07e1"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/README.md",
+   "bytes": 2458,
+   "sha256": "af6b41e58b223d959f6c9dab81c78b5a8a986ecad0e4bd9a0749be73b0f3ed57"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/base_config.py",
+   "bytes": 2520,
+   "sha256": "bfe8f791ac4374298849bb98bfc5dcc0e8454039c1880597a22b3fd4fc99463e"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/cir_cond_hardneg.py",
+   "bytes": 249,
+   "sha256": "542a6aa21cd2193fb3e765d348936e12122e9d55ca5723ff4ddfbc7dc62d8873"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/cp_cond_hardneg.py",
+   "bytes": 250,
+   "sha256": "4091326cb6e88bc211b77058f5a1217b69b3150ae8dd7adba0ba6b5575211d51"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/dataset.py",
+   "bytes": 25995,
+   "sha256": "6b9c751327d9d9504360c4ee8332a2ca6dc7c0f7c97e408635d81133f8621eca"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cir.py",
+   "bytes": 16290,
+   "sha256": "650bbf62c25bb5496e738ac05612a195d4bb36ca0f9a2a254c3b399e5697a60e"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cp.py",
+   "bytes": 10815,
+   "sha256": "2f395ffa8d62d240e60bd83f110675766d5d70081c42c73eee07e9a25601b6ec"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/outfit_transformer.py",
+   "bytes": 25959,
+   "sha256": "07ea3051a9993f7b8cf93ad2dcaf7c97cc101df7ac5baa9276790eed0752ce91"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cir.py",
+   "bytes": 24220,
+   "sha256": "7c1f07f90b35977434bbff8f1eeba55521b4658175fa6a8bf46e02e762c1941d"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cp.py",
+   "bytes": 16714,
+   "sha256": "e479efb38891a540a7ee35677dfbddcd25be372bf4a7755342f87080ec4286fb"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/utils.py",
+   "bytes": 937,
+   "sha256": "922414e24f1dbce439ef2407065e1d75182652f6ddb8ef2762d06b8f5c4f9210"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/README.md",
+   "bytes": 406,
+   "sha256": "6d0782d7ebc94c83b478c65f9110b059774d39b4ba35f28c8551cb0cdf35f666"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "1f92b2d1dd40db24456effb225913a6d941004f5f42ce2a1f3decbbcda1c6e22"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/config.json",
+   "bytes": 2075,
+   "sha256": "d8ef1caaeff0ecff2458b19cbaaf53bb88afd1b78a520580e95fb73512ec6ddd"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/cp_best_model.pt",
+   "bytes": 5268343,
+   "sha256": "2f9ba15177d2606cc6e8320c7a73ddfcf1f37f8c385cf6bfcc93389297ace96b"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/cp_train_log.csv",
+   "bytes": 7865,
+   "sha256": "ac43a54962ee7436c8c65279cda65f94c729fd6f55dce0b4314cd8601e389b2a"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_1/or_train_log.csv",
+   "bytes": 6959,
+   "sha256": "2a1df16852e1f2c98cdf086b3ab6b71a5d11568150e886be3e520c63f1bf3f2f"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "18ffe2d427d1a716a4ea41b6db99f6dd931b826ff2a88125b821c94f067497dc"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/config.json",
+   "bytes": 2072,
+   "sha256": "d6c10501ecb7b17013e4fc1c833354ee11df8c20ecb179a663fdd13c85a34687"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/cp_best_model.pt",
+   "bytes": 5268343,
+   "sha256": "14eba3cde5a61ce1d01973e249ec7bd785392fee9e9a06f7e1c14d3ad63e051a"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/cp_train_log.csv",
+   "bytes": 7865,
+   "sha256": "57161190850e81bcd1e41ec61e852837b7c81f9a9e12ebd2fabac5a088650e79"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_2/or_train_log.csv",
+   "bytes": 6959,
+   "sha256": "f704c621cad71fc926c9e8a9d9011ce81a436dc6d18a4c900b9b903b719ac2ce"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "f61b23e8ae3ccf8574da66a77a4b18beb0c68f835474910bef450be74481d249"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/config.json",
+   "bytes": 2062,
+   "sha256": "b366ebe4815bc0edfc05ad8ca507c5d1ce3830ca33989fa249bfe53377546592"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/cp_best_model.pt",
+   "bytes": 5268343,
+   "sha256": "c5d1ca06fd8c84fd163c8f67d75d34f2d33e1e1db69c2928038a6b43070c7475"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/cp_train_log.csv",
+   "bytes": 7865,
+   "sha256": "037ecca902658d85943530b385c7bff1a5ced3e2b8192826cf1caa8c05938ffa"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_3/or_train_log.csv",
+   "bytes": 6959,
+   "sha256": "7732cdb6608b4a3676bdb69fb8041644c3457b5fa59ce9f1ca363364eb8d7069"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "6e701fc6b42bbbd2be243686942b95876068c75e1e016f7ddb193721a1521c00"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/config.json",
+   "bytes": 2059,
+   "sha256": "14e1ed6b9df2d158899c41c50250d5429cb1504ebfdb9e513c0826a2a3e29a3b"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/cp_best_model.pt",
+   "bytes": 5268343,
+   "sha256": "52b3751b4fab6af6aab9a6b4b1bb83ce45a01ac4b7d009f78ced82bbdaade050"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/cp_train_log.csv",
+   "bytes": 7865,
+   "sha256": "ccca7f7e6f205da3487c915cd742a8305653d7b754bf0a7e6b4086c16ddab310"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_4/or_train_log.csv",
+   "bytes": 6958,
+   "sha256": "a689db7024b97d6bc56a6040628c04964401db0880c6d588dd570f94a03d475c"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "8bbb30cf39d2b107285d3e37cdb5dc90ba106821b12daaf418354c804a51afd4"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/config.json",
+   "bytes": 2062,
+   "sha256": "10c826e79904068456375c17c639da8a6860fc52413917e88becc888ad567baa"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/cp_best_model.pt",
+   "bytes": 5268343,
+   "sha256": "9485c223570481aac9da4d2a288bd1adeeb929481a8a2a93fbcc8f2010c8a389"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/cp_train_log.csv",
+   "bytes": 7865,
+   "sha256": "b10500cc7f54d36a94b6a9270f7b0548ada1f36d8e92f0d56d78121cba06d6d9"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/context_aware_description/seed_5/or_train_log.csv",
+   "bytes": 6959,
+   "sha256": "4e68a51621949b378702719e7cbe49807af3ff5077a41b79c07763fc56cad1a6"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "d59593f52034543a544c93e14668209fc106b58ffacae7c380a8a7bd89b7930d"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/config.json",
+   "bytes": 2000,
+   "sha256": "5ee130f172b8fb7a0341127e1735940d74b8566476d7a48ca0c568a973f8909a"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/cp_best_model.pt",
+   "bytes": 5268279,
+   "sha256": "e26ce301b96734dd958c1c5cdf6262fa064dced0a2c836cad30e0db574d8c96c"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/cp_train_log.csv",
+   "bytes": 6665,
+   "sha256": "d7d23e58adfd4ccfcf46c6435a847f34518ba26b009f4e4afc1425ef18e49242"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_1/or_train_log.csv",
+   "bytes": 5758,
+   "sha256": "551570ff9dda26288ec285a73864af2b56478000b2a96905f3f5fb930a5df62e"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "532c057c1b937edb07b64747d70ea13478dedb9e650588f4f9bf8403155d914e"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/config.json",
+   "bytes": 1986,
+   "sha256": "fd3886be9e7f421f59ec7b4513e7d6c346a2b3bc4e84c8938d39e561d0889523"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/cp_best_model.pt",
+   "bytes": 5268279,
+   "sha256": "ed6fce4aaac34b4693e91e207249b367903cf114bfbc2832a073dd8d7880e60a"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/cp_train_log.csv",
+   "bytes": 6665,
+   "sha256": "e6dc13c3612819323c22136293beed496b62773d55500cee3f9d241220e267b3"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_2/or_train_log.csv",
+   "bytes": 5759,
+   "sha256": "d45401aa47297c76934cd16e1ca8e32558387206a210122dac8a7fad30def84f"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "22a97cd8226747afdf3db173cc2e68f1054f58b4350fed209a75b5238750d43f"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/config.json",
+   "bytes": 1986,
+   "sha256": "603eeb61ae78993f7672aab58b2ac587b87f8ea09a1305e3cc9cf056419cade9"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/cp_best_model.pt",
+   "bytes": 5268279,
+   "sha256": "328c58c4b435b8a0af6dce462147434d4554e770686be9f6c284683dcf8a7f77"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/cp_train_log.csv",
+   "bytes": 6665,
+   "sha256": "fc7be6dd59d08af1977b7f7e1e26a39af0f326d0ff29bdae009185cdc764ca9c"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_3/or_train_log.csv",
+   "bytes": 5758,
+   "sha256": "523fdf0b0d13c838cd1fcd37b646029d32fb4e8e9c6f76ae9f65271ca39275e7"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "97b06312398883b6b09a1b91fa0b76f5db52812cbfae50a84fee94fc8e5e1bd9"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/config.json",
+   "bytes": 1986,
+   "sha256": "eedbdd10ac0277fff2b39ed3c786215c2d0d85f9aaffe6bec2ba222922c49591"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/cp_best_model.pt",
+   "bytes": 5268279,
+   "sha256": "d9330c1979f1f56c1606d42364d6167c2bce554b1afc5fb4eb5fc38eb55c1c42"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/cp_train_log.csv",
+   "bytes": 6665,
+   "sha256": "8938c5e4b346ebd96bc8cc2c802bc16ed2921655814287acbdabbc1b30492faf"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_4/or_train_log.csv",
+   "bytes": 5756,
+   "sha256": "aba72fc337a7c76304f80c4b27cd0e21e1ce7ae7aa1b9283bd569d54764ba7e5"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/best_model.pt",
+   "bytes": 7902965,
+   "sha256": "c88a5ffcfad149ad99f74ab495b9d48f692bab4ccf652aa33511d007ce716878"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/config.json",
+   "bytes": 1985,
+   "sha256": "fff8252418737d25eb6fcb311c470ecf0bc2cc3526aec25449ed8dec593adc33"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/cp_best_model.pt",
+   "bytes": 5268279,
+   "sha256": "aac4a56c523a800f9568a1a72a2d7634898b1e3c786ded884eab4b04eb2f3c7d"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/cp_train_log.csv",
+   "bytes": 6665,
+   "sha256": "41fa2dab052aabb8f1f7d6b8a3346374e1a7b75a937731f96120b6b4855b2455"
+  },
+  {
+   "path": "02_模型訓練和驗證_model_training_validation/second_model_two_tower/models/original_text/seed_5/or_train_log.csv",
+   "bytes": 5760,
+   "sha256": "bb93f85bfd5f4c491de8cf171def80ead9994a299c74065bc112ac4fc0f07c14"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/A05_no_judge_intervention_static_proof.csv",
+   "bytes": 2450,
+   "sha256": "c94a2ede0643a048fe0e87e354128dba24595b0a7f971c6b8e954723454e0bc8"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/A05_no_judge_intervention_static_proof.txt",
+   "bytes": 2598,
+   "sha256": "41a8030860f9b12c4bc9f8456e825c1088370597c64a6336f7f3921b5a074270"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/A06_judge_and_downstream_input_roles.csv",
+   "bytes": 1065,
+   "sha256": "6bb86b41e46f0ecc9898ec1acbd27ee16d224b87dfe7cd3075d1373df795f6fc"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/A15_requested_controls_status_summary.csv",
+   "bytes": 3038,
+   "sha256": "89c5abae8463c5cd51df0423a873119b96295548ce206ab63f7df33b14792df6"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/A17_existing_no_missing_ablation_artifact_index.csv",
+   "bytes": 5067,
+   "sha256": "7f34bca203ed2ed86e051045a0f1da0042aa6f741aff66d44708761ec9481058"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P04_reliability_xai_analysis.ipynb",
+   "bytes": 181961,
+   "sha256": "af92723086cbe1cea5d9d68da2ce21970dc398fd8dfa528e3b51d820b62c6d83"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P05_llm_judge_agreement_analysis.ipynb",
+   "bytes": 405561,
+   "sha256": "c9366ebf8c7957827187e474ad88eae4c112b9f6bf9cc6fda9aaee041255e2a0"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P06_prompt_robustness_reproducible.ipynb",
+   "bytes": 87006,
+   "sha256": "8d731db2a5638fd0ac56dbb1b4a60cb6e9804e3efe523123b0042b91d4e569c2"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/P12_environment_and_control_checks_reproducible.ipynb",
+   "bytes": 32747,
+   "sha256": "a9d9c8e0b35309ac81cb4229fb255c9d1cdea7bae2094587cde315ecaf7d91e4"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/source_programs/build_journal_artifacts.py",
+   "bytes": 77621,
+   "sha256": "8e509ae6d8e83e31cd551ad8ddb3ce557458d97f7de2634a76b29e6b56b6552c"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F12_reliability_performance_comparison.png",
+   "bytes": 150036,
+   "sha256": "b5afb6a752974c526730bbdb7210084bf5787442b7358d5b6534f1ee1ddc2fc4"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F13_reliability_diagram_comparison.png",
+   "bytes": 158063,
+   "sha256": "8a2d0c047296504c109f2bcc8444061cd641693e2e32b0d4f7e57aa18f0ec572"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F14_reliability_error_slicing_comparison.png",
+   "bytes": 226564,
+   "sha256": "22877356dd093754ccf08f4640a67af7b450aabb108caecf0a04d20450277f74"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F15_reliability_subgroup_hit10_comparison.png",
+   "bytes": 203066,
+   "sha256": "a9d6c59e068e0f21bc05cd6e524be0c1e787e595bc271f2157ed86d27d382cc8"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F16_reliability_subgroup_delta_hit10_heatmap.png",
+   "bytes": 220118,
+   "sha256": "f80c146ca0eed77a4470a82c41ed89c26d558ff8c06a3c613b66af866a17476f"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F17_judge_qwen_gemma_score_histogram.svg",
+   "bytes": 36797,
+   "sha256": "ad10de323cdac5793cf5cfcc179233dfc27e2d21f518469bd2431772270cd09f"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F18_judge_qwen_gemma_quantile_confusion.png",
+   "bytes": 53554,
+   "sha256": "7e5823b44b2c67c6e8b3af6880bbddf4c546dc65c61ca398a73db4625094a137"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F19_judge_bottomp_sensitivity_overlap_band.svg",
+   "bytes": 17165,
+   "sha256": "bc622da517a6122b4ff96c5701de48be987a4211bd7a30bfb64c6ef1d7f3e4fa"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/figures/F20_prompt_robustness_absolute_difference.png",
+   "bytes": 135594,
+   "sha256": "32a3c7be25ee5739a5f16e8f51d78b9ca33ed3aa5d53be1d66f96458b908928f"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/tables/T18_reliability_required_fields_compare.csv",
+   "bytes": 41365964,
+   "sha256": "c57e0bf9eda77e11ef58916d35e88fda8e72f3ac3e0404a5dd3f6a7280286b86"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/tables/T19_judge_qwen_gemma_agreement_summary.csv",
+   "bytes": 431,
+   "sha256": "6b9214acf68a8fd0b252f9dff157bfd70e894b58ec2d06a4f2f1edb8d0c74ff3"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/tables/T20_judge_qwen_gemma_correlation_summary.csv",
+   "bytes": 286,
+   "sha256": "fa798c860b43c1f1ccd6e5d75844de496eab321fce57101b09cbaef2b2e3d449"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/00_控制檢查與附加稽核/圖表_figures_tables/tables/T21_judge_qwen_gemma_threshold_agreement.csv",
+   "bytes": 231,
+   "sha256": "afa4a6b18f4aa4125a5bf2bf8d5912b2a83af6b46e07dd4c3d6f3906bd042a9d"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/01_文字長度影響分析/A07_length_performance_rowlevel_cir.csv",
+   "bytes": 6107878,
+   "sha256": "118d1a0e118bc0b82aeafd97eeab1a5b4a870ca4e5008aebb3ca735aab979823"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/01_文字長度影響分析/A11_length_defense_interpretation.txt",
+   "bytes": 1480,
+   "sha256": "4a2e5f01c64cf2dfb955b2a267dd452a61f70d061bd78b86298dbf4114212c0b"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/01_文字長度影響分析/source_programs/P12_length_defense_reproducible.ipynb",
+   "bytes": 22983,
+   "sha256": "565feaf03dca2997145b12d3c6d5a3812a8c4bcab2bf0b23c58a590ccb587162"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/01_文字長度影響分析/圖表_figures_tables/tables/A08_length_performance_correlation_summary.csv",
+   "bytes": 2713,
+   "sha256": "28e51f7f690090fb8dd8bc89f8ee8986ed4cbd10423f8547c3b8c217f14ed1ad"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/01_文字長度影響分析/圖表_figures_tables/tables/A09_length_bucket_performance_summary.csv",
+   "bytes": 1663,
+   "sha256": "7fa8b8a0a85f30244c5bc39a1d217053b2c298627ac99a0e9b57534c5392534d"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/01_文字長度影響分析/圖表_figures_tables/tables/A10_matched_length_subset_summary.csv",
+   "bytes": 916,
+   "sha256": "39226b9b74636c6ffdb330eecd225f83866e3895207e490d68f6e0e4875f5be0"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/02_目標單品線索檢查/A04_target_item_clue_leakage_examples.csv",
+   "bytes": 20738,
+   "sha256": "47c112f2310ec0794082203f767df30cd2520ca04a0ae98c8e093b7f769e0cbc"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/02_目標單品線索檢查/source_programs/P12_target_clue_leakage_reproducible.ipynb",
+   "bytes": 15760,
+   "sha256": "cefb3486f5a9eac6547231a150ca8e80a124fa77f7d3b55b355f4028a86fdf77"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/02_目標單品線索檢查/圖表_figures_tables/tables/A03_target_item_clue_leakage_audit_summary.csv",
+   "bytes": 753,
+   "sha256": "e8fd123345e2d638830846d98abd92859d40515cfc03a74281cfb6bf09232a79"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P01_main_results_and_ablation_5seed_ttest.ipynb",
+   "bytes": 2851221,
+   "sha256": "9fe2ae1ffd5ce4649c043adbe2bff98c46105b1cdc223d95ef808b10789b99c3"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P12_statistical_rigor_reproducible.ipynb",
+   "bytes": 14540,
+   "sha256": "37edce857cc32b420f5a6b4878fa4072f3c7d0316bc6ff9e2caa62573008db4c"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/figures/F01_main_factor_contribution_proportion.pdf",
+   "bytes": 30919,
+   "sha256": "278fa4bef9486b4ac3b86f5593e3fed693ca40faab0a7eaf73993244c5c09dd5"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/A14_statistical_rigor_ci_adjusted_p_effect_sizes.csv",
+   "bytes": 2019,
+   "sha256": "2dcb32830c84032e5535beabb49e5aac7133275f29755af2b9ea023b012212ab"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T01_main_overall_baseline_and_ablation.csv",
+   "bytes": 1968,
+   "sha256": "cf2bdfa8e84cc941d4642eadf2f6bf9737621961a066ed9dd502831be2aafffa"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T02_main_significance_tests.csv",
+   "bytes": 1832,
+   "sha256": "5e4ea96d1f875c6d0831be84ff740ab6f4bee5d4c3c9f27b1aff543fb1e09c25"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T03_stage1_cp_original_vs_full.csv",
+   "bytes": 325,
+   "sha256": "78d06dec86441c13b6dd5bc2659544ab46477cff22af08527ebc1e535c8ea490"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T04_stage1_cir_original_vs_full.csv",
+   "bytes": 435,
+   "sha256": "5ed63fa971a70de0e3f018b0f1db2ea027c6625077421bc585943cc925d87b02"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T05_stage2_cp_ablation.csv",
+   "bytes": 325,
+   "sha256": "16f62f5c237a6cd6962b3a3712c5f9e4fa6ea53e133ad8839460d96cf9001892"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T06_stage2_cir_ablation.csv",
+   "bytes": 434,
+   "sha256": "1b4946c12bc781f6f3de033897035a635bcc29fac2966bee94f322833c2a5353"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T07_stage2_factor_contribution_ratio.csv",
+   "bytes": 762,
+   "sha256": "cdd06d5a6acd69c52e484d0bd4fb0e6a49c431a02106a7a6f413ef7d6cda34f4"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T08_stage1_cp_seed_detail.csv",
+   "bytes": 443,
+   "sha256": "8135e77493dc72ca4b2c643c3901a809b5fe1f2a28735aaa09132a2cd1a0ad27"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T09_stage1_cir_seed_detail.csv",
+   "bytes": 628,
+   "sha256": "21b1da0a51b2818de1f9d556d9e50ed1ff836ca267fca9201e3cb2749e83d49e"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T10_stage2_cp_seed_detail.csv",
+   "bytes": 1190,
+   "sha256": "2b85f0982e1d2561fa9579238f009be535b63b9707e9f2cacd0f31a3795dfd57"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/03_主推薦任務結果/圖表_figures_tables/tables/T11_stage2_cir_seed_detail.csv",
+   "bytes": 1792,
+   "sha256": "eca1531b55fc506afd85775a8de99fff7d3a0df0e87e0c338f51699ea171bb58"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/README.md",
+   "bytes": 270,
+   "sha256": "acf8ec9b95e25577ca6c909326a9e672c38bf821a740b15ee4d0f4a35ee7df11"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb",
+   "bytes": 155024,
+   "sha256": "085d163b00403a2c01e7e66dba751ffeb8197ffd605d645be985d600dca47e1b"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P03_qualitative_case_analysis.ipynb",
+   "bytes": 828215,
+   "sha256": "660c2e4a6578e1011add75333cf59990484c38ba8ac135b9f5bdeec1a4bfa63e"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F02_subset_hitrate_comparison.png",
+   "bytes": 98101,
+   "sha256": "88ea974c87a62db372eb19d61cad853c20751eaf87df148c1ad90a3f0bb4d213"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F03_subset_delta_hit10_heatmap.png",
+   "bytes": 123377,
+   "sha256": "b1a669fa35aa6017ec2606b1b3999416ee70631027a7f0f285cb7a132d2f8b69"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F04_subset_ablation_across_subsets.png",
+   "bytes": 193577,
+   "sha256": "7c859e61133bab72946db5ae06cb967134bf4cbafacb4740129eaf8d3620331d"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F05_subset_per_dimension_bars.svg",
+   "bytes": 33412,
+   "sha256": "f5684ccd18b7abf4efdd74893c7bff907042407808c894cf02fa88b0fec871f7"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F06_subset_rank_improvement_by_subset.svg",
+   "bytes": 13039,
+   "sha256": "d31b1d38aa15d82e2b521256b84b4501437eb106b99e3ea156e6b0c51ea896a9"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F07_qualitative_category_original_vs_full.png",
+   "bytes": 36515,
+   "sha256": "14ff18ee8ebff74216440890805bb16e52823e31890c8a67622233ec9e29194e"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F08_qualitative_condition_occasion_original_vs_full.png",
+   "bytes": 60722,
+   "sha256": "cd63b132a77d8b968552934edd8c1726bffef6f9f420819fcee78673b1e86539"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F08a_qualitative_category_context_aware_vs_original.svg",
+   "bytes": 42971,
+   "sha256": "d7e21b71ad1c7036a6762339fc5f90360b83e5cd83ffafaa8259854557aa439a"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F09_qualitative_category_weather.svg",
+   "bytes": 44464,
+   "sha256": "8c5608690a808c9826f024fc4e2fbe2b15d10b65195e40a10e7929d3d80de857"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F09a_weather_terms_context_aware_vs_original.svg",
+   "bytes": 39754,
+   "sha256": "cc5ede3ab8a9cec58c100fc4408606cf64449ce0011ff56105bcefaf329a61a9"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F09b_weather_term_contribution_no_weather_vs_full.svg",
+   "bytes": 42797,
+   "sha256": "cd5be27e1fe471c44b5127595790ec5816ef1bb621cc18ac8a780e394836b599"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F10_qualitative_category_occasion.svg",
+   "bytes": 43735,
+   "sha256": "030f78054e0574e76a391f0039367d3f8307587fe2f28738fe374999d223e70b"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F10a_occasion_terms_context_aware_vs_original.svg",
+   "bytes": 42418,
+   "sha256": "1afba9e10f88a3f31143cb0691d801f3f0e1b612adc005439c84e35432cff0e5"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F10b_occasion_term_contribution_no_occasion_vs_full.svg",
+   "bytes": 42390,
+   "sha256": "8ccbccdd2f864f6cca459ce67b9d94742588fa3f279789b9f658281e70c97f61"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F11_qualitative_category_style.svg",
+   "bytes": 45844,
+   "sha256": "988d8d1f500df0846d6077f7e4b7d5e52998912d4178e8e523ad4a3d5c6344b9"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F11a_style_terms_context_aware_vs_original.svg",
+   "bytes": 46281,
+   "sha256": "fd8d87dce427cbaa079dad91714fea0c58a4c9a477f351fb0fc12ca9a6228b35"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/figures/F11b_style_term_contribution_no_style_vs_full.svg",
+   "bytes": 46180,
+   "sha256": "80870087f8bb87235154c653a104cd37aa80c1b3938dd01c7136d87819c60f83"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/tables/T12_subset_robustness_summary.csv",
+   "bytes": 4313,
+   "sha256": "f9be2d6431a68c2912cc34c8a53f6608b9f4ad46f69c886fc6610e26ad1120a3"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/tables/T13_subset_delta_hit10_pivot.csv",
+   "bytes": 464,
+   "sha256": "f100754df307d56b9ee1c7cdbc20b601b9c95dc9b3eecd285d0139c414dc0be5"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/tables/T14_qualitative_condition_summary.csv",
+   "bytes": 3956,
+   "sha256": "5b161a5f0806797e406235d8d2be03e9647aad9f42f66263e227aa6f7bc5d70f"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/tables/T15_qualitative_category_summary.csv",
+   "bytes": 3141,
+   "sha256": "93c8174a78bf9f5b167331f4dc1dfa1dcc614b4dfa2c220fd1e09f962dbf2685"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/tables/T16_qualitative_failure_cases.csv",
+   "bytes": 37347,
+   "sha256": "492cf1f05c5b76163b37f67232283142f2d309286857cd41c174a960972f7f30"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/04_情境子集與三因子分析/圖表_figures_tables/tables/T17_qualitative_user_cases.csv",
+   "bytes": 37644,
+   "sha256": "bbe8e621a2af6a2047aa36c1b208d8d4a6b1a2b2b06df7e9beae073cf45fb310"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/A31_second_model_two_tower_or_rowlevel.csv",
+   "bytes": 32461155,
+   "sha256": "ef2ec6fc8df050a6003009c9dac32bb1b49abeb5cef2e10d0bb5410c1c93a855"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/A33_second_model_two_tower_interpretation.txt",
+   "bytes": 1119,
+   "sha256": "6a1c9710b3a58eac9c7da8127c7ac1305bccb88a1770164cdcafc8316719db50"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/A34_second_model_training_report.txt",
+   "bytes": 9975,
+   "sha256": "b96afd540380fa6cf3c7e99c37376b871aaf2a96de79afa14e8de174278b4095"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/context_aware_description/seed_1/seed_summary.csv",
+   "bytes": 1015,
+   "sha256": "4a1c417e2074d13e6b44e647adf782bd3f921577b99816a9c9cd9422feb98de0"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/context_aware_description/seed_2/seed_summary.csv",
+   "bytes": 1012,
+   "sha256": "e235c1fdb997de6db89750671f9943e959fe3e3b650b86c34f145651cfb5351b"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/context_aware_description/seed_3/seed_summary.csv",
+   "bytes": 1002,
+   "sha256": "8cb477352edd62ac7e280f9e0222ba2f1dda1fa43c44195f69581281d3b9c58f"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/context_aware_description/seed_4/seed_summary.csv",
+   "bytes": 999,
+   "sha256": "b7efdf05c01be86f5c45f64feb94ece6ea23be702207940ff9606e165b70d100"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/context_aware_description/seed_5/seed_summary.csv",
+   "bytes": 1002,
+   "sha256": "8b312087852ab34347f9a7dec2d9d358185e54d79b4409df7b1eea985b3c77f2"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/original_text/seed_1/seed_summary.csv",
+   "bytes": 979,
+   "sha256": "df7063ba66c2e12c1b1d80aceea2430d5bd70392fe4e819abc9de3ef73c88bba"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/original_text/seed_2/seed_summary.csv",
+   "bytes": 965,
+   "sha256": "dc5d9dc02d92fac3d2cc0e6c6ac9957382e00a3183984a3ac13e98a872fa594d"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/original_text/seed_3/seed_summary.csv",
+   "bytes": 965,
+   "sha256": "0b192514a341cea95733de08bb36a3a554570ad9cb3e4af84c7fa56c3623251e"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/original_text/seed_4/seed_summary.csv",
+   "bytes": 965,
+   "sha256": "2e6f158eddda1b1c80b022e11db988607533547f34c085930c0d4b7a49f44acd"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/per_seed_summary/original_text/seed_5/seed_summary.csv",
+   "bytes": 964,
+   "sha256": "706d86b756e4f5092eae235ee3372d14d637ec9c59ab2be940f9315e1261c540"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/source_programs/P15_fashionclip_text_conditioned_retrieval_baseline.ipynb",
+   "bytes": 1557930,
+   "sha256": "45afc380ec1acafa063c1b114d2216e41d98000082bda50750c54e55834f076a"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/圖表_figures_tables/tables/A30_second_model_two_tower_seed_summary.csv",
+   "bytes": 6799,
+   "sha256": "d6d8bae25fb9935d78f88a1bf9ae317c6aad84d3bba93cd05787d11bc8f5eeb6"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/05_第二模型驗證/圖表_figures_tables/tables/A32_second_model_two_tower_mean_std.csv",
+   "bytes": 2585,
+   "sha256": "f1b3853b2e8d8959a0407550e4248ca5508574c41d18236d7ae1a9aa9561727a"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/06_反事實情境敏感度/A44_counterfactual_context_pairs.csv",
+   "bytes": 28206,
+   "sha256": "8df48da3c06a475e66a55f34c44561009260350ce909adb38fde1e19f6bb324e"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/06_反事實情境敏感度/A45_counterfactual_context_retrieval_seed1.csv",
+   "bytes": 26428,
+   "sha256": "267b9dea56d8d4e565823821506abadf79d97fabc23e6d694bfb04d0dfb475dc"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/06_反事實情境敏感度/A46_counterfactual_context_manual_review_sheet.csv",
+   "bytes": 16851,
+   "sha256": "b8755eda908c966114f4fa78089ca4051419e07b8d462e97e1699c22c8f6faba"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/06_反事實情境敏感度/A47_counterfactual_context_experiment_note.txt",
+   "bytes": 1373,
+   "sha256": "d7d72cca74f5745e47e1a6f607fbfce0f27d91e9badd4475d2854d9f472d69f1"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/06_反事實情境敏感度/source_programs/P16_counterfactual_context_consistency_check.ipynb",
+   "bytes": 149369,
+   "sha256": "13e766aee5f32f207ec2afc207e031c3d837e2c5e9140347a55bbf446d84db47"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A35_human_audit_30_sampling_frame.csv",
+   "bytes": 17694740,
+   "sha256": "2fbfd405af4ffeaca74a046074a119fe8078b2660f8299e8b5611f7289c59bbc"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A36_human_audit_30_selected_cases.csv",
+   "bytes": 17395,
+   "sha256": "994a881747b7d3fa4346d2b337179e25f74ce2de79c6c74200b6bdd6b9597ba7"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A37_human_audit_30_selected_cases.json",
+   "bytes": 32009,
+   "sha256": "d0ab2c2943484915b938a958a012ccef8f2ce1e1d5bc0a5bad6bdbb687f8627a"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A38_human_audit_30_manual_results.csv",
+   "bytes": 156660,
+   "sha256": "14e88488195a9e58698ad50c8ca8b5c7e5eaa0734b01f447f4d9725f3555a30c"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A38_human_audit_30_manual_results_template.csv",
+   "bytes": 147881,
+   "sha256": "6e0bc857e7cfe92bdcca2d496925e3abdfaebd1a16ecbc51571e46d370c7b3ca"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A41_human_audit_30_sample_score_summary.csv",
+   "bytes": 6749,
+   "sha256": "80876e5d95d1ddb19a8ff22ca7303f545dbc1e09382643b358c7babf12cc4df6"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A42_human_audit_30_coverage_summary.csv",
+   "bytes": 837,
+   "sha256": "b0ae7ed5471c27eb9a17e82ef0bccf6e6d9e36e45f4e81a9ec215ba03a99eae2"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/A43_human_audit_30_interpretation.txt",
+   "bytes": 837,
+   "sha256": "4c4a137e1befe314f6a21a3f5d420c1856fa0ed4c566d8cb7a4fa37d3890e35d"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/human_audit_30_form.html",
+   "bytes": 63443,
+   "sha256": "6e42028e25d3162482239ad57458d6a57cd4fc6c19452e0a3ad3226d840ba1d4"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/source_programs/P06_human_audit_30_reproducible.ipynb",
+   "bytes": 86197,
+   "sha256": "baf6243e8c3eb3d90be38afce1f94d24e16acde87e847064110d0980760d06b3"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/圖表_figures_tables/figures/F30_human_audit30_sampling_coverage.svg",
+   "bytes": 46722,
+   "sha256": "b93cf47897ddd90e7a6abb640a2b596b6f8511c3afeb754c627df978337d1a9a"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/圖表_figures_tables/figures/F31_human_audit30_model_human_error_metrics.svg",
+   "bytes": 12138,
+   "sha256": "4464f1fd50316a741b1064859f972d6f608a7b812128c2ab7097e0d9b89acb99"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/圖表_figures_tables/figures/F32_human_audit30_model_human_score_scatter.svg",
+   "bytes": 23912,
+   "sha256": "eb95e63d1a57365c07d03465e41dcf6f8e019effbe4e6c5725f4328f30cbdb12"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/圖表_figures_tables/figures/F33_human_audit30_item_disagreement_ranking.svg",
+   "bytes": 18797,
+   "sha256": "e13912ea57e98202825caa3c07840721c9f9329f5c65efaa9e2cf9108fd8f1f7"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/圖表_figures_tables/tables/T30_human_audit30_model_human_score_metrics.csv",
+   "bytes": 298,
+   "sha256": "6767832c115efa2906cc14c1467a5251c893611c3902588c81dc68566e8c261e"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/07_人工稽核與品質診斷/圖表_figures_tables/tables/T31_human_audit30_item_disagreement.csv",
+   "bytes": 5903,
+   "sha256": "39702f4da2afe63daafd941dbbe2453adfd909d5ec2724323b2d99a193fe8bf9"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/README.md",
+   "bytes": 604,
+   "sha256": "e5e6ee043418b45b4821693b3dba522d6955571b8bb761c3d715eaee3ec3454c"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/source_map.csv",
+   "bytes": 57652,
+   "sha256": "eee445d770c706b57fdac1d2245d11c2723348f4403e5a1d4eccd30a612115aa"
+  },
+  {
+   "path": "03_實驗與結果_experiments_results/source_map.txt",
+   "bytes": 27052,
+   "sha256": "c67c160620f4006a5bcb726efe7d63a5f714b20d9cf1ee144940738b5397bece"
+  }
+ ]
+}

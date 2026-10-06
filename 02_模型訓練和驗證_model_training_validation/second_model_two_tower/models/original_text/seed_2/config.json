@@ -1,0 +1,39 @@
+{
+  "variant": "original_text",
+  "seed": 2,
+  "pipeline": "CP binary compatibility pretraining -> OR retrieval fine-tuning",
+  "checkpoint_selection": "CP and OR checkpoints selected by validation FITB accuracy; train up to 100 epochs without early stopping",
+  "cp_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/original_text/seed_2/cp_best_model.pt",
+  "or_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/original_text/seed_2/best_model.pt",
+  "text_feature_file": "encoded_outfitUrlTitle_en_fashionClip.pkl",
+  "splits": {
+    "train": "PO-D train",
+    "valid": "PO-D valid",
+    "test": "PO-D test"
+  },
+  "seed_summary": {
+    "variant": "original_text",
+    "seed": 2,
+    "cp_best_epoch": 12,
+    "cp_best_valid_fitb_acc": 0.5773333333333334,
+    "cp_valid_auc_at_best_fitb": 0.9137965555555556,
+    "cp_test_auc": 0.8810136873216659,
+    "cp_test_fitb_acc": 0.5473093430174976,
+    "or_best_epoch": 2,
+    "or_best_valid_fitb_acc": 0.613,
+    "or_test_fitb_acc": 0.5875866622647739,
+    "cp_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/original_text/seed_2/cp_best_model.pt",
+    "or_checkpoint": "/home/ester/valid_description/experiment data/journal_figures_tables_20260629/second_model_runs/fashionclip_two_tower_fitb_or/models/original_text/seed_2/best_model.pt",
+    "test_fitb_questions": 15145,
+    "or_recall_evaluable_pairs": 9311,
+    "or_recall_skipped_questions": 5834,
+    "mean_rank": 601.6036945548276,
+    "median_rank": 358.0,
+    "recall@1": 0.006229191279132209,
+    "recall@3": 0.013961980453227366,
+    "recall@5": 0.02158736977768231,
+    "recall@10": 0.03844914617119536,
+    "recall@30": 0.09751906347331114,
+    "recall@50": 0.14531199656320481
+  }
+}

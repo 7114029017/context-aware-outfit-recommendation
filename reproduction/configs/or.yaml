@@ -1,0 +1,108 @@
+schema_version: 1
+artifact_role: TORS_A5_experiment_config
+task: outfit_recommendation_retrieval
+task_short_name: OR
+implementation_family: CIR
+status: evidence_backed_reproduction_config
+inherits_shared_model_settings_from: reproduction/configs/cp.yaml
+
+provenance:
+  primary_sources:
+    - reproduction/configs/main_hybrid_attention.yaml
+    - 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/base_config.py
+    - 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cir.py
+    - 02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cir.py
+  preserved_checkpoint_inference_status: reproduced
+  historical_training_source_exact: partial
+
+dataset:
+  name: Polyvore Outfits Disjoint
+  split: disjoint
+  train_outfits: 16995
+  validation_outfits: 3000
+  test_outfits: 15145
+  evaluable_or_pairs: 9311
+  manifest: reproduction/splits/or_ids.csv
+
+conditions:
+  original:
+    outfit_feature: encoded_outfitUrlTitle_en_fashionClip.pkl
+  context_aware:
+    outfit_feature: encoded_NewoutfitUrlTitle_en_fashionClip.pkl
+
+model:
+  class: OutfitTransformerRetrieval
+  image_encoder: LinearImageEncoder
+  text_encoder: LinearTextEncoder
+  image_input_dim: 512
+  item_text_input_dim: 512
+  outfit_text_input_dim: 512
+  image_embedding_dim: 64
+  item_text_embedding_dim: 64
+  outfit_text_embedding_dim: 128
+  attention_heads: 16
+  transformer_layers: 3
+  dropout: 0.1
+  max_outfit_items: 16
+  target_item_info: category
+  use_outfit_text: true
+  margin: 0.3
+
+initialization:
+  source: matching_CP_checkpoint
+  transfer_rule: copy parameters whose names exist and tensor shapes match
+  cp_source_config: reproduction/configs/cp.yaml
+  historical_lineage_note: CP_to_CIR initialization is strongly established; exact historical CP decoder source remains unresolved
+
+training:
+  epochs: 100
+  batch_size: 50
+  optimizer:
+    class: Adam
+    learning_rate: 0.00005
+    weight_decay: 0.0
+  gradient_accumulation_steps: 1
+  gradient_clip_norm: 0.5
+  precision: float16
+  grad_scaler: true
+  compile_model: false
+  loss:
+    class: MarginRankingLoss
+    margin: 0.3
+  hard_negative:
+    enabled_from_epoch_inclusive: 40
+    historical_behavior_note: preserve archived behavior for original-behavior reproduction; corrected behavior must use a separate experiment tag
+  scheduler:
+    class: StepLR
+    constructor_step_size: 1
+    gamma: 0.5
+    scheduler_step_call: every_10_epochs
+  warmup: none
+  early_stopping: false
+  train_shuffle: true
+  validation_shuffle: false
+  evaluation_interval_epochs: 1
+  checkpoint_selection:
+    metric: validation_fitb_accuracy
+    direction: maximize
+
+reproducibility:
+  seeds: [1, 2, 3, 4, 5]
+  cudnn_deterministic: true
+  cudnn_benchmark: false
+  mixed_precision: float16
+  gpu_count: 1
+  average_runtime: null
+  average_runtime_status: use_reproduction_run_manifests_when_available
+
+evaluation:
+  metrics: [recall_at_1, recall_at_3, recall_at_5, recall_at_10, recall_at_30, recall_at_50]
+  candidate_pool:
+    grouping: fine_grained_category
+    target_size_per_evaluable_category: 3000
+    construction: unique test items first, then fill from train items
+    target_item_inserted_if_absent: true
+  ranking_score: cosine_similarity
+  expected_evaluable_pairs: 9311
+  expected_results_document: reproduction/docs/expected_results.md
+  acceptance_matrix: reproduction/docs/tors_compliance.md

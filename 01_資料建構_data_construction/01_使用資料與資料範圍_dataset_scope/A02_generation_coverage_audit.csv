@@ -1,0 +1,12 @@
+metric,value,source,notes
+po_d_disjoint_train_records,16995,/home/ester/valid_description/polyvore_data/polyvore_outfits/disjoint/train.json,Main PO-D split.
+po_d_disjoint_valid_records,3000,/home/ester/valid_description/polyvore_data/polyvore_outfits/disjoint/valid.json,Main PO-D split.
+po_d_disjoint_test_records,15145,/home/ester/valid_description/polyvore_data/polyvore_outfits/disjoint/test.json,Main PO-D split.
+po_d_disjoint_total_records,35140,disjoint train + valid + test,Main dataset size.
+generated_valid_title_records,35140,/home/ester/valid_description/new_polyvore_outfit_titles.json,Aligned 1-to-1 with PO-D set_ids.
+original_polyvore_title_metadata_records,68306,/home/ester/valid_description/polyvore_data/polyvore_outfits/polyvore_outfit_titles.json,Reference metadata pool only.
+cp_compatibility_test_pairs,30290,/home/ester/valid_description/polyvore_data/polyvore_outfits/disjoint/compatibility_test.txt,CP AUC evaluation scope.
+cp_fitb_test_questions,15145,/home/ester/valid_description/polyvore_data/polyvore_outfits/disjoint/fill_in_blank_test.json,CP FITB evaluation scope.
+cir_evaluable_query_target_pairs_per_seed,9311,/home/ester/valid_description/text-conditioned-outfit-recommendation/experiments/detail_cir_cir_old_featold_seed*.csv,CIR recall scope after candidate-pool eligibility filtering.
+cir_test_questions_excluded_by_cir_eligibility,5834,/home/ester/valid_description/text-conditioned-outfit-recommendation/CIR_evaluate.py,Skipped by CIR candidate-pool eligibility; not CP reassignment.
+no_missing_none_ids_total,21903,/home/ester/valid_description/no_missing_none_ids.txt,Supplementary no-missing ablation/control only.

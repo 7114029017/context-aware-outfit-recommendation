@@ -1,0 +1,85 @@
+{
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+  "packages": {
+    "numpy": {
+      "expected_archived_version": "2.0.2",
+      "installed_version": "2.0.2",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "torch": {
+      "expected_archived_version": "2.9.1",
+      "installed_version": "2.9.1+cu130",
+      "exact_version_match": false,
+      "import_ok": true
+    },
+    "torchvision": {
+      "expected_archived_version": "0.24.1",
+      "installed_version": "0.24.1",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "transformers": {
+      "expected_archived_version": "4.57.1",
+      "installed_version": "4.57.1",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "scikit-learn": {
+      "expected_archived_version": "1.6.1",
+      "installed_version": "1.6.1",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "einops": {
+      "expected_archived_version": "0.8.1",
+      "installed_version": "0.8.1",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "Pillow": {
+      "expected_archived_version": "11.3.0",
+      "installed_version": "11.3.0",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "tqdm": {
+      "expected_archived_version": "4.67.1",
+      "installed_version": "4.67.1",
+      "exact_version_match": true,
+      "import_ok": true
+    },
+    "ipdb": {
+      "expected_archived_version": "0.13.13",
+      "installed_version": "0.13.13",
+      "exact_version_match": true,
+      "import_ok": true
+    }
+  },
+  "torch_runtime": {
+    "cuda_available": true,
+    "torch_cuda_version": "13.0",
+    "cudnn_version": 91300,
+    "device_count": 1,
+    "devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA GB10",
+        "capability": [
+          12,
+          1
+        ]
+      }
+    ],
+    "float16_autocast_available": true
+  },
+  "summary": {
+    "all_required_imports_ok": true,
+    "all_versions_exactly_match_archived_freeze": false,
+    "checkpoint_eval_environment_status": "imports_ok_but_version_drift",
+    "cuda_runtime_available": true,
+    "torch_is_cuda_build": true,
+    "note": "The archived requirements.txt is a later/full workspace freeze and is not yet proven to be the exact 2025 training environment. Version mismatch is therefore recorded, not silently corrected."
+  }
+}
