@@ -101,7 +101,18 @@ Script: `scripts/supplementary/paper_value_checks.py`.
 Output: `results/supplementary/paper_value_checks/`; `supplementary/paper_value_checks/` in a run folder.
 
 Recomputes the values that do not come from the 35 training units: Table 1
-(dataset and evaluation scope), Table 2 (text fields), the proxy-value row of
-Table 5, Table 8 (Two-Tower, from the preserved 2025 per-seed outputs, including
-paired 95% confidence intervals) and Table 9 (counterfactual analysis, from the
-preserved 2025 seed-1 retrieval outputs).
+(dataset and evaluation scope), Table 2 (text fields), the proxy-value and
+target-clue rows of Table 5, Table 8 (Two-Tower, from the preserved per-seed
+outputs, including paired 95% confidence intervals) and Table 9 (counterfactual
+analysis, from the preserved seed-1 retrieval outputs). Tables 8 and 9 and the
+text-length row are regenerated from the run's own models by the extension
+analyses (`extensions.md`).
+
+The target-clue audit (notebook P12 in `02_目標單品線索檢查`) needs the
+fine-grained category of each target. `categories.csv` lists 34 category IDs
+more than once, 16 of them with different labels. The 2025 programs keep the
+first occurrence; with that rule the six counts equal the archived table A03
+and the manuscript (4.50%, 4.88%, 11.06%, 0.87%, 12.40%), and all 80 archived
+examples (A04) carry the same labels. The pipeline's secondary step keeps the
+last occurrence, which explains its different counts
+(`table5_target_clues.csv` lists both).

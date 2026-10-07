@@ -1,0 +1,35 @@
+{
+ "device": "cpu",
+ "threads": 4,
+ "run": "full_20261002T161428Z",
+ "pairs": "03_實驗與結果_experiments_results/06_反事實情境敏感度/A44_counterfactual_context_pairs.csv",
+ "pairs_sha256": "8df48da3c06a475e66a55f34c44561009260350ce909adb38fde1e19f6bb324e",
+ "fashionclip": "patrickjohncyh/fashion-clip@7e3ba62ce16b379a1ab479346b66f192e76f51b7",
+ "fashionclip_weights_sha256": "4977e3a54929eccf065ce449aeaf296f0e5cb6b28e8798c3c97d67cb2f6dafc9",
+ "models": {
+  "2025_seed1": {
+   "checkpoint": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed1/ckpt.pt",
+   "sha256": "0fe754a09b382abcc5b040fe8b57a31f9cacb5ecc1a41dbe2ceb22bb19b5565b"
+  },
+  "seed1": {
+   "checkpoint": "<run>/main/context_seed1/cir_best_ckpt.pt",
+   "sha256": "858200398832f15a3d0160f58be7012340e207aa9981af0477c43b3f5f0101e7"
+  },
+  "seed2": {
+   "checkpoint": "<run>/main/context_seed2/cir_best_ckpt.pt",
+   "sha256": "6adc8f7dfe658fc224b7887ffdf741f64d2c0ff4239d1e146e8445877abe9382"
+  },
+  "seed3": {
+   "checkpoint": "<run>/main/context_seed3/cir_best_ckpt.pt",
+   "sha256": "17dd26d3090510f00a70d542c4747dbfb594c91e8c3e53d47f53bc157b2bc465"
+  },
+  "seed4": {
+   "checkpoint": "<run>/main/context_seed4/cir_best_ckpt.pt",
+   "sha256": "272a9721716001fd3baec289d3edc592411320206b87e61f087468f05cc29230"
+  },
+  "seed5": {
+   "checkpoint": "<run>/main/context_seed5/cir_best_ckpt.pt",
+   "sha256": "98d24fe747a222ca3c95d4594ef812364656d721e69e77bb76534f93735330a2"
+  }
+ }
+}

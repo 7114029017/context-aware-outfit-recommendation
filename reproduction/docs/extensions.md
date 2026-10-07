@@ -1,0 +1,110 @@
+# Extension analyses
+
+The 35 training units reproduce Tables 6 and 7. Several other analyses in the
+TORS manuscript still rest on the senior student's preserved model outputs:
+the text-length row of Table 5, the counterfactual analysis (Tables 4 and 9),
+the Two-Tower check (Table 8), the color-shift numbers and the appendix case
+figures. The extension analyses regenerate them from a run's own models. They
+run after the 35 units, read the run's checkpoints and outputs, and never
+change the run's results or its `RUN_STATUS.txt`; the code used by the 35 units
+is not changed.
+
+Scripts: `reproduction/scripts/extensions/`. Each one is ported from the
+notebook that produced the manuscript's values. Apart from paths and output
+handling, the computation is copied unchanged, and each port is first checked
+against the notebook's archived outputs (section "Validation").
+
+## Running them
+
+A full run (`reproduce_all.sh --fresh`) runs them after it has PASSED and writes
+`<run folder>/extensions/`, with the status of each step in
+`extensions/EXTENSIONS_STATUS.txt` and the console output in
+`logs/extensions.log`. A failed step prints a warning; the run stays PASSED. To
+run them by hand, for example after a failure:
+
+    bash reproduction/scripts/extensions/run_all.sh --run-root RUN [--steps LIST] [--skip-gpu] [--validate]
+
+| Step | Manuscript | Needs | Time |
+|---|---|---|---|
+| `text_length` | Table 5, "Text length" (thesis Tables 4-4, 4-5) | GPU | about 20 min |
+| `counterfactual` | Tables 4 and 9 | FashionCLIP (`bootstrap_data.sh --with-fashionclip`) | about 1 min on a CPU |
+| `two_tower` | Table 8 | GPU | 1.5-3 hours |
+| `color` | Section 5.5, color-shift analysis (thesis Table 4-19) | Polyvore images (`bootstrap_data.sh --with-images`) | seconds |
+| `figures` | Figures A1-A3 | Polyvore images | seconds |
+
+A step whose GPU or download is missing is reported as SKIPPED and the other
+steps still run. `--validate` adds the checks of the next section (about 5 min
+on a CPU). The Polyvore images and the case figures, which show Polyvore
+product photos, stay on the local machine: `case_figures.py` refuses to write
+into a tracked folder, and only the figures' contents (item IDs and ranks) are
+recorded in `case_figures_manifest.csv`.
+
+## Validation of the ported code
+
+Run with `--validate` on 2026-10-07; outputs in
+`results/extensions/full_20261002T161428Z/validation/` and
+`counterfactual/summary.md`.
+
+| Check | Result |
+|---|---|
+| Text length: the archived 2025 row-level table A07 through `length_analysis.py` | A08, A09 and A10 equal the archived tables; r = 0.027647 and 0.043384, 3,014 pairs, ΔHit@10 = +0.0106 as in the manuscript |
+| Text length: per-query files rebuilt from A07 through the `--detail-dir` path | the rebuilt A07 equals the archived one (46,555 rows) |
+| Text length: one main unit (Original, seed 1) evaluated on the CPU | 9,311 queries; per-query hits average to the recalls; Recall@1, @10 and @50 equal the official run, Recall@3, @5 and @30 differ by one or two queries (float32 on the CPU, float16 autocast on the GPU in the official run), so this step runs on the GPU |
+| Counterfactual: FashionCLIP at the revision in P16's log, on the 24 stored context-aware descriptions | cosine with the stored features 1.000000, largest absolute difference 6e-06 |
+| Counterfactual: the preserved 2025 seed-1 model against the archived A45 | top-5 lists equal in 24/24 pairs for both conditions; ranks equal in 17/24 and 22/24, never more than 1 apart; Table 9 recomputed as +17.2 / 0.500 / 0.351 (manuscript +17.0 / 0.500 / 0.351) |
+| Two-Tower: the 20 preserved checkpoints evaluated with `two_tower.py` against the archived A30 | FITB, Recall@1-50 and median rank equal; AUC within 3.3e-08 and mean rank within 0.0005 |
+| Two-Tower: one-epoch training on a subset on the CPU (`--smoke`) | training, checkpoint selection and evaluation run end to end |
+| Color: comparable rows on the official run | 745 rows over 149 cases, as printed by P03 in 2025 |
+
+## Results for the official run
+
+The official run's checkpoints are kept with the run folder and are not
+public, so its extension outputs were produced once on the maintainer's
+machine and committed to `results/extensions/full_20261002T161428Z/` (command:
+`run_all.sh --run-root <official run folder> --out-dir
+reproduction/results/extensions/full_20261002T161428Z --figures-dir <local
+folder> --skip-gpu --validate`). The GPU steps (`text_length`, `two_tower`)
+have not been run yet; their outputs will be added to the same folder.
+
+**Counterfactual (Tables 4 and 9).** Same 24 pairs, the official run's Context
+models of seeds 1-5, CPU. Mean ± SD over the seeds (`table9_seeds_mean_sd.csv`;
+per seed: `table9_seed<k>.csv`):
+
+| Scope | Mean rank change | Top-1 changed | Top-5 Jaccard | Manuscript (2025 seed-1 model) |
+|---|---:|---:|---:|---|
+| Overall | +75.9 ± 41.3 | 0.658 ± 0.090 | 0.367 ± 0.015 | +17.0, 0.500, 0.351 |
+| Weather | -77.1 ± 47.5 | 0.475 ± 0.240 | 0.522 ± 0.042 | -146.4, 0.125, 0.508 |
+| Occasion | +20.0 ± 18.4 | 0.525 ± 0.105 | 0.490 ± 0.053 | -11.9, 0.375, 0.416 |
+| Style | +285.0 ± 128.7 | 0.975 ± 0.056 | 0.088 ± 0.013 | +209.1, 1.000, 0.130 |
+
+Style replacements again give by far the largest response. The overall rank
+change is larger than in the manuscript and varies strongly between seeds, so
+a single-seed table is fragile. The pair problems listed in
+`known_limitations.md` (CF05, CF12, CF16, CF17, CF18, CF21) are unchanged; the
+analysis uses the archived pairs as they are. `table9_live_baseline_*.csv`
+compares with the context-aware description encoded by the same encoder, a
+symmetric control that P16 did not have.
+
+**Color-shift analysis.** 34 of 80 row-level problems (0.425) and 5 of 13
+case-level problems (0.385) are solved under Full; the manuscript reports
+39 / 89 (0.438) and 5 / 15 (0.333). The images come from the Hugging Face
+mirror; the 2025 per-query files are not preserved, so the 2025 counts cannot
+be recomputed.
+
+**Figures A1-A3.** Same three cases, the seed whose Full rank is closest to the
+five-seed mean: purse (seed 2) Original rank 21, Full 1; dress (seed 2)
+Original 12, No-Style 55, Full 5; sunglasses (seed 1) Original 47, Full 500.
+The five-seed mean ranks equal `results/supplementary/full_20261002T161428Z/case_ranks.csv`.
+The captions must be updated if the manuscript uses these figures.
+
+## What cannot be regenerated
+
+| Item | Why |
+|---|---|
+| Generated descriptions, CLO / MET estimates, W/O/S split | The LLM sampling settings, and the split program and prompt, were not preserved; regenerating them would create a different dataset and require retraining 30 of the 35 units |
+| LLM judge scores (prompt robustness, judge overlap) | Only the model names are recorded, without revisions, and the P0/P1/P2 prompts were not preserved; the statistics are recomputed from the preserved scores |
+| The 750 judgments of the manual audit | Human judgments; the statistics are recomputed |
+| Identity of the feature extraction | The extraction code was not preserved; the FashionCLIP text encoder reproduces the stored context-aware features (above), the image features would need all item images |
+
+The target-clue row of Table 5 is recomputed exactly from the input data by
+the supplementary checks (`supplementary_analyses.md`).

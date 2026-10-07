@@ -1,0 +1,7 @@
+text_length:    SKIPPED (--skip-gpu; needs the GPU)
+counterfactual: PASSED
+two_tower:      SKIPPED (--skip-gpu; needs the GPU)
+color:          PASSED
+figures:        PASSED
+validate_length: PASSED
+validate_two_tower: PASSED

@@ -1,0 +1,746 @@
+seed,set_id,target_item_id,target_item_fg,query_color,rank_original,rank_full,target_profile_text_original,topk_color_count_text_original,topk_color_count_text_full,alt_advantage_original,alt_advantage_full,issue_original,issue_full,solved_row
+1,216668373,177013550,57,gray,543,607,"gray(0.85), white(0.09)","gray:3, white:2","gray:3, white:2",-1,-1,0,0,0
+1,171056375,144654385,57,black,1124,1279,"red(0.47), pink(0.32)","gray:2, black:2, white:1","gray:4, black:1",0,3,0,0,0
+1,218060720,202888371,4,purple,53,30,"pink(0.94), gray(0.03)","pink:3, blue:1, black:1",pink:5,3,5,0,0,0
+1,221392704,184422473,64,pink,2,8,"gray(0.41), red(0.24)","gray:4, orange:1","gray:2, white:2, orange:1",4,2,0,0,0
+1,221849722,209933189,64,orange,35,41,"gray(0.86), white(0.07)","gray:1, pink:1, red:1, orange:1, white:1","red:2, gray:1, orange:1, pink:1",0,1,0,0,0
+1,221332807,204074548,37,pink,10,16,"pink(0.31), red(0.31)","red:4, pink:1","red:3, pink:2",3,1,1,0,1
+1,222658414,207485550,46,red,32,38,"orange(0.42), white(0.22)","orange:2, gray:1, brown:1, yellow:1","orange:3, brown:2",2,3,0,0,0
+1,216674479,198492434,43,pink,1787,1379,"red(0.38), gray(0.28)","pink:4, brown:1",pink:5,-3,-5,0,0,0
+1,209411379,186938336,64,gray,676,1272,"gray(0.39), orange(0.11)",gray:5,gray:5,-5,-5,0,0,0
+1,191508297,162694671,37,orange,7,30,"red(0.76), orange(0.08)","red:4, pink:1","red:3, pink:1, orange:1",4,2,1,1,0
+1,217376647,201569008,4,purple,20,32,"white(0.46), gray(0.31)","gray:3, purple:1, black:1","purple:1, black:1, white:1, blue:1, pink:1",2,0,0,0,0
+1,180514026,151224480,38,pink,57,58,"gray(0.72), red(0.18)","pink:3, white:1, gray:1","pink:3, white:1, gray:1",-2,-2,0,0,0
+1,220092492,206938315,46,purple,1008,664,"gray(0.38), orange(0.17)","white:3, gray:2","gray:3, white:2",3,3,0,0,0
+1,206688771,182583580,43,yellow,218,274,"gray(0.65), white(0.21)",black:5,"black:3, green:1, orange:1",5,3,0,0,0
+1,174460622,98844359,4,gray,53,14,"gray(0.97), black(0.02)","gray:4, white:1",gray:5,-3,-5,0,0,0
+1,184540324,155460756,4,pink,2077,1970,"gray(0.71), black(0.15)","red:2, gray:1, white:1, black:1","gray:3, white:1, black:1",2,3,0,0,0
+1,170199834,129359241,64,gray,74,83,"gray(0.81), white(0.19)",gray:5,gray:5,-5,-5,0,0,0
+1,224242506,213870777,4,red,8,8,"red(0.49), white(0.24)","red:3, gray:1, black:1","gray:2, red:2, pink:1",-2,0,0,0,0
+1,221140475,161194868,62,purple,1,1,"gray(0.52), white(0.12)","gray:4, white:1","gray:4, white:1",4,4,0,0,0
+1,161520335,121775976,37,brown,149,221,"brown(0.80), orange(0.08)","brown:4, orange:1","brown:3, gray:1, orange:1",-3,-2,0,0,0
+1,188912224,160058303,43,red,67,14,"orange(0.43), red(0.38)",red:5,red:5,-5,-5,0,0,0
+1,42436354,48307499,37,gray,379,451,"gray(0.65), black(0.31)","gray:3, black:2","gray:2, black:2, brown:1",-1,0,0,0,0
+1,221126045,201704588,43,pink,22,33,"orange(0.30), red(0.29)","gray:4, white:1","gray:2, white:2, red:1",4,2,0,0,0
+1,214248010,195057440,62,red,1834,1288,"gray(0.38), white(0.33)","gray:2, brown:1, white:1, pink:1","gray:2, brown:1, white:1, pink:1",2,2,0,0,0
+1,219286194,200007082,4,black,154,90,"blue(0.68), black(0.22)","gray:3, white:1, black:1","black:3, gray:1, white:1",2,-2,1,0,1
+1,139811710,121324439,62,red,293,308,"gray(0.69), black(0.20)","gray:4, pink:1","gray:4, pink:1",4,4,0,0,0
+1,100867984,91035907,57,red,142,14,"gray(0.56), black(0.42)","brown:3, red:2","brown:2, red:1, gray:1, black:1",1,1,0,0,0
+1,182596207,154443104,64,brown,22,12,"orange(0.67), gray(0.16)","orange:4, white:1",orange:5,4,5,0,0,0
+1,128208179,109410545,4,gray,143,162,"gray(0.96), white(0.03)","gray:4, blue:1",gray:5,-3,-5,0,0,0
+1,146131699,126937971,43,brown,101,58,"orange(0.70), gray(0.13)","orange:3, black:1, brown:1","orange:4, brown:1",2,3,0,0,0
+1,68842383,63103166,43,green,27,57,"blue(0.51), black(0.29)","blue:3, black:1, green:1","green:2, blue:2, white:1",2,0,0,0,0
+1,209299411,160039265,46,red,50,36,"red(0.67), brown(0.16)",red:5,red:5,-5,-5,0,0,0
+1,188548219,157989085,43,orange,14,12,"red(0.81), orange(0.12)","orange:3, red:1, yellow:1","red:2, orange:2, yellow:1",-2,0,0,0,0
+1,217204938,201202736,43,red,35,88,"gray(0.52), orange(0.27)","orange:2, white:1, red:1, brown:1","orange:1, red:1, white:1, brown:1, gray:1",1,0,0,0,0
+1,215705047,192928912,64,red,1248,1347,"gray(0.75), white(0.23)","red:3, gray:2","gray:2, red:2, black:1",-1,0,0,0,0
+1,142468301,118290351,38,white,701,728,"gray(0.90), white(0.09)",gray:5,gray:5,5,5,1,1,0
+1,112596910,97501013,64,orange,24,48,"gray(0.59), white(0.29)","gray:3, orange:2","orange:3, gray:2",1,-1,0,0,0
+1,199748989,172689752,37,black,704,682,"black(0.51), gray(0.33)","black:4, gray:1","black:3, gray:2",-3,-1,0,0,0
+1,115228040,60103240,43,black,277,310,"black(0.62), gray(0.26)",black:5,"black:4, gray:1",-5,-3,0,0,0
+1,174244672,145708285,43,green,4,16,"gray(0.76), white(0.19)","gray:4, green:1","green:2, gray:2, white:1",3,0,0,0,0
+1,180198150,144472808,43,red,505,398,"gray(0.31), orange(0.30)","red:3, black:1, orange:1","red:3, black:1, orange:1",-2,-2,0,0,0
+1,184932665,153873960,46,black,51,38,"black(0.63), gray(0.26)","black:3, gray:2","black:3, gray:2",-1,-1,0,0,0
+1,216006681,191329499,43,black,67,139,"black(0.75), gray(0.19)","black:3, gray:2","black:4, gray:1",-1,-3,0,0,0
+1,206969260,182904703,4,red,29,25,"gray(0.68), pink(0.24)","pink:3, black:1, red:1","pink:3, black:1, red:1",2,2,0,0,0
+1,176270924,148352358,46,black,67,101,"gray(0.44), black(0.41)","black:3, gray:2","black:3, gray:2",-1,-1,0,0,0
+1,211447713,190729057,62,red,890,439,"gray(0.88), white(0.12)","red:3, white:1, orange:1","red:3, orange:1, white:1",-2,-2,0,0,0
+1,192255303,159931342,37,green,180,119,"brown(0.39), yellow(0.22)","brown:3, gray:1, yellow:1","brown:2, yellow:1, green:1, gray:1",3,1,0,0,0
+1,143197618,98469115,64,blue,28,33,"gray(0.56), blue(0.31)","gray:4, white:1","gray:4, white:1",4,4,1,1,0
+1,200273238,174160548,62,black,13,64,"gray(0.69), white(0.23)",gray:5,"gray:4, black:1",5,3,0,0,0
+1,175571502,147515846,37,black,1122,1840,"red(0.97), white(0.02)","red:4, gray:1","gray:3, red:2",4,3,0,0,0
+1,142208020,104629798,4,orange,566,433,"orange(0.92), gray(0.03)",red:5,red:5,5,5,1,1,0
+1,221117693,208465437,64,pink,3,12,"pink(0.73), red(0.16)","white:2, pink:2, red:1","white:2, pink:2, red:1",0,0,0,0,0
+1,210748135,189303189,38,black,536,101,"black(0.57), white(0.22)",black:5,black:5,-5,-5,0,0,0
+1,114733185,103929022,38,pink,325,172,"pink(0.71), red(0.10)",pink:5,"pink:3, red:2",-5,-1,0,0,0
+1,222359219,207833356,46,red,401,305,"black(0.60), gray(0.22)","red:4, white:1","red:4, white:1",-3,-3,0,0,0
+1,192372732,146869722,43,red,987,1027,"gray(0.64), black(0.28)","red:3, black:2","red:3, black:2",-1,-1,0,0,0
+1,191377667,134898435,57,red,1111,868,"gray(0.37), black(0.33)","gray:3, black:2","black:4, gray:1",3,4,0,0,0
+1,201629648,177326361,4,pink,26,109,"gray(0.49), green(0.21)","black:2, gray:2, red:1","black:3, pink:1, red:1",2,2,0,0,0
+1,211303932,189745855,37,green,640,607,"gray(0.47), white(0.34)","yellow:3, gray:2","yellow:3, gray:2",3,3,0,0,0
+1,198684180,167339905,46,white,758,432,"blue(0.61), gray(0.34)","white:2, gray:2, red:1","white:3, gray:2",0,-1,0,0,0
+1,213859209,192226046,43,blue,1,4,"blue(0.72), gray(0.12)",blue:5,"blue:4, black:1",-5,-3,0,0,0
+1,192278370,153562476,37,green,31,19,"brown(0.38), gray(0.23)","brown:4, yellow:1","brown:3, yellow:1, orange:1",4,3,0,0,0
+1,214329317,184721384,4,red,147,264,"gray(0.74), black(0.25)",red:5,"red:4, black:1",-5,-3,0,0,0
+1,135940202,116675816,38,white,469,487,"black(0.85), gray(0.08)","brown:3, gray:1, orange:1","orange:3, gray:2",3,3,0,0,0
+1,217928932,180001774,62,yellow,124,208,"yellow(0.33), orange(0.33)","yellow:3, green:2","yellow:1, green:1, gray:1, blue:1, orange:1",-1,0,0,0,0
+1,212592127,192227012,43,black,432,415,"black(0.73), gray(0.10)","gray:2, black:2, white:1","gray:3, black:2",0,1,0,0,0
+1,209291892,186707401,4,red,148,53,"red(0.50), gray(0.27)",red:5,"red:4, gray:1",-5,-3,0,0,0
+1,217618238,188912090,37,black,51,36,"gray(0.58), black(0.39)","gray:3, black:2","gray:3, black:2",1,1,0,0,0
+1,221161508,205365317,4,pink,2,2,"pink(0.95), red(0.04)","pink:4, red:1",pink:5,-3,-5,0,0,0
+1,217161478,168008625,38,red,9,11,"red(0.44), orange(0.26)","pink:3, red:1, brown:1","red:3, brown:1, pink:1",2,-2,1,0,1
+1,221681530,209156407,43,green,2242,2159,"gray(0.69), orange(0.17)",green:5,"green:3, gray:1, black:1",-5,-2,0,0,0
+1,125407007,103135887,4,pink,87,9,"pink(0.58), purple(0.15)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+1,151725079,128872941,43,white,98,47,"black(0.61), gray(0.32)","black:3, gray:2","gray:3, black:2",3,3,0,0,0
+1,181215991,153410659,4,red,80,42,"red(0.40), brown(0.25)","red:4, white:1",red:5,-3,-5,0,0,0
+1,174792946,141087005,38,orange,998,1515,"gray(0.50), blue(0.26)",red:5,"red:3, brown:2",5,3,0,0,0
+1,124442497,98571285,64,red,386,386,"black(0.70), gray(0.16)","red:4, gray:1","red:4, gray:1",-3,-3,0,0,0
+1,191924106,157289534,43,pink,39,34,"pink(0.36), brown(0.23)",pink:5,pink:5,-5,-5,0,0,0
+1,214369799,195227005,64,black,631,331,"black(0.45), yellow(0.32)","gray:4, black:1",gray:5,3,5,1,1,0
+1,208642516,181658560,4,red,213,475,"red(0.93), gray(0.04)","red:3, white:1, gray:1","red:3, white:1, pink:1",-2,-2,0,0,0
+1,221703068,173447641,64,white,35,33,"gray(0.26), white(0.20)","yellow:2, white:1, orange:1, red:1","gray:2, red:2, yellow:1",1,2,0,1,0
+1,188545297,159881542,57,brown,21,31,"brown(0.30), white(0.25)","orange:2, brown:2, gray:1","gray:2, orange:2, brown:1",0,1,0,0,0
+1,186431322,155610275,46,white,3,4,"white(0.63), gray(0.35)","white:3, gray:2","white:3, orange:1, gray:1",-1,-2,0,0,0
+1,216161063,199021905,4,black,55,123,"black(0.40), white(0.31)","gray:3, white:1, black:1",black:5,2,-5,1,0,1
+1,191575863,163533043,38,orange,458,131,"red(0.91), white(0.06)",red:5,"red:4, orange:1",5,3,0,0,0
+1,194649797,156951759,46,pink,22,42,"orange(0.58), gray(0.19)","orange:3, gray:2",orange:5,3,5,0,0,0
+1,97952986,78148654,64,pink,61,60,"gray(0.55), orange(0.17)","orange:3, gray:2","gray:3, orange:2",3,3,0,0,0
+1,213336123,41040635,38,red,179,212,"red(0.79), gray(0.09)",red:5,red:5,-5,-5,0,0,0
+1,209775944,169808391,62,red,45,26,"red(0.40), orange(0.38)","red:3, brown:1, gray:1","red:3, gray:1, yellow:1",-2,-2,0,0,0
+1,221119686,204683450,46,pink,3,1,"orange(0.42), pink(0.38)","gray:1, white:1, orange:1, red:1, pink:1","white:2, orange:1, gray:1, pink:1",0,1,0,0,0
+1,49107204,49933218,46,orange,168,107,"red(0.46), orange(0.31)","orange:4, brown:1","brown:2, orange:1, white:1, red:1",-3,1,0,0,0
+1,215082446,203402486,37,gray,28,31,"gray(0.80), white(0.18)",gray:5,gray:5,-5,-5,0,0,0
+1,198739700,143853422,46,pink,170,321,"gray(0.47), white(0.25)","orange:4, white:1","orange:3, pink:1, red:1",4,2,0,0,0
+1,136231774,118321491,46,black,347,223,"gray(0.36), orange(0.26)","gray:4, orange:1","gray:4, orange:1",4,4,0,0,0
+1,171987040,118260233,57,pink,2,6,"pink(0.59), gray(0.34)","pink:2, red:2, gray:1","pink:2, gray:2, red:1",0,0,0,0,0
+1,199220900,172517595,46,orange,126,225,"orange(0.66), red(0.17)","red:4, orange:1",red:5,3,5,1,1,0
+1,147717089,108862398,64,blue,2,1,"blue(0.37), white(0.19)","blue:3, gray:1, green:1","blue:4, gray:1",-2,-3,0,0,0
+1,209482859,181736422,38,black,4,28,"red(0.38), black(0.36)","red:3, black:2","black:3, gray:2",1,-1,0,0,0
+1,148404099,120181686,37,brown,80,36,"brown(0.65), orange(0.13)",brown:5,brown:5,-5,-5,0,0,0
+1,209283968,165285962,43,black,696,418,"black(0.33), gray(0.31)","black:4, white:1","black:4, gray:1",-3,-3,0,0,0
+1,148636912,122818220,43,red,819,87,"black(0.26), yellow(0.23)","black:3, gray:2",black:5,3,5,0,0,0
+1,217323822,191689967,43,purple,18,8,"pink(0.31), purple(0.23)","pink:3, purple:1, gray:1","pink:3, purple:1, gray:1",2,2,1,1,0
+1,214827627,189572218,43,blue,7,3,"blue(0.63), black(0.24)",blue:5,blue:5,-5,-5,0,0,0
+1,158897718,140582477,4,purple,111,104,"gray(0.61), white(0.32)","gray:3, white:1, pink:1","gray:2, white:2, pink:1",3,2,0,0,0
+1,222003684,199643627,37,pink,813,1146,"gray(0.52), black(0.47)","pink:3, gray:1, red:1","pink:4, gray:1",-2,-3,0,0,0
+1,201631636,164249239,57,pink,2359,2457,"brown(0.64), orange(0.31)","gray:3, red:1, black:1","pink:2, red:1, black:1, gray:1",3,-1,0,0,0
+1,185738290,156445649,43,gray,372,253,"gray(0.77), orange(0.14)",gray:5,gray:5,-5,-5,0,0,0
+1,217955716,202541424,62,white,467,285,"gray(0.76), white(0.24)","gray:3, orange:1, white:1","gray:3, white:2",2,1,1,0,1
+1,223991031,164143533,43,purple,183,95,"pink(0.58), orange(0.21)","pink:3, black:1, gray:1","pink:4, black:1",3,4,0,0,0
+1,78456224,56925731,64,red,33,6,"gray(0.73), white(0.26)","gray:3, red:2","red:2, black:2, gray:1",1,0,0,0,0
+1,137437216,119531432,62,green,5,7,"yellow(0.55), gray(0.25)","gray:3, brown:1, yellow:1","gray:3, brown:2",3,3,0,0,0
+1,211188780,173529593,4,red,1102,587,"gray(0.74), black(0.24)",red:5,red:5,-5,-5,0,0,0
+1,154270445,128589400,62,black,814,1151,"gray(0.53), white(0.46)","gray:4, white:1",gray:5,4,5,0,0,0
+1,219468209,205311074,4,blue,237,215,"white(0.59), blue(0.24)","white:2, red:2, gray:1","gray:2, white:1, red:1, blue:1",2,1,1,0,1
+1,221254086,76275548,62,pink,5,8,"pink(0.43), gray(0.22)","gray:2, pink:2, white:1","gray:3, white:1, pink:1",0,2,0,1,0
+1,223876308,209808536,38,brown,1295,949,"red(0.63), orange(0.35)","orange:2, yellow:1, brown:1, green:1","orange:2, yellow:1, green:1, brown:1",1,1,0,0,0
+1,208304805,109143906,62,black,981,834,"gray(0.75), white(0.25)","gray:3, black:2","gray:4, black:1",1,3,0,0,0
+1,187084437,157264118,38,black,693,853,"orange(0.57), white(0.15)","gray:4, black:1","gray:3, black:2",3,1,0,0,0
+1,216187678,198809896,4,black,216,217,"black(0.92), gray(0.07)","red:3, white:1, gray:1","gray:2, white:1, red:1, black:1",3,1,1,0,1
+1,208818858,184790742,64,red,221,148,"red(0.62), black(0.15)","red:3, brown:1, orange:1","red:4, brown:1",-2,-3,0,0,0
+1,115556942,103936826,4,purple,410,169,"pink(0.94), gray(0.04)","blue:3, purple:1, gray:1","blue:2, purple:1, green:1, gray:1",2,1,0,0,0
+1,221098190,195854271,57,pink,25,29,"pink(0.87), red(0.11)","gray:2, pink:2, white:1","gray:2, pink:2, white:1",0,0,0,0,0
+1,208699858,179210556,64,pink,21,15,"pink(0.63), gray(0.15)","gray:3, pink:2","gray:3, pink:2",1,1,0,0,0
+1,195833750,123189996,64,red,47,92,"gray(0.63), white(0.37)",gray:5,"gray:3, pink:1, white:1",5,3,0,0,0
+1,217382278,205030690,46,red,34,7,"white(0.68), gray(0.23)","orange:3, gray:2",orange:5,3,5,0,0,0
+1,195598730,168407756,62,gray,185,168,"white(0.51), gray(0.49)",gray:5,gray:5,-5,-5,0,0,0
+1,219877685,204948467,38,brown,663,291,"yellow(0.92), gray(0.05)","yellow:2, brown:2, gray:1","brown:2, gray:1, green:1, yellow:1",0,-1,0,0,0
+1,200593852,152312239,64,blue,15,55,"gray(0.41), brown(0.17)","green:2, gray:1, yellow:1, blue:1","gray:2, white:1, yellow:1, green:1",1,2,0,0,0
+1,195620594,165223697,46,black,214,242,"orange(0.39), brown(0.27)","orange:3, yellow:1, brown:1","black:2, yellow:1, orange:1, brown:1",3,-1,0,0,0
+1,222255174,210643200,57,black,1687,1380,"gray(0.69), blue(0.12)","gray:3, red:2","gray:3, black:1, red:1",3,2,0,0,0
+1,174710752,141212383,4,gray,31,36,"gray(0.93), white(0.04)",black:5,"gray:4, black:1",5,-3,1,0,1
+1,215148695,196324694,43,red,162,144,"red(0.40), gray(0.21)","black:4, gray:1","black:3, gray:2",4,3,1,1,0
+1,207687218,169890454,43,green,37,11,"black(0.51), orange(0.15)","green:3, white:1, black:1","green:4, gray:1",-2,-3,0,0,0
+1,153488882,20198247,4,red,38,128,"pink(0.68), red(0.26)",red:5,"red:4, pink:1",-5,-3,0,0,0
+1,167925637,116634389,57,white,270,245,"gray(0.74), white(0.19)","gray:4, orange:1","gray:3, white:2",4,1,1,0,1
+1,173164315,146168593,4,white,164,39,"gray(0.96), white(0.04)","white:3, gray:1, blue:1","gray:2, white:2, blue:1",-2,0,0,0,0
+1,218627424,201030455,38,green,35,25,"black(0.69), blue(0.17)",blue:5,"blue:4, green:1",5,3,0,0,0
+1,194860010,166190328,46,blue,67,23,"orange(0.53), brown(0.16)",gray:5,"gray:3, blue:2",5,1,0,0,0
+1,208314235,182590419,62,yellow,702,559,"gray(0.46), yellow(0.34)","green:2, yellow:2, orange:1","green:2, yellow:2, orange:1",0,0,0,0,0
+1,187546279,157092256,4,pink,7,4,"gray(0.68), white(0.24)","white:2, gray:2, red:1","gray:3, white:2",2,3,0,0,0
+1,194695906,158536496,38,yellow,259,161,"gray(0.55), brown(0.19)","brown:3, orange:2","brown:3, orange:1, black:1",3,3,0,0,0
+1,123321721,101119653,43,pink,112,123,"red(0.48), yellow(0.13)","pink:4, orange:1","pink:4, red:1",-3,-3,0,0,0
+1,194785620,165237646,43,pink,157,225,"white(0.59), gray(0.30)","white:2, gray:1, orange:1, red:1","red:2, gray:1, pink:1, orange:1",2,1,0,0,0
+1,209600686,186417621,64,black,83,190,"orange(0.40), brown(0.22)","gray:2, brown:2, yellow:1","gray:2, yellow:2, black:1",2,1,0,0,0
+1,218578178,203829614,37,purple,13,19,"pink(0.45), black(0.20)","pink:4, gray:1","pink:4, purple:1",4,3,0,0,0
+1,177318197,149582480,4,orange,71,56,"red(0.90), brown(0.03)","yellow:3, brown:1, gray:1","yellow:1, brown:1, orange:1, red:1, gray:1",3,0,0,0,0
+1,206145125,167802783,38,green,443,745,"gray(0.80), white(0.19)","green:3, gray:2","green:2, gray:2, yellow:1",-1,0,0,0,0
+1,182806205,151978785,4,red,3,5,"red(0.96), white(0.02)",red:5,"red:4, pink:1",-5,-3,0,0,0
+1,128516859,113125737,43,brown,1077,1015,"gray(0.38), orange(0.37)","brown:3, orange:2","brown:3, orange:2",-1,-1,0,0,0
+1,210701847,189202972,37,black,136,64,"black(0.53), gray(0.24)","gray:2, black:2, red:1","black:3, gray:2",0,-1,0,0,0
+2,216668373,177013550,57,gray,265,405,"gray(0.85), white(0.09)","gray:4, white:1","gray:4, white:1",-3,-3,0,0,0
+2,171056375,144654385,57,black,612,808,"red(0.47), pink(0.32)","gray:4, black:1",gray:5,3,5,0,0,0
+2,218060720,202888371,4,purple,4,5,"pink(0.94), gray(0.03)",pink:5,pink:5,5,5,0,0,0
+2,221392704,184422473,64,pink,13,5,"gray(0.41), red(0.24)","white:3, orange:1, gray:1","white:2, gray:2, orange:1",3,2,0,0,0
+2,221849722,209933189,64,orange,198,143,"gray(0.86), white(0.07)","gray:2, orange:2, pink:1","gray:1, orange:1, red:1, yellow:1, pink:1",0,0,0,0,0
+2,221332807,204074548,37,pink,51,60,"pink(0.31), red(0.31)","red:4, pink:1","red:2, white:2, pink:1",3,1,1,0,1
+2,222658414,207485550,46,red,71,54,"orange(0.42), white(0.22)","orange:4, yellow:1",orange:5,4,5,0,0,0
+2,216674479,198492434,43,pink,598,799,"red(0.38), gray(0.28)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+2,209411379,186938336,64,gray,359,1026,"gray(0.39), orange(0.11)",gray:5,gray:5,-5,-5,0,0,0
+2,191508297,162694671,37,orange,19,12,"red(0.76), orange(0.08)",red:5,red:5,5,5,1,1,0
+2,217376647,201569008,4,purple,13,25,"white(0.46), gray(0.31)","blue:1, gray:1, pink:1, white:1, purple:1","blue:1, white:1, pink:1, gray:1, purple:1",0,0,0,0,0
+2,180514026,151224480,38,pink,43,72,"gray(0.72), red(0.18)","pink:2, gray:2, white:1","pink:2, gray:1, white:1, red:1",0,-1,0,0,0
+2,220092492,206938315,46,purple,1486,1243,"gray(0.38), orange(0.17)","white:3, gray:2","gray:2, white:2, purple:1",3,1,0,0,0
+2,206688771,182583580,43,yellow,257,166,"gray(0.65), white(0.21)","red:3, white:1, black:1","black:2, red:2, white:1",3,2,0,0,0
+2,174460622,98844359,4,gray,86,75,"gray(0.97), black(0.02)",gray:5,gray:5,-5,-5,0,0,0
+2,184540324,155460756,4,pink,1443,1585,"gray(0.71), black(0.15)","gray:4, pink:1","gray:4, pink:1",3,3,0,0,0
+2,170199834,129359241,64,gray,14,25,"gray(0.81), white(0.19)",gray:5,gray:5,-5,-5,0,0,0
+2,224242506,213870777,4,red,4,2,"red(0.49), white(0.24)","red:4, black:1",red:5,-3,-5,0,0,0
+2,221140475,161194868,62,purple,1,1,"gray(0.52), white(0.12)","gray:2, white:1, red:1, pink:1","gray:3, white:1, red:1",2,3,0,0,0
+2,161520335,121775976,37,brown,100,271,"brown(0.80), orange(0.08)",brown:5,brown:5,-5,-5,0,0,0
+2,188912224,160058303,43,red,36,21,"orange(0.43), red(0.38)",red:5,red:5,-5,-5,0,0,0
+2,42436354,48307499,37,gray,195,108,"gray(0.65), black(0.31)","gray:4, black:1","black:2, gray:2, brown:1",-3,0,0,0,0
+2,221126045,201704588,43,pink,17,15,"orange(0.30), red(0.29)","orange:3, gray:2","gray:3, orange:2",3,3,0,0,0
+2,214248010,195057440,62,red,675,763,"gray(0.38), white(0.33)","brown:2, gray:2, orange:1","gray:3, brown:2",2,3,0,0,0
+2,219286194,200007082,4,black,233,117,"blue(0.68), black(0.22)","black:4, white:1","black:4, gray:1",-3,-3,0,0,0
+2,139811710,121324439,62,red,197,218,"gray(0.69), black(0.20)","gray:4, black:1","gray:4, pink:1",4,4,0,0,0
+2,100867984,91035907,57,red,260,226,"gray(0.56), black(0.42)","red:2, gray:2, brown:1","red:2, brown:1, gray:1, blue:1",0,-1,0,0,0
+2,182596207,154443104,64,brown,8,22,"orange(0.67), gray(0.16)","gray:3, orange:1, white:1","gray:3, orange:2",3,3,0,0,0
+2,128208179,109410545,4,gray,16,34,"gray(0.96), white(0.03)","gray:2, blue:2, black:1","gray:3, black:1, blue:1",0,-2,0,0,0
+2,146131699,126937971,43,brown,291,75,"orange(0.70), gray(0.13)","orange:3, gray:1, black:1","orange:4, gray:1",3,4,0,0,0
+2,68842383,63103166,43,green,29,60,"blue(0.51), black(0.29)","blue:3, green:2","green:3, blue:2",1,-1,0,0,0
+2,209299411,160039265,46,red,153,191,"red(0.67), brown(0.16)","orange:2, red:1, gray:1, black:1","black:3, red:1, white:1",1,2,0,1,0
+2,188548219,157989085,43,orange,70,168,"red(0.81), orange(0.12)","red:3, orange:1, brown:1","red:3, orange:1, yellow:1",2,2,1,1,0
+2,217204938,201202736,43,red,75,52,"gray(0.52), orange(0.27)","orange:3, brown:2","orange:3, brown:1, white:1",3,3,0,0,0
+2,215705047,192928912,64,red,1774,1427,"gray(0.75), white(0.23)","red:3, black:1, pink:1","gray:2, black:2, red:1",-2,1,0,0,0
+2,142468301,118290351,38,white,522,1123,"gray(0.90), white(0.09)",gray:5,gray:5,5,5,1,1,0
+2,112596910,97501013,64,orange,89,118,"gray(0.59), white(0.29)","gray:4, orange:1","gray:3, orange:2",3,1,0,0,0
+2,199748989,172689752,37,black,564,745,"black(0.51), gray(0.33)","black:4, gray:1","black:3, gray:1, white:1",-3,-2,0,0,0
+2,115228040,60103240,43,black,115,75,"black(0.62), gray(0.26)","black:3, white:1, gray:1","black:4, gray:1",-2,-3,0,0,0
+2,174244672,145708285,43,green,1,10,"gray(0.76), white(0.19)","gray:2, green:2, white:1","green:3, white:1, gray:1",0,-2,0,0,0
+2,180198150,144472808,43,red,411,289,"gray(0.31), orange(0.30)",red:5,red:5,-5,-5,0,0,0
+2,184932665,153873960,46,black,94,123,"black(0.63), gray(0.26)","gray:3, black:2","black:4, gray:1",1,-3,0,0,0
+2,216006681,191329499,43,black,476,547,"black(0.75), gray(0.19)","black:3, gray:2",black:5,-1,-5,0,0,0
+2,206969260,182904703,4,red,86,78,"gray(0.68), pink(0.24)","red:3, pink:1, black:1","pink:2, red:2, black:1",-2,0,0,0,0
+2,176270924,148352358,46,black,185,97,"gray(0.44), black(0.41)","black:3, gray:2","black:4, gray:1",-1,-3,0,0,0
+2,211447713,190729057,62,red,619,309,"gray(0.88), white(0.12)","red:2, gray:2, white:1","gray:4, red:1",0,3,0,0,0
+2,192255303,159931342,37,green,66,27,"brown(0.39), yellow(0.22)","brown:2, green:1, yellow:1, white:1","brown:2, yellow:1, green:1, black:1",1,1,0,0,0
+2,143197618,98469115,64,blue,20,19,"gray(0.56), blue(0.31)",gray:5,gray:5,5,5,1,1,0
+2,200273238,174160548,62,black,50,103,"gray(0.69), white(0.23)",gray:5,"gray:4, black:1",5,3,0,0,0
+2,175571502,147515846,37,black,1270,1921,"red(0.97), white(0.02)","black:4, red:1","black:3, gray:2",-3,-1,0,0,0
+2,142208020,104629798,4,orange,483,422,"orange(0.92), gray(0.03)",red:5,red:5,5,5,1,1,0
+2,221117693,208465437,64,pink,5,3,"pink(0.73), red(0.16)","pink:4, white:1","pink:4, white:1",-3,-3,0,0,0
+2,210748135,189303189,38,black,1040,207,"black(0.57), white(0.22)","gray:3, black:2","black:3, gray:2",1,-1,0,0,0
+2,114733185,103929022,38,pink,150,205,"pink(0.71), red(0.10)",pink:5,pink:5,-5,-5,0,0,0
+2,222359219,207833356,46,red,597,591,"black(0.60), gray(0.22)",red:5,"red:4, white:1",-5,-3,0,0,0
+2,192372732,146869722,43,red,1124,968,"gray(0.64), black(0.28)","red:4, black:1","red:4, black:1",-3,-3,0,0,0
+2,191377667,134898435,57,red,1736,1227,"gray(0.37), black(0.33)","gray:3, black:1, red:1","gray:3, red:1, black:1",2,2,0,0,0
+2,201629648,177326361,4,pink,28,102,"gray(0.49), green(0.21)","pink:3, black:2","pink:2, black:1, gray:1, red:1",-1,-1,0,0,0
+2,211303932,189745855,37,green,270,635,"gray(0.47), white(0.34)","yellow:3, gray:1, green:1","yellow:3, gray:1, brown:1",2,3,0,0,0
+2,198684180,167339905,46,white,442,238,"blue(0.61), gray(0.34)","brown:1, gray:1, orange:1, red:1, white:1","brown:2, gray:2, orange:1",0,2,0,0,0
+2,213859209,192226046,43,blue,2,3,"blue(0.72), gray(0.12)","blue:3, black:1, white:1","blue:4, black:1",-2,-3,0,0,0
+2,192278370,153562476,37,green,113,78,"brown(0.38), gray(0.23)","yellow:3, green:2","green:2, yellow:2, brown:1",1,0,0,0,0
+2,214329317,184721384,4,red,519,530,"gray(0.74), black(0.25)","red:4, gray:1","red:4, black:1",-3,-3,0,0,0
+2,135940202,116675816,38,white,878,688,"black(0.85), gray(0.08)","brown:3, gray:2","brown:3, gray:1, orange:1",3,3,0,0,0
+2,217928932,180001774,62,yellow,425,570,"yellow(0.33), orange(0.33)",green:5,"green:4, orange:1",5,4,1,1,0
+2,212592127,192227012,43,black,152,173,"black(0.73), gray(0.10)","black:4, gray:1",black:5,-3,-5,0,0,0
+2,209291892,186707401,4,red,72,104,"red(0.50), gray(0.27)","red:4, black:1",red:5,-3,-5,0,0,0
+2,217618238,188912090,37,black,4,6,"gray(0.58), black(0.39)","gray:4, black:1","gray:3, black:2",3,1,1,0,1
+2,221161508,205365317,4,pink,12,13,"pink(0.95), red(0.04)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+2,217161478,168008625,38,red,3,3,"red(0.44), orange(0.26)","red:4, brown:1","red:4, brown:1",-3,-3,0,0,0
+2,221681530,209156407,43,green,1442,1924,"gray(0.69), orange(0.17)","green:3, yellow:2","green:3, gray:1, black:1",-1,-2,0,0,0
+2,125407007,103135887,4,pink,36,4,"pink(0.58), purple(0.15)",pink:5,"pink:3, red:1, gray:1",-5,-2,0,0,0
+2,151725079,128872941,43,white,128,57,"black(0.61), gray(0.32)","black:3, gray:2","gray:4, black:1",3,4,0,0,0
+2,181215991,153410659,4,red,99,58,"red(0.40), brown(0.25)","red:4, white:1",red:5,-3,-5,0,0,0
+2,174792946,141087005,38,orange,2428,2575,"gray(0.50), blue(0.26)","red:3, brown:2","red:3, brown:2",3,3,0,0,0
+2,124442497,98571285,64,red,282,295,"black(0.70), gray(0.16)","red:4, gray:1","red:3, gray:2",-3,-1,0,0,0
+2,191924106,157289534,43,pink,21,26,"pink(0.36), brown(0.23)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+2,214369799,195227005,64,black,448,216,"black(0.45), yellow(0.32)","gray:4, black:1",gray:5,3,5,1,1,0
+2,208642516,181658560,4,red,386,525,"red(0.93), gray(0.04)","black:2, red:2, gray:1","black:2, red:2, pink:1",0,0,0,0,0
+2,221703068,173447641,64,white,53,153,"gray(0.26), white(0.20)","gray:2, red:1, orange:1, yellow:1","red:2, gray:2, blue:1",2,2,1,1,0
+2,188545297,159881542,57,brown,2,1,"brown(0.30), white(0.25)","brown:2, orange:2, gray:1","brown:3, gray:1, orange:1",0,-2,0,0,0
+2,186431322,155610275,46,white,36,17,"white(0.63), gray(0.35)",gray:5,"gray:3, orange:1, white:1",5,2,1,1,0
+2,216161063,199021905,4,black,9,32,"black(0.40), white(0.31)","black:3, gray:1, white:1","black:4, gray:1",-2,-3,0,0,0
+2,191575863,163533043,38,orange,2381,795,"red(0.91), white(0.06)","pink:4, red:1","red:3, pink:2",4,3,0,0,0
+2,194649797,156951759,46,pink,56,59,"orange(0.58), gray(0.19)","orange:4, gray:1","orange:3, gray:2",4,3,0,0,0
+2,97952986,78148654,64,pink,76,32,"gray(0.55), orange(0.17)","orange:4, gray:1","orange:4, gray:1",4,4,0,0,0
+2,213336123,41040635,38,red,104,75,"red(0.79), gray(0.09)","red:4, brown:1","red:3, pink:1, brown:1",-3,-2,0,0,0
+2,209775944,169808391,62,red,19,23,"red(0.40), orange(0.38)",red:5,red:5,-5,-5,0,0,0
+2,221119686,204683450,46,pink,4,25,"orange(0.42), pink(0.38)","pink:2, gray:2, orange:1","gray:2, pink:1, white:1, red:1",0,1,0,0,0
+2,49107204,49933218,46,orange,131,26,"red(0.46), orange(0.31)","brown:2, red:1, white:1, gray:1","red:2, orange:1, white:1, brown:1",2,1,1,0,1
+2,215082446,203402486,37,gray,191,108,"gray(0.80), white(0.18)","gray:3, white:2","gray:4, white:1",-1,-3,0,0,0
+2,198739700,143853422,46,pink,98,236,"gray(0.47), white(0.25)","gray:4, orange:1","orange:2, gray:2, white:1",4,2,0,0,0
+2,136231774,118321491,46,black,268,351,"gray(0.36), orange(0.26)","gray:4, black:1","gray:4, black:1",3,3,0,0,0
+2,171987040,118260233,57,pink,4,17,"pink(0.59), gray(0.34)","pink:4, gray:1","pink:3, gray:2",-3,-1,0,0,0
+2,199220900,172517595,46,orange,67,144,"orange(0.66), red(0.17)",red:5,red:5,5,5,1,1,0
+2,147717089,108862398,64,blue,29,23,"blue(0.37), white(0.19)","blue:3, green:1, gray:1","blue:4, gray:1",-2,-3,0,0,0
+2,209482859,181736422,38,black,165,262,"red(0.38), black(0.36)","black:4, red:1",black:5,-3,-5,0,0,0
+2,148404099,120181686,37,brown,18,39,"brown(0.65), orange(0.13)",brown:5,"brown:4, orange:1",-5,-3,0,0,0
+2,209283968,165285962,43,black,473,282,"black(0.33), gray(0.31)",black:5,black:5,-5,-5,0,0,0
+2,148636912,122818220,43,red,176,255,"black(0.26), yellow(0.23)","black:3, red:1, gray:1","red:3, black:2",2,-1,0,0,0
+2,217323822,191689967,43,purple,59,76,"pink(0.31), purple(0.23)","pink:3, purple:2","pink:3, purple:2",1,1,0,0,0
+2,214827627,189572218,43,blue,7,3,"blue(0.63), black(0.24)",blue:5,blue:5,-5,-5,0,0,0
+2,158897718,140582477,4,purple,40,33,"gray(0.61), white(0.32)","gray:4, white:1","gray:3, white:1, pink:1",4,3,0,0,0
+2,222003684,199643627,37,pink,721,958,"gray(0.52), black(0.47)","pink:3, red:1, gray:1","pink:4, red:1",-2,-3,0,0,0
+2,201631636,164249239,57,pink,2431,2447,"brown(0.64), orange(0.31)","pink:2, gray:2, black:1","pink:2, black:1, gray:1, red:1",0,-1,0,0,0
+2,185738290,156445649,43,gray,136,126,"gray(0.77), orange(0.14)",gray:5,gray:5,-5,-5,0,0,0
+2,217955716,202541424,62,white,358,204,"gray(0.76), white(0.24)","gray:3, black:1, white:1","gray:3, white:2",2,1,1,0,1
+2,223991031,164143533,43,purple,228,119,"pink(0.58), orange(0.21)","black:2, pink:1, purple:1, gray:1","pink:3, gray:1, purple:1",1,2,0,0,0
+2,78456224,56925731,64,red,8,35,"gray(0.73), white(0.26)","gray:4, white:1","gray:2, black:2, white:1",4,2,0,0,0
+2,137437216,119531432,62,green,9,7,"yellow(0.55), gray(0.25)","gray:3, brown:2","brown:3, gray:2",3,3,0,0,0
+2,211188780,173529593,4,red,1396,773,"gray(0.74), black(0.24)","red:3, black:2","red:3, black:2",-1,-1,0,0,0
+2,154270445,128589400,62,black,1594,1936,"gray(0.53), white(0.46)",gray:5,"gray:3, black:2",5,1,0,0,0
+2,219468209,205311074,4,blue,361,225,"white(0.59), blue(0.24)","black:2, blue:2, gray:1",blue:5,0,-5,0,0,0
+2,221254086,76275548,62,pink,11,19,"pink(0.43), gray(0.22)","red:3, pink:1, white:1","red:3, white:1, pink:1",2,2,1,1,0
+2,223876308,209808536,38,brown,1168,438,"red(0.63), orange(0.35)","orange:3, brown:2","orange:3, brown:2",1,1,0,0,0
+2,208304805,109143906,62,black,573,503,"gray(0.75), white(0.25)",gray:5,gray:5,5,5,0,0,0
+2,187084437,157264118,38,black,699,867,"orange(0.57), white(0.15)",gray:5,gray:5,5,5,0,0,0
+2,216187678,198809896,4,black,355,239,"black(0.92), gray(0.07)","red:3, white:1, gray:1","red:2, white:1, gray:1, black:1",3,1,1,0,1
+2,208818858,184790742,64,red,201,230,"red(0.62), black(0.15)",red:5,red:5,-5,-5,0,0,0
+2,115556942,103936826,4,purple,112,34,"pink(0.94), gray(0.04)","blue:2, gray:2, purple:1","blue:2, gray:2, purple:1",1,1,0,0,0
+2,221098190,195854271,57,pink,30,28,"pink(0.87), red(0.11)","gray:2, pink:2, white:1","gray:2, white:1, pink:1, red:1",0,1,0,0,0
+2,208699858,179210556,64,pink,24,19,"pink(0.63), gray(0.15)","red:2, pink:2, gray:1","red:2, orange:1, pink:1, gray:1",0,1,0,0,0
+2,195833750,123189996,64,red,204,265,"gray(0.63), white(0.37)",gray:5,"gray:4, red:1",5,3,0,0,0
+2,217382278,205030690,46,red,12,3,"white(0.68), gray(0.23)",gray:5,"gray:2, yellow:1, white:1, orange:1",5,2,0,0,0
+2,195598730,168407756,62,gray,308,396,"white(0.51), gray(0.49)","gray:3, white:2",gray:5,-1,-5,0,0,0
+2,219877685,204948467,38,brown,247,18,"yellow(0.92), gray(0.05)","brown:3, gray:1, yellow:1","brown:1, orange:1, white:1, yellow:1, gray:1",-2,0,0,0,0
+2,200593852,152312239,64,blue,20,30,"gray(0.41), brown(0.17)","blue:2, green:2, yellow:1","blue:2, green:2, yellow:1",0,0,0,0,0
+2,195620594,165223697,46,black,214,213,"orange(0.39), brown(0.27)","orange:2, gray:2, brown:1","orange:3, yellow:1, brown:1",2,3,0,0,0
+2,222255174,210643200,57,black,1467,1182,"gray(0.69), blue(0.12)","gray:2, pink:2, red:1","gray:2, red:2, pink:1",2,2,0,0,0
+2,174710752,141212383,4,gray,1,1,"gray(0.93), white(0.04)","gray:3, black:2","gray:3, black:2",-1,-1,0,0,0
+2,215148695,196324694,43,red,135,85,"red(0.40), gray(0.21)","black:4, gray:1","black:2, white:1, gray:1, red:1",4,1,1,0,1
+2,207687218,169890454,43,green,26,8,"black(0.51), orange(0.15)","green:3, yellow:2",green:5,-1,-5,0,0,0
+2,153488882,20198247,4,red,79,109,"pink(0.68), red(0.26)",red:5,red:5,-5,-5,0,0,0
+2,167925637,116634389,57,white,214,238,"gray(0.74), white(0.19)","gray:3, white:2","gray:3, orange:1, white:1",1,2,0,1,0
+2,173164315,146168593,4,white,38,16,"gray(0.96), white(0.04)","gray:4, white:1","white:2, gray:2, blue:1",3,0,1,0,1
+2,218627424,201030455,38,green,13,8,"black(0.69), blue(0.17)","blue:3, green:1, black:1","blue:3, green:2",2,1,0,0,0
+2,194860010,166190328,46,blue,130,29,"orange(0.53), brown(0.16)",gray:5,"gray:4, blue:1",5,3,0,0,0
+2,208314235,182590419,62,yellow,718,950,"gray(0.46), yellow(0.34)","yellow:2, green:2, orange:1","orange:2, green:2, yellow:1",0,1,0,0,0
+2,187546279,157092256,4,pink,14,13,"gray(0.68), white(0.24)","white:2, pink:1, gray:1, red:1","white:2, gray:2, red:1",1,2,0,0,0
+2,194695906,158536496,38,yellow,773,327,"gray(0.55), brown(0.19)","black:2, orange:1, brown:1, red:1","orange:2, brown:2, black:1",2,2,0,0,0
+2,123321721,101119653,43,pink,167,230,"red(0.48), yellow(0.13)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+2,194785620,165237646,43,pink,147,186,"white(0.59), gray(0.30)","white:3, gray:2","white:3, red:1, gray:1",3,3,0,0,0
+2,209600686,186417621,64,black,186,274,"orange(0.40), brown(0.22)","gray:3, black:2","gray:2, orange:2, black:1",1,1,0,0,0
+2,218578178,203829614,37,purple,37,122,"pink(0.45), black(0.20)","pink:4, black:1","pink:4, black:1",4,4,0,0,0
+2,177318197,149582480,4,orange,25,14,"red(0.90), brown(0.03)","brown:3, gray:1, orange:1","brown:2, red:1, orange:1, gray:1",2,1,0,0,0
+2,206145125,167802783,38,green,1411,1761,"gray(0.80), white(0.19)","green:4, blue:1","green:4, yellow:1",-3,-3,0,0,0
+2,182806205,151978785,4,red,9,5,"red(0.96), white(0.02)","red:4, black:1",red:5,-3,-5,0,0,0
+2,128516859,113125737,43,brown,1437,986,"gray(0.38), orange(0.37)","brown:3, black:1, gray:1","brown:3, orange:1, yellow:1",-2,-2,0,0,0
+2,210701847,189202972,37,black,466,499,"black(0.53), gray(0.24)","red:2, gray:2, black:1","gray:3, black:2",1,1,0,0,0
+3,216668373,177013550,57,gray,422,493,"gray(0.85), white(0.09)","blue:2, gray:2, white:1","gray:3, white:1, blue:1",0,-2,0,0,0
+3,171056375,144654385,57,black,626,713,"red(0.47), pink(0.32)","gray:4, black:1",gray:5,3,5,0,0,0
+3,218060720,202888371,4,purple,5,4,"pink(0.94), gray(0.03)","pink:3, purple:2","pink:4, purple:1",1,3,0,0,0
+3,221392704,184422473,64,pink,12,19,"gray(0.41), red(0.24)","gray:3, white:1, orange:1","white:2, orange:2, gray:1",3,2,0,0,0
+3,221849722,209933189,64,orange,112,96,"gray(0.86), white(0.07)","red:2, orange:1, pink:1, gray:1","red:2, orange:1, pink:1, yellow:1",1,1,0,0,0
+3,221332807,204074548,37,pink,77,84,"pink(0.31), red(0.31)","red:2, gray:1, pink:1, white:1","pink:2, red:1, orange:1, white:1",1,-1,0,0,0
+3,222658414,207485550,46,red,178,112,"orange(0.42), white(0.22)","orange:3, brown:1, yellow:1","orange:3, brown:2",3,3,0,0,0
+3,216674479,198492434,43,pink,722,856,"red(0.38), gray(0.28)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+3,209411379,186938336,64,gray,819,1131,"gray(0.39), orange(0.11)","gray:4, orange:1",gray:5,-3,-5,0,0,0
+3,191508297,162694671,37,orange,23,20,"red(0.76), orange(0.08)",red:5,red:5,5,5,1,1,0
+3,217376647,201569008,4,purple,3,3,"white(0.46), gray(0.31)","gray:2, white:2, purple:1","gray:2, purple:1, white:1, pink:1",1,1,0,0,0
+3,180514026,151224480,38,pink,64,58,"gray(0.72), red(0.18)","pink:2, gray:2, white:1","pink:2, gray:2, white:1",0,0,0,0,0
+3,220092492,206938315,46,purple,1322,1016,"gray(0.38), orange(0.17)","white:3, gray:2","gray:3, white:2",3,3,0,0,0
+3,206688771,182583580,43,yellow,34,68,"gray(0.65), white(0.21)","black:2, gray:1, brown:1, green:1","brown:1, yellow:1, green:1, gray:1, black:1",2,0,0,0,0
+3,174460622,98844359,4,gray,65,61,"gray(0.97), black(0.02)",gray:5,gray:5,-5,-5,0,0,0
+3,184540324,155460756,4,pink,1642,1808,"gray(0.71), black(0.15)","pink:2, gray:2, red:1","gray:3, pink:1, red:1",0,2,0,0,0
+3,170199834,129359241,64,gray,39,27,"gray(0.81), white(0.19)",gray:5,gray:5,-5,-5,0,0,0
+3,224242506,213870777,4,red,5,4,"red(0.49), white(0.24)","red:3, blue:2","red:3, blue:2",-1,-1,0,0,0
+3,221140475,161194868,62,purple,1,1,"gray(0.52), white(0.12)","gray:4, white:1","gray:2, white:1, pink:1, red:1",4,2,0,0,0
+3,161520335,121775976,37,brown,37,163,"brown(0.80), orange(0.08)","brown:4, orange:1","brown:4, orange:1",-3,-3,0,0,0
+3,188912224,160058303,43,red,51,28,"orange(0.43), red(0.38)",red:5,red:5,-5,-5,0,0,0
+3,42436354,48307499,37,gray,400,361,"gray(0.65), black(0.31)","gray:4, black:1","black:3, gray:1, brown:1",-3,2,0,1,0
+3,221126045,201704588,43,pink,7,7,"orange(0.30), red(0.29)","white:2, gray:1, red:1, orange:1","gray:2, red:1, white:1, orange:1",2,2,0,0,0
+3,214248010,195057440,62,red,847,964,"gray(0.38), white(0.33)","gray:2, black:1, brown:1, red:1","gray:2, brown:2, black:1",1,2,0,0,0
+3,219286194,200007082,4,black,138,71,"blue(0.68), black(0.22)","gray:2, black:2, white:1","black:3, gray:2",0,-1,0,0,0
+3,139811710,121324439,62,red,712,763,"gray(0.69), black(0.20)","gray:3, red:1, black:1","gray:4, black:1",2,4,0,0,0
+3,100867984,91035907,57,red,228,222,"gray(0.56), black(0.42)","brown:3, green:1, gray:1","brown:3, gray:1, orange:1",3,3,0,0,0
+3,182596207,154443104,64,brown,59,50,"orange(0.67), gray(0.16)","gray:3, white:1, orange:1","gray:3, white:1, orange:1",3,3,0,0,0
+3,128208179,109410545,4,gray,66,70,"gray(0.96), white(0.03)","gray:4, blue:1","gray:3, blue:1, black:1",-3,-2,0,0,0
+3,146131699,126937971,43,brown,164,50,"orange(0.70), gray(0.13)","orange:3, black:1, gray:1","orange:4, black:1",3,4,0,0,0
+3,68842383,63103166,43,green,20,27,"blue(0.51), black(0.29)","blue:3, green:1, black:1","blue:3, green:1, black:1",2,2,0,0,0
+3,209299411,160039265,46,red,60,64,"red(0.67), brown(0.16)","black:3, red:1, orange:1","black:2, red:1, gray:1, white:1",2,1,1,0,1
+3,188548219,157989085,43,orange,8,50,"red(0.81), orange(0.12)","red:4, orange:1","red:4, orange:1",3,3,1,1,0
+3,217204938,201202736,43,red,105,69,"gray(0.52), orange(0.27)","orange:3, brown:1, white:1","orange:3, brown:1, gray:1",3,3,0,0,0
+3,215705047,192928912,64,red,732,757,"gray(0.75), white(0.23)","black:3, gray:2","gray:3, black:2",3,3,0,0,0
+3,142468301,118290351,38,white,664,655,"gray(0.90), white(0.09)","gray:3, white:2","gray:4, white:1",1,3,0,1,0
+3,112596910,97501013,64,orange,17,50,"gray(0.59), white(0.29)","gray:4, orange:1","gray:3, orange:2",3,1,0,0,0
+3,199748989,172689752,37,black,605,775,"black(0.51), gray(0.33)","black:3, gray:2","black:4, gray:1",-1,-3,0,0,0
+3,115228040,60103240,43,black,83,64,"black(0.62), gray(0.26)","black:4, brown:1",black:5,-3,-5,0,0,0
+3,174244672,145708285,43,green,56,39,"gray(0.76), white(0.19)","gray:4, white:1","gray:4, white:1",4,4,0,0,0
+3,180198150,144472808,43,red,314,229,"gray(0.31), orange(0.30)",red:5,"red:4, black:1",-5,-3,0,0,0
+3,184932665,153873960,46,black,151,123,"black(0.63), gray(0.26)","gray:3, black:2","gray:4, black:1",1,3,0,1,0
+3,216006681,191329499,43,black,349,557,"black(0.75), gray(0.19)","gray:3, black:2","black:3, gray:2",1,-1,0,0,0
+3,206969260,182904703,4,red,93,60,"gray(0.68), pink(0.24)","pink:3, red:1, black:1","pink:3, black:1, red:1",2,2,0,0,0
+3,176270924,148352358,46,black,55,41,"gray(0.44), black(0.41)","gray:3, black:2","black:3, gray:2",1,-1,0,0,0
+3,211447713,190729057,62,red,328,247,"gray(0.88), white(0.12)","red:3, black:1, gray:1","red:4, black:1",-2,-3,0,0,0
+3,192255303,159931342,37,green,83,44,"brown(0.39), yellow(0.22)","brown:4, green:1","brown:2, yellow:2, green:1",3,1,0,0,0
+3,143197618,98469115,64,blue,44,33,"gray(0.56), blue(0.31)",gray:5,gray:5,5,5,1,1,0
+3,200273238,174160548,62,black,27,23,"gray(0.69), white(0.23)",gray:5,"gray:4, black:1",5,3,0,0,0
+3,175571502,147515846,37,black,1572,1939,"red(0.97), white(0.02)","black:2, red:2, gray:1","gray:4, black:1",0,3,0,0,0
+3,142208020,104629798,4,orange,342,306,"orange(0.92), gray(0.03)",red:5,red:5,5,5,1,1,0
+3,221117693,208465437,64,pink,23,34,"pink(0.73), red(0.16)","pink:4, red:1","pink:3, red:2",-3,-1,0,0,0
+3,210748135,189303189,38,black,187,44,"black(0.57), white(0.22)","black:4, gray:1","black:4, gray:1",-3,-3,0,0,0
+3,114733185,103929022,38,pink,19,10,"pink(0.71), red(0.10)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+3,222359219,207833356,46,red,320,395,"black(0.60), gray(0.22)",red:5,"red:4, white:1",-5,-3,0,0,0
+3,192372732,146869722,43,red,1342,1028,"gray(0.64), black(0.28)","red:4, black:1","red:3, black:2",-3,-1,0,0,0
+3,191377667,134898435,57,red,638,620,"gray(0.37), black(0.33)","gray:4, white:1","gray:4, white:1",4,4,0,0,0
+3,201629648,177326361,4,pink,6,30,"gray(0.49), green(0.21)","black:4, pink:1","black:4, pink:1",3,3,0,0,0
+3,211303932,189745855,37,green,299,415,"gray(0.47), white(0.34)","yellow:3, gray:2","yellow:3, brown:1, gray:1",3,3,0,0,0
+3,198684180,167339905,46,white,674,363,"blue(0.61), gray(0.34)","gray:2, orange:1, white:1, red:1","gray:2, blue:1, white:1, orange:1",1,1,0,0,0
+3,213859209,192226046,43,blue,7,8,"blue(0.72), gray(0.12)","black:3, blue:2","black:2, blue:2, gray:1",1,0,0,0,0
+3,192278370,153562476,37,green,13,20,"brown(0.38), gray(0.23)","yellow:3, brown:1, gray:1","yellow:2, gray:2, brown:1",3,2,0,0,0
+3,214329317,184721384,4,red,389,535,"gray(0.74), black(0.25)","red:4, black:1","red:3, black:2",-3,-1,0,0,0
+3,135940202,116675816,38,white,790,727,"black(0.85), gray(0.08)","gray:2, black:2, brown:1","orange:3, gray:2",2,3,0,0,0
+3,217928932,180001774,62,yellow,138,186,"yellow(0.33), orange(0.33)","green:3, yellow:1, orange:1","green:3, yellow:2",2,1,1,0,1
+3,212592127,192227012,43,black,612,560,"black(0.73), gray(0.10)",black:5,black:5,-5,-5,0,0,0
+3,209291892,186707401,4,red,159,144,"red(0.50), gray(0.27)",red:5,red:5,-5,-5,0,0,0
+3,217618238,188912090,37,black,5,1,"gray(0.58), black(0.39)",gray:5,"gray:3, black:2",5,1,1,0,1
+3,221161508,205365317,4,pink,4,6,"pink(0.95), red(0.04)","pink:3, red:2","pink:3, red:2",-1,-1,0,0,0
+3,217161478,168008625,38,red,7,4,"red(0.44), orange(0.26)","red:3, brown:1, black:1","red:4, brown:1",-2,-3,0,0,0
+3,221681530,209156407,43,green,2096,2241,"gray(0.69), orange(0.17)","green:4, black:1","green:3, blue:1, gray:1",-3,-2,0,0,0
+3,125407007,103135887,4,pink,94,5,"pink(0.58), purple(0.15)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+3,151725079,128872941,43,white,32,23,"black(0.61), gray(0.32)","gray:3, black:2","gray:3, black:2",3,3,0,0,0
+3,181215991,153410659,4,red,75,62,"red(0.40), brown(0.25)","pink:2, red:1, white:1, gray:1","red:3, pink:2",1,-1,0,0,0
+3,174792946,141087005,38,orange,2018,2380,"gray(0.50), blue(0.26)",red:5,red:5,5,5,0,0,0
+3,124442497,98571285,64,red,180,141,"black(0.70), gray(0.16)","red:4, black:1",red:5,-3,-5,0,0,0
+3,191924106,157289534,43,pink,9,23,"pink(0.36), brown(0.23)",pink:5,pink:5,-5,-5,0,0,0
+3,214369799,195227005,64,black,700,187,"black(0.45), yellow(0.32)","gray:4, black:1","gray:4, black:1",3,3,1,1,0
+3,208642516,181658560,4,red,374,299,"red(0.93), gray(0.04)","red:2, white:1, black:1, gray:1","red:3, white:1, black:1",-1,-2,0,0,0
+3,221703068,173447641,64,white,82,55,"gray(0.26), white(0.20)","red:3, orange:2","red:3, yellow:1, orange:1",3,3,1,1,0
+3,188545297,159881542,57,brown,40,51,"brown(0.30), white(0.25)","gray:2, brown:2, orange:1","gray:2, brown:2, orange:1",0,0,0,0,0
+3,186431322,155610275,46,white,18,14,"white(0.63), gray(0.35)","white:3, gray:2","white:3, orange:2",-1,-1,0,0,0
+3,216161063,199021905,4,black,41,53,"black(0.40), white(0.31)","black:3, white:1, gray:1",black:5,-2,-5,0,0,0
+3,191575863,163533043,38,orange,1209,821,"red(0.91), white(0.06)","red:4, pink:1","red:4, pink:1",4,4,0,0,0
+3,194649797,156951759,46,pink,103,135,"orange(0.58), gray(0.19)","orange:3, gray:2","brown:2, orange:2, gray:1",3,2,0,0,0
+3,97952986,78148654,64,pink,71,39,"gray(0.55), orange(0.17)","orange:3, gray:2","orange:4, gray:1",3,4,0,0,0
+3,213336123,41040635,38,red,178,137,"red(0.79), gray(0.09)","red:4, brown:1","red:4, brown:1",-3,-3,0,0,0
+3,209775944,169808391,62,red,101,56,"red(0.40), orange(0.38)","red:2, brown:1, gray:1, black:1","red:4, brown:1",-1,-3,0,0,0
+3,221119686,204683450,46,pink,5,18,"orange(0.42), pink(0.38)","pink:2, gray:2, orange:1","pink:2, gray:2, white:1",0,0,0,0,0
+3,49107204,49933218,46,orange,102,143,"red(0.46), orange(0.31)","brown:2, red:1, white:1, orange:1","brown:2, red:1, white:1, orange:1",1,1,0,0,0
+3,215082446,203402486,37,gray,91,168,"gray(0.80), white(0.18)","gray:4, white:1",gray:5,-3,-5,0,0,0
+3,198739700,143853422,46,pink,79,148,"gray(0.47), white(0.25)","gray:3, orange:1, white:1","orange:3, gray:2",3,3,0,0,0
+3,136231774,118321491,46,black,170,234,"gray(0.36), orange(0.26)","gray:3, orange:2","gray:3, orange:1, black:1",3,2,0,0,0
+3,171987040,118260233,57,pink,3,3,"pink(0.59), gray(0.34)",pink:5,pink:5,-5,-5,0,0,0
+3,199220900,172517595,46,orange,214,388,"orange(0.66), red(0.17)",red:5,"red:3, pink:2",5,3,1,1,0
+3,147717089,108862398,64,blue,33,12,"blue(0.37), white(0.19)","blue:2, gray:2, green:1","gray:2, blue:2, green:1",0,0,0,0,0
+3,209482859,181736422,38,black,441,605,"red(0.38), black(0.36)",black:5,black:5,-5,-5,0,0,0
+3,148404099,120181686,37,brown,67,43,"brown(0.65), orange(0.13)","brown:4, yellow:1","brown:3, yellow:1, orange:1",-3,-2,0,0,0
+3,209283968,165285962,43,black,479,101,"black(0.33), gray(0.31)","black:3, white:1, gray:1",black:5,-2,-5,0,0,0
+3,148636912,122818220,43,red,467,5,"black(0.26), yellow(0.23)",black:5,"black:3, red:2",5,1,0,0,0
+3,217323822,191689967,43,purple,44,56,"pink(0.31), purple(0.23)","pink:2, gray:2, purple:1","pink:3, purple:2",1,1,0,0,0
+3,214827627,189572218,43,blue,7,2,"blue(0.63), black(0.24)",blue:5,blue:5,-5,-5,0,0,0
+3,158897718,140582477,4,purple,39,35,"gray(0.61), white(0.32)","gray:3, white:1, pink:1","gray:3, white:1, pink:1",3,3,0,0,0
+3,222003684,199643627,37,pink,982,961,"gray(0.52), black(0.47)","pink:4, red:1","pink:3, red:2",-3,-1,0,0,0
+3,201631636,164249239,57,pink,2343,2346,"brown(0.64), orange(0.31)","pink:2, black:1, gray:1, purple:1","pink:3, black:1, gray:1",-1,-2,0,0,0
+3,185738290,156445649,43,gray,79,59,"gray(0.77), orange(0.14)",gray:5,gray:5,-5,-5,0,0,0
+3,217955716,202541424,62,white,180,332,"gray(0.76), white(0.24)","white:3, gray:2","white:3, gray:2",-1,-1,0,0,0
+3,223991031,164143533,43,purple,103,63,"pink(0.58), orange(0.21)","pink:2, purple:1, white:1, gray:1","pink:2, purple:1, white:1, gray:1",1,1,0,0,0
+3,78456224,56925731,64,red,17,31,"gray(0.73), white(0.26)","gray:3, black:2","gray:3, black:2",3,3,0,0,0
+3,137437216,119531432,62,green,7,8,"yellow(0.55), gray(0.25)","brown:4, yellow:1","brown:4, yellow:1",4,4,0,0,0
+3,211188780,173529593,4,red,836,495,"gray(0.74), black(0.24)","red:3, black:2","red:3, black:2",-1,-1,0,0,0
+3,154270445,128589400,62,black,861,1201,"gray(0.53), white(0.46)","gray:4, white:1",gray:5,4,5,0,0,0
+3,219468209,205311074,4,blue,48,69,"white(0.59), blue(0.24)","blue:3, gray:1, white:1","gray:3, blue:2",-2,1,0,0,0
+3,221254086,76275548,62,pink,15,24,"pink(0.43), gray(0.22)","gray:4, pink:1","gray:3, white:1, pink:1",3,2,1,1,0
+3,223876308,209808536,38,brown,1181,1025,"red(0.63), orange(0.35)","orange:3, white:1, brown:1","orange:2, white:1, brown:1, yellow:1",2,1,0,0,0
+3,208304805,109143906,62,black,765,795,"gray(0.75), white(0.25)","gray:3, black:2",gray:5,1,5,0,0,0
+3,187084437,157264118,38,black,619,830,"orange(0.57), white(0.15)",gray:5,gray:5,5,5,0,0,0
+3,216187678,198809896,4,black,212,190,"black(0.92), gray(0.07)","red:2, white:1, pink:1, gray:1","black:3, white:1, red:1",2,-2,1,0,1
+3,208818858,184790742,64,red,319,344,"red(0.62), black(0.15)","red:3, orange:1, brown:1","red:4, orange:1",-2,-3,0,0,0
+3,115556942,103936826,4,purple,185,126,"pink(0.94), gray(0.04)","blue:2, gray:2, purple:1","blue:2, gray:2, purple:1",1,1,0,0,0
+3,221098190,195854271,57,pink,12,21,"pink(0.87), red(0.11)","pink:3, gray:2","gray:3, pink:2",-1,1,0,0,0
+3,208699858,179210556,64,pink,28,21,"pink(0.63), gray(0.15)","gray:2, pink:2, red:1","gray:4, pink:1",0,3,0,1,0
+3,195833750,123189996,64,red,195,198,"gray(0.63), white(0.37)","gray:3, pink:2","gray:3, pink:2",3,3,0,0,0
+3,217382278,205030690,46,red,30,15,"white(0.68), gray(0.23)","orange:3, gray:1, white:1","gray:3, orange:2",3,3,0,0,0
+3,195598730,168407756,62,gray,268,371,"white(0.51), gray(0.49)",gray:5,gray:5,-5,-5,0,0,0
+3,219877685,204948467,38,brown,260,166,"yellow(0.92), gray(0.05)","brown:2, gray:1, yellow:1, green:1","yellow:2, brown:1, gray:1, orange:1",-1,1,0,0,0
+3,200593852,152312239,64,blue,30,64,"gray(0.41), brown(0.17)","blue:2, gray:1, brown:1, white:1","blue:2, brown:1, gray:1, white:1",-1,-1,0,0,0
+3,195620594,165223697,46,black,391,379,"orange(0.39), brown(0.27)","brown:3, orange:2","brown:2, orange:1, gray:1, black:1",3,1,0,0,0
+3,222255174,210643200,57,black,1123,1127,"gray(0.69), blue(0.12)","gray:2, pink:2, red:1","gray:3, red:2",2,3,0,0,0
+3,174710752,141212383,4,gray,7,1,"gray(0.93), white(0.04)","black:4, white:1","gray:3, black:2",4,-1,1,0,1
+3,215148695,196324694,43,red,255,213,"red(0.40), gray(0.21)","black:3, gray:1, orange:1","black:4, gray:1",3,4,1,1,0
+3,207687218,169890454,43,green,11,3,"black(0.51), orange(0.15)","green:3, yellow:1, brown:1","green:3, black:2",-2,-1,0,0,0
+3,153488882,20198247,4,red,269,300,"pink(0.68), red(0.26)","pink:2, red:2, black:1","red:4, black:1",0,-3,0,0,0
+3,167925637,116634389,57,white,184,279,"gray(0.74), white(0.19)","gray:3, white:2","gray:3, white:2",1,1,0,0,0
+3,173164315,146168593,4,white,8,2,"gray(0.96), white(0.04)","white:3, gray:2","gray:4, white:1",-1,3,0,1,0
+3,218627424,201030455,38,green,46,28,"black(0.69), blue(0.17)","blue:3, yellow:2","blue:3, yellow:1, green:1",3,2,0,0,0
+3,194860010,166190328,46,blue,182,46,"orange(0.53), brown(0.16)",gray:5,"gray:3, blue:2",5,1,0,0,0
+3,208314235,182590419,62,yellow,926,764,"gray(0.46), yellow(0.34)","orange:2, yellow:2, green:1","orange:2, yellow:2, green:1",0,0,0,0,0
+3,187546279,157092256,4,pink,11,7,"gray(0.68), white(0.24)","white:3, red:1, gray:1","red:2, white:2, gray:1",3,2,0,0,0
+3,194695906,158536496,38,yellow,586,464,"gray(0.55), brown(0.19)","black:2, gray:1, yellow:1, brown:1","brown:2, black:2, orange:1",1,2,0,0,0
+3,123321721,101119653,43,pink,51,55,"red(0.48), yellow(0.13)","pink:2, red:2, orange:1","pink:3, red:2",0,-1,0,0,0
+3,194785620,165237646,43,pink,175,214,"white(0.59), gray(0.30)","white:4, gray:1","white:3, gray:1, red:1",4,3,0,0,0
+3,209600686,186417621,64,black,250,267,"orange(0.40), brown(0.22)","orange:2, gray:2, white:1","yellow:2, white:1, orange:1, gray:1",2,2,0,0,0
+3,218578178,203829614,37,purple,4,6,"pink(0.45), black(0.20)",pink:5,"pink:4, black:1",5,4,0,0,0
+3,177318197,149582480,4,orange,29,5,"red(0.90), brown(0.03)","brown:2, orange:1, gray:1, red:1","red:2, brown:2, orange:1",1,1,0,0,0
+3,206145125,167802783,38,green,661,1227,"gray(0.80), white(0.19)","green:3, gray:1, yellow:1","green:3, yellow:2",-2,-1,0,0,0
+3,182806205,151978785,4,red,42,32,"red(0.96), white(0.02)",red:5,red:5,-5,-5,0,0,0
+3,128516859,113125737,43,brown,651,764,"gray(0.38), orange(0.37)","orange:4, black:1",orange:5,4,5,0,0,0
+3,210701847,189202972,37,black,262,162,"black(0.53), gray(0.24)","gray:3, red:2","black:3, gray:2",3,-1,1,0,1
+4,216668373,177013550,57,gray,762,835,"gray(0.85), white(0.09)","gray:4, white:1","gray:4, white:1",-3,-3,0,0,0
+4,171056375,144654385,57,black,1294,1505,"red(0.47), pink(0.32)","gray:3, black:2","gray:4, black:1",1,3,0,0,0
+4,218060720,202888371,4,purple,10,3,"pink(0.94), gray(0.03)","purple:3, pink:2","pink:4, purple:1",-1,3,0,0,0
+4,221392704,184422473,64,pink,40,34,"gray(0.41), red(0.24)","white:2, orange:2, gray:1","white:2, orange:2, gray:1",2,2,0,0,0
+4,221849722,209933189,64,orange,246,118,"gray(0.86), white(0.07)","gray:2, red:1, yellow:1, white:1","yellow:2, red:2, gray:1",2,2,0,0,0
+4,221332807,204074548,37,pink,68,91,"pink(0.31), red(0.31)","red:3, pink:1, orange:1","red:2, pink:1, white:1, orange:1",2,1,1,0,1
+4,222658414,207485550,46,red,53,57,"orange(0.42), white(0.22)","orange:4, yellow:1","orange:4, brown:1",4,4,0,0,0
+4,216674479,198492434,43,pink,596,921,"red(0.38), gray(0.28)",pink:5,"pink:4, black:1",-5,-3,0,0,0
+4,209411379,186938336,64,gray,1036,1187,"gray(0.39), orange(0.11)",gray:5,gray:5,-5,-5,0,0,0
+4,191508297,162694671,37,orange,32,17,"red(0.76), orange(0.08)","red:2, pink:2, orange:1","red:3, pink:2",1,3,0,1,0
+4,217376647,201569008,4,purple,73,67,"white(0.46), gray(0.31)","blue:2, gray:2, purple:1","blue:3, purple:1, pink:1",1,2,0,0,0
+4,180514026,151224480,38,pink,70,73,"gray(0.72), red(0.18)","pink:4, white:1","pink:3, gray:1, orange:1",-3,-2,0,0,0
+4,220092492,206938315,46,purple,1378,1022,"gray(0.38), orange(0.17)",white:5,"white:2, gray:2, red:1",5,2,0,0,0
+4,206688771,182583580,43,yellow,184,195,"gray(0.65), white(0.21)","red:4, white:1","black:4, brown:1",4,4,0,0,0
+4,174460622,98844359,4,gray,48,36,"gray(0.97), black(0.02)",gray:5,"gray:4, white:1",-5,-3,0,0,0
+4,184540324,155460756,4,pink,1887,1876,"gray(0.71), black(0.15)","pink:3, gray:1, red:1","pink:3, gray:1, red:1",-2,-2,0,0,0
+4,170199834,129359241,64,gray,51,79,"gray(0.81), white(0.19)",gray:5,gray:5,-5,-5,0,0,0
+4,224242506,213870777,4,red,2,6,"red(0.49), white(0.24)","white:1, red:1, blue:1, orange:1, gray:1","red:3, gray:2",0,-1,0,0,0
+4,221140475,161194868,62,purple,1,1,"gray(0.52), white(0.12)","gray:3, white:1, red:1","gray:3, white:1, red:1",3,3,0,0,0
+4,161520335,121775976,37,brown,47,224,"brown(0.80), orange(0.08)","orange:3, brown:2","brown:4, orange:1",1,-3,0,0,0
+4,188912224,160058303,43,red,23,3,"orange(0.43), red(0.38)","red:4, black:1","red:3, orange:2",-3,-1,0,0,0
+4,42436354,48307499,37,gray,182,152,"gray(0.65), black(0.31)","black:3, gray:2","black:3, gray:2",1,1,0,0,0
+4,221126045,201704588,43,pink,17,23,"orange(0.30), red(0.29)","gray:2, orange:1, red:1, white:1","gray:2, orange:1, white:1, red:1",2,2,0,0,0
+4,214248010,195057440,62,red,1204,912,"gray(0.38), white(0.33)","gray:3, brown:1, black:1","gray:3, brown:1, black:1",3,3,0,0,0
+4,219286194,200007082,4,black,194,78,"blue(0.68), black(0.22)","black:3, gray:2","black:4, gray:1",-1,-3,0,0,0
+4,139811710,121324439,62,red,787,891,"gray(0.69), black(0.20)","gray:4, red:1","gray:3, red:2",3,1,0,0,0
+4,100867984,91035907,57,red,445,519,"gray(0.56), black(0.42)","red:3, brown:1, orange:1","red:3, brown:2",-2,-1,0,0,0
+4,182596207,154443104,64,brown,17,28,"orange(0.67), gray(0.16)","orange:2, gray:2, white:1","orange:2, gray:2, white:1",2,2,0,0,0
+4,128208179,109410545,4,gray,30,82,"gray(0.96), white(0.03)","gray:4, blue:1","gray:4, black:1",-3,-3,0,0,0
+4,146131699,126937971,43,brown,105,9,"orange(0.70), gray(0.13)","orange:4, black:1","orange:4, brown:1",4,3,0,0,0
+4,68842383,63103166,43,green,46,84,"blue(0.51), black(0.29)","blue:4, green:1","blue:4, green:1",3,3,0,0,0
+4,209299411,160039265,46,red,344,152,"red(0.67), brown(0.16)","black:4, gray:1","black:3, orange:1, red:1",4,2,1,1,0
+4,188548219,157989085,43,orange,18,43,"red(0.81), orange(0.12)","orange:3, yellow:2","orange:3, red:1, yellow:1",-1,-2,0,0,0
+4,217204938,201202736,43,red,48,37,"gray(0.52), orange(0.27)","orange:2, brown:2, white:1","orange:2, white:1, brown:1, gray:1",2,2,0,0,0
+4,215705047,192928912,64,red,938,850,"gray(0.75), white(0.23)","black:3, orange:1, gray:1","gray:4, black:1",3,4,0,0,0
+4,142468301,118290351,38,white,631,607,"gray(0.90), white(0.09)",gray:5,"gray:4, white:1",5,3,1,1,0
+4,112596910,97501013,64,orange,15,31,"gray(0.59), white(0.29)","gray:3, orange:2","orange:4, gray:1",1,-3,0,0,0
+4,199748989,172689752,37,black,993,891,"black(0.51), gray(0.33)","black:4, gray:1","black:3, gray:2",-3,-1,0,0,0
+4,115228040,60103240,43,black,165,69,"black(0.62), gray(0.26)","black:4, gray:1","black:3, gray:2",-3,-1,0,0,0
+4,174244672,145708285,43,green,22,12,"gray(0.76), white(0.19)","gray:3, white:2","green:3, gray:2",3,-1,0,0,0
+4,180198150,144472808,43,red,236,148,"gray(0.31), orange(0.30)","red:4, black:1","red:3, black:2",-3,-1,0,0,0
+4,184932665,153873960,46,black,157,113,"black(0.63), gray(0.26)","gray:3, black:2","gray:3, black:2",1,1,0,0,0
+4,216006681,191329499,43,black,375,534,"black(0.75), gray(0.19)","gray:3, black:2","black:3, gray:2",1,-1,0,0,0
+4,206969260,182904703,4,red,28,43,"gray(0.68), pink(0.24)","pink:2, red:1, black:1, white:1","pink:3, red:1, black:1",1,2,0,0,0
+4,176270924,148352358,46,black,16,19,"gray(0.44), black(0.41)","black:4, gray:1","black:4, gray:1",-3,-3,0,0,0
+4,211447713,190729057,62,red,353,302,"gray(0.88), white(0.12)","red:2, gray:2, orange:1","red:4, orange:1",0,-3,0,0,0
+4,192255303,159931342,37,green,47,66,"brown(0.39), yellow(0.22)","brown:4, yellow:1","brown:3, yellow:1, green:1",4,2,0,0,0
+4,143197618,98469115,64,blue,5,10,"gray(0.56), blue(0.31)","gray:4, blue:1","gray:3, blue:2",3,1,1,0,1
+4,200273238,174160548,62,black,31,33,"gray(0.69), white(0.23)",gray:5,gray:5,5,5,0,0,0
+4,175571502,147515846,37,black,1246,1555,"red(0.97), white(0.02)","black:2, red:2, gray:1","black:3, red:1, gray:1",0,-2,0,0,0
+4,142208020,104629798,4,orange,516,551,"orange(0.92), gray(0.03)",red:5,red:5,5,5,1,1,0
+4,221117693,208465437,64,pink,5,8,"pink(0.73), red(0.16)","pink:3, white:1, red:1","pink:3, white:1, red:1",-2,-2,0,0,0
+4,210748135,189303189,38,black,512,197,"black(0.57), white(0.22)","black:3, gray:2","black:3, gray:2",-1,-1,0,0,0
+4,114733185,103929022,38,pink,409,105,"pink(0.71), red(0.10)","pink:3, purple:2",pink:5,-1,-5,0,0,0
+4,222359219,207833356,46,red,415,441,"black(0.60), gray(0.22)","red:4, gray:1","red:4, white:1",-3,-3,0,0,0
+4,192372732,146869722,43,red,1430,1358,"gray(0.64), black(0.28)","black:4, orange:1","red:2, black:2, orange:1",4,0,0,0,0
+4,191377667,134898435,57,red,1955,1034,"gray(0.37), black(0.33)","gray:4, black:1","gray:4, black:1",4,4,0,0,0
+4,201629648,177326361,4,pink,48,120,"gray(0.49), green(0.21)","white:2, gray:1, black:1, red:1","black:3, red:2",2,3,0,0,0
+4,211303932,189745855,37,green,897,1003,"gray(0.47), white(0.34)","brown:3, red:1, gray:1","brown:3, gray:1, red:1",3,3,0,0,0
+4,198684180,167339905,46,white,429,280,"blue(0.61), gray(0.34)","white:2, gray:2, red:1","brown:2, white:2, orange:1",0,0,0,0,0
+4,213859209,192226046,43,blue,7,14,"blue(0.72), gray(0.12)","blue:4, white:1","blue:3, white:1, gray:1",-3,-2,0,0,0
+4,192278370,153562476,37,green,59,101,"brown(0.38), gray(0.23)","brown:4, green:1",brown:5,3,5,0,0,0
+4,214329317,184721384,4,red,463,558,"gray(0.74), black(0.25)","red:4, black:1",red:5,-3,-5,0,0,0
+4,135940202,116675816,38,white,1085,991,"black(0.85), gray(0.08)","gray:2, brown:1, black:1, orange:1","orange:3, gray:2",2,3,0,0,0
+4,217928932,180001774,62,yellow,141,209,"yellow(0.33), orange(0.33)","yellow:2, blue:1, orange:1, green:1","yellow:3, blue:1, green:1",-1,-2,0,0,0
+4,212592127,192227012,43,black,316,296,"black(0.73), gray(0.10)","black:2, white:2, gray:1","white:2, black:2, gray:1",0,0,0,0,0
+4,209291892,186707401,4,red,145,80,"red(0.50), gray(0.27)","red:4, black:1",red:5,-3,-5,0,0,0
+4,217618238,188912090,37,black,2,2,"gray(0.58), black(0.39)","gray:3, pink:1, black:1","gray:3, black:2",2,1,1,0,1
+4,221161508,205365317,4,pink,5,4,"pink(0.95), red(0.04)","pink:4, red:1","pink:4, red:1",-3,-3,0,0,0
+4,217161478,168008625,38,red,3,5,"red(0.44), orange(0.26)","red:4, gray:1",red:5,-3,-5,0,0,0
+4,221681530,209156407,43,green,1693,1949,"gray(0.69), orange(0.17)","green:3, blue:2","blue:2, green:2, black:1",-1,0,0,0,0
+4,125407007,103135887,4,pink,31,11,"pink(0.58), purple(0.15)",pink:5,"pink:3, white:1, red:1",-5,-2,0,0,0
+4,151725079,128872941,43,white,44,22,"black(0.61), gray(0.32)","black:4, gray:1","gray:3, black:2",4,3,0,0,0
+4,181215991,153410659,4,red,23,5,"red(0.40), brown(0.25)","gray:2, white:1, red:1, black:1","red:3, white:1, pink:1",1,-2,0,0,0
+4,174792946,141087005,38,orange,2069,1627,"gray(0.50), blue(0.26)",red:5,red:5,5,5,0,0,0
+4,124442497,98571285,64,red,144,243,"black(0.70), gray(0.16)","red:2, black:1, gray:1, orange:1",red:5,-1,-5,0,0,0
+4,191924106,157289534,43,pink,21,19,"pink(0.36), brown(0.23)",pink:5,pink:5,-5,-5,0,0,0
+4,214369799,195227005,64,black,527,296,"black(0.45), yellow(0.32)","gray:4, black:1",gray:5,3,5,1,1,0
+4,208642516,181658560,4,red,357,287,"red(0.93), gray(0.04)","black:2, orange:1, gray:1, red:1","black:2, red:2, white:1",1,0,0,0,0
+4,221703068,173447641,64,white,17,29,"gray(0.26), white(0.20)","yellow:2, orange:2, red:1","yellow:2, gray:2, red:1",2,2,1,1,0
+4,188545297,159881542,57,brown,1,1,"brown(0.30), white(0.25)","brown:4, yellow:1","brown:3, orange:2",-3,-1,0,0,0
+4,186431322,155610275,46,white,53,3,"white(0.63), gray(0.35)","white:3, orange:1, gray:1","white:4, gray:1",-2,-3,0,0,0
+4,216161063,199021905,4,black,26,21,"black(0.40), white(0.31)","gray:2, white:2, black:1","black:3, white:1, gray:1",1,-2,0,0,0
+4,191575863,163533043,38,orange,2049,668,"red(0.91), white(0.06)","red:3, orange:1, pink:1",red:5,2,5,0,0,0
+4,194649797,156951759,46,pink,67,67,"orange(0.58), gray(0.19)","orange:4, gray:1","orange:4, gray:1",4,4,0,0,0
+4,97952986,78148654,64,pink,32,3,"gray(0.55), orange(0.17)","orange:3, gray:2","gray:2, orange:2, red:1",3,2,0,0,0
+4,213336123,41040635,38,red,58,50,"red(0.79), gray(0.09)",red:5,red:5,-5,-5,0,0,0
+4,209775944,169808391,62,red,143,106,"red(0.40), orange(0.38)","gray:2, black:1, brown:1, red:1","red:4, white:1",1,-3,0,0,0
+4,221119686,204683450,46,pink,3,10,"orange(0.42), pink(0.38)","gray:2, pink:1, orange:1, red:1","pink:2, gray:2, orange:1",1,0,0,0,0
+4,49107204,49933218,46,orange,950,459,"red(0.46), orange(0.31)","orange:3, brown:2","orange:2, brown:2, yellow:1",-1,0,0,0,0
+4,215082446,203402486,37,gray,43,19,"gray(0.80), white(0.18)","gray:4, white:1",gray:5,-3,-5,0,0,0
+4,198739700,143853422,46,pink,167,146,"gray(0.47), white(0.25)","orange:3, gray:2","orange:4, red:1",3,4,0,0,0
+4,136231774,118321491,46,black,261,210,"gray(0.36), orange(0.26)","gray:3, orange:2","orange:2, gray:2, black:1",3,1,0,0,0
+4,171987040,118260233,57,pink,19,20,"pink(0.59), gray(0.34)",pink:5,pink:5,-5,-5,0,0,0
+4,199220900,172517595,46,orange,23,124,"orange(0.66), red(0.17)","red:3, brown:1, orange:1","red:4, brown:1",2,4,1,1,0
+4,147717089,108862398,64,blue,1,1,"blue(0.37), white(0.19)",blue:5,"blue:4, gray:1",-5,-3,0,0,0
+4,209482859,181736422,38,black,186,167,"red(0.38), black(0.36)",black:5,black:5,-5,-5,0,0,0
+4,148404099,120181686,37,brown,37,31,"brown(0.65), orange(0.13)","brown:3, orange:2","brown:3, orange:2",-1,-1,0,0,0
+4,209283968,165285962,43,black,490,114,"black(0.33), gray(0.31)","black:4, gray:1","black:4, gray:1",-3,-3,0,0,0
+4,148636912,122818220,43,red,432,16,"black(0.26), yellow(0.23)","black:3, gray:1, orange:1",black:5,3,5,0,0,0
+4,217323822,191689967,43,purple,24,8,"pink(0.31), purple(0.23)","purple:3, pink:2","purple:3, pink:2",-1,-1,0,0,0
+4,214827627,189572218,43,blue,25,20,"blue(0.63), black(0.24)",blue:5,blue:5,-5,-5,0,0,0
+4,158897718,140582477,4,purple,36,17,"gray(0.61), white(0.32)","gray:3, white:1, pink:1","gray:3, pink:1, white:1",3,3,0,0,0
+4,222003684,199643627,37,pink,886,832,"gray(0.52), black(0.47)","pink:2, gray:2, red:1","pink:3, red:1, gray:1",0,-2,0,0,0
+4,201631636,164249239,57,pink,2525,2604,"brown(0.64), orange(0.31)","gray:3, orange:1, pink:1","gray:3, pink:1, black:1",2,2,0,0,0
+4,185738290,156445649,43,gray,229,146,"gray(0.77), orange(0.14)",gray:5,gray:5,-5,-5,0,0,0
+4,217955716,202541424,62,white,488,275,"gray(0.76), white(0.24)","white:2, orange:2, gray:1","gray:2, white:2, red:1",0,0,0,0,0
+4,223991031,164143533,43,purple,169,95,"pink(0.58), orange(0.21)","gray:3, black:1, pink:1","pink:3, black:1, purple:1",3,2,0,0,0
+4,78456224,56925731,64,red,8,6,"gray(0.73), white(0.26)","gray:3, black:2","gray:4, black:1",3,4,0,0,0
+4,137437216,119531432,62,green,13,10,"yellow(0.55), gray(0.25)","brown:3, gray:2","brown:3, gray:2",3,3,0,0,0
+4,211188780,173529593,4,red,1319,762,"gray(0.74), black(0.24)","red:4, black:1",red:5,-3,-5,0,0,0
+4,154270445,128589400,62,black,1028,1334,"gray(0.53), white(0.46)",gray:5,"gray:4, black:1",5,3,0,0,0
+4,219468209,205311074,4,blue,55,140,"white(0.59), blue(0.24)","gray:2, blue:2, white:1","gray:3, blue:2",0,1,0,0,0
+4,221254086,76275548,62,pink,4,19,"pink(0.43), gray(0.22)","gray:2, pink:2, red:1","red:2, white:1, pink:1, gray:1",0,1,0,0,0
+4,223876308,209808536,38,brown,440,424,"red(0.63), orange(0.35)","orange:3, brown:2","orange:3, brown:1, yellow:1",1,2,0,0,0
+4,208304805,109143906,62,black,587,627,"gray(0.75), white(0.25)","gray:3, black:2","gray:3, black:2",1,1,0,0,0
+4,187084437,157264118,38,black,445,486,"orange(0.57), white(0.15)",gray:5,"gray:4, black:1",5,3,0,0,0
+4,216187678,198809896,4,black,259,336,"black(0.92), gray(0.07)","black:2, white:1, gray:1, red:1","black:2, white:1, gray:1, red:1",-1,-1,0,0,0
+4,208818858,184790742,64,red,215,245,"red(0.62), black(0.15)","red:4, orange:1","red:4, orange:1",-3,-3,0,0,0
+4,115556942,103936826,4,purple,53,18,"pink(0.94), gray(0.04)","blue:3, purple:1, gray:1","blue:2, purple:1, green:1, gray:1",2,1,0,0,0
+4,221098190,195854271,57,pink,19,14,"pink(0.87), red(0.11)","white:2, pink:1, gray:1, blue:1","gray:2, white:1, pink:1, blue:1",1,1,0,0,0
+4,208699858,179210556,64,pink,4,2,"pink(0.63), gray(0.15)","pink:2, gray:2, red:1","gray:3, pink:2",0,1,0,0,0
+4,195833750,123189996,64,red,105,246,"gray(0.63), white(0.37)","gray:3, red:1, pink:1","gray:2, pink:2, red:1",2,1,0,0,0
+4,217382278,205030690,46,red,18,29,"white(0.68), gray(0.23)",orange:5,"orange:3, gray:2",5,3,0,0,0
+4,195598730,168407756,62,gray,204,189,"white(0.51), gray(0.49)",gray:5,gray:5,-5,-5,0,0,0
+4,219877685,204948467,38,brown,98,56,"yellow(0.92), gray(0.05)","brown:3, gray:1, white:1","brown:2, orange:2, white:1",-2,0,0,0,0
+4,200593852,152312239,64,blue,39,73,"gray(0.41), brown(0.17)","gray:2, green:2, blue:1","blue:3, gray:1, green:1",1,-2,0,0,0
+4,195620594,165223697,46,black,180,222,"orange(0.39), brown(0.27)","orange:4, yellow:1","orange:2, yellow:1, black:1, brown:1",4,1,0,0,0
+4,222255174,210643200,57,black,1882,1265,"gray(0.69), blue(0.12)","gray:2, pink:2, red:1","gray:3, red:2",2,3,0,0,0
+4,174710752,141212383,4,gray,32,17,"gray(0.93), white(0.04)",black:5,"black:3, gray:2",5,1,1,0,1
+4,215148695,196324694,43,red,209,111,"red(0.40), gray(0.21)","orange:3, black:1, gray:1","red:2, gray:2, black:1",3,0,1,0,1
+4,207687218,169890454,43,green,20,10,"black(0.51), orange(0.15)",green:5,green:5,-5,-5,0,0,0
+4,153488882,20198247,4,red,63,101,"pink(0.68), red(0.26)","red:3, brown:1, white:1","red:4, pink:1",-2,-3,0,0,0
+4,167925637,116634389,57,white,119,166,"gray(0.74), white(0.19)","white:2, gray:2, orange:1","gray:2, white:2, orange:1",0,0,0,0,0
+4,173164315,146168593,4,white,112,16,"gray(0.96), white(0.04)","gray:4, white:1","white:3, gray:2",3,-1,1,0,1
+4,218627424,201030455,38,green,7,8,"black(0.69), blue(0.17)","blue:3, green:1, yellow:1","blue:3, green:1, yellow:1",2,2,0,0,0
+4,194860010,166190328,46,blue,102,34,"orange(0.53), brown(0.16)",gray:5,"gray:3, blue:2",5,1,0,0,0
+4,208314235,182590419,62,yellow,1189,1246,"gray(0.46), yellow(0.34)","orange:2, yellow:2, green:1","yellow:2, orange:2, green:1",0,0,0,0,0
+4,187546279,157092256,4,pink,21,14,"gray(0.68), white(0.24)","white:2, gray:2, pink:1","white:2, gray:2, pink:1",1,1,0,0,0
+4,194695906,158536496,38,yellow,812,634,"gray(0.55), brown(0.19)","gray:3, black:1, brown:1","brown:3, black:1, orange:1",3,3,0,0,0
+4,123321721,101119653,43,pink,279,223,"red(0.48), yellow(0.13)","orange:2, pink:2, gray:1","pink:3, red:1, orange:1",0,-2,0,0,0
+4,194785620,165237646,43,pink,158,276,"white(0.59), gray(0.30)","white:3, gray:2","white:3, gray:1, pink:1",3,2,0,0,0
+4,209600686,186417621,64,black,284,337,"orange(0.40), brown(0.22)","yellow:2, white:1, orange:1, gray:1","gray:1, white:1, yellow:1, orange:1, black:1",2,0,0,0,0
+4,218578178,203829614,37,purple,3,3,"pink(0.45), black(0.20)","pink:4, gray:1","pink:4, black:1",4,4,0,0,0
+4,177318197,149582480,4,orange,9,9,"red(0.90), brown(0.03)","brown:2, gray:1, orange:1, red:1","red:2, orange:1, brown:1, gray:1",1,1,0,0,0
+4,206145125,167802783,38,green,1156,1379,"gray(0.80), white(0.19)","gray:2, green:1, blue:1, yellow:1","green:2, blue:1, gray:1, yellow:1",1,-1,0,0,0
+4,182806205,151978785,4,red,36,25,"red(0.96), white(0.02)","red:4, pink:1","red:4, pink:1",-3,-3,0,0,0
+4,128516859,113125737,43,brown,1176,830,"gray(0.38), orange(0.37)","brown:3, orange:1, black:1","brown:2, orange:2, gray:1",-2,0,0,0,0
+4,210701847,189202972,37,black,195,357,"black(0.53), gray(0.24)","gray:2, black:2, red:1","black:3, gray:2",0,-1,0,0,0
+5,216668373,177013550,57,gray,506,621,"gray(0.85), white(0.09)","gray:3, white:1, black:1","gray:3, white:2",-2,-1,0,0,0
+5,171056375,144654385,57,black,1086,1416,"red(0.47), pink(0.32)","gray:3, pink:1, purple:1","gray:4, white:1",3,4,0,0,0
+5,218060720,202888371,4,purple,11,8,"pink(0.94), gray(0.03)","pink:3, purple:2","purple:3, pink:2",1,-1,0,0,0
+5,221392704,184422473,64,pink,19,14,"gray(0.41), red(0.24)","white:2, orange:1, gray:1, red:1","white:2, red:1, orange:1, gray:1",2,2,0,0,0
+5,221849722,209933189,64,orange,110,73,"gray(0.86), white(0.07)","yellow:2, gray:1, pink:1, orange:1","gray:2, yellow:1, pink:1, red:1",1,2,0,0,0
+5,221332807,204074548,37,pink,81,90,"pink(0.31), red(0.31)","red:2, pink:1, orange:1, gray:1","red:3, pink:1, white:1",1,2,0,1,0
+5,222658414,207485550,46,red,182,51,"orange(0.42), white(0.22)","orange:1, brown:1, gray:1, yellow:1, white:1","orange:3, gray:1, brown:1",1,3,0,0,0
+5,216674479,198492434,43,pink,649,950,"red(0.38), gray(0.28)","pink:3, gray:1, black:1","pink:4, black:1",-2,-3,0,0,0
+5,209411379,186938336,64,gray,466,723,"gray(0.39), orange(0.11)",gray:5,gray:5,-5,-5,0,0,0
+5,191508297,162694671,37,orange,31,33,"red(0.76), orange(0.08)",red:5,red:5,5,5,1,1,0
+5,217376647,201569008,4,purple,46,37,"white(0.46), gray(0.31)","gray:2, blue:2, purple:1","blue:4, purple:1",1,3,0,0,0
+5,180514026,151224480,38,pink,100,104,"gray(0.72), red(0.18)","pink:4, gray:1","pink:4, gray:1",-3,-3,0,0,0
+5,220092492,206938315,46,purple,1088,757,"gray(0.38), orange(0.17)","white:3, gray:2","gray:3, white:2",3,3,0,0,0
+5,206688771,182583580,43,yellow,132,229,"gray(0.65), white(0.21)","black:3, red:1, green:1","black:4, gray:1",3,4,0,0,0
+5,174460622,98844359,4,gray,56,36,"gray(0.97), black(0.02)","gray:4, white:1",gray:5,-3,-5,0,0,0
+5,184540324,155460756,4,pink,1474,1388,"gray(0.71), black(0.15)","gray:3, pink:1, white:1","gray:3, pink:1, white:1",2,2,0,0,0
+5,170199834,129359241,64,gray,33,43,"gray(0.81), white(0.19)","gray:4, white:1","gray:4, white:1",-3,-3,0,0,0
+5,224242506,213870777,4,red,38,48,"red(0.49), white(0.24)","red:2, white:1, blue:1, gray:1","red:4, white:1",-1,-3,0,0,0
+5,221140475,161194868,62,purple,1,1,"gray(0.52), white(0.12)","gray:4, white:1","gray:4, white:1",4,4,0,0,0
+5,161520335,121775976,37,brown,40,223,"brown(0.80), orange(0.08)","brown:4, orange:1","brown:3, orange:2",-3,-1,0,0,0
+5,188912224,160058303,43,red,79,21,"orange(0.43), red(0.38)",red:5,red:5,-5,-5,0,0,0
+5,42436354,48307499,37,gray,26,76,"gray(0.65), black(0.31)","black:3, gray:2","gray:2, black:2, brown:1",1,0,0,0,0
+5,221126045,201704588,43,pink,67,61,"orange(0.30), red(0.29)","gray:3, white:2","white:4, gray:1",3,4,0,0,0
+5,214248010,195057440,62,red,566,733,"gray(0.38), white(0.33)","gray:2, brown:1, black:1, red:1","gray:1, red:1, black:1, brown:1, pink:1",1,0,0,0,0
+5,219286194,200007082,4,black,208,70,"blue(0.68), black(0.22)","gray:3, black:2","black:4, gray:1",1,-3,0,0,0
+5,139811710,121324439,62,red,715,782,"gray(0.69), black(0.20)","gray:4, pink:1","gray:2, pink:1, red:1, black:1",4,1,0,0,0
+5,100867984,91035907,57,red,255,163,"gray(0.56), black(0.42)","brown:3, gray:1, orange:1","brown:3, gray:1, yellow:1",3,3,0,0,0
+5,182596207,154443104,64,brown,30,27,"orange(0.67), gray(0.16)","orange:3, gray:2","orange:3, gray:1, yellow:1",3,3,0,0,0
+5,128208179,109410545,4,gray,10,16,"gray(0.96), white(0.03)","blue:2, gray:2, black:1","gray:3, blue:1, black:1",0,-2,0,0,0
+5,146131699,126937971,43,brown,97,45,"orange(0.70), gray(0.13)","black:2, orange:2, brown:1","orange:3, black:2",1,3,0,0,0
+5,68842383,63103166,43,green,30,67,"blue(0.51), black(0.29)","blue:4, green:1","blue:3, green:2",3,1,0,0,0
+5,209299411,160039265,46,red,67,22,"red(0.67), brown(0.16)","red:3, black:2","red:3, black:1, orange:1",-1,-2,0,0,0
+5,188548219,157989085,43,orange,86,173,"red(0.81), orange(0.12)","yellow:2, brown:2, orange:1","yellow:3, red:1, orange:1",1,2,0,1,0
+5,217204938,201202736,43,red,73,77,"gray(0.52), orange(0.27)","orange:4, brown:1","orange:4, brown:1",4,4,0,0,0
+5,215705047,192928912,64,red,759,932,"gray(0.75), white(0.23)","gray:3, red:2","red:3, gray:1, black:1",1,-2,0,0,0
+5,142468301,118290351,38,white,862,1050,"gray(0.90), white(0.09)",gray:5,gray:5,5,5,1,1,0
+5,112596910,97501013,64,orange,112,158,"gray(0.59), white(0.29)","gray:3, orange:1, white:1","orange:2, white:2, gray:1",2,0,0,0,0
+5,199748989,172689752,37,black,580,837,"black(0.51), gray(0.33)",black:5,black:5,-5,-5,0,0,0
+5,115228040,60103240,43,black,64,38,"black(0.62), gray(0.26)","black:3, gray:1, white:1","black:4, brown:1",-2,-3,0,0,0
+5,174244672,145708285,43,green,9,14,"gray(0.76), white(0.19)","gray:3, white:2","gray:4, white:1",3,4,0,0,0
+5,180198150,144472808,43,red,610,486,"gray(0.31), orange(0.30)",red:5,red:5,-5,-5,0,0,0
+5,184932665,153873960,46,black,213,198,"black(0.63), gray(0.26)","black:4, gray:1","black:3, gray:2",-3,-1,0,0,0
+5,216006681,191329499,43,black,160,478,"black(0.75), gray(0.19)","gray:3, black:2","gray:4, black:1",1,3,0,1,0
+5,206969260,182904703,4,red,111,82,"gray(0.68), pink(0.24)","pink:2, black:2, red:1","pink:2, black:2, red:1",1,1,0,0,0
+5,176270924,148352358,46,black,67,69,"gray(0.44), black(0.41)","black:4, gray:1","black:3, gray:2",-3,-1,0,0,0
+5,211447713,190729057,62,red,290,310,"gray(0.88), white(0.12)","red:3, white:1, gray:1","red:4, white:1",-2,-3,0,0,0
+5,192255303,159931342,37,green,90,48,"brown(0.39), yellow(0.22)","brown:3, yellow:1, white:1","yellow:2, green:1, orange:1, brown:1",3,1,0,0,0
+5,143197618,98469115,64,blue,28,27,"gray(0.56), blue(0.31)",gray:5,gray:5,5,5,1,1,0
+5,200273238,174160548,62,black,8,12,"gray(0.69), white(0.23)",gray:5,"gray:4, black:1",5,3,0,0,0
+5,175571502,147515846,37,black,1199,1646,"red(0.97), white(0.02)","black:2, gray:2, red:1","gray:2, black:2, red:1",0,0,0,0,0
+5,142208020,104629798,4,orange,467,520,"orange(0.92), gray(0.03)",red:5,red:5,5,5,1,1,0
+5,221117693,208465437,64,pink,6,6,"pink(0.73), red(0.16)","red:3, white:1, pink:1","red:3, white:1, pink:1",2,2,1,1,0
+5,210748135,189303189,38,black,370,147,"black(0.57), white(0.22)",black:5,black:5,-5,-5,0,0,0
+5,114733185,103929022,38,pink,425,273,"pink(0.71), red(0.10)","pink:4, yellow:1","pink:4, red:1",-3,-3,0,0,0
+5,222359219,207833356,46,red,373,416,"black(0.60), gray(0.22)","red:4, white:1",red:5,-3,-5,0,0,0
+5,192372732,146869722,43,red,1155,958,"gray(0.64), black(0.28)","red:4, black:1","red:4, black:1",-3,-3,0,0,0
+5,191377667,134898435,57,red,1092,1431,"gray(0.37), black(0.33)",gray:5,gray:5,5,5,0,0,0
+5,201629648,177326361,4,pink,4,43,"gray(0.49), green(0.21)","black:4, gray:1","black:2, red:2, pink:1",4,1,0,0,0
+5,211303932,189745855,37,green,446,392,"gray(0.47), white(0.34)","gray:3, brown:1, yellow:1","gray:2, yellow:1, green:1, brown:1",3,1,0,0,0
+5,198684180,167339905,46,white,304,164,"blue(0.61), gray(0.34)","orange:2, brown:1, white:1, gray:1","brown:2, white:1, orange:1, gray:1",1,1,0,0,0
+5,213859209,192226046,43,blue,1,1,"blue(0.72), gray(0.12)","blue:3, white:1, black:1","blue:2, black:2, white:1",-2,0,0,0,0
+5,192278370,153562476,37,green,5,5,"brown(0.38), gray(0.23)","brown:3, orange:1, gray:1","brown:2, yellow:1, orange:1, gray:1",3,2,0,0,0
+5,214329317,184721384,4,red,395,609,"gray(0.74), black(0.25)","red:3, gray:1, black:1","red:4, black:1",-2,-3,0,0,0
+5,135940202,116675816,38,white,681,609,"black(0.85), gray(0.08)","gray:3, brown:2","brown:3, gray:1, orange:1",3,3,0,0,0
+5,217928932,180001774,62,yellow,230,278,"yellow(0.33), orange(0.33)","yellow:4, orange:1","yellow:3, orange:1, white:1",-3,-2,0,0,0
+5,212592127,192227012,43,black,277,394,"black(0.73), gray(0.10)","black:4, white:1","black:4, gray:1",-3,-3,0,0,0
+5,209291892,186707401,4,red,39,27,"red(0.50), gray(0.27)",red:5,red:5,-5,-5,0,0,0
+5,217618238,188912090,37,black,20,12,"gray(0.58), black(0.39)","gray:3, white:1, black:1","black:3, gray:1, white:1",2,-2,1,0,1
+5,221161508,205365317,4,pink,11,7,"pink(0.95), red(0.04)","pink:4, red:1","pink:4, red:1",-3,-3,0,0,0
+5,217161478,168008625,38,red,1,3,"red(0.44), orange(0.26)","red:3, orange:1, brown:1","red:4, pink:1",-2,-3,0,0,0
+5,221681530,209156407,43,green,1996,2293,"gray(0.69), orange(0.17)","green:3, yellow:1, blue:1","green:3, gray:1, black:1",-2,-2,0,0,0
+5,125407007,103135887,4,pink,39,8,"pink(0.58), purple(0.15)","pink:4, gray:1","pink:4, white:1",-3,-3,0,0,0
+5,151725079,128872941,43,white,27,10,"black(0.61), gray(0.32)","gray:3, black:2","gray:4, black:1",3,4,0,0,0
+5,181215991,153410659,4,red,49,31,"red(0.40), brown(0.25)","black:2, white:1, pink:1, red:1",red:5,1,-5,0,0,0
+5,174792946,141087005,38,orange,2427,2050,"gray(0.50), blue(0.26)",red:5,red:5,5,5,0,0,0
+5,124442497,98571285,64,red,70,69,"black(0.70), gray(0.16)","red:4, black:1","red:3, black:1, gray:1",-3,-2,0,0,0
+5,191924106,157289534,43,pink,53,62,"pink(0.36), brown(0.23)",pink:5,pink:5,-5,-5,0,0,0
+5,214369799,195227005,64,black,307,129,"black(0.45), yellow(0.32)",gray:5,gray:5,5,5,1,1,0
+5,208642516,181658560,4,red,589,473,"red(0.93), gray(0.04)","white:1, gray:1, black:1, red:1, pink:1","red:2, white:1, gray:1, black:1",0,-1,0,0,0
+5,221703068,173447641,64,white,8,22,"gray(0.26), white(0.20)","yellow:3, gray:1, blue:1","yellow:3, gray:1, blue:1",3,3,1,1,0
+5,188545297,159881542,57,brown,38,23,"brown(0.30), white(0.25)","orange:3, brown:2","orange:3, brown:1, gray:1",1,2,0,1,0
+5,186431322,155610275,46,white,10,8,"white(0.63), gray(0.35)","white:3, orange:2","white:3, orange:2",-1,-1,0,0,0
+5,216161063,199021905,4,black,58,68,"black(0.40), white(0.31)","black:4, white:1","black:3, gray:1, white:1",-3,-2,0,0,0
+5,191575863,163533043,38,orange,1313,322,"red(0.91), white(0.06)","yellow:2, orange:2, red:1","red:4, yellow:1",0,4,0,0,0
+5,194649797,156951759,46,pink,37,42,"orange(0.58), gray(0.19)","orange:3, gray:2","orange:4, gray:1",3,4,0,0,0
+5,97952986,78148654,64,pink,43,12,"gray(0.55), orange(0.17)","gray:3, brown:1, orange:1","gray:3, red:1, orange:1",3,3,0,0,0
+5,213336123,41040635,38,red,59,107,"red(0.79), gray(0.09)",red:5,red:5,-5,-5,0,0,0
+5,209775944,169808391,62,red,155,74,"red(0.40), orange(0.38)","red:3, black:1, gray:1",red:5,-2,-5,0,0,0
+5,221119686,204683450,46,pink,21,15,"orange(0.42), pink(0.38)","gray:3, pink:1, orange:1","pink:2, gray:2, white:1",2,0,1,0,1
+5,49107204,49933218,46,orange,680,453,"red(0.46), orange(0.31)","brown:4, orange:1","orange:2, brown:2, red:1",3,0,1,0,1
+5,215082446,203402486,37,gray,46,22,"gray(0.80), white(0.18)","gray:2, black:2, white:1","gray:4, white:1",0,-3,0,0,0
+5,198739700,143853422,46,pink,98,103,"gray(0.47), white(0.25)","orange:2, gray:2, white:1","gray:2, red:1, orange:1, white:1",2,2,0,0,0
+5,136231774,118321491,46,black,465,509,"gray(0.36), orange(0.26)","gray:4, orange:1",gray:5,4,5,0,0,0
+5,171987040,118260233,57,pink,5,8,"pink(0.59), gray(0.34)",pink:5,"pink:4, red:1",-5,-3,0,0,0
+5,199220900,172517595,46,orange,100,177,"orange(0.66), red(0.17)","red:4, orange:1",red:5,3,5,1,1,0
+5,147717089,108862398,64,blue,3,3,"blue(0.37), white(0.19)","blue:3, white:1, green:1",blue:5,-2,-5,0,0,0
+5,209482859,181736422,38,black,155,200,"red(0.38), black(0.36)",black:5,black:5,-5,-5,0,0,0
+5,148404099,120181686,37,brown,116,108,"brown(0.65), orange(0.13)","brown:4, orange:1","brown:4, orange:1",-3,-3,0,0,0
+5,209283968,165285962,43,black,167,25,"black(0.33), gray(0.31)",black:5,"black:3, gray:2",-5,-1,0,0,0
+5,148636912,122818220,43,red,350,17,"black(0.26), yellow(0.23)","black:4, gray:1","black:3, gray:1, orange:1",4,3,0,0,0
+5,217323822,191689967,43,purple,38,26,"pink(0.31), purple(0.23)","pink:4, purple:1","pink:3, purple:2",3,1,1,0,1
+5,214827627,189572218,43,blue,5,2,"blue(0.63), black(0.24)",blue:5,blue:5,-5,-5,0,0,0
+5,158897718,140582477,4,purple,18,17,"gray(0.61), white(0.32)","gray:3, white:1, pink:1","gray:3, white:1, pink:1",3,3,0,0,0
+5,222003684,199643627,37,pink,853,1007,"gray(0.52), black(0.47)","pink:2, gray:2, red:1","pink:3, red:1, gray:1",0,-2,0,0,0
+5,201631636,164249239,57,pink,2294,2302,"brown(0.64), orange(0.31)","pink:3, gray:1, red:1","pink:4, gray:1",-2,-3,0,0,0
+5,185738290,156445649,43,gray,232,177,"gray(0.77), orange(0.14)",gray:5,gray:5,-5,-5,0,0,0
+5,217955716,202541424,62,white,281,147,"gray(0.76), white(0.24)","white:2, gray:2, orange:1","gray:3, white:1, red:1",0,2,0,1,0
+5,223991031,164143533,43,purple,119,84,"pink(0.58), orange(0.21)","pink:4, purple:1","pink:4, purple:1",3,3,0,0,0
+5,78456224,56925731,64,red,22,38,"gray(0.73), white(0.26)","gray:3, red:1, black:1",gray:5,2,5,0,0,0
+5,137437216,119531432,62,green,162,70,"yellow(0.55), gray(0.25)","brown:3, gray:2","brown:3, gray:2",3,3,0,0,0
+5,211188780,173529593,4,red,1198,660,"gray(0.74), black(0.24)",red:5,"red:4, gray:1",-5,-3,0,0,0
+5,154270445,128589400,62,black,1784,1745,"gray(0.53), white(0.46)",gray:5,"gray:4, white:1",5,4,0,0,0
+5,219468209,205311074,4,blue,38,49,"white(0.59), blue(0.24)","gray:3, blue:2","blue:3, gray:2",1,-1,0,0,0
+5,221254086,76275548,62,pink,8,10,"pink(0.43), gray(0.22)","red:2, pink:2, gray:1","red:2, white:1, gray:1, pink:1",0,1,0,0,0
+5,223876308,209808536,38,brown,281,202,"red(0.63), orange(0.35)","orange:2, brown:2, yellow:1","brown:2, orange:1, yellow:1, gray:1",0,-1,0,0,0
+5,208304805,109143906,62,black,759,591,"gray(0.75), white(0.25)","black:3, gray:2","gray:3, black:2",-1,1,0,0,0
+5,187084437,157264118,38,black,711,899,"orange(0.57), white(0.15)",gray:5,gray:5,5,5,0,0,0
+5,216187678,198809896,4,black,367,406,"black(0.92), gray(0.07)","gray:2, white:1, red:1, black:1","black:2, white:1, red:1, gray:1",1,-1,0,0,0
+5,208818858,184790742,64,red,412,317,"red(0.62), black(0.15)","red:4, orange:1",red:5,-3,-5,0,0,0
+5,115556942,103936826,4,purple,42,19,"pink(0.94), gray(0.04)","purple:2, blue:1, pink:1, gray:1","purple:3, blue:2",-1,-1,0,0,0
+5,221098190,195854271,57,pink,66,94,"pink(0.87), red(0.11)","pink:4, gray:1","pink:4, gray:1",-3,-3,0,0,0
+5,208699858,179210556,64,pink,20,10,"pink(0.63), gray(0.15)","gray:3, red:1, pink:1","gray:4, red:1",2,4,1,1,0
+5,195833750,123189996,64,red,75,84,"gray(0.63), white(0.37)",gray:5,gray:5,5,5,0,0,0
+5,217382278,205030690,46,red,51,37,"white(0.68), gray(0.23)","white:3, gray:2","orange:2, gray:2, white:1",3,2,0,0,0
+5,195598730,168407756,62,gray,438,469,"white(0.51), gray(0.49)",gray:5,gray:5,-5,-5,0,0,0
+5,219877685,204948467,38,brown,11,6,"yellow(0.92), gray(0.05)","gray:2, brown:2, yellow:1","orange:2, gray:1, brown:1, green:1",0,1,0,0,0
+5,200593852,152312239,64,blue,4,9,"gray(0.41), brown(0.17)","yellow:1, white:1, blue:1, gray:1, green:1","white:2, yellow:1, green:1, blue:1",0,1,0,0,0
+5,195620594,165223697,46,black,293,390,"orange(0.39), brown(0.27)","orange:2, black:2, yellow:1","orange:2, yellow:1, black:1, brown:1",0,1,0,0,0
+5,222255174,210643200,57,black,1530,1395,"gray(0.69), blue(0.12)","pink:3, gray:2","gray:4, pink:1",3,4,0,0,0
+5,174710752,141212383,4,gray,45,26,"gray(0.93), white(0.04)",black:5,"black:4, gray:1",5,3,1,1,0
+5,215148695,196324694,43,red,151,133,"red(0.40), gray(0.21)","black:3, gray:1, orange:1","black:3, pink:1, gray:1",3,3,1,1,0
+5,207687218,169890454,43,green,6,4,"black(0.51), orange(0.15)","green:3, black:1, yellow:1","green:3, gray:1, black:1",-2,-2,0,0,0
+5,153488882,20198247,4,red,22,23,"pink(0.68), red(0.26)","red:3, white:1, black:1","red:3, white:1, black:1",-2,-2,0,0,0
+5,167925637,116634389,57,white,404,419,"gray(0.74), white(0.19)",gray:5,gray:5,5,5,1,1,0
+5,173164315,146168593,4,white,9,1,"gray(0.96), white(0.04)","gray:3, white:1, blue:1","gray:3, white:2",2,1,1,0,1
+5,218627424,201030455,38,green,9,16,"black(0.69), blue(0.17)","blue:3, black:2","blue:3, black:1, green:1",3,2,0,0,0
+5,194860010,166190328,46,blue,120,12,"orange(0.53), brown(0.16)",gray:5,gray:5,5,5,0,0,0
+5,208314235,182590419,62,yellow,1354,1399,"gray(0.46), yellow(0.34)","yellow:4, green:1","yellow:4, green:1",-3,-3,0,0,0
+5,187546279,157092256,4,pink,11,8,"gray(0.68), white(0.24)","white:3, red:1, gray:1","white:3, red:2",3,3,0,0,0
+5,194695906,158536496,38,yellow,547,483,"gray(0.55), brown(0.19)","orange:2, brown:1, gray:1, black:1","brown:2, orange:1, black:1, white:1",2,2,0,0,0
+5,123321721,101119653,43,pink,215,268,"red(0.48), yellow(0.13)","pink:4, gray:1","pink:4, red:1",-3,-3,0,0,0
+5,194785620,165237646,43,pink,184,226,"white(0.59), gray(0.30)","gray:3, white:2","white:3, gray:2",3,3,0,0,0
+5,209600686,186417621,64,black,124,189,"orange(0.40), brown(0.22)","yellow:2, brown:1, gray:1, orange:1","black:3, orange:1, brown:1",2,-2,0,0,0
+5,218578178,203829614,37,purple,3,8,"pink(0.45), black(0.20)","pink:4, gray:1","pink:3, gray:1, black:1",4,3,0,0,0
+5,177318197,149582480,4,orange,37,42,"red(0.90), brown(0.03)","brown:3, red:1, yellow:1","brown:3, red:1, orange:1",3,2,0,0,0
+5,206145125,167802783,38,green,887,1252,"gray(0.80), white(0.19)","white:1, gray:1, orange:1, green:1, yellow:1","white:1, gray:1, yellow:1, green:1, red:1",0,0,0,0,0
+5,182806205,151978785,4,red,56,72,"red(0.96), white(0.02)",red:5,red:5,-5,-5,0,0,0
+5,128516859,113125737,43,brown,1058,1072,"gray(0.38), orange(0.37)","brown:3, orange:2","orange:4, brown:1",-1,3,0,0,0
+5,210701847,189202972,37,black,170,312,"black(0.53), gray(0.24)","gray:3, red:1, black:1","black:3, gray:2",2,-1,1,0,1

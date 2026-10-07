@@ -1,0 +1,29 @@
+{
+ "run": "full_20261002T161428Z",
+ "status": "check_only",
+ "units": [
+  {
+   "unit": "original_seed1",
+   "seed": 1,
+   "variant": "outfitUrlTitle",
+   "device": "cpu",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "1b90df6dc9ff90d46612d6f75bea717bee3324a1a66ab23861e3f790ee22f33a",
+   "detail_sha256": "2ed865448fe9a35e0fb7d7d36db025c96b9e1b22a4f605604b659a79248b7576",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.014176780152507786",
+    "recall_at_3": "0.03458275158414778",
+    "recall_at_5": "0.04865213188701536",
+    "recall_at_10": "0.07958328858339599",
+    "recall_at_30": "0.16539576844592419",
+    "recall_at_50": "0.23090967672645257"
+   },
+   "recalls_equal_stored": false,
+   "hits_average_to_recalls": true
+  }
+ ],
+ "torch": "2.9.1+cu130",
+ "cuda_device": null
+}

@@ -1,0 +1,5 @@
+scope,n,mean_rank_before,mean_rank_after,mean_rank_change,top1_changed_share,top5_jaccard
+Overall,24,585.9,603.1,+17.2,0.500,0.351
+Weather,8,850.4,704.4,-146.0,0.125,0.508
+Occasion,8,282.4,270.5,-11.9,0.375,0.416
+Style,8,625.0,834.4,+209.4,1.000,0.130

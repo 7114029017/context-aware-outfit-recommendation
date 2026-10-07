@@ -25,8 +25,9 @@ What the release contains:
 
 Reproducing the 35 training units (10 main units and 25 fair-subset ablation
 units, seeds 1–5) needs Linux, Git LFS, Python 3.12 (required by the pinned
-packages), an NVIDIA GPU that runs CUDA 13.0 PyTorch, and about 20 GB of disk
-(requirements: `reproduction/README.md` §0.0):
+packages), an NVIDIA GPU that runs CUDA 13.0 PyTorch, and about 20 GB of disk,
+plus 3.5 GB for the extension analyses (requirements: `reproduction/README.md`
+§0.0):
 
     git clone --branch v1.0.0-tors-reproduction \
       https://github.com/7114029017/context-aware-outfit-recommendation.git
@@ -36,7 +37,8 @@ packages), an NVIDIA GPU that runs CUDA 13.0 PyTorch, and about 20 GB of disk
     python -m pip install torch==2.9.1 torchvision==0.24.1 \
       --index-url https://download.pytorch.org/whl/cu130
     python -m pip install -r reproduction/environment/requirements-reproduction-runtime.txt
-    bash reproduction/scripts/bootstrap_data.sh   # Polyvore metadata and splits, no images
+    bash reproduction/scripts/bootstrap_data.sh --with-images --with-fashionclip
+                                    # Polyvore metadata and splits; images and FashionCLIP for the extensions
     bash reproduction/scripts/check.sh            # preflight
     bash reproduction/scripts/reproduce_all.sh --fresh
     python3 reproduction/scripts/compare_with_official_run.py --run-root reproduction/runs/<full_run>
@@ -66,6 +68,11 @@ Official run and results:
   of the input data: `reproduction/docs/supplementary_analyses.md`. A new full
   run writes the same analyses of its own outputs to its `supplementary/`
   folder after it has passed.
+- Extension analyses that regenerate, from a run's own models, the analyses
+  for which the manuscript used preserved outputs (text length, Tables 4, 8
+  and 9, the color analysis, Figures A1-A3):
+  `reproduction/docs/extensions.md`; results for the official run in
+  `reproduction/results/extensions/`.
 
 Version provenance: the official run was executed from commit `b9bf5aa` of the
 original development repository, which is not public. This repository contains
@@ -139,7 +146,8 @@ repo 文件中的 reference run 則指較早的 `reference_20260921T175217Z`。
 
 修訂稿與 README 引用的正式數值只來自 `reproduction/results/summary/full_20261002T161428Z/`；
 補充分析的輸出另放在 `reproduction/results/supplementary/`；新的完整 run 通過後，會在自己的
-`supplementary/` 資料夾產生同樣的分析。
+`supplementary/` 資料夾產生同樣的分析。稿件中原本使用學姊保存輸出的分析（文字長度、表 4、8、9、
+色彩分析、附錄圖），由延伸分析以 run 自己的模型重做，見 `reproduction/docs/extensions.md`。
 
 授權：本 repository 撰寫的程式與文件採用 MIT License（`LICENSE`），第三方元件依其原本條款
 （`THIRD_PARTY_NOTICES.md`）。引用方式見 `CITATION.cff`。
