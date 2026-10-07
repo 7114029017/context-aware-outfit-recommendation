@@ -29,6 +29,14 @@ run_all.sh after it has PASSED. Outputs:
 - fair_subset_bh_family_sensitivity.csv: retrospective sensitivity analysis of
   the Benjamini-Hochberg family for Full vs Original (the five reported
   metrics vs all eight metrics);
+- stage1_cp_seed_detail.csv and stage1_cir_seed_detail.csv: the 2025 tables T08
+  and T09 (Full vs Original on the fair subset at full precision: means, SDs,
+  paired t-test p, dz; notebook P01 cell 5, make_stage1_table), checked against
+  the run's tables T03 and T04;
+- main_statistical_rigor.csv: the 2025 table A14 for this run's main
+  experiment (Full vs Original over the five seeds: 95% CI, paired t-test and
+  Wilcoxon signed-rank p-values with BH over the five metrics, Cohen's dz;
+  notebook 03_實驗與結果_experiments_results/03_主推薦任務結果/source_programs/P12_statistical_rigor_reproducible.ipynb);
 - subset_robustness_summary.csv: the 2025 table T12 recomputed (Hit@10 and
   median rank of Full vs Original, and Hit@10 of Full vs each simplified
   description, by subset, with the union of each dimension and all queries);
@@ -37,6 +45,24 @@ run_all.sh after it has PASSED. Outputs:
   values of T15;
 - factor_term_effects.csv: the same by weather, occasion and style term
   (terms with at least 20 observations, as in 2025);
+- subset_delta_hit10_pivot.csv: the 2025 table T13 (Hit@10 of Full minus
+  Original by subset and dimension), with figures/figure_F03_subset_delta_heatmap.svg
+  and figures/figure_F04_factor_contribution_by_subset.svg (the 2025 figures F03
+  and F04 of notebook P02);
+- weather_bin_effects.csv: the weather rows of the 2025 table T14 (Hit@10 and
+  median rank by temperature band). The program of T14 is not preserved; its
+  bands are the leading temperature of the generated description with the
+  cut-offs 15, 22 and 28 °C, which reproduce all four 2025 band sizes. Its
+  occasion labels could not be recovered and are left out;
+- qualitative_failure_cases.csv and qualitative_user_cases.csv: the 2025 case
+  lists T16 and T17, written by the same lost program. Their rows show the rule:
+  for each comparison (Original, No-Weather, No-Occasion or No-Style against
+  Full), the 12 queries with the largest rank loss under Full (T16), and the
+  12 with the largest rank gain among those Full ranks in the top 10 (T17);
+  ties keep the order of the query rows. The occasion label is left empty, and
+  the simplified descriptions, empty in 2025, are filled in;
+- figures/figure_4_7_factor_contribution.svg: thesis Figure 4-7 (the 2025 figure
+  F01) from the run's table T07;
 - figures/: thesis Figures 4-8 to 4-13 redrawn from this run (SVG);
 - summary.md: the main numbers and the cross-checks.
 
@@ -51,16 +77,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import statistics
 from collections import defaultdict
 from pathlib import Path
 
+import numpy as np
 from scipy import stats
 
-from _common import (CASE_TABLES, OFFICIAL_RUN, REPRO, SUPPLEMENTARY, WOS_JSONL, bh_adjust, fmt,
+from _common import (CASE_TABLES, D03, GENERATED, OFFICIAL_RUN, REPRO, SUPPLEMENTARY, WOS_JSONL, bh_adjust, fmt,
                      polyvore_root, read_csv, read_json, signed, write_csv, write_text)
-from _svg import GREY, POSITIVE, grouped_vbar_chart, hbar_chart, vbar_chart
+from _svg import (GREY, POSITIVE, category_line_chart, grouped_vbar_chart, hbar_chart, heatmap_chart,
+                  stacked_share_chart, vbar_chart)
 
 VARIANTS = {  # run directory prefix -> condition name in the manuscript
     "original": "Original",
@@ -114,6 +143,18 @@ TERM_FIGURES_2025 = {
     ("style", "no_style"): "F11b_style_term_contribution_no_style_vs_full.svg",
 }
 THESIS_FIGURE = {"weather": "4-11", "occasion": "4-12", "style": "4-13"}
+WEATHER_BANDS = (("cold", 15.0), ("mild", 22.0), ("warm", 28.0))  # upper bounds (inclusive); above: hot
+TEMPERATURE_PREFIX = re.compile(r"^\s*(-?\d+(?:\.\d+)?)\s*°")
+T14_WEATHER_CASES = (("orig_to_full_weather", "original"), ("weather_factor", "no_weather"),
+                     ("style_factor_weather", "no_style"))
+FACTOR_COLORS = {"weather": "#C43C2B", "occasion": "#E67E22", "style": "#4E9A3D"}  # notebook P01
+CASE_LIST_SIZE = 12  # rows per comparison in the 2025 tables T16 and T17
+STAGE1_LABELS = {"auc": "AUC", "fitb_acc": "FITB Acc", "recall_at_10": "Recall@10",
+                 "recall_at_30": "Recall@30", "recall_at_50": "Recall@50"}  # P01 METRIC_LABELS
+CASE_COMPARISONS = {"orig_to_full": "Original -> Proposed", "weather": "No-weather -> Proposed",
+                    "occasion": "No-occasion -> Proposed", "style": "No-style -> Proposed"}  # T16 / T17 labels
+CASE_COLUMN = {"original": "orig", "context": "full", "no_weather": "no_weather", "no_occasion": "no_occasion",
+               "no_style": "no_style"}  # T16 / T17 column suffix of each condition
 
 
 def norm_text(value) -> str:
@@ -168,6 +209,8 @@ def load_metrics(ablation: Path) -> dict[str, dict[str, list[float]]]:
 def official_source() -> dict:
     return {"run_id": OFFICIAL_RUN, "units": REPRO / "results" / "raw" / OFFICIAL_RUN / "ablation",
             "tables": REPRO / "results" / "summary" / OFFICIAL_RUN / "ablation", "out": SUPPLEMENTARY / OFFICIAL_RUN,
+            "main": str(REPRO / "results" / "raw" / OFFICIAL_RUN / "main" / "{unit}" / "results_{task}.csv"),
+            "statistics": REPRO / "results" / "summary" / OFFICIAL_RUN / "statistics",
             "label": f"the official run included in the repository (`{OFFICIAL_RUN}`)"}
 
 
@@ -181,6 +224,8 @@ def run_folder_source(run_root: Path) -> dict:
         raise SystemExit(f"[SUPPLEMENTARY BLOCKED] {run_root}: RUN_STATUS is {state}, not PASSED. "
                          "Pass --run-root PATH for a completed run, or --official for the official run.")
     return {"run_id": run_root.name, "units": run_root / "ablation" / "runs", "tables": run_root / "ablation" / "summary",
+            "main": str(run_root / "main" / "{unit}" / "evaluation" / "results_{task}.csv"),
+            "statistics": run_root / "statistics",
             "out": run_root / "supplementary" / "run_analyses", "label": f"the run folder `{run_root}`"}
 
 
@@ -242,6 +287,67 @@ def archived_bar_values(path: Path) -> list[tuple[str, float]]:
     if not values or len(labels) != len(values):
         return []
     return list(zip(labels, (float(v) for v in values)))[::-1]
+
+
+# ---------------------------------------------------------------- 2025 table A14 (P12 statistical rigor, cell 4)
+A14_METRICS = (("CP", "auc", "cp"), ("CP", "fitb_acc", "cp"), ("CIR", "recall_at_10", "cir"),
+               ("CIR", "recall_at_30", "cir"), ("CIR", "recall_at_50", "cir"))
+A14_COLUMNS = ["comparison", "task", "metric", "baseline_mean", "baseline_std", "proposed_mean", "proposed_std",
+               "mean_difference", "ci95_low", "ci95_high", "paired_t_p", "wilcoxon_p", "cohens_dz", "paired_seeds",
+               "n_seeds", "source_scope", "paired_t_p_bh", "wilcoxon_p_bh"]
+A14_STATISTICS_NAMES = {"auc": "cp_auc", "fitb_acc": "cp_fitb", "recall_at_10": "or_r10", "recall_at_30": "or_r30",
+                        "recall_at_50": "or_r50"}
+
+
+def fmt6(x) -> str:
+    """P12 fmt_float(x, 6)."""
+    try:
+        if x is None or math.isnan(float(x)):
+            return ""
+        return f"{float(x):.6f}"
+    except Exception:
+        return ""
+
+
+def a14_paired_row(task: str, metric: str, baseline: dict, proposed: dict) -> dict:
+    seeds = sorted(set(baseline) & set(proposed))
+    b = [baseline[s] for s in seeds]
+    p = [proposed[s] for s in seeds]
+    diffs = [pp - bb for bb, pp in zip(b, p)]
+    n = len(diffs)
+    dmean = statistics.mean(diffs)
+    dsd = statistics.stdev(diffs) if n >= 2 else 0.0
+    dz = dmean / dsd if dsd else float("nan")
+    pt = float(stats.ttest_rel(p, b).pvalue)
+    try:
+        pw = float(stats.wilcoxon(diffs, zero_method="wilcox").pvalue)
+    except Exception:
+        pw = float("nan")
+    tcrit = float(stats.t.ppf(0.975, n - 1))
+    se = dsd / (n ** 0.5) if n and dsd else 0.0
+    return {
+        "comparison": "Full contextual rewrite vs original description", "task": task, "metric": metric,
+        "baseline_mean": fmt6(statistics.mean(b)), "baseline_std": fmt6(statistics.stdev(b)) if len(b) >= 2 else "",
+        "proposed_mean": fmt6(statistics.mean(p)), "proposed_std": fmt6(statistics.stdev(p)) if len(p) >= 2 else "",
+        "mean_difference": fmt6(dmean), "ci95_low": fmt6(dmean - tcrit * se), "ci95_high": fmt6(dmean + tcrit * se),
+        "paired_t_p": fmt6(pt), "wilcoxon_p": fmt6(pw), "cohens_dz": fmt6(dz),
+        "paired_seeds": ",".join(str(s) for s in seeds), "n_seeds": str(n),
+        "source_scope": "this run's main per-seed results",
+    }
+
+
+def a14_bh(rows: list[dict], pcol: str, outcol: str) -> None:
+    vals = [(i, float(r[pcol]) if r[pcol] else float("nan")) for i, r in enumerate(rows)]
+    vals = [(i, p) for i, p in vals if not math.isnan(p)]
+    m = len(vals)
+    for r in rows:
+        r[outcol] = ""
+    prev = 1.0
+    for rank_from_end, (i, p) in enumerate(reversed(sorted(vals, key=lambda x: x[1])), start=1):
+        rank = m - rank_from_end + 1
+        adj = min(prev, p * m / rank)
+        rows[i][outcol] = fmt6(adj)
+        prev = adj
 
 
 def pfmt(p: float | None) -> str:
@@ -424,6 +530,128 @@ def main() -> None:
                [0.0 - r["ΔMedian Rank"] for r in plotted], "Rank improvement (rank positions)", breaks=(2, 4, 6),
                subtitle=f"Run {source['run_id']}; improvement = median rank of Original minus median rank of Full")
 
+    # ---------------------------------------------------------------- 2025 T13 and figures F03, F04 (P02)
+    pivot_labels = sorted({r["label"] for r in t12_rows if r["label"] != "All (union)"})
+    pivot_dims = sorted({r["dimension"] for r in t12_rows})
+    pivot = {(r["dimension"], r["label"]): r["ΔHit@10"] for r in t12_rows if r["label"] != "All (union)"}
+    write_csv(out / "subset_delta_hit10_pivot.csv", ["dimension", *pivot_labels],
+              [[d, *[repr(pivot[(d, l)]) if (d, l) in pivot else "" for l in pivot_labels]] for d in pivot_dims])
+    heat_dims = [d for d, _ in DIMENSIONS]
+    heat_labels = [T12_LABELS.get(n, n) for _, names in DIMENSIONS for n in names]
+    heatmap_chart(out / "figures" / "figure_F03_subset_delta_heatmap.svg",
+                  "ΔHit@10 across subsets and dimensions (2025 figure F03)", heat_dims, heat_labels,
+                  [[pivot.get((d, l)) for l in heat_labels] for d in heat_dims], -0.05, 0.05,
+                  colorbar_label="ΔHit@10 (Full − Original)",
+                  subtitle=f"Run {source['run_id']}; colour scale -0.05 to +0.05 as in P02")
+    category_line_chart(out / "figures" / "figure_F04_factor_contribution_by_subset.svg",
+                        "Factor contribution by subset (2025 figure F04)", tick_labels,
+                        [("Weather removed", [r["ΔHit@10 (no_weather→full)"] for r in plotted], "#C0392B"),
+                         ("Occasion removed", [r["ΔHit@10 (no_occasion→full)"] for r in plotted], "#E67E22"),
+                         ("Style removed", [r["ΔHit@10 (no_style→full)"] for r in plotted], "#8E44AD")],
+                        "ΔHit@10 (Full − without the factor)", breaks=(2, 4, 6),
+                        subtitle=f"Run {source['run_id']}; positive: removing the factor hurts in this subset")
+
+    # ---------------------------------------------------------------- 2025 T14, weather rows
+    generated = read_json(GENERATED)
+
+    def band(set_id: str) -> str:
+        value = generated.get(set_id, "")
+        match = TEMPERATURE_PREFIX.match(value.get("title", "") if isinstance(value, dict) else str(value))
+        if not match:
+            return "unknown"
+        t = float(match.group(1))
+        return next((name for name, upper in WEATHER_BANDS if t <= upper), "hot")
+
+    band_members = defaultdict(list)
+    for key in keys:
+        band_members[band(key[1])].append(key)
+    t14 = read_csv(CASE_TABLES / "T14_qualitative_condition_summary.csv")
+    t14_weather = {(r["case_type"], r["weather_bin"]): r for r in t14 if r["weather_bin"]}
+    band_rows = []
+    for case_type, left in T14_WEATHER_CASES:
+        for r in summarize_groups(band_members, by_key, left):
+            old = t14_weather.get((case_type, r["group"]), {})
+            band_rows.append([r["group"], r["n"], repr(r["left_hit10"]), repr(r["right_hit10"]), repr(r["left_rank"]),
+                              repr(r["right_rank"]), repr(r["delta_hit10"]), repr(r["delta_rank"]), case_type, "",
+                              old.get("n", ""), old.get("delta_hit10", "")])
+    write_csv(out / "weather_bin_effects.csv",
+              ["weather_bin", "n", "left_hit10", "right_hit10", "left_rank", "right_rank", "delta_hit10", "delta_rank",
+               "case_type", "occasion_label", "n_2025", "delta_hit10_2025"], band_rows)
+    t14_same_n = len(band_rows) == len(t14_weather) and all(str(r[1]) == r[10] for r in band_rows)
+
+    # ---------------------------------------------------------------- 2025 T16 and T17 (case lists)
+    detail = {prefix: {(r["seed"], r["set_id"], r["target_item_id"]): r for r in rows[prefix]} for prefix in VARIANTS}
+    order = [(r["seed"], r["set_id"], r["target_item_id"]) for r in rows["context"]]
+    ablation_titles = {}
+    for line in WOS_JSONL.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            record = json.loads(line)
+            ablation_titles[str(record.get("id", ""))] = record.get("title_ablation") or {}
+
+    def leading_temperature(set_id: str) -> float | None:
+        value = generated.get(set_id, "")
+        match = TEMPERATURE_PREFIX.match(value.get("title", "") if isinstance(value, dict) else str(value))
+        return float(match.group(1)) if match else None
+
+    case_header = ["query_key", "seed", "set_id", "target_item_id", "target_item_fg"]
+    for prefix in ("original", "context"):
+        c = CASE_COLUMN[prefix]
+        case_header += [f"rank_{c}", f"hit@10_{c}", f"top10_ids_{c}", f"top10_ids_list_{c}"]
+    case_header += ["title_full_text", "title_no_weather_text", "title_no_occasion_text", "title_no_style_text",
+                    "temp_c", "weather_bin", "occasion_label", "RANK_CHANGE", "comparison", "case_type"]
+    for prefix in ("no_weather", "no_occasion", "no_style"):
+        c = CASE_COLUMN[prefix]
+        case_header += [f"rank_{c}", f"hit@10_{c}", f"top10_ids_{c}", f"top10_ids_list_{c}"]
+
+    def case_list(change_name: str) -> list[list]:
+        """T16 (rank_loss) or T17 (rank_gain, Full in the top 10): 12 queries per comparison."""
+        out_rows = []
+        for case_type, left in CASE_TYPES:
+            candidates = []
+            for key in order:
+                lr, fr = detail[left][key]["rank"], detail["context"][key]["rank"]
+                if change_name == "rank_gain" and fr > 10:
+                    continue
+                candidates.append((fr - lr if change_name == "rank_loss" else lr - fr, key))
+            for change, key in sorted(candidates, key=lambda c: -c[0])[:CASE_LIST_SIZE]:
+                seed, set_id, target = key
+                cells = {"query_key": f"{seed}||{set_id}||{target}", "seed": seed, "set_id": set_id,
+                         "target_item_id": target, "target_item_fg": detail["context"][key]["target_item_fg"],
+                         "title_full_text": fragments.get(set_id, {}).get("title", ""),
+                         **{f"title_{a}_text": ablation_titles.get(set_id, {}).get(a, "")
+                            for a in ("no_weather", "no_occasion", "no_style")},
+                         "temp_c": leading_temperature(set_id), "weather_bin": band(set_id), "occasion_label": "",
+                         "RANK_CHANGE": change, "comparison": CASE_COMPARISONS[case_type], "case_type": case_type}
+                for prefix in (left, "context"):
+                    r, c = detail[prefix][key], CASE_COLUMN[prefix]
+                    cells.update({f"rank_{c}": r["rank"], f"hit@10_{c}": r["hit@10"], f"top10_ids_{c}": r["top10_ids"],
+                                  f"top10_ids_list_{c}": str(json.loads(r["top10_ids"]))})
+                out_rows.append([cells.get(h, "") for h in case_header])
+        return out_rows
+
+    case_lists = {}
+    for name, change_name in (("qualitative_failure_cases.csv", "rank_loss"), ("qualitative_user_cases.csv", "rank_gain")):
+        case_lists[change_name] = case_list(change_name)
+        write_csv(out / name, [change_name if h == "RANK_CHANGE" else h for h in case_header], case_lists[change_name])
+    archived_cases = {
+        "rank_loss": read_csv(CASE_TABLES / "T16_qualitative_failure_cases.csv"),
+        "rank_gain": read_csv(CASE_TABLES / "T17_qualitative_user_cases.csv"),
+    }
+    change_at = case_header.index("RANK_CHANGE")
+
+    # ---------------------------------------------------------------- thesis Figure 4-7 (2025 F01) from T07
+    t07_path = source["tables"] / "T07_stage2_factor_contribution_ratio.csv"
+    t07 = read_csv(t07_path) if t07_path.is_file() else []
+    if t07:
+        def share(r, factor):
+            return float(r[f"{factor}_ratio"]) if r[f"{factor}_ratio"] else None
+        stacked_share_chart(out / "figures" / "figure_4_7_factor_contribution.svg",
+                            "Relative contribution of each factor (thesis Figure 4-7)",
+                            [f"[{r['Task']}] {r['Metric']}" for r in t07],
+                            [(f.capitalize(), [share(r, f) for r in t07], FACTOR_COLORS[f]) for f in FACTORS],
+                            subtitle=f"Run {source['run_id']}; share of the total performance drop after removing a factor",
+                            note="Not defined where removing weather or occasion does not lower the metric (table T07).")
+
     # ---------------------------------------------------------------- category and term effects (P03 cell 4)
     category_members = defaultdict(list)
     for key in keys:
@@ -528,6 +756,50 @@ def main() -> None:
               ["metric", "raw_p", "bh_p_reported_5_metrics", "bh_p_all_8_metrics"],
               [[m, f"{raw_p[m]:.6g}", f"{bh5[m]:.6g}" if m in bh5 else "", f"{bh8[m]:.6g}"] for m in METRICS])
 
+    # ---------------------------------------------------------------- 2025 tables T08 and T09 (P01 cell 5)
+    stage1 = {}
+    for task, names_, file_name in (("CP", ("auc", "fitb_acc"), "stage1_cp_seed_detail.csv"),
+                                    ("CIR", ("recall_at_10", "recall_at_30", "recall_at_50"),
+                                     "stage1_cir_seed_detail.csv")):
+        detail_rows = []
+        for m in names_:
+            x, y = np.array(metrics["original"][m], dtype=float), np.array(metrics["context"][m], dtype=float)
+            diff = y - x
+            p = float(stats.ttest_rel(y, x).pvalue)
+            sd = diff.std(ddof=1)
+            dz = float(diff.mean() / sd) if sd != 0 else float("nan")
+            star = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "n.s."
+            stage1[m] = (float(x.mean()), float(x.std(ddof=1)), float(y.mean()), float(y.std(ddof=1)),
+                         float(diff.mean()), p, dz)
+            detail_rows.append([task, STAGE1_LABELS[m], *[repr(v) for v in stage1[m][:6]], star, repr(dz),
+                                ",".join(map(str, SEEDS))])
+        write_csv(out / file_name, ["Task", "Metric", "Baseline_mean", "Baseline_std", "Proposed_mean",
+                                    "Proposed_std", "Delta_mean", "p_raw", "signif", "cohens_dz", "paired_seeds"],
+                  detail_rows)
+
+    # ---------------------------------------------------------------- 2025 table A14 for the main experiment
+    main = {}
+    for variant in ("original", "context"):
+        for seed in SEEDS:
+            for task in ("cp", "cir"):
+                row = read_csv(Path(source["main"].format(unit=f"{variant}_seed{seed}", task=task)))[0]
+                main.setdefault(variant, {}).setdefault(seed, {}).update(
+                    {k: float(v) for k, v in row.items() if k in METRICS})
+    a14 = [a14_paired_row(task, metric, {s: main["original"][s][metric] for s in SEEDS},
+                          {s: main["context"][s][metric] for s in SEEDS}) for task, metric, _ in A14_METRICS]
+    a14_bh(a14, "paired_t_p", "paired_t_p_bh")
+    a14_bh(a14, "wilcoxon_p", "wilcoxon_p_bh")
+    write_csv(out / "main_statistical_rigor.csv", A14_COLUMNS, [[r[c] for c in A14_COLUMNS] for r in a14])
+    a14_2025 = {r["metric"]: r for r in read_csv(D03 / "03_主推薦任務結果" / "圖表_figures_tables" / "tables"
+                                                 / "A14_statistical_rigor_ci_adjusted_p_effect_sizes.csv")}
+    run_stats = {r["metric"]: r for r in read_csv(source["statistics"] / "main_paired_bh_8metrics.csv")} \
+        if (source["statistics"] / "main_paired_bh_8metrics.csv").is_file() else {}
+    a14_same = bool(run_stats) and all(
+        fmt6(float(run_stats[A14_STATISTICS_NAMES[r["metric"]]][key])) == r[col]
+        for r in a14 for key, col in (("original_mean", "baseline_mean"), ("context_mean", "proposed_mean"),
+                                      ("delta_mean", "mean_difference"), ("ci95_low", "ci95_low"),
+                                      ("ci95_high", "ci95_high"), ("p_value", "paired_t_p"), ("cohen_dz", "cohens_dz")))
+
     # ---------------------------------------------------------------- cross-checks and summary
     overall_o = mean(r["hit@10"] for r in rows["original"])
     overall_f = mean(r["hit@10"] for r in rows["context"])
@@ -549,6 +821,16 @@ def main() -> None:
         return (value == "< .001" and computed < 0.001) or (value != "< .001" and f"{computed:.4f}" == value)
 
     bh_matches = [(label, value, bh5[names[label]]) for label, value in t03_t04.items() if label in names]
+    stage1_same = []
+    for table in ("T03_stage1_cp_original_vs_full.csv", "T04_stage1_cir_original_vs_full.csv"):
+        path = summary_dir / table
+        for r in (read_csv(path) if path.is_file() else []):
+            if r["Metric"] in names:
+                bm, bs, pm, ps, d, p, dz = stage1[names[r["Metric"]]]
+                stage1_same.append(r["Original (mean±std)"] == f"{bm:.4f} ± {bs:.4f}"
+                                   and r["Context-aware (mean±std)"] == f"{pm:.4f} ± {ps:.4f}"
+                                   and r["Δ"] == f"{d:+.4f}" and r["Cohen’s dz"] == f"{dz:.3f}"
+                                   and same_p(r["Raw p"], p))
     bh_ok = all(same_p(value, computed) for _, value, computed in bh_matches)
     comparisons = {"Original description": "original", "Simplified w/o weather": "no_weather",
                    "Simplified w/o occasion": "no_occasion", "Simplified w/o style": "no_style"}
@@ -647,6 +929,39 @@ def main() -> None:
         "|---|---:|---:|---:|---:|---:|---:|---:|",
         *subset_lines,
         "",
+        "Table T13 (`subset_delta_hit10_pivot.csv`) and the 2025 figures F03 and F04 are redrawn in `figures/`.",
+        "",
+        "## Temperature bands (weather rows of the 2025 table T14)",
+        "",
+        "Bands of the leading temperature of the generated description: cold ≤ 15 °C < mild ≤ 22 °C < warm ≤ 28 °C",
+        "< hot. The program of T14 is not preserved; these cut-offs reproduce its four band sizes"
+        f" ({'yes, all 12 rows' if t14_same_n else 'NO'}). Its occasion labels could not be recovered.",
+        "",
+        "| Band | Observations | Full − Original | Full − No-Weather | Full − No-Style | 2025: Full − Original |",
+        "|---|---:|---:|---:|---:|---:|",
+        *[f"| {b} | {next(r[1] for r in band_rows if r[0] == b)} | "
+          + " | ".join(signed(float(next(r[6] for r in band_rows if r[0] == b and r[8] == ct)), 4)
+                       for ct, _ in T14_WEATHER_CASES)
+          + f" | {signed(float(t14_weather[('orig_to_full_weather', b)]['delta_hit10']), 4) if ('orig_to_full_weather', b) in t14_weather else ''} |"
+          for b in ("cold", "mild", "warm", "hot") if any(r[0] == b for r in band_rows)],
+        "",
+        "## Largest rank losses and gains (2025 tables T16 and T17)",
+        "",
+        "`qualitative_failure_cases.csv` (T16) and `qualitative_user_cases.csv` (T17): for each comparison the 12",
+        "queries with the largest rank loss under Full, and the 12 with the largest rank gain among those Full ranks",
+        "in the top 10, as the archived rows show (the program is not preserved; the occasion label is left empty).",
+        "",
+        "| Comparison | Losses (T16): largest, 12th | 2025 | Gains (T17): largest, 12th | 2025 |",
+        "|---|---|---|---|---|",
+        *[f"| {CASE_COMPARISONS[ct]} | "
+          + " | ".join(
+              f"{[r[change_at] for r in case_lists[ch] if r[change_at + 2] == ct][0]}, "
+              f"{[r[change_at] for r in case_lists[ch] if r[change_at + 2] == ct][-1]} | "
+              f"{[r[ch] for r in archived_cases[ch] if r['case_type'] == ct][0]}, "
+              f"{[r[ch] for r in archived_cases[ch] if r['case_type'] == ct][-1]}"
+              for ch in ("rank_loss", "rank_gain")) + " |"
+          for ct, _ in CASE_TYPES],
+        "",
         "## Category effects of each factor (thesis Figures 4-8 and 4-11 (a) to 4-13 (a))",
         "",
         "ΔHit@10 of Full minus the other condition; 2025 values (table T15) in parentheses.",
@@ -674,6 +989,21 @@ def main() -> None:
                      f"{by_label['No-Weather']} | {by_label['No-Occasion']} | {by_label['No-Style']} |")
     lines += [
         "",
+        "## Main experiment with Wilcoxon tests (2025 table A14)",
+        "",
+        "Full vs Original over the five seeds of the main experiment (`main_statistical_rigor.csv`; notebook P12",
+        "statistical rigor, cell 4). BH is applied over these five tests, as in 2025.",
+        "",
+        "| Metric | Original | Full | Difference (95% CI) | Paired t p | Wilcoxon p | dz | 2025: difference, t p, Wilcoxon p |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        *[f"| {r['task']} {r['metric']} | {r['baseline_mean']} | {r['proposed_mean']} | {r['mean_difference']} "
+          f"[{r['ci95_low']}, {r['ci95_high']}] | {r['paired_t_p']} | {r['wilcoxon_p']} | {r['cohens_dz']} | "
+          + (f"{a14_2025[r['metric']]['mean_difference']}, {a14_2025[r['metric']]['paired_t_p']}, "
+             f"{a14_2025[r['metric']]['wilcoxon_p']} |" if r["metric"] in a14_2025 else "– |") for r in a14],
+        "",
+        "With five seeds the exact two-sided Wilcoxon signed-rank test cannot go below 0.0625 (all five",
+        "differences of the same sign), so it never reaches 0.05; the 2025 table shows 0.0625 for every metric.",
+        "",
         "## Benjamini-Hochberg family (retrospective sensitivity analysis)",
         "",
         "Full vs Original on the fair subset. The manuscript corrects over the five reported metrics.",
@@ -693,9 +1023,14 @@ def main() -> None:
         f"- Observations per category in all four comparisons equal the 2025 table T15: "
         f"{'yes' if t15_same_n else 'NO'}.",
         f"- BH over the five reported metrics equals the run's tables T03/T04: {'yes' if bh_ok and bh_matches else 'NO'}.",
+        f"- `stage1_cp_seed_detail.csv` and `stage1_cir_seed_detail.csv` (the 2025 tables T08 and T09) agree with the "
+        f"run's T03/T04 at their printed precision: {'yes' if stage1_same and all(stage1_same) else 'NO'} "
+        f"({sum(stage1_same)} of {len(stage1_same)} metrics).",
         f"- Mean differences and p-values of the four comparisons equal the run's table T02 "
         f"({len(t02_rows)} rows): {'yes' if t02_ok else 'NO'}.",
         f"- Median temperature threshold: {threshold:.2f} °C.",
+        f"- The means, differences, CIs, paired t p-values and dz of `main_statistical_rigor.csv` equal the run's "
+        f"statistics table main_paired_bh_8metrics.csv: {'yes' if a14_same else 'NO' if run_stats else 'not checked (table missing)'}.",
     ]
     write_text(out / "summary.md", lines)
     print(f"[SUPPLEMENTARY] run analyses written to {out}")

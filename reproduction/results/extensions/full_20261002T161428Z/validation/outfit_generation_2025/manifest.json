@@ -1,0 +1,99 @@
+{
+ "case_set_id": "224188768",
+ "query_text": "26.2° C, Effortless Summer Wedding Style with a Pop of Citrus",
+ "device": "cpu",
+ "model": "preserved 2025 cir_new_seed1",
+ "checkpoint_sha256": "0fe754a09b382abcc5b040fe8b57a31f9cacb5ecc1a41dbe2ceb22bb19b5565b",
+ "fashionclip": "patrickjohncyh/fashion-clip@7e3ba62ce16b379a1ab479346b66f192e76f51b7",
+ "bank_sizes": {
+  "lower": 7695,
+  "upper": 14270,
+  "shoe": 13225,
+  "bag": 11688,
+  "overall": 5170
+ },
+ "gt_by_slot": {
+  "upper": null,
+  "lower": null,
+  "overall": "209144226",
+  "shoe": "208337886",
+  "bag": "201548065"
+ },
+ "schema": [
+  "overall",
+  "shoe",
+  "bag"
+ ],
+ "results": {
+  "keep0": {
+   "kept": [],
+   "steps": [
+    {
+     "step": 1,
+     "slot": "overall",
+     "item_id": "56998165",
+     "score": 0.7138849496841431,
+     "runner_up": "149930953",
+     "runner_up_score": 0.7138322591781616
+    },
+    {
+     "step": 2,
+     "slot": "shoe",
+     "item_id": "121507083",
+     "score": 0.8287072777748108,
+     "runner_up": "133306142",
+     "runner_up_score": 0.8155356049537659
+    },
+    {
+     "step": 3,
+     "slot": "bag",
+     "item_id": "161194648",
+     "score": 0.7799976468086243,
+     "runner_up": "203680817",
+     "runner_up_score": 0.7791972756385803
+    }
+   ]
+  },
+  "keep1": {
+   "kept": [
+    "overall"
+   ],
+   "steps": [
+    {
+     "step": 1,
+     "slot": "shoe",
+     "item_id": "82253359",
+     "score": 0.7508631944656372,
+     "runner_up": "27368340",
+     "runner_up_score": 0.7139520645141602
+    },
+    {
+     "step": 2,
+     "slot": "bag",
+     "item_id": "112382686",
+     "score": 0.7621217370033264,
+     "runner_up": "161194648",
+     "runner_up_score": 0.7199326753616333
+    }
+   ]
+  },
+  "keep2": {
+   "kept": [
+    "overall",
+    "shoe"
+   ],
+   "steps": [
+    {
+     "step": 1,
+     "slot": "bag",
+     "item_id": "112382686",
+     "score": 0.6872518062591553,
+     "runner_up": "158101683",
+     "runner_up_score": 0.6433016657829285
+    }
+   ]
+  }
+ },
+ "p02_picks_equal": "6/6",
+ "figure": "figure_P02_outfit_generation_224188768_2025.png"
+}

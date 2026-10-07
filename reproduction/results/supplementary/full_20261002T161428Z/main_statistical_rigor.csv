@@ -1,0 +1,6 @@
+comparison,task,metric,baseline_mean,baseline_std,proposed_mean,proposed_std,mean_difference,ci95_low,ci95_high,paired_t_p,wilcoxon_p,cohens_dz,paired_seeds,n_seeds,source_scope,paired_t_p_bh,wilcoxon_p_bh
+Full contextual rewrite vs original description,CP,auc,0.926803,0.004014,0.945636,0.001039,0.018834,0.013135,0.024533,0.000783,0.062500,4.103342,"1,2,3,4,5",5,this run's main per-seed results,0.000979,0.062500
+Full contextual rewrite vs original description,CP,fitb_acc,0.635669,0.003549,0.648148,0.002862,0.012479,0.005936,0.019023,0.006107,0.062500,2.368057,"1,2,3,4,5",5,this run's main per-seed results,0.006107,0.062500
+Full contextual rewrite vs original description,CIR,recall_at_10,0.078187,0.001157,0.092708,0.001955,0.014520,0.010752,0.018289,0.000433,0.062500,4.783930,"1,2,3,4,5",5,this run's main per-seed results,0.000722,0.062500
+Full contextual rewrite vs original description,CIR,recall_at_30,0.168360,0.003746,0.188487,0.002798,0.020127,0.016111,0.024142,0.000155,0.062500,6.223201,"1,2,3,4,5",5,this run's main per-seed results,0.000387,0.062500
+Full contextual rewrite vs original description,CIR,recall_at_50,0.230330,0.003231,0.253249,0.002267,0.022919,0.019294,0.026544,0.000062,0.062500,7.851108,"1,2,3,4,5",5,this run's main per-seed results,0.000310,0.062500

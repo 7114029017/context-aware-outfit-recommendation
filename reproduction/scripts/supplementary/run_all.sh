@@ -5,8 +5,8 @@
 # Without --run-root or --official, the newest full_* folder under reproduction/runs/
 # is analyzed (its RUN_STATUS must be PASSED), or the official run included in the
 # repository if there is none.
-# Output: run_analyses/, input_data_audit/, paper_value_checks/, judge_audit_checks/,
-# met_reference_check/ and checklist_coverage/ under --out-dir, or under
+# Output: run_analyses/, input_data_audit/, dataset_tables_check/, paper_value_checks/,
+# judge_audit_checks/, met_reference_check/ and checklist_coverage/ under --out-dir, or under
 # <run folder>/supplementary/ for a run folder. For the official run the default is
 # reproduction/results/supplementary/, with the run analyses in full_20261002T161428Z/.
 # The last two are SKIPPED when their download is missing (bootstrap_data.sh
@@ -55,6 +55,7 @@ run_py() {  # script, output folder under --out-dir, other arguments
 }
 # The run analyses go first: they stop this script if the run has not PASSED.
 run_py official_run_analyses run_analyses "${RUN_ARGS[@]}"
-for script in input_data_audit paper_value_checks judge_audit_checks met_reference_check checklist_coverage; do
+for script in input_data_audit dataset_tables_check paper_value_checks judge_audit_checks met_reference_check \
+    checklist_coverage; do
   run_py "$script" "$script"
 done

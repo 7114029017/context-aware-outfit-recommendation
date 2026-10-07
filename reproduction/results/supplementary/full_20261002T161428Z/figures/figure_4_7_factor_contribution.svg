@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="450" viewBox="0 0 740 450" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="370.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Relative contribution of each factor (thesis Figure 4-7)</text>
+<text x="370.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z; share of the total performance drop after removing a factor</text>
+<line x1="80.00" y1="364.00" x2="590.00" y2="364.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="364.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="367.32" font-size="9.5" fill="#222222" text-anchor="end">0%</text>
+<line x1="80.00" y1="304.00" x2="590.00" y2="304.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="304.00" x2="80.00" y2="304.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="307.32" font-size="9.5" fill="#222222" text-anchor="end">20%</text>
+<line x1="80.00" y1="244.00" x2="590.00" y2="244.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="244.00" x2="80.00" y2="244.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="247.32" font-size="9.5" fill="#222222" text-anchor="end">40%</text>
+<line x1="80.00" y1="184.00" x2="590.00" y2="184.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="184.00" x2="80.00" y2="184.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="187.32" font-size="9.5" fill="#222222" text-anchor="end">60%</text>
+<line x1="80.00" y1="124.00" x2="590.00" y2="124.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="124.00" x2="80.00" y2="124.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="127.33" font-size="9.5" fill="#222222" text-anchor="end">80%</text>
+<line x1="80.00" y1="64.00" x2="590.00" y2="64.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="64.00" x2="80.00" y2="64.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="67.33" font-size="9.5" fill="#222222" text-anchor="end">100%</text>
+<text x="131.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">[CP] AUC</text>
+<text x="233.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">[CP] FITB Acc</text>
+<text x="335.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">[CIR] Recall@10</text>
+<text x="437.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">[CIR] Recall@30</text>
+<text x="539.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">[CIR] Recall@50</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="364.00" x2="590.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<text x="36.73" y="214.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 36.73 214.00)">Relative contribution (%)</text>
+<rect x="100.40" y="340.81" width="61.20" height="23.19" fill="#C43C2B" stroke="#ffffff" stroke-width="0.6"/>
+<text x="131.00" y="356.41" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">8%</text>
+<rect x="100.40" y="268.29" width="61.20" height="72.52" fill="#E67E22" stroke="#ffffff" stroke-width="0.6"/>
+<text x="131.00" y="308.55" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">24%</text>
+<rect x="100.40" y="64.00" width="61.20" height="204.29" fill="#4E9A3D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="131.00" y="170.14" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">68%</text>
+<rect x="202.40" y="312.99" width="61.20" height="51.01" fill="#C43C2B" stroke="#ffffff" stroke-width="0.6"/>
+<text x="233.00" y="342.50" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">17%</text>
+<rect x="202.40" y="273.73" width="61.20" height="39.26" fill="#E67E22" stroke="#ffffff" stroke-width="0.6"/>
+<text x="233.00" y="297.36" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">13%</text>
+<rect x="202.40" y="64.00" width="61.20" height="209.73" fill="#4E9A3D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="233.00" y="172.87" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">70%</text>
+<text x="335.00" y="214.00" font-size="9" fill="#777777" text-anchor="middle">not defined</text>
+<text x="437.00" y="214.00" font-size="9" fill="#777777" text-anchor="middle">not defined</text>
+<text x="539.00" y="214.00" font-size="9" fill="#777777" text-anchor="middle">not defined</text>
+<rect x="604.00" y="65.00" width="79.40" height="55.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="610.00" y="71.00" width="14.00" height="9.00" fill="#C43C2B" fill-opacity="0.75"/>
+<text x="631.00" y="80.00" font-size="10" fill="#222222">Weather</text>
+<rect x="610.00" y="88.00" width="14.00" height="9.00" fill="#E67E22" fill-opacity="0.75"/>
+<text x="631.00" y="97.00" font-size="10" fill="#222222">Occasion</text>
+<rect x="610.00" y="105.00" width="14.00" height="9.00" fill="#4E9A3D" fill-opacity="0.75"/>
+<text x="631.00" y="114.00" font-size="10" fill="#222222">Style</text>
+<text x="12.00" y="440.00" font-size="9" fill="#555555">Not defined where removing weather or occasion does not lower the metric (table T07).</text>
+</svg>

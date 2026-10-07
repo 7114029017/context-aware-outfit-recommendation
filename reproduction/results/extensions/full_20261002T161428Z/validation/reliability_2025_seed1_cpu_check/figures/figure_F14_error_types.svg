@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="434" viewBox="0 0 640 434" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="320.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Error Slicing by Error Type: Original vs Proposed</text>
+<text x="320.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Preserved 2025 checkpoints, seed 1</text>
+<line x1="80.00" y1="364.00" x2="610.00" y2="364.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="364.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="367.32" font-size="9.5" fill="#222222" text-anchor="end">0</text>
+<line x1="80.00" y1="256.91" x2="610.00" y2="256.91" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="256.91" x2="80.00" y2="256.91" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="260.23" font-size="9.5" fill="#222222" text-anchor="end">2000</text>
+<line x1="80.00" y1="149.82" x2="610.00" y2="149.82" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="149.82" x2="80.00" y2="149.82" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="153.14" font-size="9.5" fill="#222222" text-anchor="end">4000</text>
+<text x="133.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">accessory-led</text>
+<text x="133.00" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">retrieval failure</text>
+<text x="239.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">context metadata</text>
+<text x="239.00" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">incomplete</text>
+<text x="345.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">general retrieval</text>
+<text x="345.00" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">error</text>
+<text x="451.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">high-confidence</text>
+<text x="451.00" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">semantic mismatch</text>
+<text x="557.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">low-style</text>
+<text x="557.00" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">ambiguity</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="364.00" x2="610.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<text x="37.68" y="214.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 37.68 214.00)">Number of errors</text>
+<rect x="94.84" y="112.33" width="38.16" height="251.67" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="113.92" y="108.33" font-size="8" fill="#222222" text-anchor="middle">4700</text>
+<rect x="200.84" y="310.24" width="38.16" height="53.76" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="219.92" y="306.24" font-size="8" fill="#222222" text-anchor="middle">1004</text>
+<rect x="306.84" y="342.90" width="38.16" height="21.10" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="325.92" y="338.90" font-size="8" fill="#222222" text-anchor="middle">394</text>
+<rect x="412.84" y="254.44" width="38.16" height="109.56" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="431.92" y="250.44" font-size="8" fill="#222222" text-anchor="middle">2046</text>
+<rect x="518.84" y="340.33" width="38.16" height="23.67" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="537.92" y="336.33" font-size="8" fill="#222222" text-anchor="middle">442</text>
+<rect x="133.00" y="109.76" width="38.16" height="254.24" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="152.08" y="105.76" font-size="8" fill="#222222" text-anchor="middle">4748</text>
+<rect x="239.00" y="311.42" width="38.16" height="52.58" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="258.08" y="307.42" font-size="8" fill="#222222" text-anchor="middle">982</text>
+<rect x="345.00" y="342.74" width="38.16" height="21.26" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="364.08" y="338.74" font-size="8" fill="#222222" text-anchor="middle">397</text>
+<rect x="451.00" y="260.98" width="38.16" height="103.02" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="470.08" y="256.98" font-size="8" fill="#222222" text-anchor="middle">1924</text>
+<rect x="557.00" y="339.90" width="38.16" height="24.10" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="576.08" y="335.90" font-size="8" fill="#222222" text-anchor="middle">450</text>
+<rect x="515.60" y="63.00" width="78.40" height="38.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="521.60" y="69.00" width="14.00" height="9.00" fill="#1f77b4" fill-opacity="0.75"/>
+<text x="542.60" y="78.00" font-size="10" fill="#222222">original</text>
+<rect x="521.60" y="86.00" width="14.00" height="9.00" fill="#ff7f0e" fill-opacity="0.75"/>
+<text x="542.60" y="95.00" font-size="10" fill="#222222">proposed</text>
+</svg>

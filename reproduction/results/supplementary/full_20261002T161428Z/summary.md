@@ -57,6 +57,33 @@ Full table: `subset_robustness_summary.csv` (columns of T12).
 | All (union) (Category) | 17160 | 255.0 → 223.0 | +32.0 | +37.5 | -0.0001 | -0.0037 | +0.0106 |
 | Full dataset | 17160 | 255.0 → 223.0 | +32.0 | +37.5 | -0.0001 | -0.0037 | +0.0106 |
 
+Table T13 (`subset_delta_hit10_pivot.csv`) and the 2025 figures F03 and F04 are redrawn in `figures/`.
+
+## Temperature bands (weather rows of the 2025 table T14)
+
+Bands of the leading temperature of the generated description: cold ≤ 15 °C < mild ≤ 22 °C < warm ≤ 28 °C
+< hot. The program of T14 is not preserved; these cut-offs reproduce its four band sizes (yes, all 12 rows). Its occasion labels could not be recovered.
+
+| Band | Observations | Full − Original | Full − No-Weather | Full − No-Style | 2025: Full − Original |
+|---|---:|---:|---:|---:|---:|
+| cold | 1380 | +0.0094 | -0.0029 | +0.0181 | +0.0087 |
+| mild | 5145 | +0.0051 | +0.0006 | +0.0039 | +0.0082 |
+| warm | 10540 | +0.0072 | -0.0002 | +0.0133 | +0.0103 |
+| hot | 95 | +0.0211 | +0.0211 | -0.0316 | +0.0105 |
+
+## Largest rank losses and gains (2025 tables T16 and T17)
+
+`qualitative_failure_cases.csv` (T16) and `qualitative_user_cases.csv` (T17): for each comparison the 12
+queries with the largest rank loss under Full, and the 12 with the largest rank gain among those Full ranks
+in the top 10, as the archived rows show (the program is not preserved; the occasion label is left empty).
+
+| Comparison | Losses (T16): largest, 12th | 2025 | Gains (T17): largest, 12th | 2025 |
+|---|---|---|---|---|
+| Original -> Proposed | 1970, 1377 | 1619, 1398 | 1271, 325 | 1332, 436 |
+| No-weather -> Proposed | 1054, 666 | 879, 629 | 110, 28 | 96, 33 |
+| No-occasion -> Proposed | 1330, 912 | 1308, 917 | 253, 29 | 87, 30 |
+| No-style -> Proposed | 1750, 1377 | 1713, 1397 | 1328, 424 | 1185, 393 |
+
 ## Category effects of each factor (thesis Figures 4-8 and 4-11 (a) to 4-13 (a))
 
 ΔHit@10 of Full minus the other condition; 2025 values (table T15) in parentheses.
@@ -165,6 +192,22 @@ observations are left out, as in 2025. The 2025 columns are the eight bars of th
 | dress (Figure A2, set 94771580) | 77.0 | 4.8 | 3.2 | 21.4 | 125.4 |
 | sunglasses (Figure A3, set 200099867) | 27.0 | 593.4 | 509.4 | 465.4 | 100.6 |
 
+## Main experiment with Wilcoxon tests (2025 table A14)
+
+Full vs Original over the five seeds of the main experiment (`main_statistical_rigor.csv`; notebook P12
+statistical rigor, cell 4). BH is applied over these five tests, as in 2025.
+
+| Metric | Original | Full | Difference (95% CI) | Paired t p | Wilcoxon p | dz | 2025: difference, t p, Wilcoxon p |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| CP auc | 0.926803 | 0.945636 | 0.018834 [0.013135, 0.024533] | 0.000783 | 0.062500 | 4.103342 | 0.016205, 0.000000, 0.062500 |
+| CP fitb_acc | 0.635669 | 0.648148 | 0.012479 [0.005936, 0.019023] | 0.006107 | 0.062500 | 2.368057 | 0.010340, 0.004492, 0.062500 |
+| CIR recall_at_10 | 0.078187 | 0.092708 | 0.014520 [0.010752, 0.018289] | 0.000433 | 0.062500 | 4.783930 | 0.014112, 0.000639, 0.062500 |
+| CIR recall_at_30 | 0.168360 | 0.188487 | 0.020127 [0.016111, 0.024142] | 0.000155 | 0.062500 | 6.223201 | 0.019697, 0.000246, 0.062500 |
+| CIR recall_at_50 | 0.230330 | 0.253249 | 0.022919 [0.019294, 0.026544] | 0.000062 | 0.062500 | 7.851108 | 0.021458, 0.000384, 0.062500 |
+
+With five seeds the exact two-sided Wilcoxon signed-rank test cannot go below 0.0625 (all five
+differences of the same sign), so it never reaches 0.05; the 2025 table shows 0.0625 for every metric.
+
 ## Benjamini-Hochberg family (retrospective sensitivity analysis)
 
 Full vs Original on the fair subset. The manuscript corrects over the five reported metrics.
@@ -187,5 +230,7 @@ Full vs Original on the fair subset. The manuscript corrects over the five repor
 - Observations per subset equal the 2025 table T12: yes; all 13 rows of T12, including the unions: yes.
 - Observations per category in all four comparisons equal the 2025 table T15: yes.
 - BH over the five reported metrics equals the run's tables T03/T04: yes.
+- `stage1_cp_seed_detail.csv` and `stage1_cir_seed_detail.csv` (the 2025 tables T08 and T09) agree with the run's T03/T04 at their printed precision: yes (5 of 5 metrics).
 - Mean differences and p-values of the four comparisons equal the run's table T02 (20 rows): yes.
 - Median temperature threshold: 22.90 °C.
+- The means, differences, CIs, paired t p-values and dz of `main_statistical_rigor.csv` equal the run's statistics table main_paired_bh_8metrics.csv: yes.

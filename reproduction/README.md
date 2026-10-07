@@ -50,7 +50,7 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
 | Git | `git` 與 Git LFS（Ubuntu／Debian：`sudo apt install git-lfs`） |
 | 網路 | github.com（含 Git LFS）、pypi.org、download.pytorch.org、huggingface.co |
 | 磁碟 | 至少 20 GB：repo 與特徵檔約 5 GB、Python 環境約 5 GB、Polyvore metadata 約 140 MB、一次完整 run 約 2 GB，訓練期間另有暫存檔；延伸分析與補充分析用的圖片、FashionCLIP 與 Nomic 模型另需約 5.5 GB（0.4） |
-| 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片、FashionCLIP 與 Nomic 模型約 3 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的延伸分析約 2～3.5 小時 |
+| 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片、FashionCLIP 與 Nomic 模型約 3 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的延伸分析約 3～4 小時 |
 
 `sudo` 只有安裝系統套件與 0.6 的清除快取指令（選用）需要。
 
@@ -252,7 +252,7 @@ NVIDIA GB10 這類 CPU／GPU 共用記憶體的機器：CUDA 只把真正空閒�
 - 狀態成為 `PASSED` 之後，再執行補充分析（只用 CPU，一分鐘內；不改變 `RUN_STATUS.txt`），
   結果在 run 資料夾的 `supplementary/`（見 §11）；
 - 接著執行延伸分析：用這次 run 的模型重做文字長度、反事實分析、Two-Tower、色彩分析與附錄圖
-  （GPU 約 2～3.5 小時；同樣不改變 `RUN_STATUS.txt`），結果在 `extensions/`（見 §11）。
+  （GPU 約 3～4 小時；同樣不改變 `RUN_STATUS.txt`），結果在 `extensions/`（見 §11）。
 
 開始時會顯示 `[RUN ROOT]`（這次 run 的資料夾，預設為
 `reproduction/runs/full_<UTC timestamp>/`）與 `[LIVE LOG]`。要看進度，另開一個 terminal：
@@ -726,12 +726,13 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 
 | 資料夾 | 內容 | 正式 run 的對應位置 |
 |---|---|---|
-| `run_analyses/` | 由該 run 的逐題結果計算：類別、情境子集、因子與詞彙的效果（表 T12，論文圖 4-8～4-13）、個案名次、因子效果、BH 族群的敏感度分析 | `results/supplementary/full_20261002T161428Z/` |
+| `run_analyses/` | 由該 run 的逐題結果計算：類別、情境子集、因子與詞彙的效果（表 T12～T17，論文圖 4-7～4-13，2025 年圖 F03、F04）、個案名次、因子效果（表 T08、T09）、BH 族群的敏感度分析、主實驗的 Wilcoxon 檢定（表 A14） | `results/supplementary/full_20261002T161428Z/` |
 | `input_data_audit/` | 輸入資料稽核，含 CLO 分布（表 D-3、圖 D-4）與類別門檻（5.2 節），與 run 無關 | `results/supplementary/input_data_audit/` |
 | `paper_value_checks/` | 稿件 Table 1、2、5、8、9 的重算，與 run 無關 | `results/supplementary/paper_value_checks/` |
-| `judge_audit_checks/` | 評分者分數分布、低分樣本敏感度、人工稽核的題項分歧（圖 4-1、4-3、4-4，表 T31）與評分結果未進入訓練的程式掃描（表 A05、A06），與 run 無關 | `results/supplementary/judge_audit_checks/` |
+| `judge_audit_checks/` | 評分者分數分布、低分樣本敏感度、人工稽核的題項分歧與分數（圖 4-1、4-3、4-4，表 T30、T31、A41，2025 年圖 F18、F20、F30～F32）與評分結果未進入訓練的程式掃描（表 A05、A06），與 run 無關 | `results/supplementary/judge_audit_checks/` |
 | `met_reference_check/` | 由官方 Compendium 依論文規則重建 457 筆 MET 對照表（表 3-1），與 run 無關；需要 `--with-compendium` | `results/supplementary/met_reference_check/` |
 | `checklist_coverage/` | 兩組檢核清單的概念涵蓋度（圖 4-2），與 run 無關；需要 `--with-nomic` | `results/supplementary/checklist_coverage/` |
+| `dataset_tables_check/` | 2025 年資料表 T00、T01、A01、A02、A12、A13 的重算（471 個數值），與 run 無關 | `results/supplementary/dataset_tables_check/` |
 
 執行時的輸出記錄在 `logs/supplementary.log`。正式 run 執行時流程還沒有這一步，右欄的檔案
 是之後用同一套程式從正式 run 的輸出算出的。§0.8 的判定為 `IDENTICAL` 時，你的
@@ -742,7 +743,7 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
     diff -r "$RUN/supplementary/run_analyses" reproduction/results/supplementary/full_20261002T161428Z
     diff -r "$RUN/supplementary/input_data_audit" reproduction/results/supplementary/input_data_audit
     diff -r "$RUN/supplementary/paper_value_checks" reproduction/results/supplementary/paper_value_checks
-    for d in judge_audit_checks met_reference_check checklist_coverage; do
+    for d in judge_audit_checks met_reference_check checklist_coverage dataset_tables_check; do
       diff -r "$RUN/supplementary/$d" "reproduction/results/supplementary/$d"
     done
 
@@ -771,14 +772,18 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 | `counterfactual` | Table 4、Table 9 | `--with-fashionclip`；CPU 約 1 分鐘 | `results/extensions/full_20261002T161428Z/counterfactual/`（5 個 seed） |
 | `two_tower` | Table 8 | GPU，1.5～3 小時 | 尚未執行（需安排 GPU） |
 | `color` | 5.5 節色彩分析 | `--with-images`；CPU 幾秒 | `results/extensions/full_20261002T161428Z/color_analysis/` |
-| `figures` | 附錄圖 A1～A3、論文圖 4-14（顏色偏移案例） | `--with-images`；CPU 幾秒 | 圖只在本機；內容（商品 ID、名次、顏色）在 `case_figures/case_figures_manifest.csv`、`color_case_figure_manifest.csv` |
+| `figures` | 附錄圖 A1～A3、論文圖 4-14（顏色偏移案例）、2025 年反事實範例圖 F34a、F34b | `--with-images`；CPU 幾秒 | 圖只在本機；內容（商品 ID、名次、顏色）在 `case_figures/` 的三個 manifest |
+| `reliability` | 2025 年可靠度分析（P04：表 T18、圖 F12～F16；稿件沒用） | GPU，約 5 分鐘 | 尚未執行（需安排 GPU）；標註部分已驗證，見 `validation/reliability_labels/` |
+| `text_swap` | 2025 年文字互換評估（`CP_evaluate.py`、`CIR_evaluate.py --sweep`；稿件沒用） | GPU，約 45 分鐘 | 尚未執行（需安排 GPU） |
+| `outfit_generation` | 2025 年虛擬試穿示範的逐步選品（P02，不含試穿；稿件沒用） | `--with-images`、`--with-fashionclip`；CPU 約 2 分鐘 | `results/extensions/full_20261002T161428Z/outfit_generation/` |
 
 run 資料夾中的結果在 `extensions/`，各步驟的狀態在 `extensions/EXTENSIONS_STATUS.txt`；
 缺少 GPU 或下載檔的步驟會標為 `SKIPPED`，其他步驟照常執行。單獨執行或重跑（例如修正失敗原因後）：
 
     bash reproduction/scripts/extensions/run_all.sh --run-root "$RUN" [--steps text_length,two_tower] [--skip-gpu] [--validate]
 
-`--validate` 另外用學姊保存的輸出檢查移植的程式（CPU 約 5 分鐘）。驗證結果、正式 run 的數值與
+`--validate` 另外用學姊保存的輸出檢查移植的程式（CPU 約 10 分鐘；有 GPU 時另外約 5 分鐘重算
+表 T18、約 75 分鐘用學姊的 20 個主實驗 checkpoint 重算文字互換）。驗證結果、正式 run 的數值與
 仍無法重做的項目，見 `docs/extensions.md`。
 
 ## 12. Hyperparameter tuning provenance

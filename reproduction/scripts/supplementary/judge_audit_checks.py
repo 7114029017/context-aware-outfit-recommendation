@@ -15,9 +15,16 @@ of the same data, with the computation copied from the 2025 programs, and writes
   overlap of the two judges' lowest-scored p% for p = 1% to 30% with 95% bootstrap bands (B = 500,
   seed 123; thesis Figure 4-3; P05 cell 3: sensitivity_point_estimate, bootstrap_bands);
   the histogram and the curves are compared with the archived SVG figures F17 and F19;
+- judge_quantile_confusion.csv and figures/figure_F18_quantile_confusion.svg: the 10 x 10 confusion
+  matrix of the two judges' score deciles behind the QWK of table T19 (the 2025 figure F18; P05 cell 3);
+- figures/figure_F20_prompt_robustness.svg: the mean absolute score difference of the three prompt
+  variants (the 2025 figure F20; notebook P06_prompt_robustness_reproducible, cell 3);
 - item_disagreement.csv and figure_4_4_item_disagreement.svg: for each checklist item, how often the
   judge's yes/no differs from the human answer over the 30 audited descriptions (2025 table T31, thesis
   Figure 4-4; notebook P06 cell 10);
+- audit_score_metrics.csv and audit_sample_scores.csv: the 2025 tables T30 and A41 (weighted human
+  score against the judge's score, per checklist and per description), with the 2025 figures F30, F31
+  and F32 (sampling coverage, error metrics, score scatter; P06 cells 9 and 10);
 - judge_reference_scan.csv and judge_input_roles.csv: a static search of the training and evaluation code
   for references to judge outputs (2025 tables A05 and A06; build_journal_artifacts.py,
   derive_no_judge_intervention_proof), repeated on the code that runs the reproduction's 35 units;
@@ -31,14 +38,15 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from statistics import mean
 
 import numpy as np
 
 from _common import D01, D02, D03, GENERATED, REPRO, SUPPLEMENTARY, read_csv, read_json, write_csv, write_text
-from _svg import PALETTE, hbar_chart, histogram_chart, line_chart
+from _svg import (PALETTE, VIRIDIS, grouped_vbar_chart, hbar_chart, heatmap_chart, histogram_chart, line_chart,
+                  scatter_chart, small_multiple_bars)
 
 JUDGES = D01 / "llm_judge_checklists"
 QWEN_SCORES = JUDGES / "Qwen3_Instruct" / "phase3_scores_Qwen3VL32B.jsonl"
@@ -233,6 +241,112 @@ def safe_float(value, default=None):
         return default
 
 
+def quantile_bins(x, n_bins=10):
+    """P05 cell 3."""
+    qs = np.quantile(x, np.linspace(0, 1, n_bins + 1))
+    return np.digitize(x, qs[1:-1], right=True)
+
+
+def weighted_score(decisions: dict, checklist: list[dict]):
+    """P06 cell 10."""
+    total_w = 0.0
+    total = 0.0
+    for item in checklist:
+        item_id = str(item["id"])
+        if item_id not in decisions:
+            continue
+        w = float(item.get("weight", 1))
+        total += w * float(decisions[item_id])
+        total_w += w
+    if total_w == 0:
+        return None
+    return total / total_w
+
+
+def pearson(xs, ys):
+    if len(xs) < 2:
+        return None
+    mx, my = mean(xs), mean(ys)
+    vx = sum((x - mx) ** 2 for x in xs)
+    vy = sum((y - my) ** 2 for y in ys)
+    if vx == 0 or vy == 0:
+        return None
+    return sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / (vx * vy) ** 0.5
+
+
+def rank_values(values):
+    indexed = sorted(enumerate(values), key=lambda kv: kv[1])
+    ranks = [0.0] * len(values)
+    i = 0
+    while i < len(indexed):
+        j = i
+        while j + 1 < len(indexed) and indexed[j + 1][1] == indexed[i][1]:
+            j += 1
+        avg = (i + 1 + j + 1) / 2
+        for k in range(i, j + 1):
+            ranks[indexed[k][0]] = avg
+        i = j + 1
+    return ranks
+
+
+def audit_scores(scores: dict, checklists: dict, selected: list[dict], manual_rows: list[dict]):
+    """P06 cell 10, sections 9-1 and 9-3: weighted human scores against the judges' scores."""
+    from statistics import stdev
+    selected_ids = [row["set_id"] for row in selected]
+    human_values = defaultdict(list)
+    for row in manual_rows:
+        set_id = str(row.get("set_id", ""))
+        if set_id not in selected_ids:
+            continue
+        name = str(row.get("checklist", "")).strip().lower()
+        item_id = str(row.get("item_id", "")).strip()
+        ans = answer_to_float(row.get("human_answer_yes", row.get("human_answer", "")))
+        if ans is None:
+            ans = answer_to_float(row.get("human_answer", ""))
+        if name in {"qwen", "gemma"} and item_id and ans is not None:
+            human_values[(set_id, name, item_id)].append(ans)
+    human_mean = {key: mean(values) for key, values in human_values.items() if values}
+    human_score = {}
+    for set_id in selected_ids:
+        for name, checklist in checklists.items():
+            decisions = {str(i["id"]): human_mean[(set_id, name, str(i["id"]))] for i in checklist
+                         if (set_id, name, str(i["id"])) in human_mean}
+            human_score[(set_id, name)] = weighted_score(decisions, checklist)
+    sd = lambda v: stdev(v) if len(v) >= 2 else 0.0 if v else None
+    metric_rows = []
+    for name in ["qwen", "gemma"]:
+        xs, ys = [], []
+        for set_id in selected_ids:
+            h = human_score.get((set_id, name))
+            if h is None:
+                continue
+            xs.append(float(h))
+            ys.append(float(scores[name][set_id]["score"]))
+        diffs = [m - h for h, m in zip(xs, ys)]
+        metric_rows.append({
+            "scope": "30_case_human_audit", "checklist": name, "n": len(xs),
+            "bias_model_minus_human": fmt4(mean(diffs) if diffs else None),
+            "mae": fmt4(mean([abs(d) for d in diffs]) if diffs else None),
+            "rmse": fmt4(mean([d * d for d in diffs]) ** 0.5 if diffs else None),
+            "pearson": fmt4(pearson(xs, ys)), "spearman": fmt4(pearson(rank_values(xs), rank_values(ys))),
+            "human_mean": fmt4(mean(xs) if xs else None), "model_mean": fmt4(mean(ys) if ys else None),
+            "human_sd": fmt4(sd(xs)), "model_sd": fmt4(sd(ys)),
+        })
+    sample_rows = []
+    for case in selected:
+        set_id = case["set_id"]
+        out = {k: case[k] for k in ("set_id", "sample_order", "audit_stratum", "temperature_c", "temp_bin", "met_value",
+                                    "met_bin", "occasion_bin", "style_bin", "generated_title")}
+        for name in ["qwen", "gemma"]:
+            h = human_score.get((set_id, name))
+            m = float(scores[name][set_id]["score"])
+            out[f"human_{name}_score"] = fmt4(h)
+            out[f"model_{name}_score"] = fmt4(m)
+            out[f"error_{name}_model_minus_human"] = fmt4(m - h if h is not None else None)
+        sample_rows.append(out)
+    return human_score, metric_rows, sample_rows
+
+
 def item_disagreement(scores: dict, checklists: dict, selected_ids: list[str], manual_rows: list[dict]) -> list[dict]:
     human_values = defaultdict(list)
     for row in manual_rows:
@@ -397,6 +511,62 @@ def main() -> None:
                colors=[GEMMA_COLOR if r["checklist"] == "gemma" else QWEN_COLOR for r in top],
                legend=[("Qwen", QWEN_COLOR, "box"), ("Gemma", GEMMA_COLOR, "box")])
 
+    # ---------------------------------------------------------------- 2025 T30, A41 and figures F30-F32 (P06)
+    selected = read_csv(AUDIT / "A36_human_audit_30_selected_cases.csv")
+    human_score, metric_rows, sample_rows = audit_scores({"qwen": qwen, "gemma": gemma}, checklists, selected, manual)
+    metric_cols, sample_cols = list(metric_rows[0]), list(sample_rows[0])
+    write_csv(out / "audit_score_metrics.csv", metric_cols, [[r[c] for c in metric_cols] for r in metric_rows])
+    write_csv(out / "audit_sample_scores.csv", sample_cols, [[r[c] for c in sample_cols] for r in sample_rows])
+    t30 = read_csv(AUDIT / "圖表_figures_tables" / "tables" / "T30_human_audit30_model_human_score_metrics.csv")
+    a41 = read_csv(AUDIT / "A41_human_audit_30_sample_score_summary.csv")
+    t30_same = [[str(r[c]) for c in metric_cols] for r in metric_rows] == [[r.get(c, "") for c in metric_cols] for r in t30]
+    a41_same = [[str(r[c]) for c in sample_cols] for r in sample_rows] == [[r.get(c, "") for c in sample_cols] for r in a41]
+    panels = []
+    for dim, xlabel in (("temp_bin", "Temperature (degC)"), ("met_bin", "Activity level (MET)"),
+                        ("occasion_bin", "Occasion type"), ("style_bin", "Style type")):
+        counts = Counter(row[dim] for row in selected)  # P06 keeps the order of first appearance
+        panels.append((xlabel, [label.replace(" (", "\n(").replace("/", "/\n") if len(label) > 12 else label
+                                for label in counts], list(counts.values())))
+    small_multiple_bars(figures / "figure_F30_audit_sampling_coverage.svg",
+                        "Sampling coverage of the 30 audited descriptions (2025 figure F30)", panels)
+    grouped_vbar_chart(figures / "figure_F31_audit_error_metrics.svg",
+                       "Judge score minus weighted human score (2025 figure F31)", ["Bias", "MAE", "RMSE"],
+                       [(label, [float(r[k]) for k in ("bias_model_minus_human", "mae", "rmse")], color)
+                        for r, label, color in zip(metric_rows, ("Qwen", "Gemma"), (QWEN_COLOR, GEMMA_COLOR))],
+                       "Score difference / error (0-1)", subtitle=f"{len(selected)} audited descriptions")
+    scatter_chart(figures / "figure_F32_audit_score_scatter.svg",
+                  "Weighted human score and judge score (2025 figure F32)",
+                  [(label, [(human_score[(row['set_id'], name)], (qwen if name == 'qwen' else gemma)[row['set_id']]['score'])
+                            for row in selected if human_score.get((row['set_id'], name)) is not None], color)
+                   for name, label, color in (("qwen", "Qwen", QWEN_COLOR), ("gemma", "Gemma", GEMMA_COLOR))],
+                  "Human weighted score (0-1)", "Model score (0-1)")
+
+    # ---------------------------------------------------------------- 2025 F18 (P05 cell 3) and F20 (prompt robustness)
+    ba, bb = quantile_bins(xa), quantile_bins(xb)
+    cm = np.zeros((10, 10), dtype=np.int64)
+    for i, j in zip(ba, bb):
+        cm[int(i), int(j)] += 1
+    write_csv(out / "judge_quantile_confusion.csv", ["judge_A_decile", *[f"judge_B_decile_{j}" for j in range(10)]],
+              [[i, *cm[i].tolist()] for i in range(10)])
+    heatmap_chart(figures / "figure_F18_quantile_confusion.svg",
+                  "Confusion matrix of quantile bins, A rows, B columns (2025 figure F18)",
+                  [f"A bin {i}" for i in range(10)], [f"B bin {j}" for j in range(10)], cm.tolist(), 0,
+                  float(cm.max()), value_fmt="{:.0f}", cmap=VIRIDIS, colorbar_label="descriptions", cell_w=58,
+                  cell_h=30, subtitle=f"Score deciles of Judge A (Qwen) and Judge B (Gemma); QWK = {float(t19['QWK_bins']):.6f} (T19)")
+    robustness = {}
+    for judge, folder, prefix in (("Qwen3-VL", "Qwen3_Instruct", "phase3_scores_Qwen3VL32B"),
+                                  ("Gemma-3", "Gemma3", "phase3_scores_Gemma3")):
+        for variant, suffix in (("P0-R2", ""), ("P1", "_change"), ("P2", "_conservative")):
+            rows = read_csv(JUDGES / folder / f"{prefix}_robustness_run1_compare{suffix}.csv")
+            robustness[(judge, variant)] = mean(float(r["abs_diff"]) for r in rows)
+    grouped_vbar_chart(figures / "figure_F20_prompt_robustness.svg",
+                       "Prompt robustness: mean absolute difference (2025 figure F20)", ["P0-R2", "P1", "P2"],
+                       [(judge, [robustness[(judge, v)] for v in ("P0-R2", "P1", "P2")], color)
+                        for judge, color in (("Qwen3-VL", PALETTE[0]), ("Gemma-3", PALETTE[1]))],
+                       "Mean absolute difference (abs_diff)", subtitle="150 descriptions; preserved compare files")
+    t20 = read_csv(CONTROL_TABLES / "T20_judge_qwen_gemma_correlation_summary.csv")[0]
+    t20_in_t19 = all(t20[k] == t19.get(k if k != "N" else "N_intersection") for k in t20)
+
     # ---------------------------------------------------------------- A05 / A06
     scan_rows = []
     for name in FILES_2025:
@@ -478,6 +648,23 @@ def main() -> None:
         f"Equal to the archived T31 in all {len(T31_COLUMNS)} compared columns and the order of the "
         f"{len(archived)} rows: {'yes' if t31_same else 'NO ' + str(t31_diff[:5])} (the Chinese translation of "
         "each question, a display aid, is not recomputed).",
+        "",
+        "## Human audit scores (2025 tables T30 and A41; figures F30-F32)",
+        "",
+        "Weighted human score per description and checklist against the judge's score (P06 cell 10).",
+        f"`audit_score_metrics.csv` equals the archived T30: {'yes' if t30_same else 'NO'}; `audit_sample_scores.csv`",
+        f"equals the archived A41 (30 descriptions): {'yes' if a41_same else 'NO'}. Figures: "
+        "`figures/figure_F30_audit_sampling_coverage.svg`, `figure_F31_audit_error_metrics.svg`, "
+        "`figure_F32_audit_score_scatter.svg`.",
+        "",
+        "## Other 2025 judge figures and T20",
+        "",
+        "- `figures/figure_F18_quantile_confusion.svg` and `judge_quantile_confusion.csv`: the decile confusion",
+        "  matrix behind the QWK of T19 (P05 cell 3).",
+        "- `figures/figure_F20_prompt_robustness.svg`: mean absolute difference of P0-R2, P1 and P2 for each judge",
+        "  (" + ", ".join(f"{j} {v}: {robustness[(j, v)]:.4f}" for j in ("Qwen3-VL", "Gemma-3") for v in ("P0-R2", "P1", "P2")) + ").",
+        f"- The archived T20 equals the correlation columns of T19: {'yes' if t20_in_t19 else 'NO'}; the pipeline's",
+        "  secondary step recomputes T19 (with its 5,000 bootstrap draws).",
         "",
         "## Judge outputs in the training and evaluation code (2025 tables A05 and A06)",
         "",

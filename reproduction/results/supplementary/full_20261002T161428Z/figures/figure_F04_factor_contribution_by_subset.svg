@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="870" height="434" viewBox="0 0 870 434" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="435.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Factor contribution by subset (2025 figure F04)</text>
+<text x="435.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z; positive: removing the factor hurts in this subset</text>
+<line x1="80.00" y1="361.12" x2="840.00" y2="361.12" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="361.12" x2="80.00" y2="361.12" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="364.44" font-size="9.5" fill="#222222" text-anchor="end">-0.010</text>
+<line x1="80.00" y1="298.10" x2="840.00" y2="298.10" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="298.10" x2="80.00" y2="298.10" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="301.43" font-size="9.5" fill="#222222" text-anchor="end">0.000</text>
+<line x1="80.00" y1="235.08" x2="840.00" y2="235.08" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="235.08" x2="80.00" y2="235.08" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="238.41" font-size="9.5" fill="#222222" text-anchor="end">0.010</text>
+<line x1="80.00" y1="172.06" x2="840.00" y2="172.06" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="172.06" x2="80.00" y2="172.06" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="175.39" font-size="9.5" fill="#222222" text-anchor="end">0.020</text>
+<line x1="80.00" y1="109.05" x2="840.00" y2="109.05" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="109.05" x2="80.00" y2="109.05" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="112.37" font-size="9.5" fill="#222222" text-anchor="end">0.030</text>
+<text x="127.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Cold</text>
+<text x="127.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=9920)</text>
+<text x="222.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Warm</text>
+<text x="222.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=7240)</text>
+<text x="317.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Formal</text>
+<text x="317.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=2330)</text>
+<text x="412.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Casual</text>
+<text x="412.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=2020)</text>
+<text x="507.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">High style</text>
+<text x="507.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=13260)</text>
+<text x="602.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Low style</text>
+<text x="602.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=3900)</text>
+<text x="697.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Clothing-led</text>
+<text x="697.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=2735)</text>
+<text x="792.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Accessory-led</text>
+<text x="792.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=14425)</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="364.00" x2="840.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<text x="28.18" y="214.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 28.18 214.00)">ΔHit@10 (Full − without the factor)</text>
+<line x1="80.00" y1="298.10" x2="840.00" y2="298.10" stroke="#999999" stroke-width="1.0" stroke-dasharray="4,3"/>
+<line x1="270.00" y1="64.00" x2="270.00" y2="364.00" stroke="#cccccc" stroke-width="1.0" stroke-dasharray="4,3"/>
+<line x1="460.00" y1="64.00" x2="460.00" y2="364.00" stroke="#cccccc" stroke-width="1.0" stroke-dasharray="4,3"/>
+<line x1="650.00" y1="64.00" x2="650.00" y2="364.00" stroke="#cccccc" stroke-width="1.0" stroke-dasharray="4,3"/>
+<polyline points="127.50,300.64 222.50,295.49 317.50,311.62 412.50,288.74 507.50,297.15 602.50,302.95 697.50,279.67 792.50,302.03" fill="none" stroke="#C0392B" stroke-width="2"/>
+<circle cx="127.50" cy="300.64" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="222.50" cy="295.49" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="317.50" cy="311.62" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="412.50" cy="288.74" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="507.50" cy="297.15" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="602.50" cy="302.95" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="697.50" cy="279.67" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<circle cx="792.50" cy="302.03" r="4" fill="#C0392B" fill-opacity="1.0"/>
+<polyline points="127.50,318.43 222.50,325.08 317.50,303.51 412.50,313.70 507.50,323.76 602.50,312.64 697.50,334.97 792.50,318.63" fill="none" stroke="#E67E22" stroke-width="2"/>
+<circle cx="127.50" cy="318.43" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="222.50" cy="325.08" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="317.50" cy="303.51" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="412.50" cy="313.70" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="507.50" cy="323.76" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="602.50" cy="312.64" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="697.50" cy="334.97" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<circle cx="792.50" cy="318.63" r="4" fill="#E67E22" fill-opacity="1.0"/>
+<polyline points="127.50,239.02 222.50,220.63 317.50,227.78 412.50,257.54 507.50,234.89 602.50,218.92 697.50,93.03 792.50,257.47" fill="none" stroke="#8E44AD" stroke-width="2"/>
+<circle cx="127.50" cy="239.02" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="222.50" cy="220.63" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="317.50" cy="227.78" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="412.50" cy="257.54" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="507.50" cy="234.89" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="602.50" cy="218.92" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="697.50" cy="93.03" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<circle cx="792.50" cy="257.47" r="4" fill="#8E44AD" fill-opacity="1.0"/>
+<rect x="90.00" y="65.00" width="127.80" height="55.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<line x1="96.00" y1="76.00" x2="112.00" y2="76.00" stroke="#C0392B" stroke-width="2"/>
+<text x="117.00" y="80.00" font-size="10" fill="#222222">Weather removed</text>
+<line x1="96.00" y1="93.00" x2="112.00" y2="93.00" stroke="#E67E22" stroke-width="2"/>
+<text x="117.00" y="97.00" font-size="10" fill="#222222">Occasion removed</text>
+<line x1="96.00" y1="110.00" x2="112.00" y2="110.00" stroke="#8E44AD" stroke-width="2"/>
+<text x="117.00" y="114.00" font-size="10" fill="#222222">Style removed</text>
+</svg>

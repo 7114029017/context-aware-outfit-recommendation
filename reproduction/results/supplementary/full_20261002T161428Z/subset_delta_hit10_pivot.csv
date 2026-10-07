@@ -1,0 +1,6 @@
+dimension,Accessory-led,Casual,Clothing-led,Cold,Formal,Full dataset,High style (≥2 terms),Low style (≤1 term),Warm
+Category: Clothing vs Accessory,0.005060658578856153,,0.016087751371115178,,,,,,
+Occasion: Formal vs Casual,,0.011386138613861382,,,0.0055793991416309,,,,
+Overall,,,,,,0.0068181818181818205,,,
+Style Richness: High vs Low,,,,,,,0.006711915535444951,0.007179487179487173,
+Weather: Cold vs Warm,,,,0.005947580645161293,,,,,0.008011049723756908

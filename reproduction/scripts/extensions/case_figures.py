@@ -19,11 +19,19 @@ case's most frequent wrong color, gold the target. The seed shown is the
 representative row of the notebook (the largest color problem under Original,
 then the best Original rank); the colors come from color_analysis.py.
 
+It also draws the two counterfactual examples F34a and F34b of the 2025
+notebook 03_實驗與結果_experiments_results/06_反事實情境敏感度/source_programs/P16_counterfactual_context_consistency_check.ipynb
+(cells 7 and 9): from the seed-1 results of the counterfactual analysis, the
+review sheet A46 is rebuilt, and the pair with the largest rank change and the
+pair with the smallest one are shown (query outfit, then the top 5 for the
+context-aware and the counterfactual description). With the archived A46 the
+same rule selects the 2025 pairs CF04 and CF09.
+
 The figures contain Polyvore product photos: they are written only outside the
 repository or into a Git-ignored folder (reproduction/runs/, _external/), never
 committed or redistributed. The panel contents (item IDs, ranks and colors) are
-also written to case_figures_manifest.csv and color_case_figure_manifest.csv,
-which contain no images.
+also written to case_figures_manifest.csv, color_case_figure_manifest.csv and
+counterfactual_figure_manifest.csv, which contain no images.
 """
 from __future__ import annotations
 
@@ -37,7 +45,8 @@ from statistics import mean
 from PIL import Image, ImageDraw, ImageFont
 
 import color_analysis as color
-from _ext import OFFICIAL_RUN, REPO, REPRO, SEEDS, WOS_JSONL, local_path, passed_run, write_csv
+from _ext import (COUNTERFACTUAL_DIR, EXTENSIONS, OFFICIAL_RUN, REPO, REPRO, SEEDS, WOS_JSONL, local_path, passed_run,
+                  read_csv, write_csv)
 
 CASES = (  # manuscript Figures A1-A3
     ("A1", "purse", "224499261"),
@@ -58,6 +67,17 @@ GAP = 8
 HEADER = 30
 GREEN, BLACK, GREY = (39, 174, 96), (17, 17, 17), (204, 204, 204)
 QUERY_COLOR, WRONG_COLOR, TARGET = (46, 139, 87), (192, 57, 43), (212, 172, 13)  # P03 show_case borders
+CF_SEED = 1  # P16: SEED = 1
+CF_BLUE, CF_ORANGE, CF_RED = (31, 119, 180), (242, 142, 43), (214, 39, 40)  # P16 BLUE, ORANGE, RED
+REVIEW_COLUMNS = ["pair_id", "set_id", "factor", "direction", "target_group", "target_main_category",
+                  "target_fine_category", "baseline_factor_level", "counterfactual_factor_level",
+                  "context_aware_description", "counterfactual_description", "counterfactual_replacement_terms",
+                  "preserved_non_target_factor_core", "rewrite_basis", "target_item_id", "target_item_title",
+                  "partial_item_titles", "context_aware_rank", "counterfactual_rank",
+                  "rank_delta_counterfactual_minus_context", "context_aware_hit10", "counterfactual_hit10",
+                  "top1_changed", "top5_jaccard_overlap", "context_aware_top5_ids", "counterfactual_top5_ids",
+                  "target_factor_reasonable_change", "non_target_factors_preserved", "visual_content_stable",
+                  "retrieval_change_explainable", "drift_level", "review_note"]  # A46
 
 
 def font(size: int, bold: bool = False):
@@ -203,6 +223,91 @@ def draw_color_case(fig_id: str, set_id: str, target: str, category: str, outfit
     return fig
 
 
+def split_ids(value: str) -> list[str]:
+    return [x.strip() for x in str(value).split("|") if x.strip()]
+
+
+def counterfactual_review(pairs: list[dict], cases: list[dict]) -> list[dict]:
+    """P16 cell 7: the review sheet A46 (the manual columns stay empty)."""
+    by = {(c["pair_id"], c["condition"]): c for c in cases}
+    rows = []
+    for pair in pairs:
+        pid = pair["pair_id"]
+        b, c = by[(pid, "context_aware")], by[(pid, "counterfactual")]
+        b_top5, c_top5 = split_ids(b["top5_ids"]), split_ids(c["top5_ids"])
+        overlap = len(set(b_top5) & set(c_top5)) / max(1, len(set(b_top5) | set(c_top5)))
+        row = {k: pair.get(k, "") for k in REVIEW_COLUMNS}
+        row.update({
+            "context_aware_rank": int(b["rank"]), "counterfactual_rank": int(c["rank"]),
+            "rank_delta_counterfactual_minus_context": int(c["rank"]) - int(b["rank"]),
+            "context_aware_hit10": int(b["hit@10"]), "counterfactual_hit10": int(c["hit@10"]),
+            "top1_changed": int(str(b["top1_id"]) != str(c["top1_id"])), "top5_jaccard_overlap": round(overlap, 4),
+            "context_aware_top5_ids": b["top5_ids"], "counterfactual_top5_ids": c["top5_ids"],
+            "target_factor_reasonable_change": "", "non_target_factors_preserved": "", "visual_content_stable": "",
+            "retrieval_change_explainable": "", "drift_level": "", "review_note": "",
+        })
+        rows.append(row)
+    return rows
+
+
+def select_examples(review: list[dict]) -> tuple[dict, dict]:
+    """P16 cell 9: the largest absolute rank change (then top-1 changed), and the smallest one (then the largest
+    top-5 overlap), each in a stable sort as pandas does."""
+    def rank_delta(r):
+        return abs(int(r["rank_delta_counterfactual_minus_context"]))
+    large = sorted(review, key=lambda r: (-rank_delta(r), -int(r["top1_changed"])))[0]
+    small = [r for r in sorted(review, key=lambda r: (rank_delta(r), -float(r["top5_jaccard_overlap"])))
+             if r["pair_id"] != large["pair_id"]][0]
+    return large, small
+
+
+def draw_counterfactual(fig_id: str, panel: str, row: dict, pair: dict, image_root: Path) -> Image.Image:
+    """P16 build_single_svg, drawn with Pillow."""
+    partial = split_ids(pair["partial_item_ids"])
+    response = "larger retrieval response" if panel == "A" else "limited retrieval response"
+    lines = [
+        (f"Figure {fig_id}  |  Example {panel}: {pair['factor']} / {pair['direction']} ({response})  |  seed {CF_SEED}",
+         font(15, True), BLACK),
+        (f"{pair['target_group']}; target={pair['target_main_category']} / {pair['target_fine_category']}", font(12), BLACK),
+        (f"context-aware rank #{row['context_aware_rank']}; counterfactual rank #{row['counterfactual_rank']}; "
+         f"top-5 overlap {float(row['top5_jaccard_overlap']):.2f}", font(12), BLACK),
+    ]
+    width = max(GAP + 6 * (TILE + GAP) + 40, max(int(f.getlength(t)) for t, f, _ in lines) + 2 * GAP)
+    descriptions = {name: textwrap.wrap(pair[key], width=max(60, width // 8))[:2]
+                    for name, key in (("context", "context_aware_description"),
+                                      ("counterfactual", "counterfactual_description"))}
+    height = 3 * 20 + 16 + 3 * (HEADER + TILE + 20 + GAP) + sum(18 * len(v) for v in descriptions.values()) + 20
+    fig = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(fig)
+    y = 6
+    for text, f, color_rgb in lines:
+        draw.text((GAP, y), text, fill=color_rgb, font=f)
+        y += 20
+    y += 16
+
+    def band(title, title_rgb, items, labels, border, desc=()):
+        nonlocal y
+        draw.text((GAP, y + 6), title, fill=title_rgb, font=font(13, True))
+        y += HEADER
+        for line in desc:
+            draw.text((GAP, y), line, fill=title_rgb, font=font(12))
+            y += 18
+        for i, (item, label) in enumerate(zip(items, labels)):
+            x = GAP + i * (TILE + GAP)
+            b = border[i] if isinstance(border, list) else border
+            fig.paste(tile(image_root, item, b, 4), (x, y))
+            draw.text((x + 4, y + TILE + 2), label, fill=(68, 68, 68), font=font(11))
+        y += TILE + 20 + GAP
+
+    band("Query outfit", BLACK, partial + [pair["target_item_id"]],
+         [f"Item {i + 1}" for i in range(len(partial))] + ["Target"], [CF_BLUE] * len(partial) + [CF_RED])
+    band("Context-aware", CF_BLUE, split_ids(row["context_aware_top5_ids"])[:5], [f"Top-{i + 1}" for i in range(5)],
+         CF_BLUE, descriptions["context"])
+    band("Counterfactual", CF_ORANGE, split_ids(row["counterfactual_top5_ids"])[:5], [f"Top-{i + 1}" for i in range(5)],
+         CF_ORANGE, descriptions["counterfactual"])
+    return fig
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     source = parser.add_mutually_exclusive_group(required=True)
@@ -212,13 +317,17 @@ def main() -> None:
     parser.add_argument("--manifest-dir", type=Path, default=None,
                         help="folder for case_figures_manifest.csv (no images); default: --out-dir")
     parser.add_argument("--polyvore-root", default=None)
+    parser.add_argument("--counterfactual-dir", type=Path, default=None,
+                        help="outputs of counterfactual.py (default: the run's extensions/counterfactual/)")
     args = parser.parse_args()
 
     if args.official:
         run_id, detail_root = OFFICIAL_RUN, REPRO / "results" / "raw" / OFFICIAL_RUN / "ablation"
+        cf_dir = args.counterfactual_dir or EXTENSIONS / OFFICIAL_RUN / "counterfactual"
     else:
         run_root = passed_run(args.run_root)
         run_id, detail_root = run_root.name, run_root / "ablation" / "runs"
+        cf_dir = args.counterfactual_dir or run_root / "extensions" / "counterfactual"
     out = safe_out_dir(args.out_dir)
     polyvore = local_path("polyvore_root", args.polyvore_root)
     if polyvore is None or not (polyvore / "images").is_dir():
@@ -297,6 +406,32 @@ def main() -> None:
     print(f"[FIGURES] {fig_id} {name}: seed {rep['seed']}; rank Original {rep['rank_original']}, Full "
           f"{rep['rank_full']}; top-5 colors Original {', '.join(rep['topk_colors_original'][:TOPK])}; "
           f"Full {', '.join(rep['topk_colors_full'][:TOPK])}")
+
+    # 2025 F34a / F34b: counterfactual examples (P16 cells 7 and 9)
+    cases_path = cf_dir / f"cases_seed{CF_SEED}.csv"
+    if not cases_path.is_file():
+        print(f"[FIGURES] F34a/F34b SKIPPED: {cases_path} not found (run the counterfactual step first)")
+    else:
+        pairs = {r["pair_id"]: r for r in read_csv(COUNTERFACTUAL_DIR / "A44_counterfactual_context_pairs.csv")}
+        review = counterfactual_review(list(pairs.values()), read_csv(cases_path))
+        write_csv((args.manifest_dir or out) / f"counterfactual_review_seed{CF_SEED}.csv", REVIEW_COLUMNS,
+                  [[r[c] for c in REVIEW_COLUMNS] for r in review])
+        archived = select_examples(read_csv(COUNTERFACTUAL_DIR / "A46_counterfactual_context_manual_review_sheet.csv"))
+        cf_manifest = []
+        for (fig_id, panel), row in zip((("F34a", "A"), ("F34b", "B")), select_examples(review)):
+            image = draw_counterfactual(fig_id, panel, row, pairs[row["pair_id"]], polyvore / "images")
+            image.save(out / f"figure_{fig_id}_counterfactual_{row['pair_id']}_seed{CF_SEED}.png")
+            cf_manifest.append([fig_id, row["pair_id"], row["factor"], row["direction"], row["target_item_id"],
+                                row["context_aware_rank"], row["counterfactual_rank"], row["top5_jaccard_overlap"],
+                                row["context_aware_top5_ids"], row["counterfactual_top5_ids"]])
+            print(f"[FIGURES] {fig_id}: {row['pair_id']} {row['factor']}/{row['direction']}, rank "
+                  f"{row['context_aware_rank']} -> {row['counterfactual_rank']}, top-5 overlap {row['top5_jaccard_overlap']}")
+        write_csv((args.manifest_dir or out) / "counterfactual_figure_manifest.csv",
+                  ["figure", "pair_id", "factor", "direction", "target_item_id", "context_aware_rank",
+                   "counterfactual_rank", "top5_jaccard_overlap", "context_aware_top5_ids", "counterfactual_top5_ids"],
+                  cf_manifest)
+        print(f"[FIGURES] the same rule on the archived A46 selects {archived[0]['pair_id']} and {archived[1]['pair_id']} "
+              "(the 2025 figures show CF04 and CF09)")
     print(f"[FIGURES] run {run_id}: figures in {out} (local only; they contain Polyvore photos)")
 
 

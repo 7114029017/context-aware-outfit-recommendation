@@ -1,0 +1,4 @@
+Text field,N records,Empty records,Mean / median / max word count,Mean query-token count,Texts <= 3 words,Unique word tokens,Type-token ratio,Note
+Original title field,"35,140","5,945 (16.92%)",1.83 / 2.00 / 5 words,1.83,96.49%,"1,523",0.0237,Dataset characterization only; original retrieval baseline uses url_name + title.
+Original url_name + title query (outfitUrlTitle),"35,140",34 (0.10%),4.82 / 5.00 / 25 words,4.90,21.88%,"8,557",0.0505,Original-paper text embedding context used for fair baseline comparison.
+Generated context-aware description (title only),"35,140",0 (0.00%),10.08 / 10.00 / 27 words,11.60,0.00%,"3,310",0.0093,Proposed/generated query; original url_name is not appended.

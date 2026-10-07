@@ -1,0 +1,98 @@
+{
+ "case_set_id": "224188768",
+ "query_text": "26.2° C, Effortless Summer Wedding Style with a Pop of Citrus",
+ "device": "cpu",
+ "model": "run full_20261002T161428Z, main/context_seed1",
+ "checkpoint_sha256": "858200398832f15a3d0160f58be7012340e207aa9981af0477c43b3f5f0101e7",
+ "fashionclip": "patrickjohncyh/fashion-clip@7e3ba62ce16b379a1ab479346b66f192e76f51b7",
+ "bank_sizes": {
+  "lower": 7695,
+  "upper": 14270,
+  "shoe": 13225,
+  "bag": 11688,
+  "overall": 5170
+ },
+ "gt_by_slot": {
+  "upper": null,
+  "lower": null,
+  "overall": "209144226",
+  "shoe": "208337886",
+  "bag": "201548065"
+ },
+ "schema": [
+  "overall",
+  "shoe",
+  "bag"
+ ],
+ "results": {
+  "keep0": {
+   "kept": [],
+   "steps": [
+    {
+     "step": 1,
+     "slot": "overall",
+     "item_id": "209144226",
+     "score": 0.7932778000831604,
+     "runner_up": "196120491",
+     "runner_up_score": 0.781728982925415
+    },
+    {
+     "step": 2,
+     "slot": "shoe",
+     "item_id": "82253359",
+     "score": 0.7568025588989258,
+     "runner_up": "133780489",
+     "runner_up_score": 0.735460638999939
+    },
+    {
+     "step": 3,
+     "slot": "bag",
+     "item_id": "112382686",
+     "score": 0.788535475730896,
+     "runner_up": "205926499",
+     "runner_up_score": 0.7431122660636902
+    }
+   ]
+  },
+  "keep1": {
+   "kept": [
+    "overall"
+   ],
+   "steps": [
+    {
+     "step": 1,
+     "slot": "shoe",
+     "item_id": "82253359",
+     "score": 0.7568025588989258,
+     "runner_up": "133780489",
+     "runner_up_score": 0.735460638999939
+    },
+    {
+     "step": 2,
+     "slot": "bag",
+     "item_id": "112382686",
+     "score": 0.788535475730896,
+     "runner_up": "205926499",
+     "runner_up_score": 0.7431122660636902
+    }
+   ]
+  },
+  "keep2": {
+   "kept": [
+    "overall",
+    "shoe"
+   ],
+   "steps": [
+    {
+     "step": 1,
+     "slot": "bag",
+     "item_id": "112382686",
+     "score": 0.6884132027626038,
+     "runner_up": "205926499",
+     "runner_up_score": 0.6654466390609741
+    }
+   ]
+  }
+ },
+ "figure": "figure_P02_outfit_generation_224188768_seed1.png"
+}

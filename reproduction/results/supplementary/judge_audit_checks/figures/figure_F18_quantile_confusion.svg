@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="767" height="460" viewBox="0 0 767 460" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="383.70" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Confusion matrix of quantile bins, A rows, B columns (2025 figure F18)</text>
+<text x="383.70" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Score deciles of Judge A (Qwen) and Judge B (Gemma); QWK = 0.067554 (T19)</text>
+<text x="49.40" y="89.00" font-size="10" fill="#222222" text-anchor="end">A bin 0</text>
+<rect x="57.40" y="70.00" width="58.00" height="30.00" fill="#404285" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">1605</text>
+<rect x="115.40" y="70.00" width="58.00" height="30.00" fill="#44357f" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">1256</text>
+<rect x="173.40" y="70.00" width="58.00" height="30.00" fill="#33648d" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">2583</text>
+<rect x="231.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="70.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="89.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="119.00" font-size="10" fill="#222222" text-anchor="end">A bin 1</text>
+<rect x="57.40" y="100.00" width="58.00" height="30.00" fill="#461567" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">464</text>
+<rect x="115.40" y="100.00" width="58.00" height="30.00" fill="#482777" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">878</text>
+<rect x="173.40" y="100.00" width="58.00" height="30.00" fill="#287c8e" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">3403</text>
+<rect x="231.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="100.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="119.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="149.00" font-size="10" fill="#222222" text-anchor="end">A bin 2</text>
+<rect x="57.40" y="130.00" width="58.00" height="30.00" fill="#450759" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">132</text>
+<rect x="115.40" y="130.00" width="58.00" height="30.00" fill="#450d5f" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">286</text>
+<rect x="173.40" y="130.00" width="58.00" height="30.00" fill="#482979" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">934</text>
+<rect x="231.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="130.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="149.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="179.00" font-size="10" fill="#222222" text-anchor="end">A bin 3</text>
+<rect x="57.40" y="160.00" width="58.00" height="30.00" fill="#461365" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">421</text>
+<rect x="115.40" y="160.00" width="58.00" height="30.00" fill="#482a79" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">942</text>
+<rect x="173.40" y="160.00" width="58.00" height="30.00" fill="#297b8e" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">3358</text>
+<rect x="231.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="160.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="179.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="209.00" font-size="10" fill="#222222" text-anchor="end">A bin 4</text>
+<rect x="57.40" y="190.00" width="58.00" height="30.00" fill="#461667" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">487</text>
+<rect x="115.40" y="190.00" width="58.00" height="30.00" fill="#404286" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">1624</text>
+<rect x="173.40" y="190.00" width="58.00" height="30.00" fill="#73cf55" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="209.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">6369</text>
+<rect x="231.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="190.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="209.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="239.00" font-size="10" fill="#222222" text-anchor="end">A bin 5</text>
+<rect x="57.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="115.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="173.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="231.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="220.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="239.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="269.00" font-size="10" fill="#222222" text-anchor="end">A bin 6</text>
+<rect x="57.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="115.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="173.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="231.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="250.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="269.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="299.00" font-size="10" fill="#222222" text-anchor="end">A bin 7</text>
+<rect x="57.40" y="280.00" width="58.00" height="30.00" fill="#461364" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">406</text>
+<rect x="115.40" y="280.00" width="58.00" height="30.00" fill="#3d4c89" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">1883</text>
+<rect x="173.40" y="280.00" width="58.00" height="30.00" fill="#fde725" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="299.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">8109</text>
+<rect x="231.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="280.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="299.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="329.00" font-size="10" fill="#222222" text-anchor="end">A bin 8</text>
+<rect x="57.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="115.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="173.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="231.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="310.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="329.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="49.40" y="359.00" font-size="10" fill="#222222" text-anchor="end">A bin 9</text>
+<rect x="57.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="86.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="115.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="144.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="173.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="202.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="231.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="260.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="289.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="318.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="347.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="376.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="405.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="434.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="463.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="492.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="521.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="550.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<rect x="579.40" y="340.00" width="58.00" height="30.00" fill="#440154" stroke="#ffffff" stroke-width="1.0"/>
+<text x="608.40" y="359.00" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">0</text>
+<text x="86.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 86.40 384.00)">B bin 0</text>
+<text x="144.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 144.40 384.00)">B bin 1</text>
+<text x="202.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 202.40 384.00)">B bin 2</text>
+<text x="260.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 260.40 384.00)">B bin 3</text>
+<text x="318.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 318.40 384.00)">B bin 4</text>
+<text x="376.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 376.40 384.00)">B bin 5</text>
+<text x="434.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 434.40 384.00)">B bin 6</text>
+<text x="492.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 492.40 384.00)">B bin 7</text>
+<text x="550.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 550.40 384.00)">B bin 8</text>
+<text x="608.40" y="384.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 608.40 384.00)">B bin 9</text>
+<rect x="667.40" y="70.00" width="14.00" height="8.00" fill="#fde725"/>
+<rect x="667.40" y="77.50" width="14.00" height="8.00" fill="#ece526"/>
+<rect x="667.40" y="85.00" width="14.00" height="8.00" fill="#dce328"/>
+<rect x="667.40" y="92.50" width="14.00" height="8.00" fill="#cbe129"/>
+<rect x="667.40" y="100.00" width="14.00" height="8.00" fill="#bbdf2b"/>
+<rect x="667.40" y="107.50" width="14.00" height="8.00" fill="#aadc32"/>
+<rect x="667.40" y="115.00" width="14.00" height="8.00" fill="#9ad83c"/>
+<rect x="667.40" y="122.50" width="14.00" height="8.00" fill="#89d447"/>
+<rect x="667.40" y="130.00" width="14.00" height="8.00" fill="#79d051"/>
+<rect x="667.40" y="137.50" width="14.00" height="8.00" fill="#6acc5b"/>
+<rect x="667.40" y="145.00" width="14.00" height="8.00" fill="#5cc762"/>
+<rect x="667.40" y="152.50" width="14.00" height="8.00" fill="#4fc26a"/>
+<rect x="667.40" y="160.00" width="14.00" height="8.00" fill="#42bc71"/>
+<rect x="667.40" y="167.50" width="14.00" height="8.00" fill="#35b779"/>
+<rect x="667.40" y="175.00" width="14.00" height="8.00" fill="#30b17d"/>
+<rect x="667.40" y="182.50" width="14.00" height="8.00" fill="#2bab80"/>
+<rect x="667.40" y="190.00" width="14.00" height="8.00" fill="#26a684"/>
+<rect x="667.40" y="197.50" width="14.00" height="8.00" fill="#21a088"/>
+<rect x="667.40" y="205.00" width="14.00" height="8.00" fill="#209a8a"/>
+<rect x="667.40" y="212.50" width="14.00" height="8.00" fill="#22938b"/>
+<rect x="667.40" y="220.00" width="14.00" height="8.00" fill="#238d8c"/>
+<rect x="667.40" y="227.50" width="14.00" height="8.00" fill="#25868d"/>
+<rect x="667.40" y="235.00" width="14.00" height="8.00" fill="#27808e"/>
+<rect x="667.40" y="242.50" width="14.00" height="8.00" fill="#297a8e"/>
+<rect x="667.40" y="250.00" width="14.00" height="8.00" fill="#2c748e"/>
+<rect x="667.40" y="257.50" width="14.00" height="8.00" fill="#2e6e8e"/>
+<rect x="667.40" y="265.00" width="14.00" height="8.00" fill="#31688e"/>
+<rect x="667.40" y="272.50" width="14.00" height="8.00" fill="#34618d"/>
+<rect x="667.40" y="280.00" width="14.00" height="8.00" fill="#375a8c"/>
+<rect x="667.40" y="287.50" width="14.00" height="8.00" fill="#3a538b"/>
+<rect x="667.40" y="295.00" width="14.00" height="8.00" fill="#3d4b89"/>
+<rect x="667.40" y="302.50" width="14.00" height="8.00" fill="#404486"/>
+<rect x="667.40" y="310.00" width="14.00" height="8.00" fill="#423c82"/>
+<rect x="667.40" y="317.50" width="14.00" height="8.00" fill="#44357f"/>
+<rect x="667.40" y="325.00" width="14.00" height="8.00" fill="#462d7b"/>
+<rect x="667.40" y="332.50" width="14.00" height="8.00" fill="#482575"/>
+<rect x="667.40" y="340.00" width="14.00" height="8.00" fill="#471c6d"/>
+<rect x="667.40" y="347.50" width="14.00" height="8.00" fill="#461365"/>
+<rect x="667.40" y="355.00" width="14.00" height="8.00" fill="#450a5c"/>
+<rect x="667.40" y="362.50" width="14.00" height="8.00" fill="#440154"/>
+<text x="685.40" y="78.00" font-size="9" fill="#222222">8109</text>
+<text x="685.40" y="370.00" font-size="9" fill="#222222">0</text>
+<text x="727.40" y="220.00" font-size="9.5" fill="#222222" text-anchor="middle" transform="rotate(-90 727.40 220.00)">descriptions</text>
+</svg>

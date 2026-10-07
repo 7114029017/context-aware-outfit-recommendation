@@ -1,6 +1,8 @@
-# Not committed: model checkpoints, large row-level files and logs with local paths.
+# Not committed: model checkpoints, large row-level files (A31, OR recall, reliability T18 layout) and logs with
+# local paths.
 *.pt
 *.log
 logs/
 A31_second_model_two_tower_or_rowlevel.csv
 or_recall_rowlevel.csv
+reliability_required_fields.csv

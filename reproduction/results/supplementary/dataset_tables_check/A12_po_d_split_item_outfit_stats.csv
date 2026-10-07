@@ -1,0 +1,5 @@
+split,n_outfits,n_item_occurrences,n_unique_items,mean_outfit_length,median_outfit_length,min_outfit_length,max_outfit_length
+train,16995,85935,71967,5.0565,5.0000,2,16
+valid,3000,15288,14657,5.0960,5.0000,2,14
+test,15145,74262,70035,4.9034,5.0000,2,14
+all_po_d,35140,175485,152785,4.9939,5.0000,2,16

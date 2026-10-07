@@ -1,0 +1,472 @@
+table,row,column,recomputed,archived,equal
+T00_dataset_overview_po_d_main.csv,1,Category,Dataset,Dataset,yes
+T00_dataset_overview_po_d_main.csv,1,Statistic,Source,Source,yes
+T00_dataset_overview_po_d_main.csv,1,Value,Polyvore Outfits Disjoint version (PO-D),Polyvore Outfits Disjoint version (PO-D),yes
+T00_dataset_overview_po_d_main.csv,2,Category,Dataset split,Dataset split,yes
+T00_dataset_overview_po_d_main.csv,2,Statistic,Train / validation / test / total outfits,Train / validation / test / total outfits,yes
+T00_dataset_overview_po_d_main.csv,2,Value,"16,995 / 3,000 / 15,145 / 35,140","16,995 / 3,000 / 15,145 / 35,140",yes
+T00_dataset_overview_po_d_main.csv,3,Category,Dataset split,Dataset split,yes
+T00_dataset_overview_po_d_main.csv,3,Statistic,Generated-valid descriptions aligned to PO-D,Generated-valid descriptions aligned to PO-D,yes
+T00_dataset_overview_po_d_main.csv,3,Value,"35,140 / 35,140 (100.00%)","35,140 / 35,140 (100.00%)",yes
+T00_dataset_overview_po_d_main.csv,4,Category,Reference metadata,Reference metadata,yes
+T00_dataset_overview_po_d_main.csv,4,Statistic,Original Polyvore title metadata records,Original Polyvore title metadata records,yes
+T00_dataset_overview_po_d_main.csv,4,Value,"68,306 (metadata pool only; not main experimental N)","68,306 (metadata pool only; not main experimental N)",yes
+T00_dataset_overview_po_d_main.csv,5,Category,CP evaluation,CP evaluation,yes
+T00_dataset_overview_po_d_main.csv,5,Statistic,Compatibility test pairs,Compatibility test pairs,yes
+T00_dataset_overview_po_d_main.csv,5,Value,"30,290","30,290",yes
+T00_dataset_overview_po_d_main.csv,6,Category,CP evaluation,CP evaluation,yes
+T00_dataset_overview_po_d_main.csv,6,Statistic,FITB test questions,FITB test questions,yes
+T00_dataset_overview_po_d_main.csv,6,Value,"15,145","15,145",yes
+T00_dataset_overview_po_d_main.csv,7,Category,CIR evaluation,CIR evaluation,yes
+T00_dataset_overview_po_d_main.csv,7,Statistic,Initial test questions before CIR eligibility filtering,Initial test questions before CIR eligibility filtering,yes
+T00_dataset_overview_po_d_main.csv,7,Value,"15,145","15,145",yes
+T00_dataset_overview_po_d_main.csv,8,Category,CIR evaluation,CIR evaluation,yes
+T00_dataset_overview_po_d_main.csv,8,Statistic,Evaluable query-target pairs per seed,Evaluable query-target pairs per seed,yes
+T00_dataset_overview_po_d_main.csv,8,Value,"9,311 (9,311 unique pairs)","9,311 (9,311 unique pairs)",yes
+T00_dataset_overview_po_d_main.csv,9,Category,CIR evaluation,CIR evaluation,yes
+T00_dataset_overview_po_d_main.csv,9,Statistic,Excluded from CIR recall computation,Excluded from CIR recall computation,yes
+T00_dataset_overview_po_d_main.csv,9,Value,"5,834 test questions","5,834 test questions",yes
+T00_dataset_overview_po_d_main.csv,10,Category,CIR evaluation,CIR evaluation,yes
+T00_dataset_overview_po_d_main.csv,10,Statistic,"Reason for 9,311 rather than 15,145","Reason for 9,311 rather than 15,145",yes
+T00_dataset_overview_po_d_main.csv,10,Value,CIR keeps only target fine-grained categories with an eligible same-category distractor pool in the original evaluation; skipped cases are not CP cases.,CIR keeps only target fine-grained categories with an eligible same-category distractor pool in the original evaluation; skipped cases are not CP cases.,yes
+T00_dataset_overview_po_d_main.csv,11,Category,CIR evaluation,CIR evaluation,yes
+T00_dataset_overview_po_d_main.csv,11,Statistic,Target fine-grained categories represented in CIR detail,Target fine-grained categories represented in CIR detail,yes
+T00_dataset_overview_po_d_main.csv,11,Value,19,19,yes
+T00_dataset_overview_po_d_main.csv,12,Category,CIR evaluation,CIR evaluation,yes
+T00_dataset_overview_po_d_main.csv,12,Statistic,Seed-level paired CIR records across 5 seeds,Seed-level paired CIR records across 5 seeds,yes
+T00_dataset_overview_po_d_main.csv,12,Value,"46,555","46,555",yes
+T00_dataset_overview_po_d_main.csv,13,Category,Supplementary no-missing ablation,Supplementary no-missing ablation,yes
+T00_dataset_overview_po_d_main.csv,13,Statistic,no_missing_none_ids total / test overlap,no_missing_none_ids total / test overlap,yes
+T00_dataset_overview_po_d_main.csv,13,Value,"21,903 / 9,930","21,903 / 9,930",yes
+T00_dataset_overview_po_d_main.csv,14,Category,Supplementary no-missing ablation,Supplementary no-missing ablation,yes
+T00_dataset_overview_po_d_main.csv,14,Statistic,CIR evaluable pairs per seed under experiments_none_only,CIR evaluable pairs per seed under experiments_none_only,yes
+T00_dataset_overview_po_d_main.csv,14,Value,"3,432 (not the main experiment scope)","3,432 (not the main experiment scope)",yes
+T00_dataset_overview_po_d_main.csv,15,Category,Outfit composition,Outfit composition,yes
+T00_dataset_overview_po_d_main.csv,15,Statistic,Item occurrences / unique items,Item occurrences / unique items,yes
+T00_dataset_overview_po_d_main.csv,15,Value,"175,485 / 152,785","175,485 / 152,785",yes
+T00_dataset_overview_po_d_main.csv,16,Category,Outfit composition,Outfit composition,yes
+T00_dataset_overview_po_d_main.csv,16,Statistic,Mean / median outfit length,Mean / median outfit length,yes
+T00_dataset_overview_po_d_main.csv,16,Value,4.99 / 5.00 items,4.99 / 5.00 items,yes
+T00_dataset_characterization_po_d_main.csv,1,Category,Dataset,Dataset,yes
+T00_dataset_characterization_po_d_main.csv,1,Statistic,Source,Source,yes
+T00_dataset_characterization_po_d_main.csv,1,Value,Polyvore Outfits Disjoint version (PO-D),Polyvore Outfits Disjoint version (PO-D),yes
+T00_dataset_characterization_po_d_main.csv,2,Category,Dataset split,Dataset split,yes
+T00_dataset_characterization_po_d_main.csv,2,Statistic,Train / validation / test outfits,Train / validation / test outfits,yes
+T00_dataset_characterization_po_d_main.csv,2,Value,"16,995 / 3,000 / 15,145","16,995 / 3,000 / 15,145",yes
+T00_dataset_characterization_po_d_main.csv,3,Category,Main experiment,Main experiment,yes
+T00_dataset_characterization_po_d_main.csv,3,Statistic,Total outfits,Total outfits,yes
+T00_dataset_characterization_po_d_main.csv,3,Value,"35,140","35,140",yes
+T00_dataset_characterization_po_d_main.csv,4,Category,Outfit composition,Outfit composition,yes
+T00_dataset_characterization_po_d_main.csv,4,Statistic,Item occurrences,Item occurrences,yes
+T00_dataset_characterization_po_d_main.csv,4,Value,"175,485","175,485",yes
+T00_dataset_characterization_po_d_main.csv,5,Category,Outfit composition,Outfit composition,yes
+T00_dataset_characterization_po_d_main.csv,5,Statistic,Unique items,Unique items,yes
+T00_dataset_characterization_po_d_main.csv,5,Value,"152,785","152,785",yes
+T00_dataset_characterization_po_d_main.csv,6,Category,Outfit composition,Outfit composition,yes
+T00_dataset_characterization_po_d_main.csv,6,Statistic,Mean / median outfit length,Mean / median outfit length,yes
+T00_dataset_characterization_po_d_main.csv,6,Value,4.99 / 5.00 items,4.99 / 5.00 items,yes
+T00_dataset_characterization_po_d_main.csv,7,Category,Original title field,Original title field,yes
+T00_dataset_characterization_po_d_main.csv,7,Statistic,Empty titles,Empty titles,yes
+T00_dataset_characterization_po_d_main.csv,7,Value,5945 (16.92%),5945 (16.92%),yes
+T00_dataset_characterization_po_d_main.csv,8,Category,Original title field,Original title field,yes
+T00_dataset_characterization_po_d_main.csv,8,Statistic,Mean / median / max length,Mean / median / max length,yes
+T00_dataset_characterization_po_d_main.csv,8,Value,1.83 / 2.00 / 5 tokens,1.83 / 2.00 / 5 tokens,yes
+T00_dataset_characterization_po_d_main.csv,9,Category,Original title field,Original title field,yes
+T00_dataset_characterization_po_d_main.csv,9,Statistic,Titles ≤ 3 tokens,Titles ≤ 3 tokens,yes
+T00_dataset_characterization_po_d_main.csv,9,Value,96.49%,96.49%,yes
+T00_dataset_characterization_po_d_main.csv,10,Category,Generated description,Generated description,yes
+T00_dataset_characterization_po_d_main.csv,10,Statistic,Mean / median / max length,Mean / median / max length,yes
+T00_dataset_characterization_po_d_main.csv,10,Value,10.08 / 10.00 / 27 tokens,10.08 / 10.00 / 27 tokens,yes
+T00_dataset_characterization_po_d_main.csv,11,Category,Generated description,Generated description,yes
+T00_dataset_characterization_po_d_main.csv,11,Statistic,Mean / median / max length without temperature prefix,Mean / median / max length without temperature prefix,yes
+T00_dataset_characterization_po_d_main.csv,11,Value,9.08 / 9.00 / 26 tokens,9.08 / 9.00 / 26 tokens,yes
+T01_text_field_comparison_po_d_main.csv,1,Text field,Original title field,Original title field,yes
+T01_text_field_comparison_po_d_main.csv,1,N records,"35,140","35,140",yes
+T01_text_field_comparison_po_d_main.csv,1,Empty records,"5,945 (16.92%)","5,945 (16.92%)",yes
+T01_text_field_comparison_po_d_main.csv,1,Mean / median / max word count,1.83 / 2.00 / 5 words,1.83 / 2.00 / 5 words,yes
+T01_text_field_comparison_po_d_main.csv,1,Mean query-token count,1.83,1.83,yes
+T01_text_field_comparison_po_d_main.csv,1,Texts <= 3 words,96.49%,96.49%,yes
+T01_text_field_comparison_po_d_main.csv,1,Unique word tokens,"1,523","1,523",yes
+T01_text_field_comparison_po_d_main.csv,1,Type-token ratio,0.0237,0.0237,yes
+T01_text_field_comparison_po_d_main.csv,1,Note,Dataset characterization only; original retrieval baseline uses url_name + title.,Dataset characterization only; original retrieval baseline uses url_name + title.,yes
+T01_text_field_comparison_po_d_main.csv,2,Text field,Original url_name + title query (outfitUrlTitle),Original url_name + title query (outfitUrlTitle),yes
+T01_text_field_comparison_po_d_main.csv,2,N records,"35,140","35,140",yes
+T01_text_field_comparison_po_d_main.csv,2,Empty records,34 (0.10%),34 (0.10%),yes
+T01_text_field_comparison_po_d_main.csv,2,Mean / median / max word count,4.82 / 5.00 / 25 words,4.82 / 5.00 / 25 words,yes
+T01_text_field_comparison_po_d_main.csv,2,Mean query-token count,4.90,4.90,yes
+T01_text_field_comparison_po_d_main.csv,2,Texts <= 3 words,21.88%,21.88%,yes
+T01_text_field_comparison_po_d_main.csv,2,Unique word tokens,"8,557","8,557",yes
+T01_text_field_comparison_po_d_main.csv,2,Type-token ratio,0.0505,0.0505,yes
+T01_text_field_comparison_po_d_main.csv,2,Note,Original-paper text embedding context used for fair baseline comparison.,Original-paper text embedding context used for fair baseline comparison.,yes
+T01_text_field_comparison_po_d_main.csv,3,Text field,Generated context-aware description (title only),Generated context-aware description (title only),yes
+T01_text_field_comparison_po_d_main.csv,3,N records,"35,140","35,140",yes
+T01_text_field_comparison_po_d_main.csv,3,Empty records,0 (0.00%),0 (0.00%),yes
+T01_text_field_comparison_po_d_main.csv,3,Mean / median / max word count,10.08 / 10.00 / 27 words,10.08 / 10.00 / 27 words,yes
+T01_text_field_comparison_po_d_main.csv,3,Mean query-token count,11.60,11.60,yes
+T01_text_field_comparison_po_d_main.csv,3,Texts <= 3 words,0.00%,0.00%,yes
+T01_text_field_comparison_po_d_main.csv,3,Unique word tokens,"3,310","3,310",yes
+T01_text_field_comparison_po_d_main.csv,3,Type-token ratio,0.0093,0.0093,yes
+T01_text_field_comparison_po_d_main.csv,3,Note,Proposed/generated query; original url_name is not appended.,Proposed/generated query; original url_name is not appended.,yes
+A01_title_length_audit.csv,1,dataset,Original title field matched to PO-D ids,Original title field matched to PO-D ids,yes
+A01_title_length_audit.csv,1,n_records,35140,35140,yes
+A01_title_length_audit.csv,1,empty_records,5945,5945,yes
+A01_title_length_audit.csv,1,pct_empty,16.92,16.92,yes
+A01_title_length_audit.csv,1,mean_word_count,1.8311,1.8311,yes
+A01_title_length_audit.csv,1,median_word_count,2.0000,2.0000,yes
+A01_title_length_audit.csv,1,max_word_count,5,5,yes
+A01_title_length_audit.csv,1,mean_query_token_count,1.8318,1.8318,yes
+A01_title_length_audit.csv,1,median_query_token_count,2.0000,2.0000,yes
+A01_title_length_audit.csv,1,max_query_token_count,5,5,yes
+A01_title_length_audit.csv,1,pct_word_len_le_3,96.49,96.49,yes
+A01_title_length_audit.csv,1,pct_word_len_le_5,100.00,100.00,yes
+A01_title_length_audit.csv,1,total_word_tokens,64344,64344,yes
+A01_title_length_audit.csv,1,unique_word_tokens,1523,1523,yes
+A01_title_length_audit.csv,1,type_token_ratio,0.023670,0.023670,yes
+A01_title_length_audit.csv,2,dataset,Original url_name + title query matched to PO-D ids,Original url_name + title query matched to PO-D ids,yes
+A01_title_length_audit.csv,2,n_records,35140,35140,yes
+A01_title_length_audit.csv,2,empty_records,34,34,yes
+A01_title_length_audit.csv,2,pct_empty,0.10,0.10,yes
+A01_title_length_audit.csv,2,mean_word_count,4.8177,4.8177,yes
+A01_title_length_audit.csv,2,median_word_count,5.0000,5.0000,yes
+A01_title_length_audit.csv,2,max_word_count,25,25,yes
+A01_title_length_audit.csv,2,mean_query_token_count,4.8964,4.8964,yes
+A01_title_length_audit.csv,2,median_query_token_count,5.0000,5.0000,yes
+A01_title_length_audit.csv,2,max_query_token_count,29,29,yes
+A01_title_length_audit.csv,2,pct_word_len_le_3,21.88,21.88,yes
+A01_title_length_audit.csv,2,pct_word_len_le_5,64.46,64.46,yes
+A01_title_length_audit.csv,2,total_word_tokens,169294,169294,yes
+A01_title_length_audit.csv,2,unique_word_tokens,8557,8557,yes
+A01_title_length_audit.csv,2,type_token_ratio,0.050545,0.050545,yes
+A01_title_length_audit.csv,3,dataset,Generated context-aware title-only query,Generated context-aware title-only query,yes
+A01_title_length_audit.csv,3,n_records,35140,35140,yes
+A01_title_length_audit.csv,3,empty_records,0,0,yes
+A01_title_length_audit.csv,3,pct_empty,0.00,0.00,yes
+A01_title_length_audit.csv,3,mean_word_count,10.0783,10.0783,yes
+A01_title_length_audit.csv,3,median_word_count,10.0000,10.0000,yes
+A01_title_length_audit.csv,3,max_word_count,27,27,yes
+A01_title_length_audit.csv,3,mean_query_token_count,11.5951,11.5951,yes
+A01_title_length_audit.csv,3,median_query_token_count,11.0000,11.0000,yes
+A01_title_length_audit.csv,3,max_query_token_count,29,29,yes
+A01_title_length_audit.csv,3,pct_word_len_le_3,0.00,0.00,yes
+A01_title_length_audit.csv,3,pct_word_len_le_5,2.65,2.65,yes
+A01_title_length_audit.csv,3,total_word_tokens,354152,354152,yes
+A01_title_length_audit.csv,3,unique_word_tokens,3310,3310,yes
+A01_title_length_audit.csv,3,type_token_ratio,0.009346,0.009346,yes
+A02_generation_coverage_audit.csv,1,metric,po_d_disjoint_train_records,po_d_disjoint_train_records,yes
+A02_generation_coverage_audit.csv,1,value,16995,16995,yes
+A02_generation_coverage_audit.csv,2,metric,po_d_disjoint_valid_records,po_d_disjoint_valid_records,yes
+A02_generation_coverage_audit.csv,2,value,3000,3000,yes
+A02_generation_coverage_audit.csv,3,metric,po_d_disjoint_test_records,po_d_disjoint_test_records,yes
+A02_generation_coverage_audit.csv,3,value,15145,15145,yes
+A02_generation_coverage_audit.csv,4,metric,po_d_disjoint_total_records,po_d_disjoint_total_records,yes
+A02_generation_coverage_audit.csv,4,value,35140,35140,yes
+A02_generation_coverage_audit.csv,5,metric,generated_valid_title_records,generated_valid_title_records,yes
+A02_generation_coverage_audit.csv,5,value,35140,35140,yes
+A02_generation_coverage_audit.csv,6,metric,original_polyvore_title_metadata_records,original_polyvore_title_metadata_records,yes
+A02_generation_coverage_audit.csv,6,value,68306,68306,yes
+A02_generation_coverage_audit.csv,7,metric,cp_compatibility_test_pairs,cp_compatibility_test_pairs,yes
+A02_generation_coverage_audit.csv,7,value,30290,30290,yes
+A02_generation_coverage_audit.csv,8,metric,cp_fitb_test_questions,cp_fitb_test_questions,yes
+A02_generation_coverage_audit.csv,8,value,15145,15145,yes
+A02_generation_coverage_audit.csv,9,metric,cir_evaluable_query_target_pairs_per_seed,cir_evaluable_query_target_pairs_per_seed,yes
+A02_generation_coverage_audit.csv,9,value,9311,9311,yes
+A02_generation_coverage_audit.csv,10,metric,cir_test_questions_excluded_by_cir_eligibility,cir_test_questions_excluded_by_cir_eligibility,yes
+A02_generation_coverage_audit.csv,10,value,5834,5834,yes
+A02_generation_coverage_audit.csv,11,metric,no_missing_none_ids_total,no_missing_none_ids_total,yes
+A02_generation_coverage_audit.csv,11,value,21903,21903,yes
+A12_po_d_split_item_outfit_stats.csv,1,split,train,train,yes
+A12_po_d_split_item_outfit_stats.csv,1,n_outfits,16995,16995,yes
+A12_po_d_split_item_outfit_stats.csv,1,n_item_occurrences,85935,85935,yes
+A12_po_d_split_item_outfit_stats.csv,1,n_unique_items,71967,71967,yes
+A12_po_d_split_item_outfit_stats.csv,1,mean_outfit_length,5.0565,5.0565,yes
+A12_po_d_split_item_outfit_stats.csv,1,median_outfit_length,5.0000,5.0000,yes
+A12_po_d_split_item_outfit_stats.csv,1,min_outfit_length,2,2,yes
+A12_po_d_split_item_outfit_stats.csv,1,max_outfit_length,16,16,yes
+A12_po_d_split_item_outfit_stats.csv,2,split,valid,valid,yes
+A12_po_d_split_item_outfit_stats.csv,2,n_outfits,3000,3000,yes
+A12_po_d_split_item_outfit_stats.csv,2,n_item_occurrences,15288,15288,yes
+A12_po_d_split_item_outfit_stats.csv,2,n_unique_items,14657,14657,yes
+A12_po_d_split_item_outfit_stats.csv,2,mean_outfit_length,5.0960,5.0960,yes
+A12_po_d_split_item_outfit_stats.csv,2,median_outfit_length,5.0000,5.0000,yes
+A12_po_d_split_item_outfit_stats.csv,2,min_outfit_length,2,2,yes
+A12_po_d_split_item_outfit_stats.csv,2,max_outfit_length,14,14,yes
+A12_po_d_split_item_outfit_stats.csv,3,split,test,test,yes
+A12_po_d_split_item_outfit_stats.csv,3,n_outfits,15145,15145,yes
+A12_po_d_split_item_outfit_stats.csv,3,n_item_occurrences,74262,74262,yes
+A12_po_d_split_item_outfit_stats.csv,3,n_unique_items,70035,70035,yes
+A12_po_d_split_item_outfit_stats.csv,3,mean_outfit_length,4.9034,4.9034,yes
+A12_po_d_split_item_outfit_stats.csv,3,median_outfit_length,5.0000,5.0000,yes
+A12_po_d_split_item_outfit_stats.csv,3,min_outfit_length,2,2,yes
+A12_po_d_split_item_outfit_stats.csv,3,max_outfit_length,14,14,yes
+A12_po_d_split_item_outfit_stats.csv,4,split,all_po_d,all_po_d,yes
+A12_po_d_split_item_outfit_stats.csv,4,n_outfits,35140,35140,yes
+A12_po_d_split_item_outfit_stats.csv,4,n_item_occurrences,175485,175485,yes
+A12_po_d_split_item_outfit_stats.csv,4,n_unique_items,152785,152785,yes
+A12_po_d_split_item_outfit_stats.csv,4,mean_outfit_length,4.9939,4.9939,yes
+A12_po_d_split_item_outfit_stats.csv,4,median_outfit_length,5.0000,5.0000,yes
+A12_po_d_split_item_outfit_stats.csv,4,min_outfit_length,2,2,yes
+A12_po_d_split_item_outfit_stats.csv,4,max_outfit_length,16,16,yes
+A13_po_d_semantic_category_distribution.csv,1,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,1,semantic_category,shoes,shoes,yes
+A13_po_d_semantic_category_distribution.csv,1,item_occurrences,16175,16175,yes
+A13_po_d_semantic_category_distribution.csv,1,pct_item_occurrences,18.82,18.82,yes
+A13_po_d_semantic_category_distribution.csv,1,unique_items,13362,13362,yes
+A13_po_d_semantic_category_distribution.csv,1,pct_unique_items,18.57,18.57,yes
+A13_po_d_semantic_category_distribution.csv,2,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,2,semantic_category,bags,bags,yes
+A13_po_d_semantic_category_distribution.csv,2,item_occurrences,14574,14574,yes
+A13_po_d_semantic_category_distribution.csv,2,pct_item_occurrences,16.96,16.96,yes
+A13_po_d_semantic_category_distribution.csv,2,unique_items,11832,11832,yes
+A13_po_d_semantic_category_distribution.csv,2,pct_unique_items,16.44,16.44,yes
+A13_po_d_semantic_category_distribution.csv,3,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,3,semantic_category,jewellery,jewellery,yes
+A13_po_d_semantic_category_distribution.csv,3,item_occurrences,14091,14091,yes
+A13_po_d_semantic_category_distribution.csv,3,pct_item_occurrences,16.40,16.40,yes
+A13_po_d_semantic_category_distribution.csv,3,unique_items,12067,12067,yes
+A13_po_d_semantic_category_distribution.csv,3,pct_unique_items,16.77,16.77,yes
+A13_po_d_semantic_category_distribution.csv,4,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,4,semantic_category,tops,tops,yes
+A13_po_d_semantic_category_distribution.csv,4,item_occurrences,10465,10465,yes
+A13_po_d_semantic_category_distribution.csv,4,pct_item_occurrences,12.18,12.18,yes
+A13_po_d_semantic_category_distribution.csv,4,unique_items,9136,9136,yes
+A13_po_d_semantic_category_distribution.csv,4,pct_unique_items,12.69,12.69,yes
+A13_po_d_semantic_category_distribution.csv,5,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,5,semantic_category,bottoms,bottoms,yes
+A13_po_d_semantic_category_distribution.csv,5,item_occurrences,9653,9653,yes
+A13_po_d_semantic_category_distribution.csv,5,pct_item_occurrences,11.23,11.23,yes
+A13_po_d_semantic_category_distribution.csv,5,unique_items,7886,7886,yes
+A13_po_d_semantic_category_distribution.csv,5,pct_unique_items,10.96,10.96,yes
+A13_po_d_semantic_category_distribution.csv,6,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,6,semantic_category,all-body,all-body,yes
+A13_po_d_semantic_category_distribution.csv,6,item_occurrences,6579,6579,yes
+A13_po_d_semantic_category_distribution.csv,6,pct_item_occurrences,7.66,7.66,yes
+A13_po_d_semantic_category_distribution.csv,6,unique_items,5751,5751,yes
+A13_po_d_semantic_category_distribution.csv,6,pct_unique_items,7.99,7.99,yes
+A13_po_d_semantic_category_distribution.csv,7,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,7,semantic_category,outerwear,outerwear,yes
+A13_po_d_semantic_category_distribution.csv,7,item_occurrences,4670,4670,yes
+A13_po_d_semantic_category_distribution.csv,7,pct_item_occurrences,5.43,5.43,yes
+A13_po_d_semantic_category_distribution.csv,7,unique_items,4153,4153,yes
+A13_po_d_semantic_category_distribution.csv,7,pct_unique_items,5.77,5.77,yes
+A13_po_d_semantic_category_distribution.csv,8,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,8,semantic_category,sunglasses,sunglasses,yes
+A13_po_d_semantic_category_distribution.csv,8,item_occurrences,4503,4503,yes
+A13_po_d_semantic_category_distribution.csv,8,pct_item_occurrences,5.24,5.24,yes
+A13_po_d_semantic_category_distribution.csv,8,unique_items,3294,3294,yes
+A13_po_d_semantic_category_distribution.csv,8,pct_unique_items,4.58,4.58,yes
+A13_po_d_semantic_category_distribution.csv,9,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,9,semantic_category,hats,hats,yes
+A13_po_d_semantic_category_distribution.csv,9,item_occurrences,2110,2110,yes
+A13_po_d_semantic_category_distribution.csv,9,pct_item_occurrences,2.46,2.46,yes
+A13_po_d_semantic_category_distribution.csv,9,unique_items,1676,1676,yes
+A13_po_d_semantic_category_distribution.csv,9,pct_unique_items,2.33,2.33,yes
+A13_po_d_semantic_category_distribution.csv,10,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,10,semantic_category,accessories,accessories,yes
+A13_po_d_semantic_category_distribution.csv,10,item_occurrences,1885,1885,yes
+A13_po_d_semantic_category_distribution.csv,10,pct_item_occurrences,2.19,2.19,yes
+A13_po_d_semantic_category_distribution.csv,10,unique_items,1692,1692,yes
+A13_po_d_semantic_category_distribution.csv,10,pct_unique_items,2.35,2.35,yes
+A13_po_d_semantic_category_distribution.csv,11,split,train,train,yes
+A13_po_d_semantic_category_distribution.csv,11,semantic_category,scarves,scarves,yes
+A13_po_d_semantic_category_distribution.csv,11,item_occurrences,1230,1230,yes
+A13_po_d_semantic_category_distribution.csv,11,pct_item_occurrences,1.43,1.43,yes
+A13_po_d_semantic_category_distribution.csv,11,unique_items,1118,1118,yes
+A13_po_d_semantic_category_distribution.csv,11,pct_unique_items,1.55,1.55,yes
+A13_po_d_semantic_category_distribution.csv,12,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,12,semantic_category,shoes,shoes,yes
+A13_po_d_semantic_category_distribution.csv,12,item_occurrences,2873,2873,yes
+A13_po_d_semantic_category_distribution.csv,12,pct_item_occurrences,18.79,18.79,yes
+A13_po_d_semantic_category_distribution.csv,12,unique_items,2736,2736,yes
+A13_po_d_semantic_category_distribution.csv,12,pct_unique_items,18.67,18.67,yes
+A13_po_d_semantic_category_distribution.csv,13,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,13,semantic_category,bags,bags,yes
+A13_po_d_semantic_category_distribution.csv,13,item_occurrences,2613,2613,yes
+A13_po_d_semantic_category_distribution.csv,13,pct_item_occurrences,17.09,17.09,yes
+A13_po_d_semantic_category_distribution.csv,13,unique_items,2478,2478,yes
+A13_po_d_semantic_category_distribution.csv,13,pct_unique_items,16.91,16.91,yes
+A13_po_d_semantic_category_distribution.csv,14,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,14,semantic_category,jewellery,jewellery,yes
+A13_po_d_semantic_category_distribution.csv,14,item_occurrences,2445,2445,yes
+A13_po_d_semantic_category_distribution.csv,14,pct_item_occurrences,15.99,15.99,yes
+A13_po_d_semantic_category_distribution.csv,14,unique_items,2378,2378,yes
+A13_po_d_semantic_category_distribution.csv,14,pct_unique_items,16.22,16.22,yes
+A13_po_d_semantic_category_distribution.csv,15,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,15,semantic_category,tops,tops,yes
+A13_po_d_semantic_category_distribution.csv,15,item_occurrences,1838,1838,yes
+A13_po_d_semantic_category_distribution.csv,15,pct_item_occurrences,12.02,12.02,yes
+A13_po_d_semantic_category_distribution.csv,15,unique_items,1797,1797,yes
+A13_po_d_semantic_category_distribution.csv,15,pct_unique_items,12.26,12.26,yes
+A13_po_d_semantic_category_distribution.csv,16,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,16,semantic_category,bottoms,bottoms,yes
+A13_po_d_semantic_category_distribution.csv,16,item_occurrences,1719,1719,yes
+A13_po_d_semantic_category_distribution.csv,16,pct_item_occurrences,11.24,11.24,yes
+A13_po_d_semantic_category_distribution.csv,16,unique_items,1640,1640,yes
+A13_po_d_semantic_category_distribution.csv,16,pct_unique_items,11.19,11.19,yes
+A13_po_d_semantic_category_distribution.csv,17,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,17,semantic_category,all-body,all-body,yes
+A13_po_d_semantic_category_distribution.csv,17,item_occurrences,1131,1131,yes
+A13_po_d_semantic_category_distribution.csv,17,pct_item_occurrences,7.40,7.40,yes
+A13_po_d_semantic_category_distribution.csv,17,unique_items,1096,1096,yes
+A13_po_d_semantic_category_distribution.csv,17,pct_unique_items,7.48,7.48,yes
+A13_po_d_semantic_category_distribution.csv,18,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,18,semantic_category,outerwear,outerwear,yes
+A13_po_d_semantic_category_distribution.csv,18,item_occurrences,884,884,yes
+A13_po_d_semantic_category_distribution.csv,18,pct_item_occurrences,5.78,5.78,yes
+A13_po_d_semantic_category_distribution.csv,18,unique_items,862,862,yes
+A13_po_d_semantic_category_distribution.csv,18,pct_unique_items,5.88,5.88,yes
+A13_po_d_semantic_category_distribution.csv,19,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,19,semantic_category,sunglasses,sunglasses,yes
+A13_po_d_semantic_category_distribution.csv,19,item_occurrences,789,789,yes
+A13_po_d_semantic_category_distribution.csv,19,pct_item_occurrences,5.16,5.16,yes
+A13_po_d_semantic_category_distribution.csv,19,unique_items,712,712,yes
+A13_po_d_semantic_category_distribution.csv,19,pct_unique_items,4.86,4.86,yes
+A13_po_d_semantic_category_distribution.csv,20,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,20,semantic_category,hats,hats,yes
+A13_po_d_semantic_category_distribution.csv,20,item_occurrences,384,384,yes
+A13_po_d_semantic_category_distribution.csv,20,pct_item_occurrences,2.51,2.51,yes
+A13_po_d_semantic_category_distribution.csv,20,unique_items,362,362,yes
+A13_po_d_semantic_category_distribution.csv,20,pct_unique_items,2.47,2.47,yes
+A13_po_d_semantic_category_distribution.csv,21,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,21,semantic_category,accessories,accessories,yes
+A13_po_d_semantic_category_distribution.csv,21,item_occurrences,351,351,yes
+A13_po_d_semantic_category_distribution.csv,21,pct_item_occurrences,2.30,2.30,yes
+A13_po_d_semantic_category_distribution.csv,21,unique_items,339,339,yes
+A13_po_d_semantic_category_distribution.csv,21,pct_unique_items,2.31,2.31,yes
+A13_po_d_semantic_category_distribution.csv,22,split,valid,valid,yes
+A13_po_d_semantic_category_distribution.csv,22,semantic_category,scarves,scarves,yes
+A13_po_d_semantic_category_distribution.csv,22,item_occurrences,261,261,yes
+A13_po_d_semantic_category_distribution.csv,22,pct_item_occurrences,1.71,1.71,yes
+A13_po_d_semantic_category_distribution.csv,22,unique_items,257,257,yes
+A13_po_d_semantic_category_distribution.csv,22,pct_unique_items,1.75,1.75,yes
+A13_po_d_semantic_category_distribution.csv,23,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,23,semantic_category,shoes,shoes,yes
+A13_po_d_semantic_category_distribution.csv,23,item_occurrences,14021,14021,yes
+A13_po_d_semantic_category_distribution.csv,23,pct_item_occurrences,18.88,18.88,yes
+A13_po_d_semantic_category_distribution.csv,23,unique_items,13225,13225,yes
+A13_po_d_semantic_category_distribution.csv,23,pct_unique_items,18.88,18.88,yes
+A13_po_d_semantic_category_distribution.csv,24,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,24,semantic_category,bags,bags,yes
+A13_po_d_semantic_category_distribution.csv,24,item_occurrences,12329,12329,yes
+A13_po_d_semantic_category_distribution.csv,24,pct_item_occurrences,16.60,16.60,yes
+A13_po_d_semantic_category_distribution.csv,24,unique_items,11688,11688,yes
+A13_po_d_semantic_category_distribution.csv,24,pct_unique_items,16.69,16.69,yes
+A13_po_d_semantic_category_distribution.csv,25,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,25,semantic_category,jewellery,jewellery,yes
+A13_po_d_semantic_category_distribution.csv,25,item_occurrences,11254,11254,yes
+A13_po_d_semantic_category_distribution.csv,25,pct_item_occurrences,15.15,15.15,yes
+A13_po_d_semantic_category_distribution.csv,25,unique_items,10680,10680,yes
+A13_po_d_semantic_category_distribution.csv,25,pct_unique_items,15.25,15.25,yes
+A13_po_d_semantic_category_distribution.csv,26,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,26,semantic_category,tops,tops,yes
+A13_po_d_semantic_category_distribution.csv,26,item_occurrences,9522,9522,yes
+A13_po_d_semantic_category_distribution.csv,26,pct_item_occurrences,12.82,12.82,yes
+A13_po_d_semantic_category_distribution.csv,26,unique_items,9005,9005,yes
+A13_po_d_semantic_category_distribution.csv,26,pct_unique_items,12.86,12.86,yes
+A13_po_d_semantic_category_distribution.csv,27,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,27,semantic_category,bottoms,bottoms,yes
+A13_po_d_semantic_category_distribution.csv,27,item_occurrences,8324,8324,yes
+A13_po_d_semantic_category_distribution.csv,27,pct_item_occurrences,11.21,11.21,yes
+A13_po_d_semantic_category_distribution.csv,27,unique_items,7695,7695,yes
+A13_po_d_semantic_category_distribution.csv,27,pct_unique_items,10.99,10.99,yes
+A13_po_d_semantic_category_distribution.csv,28,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,28,semantic_category,outerwear,outerwear,yes
+A13_po_d_semantic_category_distribution.csv,28,item_occurrences,5570,5570,yes
+A13_po_d_semantic_category_distribution.csv,28,pct_item_occurrences,7.50,7.50,yes
+A13_po_d_semantic_category_distribution.csv,28,unique_items,5265,5265,yes
+A13_po_d_semantic_category_distribution.csv,28,pct_unique_items,7.52,7.52,yes
+A13_po_d_semantic_category_distribution.csv,29,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,29,semantic_category,all-body,all-body,yes
+A13_po_d_semantic_category_distribution.csv,29,item_occurrences,5322,5322,yes
+A13_po_d_semantic_category_distribution.csv,29,pct_item_occurrences,7.17,7.17,yes
+A13_po_d_semantic_category_distribution.csv,29,unique_items,5170,5170,yes
+A13_po_d_semantic_category_distribution.csv,29,pct_unique_items,7.38,7.38,yes
+A13_po_d_semantic_category_distribution.csv,30,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,30,semantic_category,sunglasses,sunglasses,yes
+A13_po_d_semantic_category_distribution.csv,30,item_occurrences,2821,2821,yes
+A13_po_d_semantic_category_distribution.csv,30,pct_item_occurrences,3.80,3.80,yes
+A13_po_d_semantic_category_distribution.csv,30,unique_items,2449,2449,yes
+A13_po_d_semantic_category_distribution.csv,30,pct_unique_items,3.50,3.50,yes
+A13_po_d_semantic_category_distribution.csv,31,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,31,semantic_category,accessories,accessories,yes
+A13_po_d_semantic_category_distribution.csv,31,item_occurrences,2017,2017,yes
+A13_po_d_semantic_category_distribution.csv,31,pct_item_occurrences,2.72,2.72,yes
+A13_po_d_semantic_category_distribution.csv,31,unique_items,1931,1931,yes
+A13_po_d_semantic_category_distribution.csv,31,pct_unique_items,2.76,2.76,yes
+A13_po_d_semantic_category_distribution.csv,32,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,32,semantic_category,hats,hats,yes
+A13_po_d_semantic_category_distribution.csv,32,item_occurrences,1638,1638,yes
+A13_po_d_semantic_category_distribution.csv,32,pct_item_occurrences,2.21,2.21,yes
+A13_po_d_semantic_category_distribution.csv,32,unique_items,1529,1529,yes
+A13_po_d_semantic_category_distribution.csv,32,pct_unique_items,2.18,2.18,yes
+A13_po_d_semantic_category_distribution.csv,33,split,test,test,yes
+A13_po_d_semantic_category_distribution.csv,33,semantic_category,scarves,scarves,yes
+A13_po_d_semantic_category_distribution.csv,33,item_occurrences,1444,1444,yes
+A13_po_d_semantic_category_distribution.csv,33,pct_item_occurrences,1.94,1.94,yes
+A13_po_d_semantic_category_distribution.csv,33,unique_items,1398,1398,yes
+A13_po_d_semantic_category_distribution.csv,33,pct_unique_items,2.00,2.00,yes
+A13_po_d_semantic_category_distribution.csv,34,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,34,semantic_category,shoes,shoes,yes
+A13_po_d_semantic_category_distribution.csv,34,item_occurrences,33069,33069,yes
+A13_po_d_semantic_category_distribution.csv,34,pct_item_occurrences,18.84,18.84,yes
+A13_po_d_semantic_category_distribution.csv,34,unique_items,28534,28534,yes
+A13_po_d_semantic_category_distribution.csv,34,pct_unique_items,18.68,18.68,yes
+A13_po_d_semantic_category_distribution.csv,35,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,35,semantic_category,bags,bags,yes
+A13_po_d_semantic_category_distribution.csv,35,item_occurrences,29516,29516,yes
+A13_po_d_semantic_category_distribution.csv,35,pct_item_occurrences,16.82,16.82,yes
+A13_po_d_semantic_category_distribution.csv,35,unique_items,25287,25287,yes
+A13_po_d_semantic_category_distribution.csv,35,pct_unique_items,16.55,16.55,yes
+A13_po_d_semantic_category_distribution.csv,36,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,36,semantic_category,jewellery,jewellery,yes
+A13_po_d_semantic_category_distribution.csv,36,item_occurrences,27790,27790,yes
+A13_po_d_semantic_category_distribution.csv,36,pct_item_occurrences,15.84,15.84,yes
+A13_po_d_semantic_category_distribution.csv,36,unique_items,24506,24506,yes
+A13_po_d_semantic_category_distribution.csv,36,pct_unique_items,16.04,16.04,yes
+A13_po_d_semantic_category_distribution.csv,37,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,37,semantic_category,tops,tops,yes
+A13_po_d_semantic_category_distribution.csv,37,item_occurrences,21825,21825,yes
+A13_po_d_semantic_category_distribution.csv,37,pct_item_occurrences,12.44,12.44,yes
+A13_po_d_semantic_category_distribution.csv,37,unique_items,19561,19561,yes
+A13_po_d_semantic_category_distribution.csv,37,pct_unique_items,12.80,12.80,yes
+A13_po_d_semantic_category_distribution.csv,38,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,38,semantic_category,bottoms,bottoms,yes
+A13_po_d_semantic_category_distribution.csv,38,item_occurrences,19696,19696,yes
+A13_po_d_semantic_category_distribution.csv,38,pct_item_occurrences,11.22,11.22,yes
+A13_po_d_semantic_category_distribution.csv,38,unique_items,16752,16752,yes
+A13_po_d_semantic_category_distribution.csv,38,pct_unique_items,10.96,10.96,yes
+A13_po_d_semantic_category_distribution.csv,39,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,39,semantic_category,all-body,all-body,yes
+A13_po_d_semantic_category_distribution.csv,39,item_occurrences,13032,13032,yes
+A13_po_d_semantic_category_distribution.csv,39,pct_item_occurrences,7.43,7.43,yes
+A13_po_d_semantic_category_distribution.csv,39,unique_items,11783,11783,yes
+A13_po_d_semantic_category_distribution.csv,39,pct_unique_items,7.71,7.71,yes
+A13_po_d_semantic_category_distribution.csv,40,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,40,semantic_category,outerwear,outerwear,yes
+A13_po_d_semantic_category_distribution.csv,40,item_occurrences,11124,11124,yes
+A13_po_d_semantic_category_distribution.csv,40,pct_item_occurrences,6.34,6.34,yes
+A13_po_d_semantic_category_distribution.csv,40,unique_items,10111,10111,yes
+A13_po_d_semantic_category_distribution.csv,40,pct_unique_items,6.62,6.62,yes
+A13_po_d_semantic_category_distribution.csv,41,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,41,semantic_category,sunglasses,sunglasses,yes
+A13_po_d_semantic_category_distribution.csv,41,item_occurrences,8113,8113,yes
+A13_po_d_semantic_category_distribution.csv,41,pct_item_occurrences,4.62,4.62,yes
+A13_po_d_semantic_category_distribution.csv,41,unique_items,6152,6152,yes
+A13_po_d_semantic_category_distribution.csv,41,pct_unique_items,4.03,4.03,yes
+A13_po_d_semantic_category_distribution.csv,42,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,42,semantic_category,accessories,accessories,yes
+A13_po_d_semantic_category_distribution.csv,42,item_occurrences,4253,4253,yes
+A13_po_d_semantic_category_distribution.csv,42,pct_item_occurrences,2.42,2.42,yes
+A13_po_d_semantic_category_distribution.csv,42,unique_items,3904,3904,yes
+A13_po_d_semantic_category_distribution.csv,42,pct_unique_items,2.56,2.56,yes
+A13_po_d_semantic_category_distribution.csv,43,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,43,semantic_category,hats,hats,yes
+A13_po_d_semantic_category_distribution.csv,43,item_occurrences,4132,4132,yes
+A13_po_d_semantic_category_distribution.csv,43,pct_item_occurrences,2.35,2.35,yes
+A13_po_d_semantic_category_distribution.csv,43,unique_items,3463,3463,yes
+A13_po_d_semantic_category_distribution.csv,43,pct_unique_items,2.27,2.27,yes
+A13_po_d_semantic_category_distribution.csv,44,split,all_po_d,all_po_d,yes
+A13_po_d_semantic_category_distribution.csv,44,semantic_category,scarves,scarves,yes
+A13_po_d_semantic_category_distribution.csv,44,item_occurrences,2935,2935,yes
+A13_po_d_semantic_category_distribution.csv,44,pct_item_occurrences,1.67,1.67,yes
+A13_po_d_semantic_category_distribution.csv,44,unique_items,2732,2732,yes
+A13_po_d_semantic_category_distribution.csv,44,pct_unique_items,1.79,1.79,yes

@@ -1,0 +1,87 @@
+{
+ "mode": "validate_2025",
+ "polyvore_queries": 9311,
+ "labels_equal_archived_t18": true,
+ "a16_equal_archived": true,
+ "archived_t18_sha256": "c57e0bf9eda77e11ef58916d35e88fda8e72f3ac3e0404a5dd3f6a7280286b86",
+ "agreement": [
+  {
+   "run_tag": "original",
+   "queries": 9311,
+   "archived_queries": 9311,
+   "matched": 9311,
+   "rank_equal": 7342,
+   "largest_rank_difference": 8,
+   "hit10_equal": 9310,
+   "top1_equal": 9294,
+   "top10_list_equal": 8775,
+   "largest_confidence_difference": "0.005378",
+   "high_conf_error_flag_equal": 9303,
+   "error_type_equal": 9303
+  },
+  {
+   "run_tag": "proposed",
+   "queries": 9311,
+   "archived_queries": 9311,
+   "matched": 9311,
+   "rank_equal": 7387,
+   "largest_rank_difference": 5,
+   "hit10_equal": 9310,
+   "top1_equal": 9294,
+   "top10_list_equal": 8746,
+   "largest_confidence_difference": "0.005178",
+   "high_conf_error_flag_equal": 9308,
+   "error_type_equal": 9307
+  }
+ ],
+ "metric_code_equals_p04_printed": true,
+ "device": "cpu",
+ "precision": "float32",
+ "threads": 4,
+ "max_queries": null,
+ "status": "check_only",
+ "run": null,
+ "seconds": 917,
+ "torch": "2.9.1+cu130",
+ "cuda_device": null,
+ "models": {
+  "original": {
+   "checkpoint": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed1/ckpt.pt",
+   "sha256": "30a7c4c573bc598cab1d64ff7b876800611fa4361794f56a548fbbb5080f8b41"
+  },
+  "proposed": {
+   "checkpoint": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed1/ckpt.pt",
+   "sha256": "0fe754a09b382abcc5b040fe8b57a31f9cacb5ecc1a41dbe2ceb22bb19b5565b"
+  }
+ },
+ "queries": {
+  "original": 9311,
+  "proposed": 9311
+ },
+ "performance": {
+  "original": {
+   "n": 9311,
+   "Hit@1": 0.013854580603587154,
+   "Hit@10": 0.07786489098915261,
+   "Median Rank": 230.0,
+   "Mean Rank": 463.32252174846957,
+   "Avg Confidence": 0.7202871805487813,
+   "Error Rate": 0.9221351090108474,
+   "High-conf Error Rate": 0.21974009236387068,
+   "ECE": 0.6424222895596287,
+   "Brier Score": 0.5050624677560253
+  },
+  "proposed": {
+   "n": 9311,
+   "Hit@1": 0.015250778648909892,
+   "Hit@10": 0.0869938782085705,
+   "Median Rank": 205.0,
+   "Mean Rank": 441.7629685318441,
+   "Avg Confidence": 0.718543840730941,
+   "Error Rate": 0.9130061217914295,
+   "High-conf Error Rate": 0.206637310707765,
+   "ECE": 0.6315499625223705,
+   "Brier Score": 0.49741032516569605
+  }
+ }
+}

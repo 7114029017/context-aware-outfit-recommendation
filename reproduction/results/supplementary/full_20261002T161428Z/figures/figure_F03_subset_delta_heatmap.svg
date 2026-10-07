@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="344" viewBox="0 0 1080 344" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="539.77" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">ΔHit@10 across subsets and dimensions (2025 figure F03)</text>
+<text x="539.77" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z; colour scale -0.05 to +0.05 as in P02</text>
+<text x="185.40" y="97.00" font-size="10" fill="#222222" text-anchor="end">Weather: Cold vs Warm</text>
+<rect x="193.40" y="70.00" width="94.52" height="46.00" fill="#e0ecf3" stroke="#ffffff" stroke-width="1.0"/>
+<text x="240.66" y="97.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.006</text>
+<rect x="287.92" y="70.00" width="94.52" height="46.00" fill="#d9e9f1" stroke="#ffffff" stroke-width="1.0"/>
+<text x="335.18" y="97.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.008</text>
+<rect x="382.44" y="70.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="476.95" y="70.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="571.47" y="70.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="665.99" y="70.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="760.50" y="70.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="855.02" y="70.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<text x="185.40" y="143.00" font-size="10" fill="#222222" text-anchor="end">Occasion: Formal vs Casual</text>
+<rect x="193.40" y="116.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="287.92" y="116.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="382.44" y="116.00" width="94.52" height="46.00" fill="#e2edf3" stroke="#ffffff" stroke-width="1.0"/>
+<text x="429.69" y="143.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.006</text>
+<rect x="476.95" y="116.00" width="94.52" height="46.00" fill="#c8e1ee" stroke="#ffffff" stroke-width="1.0"/>
+<text x="524.21" y="143.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.011</text>
+<rect x="571.47" y="116.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="665.99" y="116.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="760.50" y="116.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="855.02" y="116.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<text x="185.40" y="189.00" font-size="10" fill="#222222" text-anchor="end">Style Richness: High vs Low</text>
+<rect x="193.40" y="162.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="287.92" y="162.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="382.44" y="162.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="476.95" y="162.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="571.47" y="162.00" width="94.52" height="46.00" fill="#ddebf2" stroke="#ffffff" stroke-width="1.0"/>
+<text x="618.73" y="189.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.007</text>
+<rect x="665.99" y="162.00" width="94.52" height="46.00" fill="#dceaf2" stroke="#ffffff" stroke-width="1.0"/>
+<text x="713.25" y="189.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.007</text>
+<rect x="760.50" y="162.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="855.02" y="162.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<text x="185.40" y="235.00" font-size="10" fill="#222222" text-anchor="end">Category: Clothing vs Accessory</text>
+<rect x="193.40" y="208.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="287.92" y="208.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="382.44" y="208.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="476.95" y="208.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="571.47" y="208.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="665.99" y="208.00" width="94.52" height="46.00" fill="#ffffff" stroke="#eeeeee" stroke-width="1.0"/>
+<rect x="760.50" y="208.00" width="94.52" height="46.00" fill="#abd2e5" stroke="#ffffff" stroke-width="1.0"/>
+<text x="807.76" y="235.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.016</text>
+<rect x="855.02" y="208.00" width="94.52" height="46.00" fill="#e4eef3" stroke="#ffffff" stroke-width="1.0"/>
+<text x="902.28" y="235.00" font-size="9" fill="#222222" text-anchor="middle" font-weight="bold">+0.005</text>
+<text x="240.66" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 240.66 268.00)">Cold</text>
+<text x="335.18" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 335.18 268.00)">Warm</text>
+<text x="429.69" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 429.69 268.00)">Formal</text>
+<text x="524.21" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 524.21 268.00)">Casual</text>
+<text x="618.73" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 618.73 268.00)">High style (≥2 terms)</text>
+<text x="713.25" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 713.25 268.00)">Low style (≤1 term)</text>
+<text x="807.76" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 807.76 268.00)">Clothing-led</text>
+<text x="902.28" y="268.00" font-size="9.5" fill="#222222" text-anchor="end" transform="rotate(-30 902.28 268.00)">Accessory-led</text>
+<rect x="979.54" y="70.00" width="14.00" height="5.10" fill="#053061"/>
+<rect x="979.54" y="74.60" width="14.00" height="5.10" fill="#0c3e74"/>
+<rect x="979.54" y="79.20" width="14.00" height="5.10" fill="#134c87"/>
+<rect x="979.54" y="83.80" width="14.00" height="5.10" fill="#1b5a9b"/>
+<rect x="979.54" y="88.40" width="14.00" height="5.10" fill="#2267ad"/>
+<rect x="979.54" y="93.00" width="14.00" height="5.10" fill="#2b73b2"/>
+<rect x="979.54" y="97.60" width="14.00" height="5.10" fill="#337eb8"/>
+<rect x="979.54" y="102.20" width="14.00" height="5.10" fill="#3c8abe"/>
+<rect x="979.54" y="106.80" width="14.00" height="5.10" fill="#4796c4"/>
+<rect x="979.54" y="111.40" width="14.00" height="5.10" fill="#5ba2cb"/>
+<rect x="979.54" y="116.00" width="14.00" height="5.10" fill="#70afd2"/>
+<rect x="979.54" y="120.60" width="14.00" height="5.10" fill="#84bcd9"/>
+<rect x="979.54" y="125.20" width="14.00" height="5.10" fill="#97c7df"/>
+<rect x="979.54" y="129.80" width="14.00" height="5.10" fill="#a7d0e4"/>
+<rect x="979.54" y="134.40" width="14.00" height="5.10" fill="#b7d8e9"/>
+<rect x="979.54" y="139.00" width="14.00" height="5.10" fill="#c7e0ed"/>
+<rect x="979.54" y="143.60" width="14.00" height="5.10" fill="#d5e7f1"/>
+<rect x="979.54" y="148.20" width="14.00" height="5.10" fill="#dfebf3"/>
+<rect x="979.54" y="152.80" width="14.00" height="5.10" fill="#e8f0f4"/>
+<rect x="979.54" y="157.40" width="14.00" height="5.10" fill="#f2f5f6"/>
+<rect x="979.54" y="162.00" width="14.00" height="5.10" fill="#f8f3f1"/>
+<rect x="979.54" y="166.60" width="14.00" height="5.10" fill="#f9ece5"/>
+<rect x="979.54" y="171.20" width="14.00" height="5.10" fill="#fbe5d8"/>
+<rect x="979.54" y="175.80" width="14.00" height="5.10" fill="#fcdecc"/>
+<rect x="979.54" y="180.40" width="14.00" height="5.10" fill="#fcd3bc"/>
+<rect x="979.54" y="185.00" width="14.00" height="5.10" fill="#f9c5ab"/>
+<rect x="979.54" y="189.60" width="14.00" height="5.10" fill="#f7b799"/>
+<rect x="979.54" y="194.20" width="14.00" height="5.10" fill="#f5a987"/>
+<rect x="979.54" y="198.80" width="14.00" height="5.10" fill="#ef9978"/>
+<rect x="979.54" y="203.40" width="14.00" height="5.10" fill="#e7876b"/>
+<rect x="979.54" y="208.00" width="14.00" height="5.10" fill="#df755d"/>
+<rect x="979.54" y="212.60" width="14.00" height="5.10" fill="#d86450"/>
+<rect x="979.54" y="217.20" width="14.00" height="5.10" fill="#cf5146"/>
+<rect x="979.54" y="221.80" width="14.00" height="5.10" fill="#c53f3d"/>
+<rect x="979.54" y="226.40" width="14.00" height="5.10" fill="#bc2c35"/>
+<rect x="979.54" y="231.00" width="14.00" height="5.10" fill="#b31a2c"/>
+<rect x="979.54" y="235.60" width="14.00" height="5.10" fill="#a11228"/>
+<rect x="979.54" y="240.20" width="14.00" height="5.10" fill="#8d0c25"/>
+<rect x="979.54" y="244.80" width="14.00" height="5.10" fill="#7a0622"/>
+<rect x="979.54" y="249.40" width="14.00" height="5.10" fill="#67001f"/>
+<text x="997.54" y="78.00" font-size="9" fill="#222222">+0.050</text>
+<text x="997.54" y="254.00" font-size="9" fill="#222222">-0.050</text>
+<text x="1039.54" y="162.00" font-size="9.5" fill="#222222" text-anchor="middle" transform="rotate(-90 1039.54 162.00)">ΔHit@10 (Full − Original)</text>
+</svg>

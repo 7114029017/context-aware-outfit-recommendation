@@ -20,6 +20,7 @@ A full run writes them to its own folder:
 | `supplementary/judge_audit_checks/` | Section 4, independent of the run | `results/supplementary/judge_audit_checks/` |
 | `supplementary/met_reference_check/` | Section 5, independent of the run; needs `bootstrap_data.sh --with-compendium` | `results/supplementary/met_reference_check/` |
 | `supplementary/checklist_coverage/` | Section 6, independent of the run; needs `bootstrap_data.sh --with-nomic` | `results/supplementary/checklist_coverage/` |
+| `supplementary/dataset_tables_check/` | Section 7, independent of the run | `results/supplementary/dataset_tables_check/` |
 | `logs/supplementary.log` | Console output | — |
 
 Without its download, section 5 or 6 prints `SKIPPED` and writes nothing. The
@@ -30,7 +31,7 @@ run's except for the run name in `run_analyses/summary.md` and in the figure
 subtitles; when it reports `CONSISTENT`, the values in `run_analyses/` differ
 slightly. The other folders do not depend on the run and should be identical.
 
-To run the six scripts by hand (under a minute on a CPU), for example after the
+To run the seven scripts by hand (under a minute on a CPU), for example after the
 step failed during a run:
 
     bash reproduction/scripts/supplementary/run_all.sh [--run-root PATH | --official] [--out-dir DIR]
@@ -74,7 +75,12 @@ metrics. From these files the script computes:
 | `case_ranks.csv` | Five-seed mean ranks of the purse, dress and sunglasses cases under the five conditions | Manuscript Section 5.5, Figures A1–A3 |
 | `fair_subset_factor_effects.csv` | Full minus Original, No-Weather, No-Occasion and No-Style for all eight metrics, with paired t-test p-values | Manuscript Section 5.3 |
 | `fair_subset_bh_family_sensitivity.csv` | Retrospective sensitivity analysis: BH over the five reported metrics (as in the manuscript) and over all eight metrics | Manuscript Table 7 |
-| `figures/` | Thesis Figures 4-8 to 4-13 (12 SVG files) | |
+| `subset_delta_hit10_pivot.csv` | The 2025 table T13: Hit@10 of Full minus Original, No-Weather, No-Occasion and No-Style for every subset (the layout of T13, from `subset_robustness_summary.csv`) | 2025 figures F03 and F04 |
+| `weather_bin_effects.csv` | The weather rows of the 2025 table T14: Hit@10 and median rank by band of the leading temperature of the description (cold ≤ 15 °C < mild ≤ 22 °C < warm ≤ 28 °C < hot), for Full against Original, No-Weather and No-Style. The program of T14 is not preserved; these cut-offs reproduce its four band sizes (1,380 / 5,145 / 10,540 / 95 observations). Its occasion rows could not be rebuilt (`known_limitations.md`) | 2025 table T14 |
+| `qualitative_failure_cases.csv`, `qualitative_user_cases.csv` | The 2025 case lists T16 and T17, written by the same lost program as T14. Their rows follow one rule, applied here: for each comparison (Original, No-Weather, No-Occasion and No-Style against Full) the 12 queries with the largest rank loss under Full (T16), and the 12 with the largest rank gain among the queries that Full ranks in the top 10 (T17); ties keep the order of the query rows. The occasion label is left empty; the simplified descriptions, empty in 2025, are filled in | 2025 tables T16 and T17 |
+| `stage1_cp_seed_detail.csv`, `stage1_cir_seed_detail.csv` | The 2025 tables T08 and T09: Full against Original on the fair subset at full precision (means, SDs, mean difference, paired t-test p, Cohen's dz), as notebook P01 (cell 5, `make_stage1_table`) wrote them; the pipeline writes the same comparison rounded as T03 and T04 | Manuscript Table 7 |
+| `main_statistical_rigor.csv` | The 2025 table A14: Full against Original over the five main seeds (CP AUC and FITB, CIR Recall@10, @30 and @50) with paired t-test, exact Wilcoxon signed-rank test, 95% CI, Cohen's dz and BH over the five tests (notebook P12, statistical rigor, cell 4) | Thesis Table 4-3 |
+| `figures/` | Thesis Figures 4-7 to 4-13 and the 2025 figures F03 and F04 (15 SVG files) | |
 
 The manuscript's Figure 4, subset and case values come from 2025 outputs
 (`known_limitations.md`). The official run gives the same subset conclusion
@@ -89,9 +95,21 @@ text (`run_analyses/summary.md` lists both).
 
 Cross-checks written to `summary.md`: the overall Hit@10 from the query rows
 equals the per-seed Recall@10; the observation counts equal the 2025 tables T12
-(all 13 rows) and T15 (all 32 rows); the BH values over the five reported
-metrics equal the run's tables T03 and T04; the mean differences and p-values
-of the four comparisons equal the run's table T02.
+(all 13 rows), T14 (its 12 weather rows) and T15 (all 32 rows); the BH values
+over the five reported metrics equal the run's tables T03 and T04, and so do
+the tables T08 and T09 at the precision printed there; the mean differences
+and p-values of the four comparisons equal the run's table T02;
+the means, differences, CIs, t-test p-values and dz of
+`main_statistical_rigor.csv` equal the run's `main_paired_bh_8metrics.csv`.
+
+With five seeds the exact two-sided Wilcoxon test cannot go below 0.0625 (all
+five differences of the same sign), so it is never significant; the 2025 table
+A14 shows 0.0625 for every metric as well, and the official run's paired t-tests
+are significant for all five metrics. Thesis Figure 4-7 (the share of each
+factor in the total loss when it is removed) is drawn from the run's table T07:
+for CP style accounts for 68-70%, for CIR the shares are not defined because
+removing occasion raises every recall (and removing weather raises Recall@10
+and Recall@50).
 
 ## 2. Audit of the input data
 
@@ -162,6 +180,9 @@ data, with the code of the 2025 notebooks P05 (cell 3) and P06 (cell 10):
 | `judge_score_diagnostics.csv`, `judge_score_histogram.csv`, `figures/figure_4_1_judge_score_histogram.svg` | Figure 4-1, the means ± SDs of Section 4.2.4 | Means and SDs equal T19 to all digits; the 100 bars equal the archived SVG of the thesis figure (F17), which bins both judges on [0, 1] (the notebook's own PNG binned each judge on its own range; the program that redrew it is not preserved) |
 | `bottom_p_sensitivity_band.csv`, `figures/figure_4_3_bottom_p_overlap_band.svg`, `figures/bottom_p_lift_band.svg` | Figure 4-3 | p = 1% to 30%, bootstrap B = 500, seed 123. Many descriptions share a score, so the lowest p% depends on how `numpy.argsort` orders ties: the curves differ from the archived figure (F19) by at most 0.012 (Jaccard) and 0.016 (F1), the bands by at most 0.0034, and the intersections of Table 4-7 by 1, 15 and 44 descriptions, as in the pipeline |
 | `item_disagreement.csv`, `figures/figure_4_4_item_disagreement.svg` | Figure 4-4, table T31 | All 25 rows equal the archived T31 in all compared columns and in order |
+| `audit_score_metrics.csv`, `audit_sample_scores.csv`, `figures/figure_F30_audit_sampling_coverage.svg`, `figure_F31_audit_error_metrics.svg`, `figure_F32_audit_score_scatter.svg` | 2025 tables T30 and A41, figures F30-F32: the weighted human score of each audited description and checklist against the judge's score (P06 cell 10) | Both tables equal the archived ones (A41: 30 descriptions) |
+| `judge_quantile_confusion.csv`, `figures/figure_F18_quantile_confusion.svg` | 2025 figure F18: the decile confusion matrix of the two judges behind the QWK of table T19 (P05 cell 3) | — |
+| `figures/figure_F20_prompt_robustness.svg` | 2025 figure F20: mean absolute score difference of the prompt variants P0-R2, P1 and P2 for each judge (notebook P06_prompt_robustness_reproducible, cell 3) | Means of the preserved comparison files (`*_robustness_run1_compare*.csv`); the archived T20 equals the correlation columns of T19 |
 | `judge_reference_scan.csv`, `judge_input_roles.csv` | Section 3.5.3 (judges used only for assessment), tables A05 and A06 | The 2025 search terms in the 2025 file list (11 files found, none references a judge output; two t-test notebooks are not in the repository) and in the 29 files executed for the reproduction's 35 units (none); only the post-hoc analysis scripts read judge outputs |
 
 ## 5. MET reference list
@@ -205,3 +226,20 @@ coverage table (51 thresholds × 10 columns) at the six printed decimals, both
 AvgMaxSim values (0.869612 and 0.879224), the category JSD (0.005029) and L1
 distance (0.151515), and the uncovered items at the focus threshold (13 of 15
 and 9 of 10); the focus threshold itself differs in the sixth decimal.
+
+## 7. Dataset tables
+
+Script: `scripts/supplementary/dataset_tables_check.py`.
+Output: `results/supplementary/dataset_tables_check/`; `supplementary/dataset_tables_check/` in a run folder.
+
+Rebuilds the 2025 dataset tables with the code of the programs that wrote them:
+T00 (dataset overview and characterization), T01 (text fields), A01 (title
+lengths) and A02 (generation coverage) from notebook P12 in
+`01_資料建構_data_construction/01_使用資料與資料範圍_dataset_scope/`, and A12
+(split statistics) and A13 (semantic categories) from
+`00_控制檢查與附加稽核/source_programs/build_journal_artifacts.py`. The program of
+the T00 characterization table is not preserved; its rows are rebuilt from the
+same statistics. Two inputs differ in kind from 2025: the CIR scope follows the
+rule of the archived evaluator (the 2025 per-query files are not preserved), and
+the fair subset is the reconstruction used by the official run. All 471
+compared values equal the archived tables (`comparison.csv`).

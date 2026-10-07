@@ -1,0 +1,3 @@
+figure,pair_id,factor,direction,target_item_id,context_aware_rank,counterfactual_rank,top5_jaccard_overlap,context_aware_top5_ids,counterfactual_top5_ids
+F34a,CF18,style,high_to_low_style,211712071,380,1151,0.0,78094126 | 182471802 | 200785600 | 191609685 | 162288050,103622462 | 191212937 | 64747034 | 187274145 | 11179514
+F34b,CF02,weather,warm_to_cold,198339576,9,9,0.6667,168668833 | 196545171 | 87542376 | 112978685 | 122753941,168668833 | 196545171 | 87542376 | 122753941 | 159894413

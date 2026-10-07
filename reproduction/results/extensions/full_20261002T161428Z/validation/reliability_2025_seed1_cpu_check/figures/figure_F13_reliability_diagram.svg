@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="300.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Reliability Diagram: Original vs Proposed</text>
+<text x="300.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Preserved 2025 checkpoints, seed 1</text>
+<line x1="90.00" y1="510.00" x2="530.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="86.00" y1="510.00" x2="90.00" y2="510.00" stroke="#555555" stroke-width="0.8"/>
+<text x="83.00" y="513.33" font-size="9.5" fill="#222222" text-anchor="end">0.0</text>
+<line x1="90.00" y1="422.00" x2="530.00" y2="422.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="86.00" y1="422.00" x2="90.00" y2="422.00" stroke="#555555" stroke-width="0.8"/>
+<text x="83.00" y="425.32" font-size="9.5" fill="#222222" text-anchor="end">0.2</text>
+<line x1="90.00" y1="334.00" x2="530.00" y2="334.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="86.00" y1="334.00" x2="90.00" y2="334.00" stroke="#555555" stroke-width="0.8"/>
+<text x="83.00" y="337.32" font-size="9.5" fill="#222222" text-anchor="end">0.4</text>
+<line x1="90.00" y1="246.00" x2="530.00" y2="246.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="86.00" y1="246.00" x2="90.00" y2="246.00" stroke="#555555" stroke-width="0.8"/>
+<text x="83.00" y="249.32" font-size="9.5" fill="#222222" text-anchor="end">0.6</text>
+<line x1="90.00" y1="158.00" x2="530.00" y2="158.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="86.00" y1="158.00" x2="90.00" y2="158.00" stroke="#555555" stroke-width="0.8"/>
+<text x="83.00" y="161.32" font-size="9.5" fill="#222222" text-anchor="end">0.8</text>
+<line x1="90.00" y1="70.00" x2="530.00" y2="70.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="86.00" y1="70.00" x2="90.00" y2="70.00" stroke="#555555" stroke-width="0.8"/>
+<text x="83.00" y="73.33" font-size="9.5" fill="#222222" text-anchor="end">1.0</text>
+<line x1="90.00" y1="70.00" x2="90.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="90.00" y1="510.00" x2="90.00" y2="514.00" stroke="#555555" stroke-width="0.8"/>
+<text x="90.00" y="525.50" font-size="9.5" fill="#222222" text-anchor="middle">0.0</text>
+<line x1="178.00" y1="70.00" x2="178.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="178.00" y1="510.00" x2="178.00" y2="514.00" stroke="#555555" stroke-width="0.8"/>
+<text x="178.00" y="525.50" font-size="9.5" fill="#222222" text-anchor="middle">0.2</text>
+<line x1="266.00" y1="70.00" x2="266.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="266.00" y1="510.00" x2="266.00" y2="514.00" stroke="#555555" stroke-width="0.8"/>
+<text x="266.00" y="525.50" font-size="9.5" fill="#222222" text-anchor="middle">0.4</text>
+<line x1="354.00" y1="70.00" x2="354.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="354.00" y1="510.00" x2="354.00" y2="514.00" stroke="#555555" stroke-width="0.8"/>
+<text x="354.00" y="525.50" font-size="9.5" fill="#222222" text-anchor="middle">0.6</text>
+<line x1="442.00" y1="70.00" x2="442.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="442.00" y1="510.00" x2="442.00" y2="514.00" stroke="#555555" stroke-width="0.8"/>
+<text x="442.00" y="525.50" font-size="9.5" fill="#222222" text-anchor="middle">0.8</text>
+<line x1="530.00" y1="70.00" x2="530.00" y2="510.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="530.00" y1="510.00" x2="530.00" y2="514.00" stroke="#555555" stroke-width="0.8"/>
+<text x="530.00" y="525.50" font-size="9.5" fill="#222222" text-anchor="middle">1.0</text>
+<line x1="90.00" y1="70.00" x2="90.00" y2="510.00" stroke="#555555" stroke-width="1"/>
+<line x1="90.00" y1="510.00" x2="530.00" y2="510.00" stroke="#555555" stroke-width="1"/>
+<text x="310.00" y="544.50" font-size="10.5" fill="#222222" text-anchor="middle">Average confidence</text>
+<text x="56.42" y="290.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 56.42 290.00)">Empirical Hit@10 accuracy</text>
+<line x1="90.00" y1="510.00" x2="530.00" y2="70.00" stroke="#555555" stroke-width="1.5" stroke-dasharray="6,4"/>
+<polyline points="310.00,363.33 330.83,477.17 375.29,477.45 419.24,472.78 463.50,475.29 508.01,475.08" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<circle cx="310.00" cy="363.33" r="4" fill="#1f77b4" fill-opacity="1.0"/>
+<circle cx="330.83" cy="477.17" r="4" fill="#1f77b4" fill-opacity="1.0"/>
+<circle cx="375.29" cy="477.45" r="4" fill="#1f77b4" fill-opacity="1.0"/>
+<circle cx="419.24" cy="472.78" r="4" fill="#1f77b4" fill-opacity="1.0"/>
+<circle cx="463.50" cy="475.29" r="4" fill="#1f77b4" fill-opacity="1.0"/>
+<circle cx="508.01" cy="475.08" r="4" fill="#1f77b4" fill-opacity="1.0"/>
+<polyline points="310.00,510.00 330.95,474.13 375.16,472.42 419.31,473.12 463.25,472.87 507.50,463.30" fill="none" stroke="#ff7f0e" stroke-width="2"/>
+<circle cx="310.00" cy="510.00" r="4" fill="#ff7f0e" fill-opacity="1.0"/>
+<circle cx="330.95" cy="474.13" r="4" fill="#ff7f0e" fill-opacity="1.0"/>
+<circle cx="375.16" cy="472.42" r="4" fill="#ff7f0e" fill-opacity="1.0"/>
+<circle cx="419.31" cy="473.12" r="4" fill="#ff7f0e" fill-opacity="1.0"/>
+<circle cx="463.25" cy="472.87" r="4" fill="#ff7f0e" fill-opacity="1.0"/>
+<circle cx="507.50" cy="463.30" r="4" fill="#ff7f0e" fill-opacity="1.0"/>
+<rect x="100.00" y="73.00" width="143.40" height="55.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<line x1="106.00" y1="84.00" x2="122.00" y2="84.00" stroke="#1f77b4" stroke-width="2"/>
+<text x="127.00" y="88.00" font-size="10" fill="#222222">original, ECE=0.642</text>
+<line x1="106.00" y1="101.00" x2="122.00" y2="101.00" stroke="#ff7f0e" stroke-width="2"/>
+<text x="127.00" y="105.00" font-size="10" fill="#222222">proposed, ECE=0.632</text>
+<line x1="106.00" y1="118.00" x2="122.00" y2="118.00" stroke="#555555" stroke-width="2" stroke-dasharray="5,3"/>
+<text x="127.00" y="122.00" font-size="10" fill="#222222">Perfect calibration</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="434" viewBox="0 0 640 434" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="320.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Prompt robustness: mean absolute difference (2025 figure F20)</text>
+<text x="320.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">150 descriptions; preserved compare files</text>
+<line x1="80.00" y1="364.00" x2="610.00" y2="364.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="364.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="367.32" font-size="9.5" fill="#222222" text-anchor="end">0.00</text>
+<line x1="80.00" y1="292.70" x2="610.00" y2="292.70" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="292.70" x2="80.00" y2="292.70" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="296.02" font-size="9.5" fill="#222222" text-anchor="end">0.02</text>
+<line x1="80.00" y1="221.40" x2="610.00" y2="221.40" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="221.40" x2="80.00" y2="221.40" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="224.72" font-size="9.5" fill="#222222" text-anchor="end">0.04</text>
+<line x1="80.00" y1="150.09" x2="610.00" y2="150.09" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="150.09" x2="80.00" y2="150.09" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="153.42" font-size="9.5" fill="#222222" text-anchor="end">0.06</text>
+<line x1="80.00" y1="78.79" x2="610.00" y2="78.79" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="78.79" x2="80.00" y2="78.79" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="82.12" font-size="9.5" fill="#222222" text-anchor="end">0.08</text>
+<text x="168.33" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">P0-R2</text>
+<text x="345.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">P1</text>
+<text x="521.67" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">P2</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="364.00" x2="610.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<text x="40.34" y="214.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 40.34 214.00)">Mean absolute difference (abs_diff)</text>
+<rect x="104.73" y="346.71" width="63.60" height="17.29" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="136.53" y="342.71" font-size="8" fill="#222222" text-anchor="middle">0.005</text>
+<rect x="281.40" y="111.20" width="63.60" height="252.80" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="313.20" y="107.20" font-size="8" fill="#222222" text-anchor="middle">0.071</text>
+<rect x="458.07" y="183.59" width="63.60" height="180.41" fill="#1f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="489.87" y="179.59" font-size="8" fill="#222222" text-anchor="middle">0.051</text>
+<rect x="168.33" y="199.79" width="63.60" height="164.21" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="200.13" y="195.79" font-size="8" fill="#222222" text-anchor="middle">0.046</text>
+<rect x="345.00" y="109.76" width="63.60" height="254.24" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="376.80" y="105.76" font-size="8" fill="#222222" text-anchor="middle">0.071</text>
+<rect x="521.67" y="178.18" width="63.60" height="185.82" fill="#ff7f0e" stroke="#ffffff" stroke-width="0.6"/>
+<text x="553.47" y="174.18" font-size="8" fill="#222222" text-anchor="middle">0.052</text>
+<rect x="84.00" y="63.00" width="87.00" height="38.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="90.00" y="69.00" width="14.00" height="9.00" fill="#1f77b4" fill-opacity="0.75"/>
+<text x="111.00" y="78.00" font-size="10" fill="#222222">Qwen3-VL</text>
+<rect x="90.00" y="86.00" width="14.00" height="9.00" fill="#ff7f0e" fill-opacity="0.75"/>
+<text x="111.00" y="95.00" font-size="10" fill="#222222">Gemma-3</text>
+</svg>

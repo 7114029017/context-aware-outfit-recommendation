@@ -16,8 +16,9 @@ This starts the entire 10-main + 25 fair-subset ablation training pipeline.
 No --check-only mode: use bash reproduction/scripts/check.sh to preflight.
 After the run has PASSED, the supplementary analyses (CPU only, outside the
 35 units) are written to <run-id>/supplementary/, and the extension analyses
-(text length, counterfactual, Two-Tower, color, case figures; about 2-3.5 GPU
-hours) to <run-id>/extensions/. Neither ever changes RUN_STATUS.
+(text length, counterfactual, Two-Tower, color, case figures, reliability, text
+swap, outfit generation; about 3-4 GPU hours) to <run-id>/extensions/. Neither
+ever changes RUN_STATUS.
 
 All outputs for this new execution are stored within a single run directory:
   <output-base>/<run-id>/
@@ -120,7 +121,7 @@ different run ID. The initial status is RUNNING; check RUN_STATUS.txt.
 | chapter4/ | Twenty-table overview, 112 scoped numeric rows, JSON evidence |
 | reproduction_summary.md, reproduction_summary.json | Final cross-module summary; present only after full completion |
 | README.txt | Original entrypoint's final output pointers; present only after completion |
-| supplementary/run_analyses/, input_data_audit/, paper_value_checks/, judge_audit_checks/, met_reference_check/, checklist_coverage/ | Supplementary analyses, run after PASSED (CPU only, outside the 35 units; they never change RUN_STATUS) |
+| supplementary/run_analyses/, input_data_audit/, dataset_tables_check/, paper_value_checks/, judge_audit_checks/, met_reference_check/, checklist_coverage/ | Supplementary analyses, run after PASSED (CPU only, outside the 35 units; they never change RUN_STATUS) |
 | extensions/ | Extension analyses, run after PASSED (outside the 35 units; they never change RUN_STATUS); step status in extensions/EXTENSIONS_STATUS.txt |
 
 The 35 training units run in series. Some historical sources are incomplete,
@@ -171,14 +172,14 @@ if [[ "${codes[0]}" -eq 0 && "${codes[1]}" -eq 0 ]] &&
     echo "[WARN] scientific run PASSED, but the supplementary analyses failed; see $RUN_ROOT/logs/supplementary.log" >&2
     echo "[WARN] after fixing the cause, rerun: ${supplementary[*]}" >&2
   fi
-  # Extension analyses (reproduction/docs/extensions.md): text length and Two-Tower on the GPU;
-  # counterfactual, color analysis and case figures on the CPU. A step whose download is missing
-  # is skipped. They read this run's checkpoints and outputs and never change RUN_STATUS.txt.
+  # Extension analyses (reproduction/docs/extensions.md): text length, Two-Tower, reliability and
+  # text swap on the GPU; counterfactual, color analysis, case figures and outfit generation on the
+  # CPU. A step whose download is missing is skipped. They read this run's checkpoints and outputs and never change RUN_STATUS.txt.
   extensions=(bash "$REPRO_SCRIPTS/extensions/run_all.sh" --run-root "$RUN_ROOT")
   if [[ -n "$POLYVORE_ROOT" ]]; then
     extensions+=(--polyvore-root "$POLYVORE_ROOT")
   fi
-  echo "[EXTENSIONS] running the extension analyses (about 2-3.5 GPU hours); step logs in $RUN_ROOT/extensions/logs/"
+  echo "[EXTENSIONS] running the extension analyses (about 3-4 GPU hours); step logs in $RUN_ROOT/extensions/logs/"
   if "${extensions[@]}" 2>&1 | tee "$RUN_ROOT/logs/extensions.log"; then
     echo "[EXTENSIONS] $RUN_ROOT/extensions/ (status: extensions/EXTENSIONS_STATUS.txt)"
   else

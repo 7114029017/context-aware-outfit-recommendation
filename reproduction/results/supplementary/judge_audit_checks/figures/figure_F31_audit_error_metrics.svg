@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="434" viewBox="0 0 640 434" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="320.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Judge score minus weighted human score (2025 figure F31)</text>
+<text x="320.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">30 audited descriptions</text>
+<line x1="80.00" y1="364.00" x2="610.00" y2="364.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="364.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="367.32" font-size="9.5" fill="#222222" text-anchor="end">0.0</text>
+<line x1="80.00" y1="288.54" x2="610.00" y2="288.54" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="288.54" x2="80.00" y2="288.54" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="291.86" font-size="9.5" fill="#222222" text-anchor="end">0.1</text>
+<line x1="80.00" y1="213.07" x2="610.00" y2="213.07" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="213.07" x2="80.00" y2="213.07" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="216.40" font-size="9.5" fill="#222222" text-anchor="end">0.2</text>
+<line x1="80.00" y1="137.61" x2="610.00" y2="137.61" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="137.61" x2="80.00" y2="137.61" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="140.93" font-size="9.5" fill="#222222" text-anchor="end">0.3</text>
+<text x="168.33" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Bias</text>
+<text x="345.00" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">MAE</text>
+<text x="521.67" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">RMSE</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="364.00" x2="610.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<text x="46.42" y="214.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 46.42 214.00)">Score difference / error (0-1)</text>
+<rect x="104.73" y="364.00" width="63.60" height="43.47" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="136.53" y="403.47" font-size="8" fill="#222222" text-anchor="middle">-0.058</text>
+<rect x="281.40" y="192.47" width="63.60" height="171.53" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="313.20" y="188.47" font-size="8" fill="#222222" text-anchor="middle">0.227</text>
+<rect x="458.07" y="109.76" width="63.60" height="254.24" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="489.87" y="105.76" font-size="8" fill="#222222" text-anchor="middle">0.337</text>
+<rect x="168.33" y="364.00" width="63.60" height="19.09" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="200.13" y="379.09" font-size="8" fill="#222222" text-anchor="middle">-0.025</text>
+<rect x="345.00" y="197.07" width="63.60" height="166.93" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="376.80" y="193.07" font-size="8" fill="#222222" text-anchor="middle">0.221</text>
+<rect x="521.67" y="131.19" width="63.60" height="232.81" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="553.47" y="127.19" font-size="8" fill="#222222" text-anchor="middle">0.308</text>
+<rect x="84.00" y="63.00" width="68.60" height="38.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="90.00" y="69.00" width="14.00" height="9.00" fill="#2f77b4" fill-opacity="0.75"/>
+<text x="111.00" y="78.00" font-size="10" fill="#222222">Qwen</text>
+<rect x="90.00" y="86.00" width="14.00" height="9.00" fill="#f28e2b" fill-opacity="0.75"/>
+<text x="111.00" y="95.00" font-size="10" fill="#222222">Gemma</text>
+</svg>

@@ -39,7 +39,10 @@ reproduction: other scripts,reproduction/scripts/extensions/color_analysis.py,se
 reproduction: other scripts,reproduction/scripts/extensions/counterfactual.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/extensions/length_analysis.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/extensions/main_cir_per_query.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/outfit_generation.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/reliability_analysis.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/extensions/run_all.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/text_swap.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/extensions/two_tower.py,searched,,no_judge_artifact_reference_found
 "reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/freeze_splits.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/package_official_run.py,searched,,no_judge_artifact_reference_found
@@ -74,6 +77,7 @@ reproduction: other scripts,reproduction/scripts/smoke_test.sh,searched,,no_judg
 reproduction: other scripts,reproduction/scripts/supplementary/_common.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/supplementary/_svg.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/supplementary/checklist_coverage.py,searched,Qwen3VL32B|checklist_C,reads judge outputs; not run by the 35 units
+reproduction: other scripts,reproduction/scripts/supplementary/dataset_tables_check.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/supplementary/input_data_audit.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/supplementary/judge_audit_checks.py,searched,phase3_scores|Qwen3VL32B|phase3_scores_Qwen3VL32B|phase3_scores_Gemma3|checklist_C|LLM-as-a-Judge|judge_score|rewrite_qwen|rewrite_gemma,reads judge outputs; not run by the 35 units
 reproduction: other scripts,reproduction/scripts/supplementary/met_reference_check.py,searched,,no_judge_artifact_reference_found

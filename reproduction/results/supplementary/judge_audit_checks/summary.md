@@ -52,6 +52,21 @@ Largest difference from the thesis figure (the archived SVG F19), over the 30 va
 
 Equal to the archived T31 in all 11 compared columns and the order of the 25 rows: yes (the Chinese translation of each question, a display aid, is not recomputed).
 
+## Human audit scores (2025 tables T30 and A41; figures F30-F32)
+
+Weighted human score per description and checklist against the judge's score (P06 cell 10).
+`audit_score_metrics.csv` equals the archived T30: yes; `audit_sample_scores.csv`
+equals the archived A41 (30 descriptions): yes. Figures: `figures/figure_F30_audit_sampling_coverage.svg`, `figure_F31_audit_error_metrics.svg`, `figure_F32_audit_score_scatter.svg`.
+
+## Other 2025 judge figures and T20
+
+- `figures/figure_F18_quantile_confusion.svg` and `judge_quantile_confusion.csv`: the decile confusion
+  matrix behind the QWK of T19 (P05 cell 3).
+- `figures/figure_F20_prompt_robustness.svg`: mean absolute difference of P0-R2, P1 and P2 for each judge
+  (Qwen3-VL P0-R2: 0.0048, Qwen3-VL P1: 0.0709, Qwen3-VL P2: 0.0506, Gemma-3 P0-R2: 0.0461, Gemma-3 P1: 0.0713, Gemma-3 P2: 0.0521).
+- The archived T20 equals the correlation columns of T19: yes; the pipeline's
+  secondary step recomputes T19 (with its 5,000 bootstrap draws).
+
 ## Judge outputs in the training and evaluation code (2025 tables A05 and A06)
 
 Search terms (2025): phase3_scores, Qwen3VL32B, phase3_scores_Qwen3VL32B, phase3_scores_Gemma3, checklist_C, LLM-as-a-Judge, judge_score, rewrite_qwen, rewrite_gemma. `judge_reference_scan.csv`, `judge_input_roles.csv`.
