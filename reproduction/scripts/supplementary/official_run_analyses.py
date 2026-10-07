@@ -14,7 +14,9 @@ nothing is re-run. The run is chosen as follows:
 
 A run folder must have RUN_STATUS PASSED. The outputs go to
 reproduction/results/supplementary/<run>/ for the official run and to
-<run folder>/supplementary/ for a run folder (or to --out-dir):
+<run folder>/supplementary/run_analyses/ for a run folder (or to --out-dir).
+run_all.sh runs this script and the two input-data scripts; a full run calls
+run_all.sh after it has PASSED. Outputs:
 
 - category_hit10_delta.csv: Hit@10 of Full minus Original by fine-grained
   target category (manuscript Figure 4), with the 2025 values for comparison;
@@ -138,7 +140,7 @@ def run_folder_source(run_root: Path) -> dict:
         raise SystemExit(f"[SUPPLEMENTARY BLOCKED] {run_root}: RUN_STATUS is {state}, not PASSED. "
                          "Pass --run-root PATH for a completed run, or --official for the official run.")
     return {"run_id": run_root.name, "units": run_root / "ablation" / "runs", "tables": run_root / "ablation" / "summary",
-            "out": run_root / "supplementary", "label": f"the run folder `{run_root}`"}
+            "out": run_root / "supplementary" / "run_analyses", "label": f"the run folder `{run_root}`"}
 
 
 def choose_source(args) -> dict:
@@ -372,20 +374,20 @@ def main() -> None:
         "",
         "Computed by `reproduction/scripts/supplementary/official_run_analyses.py` from the run's saved",
         "fair-subset outputs (query-level rows and per-seed metrics). No model was loaded and nothing was re-run.",
-        "These are post-hoc analyses; they are not part of the 35-unit pipeline.",
+        "These analyses come after the 35 training units and change none of the run's results.",
         "",
         "## Hit@10 by target category (manuscript Figure 4)",
         "",
-        "| Category | Observations | Official run: Full − Original | 2025: Full − Original |",
+        "| Category | Observations | This run: Full − Original | 2025: Full − Original |",
         "|---|---:|---:|---:|",
         *[f"| {r[1]} ({r[2]}) | {r[3]} | {r[6]} | {r[-1]} |" for r in category_rows],
         "",
-        f"Largest gain: {best[1]} ({best[6]}). Categories with a decline in the official run: "
+        f"Largest gain: {best[1]} ({best[6]}). Categories with a decline in this run: "
         + (", ".join(f"{r[1]} ({r[6]})" for r in category_rows if float(r[6]) < 0) or "none") + ".",
         "",
         "## Hit@10 by context subset",
         "",
-        "| Subset | Rule | Observations | Official run: Full − Original | 2025 |",
+        "| Subset | Rule | Observations | This run: Full − Original | 2025 |",
         "|---|---|---:|---:|---:|",
         *[f"| {r[0]} | {r[1]} | {r[2]} | {r[5]} | {r[7]} |" for r in subset_rows],
         "",

@@ -63,7 +63,9 @@ Official run and results:
   numbers can differ slightly; the comparison tool then checks that the
   conclusions hold.
 - Supplementary analyses computed from the official run's outputs, and audits
-  of the input data: `reproduction/docs/supplementary_analyses.md`.
+  of the input data: `reproduction/docs/supplementary_analyses.md`. A new full
+  run writes the same analyses of its own outputs to its `supplementary/`
+  folder after it has passed.
 
 Version provenance: the official run was executed from commit `b9bf5aa` of the
 original development repository, which is not public. This repository contains
@@ -136,7 +138,8 @@ repo 文件中的 reference run 則指較早的 `reference_20260921T175217Z`。
 之後，設定、資料切分、訓練、評估與統計程式都沒有改動。
 
 修訂稿與 README 引用的正式數值只來自 `reproduction/results/summary/full_20261002T161428Z/`；
-補充分析的輸出另放在 `reproduction/results/supplementary/`。
+補充分析的輸出另放在 `reproduction/results/supplementary/`；新的完整 run 通過後，會在自己的
+`supplementary/` 資料夾產生同樣的分析。
 
 授權：本 repository 撰寫的程式與文件採用 MIT License（`LICENSE`），第三方元件依其原本條款
 （`THIRD_PARTY_NOTICES.md`）。引用方式見 `CITATION.cff`。

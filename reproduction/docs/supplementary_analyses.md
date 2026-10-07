@@ -1,39 +1,52 @@
 # Supplementary analyses
 
 These analyses answer questions raised when the TORS manuscript was checked
-against this repository. They are post-hoc analyses, not part of the 35-unit
-pipeline (`reproduce_all.sh` does not run them): they read files that are
-already in the repository, in a completed run folder, or downloaded by
+against this repository. They are not part of the 35 training units: a full run
+(`reproduce_all.sh --fresh`) runs them after its `RUN_STATUS.txt` has become
+`PASSED`, and a failure here does not change that status. They read files that
+are already in the repository, in the run folder, or downloaded by
 `scripts/bootstrap_data.sh`; they load no model, use no GPU, and never modify
 any run's results. The manuscript's formal results remain those in
 `results/summary/full_20261002T161428Z/`.
 
-Run all three scripts (a few seconds on a CPU):
+A full run writes them to its own folder:
 
-    bash reproduction/scripts/supplementary/run_all.sh [--run-root PATH | --official]
+| Folder | Content | Official run |
+|---|---|---|
+| `supplementary/run_analyses/` | Section 1, computed from this run's outputs | `results/supplementary/full_20261002T161428Z/` |
+| `supplementary/input_data_audit/` | Section 2, independent of the run | `results/supplementary/input_data_audit/` |
+| `supplementary/paper_value_checks/` | Section 3, independent of the run | `results/supplementary/paper_value_checks/` |
+| `logs/supplementary.log` | Console output | — |
+
+The official run was made before this step was added to the pipeline; its
+files were computed afterwards with the same scripts. When the comparison with
+the official run (README 0.8) reports `IDENTICAL`, a run's files equal the
+official run's except for the run name and source at the top of
+`run_analyses/summary.md`; when it reports `CONSISTENT`, the values in
+`run_analyses/` differ slightly. The other two folders do not depend on the run
+and should be identical.
+
+To run the three scripts by hand (a few seconds on a CPU), for example after the
+step failed during a run:
+
+    bash reproduction/scripts/supplementary/run_all.sh [--run-root PATH | --official] [--out-dir DIR]
+
+| Option | Run analyzed | Output |
+|---|---|---|
+| `--run-root PATH` | The completed run folder at PATH, whose `RUN_STATUS.txt` must be `PASSED` | `PATH/supplementary/` |
+| `--official` | The official run included in this repository | `results/supplementary/`; this regenerates the committed files |
+| none | The newest `full_*` folder under `reproduction/runs/`, or the official run if there is none | As above |
+| `--out-dir DIR` | — | `DIR/` instead |
 
 They use the Polyvore metadata recorded by `bootstrap_data.sh`
 (`reproduction/.local/polyvore_root.txt`); pass `--polyvore-root PATH` to use
 another copy.
 
-The first script analyzes one run:
-
-| Option | Run analyzed | Output |
-|---|---|---|
-| none | The newest `full_*` folder under `reproduction/runs/`, whose `RUN_STATUS.txt` must be `PASSED`; the official run if there is no such folder | The run folder's `supplementary/`; `results/supplementary/full_20261002T161428Z/` for the official run |
-| `--run-root PATH` | The completed run folder at PATH, for example a run written with `--output-base` or `--run-id` | `PATH/supplementary/` |
-| `--official` | The official run included in this repository | `results/supplementary/full_20261002T161428Z/` |
-
-After `reproduce_all.sh --fresh`, the default therefore analyzes the new run.
-Compare its `supplementary/` folder with `results/supplementary/full_20261002T161428Z/`:
-on the same NVIDIA GB10 and software stack, the files are identical except for
-the run name and source in `summary.md`; on other GPUs the values differ
-slightly. The other two scripts do not depend on a run.
-
 ## 1. Analyses of a run's outputs
 
 Script: `scripts/supplementary/official_run_analyses.py`.
-Output for the official run: `results/supplementary/full_20261002T161428Z/`.
+Output: `results/supplementary/full_20261002T161428Z/` for the official run;
+`supplementary/run_analyses/` in a run folder.
 
 The official run stored, for every fair-subset unit, the rank and hits of each
 of the 3,432 queries (`results/raw/full_20261002T161428Z/ablation/*/detail_cir_fresh_subset.csv`;
@@ -63,7 +76,7 @@ of the four comparisons equal the run's table T02.
 ## 2. Audit of the input data
 
 Script: `scripts/supplementary/input_data_audit.py`.
-Output: `results/supplementary/input_data_audit/`.
+Output: `results/supplementary/input_data_audit/`; `supplementary/input_data_audit/` in a run folder.
 
 The generated descriptions, the CLO / MET / temperature records, the W/O/S
 annotations and the counterfactual pairs were built in 2025, and the official
@@ -85,7 +98,7 @@ The findings are listed in `known_limitations.md`.
 ## 3. Manuscript values from the input data and 2025 outputs
 
 Script: `scripts/supplementary/paper_value_checks.py`.
-Output: `results/supplementary/paper_value_checks/`.
+Output: `results/supplementary/paper_value_checks/`; `supplementary/paper_value_checks/` in a run folder.
 
 Recomputes the values that do not come from the 35 training units: Table 1
 (dataset and evaluation scope), Table 2 (text fields), the proxy-value row of

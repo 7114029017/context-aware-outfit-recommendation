@@ -3,8 +3,8 @@
 
 The generated descriptions, the CLO / MET / temperature records, the W/O/S
 annotations and the counterfactual pairs were built in 2025 and are used by the
-official run unchanged. This script checks them and writes, under
-reproduction/results/supplementary/input_data_audit/:
+official run unchanged. This script checks them and writes, under --out-dir
+(default reproduction/results/supplementary/input_data_audit/):
 
 - temperature_prefix_audit.csv and temperature_prefix_mismatches.csv: the
   temperature at the start of each generated description against the computed

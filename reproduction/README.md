@@ -230,7 +230,9 @@ NVIDIA GB10 這類 CPU／GPU 共用記憶體的機器：CUDA 只把真正空閒�
   × seeds 1,2,3,4,5；
 - 共 10 main + 25 公平子集消融 = **35 training units**；
 - 後續 secondary analyses、Chapter 4 report、statistics、
-  `THESIS_TABLES_SUMMARY.md` 與 final reproduction summary。
+  `THESIS_TABLES_SUMMARY.md` 與 final reproduction summary；
+- 狀態成為 `PASSED` 之後，再執行補充分析（只用 CPU，幾秒鐘；不改變 `RUN_STATUS.txt`），
+  結果在 run 資料夾的 `supplementary/`（見 §11）。
 
 開始時會顯示 `[RUN ROOT]`（這次 run 的資料夾，預設為
 `reproduction/runs/full_<UTC timestamp>/`）與 `[LIVE LOG]`。要看進度，另開一個 terminal：
@@ -331,6 +333,7 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | 消融的 95% CI、p 值、Cohen's dz | `ablation/summary/T10_stage2_cp_seed_detail.csv`、`ablation/summary/T11_stage2_cir_seed_detail.csv` |
 | 每個 seed 的結果 | `main/<variant>_seed<N>/evaluation/results_cp.csv`、`results_cir.csv`；`ablation/summary/fresh_25unit_metrics.csv` |
 | 第四章 20 張表的來源與限制 | `chapter4/THESIS_TABLES_SUMMARY.md` |
+| 補充分析：類別與情境子集的 Hit@10、個案名次、因子效果、BH 族群、輸入資料稽核、稿件 Table 1、2、5、8、9 的重算 | `supplementary/`（見 §11） |
 | 所有輸出的索引 | `INDEX.md` |
 
 正式 run 的同一批檔案已收錄在 repository，數值整理在 `docs/expected_results.md`。
@@ -343,8 +346,10 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | `ablation/summary/` | `results/summary/full_20261002T161428Z/ablation/` |
 | `main/<variant>_seed<N>/evaluation/results_cp.csv`、`results_cir.csv` | `results/raw/full_20261002T161428Z/main/<variant>_seed<N>/` |
 | `ablation/runs/<variant>_seed<N>/` | `results/raw/full_20261002T161428Z/ablation/<variant>_seed<N>/` |
+| `supplementary/` | `results/supplementary/`（`run_analyses/` 收錄為 `full_20261002T161428Z/`；見 §11） |
 
-選做：補充分析（類別、情境子集與個案等）不在 `reproduce_all.sh` 中，見 §11。
+補充分析在 `PASSED` 之後自動執行，不屬於驗收條件：若失敗，terminal 會顯示 `[WARN]` 與
+重跑指令，`RUN_STATUS.txt` 仍是 `PASSED`（見 §11）。
 
 ### 0.9 目前 clean-room 驗證狀態
 
@@ -433,7 +438,7 @@ Frozen senior baseline：
 | `splits/` | 固定 main IDs 與重建的公平子集 IDs |
 | `prompts/` | 可保存的 semantic prompt 與 Judge C/C* checklists |
 | `scripts/` | check、smoke、full reproduction、統計與比對程式 |
-| `scripts/supplementary/` | 補充分析程式（不在 35 組流程中，見 §11） |
+| `scripts/supplementary/` | 補充分析程式（35 組訓練完成後執行，見 §11） |
 | `results/raw/` | 正式 run 與 reference run 的 seed-level results |
 | `results/summary/` | 正式 run 與 reference run 的 summary、第四章比較與 statistics |
 | `results/supplementary/` | 補充分析的輸出（見 §11） |
@@ -595,13 +600,15 @@ Smoke test 只用小型 subset（context、seed 1、200 筆 train 與 100 筆 va
 3. 公平子集的五種條件 × 5 seeds；
 4. preserved-output secondary analysis；
 5. Chapter 4 comparison report；
-6. five-seed summary 與 post-hoc statistics。
+6. five-seed summary 與 post-hoc statistics；
+7. 狀態成為 `PASSED` 之後的補充分析（只用 CPU，見 §11）。
 
 輸出位於 `reproduction/runs/full_<UTC timestamp>/`（可用 `--run-id`、`--output-base` 改變）。
 若完成為 `PASSED`，最後會從該次 run 的 `main/summary/`、`ablation/summary/`、`statistics/`、
-`chapter4/` 自動顯示 terminal 摘要，並存成 `logs/final_terminal_summary.txt`。摘要顯示失敗
-不會改變已完成訓練的 `RUN_STATUS.txt`；原始 CSV / JSON 仍是權威結果。跑完後依 §0.8 與
-正式 run 比對。
+`chapter4/` 自動顯示 terminal 摘要，並存成 `logs/final_terminal_summary.txt`，接著執行補充
+分析（結果在 `supplementary/`，輸出記錄在 `logs/supplementary.log`）。摘要顯示或補充分析
+失敗都不會改變已完成訓練的 `RUN_STATUS.txt`；原始 CSV / JSON 仍是權威結果。跑完後依 §0.8
+與正式 run 比對。
 
 完整流程也會產生一份**表 4-1～表 4-20 的逐表來源報告**：
 
@@ -686,28 +693,40 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 要以另一個已完成的 run 產生對帳表時，用 `--run-root <run 目錄>` 並加上
 `--out-dir <其他目錄>`，以免覆寫正式對帳表。
 
-補充分析不屬於 35 組流程，`reproduce_all.sh` 不會執行，需另外執行。它只讀取 run 已存下的
-結果、2025 年的輸入資料與保存的輸出，不載入模型、只用 CPU，幾秒鐘即可完成。內容包括
-類別與情境子集的 Hit@10、個案名次、因子效果、BH 族群的敏感度分析、輸入資料稽核，以及
-稿件 Table 1、2、5、8、9 的重算。需要 0.3 的環境與 0.4 下載的 Polyvore metadata（或用
-`--polyvore-root PATH` 指定）：
+補充分析不屬於 35 個 training units：`reproduce_all.sh --fresh` 在 run 的狀態成為 `PASSED`
+之後才執行它，它失敗也不會改變 `RUN_STATUS.txt`。它只讀取 run 已存下的結果、2025 年的
+輸入資料與保存的輸出，不載入模型、只用 CPU，幾秒鐘即可完成。結果在 run 資料夾的
+`supplementary/`：
 
-    bash reproduction/scripts/supplementary/run_all.sh
+| 資料夾 | 內容 | 正式 run 的對應位置 |
+|---|---|---|
+| `run_analyses/` | 由該 run 的逐題結果計算：類別與情境子集的 Hit@10、個案名次、因子效果、BH 族群的敏感度分析 | `results/supplementary/full_20261002T161428Z/` |
+| `input_data_audit/` | 輸入資料稽核，與 run 無關 | `results/supplementary/input_data_audit/` |
+| `paper_value_checks/` | 稿件 Table 1、2、5、8、9 的重算，與 run 無關 | `results/supplementary/paper_value_checks/` |
 
-分析哪一次 run：
+執行時的輸出記錄在 `logs/supplementary.log`。正式 run 執行時流程還沒有這一步，右欄的檔案
+是之後用同一套程式從正式 run 的輸出算出的。§0.8 的判定為 `IDENTICAL` 時，你的
+`supplementary/` 除了 `run_analyses/summary.md` 開頭的 run 名稱與來源，應與右欄完全相同；
+判定為 `CONSISTENT` 時，`run_analyses/` 的數字會略有不同。另外兩個資料夾與 run 無關，
+應完全相同。核對方式（`$RUN` 見 §0.8）：
 
-- 不加參數：`reproduction/runs/` 中最新的 `full_*`（`RUN_STATUS` 必須是 `PASSED`），
-  結果寫在該 run 資料夾的 `supplementary/`。沒有任何 run 時（例如剛 clone），分析 repo
-  收錄的正式 run，結果寫在 `results/supplementary/full_20261002T161428Z/`。
-- `--run-root <run 目錄>`：指定已完成的 run（例如用 `--output-base` 或 `--run-id` 跑的 run）。
-- `--official`：指定 repo 收錄的正式 run。
+    diff -r "$RUN/supplementary/run_analyses" reproduction/results/supplementary/full_20261002T161428Z
+    diff -r "$RUN/supplementary/input_data_audit" reproduction/results/supplementary/input_data_audit
+    diff -r "$RUN/supplementary/paper_value_checks" reproduction/results/supplementary/paper_value_checks
 
-輸入資料稽核與稿件數值重算與 run 無關，結果固定寫在 `results/supplementary/input_data_audit/`
-與 `results/supplementary/paper_value_checks/`（重跑會得到相同的檔案）。
+也可以單獨執行，例如自動執行失敗時（terminal 會顯示 `[WARN]` 與重跑指令），修正原因後
+重跑。需要 0.3 的環境與 0.4 下載的 Polyvore metadata（或用 `--polyvore-root PATH` 指定）：
 
-完成 `--fresh` 後直接執行上面的指令，就會分析新的 run。把它的 `supplementary/` 與
-`results/supplementary/full_20261002T161428Z/` 對照：同一台 GB10、同一套軟體時，除了
-`summary.md` 中的 run 名稱與來源，檔案應完全相同；在其他 GPU 上數字會略有不同。
+    bash reproduction/scripts/supplementary/run_all.sh --run-root "$RUN"
+
+- `--run-root <run 目錄>`：分析該 run（`RUN_STATUS` 必須是 `PASSED`），結果寫在該 run 資料夾的
+  `supplementary/`。
+- `--official`：分析 repo 收錄的正式 run，結果寫在 `results/supplementary/`，會重新產生與 repo
+  相同的檔案。
+- 不加參數：分析 `reproduction/runs/` 中最新的 `full_*`；沒有任何 run 時（例如剛 clone），
+  分析正式 run。
+- `--out-dir DIR`：結果改寫到 `DIR`。
+
 說明見 `docs/supplementary_analyses.md`。
 
 ## 12. Hyperparameter tuning provenance

@@ -14,6 +14,8 @@ Usage:
 
 This starts the entire 10-main + 25 fair-subset ablation training pipeline.
 No --check-only mode: use bash reproduction/scripts/check.sh to preflight.
+After the run has PASSED, the supplementary analyses (CPU only, outside the
+35 units) are written to <run-id>/supplementary/; they never change RUN_STATUS.
 
 All outputs for this new execution are stored within a single run directory:
   <output-base>/<run-id>/
@@ -100,6 +102,7 @@ different run ID. The initial status is RUNNING; check RUN_STATUS.txt.
 | started_utc.txt, finished_utc.txt | UTC execution timestamps |
 | logs/full_console.log | Complete command-line output, including failures |
 | logs/final_terminal_summary.txt | Final terminal summary; present only after PASSED |
+| logs/supplementary.log | Output of the supplementary analyses; present only after PASSED |
 | environment/ | Python, CUDA, GPU and eight feature checks |
 | frozen_splits/ | Six ordered training/evaluation scope identity manifests |
 | git_commit.txt, git_status_start.txt, git_remote.txt | Source revision, branch and starting working tree, repository URL |
@@ -114,6 +117,7 @@ different run ID. The initial status is RUNNING; check RUN_STATUS.txt.
 | chapter4/ | Twenty-table overview, 112 scoped numeric rows, JSON evidence |
 | reproduction_summary.md, reproduction_summary.json | Final cross-module summary; present only after full completion |
 | README.txt | Original entrypoint's final output pointers; present only after completion |
+| supplementary/run_analyses/, supplementary/input_data_audit/, supplementary/paper_value_checks/ | Supplementary analyses, run after PASSED (CPU only, outside the 35 units; they never change RUN_STATUS) |
 
 The 35 training units run in series. Some historical sources are incomplete,
 so a finished run must NOT claim exact reproduction of all published tables.
@@ -148,6 +152,20 @@ if [[ "${codes[0]}" -eq 0 && "${codes[1]}" -eq 0 ]] &&
        tee "$RUN_ROOT/logs/final_terminal_summary.txt"; then
     echo "[WARN] scientific run PASSED, but the final terminal summary could not be rendered." >&2
     echo "[WARN] inspect the saved CSV/JSON outputs under: $RUN_ROOT" >&2
+  fi
+  # Supplementary analyses: CPU only, a few seconds. They read this run's saved
+  # outputs and the fixed input data, and never change RUN_STATUS.txt.
+  supplementary=(bash "$REPRO_SCRIPTS/supplementary/run_all.sh" --run-root "$RUN_ROOT"
+                 --out-dir "$RUN_ROOT/supplementary")
+  if [[ -n "$POLYVORE_ROOT" ]]; then
+    supplementary+=(--polyvore-root "$POLYVORE_ROOT")
+  fi
+  echo
+  if "${supplementary[@]}" > "$RUN_ROOT/logs/supplementary.log" 2>&1; then
+    echo "[SUPPLEMENTARY] $RUN_ROOT/supplementary/ (log: logs/supplementary.log)"
+  else
+    echo "[WARN] scientific run PASSED, but the supplementary analyses failed; see $RUN_ROOT/logs/supplementary.log" >&2
+    echo "[WARN] after fixing the cause, rerun: ${supplementary[*]}" >&2
   fi
 else
   printf '%s\n' "FAILED entrypoint_exit=${codes[0]} tee_exit=${codes[1]}" > "$RUN_ROOT/RUN_STATUS.txt"

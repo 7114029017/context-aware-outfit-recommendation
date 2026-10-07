@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Recompute manuscript values that come from the input data or from 2025 outputs.
 
-Writes, under reproduction/results/supplementary/paper_value_checks/:
+Writes, under --out-dir (default reproduction/results/supplementary/paper_value_checks/):
 
 - table1_dataset_scope.csv: split sizes, CP / FITB / CIR evaluation scope;
 - table2_text_fields.csv: missing values and lengths of the original text

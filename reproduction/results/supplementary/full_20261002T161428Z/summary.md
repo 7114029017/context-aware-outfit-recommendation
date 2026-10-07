@@ -4,11 +4,11 @@ Source: the official run included in the repository (`full_20261002T161428Z`).
 
 Computed by `reproduction/scripts/supplementary/official_run_analyses.py` from the run's saved
 fair-subset outputs (query-level rows and per-seed metrics). No model was loaded and nothing was re-run.
-These are post-hoc analyses; they are not part of the 35-unit pipeline.
+These analyses come after the 35 training units and change none of the run's results.
 
 ## Hit@10 by target category (manuscript Figure 4)
 
-| Category | Observations | Official run: Full − Original | 2025: Full − Original |
+| Category | Observations | This run: Full − Original | 2025: Full − Original |
 |---|---:|---:|---:|
 | dress (all body) | 2735 | +0.0161 | +0.0234 |
 | heels (shoes) | 2375 | +0.0114 | +0.0126 |
@@ -19,11 +19,11 @@ These are post-hoc analyses; they are not part of the 35-unit pipeline.
 | earrings (jewellery) | 2355 | +0.0025 | +0.0047 |
 | necklace (jewellery) | 1645 | -0.0012 | +0.0012 |
 
-Largest gain: dress (+0.0161). Categories with a decline in the official run: necklace (-0.0012).
+Largest gain: dress (+0.0161). Categories with a decline in this run: necklace (-0.0012).
 
 ## Hit@10 by context subset
 
-| Subset | Rule | Observations | Official run: Full − Original | 2025 |
+| Subset | Rule | Observations | This run: Full − Original | 2025 |
 |---|---|---:|---:|---:|
 | Cold | temperature <= 22.90 °C | 9920 | +0.0059 | +0.0078 |
 | Warm | temperature > 22.90 °C | 7240 | +0.0080 | +0.0120 |
