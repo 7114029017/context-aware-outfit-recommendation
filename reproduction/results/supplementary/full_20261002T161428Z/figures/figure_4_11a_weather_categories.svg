@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="372" viewBox="0 0 640 372" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="320.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Categories most sensitive to weather information (thesis Figure 4-11 (a))</text>
+<text x="320.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z, fair subset, five seeds pooled; target categories</text>
+<line x1="232.07" y1="62.00" x2="232.07" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="232.07" y1="302.00" x2="232.07" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="232.07" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">-0.004</text>
+<line x1="317.59" y1="62.00" x2="317.59" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="317.59" y1="302.00" x2="317.59" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="317.59" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">-0.002</text>
+<line x1="403.11" y1="62.00" x2="403.11" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="403.11" y1="302.00" x2="403.11" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="403.11" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.000</text>
+<line x1="488.64" y1="62.00" x2="488.64" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="488.64" y1="302.00" x2="488.64" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="488.64" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.002</text>
+<line x1="574.16" y1="62.00" x2="574.16" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="574.16" y1="302.00" x2="574.16" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="574.16" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.004</text>
+<line x1="154.80" y1="62.00" x2="154.80" y2="302.00" stroke="#555555" stroke-width="1"/>
+<line x1="154.80" y1="302.00" x2="600.00" y2="302.00" stroke="#555555" stroke-width="1"/>
+<text x="377.40" y="336.50" font-size="10.5" fill="#222222" text-anchor="middle">ΔHit@10 (Full − No-Weather)</text>
+<rect x="403.11" y="68.00" width="125.08" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="80.50" font-size="10" fill="#222222" text-anchor="end">dress (all-body)</text>
+<text x="532.19" y="80.50" font-size="9" fill="#222222">+0.003</text>
+<rect x="403.11" y="98.00" width="69.25" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="110.50" font-size="10" fill="#222222" text-anchor="end">sunglasses (accessories)</text>
+<text x="476.36" y="110.50" font-size="9" fill="#222222">+0.002</text>
+<rect x="403.11" y="128.00" width="18.24" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="140.50" font-size="10" fill="#222222" text-anchor="end">pump (shoes)</text>
+<text x="425.35" y="140.50" font-size="9" fill="#222222">+0.000</text>
+<rect x="403.11" y="158.00" width="18.16" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="170.50" font-size="10" fill="#222222" text-anchor="end">earrings (jewellery)</text>
+<text x="425.27" y="170.50" font-size="9" fill="#222222">+0.000</text>
+<rect x="403.11" y="188.00" width="18.00" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="200.50" font-size="10" fill="#222222" text-anchor="end">heels (shoes)</text>
+<text x="425.12" y="200.50" font-size="9" fill="#222222">+0.000</text>
+<rect x="381.57" y="218.00" width="21.54" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="230.50" font-size="10" fill="#222222" text-anchor="end">clutch (bags)</text>
+<text x="407.11" y="230.50" font-size="9" fill="#222222">-0.001</text>
+<rect x="334.28" y="248.00" width="68.83" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="260.50" font-size="10" fill="#222222" text-anchor="end">purse (bags)</text>
+<text x="407.11" y="260.50" font-size="9" fill="#222222">-0.002</text>
+<rect x="169.16" y="278.00" width="233.95" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="290.50" font-size="10" fill="#222222" text-anchor="end">necklace (jewellery)</text>
+<text x="407.11" y="290.50" font-size="9" fill="#222222">-0.005</text>
+<line x1="403.11" y1="62.00" x2="403.11" y2="302.00" stroke="#777777" stroke-width="1.0" stroke-dasharray="4,3"/>
+</svg>

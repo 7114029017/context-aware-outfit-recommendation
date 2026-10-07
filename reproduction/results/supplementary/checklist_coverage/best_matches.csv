@@ -1,0 +1,26 @@
+direction,item,category,weight,best_match,max_similarity,covered_at_tau_0.8946
+A->B,Gemma c1,query_register,2.0,Qwen c3,0.966013,yes
+A->B,Gemma c7,query_register,2.0,Qwen c3,0.897178,yes
+A->B,Gemma c2,weather_style_occasion,3.0,Qwen c2,0.890722,
+A->B,Gemma c8,weather_style_occasion,3.0,Qwen c4,0.881978,
+A->B,Gemma c3,weather_style_occasion,3.0,Qwen c1,0.878242,
+A->B,Gemma c12,clarity_fluency,1.0,Qwen c6,0.873218,
+A->B,Gemma c11,clarity_fluency,1.0,Qwen c6,0.870090,
+A->B,Gemma c10,clarity_fluency,1.0,Qwen c10,0.867471,
+A->B,Gemma c15,grounding,4.0,Qwen c9,0.864968,
+A->B,Gemma c5,grounding,4.0,Qwen c8,0.858214,
+A->B,Gemma c4,query_register,2.0,Qwen c2,0.856737,
+A->B,Gemma c13,clarity_fluency,1.0,Qwen c6,0.853243,
+A->B,Gemma c16,weather_style_occasion,3.0,Qwen c1,0.833403,
+A->B,Gemma c9,clarity_fluency,1.0,Qwen c7,0.819745,
+A->B,Gemma c6,query_register,2.0,Qwen c7,0.813913,
+B->A,Qwen c3,query_register,2.0,Gemma c1,0.966013,yes
+B->A,Qwen c2,weather_style_occasion,3.0,Gemma c2,0.890722,
+B->A,Qwen c8,grounding,4.0,Gemma c7,0.882223,
+B->A,Qwen c4,weather_style_occasion,3.0,Gemma c8,0.881978,
+B->A,Qwen c1,weather_style_occasion,3.0,Gemma c3,0.878242,
+B->A,Qwen c6,clarity_fluency,1.0,Gemma c12,0.873218,
+B->A,Qwen c9,clarity_fluency,1.0,Gemma c7,0.868140,
+B->A,Qwen c10,clarity_fluency,1.0,Gemma c10,0.867471,
+B->A,Qwen c5,query_register,2.0,Gemma c4,0.840433,
+B->A,Qwen c7,query_register,2.0,Gemma c9,0.819745,

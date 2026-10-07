@@ -49,8 +49,8 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
 | Python | **必須是 3.12**（正式 run 為 3.12.3），並含 venv 模組（Ubuntu／Debian：`sudo apt install python3.12-venv`）。其他版本無法安裝固定的套件版本：`scipy==1.18.1` 需要 3.12 以上，`numpy==2.0.2` 沒有 3.13 的套件 |
 | Git | `git` 與 Git LFS（Ubuntu／Debian：`sudo apt install git-lfs`） |
 | 網路 | github.com（含 Git LFS）、pypi.org、download.pytorch.org、huggingface.co |
-| 磁碟 | 至少 20 GB：repo 與特徵檔約 5 GB、Python 環境約 5 GB、Polyvore metadata 約 140 MB、一次完整 run 約 2 GB，訓練期間另有暫存檔；延伸分析用的圖片與 FashionCLIP 另需約 3.5 GB（0.4） |
-| 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片與 FashionCLIP 約 2 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的延伸分析約 2～3.5 小時 |
+| 磁碟 | 至少 20 GB：repo 與特徵檔約 5 GB、Python 環境約 5 GB、Polyvore metadata 約 140 MB、一次完整 run 約 2 GB，訓練期間另有暫存檔；延伸分析與補充分析用的圖片、FashionCLIP 與 Nomic 模型另需約 5.5 GB（0.4） |
+| 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片、FashionCLIP 與 Nomic 模型約 3 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的延伸分析約 2～3.5 小時 |
 
 `sudo` 只有安裝系統套件與 0.6 的清除快取指令（選用）需要。
 
@@ -145,7 +145,7 @@ PyTorch / torchvision；不要用 CPU-only PyTorch 進行完整重現。
 
 不要從舊工作目錄複製 dataset。在 0.3 的環境中，由本 artifact 的 bootstrap 重新下載：
 
-    bash reproduction/scripts/bootstrap_data.sh --with-images --with-fashionclip
+    bash reproduction/scripts/bootstrap_data.sh --with-images --with-fashionclip --with-nomic --with-compendium
 
 來源是公開的 Hugging Face dataset `Stylique/Polyvore`
 （https://huggingface.co/datasets/Stylique/Polyvore ，不需要帳號）。不加選項時只下載約
@@ -157,7 +157,8 @@ PyTorch / torchvision；不要用 CPU-only PyTorch 進行完整重現。
 
 `reproduction/.local/polyvore_root.txt`
 
-兩個選項是 35 組之後的延伸分析（§11、`docs/extensions.md`）要用的：
+四個選項是 35 組之後的延伸分析與補充分析（§11、`docs/extensions.md`、`docs/supplementary_analyses.md`）
+要用的，下載固定版本並核對 SHA-256，全部存在 repo 之外：
 
 - `--with-images`：同一個 dataset 的商品圖片（`images.zip`，2.5 GB；核對 SHA-256 後解壓到
   `_external/uiuc-polyvore-hf/images/`，約 2.6 GB）。色彩分析與附錄圖 A1～A3 使用。圖片只留在
@@ -165,8 +166,14 @@ PyTorch / torchvision；不要用 CPU-only PyTorch 進行完整重現。
 - `--with-fashionclip`：FashionCLIP 模型（`patrickjohncyh/fashion-clip`，固定為學姊筆記本 P16
   使用的版本，約 610 MB），存到 `_external/fashion-clip/`，路徑記錄在
   `reproduction/.local/fashionclip_root.txt`。反事實分析用它編碼改寫後的描述。
+- `--with-nomic`：文字嵌入模型 `nomic-ai/nomic-embed-text-v2-moe`（約 1.9 GB）與它的模型程式碼
+  （`nomic-ai/nomic-bert-2048`，固定為學姊筆記本 P05 記錄的版本），存到 `_external/`。檢核清單
+  涵蓋度（論文圖 4-2）使用。
+- `--with-compendium`：官方的 2024 Adult Compendium of Physical Activities（PDF，0.6 MB，
+  pacompendium.com；與學姊交接資料中的檔案相同），存到 `_external/compendium/`。MET 對照表的
+  重建使用，讀取 PDF 需要 `pdftotext`（poppler-utils）。
 
-不加這兩個選項時，對應的延伸分析會略過，其他步驟不受影響。
+不加這些選項時，對應的分析會略過，其他步驟不受影響。
 
 成功時會顯示 `[READY] POLYVORE_ROOT=…`。要存到其他位置，可把路徑當成第一個參數；
 要改用其他鏡像，可設定環境變數 `POLYVORE_HF_REPO`。下載固定在 dataset 的版本 `15d6c58`
@@ -242,7 +249,7 @@ NVIDIA GB10 這類 CPU／GPU 共用記憶體的機器：CUDA 只把真正空閒�
 - 共 10 main + 25 公平子集消融 = **35 training units**；
 - 後續 secondary analyses、Chapter 4 report、statistics、
   `THESIS_TABLES_SUMMARY.md` 與 final reproduction summary；
-- 狀態成為 `PASSED` 之後，再執行補充分析（只用 CPU，幾秒鐘；不改變 `RUN_STATUS.txt`），
+- 狀態成為 `PASSED` 之後，再執行補充分析（只用 CPU，一分鐘內；不改變 `RUN_STATUS.txt`），
   結果在 run 資料夾的 `supplementary/`（見 §11）；
 - 接著執行延伸分析：用這次 run 的模型重做文字長度、反事實分析、Two-Tower、色彩分析與附錄圖
   （GPU 約 2～3.5 小時；同樣不改變 `RUN_STATUS.txt`），結果在 `extensions/`（見 §11）。
@@ -346,8 +353,8 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | 消融的 95% CI、p 值、Cohen's dz | `ablation/summary/T10_stage2_cp_seed_detail.csv`、`ablation/summary/T11_stage2_cir_seed_detail.csv` |
 | 每個 seed 的結果 | `main/<variant>_seed<N>/evaluation/results_cp.csv`、`results_cir.csv`；`ablation/summary/fresh_25unit_metrics.csv` |
 | 第四章 20 張表的來源與限制 | `chapter4/THESIS_TABLES_SUMMARY.md` |
-| 補充分析：類別與情境子集的 Hit@10、個案名次、因子效果、BH 族群、輸入資料稽核、稿件 Table 1、2、5、8、9 的重算 | `supplementary/`（見 §11） |
-| 延伸分析：文字長度、反事實分析（表 4、9）、Two-Tower（表 8）、色彩分析、附錄圖 A1～A3 | `extensions/`（各步驟狀態在 `extensions/EXTENSIONS_STATUS.txt`；見 §11） |
+| 補充分析：類別、情境子集、因子與詞彙的效果（論文圖 4-8～4-13）、個案名次、因子效果、BH 族群、輸入資料稽核（含表 D-3、5.2 節的類別門檻）、稿件 Table 1、2、5、8、9 的重算、評分者與人工稽核（圖 4-1～4-4）、MET 對照表（表 3-1） | `supplementary/`（見 §11） |
+| 延伸分析：文字長度、反事實分析（表 4、9）、Two-Tower（表 8）、色彩分析、附錄圖 A1～A3 與論文圖 4-14 | `extensions/`（各步驟狀態在 `extensions/EXTENSIONS_STATUS.txt`；見 §11） |
 | 所有輸出的索引 | `INDEX.md` |
 
 正式 run 的同一批檔案已收錄在 repository，數值整理在 `docs/expected_results.md`。
@@ -471,7 +478,7 @@ Frozen senior baseline：
 
 從乾淨環境下載所需 annotation / metadata（見 §0.4）：
 
-    bash reproduction/scripts/bootstrap_data.sh --with-images --with-fashionclip
+    bash reproduction/scripts/bootstrap_data.sh --with-images --with-fashionclip --with-nomic --with-compendium
 
 來源是 Hugging Face 的 `Stylique/Polyvore`；可用環境變數 `POLYVORE_HF_REPO` 改用其他鏡像。
 
@@ -714,24 +721,30 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 
 補充分析不屬於 35 個 training units：`reproduce_all.sh --fresh` 在 run 的狀態成為 `PASSED`
 之後才執行它，它失敗也不會改變 `RUN_STATUS.txt`。它只讀取 run 已存下的結果、2025 年的
-輸入資料與保存的輸出，不載入模型、只用 CPU，幾秒鐘即可完成。結果在 run 資料夾的
-`supplementary/`：
+輸入資料、保存的輸出與 0.4 下載的檔案，只用 CPU，一分鐘內完成；只有檢核清單涵蓋度一項載入
+文字嵌入模型。結果在 run 資料夾的 `supplementary/`：
 
 | 資料夾 | 內容 | 正式 run 的對應位置 |
 |---|---|---|
-| `run_analyses/` | 由該 run 的逐題結果計算：類別與情境子集的 Hit@10、個案名次、因子效果、BH 族群的敏感度分析 | `results/supplementary/full_20261002T161428Z/` |
-| `input_data_audit/` | 輸入資料稽核，與 run 無關 | `results/supplementary/input_data_audit/` |
+| `run_analyses/` | 由該 run 的逐題結果計算：類別、情境子集、因子與詞彙的效果（表 T12，論文圖 4-8～4-13）、個案名次、因子效果、BH 族群的敏感度分析 | `results/supplementary/full_20261002T161428Z/` |
+| `input_data_audit/` | 輸入資料稽核，含 CLO 分布（表 D-3、圖 D-4）與類別門檻（5.2 節），與 run 無關 | `results/supplementary/input_data_audit/` |
 | `paper_value_checks/` | 稿件 Table 1、2、5、8、9 的重算，與 run 無關 | `results/supplementary/paper_value_checks/` |
+| `judge_audit_checks/` | 評分者分數分布、低分樣本敏感度、人工稽核的題項分歧（圖 4-1、4-3、4-4，表 T31）與評分結果未進入訓練的程式掃描（表 A05、A06），與 run 無關 | `results/supplementary/judge_audit_checks/` |
+| `met_reference_check/` | 由官方 Compendium 依論文規則重建 457 筆 MET 對照表（表 3-1），與 run 無關；需要 `--with-compendium` | `results/supplementary/met_reference_check/` |
+| `checklist_coverage/` | 兩組檢核清單的概念涵蓋度（圖 4-2），與 run 無關；需要 `--with-nomic` | `results/supplementary/checklist_coverage/` |
 
 執行時的輸出記錄在 `logs/supplementary.log`。正式 run 執行時流程還沒有這一步，右欄的檔案
 是之後用同一套程式從正式 run 的輸出算出的。§0.8 的判定為 `IDENTICAL` 時，你的
-`supplementary/` 除了 `run_analyses/summary.md` 開頭的 run 名稱與來源，應與右欄完全相同；
-判定為 `CONSISTENT` 時，`run_analyses/` 的數字會略有不同。另外兩個資料夾與 run 無關，
+`supplementary/` 除了 `run_analyses/` 的 `summary.md` 與圖中的 run 名稱與來源，應與右欄完全相同；
+判定為 `CONSISTENT` 時，`run_analyses/` 的數字會略有不同。其他資料夾與 run 無關，
 應完全相同。核對方式（`$RUN` 見 §0.8）：
 
     diff -r "$RUN/supplementary/run_analyses" reproduction/results/supplementary/full_20261002T161428Z
     diff -r "$RUN/supplementary/input_data_audit" reproduction/results/supplementary/input_data_audit
     diff -r "$RUN/supplementary/paper_value_checks" reproduction/results/supplementary/paper_value_checks
+    for d in judge_audit_checks met_reference_check checklist_coverage; do
+      diff -r "$RUN/supplementary/$d" "reproduction/results/supplementary/$d"
+    done
 
 也可以單獨執行，例如自動執行失敗時（terminal 會顯示 `[WARN]` 與重跑指令），修正原因後
 重跑。需要 0.3 的環境與 0.4 下載的 Polyvore metadata（或用 `--polyvore-root PATH` 指定）：
@@ -758,7 +771,7 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 | `counterfactual` | Table 4、Table 9 | `--with-fashionclip`；CPU 約 1 分鐘 | `results/extensions/full_20261002T161428Z/counterfactual/`（5 個 seed） |
 | `two_tower` | Table 8 | GPU，1.5～3 小時 | 尚未執行（需安排 GPU） |
 | `color` | 5.5 節色彩分析 | `--with-images`；CPU 幾秒 | `results/extensions/full_20261002T161428Z/color_analysis/` |
-| `figures` | 附錄圖 A1～A3 | `--with-images`；CPU 幾秒 | 圖只在本機；內容（商品 ID、名次）在 `case_figures/case_figures_manifest.csv` |
+| `figures` | 附錄圖 A1～A3、論文圖 4-14（顏色偏移案例） | `--with-images`；CPU 幾秒 | 圖只在本機；內容（商品 ID、名次、顏色）在 `case_figures/case_figures_manifest.csv`、`color_case_figure_manifest.csv` |
 
 run 資料夾中的結果在 `extensions/`，各步驟的狀態在 `extensions/EXTENSIONS_STATUS.txt`；
 缺少 GPU 或下載檔的步驟會標為 `SKIPPED`，其他步驟照常執行。單獨執行或重跑（例如修正失敗原因後）：

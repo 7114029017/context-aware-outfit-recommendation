@@ -3,8 +3,8 @@
 The 35 training units reproduce Tables 6 and 7. Several other analyses in the
 TORS manuscript still rest on the senior student's preserved model outputs:
 the text-length row of Table 5, the counterfactual analysis (Tables 4 and 9),
-the Two-Tower check (Table 8), the color-shift numbers and the appendix case
-figures. The extension analyses regenerate them from a run's own models. They
+the Two-Tower check (Table 8), the color-shift numbers, the appendix case
+figures and the thesis's color-shift case (Figure 4-14). The extension analyses regenerate them from a run's own models. They
 run after the 35 units, read the run's checkpoints and outputs, and never
 change the run's results or its `RUN_STATUS.txt`; the code used by the 35 units
 is not changed.
@@ -30,14 +30,15 @@ run them by hand, for example after a failure:
 | `counterfactual` | Tables 4 and 9 | FashionCLIP (`bootstrap_data.sh --with-fashionclip`) | about 1 min on a CPU |
 | `two_tower` | Table 8 | GPU | 1.5-3 hours |
 | `color` | Section 5.5, color-shift analysis (thesis Table 4-19) | Polyvore images (`bootstrap_data.sh --with-images`) | seconds |
-| `figures` | Figures A1-A3 | Polyvore images | seconds |
+| `figures` | Figures A1-A3; thesis Figure 4-14 | Polyvore images | seconds |
 
 A step whose GPU or download is missing is reported as SKIPPED and the other
 steps still run. `--validate` adds the checks of the next section (about 5 min
 on a CPU). The Polyvore images and the case figures, which show Polyvore
 product photos, stay on the local machine: `case_figures.py` refuses to write
-into a tracked folder, and only the figures' contents (item IDs and ranks) are
-recorded in `case_figures_manifest.csv`.
+into a tracked folder, and only the figures' contents (item IDs, ranks and, for
+Figure 4-14, the dominant colors) are recorded in `case_figures_manifest.csv`
+and `color_case_figure_manifest.csv`.
 
 ## Validation of the ported code
 
@@ -96,6 +97,17 @@ five-seed mean: purse (seed 2) Original rank 21, Full 1; dress (seed 2)
 Original 12, No-Style 55, Full 5; sunglasses (seed 1) Original 47, Full 500.
 The five-seed mean ranks equal `results/supplementary/full_20261002T161428Z/case_ranks.csv`.
 The captions must be updated if the manuscript uses these figures.
+
+**Figure 4-14 (thesis, color-shift case).** Same case (set 174710752, a gray
+dress), drawn as the notebook P03 (cell 7, `show_case`) drew it: the query
+outfit, then the top-5 items under Original and under Full with their dominant
+image colors. The seed shown is the notebook's representative row (largest
+color problem under Original, then best Original rank): seed 1. All five
+Original items are black and four of the five Full items gray, while the
+target moves from rank 31 to 36; the thesis describes the same pattern (all
+five black, gray items in front, rank 27 to 36). The case is a color problem
+under Original in 4 of 5 seeds and under Full in 1 of 5
+(`color_analysis/color_shift_cases.csv`).
 
 ## What cannot be regenerated
 

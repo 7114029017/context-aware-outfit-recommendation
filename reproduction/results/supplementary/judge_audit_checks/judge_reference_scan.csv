@@ -1,0 +1,86 @@
+scope,searched_file,status,judge_artifact_terms_found,assessment
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cp.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cir.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cp.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cir.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/CP_evaluate.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/dataset.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/outfit_transformer.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/utils.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/base_config.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/cp_cond_hardneg.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/cir_cond_hardneg.py,searched,,no_judge_artifact_reference_found
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/5筆資料 t-test.ipynb,missing_file,,not in the repository
+2025 list (A05),02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/新描述 t-test.ipynb,missing_file,,not in the repository
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/CIR_evaluate.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/CP_evaluate.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/base_config.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/cir_cond_hardneg.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/config/cp_cond_hardneg.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/dataset.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cir.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/evaluate_cp.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/outfit_transformer.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cir.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/train_cp.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",02_模型訓練和驗證_model_training_validation/main_hybrid_attention_code/utils.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/_common.sh,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/audit_fair_subset_cir_scope.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/bootstrap_data.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/build_manuscript_reconciliation.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/build_thesis_tables_summary.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/build_zenodo_package.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/check.sh,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/compare_main_results.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/compare_with_official_run.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/_ext.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/case_figures.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/color_analysis.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/counterfactual.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/length_analysis.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/main_cir_per_query.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/run_all.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/extensions/two_tower.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/freeze_splits.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/package_official_run.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/build_chapter4_report.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/build_fair_subset_report.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/build_run_summary.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/collect_main_results.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/complete_statistics.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/evaluate_main_run.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/launch_full.sh,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/reproduce_ablation.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/reproduce_analysis.sh,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/reproduce_main.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/reproduce_table_4_3.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/validate_chapter4_report.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/pipeline/validate_secondary_matrix.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/pipeline/verify_main_training_reuse.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/preflight_remaining_thesis_reproduction.py,searched,phase3_scores|Qwen3VL32B|phase3_scores_Qwen3VL32B|phase3_scores_Gemma3|checklist_C,reads judge outputs; not run by the 35 units
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/reconstruct_fair_subset_from_wos.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/repro_paths.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/reproduce_all.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/reproduce_remaining_thesis.py,searched,phase3_scores|Qwen3VL32B|phase3_scores_Qwen3VL32B|phase3_scores_Gemma3|checklist_C,reads judge outputs; not run by the 35 units
+reproduction: other scripts,reproduction/scripts/reproduce_thesis.sh,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/run_fair_subset_batch.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/run_fair_subset_single_seed.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/run_full_single_seed_training.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/run_single_seed_smoke_training.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/show_reproduction_summary.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/smoke_test.sh,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/standard_decoder.py,searched,,no_judge_artifact_reference_found
+"reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/summarize_fair_subset_5seed.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/_common.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/_svg.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/checklist_coverage.py,searched,Qwen3VL32B|checklist_C,reads judge outputs; not run by the 35 units
+reproduction: other scripts,reproduction/scripts/supplementary/input_data_audit.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/judge_audit_checks.py,searched,phase3_scores|Qwen3VL32B|phase3_scores_Qwen3VL32B|phase3_scores_Gemma3|checklist_C|LLM-as-a-Judge|judge_score|rewrite_qwen|rewrite_gemma,reads judge outputs; not run by the 35 units
+reproduction: other scripts,reproduction/scripts/supplementary/met_reference_check.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/official_run_analyses.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/paper_value_checks.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/supplementary/run_all.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/validate_reproduction_env.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/verify_archived_sources.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/verify_completed_reference.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/verify_feature_files.py,searched,,no_judge_artifact_reference_found

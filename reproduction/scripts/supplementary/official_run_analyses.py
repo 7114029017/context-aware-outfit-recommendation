@@ -29,11 +29,23 @@ run_all.sh after it has PASSED. Outputs:
 - fair_subset_bh_family_sensitivity.csv: retrospective sensitivity analysis of
   the Benjamini-Hochberg family for Full vs Original (the five reported
   metrics vs all eight metrics);
+- subset_robustness_summary.csv: the 2025 table T12 recomputed (Hit@10 and
+  median rank of Full vs Original, and Hit@10 of Full vs each simplified
+  description, by subset, with the union of each dimension and all queries);
+- factor_category_effects.csv: Hit@10 and median rank by target category for
+  Full vs Original and Full vs each simplified description, with the 2025
+  values of T15;
+- factor_term_effects.csv: the same by weather, occasion and style term
+  (terms with at least 20 observations, as in 2025);
+- figures/: thesis Figures 4-8 to 4-13 redrawn from this run (SVG);
 - summary.md: the main numbers and the cross-checks.
 
 The subset rules follow the 2025 notebook
 03_實驗與結果_experiments_results/04_情境子集與三因子分析/source_programs/P02_subset_robustness_analysis.ipynb
-(FORMAL_KEYWORDS, CASUAL_KEYWORDS, TEMP_PATTERN and the median temperature split).
+(FORMAL_KEYWORDS, CASUAL_KEYWORDS, TEMP_PATTERN, the median temperature split and
+METRIC_PAIRS), the category and term summaries the notebook P03 cell 4 in the
+same folder (category_summary, term_summary with min_n=20, sorted by ΔHit@10 and
+then by the number of observations).
 """
 from __future__ import annotations
 
@@ -48,6 +60,7 @@ from scipy import stats
 
 from _common import (CASE_TABLES, OFFICIAL_RUN, REPRO, SUPPLEMENTARY, WOS_JSONL, bh_adjust, fmt,
                      polyvore_root, read_csv, read_json, signed, write_csv, write_text)
+from _svg import GREY, POSITIVE, grouped_vbar_chart, hbar_chart, vbar_chart
 
 VARIANTS = {  # run directory prefix -> condition name in the manuscript
     "original": "Original",
@@ -73,6 +86,34 @@ CASUAL_KEYWORDS = re.compile(r"\b(casual|weekend|streetwear|street|relaxed|every
 TEMP_PATTERN = re.compile(r"(-?\d+(?:\.\d+)?)\s*°?\s*([CFcf])")
 CLOTHING = {"all body", "bottoms", "tops", "outerwear"}
 ACCESSORY = {"bags", "shoes", "accessories", "hats", "jewellery", "scarves", "sunglasses"}
+DIMENSIONS = (  # P02: subset dimensions in the order of table T12
+    ("Weather: Cold vs Warm", ("Cold", "Warm")),
+    ("Occasion: Formal vs Casual", ("Formal", "Casual")),
+    ("Style Richness: High vs Low", ("High style", "Low style")),
+    ("Category: Clothing vs Accessory", ("Clothing-led", "Accessory-led")),
+)
+T12_LABELS = {"High style": "High style (≥2 terms)", "Low style": "Low style (≤1 term)"}
+METRIC_PAIRS = (  # P02 METRIC_PAIRS: left, right, T12 column; ranks by the median, Hit@10 by the mean
+    ("original", "context", "Hit@10"),
+    ("original", "context", "Median Rank"),
+    ("no_weather", "context", "Hit@10 (no_weather→full)"),
+    ("no_occasion", "context", "Hit@10 (no_occasion→full)"),
+    ("no_style", "context", "Hit@10 (no_style→full)"),
+)
+FACTORS = ("weather", "occasion", "style")
+CASE_TYPES = (("orig_to_full", "original"), ("weather", "no_weather"), ("occasion", "no_occasion"),
+              ("style", "no_style"))  # T15 case types and the left condition; the right one is Full
+TERM_MIN_N = 20  # P03 term_summary(min_n=20)
+FIGURES_2025 = CASE_TABLES.parent / "figures"
+TERM_FIGURES_2025 = {
+    ("weather", "original"): "F09a_weather_terms_context_aware_vs_original.svg",
+    ("weather", "no_weather"): "F09b_weather_term_contribution_no_weather_vs_full.svg",
+    ("occasion", "original"): "F10a_occasion_terms_context_aware_vs_original.svg",
+    ("occasion", "no_occasion"): "F10b_occasion_term_contribution_no_occasion_vs_full.svg",
+    ("style", "original"): "F11a_style_terms_context_aware_vs_original.svg",
+    ("style", "no_style"): "F11b_style_term_contribution_no_style_vs_full.svg",
+}
+THESIS_FIGURE = {"weather": "4-11", "occasion": "4-12", "style": "4-13"}
 
 
 def norm_text(value) -> str:
@@ -154,6 +195,55 @@ def choose_source(args) -> dict:
     return run_folder_source(runs[-1]) if runs else official_source()
 
 
+def evaluate_subset(members: list, label: str, dimension: str, by_key: dict) -> dict:
+    """P02 evaluate_subset for the five METRIC_PAIRS."""
+    row = {"n": len(members), "label": label}
+    for left, right, name in METRIC_PAIRS:
+        if name == "Median Rank":
+            lv = float(statistics.median(by_key[k][left][0] for k in members))
+            rv = float(statistics.median(by_key[k][right][0] for k in members))
+        else:
+            lv = mean(by_key[k][left][1] for k in members)
+            rv = mean(by_key[k][right][1] for k in members)
+        row[f"{name}_left"], row[f"{name}_right"], row[f"Δ{name}"] = lv, rv, rv - lv
+    row["dimension"] = dimension
+    return row
+
+
+def summarize_groups(groups: dict, by_key: dict, left: str, min_n: int = 1) -> list[dict]:
+    """P03 category_summary / term_summary: Full (right) vs `left`, sorted by ΔHit@10 and n, descending."""
+    rows = []
+    for name, members in groups.items():
+        if len(members) < min_n:
+            continue
+        lh = mean(by_key[k][left][1] for k in members)
+        rh = mean(by_key[k]["context"][1] for k in members)
+        lr = float(statistics.median(by_key[k][left][0] for k in members))
+        rr = float(statistics.median(by_key[k]["context"][0] for k in members))
+        rows.append({"group": name, "n": len(members), "left_hit10": lh, "right_hit10": rh, "left_rank": lr,
+                     "right_rank": rr, "delta_hit10": rh - lh, "delta_rank": rr - lr})
+    # pandas sort_values is stable and groupby returns the groups sorted by key
+    rows.sort(key=lambda r: str(r["group"]))
+    rows.sort(key=lambda r: (-r["delta_hit10"], -r["n"]))
+    return rows
+
+
+def archived_bar_values(path: Path) -> list[tuple[str, float]]:
+    """Bar labels and value labels of a 2025 matplotlib bar chart, top bar first (3 decimals as displayed)."""
+    if not path.is_file():
+        return []
+    comments = re.findall(r"<!-- (.*?) -->", path.read_text(encoding="utf-8"))
+    start = next((i for i, c in enumerate(comments) if "Hit@10" in c), None)
+    if start is None:
+        return []
+    rest = comments[start + 1:]
+    values = [c for c in rest if re.fullmatch(r"[+-]\d+\.\d+", c)]
+    labels = [c for c in rest if not re.fullmatch(r"[+-]\d+\.\d+", c)]
+    if not values or len(labels) != len(values):
+        return []
+    return list(zip(labels, (float(v) for v in values)))[::-1]
+
+
 def pfmt(p: float | None) -> str:
     if p is None:
         return ""
@@ -190,11 +280,21 @@ def main() -> None:
         raise SystemExit("[SUPPLEMENTARY BLOCKED] Original and Full rows cover different queries")
     keys = sorted(original)
 
+    by_key = defaultdict(dict)  # query -> condition -> (rank, hit@10)
+    for prefix in VARIANTS:
+        for r in rows[prefix]:
+            by_key[(r["seed"], r["set_id"], r["target_item_id"])][prefix] = (r["rank"], r["hit@10"])
+    if set(by_key) != set(keys) or any(len(v) != len(VARIANTS) for v in by_key.values()):
+        raise SystemExit("[SUPPLEMENTARY BLOCKED] the five conditions cover different queries")
+
     categories = {}
+    labels = {}  # P03 map_category: "name (group)", first occurrence of an ID
     for record in (poly / "categories.csv").read_text(encoding="utf-8-sig").splitlines():
         parts = record.split(",")
         if len(parts) >= 3 and parts[0].strip():
             categories.setdefault(parts[0].strip(), (norm_category(parts[1]), norm_category(parts[2])))
+            name, group = parts[1].strip(), parts[2].strip()
+            labels.setdefault(parts[0].strip(), f"{name} ({group})" if group else name)
 
     fragments = {}
     for line in WOS_JSONL.read_text(encoding="utf-8").splitlines():
@@ -210,6 +310,7 @@ def main() -> None:
             "weather": norm_text(frag.get("weather")),
             "occasion": norm_text(frag.get("occasion")),
             "style_terms": len([t for t in style if str(t).strip()]) if isinstance(style, list) else 0,
+            "terms": {f: frag.get(f) if isinstance(frag.get(f), list) else [] for f in FACTORS},
         }
     titles = read_json(poly / "polyvore_outfit_titles.json")
 
@@ -296,6 +397,101 @@ def main() -> None:
               ["subset", "rule", "observations", "original_hit10", "full_hit10", "delta_hit10",
                "observations_2025", "delta_hit10_2025"], subset_rows)
 
+    # ---------------------------------------------------------------- table T12 and Figures 4-9, 4-10
+    tests = {name: test for name, _, test in subsets}
+    t12_rows = []
+    for dimension, names in DIMENSIONS:
+        union = set()
+        for name in names:
+            members = [k for k in keys if tests[name](info[k])]
+            union.update(members)
+            t12_rows.append(evaluate_subset(members, T12_LABELS.get(name, name), dimension, by_key))
+        t12_rows.append(evaluate_subset([k for k in keys if k in union], "All (union)", dimension, by_key))
+    t12_rows.append(evaluate_subset(keys, "Full dataset", "Overall", by_key))
+    t12_archived = read_csv(CASE_TABLES / "T12_subset_robustness_summary.csv")
+    t12_columns = list(t12_archived[0])
+    write_csv(out / "subset_robustness_summary.csv", t12_columns,
+              [[r[c] if isinstance(r[c], (int, str)) else repr(r[c]) for c in t12_columns] for r in t12_rows])
+    plotted = [r for r in t12_rows if r["dimension"] != "Overall" and r["label"] != "All (union)"]
+    tick_labels = [f"{r['label'].split(' (')[0]}\n(n={r['n']})" for r in plotted]
+    grouped_vbar_chart(out / "figures" / "figure_4_9_subset_hit10.svg",
+                       "Hit@10 by context subset: Original vs Full (thesis Figure 4-9)", tick_labels,
+                       [("Original", [r["Hit@10_left"] for r in plotted], GREY),
+                        ("Full (context-aware)", [r["Hit@10_right"] for r in plotted], POSITIVE)],
+                       "Hit@10", breaks=(2, 4, 6), subtitle=f"Run {source['run_id']}, fair subset, five seeds pooled")
+    vbar_chart(out / "figures" / "figure_4_10_median_rank_improvement.svg",
+               "Median rank improvement, Original to Full, by subset (thesis Figure 4-10)", tick_labels,
+               [0.0 - r["ΔMedian Rank"] for r in plotted], "Rank improvement (rank positions)", breaks=(2, 4, 6),
+               subtitle=f"Run {source['run_id']}; improvement = median rank of Original minus median rank of Full")
+
+    # ---------------------------------------------------------------- category and term effects (P03 cell 4)
+    category_members = defaultdict(list)
+    for key in keys:
+        category_members[original[key]["target_item_fg"]].append(key)
+    t15 = {(r["case_type"], r["target_item_fg"]): r for r in read_csv(CASE_TABLES / "T15_qualitative_category_summary.csv")}
+    category_effects = {}
+    effect_csv = []
+    for case_type, left in CASE_TYPES:
+        summary_rows = summarize_groups(category_members, by_key, left)
+        category_effects[case_type] = summary_rows
+        for r in summary_rows:
+            old = t15.get((case_type, r["group"]), {})
+            effect_csv.append([case_type, f"Full - {VARIANTS[left]}", r["group"], labels.get(r["group"], r["group"]),
+                               r["n"], fmt(r["left_hit10"], 6), fmt(r["right_hit10"], 6), signed(r["delta_hit10"], 6),
+                               fmt(r["left_rank"], 1), fmt(r["right_rank"], 1), signed(r["delta_rank"], 1),
+                               old.get("n", ""), signed(float(old["delta_hit10"]), 6) if old else "",
+                               signed(float(old["delta_rank"]), 1) if old else ""])
+    write_csv(out / "factor_category_effects.csv",
+              ["case_type", "comparison", "target_item_fg", "category", "observations", "left_hit10", "full_hit10",
+               "delta_hit10", "left_median_rank", "full_median_rank", "delta_median_rank", "observations_2025",
+               "delta_hit10_2025", "delta_median_rank_2025"], effect_csv)
+
+    term_effects = {}
+    term_csv = []
+    for factor in FACTORS:
+        groups = defaultdict(list)  # P03 explode_terms: one entry per listed term, empty terms dropped
+        for key in keys:
+            for term in fragments.get(key[1], {}).get("terms", {}).get(factor, []):
+                if term is not None and str(term).strip():
+                    groups[term].append(key)
+        for left in ("original", f"no_{factor}"):
+            summary_rows = summarize_groups(groups, by_key, left, TERM_MIN_N)
+            shown_2025 = dict(archived_bar_values(FIGURES_2025 / TERM_FIGURES_2025[(factor, left)]))
+            term_effects[(factor, left)] = (summary_rows, shown_2025, len(groups))
+            for position, r in enumerate(summary_rows, 1):
+                term_csv.append([factor, f"Full - {VARIANTS[left]}", position, r["group"], r["n"],
+                                 fmt(r["left_hit10"], 6), fmt(r["right_hit10"], 6), signed(r["delta_hit10"], 6),
+                                 fmt(r["left_rank"], 1), fmt(r["right_rank"], 1), signed(r["delta_rank"], 1),
+                                 signed(shown_2025[r["group"]], 3) if r["group"] in shown_2025 else ""])
+    write_csv(out / "factor_term_effects.csv",
+              ["factor", "comparison", "position", "term", "observations", "left_hit10", "full_hit10", "delta_hit10",
+               "left_median_rank", "full_median_rank", "delta_median_rank", "delta_hit10_2025_top8_figure"], term_csv)
+
+    def category_chart(name, case_type, title, xlabel):
+        shown = category_effects[case_type][:8]  # P03 plot_paper_category_bar(top_n=8)
+        hbar_chart(out / "figures" / name, title, [labels.get(r["group"], r["group"]) for r in shown],
+                   [r["delta_hit10"] for r in shown], xlabel,
+                   subtitle=f"Run {source['run_id']}, fair subset, five seeds pooled; target categories")
+
+    category_chart("figure_4_8_category_original_to_full.svg", "orig_to_full",
+                   "Hit@10 change by target category (thesis Figure 4-8)", "ΔHit@10 (Full − Original)")
+    for factor in FACTORS:
+        no = f"No-{factor.capitalize()}"
+        figure = THESIS_FIGURE[factor]
+        category_chart(f"figure_{figure.replace('-', '_')}a_{factor}_categories.svg", factor,
+                       f"Categories most sensitive to {factor} information (thesis Figure {figure} (a))",
+                       f"ΔHit@10 (Full − {no})")
+        for left, part, title in (("original", "b", f"{factor.capitalize()} terms improved by the context-aware description"),
+                                  (f"no_{factor}", "c", f"{factor.capitalize()} term contribution")):
+            summary_rows, _, total = term_effects[(factor, left)]
+            shown = summary_rows[:8]
+            hbar_chart(out / "figures" / f"figure_{figure.replace('-', '_')}{part}_{factor}_terms_"
+                       f"{'original' if left == 'original' else 'no_' + factor}_to_full.svg",
+                       f"{title} (thesis Figure {figure} ({part}))", [str(r["group"]) for r in shown],
+                       [r["delta_hit10"] for r in shown], f"ΔHit@10 (Full − {VARIANTS[left]})",
+                       subtitle=f"Run {source['run_id']}; top 8 of {len(summary_rows)} terms with at least "
+                                f"{TERM_MIN_N} observations ({total} distinct terms)")
+
     # ---------------------------------------------------------------- cases
     case_rows = []
     for name, set_id, figure in CASES:
@@ -367,6 +563,55 @@ def main() -> None:
     t02_ok = bool(t02_rows) and all(t02_rows)
 
     best = category_rows[0]
+    t12_same_n = (len(t12_rows) == len(t12_archived)
+                  and all(str(r["n"]) == a["n"] and r["label"] == a["label"] and r["dimension"] == a["dimension"]
+                          for r, a in zip(t12_rows, t12_archived)))
+    t15_same_n = all(str(r["n"]) == t15.get((case_type, r["group"]), {}).get("n")
+                     for case_type, rs in category_effects.items() for r in rs) and \
+        len(t15) == sum(len(rs) for rs in category_effects.values())
+    old_t12 = {(a["dimension"], a["label"]): a for a in t12_archived}
+    subset_lines = []
+    for r in t12_rows:
+        a = old_t12.get((r["dimension"], r["label"]), {})
+        before = signed(0.0 - float(a["ΔMedian Rank"]), 1) if a else ""
+        subset_lines.append(
+            f"| {r['label']}{' (' + r['dimension'].split(':')[0] + ')' if r['label'] == 'All (union)' else ''} "
+            f"| {r['n']} | {r['Median Rank_left']:.1f} → {r['Median Rank_right']:.1f} | {signed(0.0 - r['ΔMedian Rank'], 1)} "
+            f"| {before} | {signed(r['ΔHit@10 (no_weather→full)'])} | {signed(r['ΔHit@10 (no_occasion→full)'])} "
+            f"| {signed(r['ΔHit@10 (no_style→full)'])} |")
+    effect_by = {(ct, r["group"]): r for ct, rs in category_effects.items() for r in rs}
+    category_lines = []
+    for r in category_effects["orig_to_full"]:
+        cells = []
+        for case_type, _ in CASE_TYPES:
+            e, a = effect_by[(case_type, r["group"])], t15.get((case_type, r["group"]))
+            cells.append(f"{signed(e['delta_hit10'], 3)} ({signed(float(a['delta_hit10']), 3) if a else '–'})")
+        category_lines.append(f"| {labels.get(r['group'], r['group'])} | {r['n']} | " + " | ".join(cells) + " |")
+    term_lines = []
+    for factor in FACTORS:
+        for left in ("original", f"no_{factor}"):
+            summary_rows, shown_2025, total = term_effects[(factor, left)]
+            mine = {r["group"]: r for r in summary_rows}
+            top8 = {r["group"] for r in summary_rows[:8]}
+            part = "b" if left == "original" else "c"
+            term_lines += [
+                "",
+                f"**{factor.capitalize()} terms, Full − {VARIANTS[left]} (thesis Figure {THESIS_FIGURE[factor]} ({part}))**: "
+                f"{len(summary_rows)} of {total} distinct terms have at least {TERM_MIN_N} observations; terms of the "
+                f"2025 figure again in this run's top 8: {sum(1 for t in shown_2025 if t in top8)} of {len(shown_2025)}.",
+                "",
+                "| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |",
+                "|---:|---|---:|---:|---|---:|---:|",
+            ]
+            shown_list = list(shown_2025.items())
+            for i in range(8):
+                r = summary_rows[i] if i < len(summary_rows) else None
+                old_term, old_value = shown_list[i] if i < len(shown_list) else ("", None)
+                now = mine.get(old_term)
+                term_lines.append(
+                    f"| {i + 1} | {r['group'] if r else ''} | {signed(r['delta_hit10'], 3) if r else ''} "
+                    f"| {r['n'] if r else ''} | {old_term} | {signed(old_value, 3) if old_value is not None else ''} "
+                    f"| {signed(now['delta_hit10'], 3) + ' (n=' + str(now['n']) + ')' if now else ('below 20 observations' if old_term else '')} |")
     lines = [
         f"# Supplementary analyses of run `{source['run_id']}`",
         "",
@@ -390,6 +635,33 @@ def main() -> None:
         "| Subset | Rule | Observations | This run: Full − Original | 2025 |",
         "|---|---|---:|---:|---:|",
         *[f"| {r[0]} | {r[1]} | {r[2]} | {r[5]} | {r[7]} |" for r in subset_rows],
+        "",
+        "## Subsets: median rank and factor contributions (2025 table T12; thesis Figures 4-9 and 4-10)",
+        "",
+        "Median rank improvement = median rank of Original minus median rank of Full (positive: the target",
+        "moves up). The last three columns are Hit@10 of Full minus Hit@10 of the simplified description.",
+        "Full table: `subset_robustness_summary.csv` (columns of T12).",
+        "",
+        "| Subset | Observations | Median rank, Original → Full | Improvement | 2025 | No-Weather → Full | "
+        "No-Occasion → Full | No-Style → Full |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        *subset_lines,
+        "",
+        "## Category effects of each factor (thesis Figures 4-8 and 4-11 (a) to 4-13 (a))",
+        "",
+        "ΔHit@10 of Full minus the other condition; 2025 values (table T15) in parentheses.",
+        "",
+        "| Category | Observations | Full − Original | Full − No-Weather | Full − No-Occasion | Full − No-Style |",
+        "|---|---:|---:|---:|---:|---:|",
+        *category_lines,
+        "",
+        "## Term effects of each factor (thesis Figures 4-11 (b, c) to 4-13 (b, c))",
+        "",
+        "Terms are the weather, occasion and style fragments of each outfit; terms with fewer than 20",
+        "observations are left out, as in 2025. The 2025 columns are the eight bars of the archived figure",
+        "(three decimals as displayed) and this run's value for the same term. All terms:",
+        "`factor_term_effects.csv`.",
+        *term_lines,
         "",
         "## Case ranks (five-seed mean)",
         "",
@@ -416,7 +688,10 @@ def main() -> None:
         f"Original {overall_o:.6f} vs {recall_o:.6f}; Full {overall_f:.6f} vs {recall_f:.6f} "
         f"({'match' if abs(overall_o - recall_o) < 1e-9 and abs(overall_f - recall_f) < 1e-9 else 'MISMATCH'}).",
         f"- Observations per category equal the 2025 table T15: {'yes' if counts_match_t15 else 'NO'}.",
-        f"- Observations per subset equal the 2025 table T12: {'yes' if counts_match_t12 else 'NO'}.",
+        f"- Observations per subset equal the 2025 table T12: {'yes' if counts_match_t12 else 'NO'}; "
+        f"all 13 rows of T12, including the unions: {'yes' if t12_same_n else 'NO'}.",
+        f"- Observations per category in all four comparisons equal the 2025 table T15: "
+        f"{'yes' if t15_same_n else 'NO'}.",
         f"- BH over the five reported metrics equals the run's tables T03/T04: {'yes' if bh_ok and bh_matches else 'NO'}.",
         f"- Mean differences and p-values of the four comparisons equal the run's table T02 "
         f"({len(t02_rows)} rows): {'yes' if t02_ok else 'NO'}.",

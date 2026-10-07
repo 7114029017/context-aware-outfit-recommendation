@@ -1,0 +1,23 @@
+row_type,activity_code,major_heading,met_value,kept_when_all_rows_are_used
+description wraps around the code (dropped by a line-based extraction),02050,Conditioning Exercise,6.0,
+description wraps around the code (dropped by a line-based extraction),03039,Dancing,13.0,yes
+description wraps around the code (dropped by a line-based extraction),03060,Dancing,3.5,yes
+description wraps around the code (dropped by a line-based extraction),05050,Home Activities,2.0,
+description wraps around the code (dropped by a line-based extraction),05090,Home Activities,2.3,
+description wraps around the code (dropped by a line-based extraction),05146,Home Activities,3.8,
+description wraps around the code (dropped by a line-based extraction),11126,Occupation,3.8,yes
+description wraps around the code (dropped by a line-based extraction),11146,Occupation,4.8,
+description wraps around the code (dropped by a line-based extraction),11192,Occupation,4.5,yes
+description wraps around the code (dropped by a line-based extraction),11266,Occupation,8.5,yes
+description wraps around the code (dropped by a line-based extraction),11600,Occupation,1.8,
+description wraps around the code (dropped by a line-based extraction),11610,Occupation,3.3,
+description wraps around the code (dropped by a line-based extraction),11765,Occupation,4.0,
+description wraps around the code (dropped by a line-based extraction),15135,Sports,5.8,
+"kept from all rows, not from line rows",03039,Dancing,13.0,
+"kept from all rows, not from line rows",03060,Dancing,3.5,
+"kept from all rows, not from line rows",11126,Occupation,3.8,
+"kept from all rows, not from line rows",11192,Occupation,4.5,
+"kept from all rows, not from line rows",11266,Occupation,8.5,
+"kept from line rows, not from all rows",11195,Occupation,3.8,
+"kept from line rows, not from all rows",11383,Occupation,4.5,
+"kept from line rows, not from all rows",11493,Occupation,8.5,

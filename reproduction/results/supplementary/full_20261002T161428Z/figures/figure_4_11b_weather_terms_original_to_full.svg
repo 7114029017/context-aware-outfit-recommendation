@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="697" height="372" viewBox="0 0 697 372" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="348.56" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Weather terms improved by the context-aware description (thesis Figure 4-11 (b))</text>
+<text x="348.56" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z; top 8 of 209 terms with at least 20 observations (480 distinct terms)</text>
+<line x1="104.80" y1="62.00" x2="104.80" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="104.80" y1="302.00" x2="104.80" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="104.80" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.00</text>
+<line x1="248.63" y1="62.00" x2="248.63" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="248.63" y1="302.00" x2="248.63" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="248.63" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.05</text>
+<line x1="392.46" y1="62.00" x2="392.46" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="392.46" y1="302.00" x2="392.46" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="392.46" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.10</text>
+<line x1="536.30" y1="62.00" x2="536.30" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="536.30" y1="302.00" x2="536.30" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="536.30" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.15</text>
+<line x1="104.80" y1="62.00" x2="104.80" y2="302.00" stroke="#555555" stroke-width="1"/>
+<line x1="104.80" y1="302.00" x2="657.12" y2="302.00" stroke="#555555" stroke-width="1"/>
+<text x="380.96" y="336.50" font-size="10.5" fill="#222222" text-anchor="middle">ΔHit@10 (Full − Original)</text>
+<rect x="104.80" y="68.00" width="460.26" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="80.50" font-size="10" fill="#222222" text-anchor="end">summer evening</text>
+<text x="569.06" y="80.50" font-size="9" fill="#222222">+0.160</text>
+<rect x="104.80" y="98.00" width="460.26" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="110.50" font-size="10" fill="#222222" text-anchor="end">12.7° C</text>
+<text x="569.06" y="110.50" font-size="9" fill="#222222">+0.160</text>
+<rect x="104.80" y="128.00" width="447.48" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="140.50" font-size="10" fill="#222222" text-anchor="end">16.9° C</text>
+<text x="556.28" y="140.50" font-size="9" fill="#222222">+0.156</text>
+<rect x="104.80" y="158.00" width="313.82" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="170.50" font-size="10" fill="#222222" text-anchor="end">Warm</text>
+<text x="422.62" y="170.50" font-size="9" fill="#222222">+0.109</text>
+<rect x="104.80" y="188.00" width="287.66" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="200.50" font-size="10" fill="#222222" text-anchor="end">26.9° C</text>
+<text x="396.46" y="200.50" font-size="9" fill="#222222">+0.100</text>
+<rect x="104.80" y="218.00" width="287.66" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="230.50" font-size="10" fill="#222222" text-anchor="end">breezy evening</text>
+<text x="396.46" y="230.50" font-size="9" fill="#222222">+0.100</text>
+<rect x="104.80" y="248.00" width="242.24" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="260.50" font-size="10" fill="#222222" text-anchor="end">26.2° C</text>
+<text x="351.04" y="260.50" font-size="9" fill="#222222">+0.084</text>
+<rect x="104.80" y="278.00" width="230.13" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="96.80" y="290.50" font-size="10" fill="#222222" text-anchor="end">14.1° C</text>
+<text x="338.93" y="290.50" font-size="9" fill="#222222">+0.080</text>
+<line x1="104.80" y1="62.00" x2="104.80" y2="302.00" stroke="#777777" stroke-width="1.0" stroke-dasharray="4,3"/>
+</svg>

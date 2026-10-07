@@ -35,6 +35,128 @@ Largest gain: dress (+0.0161). Categories with a decline in this run: necklace (
 | Accessory-led | target in bags, shoes, accessories, hats, jewellery, scarves or sunglasses | 14425 | +0.0051 | +0.0069 |
 | All | all fair-subset queries | 17160 | +0.0068 | +0.0096 |
 
+## Subsets: median rank and factor contributions (2025 table T12; thesis Figures 4-9 and 4-10)
+
+Median rank improvement = median rank of Original minus median rank of Full (positive: the target
+moves up). The last three columns are Hit@10 of Full minus Hit@10 of the simplified description.
+Full table: `subset_robustness_summary.csv` (columns of T12).
+
+| Subset | Observations | Median rank, Original → Full | Improvement | 2025 | No-Weather → Full | No-Occasion → Full | No-Style → Full |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Cold | 9920 | 256.0 → 231.0 | +25.0 | +38.0 | -0.0004 | -0.0032 | +0.0094 |
+| Warm | 7240 | 250.0 → 213.0 | +37.0 | +39.0 | +0.0004 | -0.0043 | +0.0123 |
+| All (union) (Weather) | 17160 | 255.0 → 223.0 | +32.0 | +37.5 | -0.0001 | -0.0037 | +0.0106 |
+| Formal | 2330 | 247.0 → 207.5 | +39.5 | +37.0 | -0.0021 | -0.0009 | +0.0112 |
+| Casual | 2020 | 268.5 → 211.0 | +57.5 | +67.5 | +0.0015 | -0.0025 | +0.0064 |
+| All (union) (Occasion) | 4310 | 255.0 → 209.0 | +46.0 | +44.5 | -0.0005 | -0.0012 | +0.0093 |
+| High style (≥2 terms) | 13260 | 261.5 → 231.5 | +30.0 | +38.0 | +0.0002 | -0.0041 | +0.0100 |
+| Low style (≤1 term) | 3900 | 233.0 → 201.0 | +32.0 | +38.5 | -0.0008 | -0.0023 | +0.0126 |
+| All (union) (Style Richness) | 17160 | 255.0 → 223.0 | +32.0 | +37.5 | -0.0001 | -0.0037 | +0.0106 |
+| Clothing-led | 2735 | 176.0 → 140.0 | +36.0 | +42.0 | +0.0029 | -0.0059 | +0.0325 |
+| Accessory-led | 14425 | 272.0 → 243.0 | +29.0 | +32.0 | -0.0006 | -0.0033 | +0.0064 |
+| All (union) (Category) | 17160 | 255.0 → 223.0 | +32.0 | +37.5 | -0.0001 | -0.0037 | +0.0106 |
+| Full dataset | 17160 | 255.0 → 223.0 | +32.0 | +37.5 | -0.0001 | -0.0037 | +0.0106 |
+
+## Category effects of each factor (thesis Figures 4-8 and 4-11 (a) to 4-13 (a))
+
+ΔHit@10 of Full minus the other condition; 2025 values (table T15) in parentheses.
+
+| Category | Observations | Full − Original | Full − No-Weather | Full − No-Occasion | Full − No-Style |
+|---|---:|---:|---:|---:|---:|
+| dress (all-body) | 2735 | +0.016 (+0.023) | +0.003 (+0.005) | -0.006 (+0.005) | +0.033 (+0.038) |
+| heels (shoes) | 2375 | +0.011 (+0.013) | +0.000 (+0.007) | -0.005 (+0.003) | +0.014 (+0.016) |
+| sunglasses (accessories) | 1235 | +0.006 (-0.004) | +0.002 (-0.001) | +0.000 (-0.002) | -0.002 (+0.000) |
+| purse (bags) | 2485 | +0.006 (+0.013) | -0.002 (+0.000) | -0.012 (+0.000) | +0.002 (+0.003) |
+| pump (shoes) | 2345 | +0.005 (+0.010) | +0.000 (+0.001) | -0.001 (-0.001) | +0.011 (+0.013) |
+| clutch (bags) | 1985 | +0.004 (+0.003) | -0.001 (+0.002) | +0.002 (-0.001) | +0.006 (+0.001) |
+| earrings (jewellery) | 2355 | +0.003 (+0.005) | +0.000 (+0.002) | +0.000 (-0.000) | +0.003 (-0.001) |
+| necklace (jewellery) | 1645 | -0.001 (+0.001) | -0.005 (-0.003) | -0.005 (-0.001) | +0.008 (+0.007) |
+
+## Term effects of each factor (thesis Figures 4-11 (b, c) to 4-13 (b, c))
+
+Terms are the weather, occasion and style fragments of each outfit; terms with fewer than 20
+observations are left out, as in 2025. The 2025 columns are the eight bars of the archived figure
+(three decimals as displayed) and this run's value for the same term. All terms:
+`factor_term_effects.csv`.
+
+**Weather terms, Full − Original (thesis Figure 4-11 (b))**: 209 of 480 distinct terms have at least 20 observations; terms of the 2025 figure again in this run's top 8: 2 of 8.
+
+| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |
+|---:|---|---:|---:|---|---:|---:|
+| 1 | summer evening | +0.160 | 25 | 16.9° C | +0.156 | +0.156 (n=45) |
+| 2 | 12.7° C | +0.160 | 25 | 12.7° C | +0.120 | +0.160 (n=25) |
+| 3 | 16.9° C | +0.156 | 45 | 14.7° C | +0.120 | +0.040 (n=25) |
+| 4 | Warm | +0.109 | 55 | 22.1° C | +0.100 | +0.050 (n=20) |
+| 5 | 26.9° C | +0.100 | 20 | 26.4° C | +0.091 | +0.064 (n=110) |
+| 6 | breezy evening | +0.100 | 20 | Cool Evening | +0.089 | +0.044 (n=45) |
+| 7 | 26.2° C | +0.084 | 95 | Warm Night | +0.080 | +0.000 (n=25) |
+| 8 | 14.1° C | +0.080 | 25 | Cool | +0.074 | +0.053 (n=95) |
+
+**Weather terms, Full − No-Weather (thesis Figure 4-11 (c))**: 209 of 480 distinct terms have at least 20 observations; terms of the 2025 figure again in this run's top 8: 1 of 8.
+
+| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |
+|---:|---|---:|---:|---|---:|---:|
+| 1 | 22.1° C | +0.100 | 20 | shimmering evening | +0.120 | -0.040 (n=25) |
+| 2 | summer evening | +0.080 | 25 | 26.0° C | +0.100 | +0.000 (n=30) |
+| 3 | 17.1° C | +0.080 | 25 | 18.5° C | +0.082 | +0.012 (n=85) |
+| 4 | 16.9° C | +0.067 | 45 | Spring Day | +0.080 | +0.000 (n=50) |
+| 5 | 16.4° C | +0.057 | 70 | 22.1° C | +0.050 | +0.100 (n=20) |
+| 6 | 14.5° C | +0.050 | 40 | Breezy | +0.047 | +0.047 (n=170) |
+| 7 | sun-drenched afternoon | +0.050 | 60 | Warm Evening | +0.047 | +0.035 (n=85) |
+| 8 | breezy evening | +0.050 | 20 | 16.3° C | +0.044 | +0.022 (n=45) |
+
+**Occasion terms, Full − Original (thesis Figure 4-12 (b))**: 129 of 835 distinct terms have at least 20 observations; terms of the 2025 figure again in this run's top 8: 5 of 8.
+
+| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |
+|---:|---|---:|---:|---|---:|---:|
+| 1 | Campus | +0.200 | 20 | Race Day | +0.167 | +0.033 (n=30) |
+| 2 | Party | +0.200 | 20 | Party | +0.150 | +0.200 (n=20) |
+| 3 | Art Museum | +0.150 | 20 | afternoon out | +0.133 | +0.100 (n=30) |
+| 4 | Escape | +0.127 | 55 | Concert | +0.133 | +0.100 (n=30) |
+| 5 | afternoon out | +0.100 | 30 | Escape | +0.127 | +0.127 (n=55) |
+| 6 | Explorer | +0.100 | 20 | getaway | +0.120 | +0.060 (n=50) |
+| 7 | Concert | +0.100 | 30 | Art Museum | +0.100 | +0.150 (n=20) |
+| 8 | Night | +0.100 | 20 | Garden Wedding | +0.100 | +0.067 (n=30) |
+
+**Occasion terms, Full − No-Occasion (thesis Figure 4-12 (c))**: 129 of 835 distinct terms have at least 20 observations; terms of the 2025 figure again in this run's top 8: 3 of 8.
+
+| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |
+|---:|---|---:|---:|---|---:|---:|
+| 1 | Race Day | +0.100 | 30 | evenings | +0.150 | +0.050 (n=20) |
+| 2 | Adventures | +0.067 | 30 | Race Day | +0.100 | +0.100 (n=30) |
+| 3 | Escape | +0.055 | 55 | Urban Explorer | +0.080 | +0.000 (n=25) |
+| 4 | Explorer | +0.050 | 20 | Picnic | +0.080 | +0.040 (n=25) |
+| 5 | Art Museum | +0.050 | 20 | back-to-school | +0.080 | +0.000 (n=25) |
+| 6 | Campus | +0.050 | 20 | Escape | +0.055 | +0.055 (n=55) |
+| 7 | Night | +0.050 | 20 | Look | +0.050 | +0.000 (n=20) |
+| 8 | evenings | +0.050 | 20 | Salsa Night | +0.050 | +0.000 (n=20) |
+
+**Style terms, Full − Original (thesis Figure 4-13 (b))**: 232 of 3360 distinct terms have at least 20 observations; terms of the 2025 figure again in this run's top 8: 5 of 8.
+
+| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |
+|---:|---|---:|---:|---|---:|---:|
+| 1 | Effortless red romance | +0.300 | 20 | Effortless red romance | +0.300 | +0.300 (n=20) |
+| 2 | Pop of Red | +0.200 | 25 | breezy sandals | +0.250 | +0.200 (n=20) |
+| 3 | breezy sandals | +0.200 | 20 | Effortless Summer Wedding Style | +0.250 | +0.150 (n=20) |
+| 4 | delicate sparkle | +0.200 | 20 | Pop of Red | +0.160 | +0.200 (n=25) |
+| 5 | Delicate Jewelry | +0.167 | 30 | Fringe Details | +0.160 | +0.120 (n=25) |
+| 6 | Gladiator Sandals | +0.167 | 30 | Red-Hot | +0.150 | +0.125 (n=40) |
+| 7 | Effortless Art Museum Chic | +0.150 | 20 | delicate sparkle | +0.150 | +0.200 (n=20) |
+| 8 | Effortless Summer Wedding Style | +0.150 | 20 | Romance | +0.150 | +0.050 (n=20) |
+
+**Style terms, Full − No-Style (thesis Figure 4-13 (c))**: 232 of 3360 distinct terms have at least 20 observations; terms of the 2025 figure again in this run's top 8: 4 of 8.
+
+| Rank | This run: term | ΔHit@10 | Observations | 2025 figure: term | ΔHit@10 (2025) | This run |
+|---:|---|---:|---:|---|---:|---:|
+| 1 | Gladiator Sandals | +0.233 | 30 | Effortless Summer Wedding Style | +0.300 | +0.150 (n=20) |
+| 2 | breezy sandals | +0.200 | 20 | breezy sandals | +0.250 | +0.200 (n=20) |
+| 3 | Delicate Jewelry | +0.167 | 30 | Fringe Details | +0.240 | +0.120 (n=25) |
+| 4 | Cozy Layered Look | +0.150 | 20 | Cozy Layered Look | +0.200 | +0.150 (n=20) |
+| 5 | Effortless Art Museum Chic | +0.150 | 20 | Gladiator Sandals | +0.200 | +0.233 (n=30) |
+| 6 | Effortless Summer Wedding Style | +0.150 | 20 | Floral Flair | +0.160 | +0.040 (n=25) |
+| 7 | Velvet Evening Glam | +0.150 | 20 | Red-Hot | +0.150 | +0.100 (n=40) |
+| 8 | glam | +0.150 | 20 | Delicate Lace | +0.150 | +0.100 (n=40) |
+
 ## Case ranks (five-seed mean)
 
 | Case | Original | Full | No-Weather | No-Occasion | No-Style |
@@ -62,7 +184,8 @@ Full vs Original on the fair subset. The manuscript corrects over the five repor
 
 - Overall Hit@10 from the query-level rows equals the mean per-seed Recall@10: Original 0.068531 vs 0.068531; Full 0.075350 vs 0.075350 (match).
 - Observations per category equal the 2025 table T15: yes.
-- Observations per subset equal the 2025 table T12: yes.
+- Observations per subset equal the 2025 table T12: yes; all 13 rows of T12, including the unions: yes.
+- Observations per category in all four comparisons equal the 2025 table T15: yes.
 - BH over the five reported metrics equals the run's tables T03/T04: yes.
 - Mean differences and p-values of the four comparisons equal the run's table T02 (20 rows): yes.
 - Median temperature threshold: 22.90 °C.

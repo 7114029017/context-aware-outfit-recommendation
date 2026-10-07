@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="434" viewBox="0 0 950 434" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="475.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Hit@10 by context subset: Original vs Full (thesis Figure 4-9)</text>
+<text x="475.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z, fair subset, five seeds pooled</text>
+<line x1="80.00" y1="364.00" x2="920.00" y2="364.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="364.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="367.32" font-size="9.5" fill="#222222" text-anchor="end">0.000</text>
+<line x1="80.00" y1="302.79" x2="920.00" y2="302.79" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="302.79" x2="80.00" y2="302.79" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="306.12" font-size="9.5" fill="#222222" text-anchor="end">0.025</text>
+<line x1="80.00" y1="241.58" x2="920.00" y2="241.58" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="241.58" x2="80.00" y2="241.58" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="244.91" font-size="9.5" fill="#222222" text-anchor="end">0.050</text>
+<line x1="80.00" y1="180.37" x2="920.00" y2="180.37" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="180.37" x2="80.00" y2="180.37" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="183.70" font-size="9.5" fill="#222222" text-anchor="end">0.075</text>
+<line x1="80.00" y1="119.16" x2="920.00" y2="119.16" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="119.16" x2="80.00" y2="119.16" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="122.49" font-size="9.5" fill="#222222" text-anchor="end">0.100</text>
+<text x="132.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Cold</text>
+<text x="132.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=9920)</text>
+<text x="237.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Warm</text>
+<text x="237.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=7240)</text>
+<text x="342.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Formal</text>
+<text x="342.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=2330)</text>
+<text x="447.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Casual</text>
+<text x="447.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=2020)</text>
+<text x="552.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">High style</text>
+<text x="552.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=13260)</text>
+<text x="657.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Low style</text>
+<text x="657.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=3900)</text>
+<text x="762.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Clothing-led</text>
+<text x="762.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=2735)</text>
+<text x="867.50" y="379.50" font-size="9.5" fill="#222222" text-anchor="middle">Accessory-led</text>
+<text x="867.50" y="392.00" font-size="9.5" fill="#222222" text-anchor="middle">(n=14425)</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="364.00" x2="920.00" y2="364.00" stroke="#555555" stroke-width="1"/>
+<text x="34.26" y="214.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 34.26 214.00)">Hit@10</text>
+<rect x="94.70" y="185.31" width="37.80" height="178.69" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="113.60" y="181.31" font-size="8" fill="#222222" text-anchor="middle">0.073</text>
+<rect x="199.70" y="211.15" width="37.80" height="152.85" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="218.60" y="207.15" font-size="8" fill="#222222" text-anchor="middle">0.062</text>
+<rect x="304.70" y="179.06" width="37.80" height="184.94" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="323.60" y="175.06" font-size="8" fill="#222222" text-anchor="middle">0.076</text>
+<rect x="409.70" y="199.16" width="37.80" height="164.84" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="428.60" y="195.16" font-size="8" fill="#222222" text-anchor="middle">0.067</text>
+<rect x="514.70" y="200.96" width="37.80" height="163.04" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="533.60" y="196.96" font-size="8" fill="#222222" text-anchor="middle">0.067</text>
+<rect x="619.70" y="180.06" width="37.80" height="183.94" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="638.60" y="176.06" font-size="8" fill="#222222" text-anchor="middle">0.075</text>
+<rect x="724.70" y="149.15" width="37.80" height="214.85" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="743.60" y="145.15" font-size="8" fill="#222222" text-anchor="middle">0.088</text>
+<rect x="829.70" y="205.13" width="37.80" height="158.87" fill="#888888" stroke="#ffffff" stroke-width="0.6"/>
+<text x="848.60" y="201.13" font-size="8" fill="#222222" text-anchor="middle">0.065</text>
+<rect x="132.50" y="170.75" width="37.80" height="193.25" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="151.40" y="166.75" font-size="8" fill="#222222" text-anchor="middle">0.079</text>
+<rect x="237.50" y="191.53" width="37.80" height="172.47" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="256.40" y="187.53" font-size="8" fill="#222222" text-anchor="middle">0.070</text>
+<rect x="342.50" y="165.40" width="37.80" height="198.60" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="361.40" y="161.40" font-size="8" fill="#222222" text-anchor="middle">0.081</text>
+<rect x="447.50" y="171.28" width="37.80" height="192.72" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="466.40" y="167.28" font-size="8" fill="#222222" text-anchor="middle">0.079</text>
+<rect x="552.50" y="184.53" width="37.80" height="179.47" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="571.40" y="180.53" font-size="8" fill="#222222" text-anchor="middle">0.073</text>
+<rect x="657.50" y="162.48" width="37.80" height="201.52" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="676.40" y="158.48" font-size="8" fill="#222222" text-anchor="middle">0.082</text>
+<rect x="762.50" y="109.76" width="37.80" height="254.24" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="781.40" y="105.76" font-size="8" fill="#222222" text-anchor="middle">0.104</text>
+<rect x="867.50" y="192.74" width="37.80" height="171.26" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="886.40" y="188.74" font-size="8" fill="#222222" text-anchor="middle">0.070</text>
+<line x1="290.00" y1="64.00" x2="290.00" y2="364.00" stroke="#cccccc" stroke-width="1.0" stroke-dasharray="4,3"/>
+<line x1="500.00" y1="64.00" x2="500.00" y2="364.00" stroke="#cccccc" stroke-width="1.0" stroke-dasharray="4,3"/>
+<line x1="710.00" y1="64.00" x2="710.00" y2="364.00" stroke="#cccccc" stroke-width="1.0" stroke-dasharray="4,3"/>
+<rect x="84.00" y="63.00" width="139.40" height="38.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="90.00" y="69.00" width="14.00" height="9.00" fill="#888888" fill-opacity="0.75"/>
+<text x="111.00" y="78.00" font-size="10" fill="#222222">Original</text>
+<rect x="90.00" y="86.00" width="14.00" height="9.00" fill="#2166AC" fill-opacity="0.75"/>
+<text x="111.00" y="95.00" font-size="10" fill="#222222">Full (context-aware)</text>
+</svg>

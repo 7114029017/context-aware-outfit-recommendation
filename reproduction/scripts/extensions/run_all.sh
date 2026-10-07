@@ -9,7 +9,7 @@
 #   counterfactual  CPU, about 1 min: Tables 4 and 9 with the run's Context models (needs FashionCLIP)
 #   two_tower       GPU, 1.5-3 hours: retrain the Two-Tower model, Table 8
 #   color           CPU, seconds: color-shift analysis (needs the Polyvore images)
-#   figures         CPU, seconds: Figures A1-A3 (needs the images; the PNG files stay local)
+#   figures         CPU, seconds: Figures A1-A3 and thesis Figure 4-14 (needs the images; the PNG files stay local)
 # --validate also checks the ported code against the 2025 outputs (archived A07 table, the 20
 # preserved Two-Tower checkpoints, the 2025 counterfactual model); about 5 min on a CPU.
 # A step whose GPU or download is missing is SKIPPED; a failing step does not stop the others.

@@ -1,0 +1,26 @@
+checklist,item_id,category,weight,n,item_disagreement_rate_0_1,weighted_item_disagreement_0_1,mean_signed_model_minus_human,question_en,short_label,rank
+gemma,c15,grounding,4.0,30,0.3333,0.0404,-0.2667,Does the description accurately represent the overall impression of the outfit in the image?,Gemma c15,1
+qwen,c8,grounding,4.0,30,0.2000,0.0364,-0.1333,Does the description avoid introducing elements or details not visually present in the outfit collage?,Qwen c8,2
+qwen,c2,weather_style_occasion,3.0,30,0.2667,0.0364,-0.2667,"Does the description specify the overall style or theme of the outfit (e.g., beach chic, gothic, sporty)?",Qwen c2,3
+gemma,c1,query_register,2.0,30,0.5667,0.0343,0.5667,Does the description mention key colors present in the outfit?,Gemma c1,4
+qwen,c1,weather_style_occasion,3.0,30,0.2333,0.0318,0.1000,"Does the description include the temperature in °C and a qualitative thermal feeling (e.g., cool, warm, hot) relevant to the outfit?",Qwen c1,5
+qwen,c4,weather_style_occasion,3.0,30,0.2333,0.0318,-0.1667,"Does the description indicate the occasion or context for which the outfit is suitable (e.g., date, wedding, night out)?",Qwen c4,6
+qwen,c3,query_register,2.0,30,0.3333,0.0303,0.2000,Does the description mention the primary color scheme or key colors present in the outfit?,Qwen c3,7
+gemma,c3,weather_style_occasion,3.0,30,0.3000,0.0273,0.0333,Does the description include a temperature or season that aligns with the outfit's suitability?,Gemma c3,8
+gemma,c8,weather_style_occasion,3.0,30,0.3000,0.0273,-0.2333,Does the description suggest a potential occasion or activity suitable for the outfit?,Gemma c8,9
+gemma,c5,grounding,4.0,30,0.2000,0.0242,-0.1333,Does the description avoid making claims about the outfit that aren't visually apparent?,Gemma c5,10
+gemma,c2,weather_style_occasion,3.0,30,0.2667,0.0242,-0.2667,"Does the description identify the overall style or aesthetic of the outfit (e.g., casual, formal, bohemian)?",Gemma c2,11
+gemma,c7,query_register,2.0,30,0.4000,0.0242,0.0667,Does the description highlight any prominent textures or patterns in the outfit?,Gemma c7,12
+qwen,c5,query_register,2.0,30,0.2333,0.0212,-0.1000,"Does the description capture the mood or aesthetic tone (e.g., effortless, glamorous, sophisticated)?",Qwen c5,13
+qwen,c7,query_register,2.0,30,0.2000,0.0182,0.0667,"Does the description use concise, query-style language appropriate for a search or request?",Qwen c7,14
+gemma,c4,query_register,2.0,30,0.2667,0.0162,-0.2000,Does the description use adjectives that accurately reflect the outfit's mood or vibe?,Gemma c4,15
+gemma,c6,query_register,2.0,30,0.2333,0.0141,-0.0333,Does the description use language a user would employ when searching for similar outfits?,Gemma c6,16
+gemma,c16,weather_style_occasion,3.0,30,0.1333,0.0121,0.1333,Does the description mention a specific temperature in °C?,Gemma c16,17
+gemma,c11,clarity_fluency,1.0,30,0.3667,0.0111,0.3667,"Does the description focus on the outfit as a whole, rather than individual items?",Gemma c11,18
+gemma,c12,clarity_fluency,1.0,30,0.3667,0.0111,0.0333,Does the description avoid overly generic terms that could apply to many outfits?,Gemma c12,19
+qwen,c6,clarity_fluency,1.0,30,0.2333,0.0106,-0.0333,"Does the description reference the main garment or item that defines the outfit (e.g., dress, bikini, vest)?",Qwen c6,20
+qwen,c9,clarity_fluency,1.0,30,0.2333,0.0106,-0.1000,Does the description logically connect the visual elements into a coherent outfit narrative?,Qwen c9,21
+qwen,c10,clarity_fluency,1.0,30,0.2000,0.0091,0.0667,"Is the description grammatically correct and fluent, with natural phrasing for a user query?",Qwen c10,22
+gemma,c10,clarity_fluency,1.0,30,0.2000,0.0061,0.2000,Is the description grammatically correct and easy to understand?,Gemma c10,23
+gemma,c9,clarity_fluency,1.0,30,0.2000,0.0061,0.2000,Is the description concise and avoids unnecessary details?,Gemma c9,24
+gemma,c13,clarity_fluency,1.0,30,0.1667,0.0051,0.1667,Does the description use descriptive words that are relevant to fashion and clothing?,Gemma c13,25

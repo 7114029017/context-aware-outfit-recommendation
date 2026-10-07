@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="448" viewBox="0 0 720 448" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="360.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Score distribution of the two judges (thesis Figure 4-1)</text>
+<text x="360.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">35140 descriptions scored by both judges; 50 bins on [0, 1]</text>
+<line x1="80.00" y1="384.00" x2="690.00" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="384.00" x2="80.00" y2="384.00" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="387.32" font-size="9.5" fill="#222222" text-anchor="end">0</text>
+<line x1="80.00" y1="264.31" x2="690.00" y2="264.31" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="264.31" x2="80.00" y2="264.31" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="267.64" font-size="9.5" fill="#222222" text-anchor="end">10000</text>
+<line x1="80.00" y1="144.63" x2="690.00" y2="144.63" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="144.63" x2="80.00" y2="144.63" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="147.95" font-size="9.5" fill="#222222" text-anchor="end">20000</text>
+<line x1="80.00" y1="384.00" x2="80.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="80.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.0</text>
+<line x1="202.00" y1="384.00" x2="202.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="202.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.2</text>
+<line x1="324.00" y1="384.00" x2="324.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="324.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.4</text>
+<line x1="446.00" y1="384.00" x2="446.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="446.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.6</text>
+<line x1="568.00" y1="384.00" x2="568.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="568.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.8</text>
+<line x1="690.00" y1="384.00" x2="690.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="690.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">1.0</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="384.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="384.00" x2="690.00" y2="384.00" stroke="#555555" stroke-width="1"/>
+<text x="385.00" y="418.50" font-size="10.5" fill="#222222" text-anchor="middle">Judge score</text>
+<text x="31.60" y="224.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 31.60 224.00)">Number of descriptions</text>
+<rect x="80.00" y="383.93" width="12.20" height="0.07" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="153.20" y="383.51" width="12.20" height="0.49" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="189.80" y="383.88" width="12.20" height="0.12" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="214.20" y="383.25" width="12.20" height="0.75" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="238.60" y="383.16" width="12.20" height="0.84" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="263.00" y="383.71" width="12.20" height="0.29" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="299.60" y="380.91" width="12.20" height="3.09" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="324.00" y="383.17" width="12.20" height="0.83" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="348.40" y="380.39" width="12.20" height="3.61" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="385.00" y="376.45" width="12.20" height="7.55" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="409.40" y="380.05" width="12.20" height="3.95" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="433.80" y="376.46" width="12.20" height="7.54" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="458.20" y="376.44" width="12.20" height="7.56" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="494.80" y="355.54" width="12.20" height="28.46" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="519.20" y="327.21" width="12.20" height="56.79" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="543.60" y="367.82" width="12.20" height="16.18" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="568.00" y="327.50" width="12.20" height="56.50" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="604.60" y="282.51" width="12.20" height="101.49" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="629.00" y="373.91" width="12.20" height="10.09" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="653.40" y="354.98" width="12.20" height="29.02" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="677.80" y="298.66" width="12.20" height="85.34" fill="#1f77b4" fill-opacity="0.6"/>
+<rect x="202.00" y="383.99" width="12.20" height="0.01" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="226.40" y="383.78" width="12.20" height="0.22" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="238.60" y="383.89" width="12.20" height="0.11" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="263.00" y="383.72" width="12.20" height="0.28" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="275.20" y="383.74" width="12.20" height="0.26" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="299.60" y="383.41" width="12.20" height="0.59" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="311.80" y="383.57" width="12.20" height="0.43" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="336.20" y="383.63" width="12.20" height="0.37" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="348.40" y="383.68" width="12.20" height="0.32" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="372.80" y="382.32" width="12.20" height="1.68" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="385.00" y="383.56" width="12.20" height="0.44" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="409.40" y="383.74" width="12.20" height="0.26" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="421.60" y="382.52" width="12.20" height="1.48" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="446.00" y="383.23" width="12.20" height="0.77" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="458.20" y="383.68" width="12.20" height="0.32" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="482.60" y="382.54" width="12.20" height="1.46" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="494.80" y="383.03" width="12.20" height="0.97" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="519.20" y="379.87" width="12.20" height="4.13" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="531.40" y="381.22" width="12.20" height="2.78" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="555.80" y="383.82" width="12.20" height="0.18" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="568.00" y="369.09" width="12.20" height="14.91" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="592.40" y="373.90" width="12.20" height="10.10" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="604.60" y="383.78" width="12.20" height="0.22" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="629.00" y="343.07" width="12.20" height="40.93" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="641.20" y="342.94" width="12.20" height="41.06" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="677.80" y="87.70" width="12.20" height="296.30" fill="#ff7f0e" fill-opacity="0.6"/>
+<rect x="88.00" y="65.00" width="123.40" height="38.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="94.00" y="71.00" width="14.00" height="9.00" fill="#1f77b4" fill-opacity="0.75"/>
+<text x="115.00" y="80.00" font-size="10" fill="#222222">Judge A (Qwen)</text>
+<rect x="94.00" y="88.00" width="14.00" height="9.00" fill="#ff7f0e" fill-opacity="0.75"/>
+<text x="115.00" y="97.00" font-size="10" fill="#222222">Judge B (Gemma)</text>
+</svg>

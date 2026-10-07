@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="448" viewBox="0 0 720 448" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="360.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Lift over random baseline with 95% bootstrap band (B=500)</text>
+<text x="360.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Intersection of the two bottom-p% sets divided by p² N</text>
+<line x1="80.00" y1="383.65" x2="690.00" y2="383.65" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="383.65" x2="80.00" y2="383.65" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="386.98" font-size="9.5" fill="#222222" text-anchor="end">0</text>
+<line x1="80.00" y1="312.67" x2="690.00" y2="312.67" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="312.67" x2="80.00" y2="312.67" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="316.00" font-size="9.5" fill="#222222" text-anchor="end">5</text>
+<line x1="80.00" y1="241.69" x2="690.00" y2="241.69" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="241.69" x2="80.00" y2="241.69" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="245.02" font-size="9.5" fill="#222222" text-anchor="end">10</text>
+<line x1="80.00" y1="170.71" x2="690.00" y2="170.71" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="170.71" x2="80.00" y2="170.71" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="174.04" font-size="9.5" fill="#222222" text-anchor="end">15</text>
+<line x1="80.00" y1="99.73" x2="690.00" y2="99.73" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="76.00" y1="99.73" x2="80.00" y2="99.73" stroke="#555555" stroke-width="0.8"/>
+<text x="73.00" y="103.06" font-size="9.5" fill="#222222" text-anchor="end">20</text>
+<line x1="164.14" y1="64.00" x2="164.14" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="164.14" y1="384.00" x2="164.14" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="164.14" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.05</text>
+<line x1="269.31" y1="64.00" x2="269.31" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="269.31" y1="384.00" x2="269.31" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="269.31" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.10</text>
+<line x1="374.48" y1="64.00" x2="374.48" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="374.48" y1="384.00" x2="374.48" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="374.48" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.15</text>
+<line x1="479.66" y1="64.00" x2="479.66" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="479.66" y1="384.00" x2="479.66" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="479.66" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.20</text>
+<line x1="584.83" y1="64.00" x2="584.83" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="584.83" y1="384.00" x2="584.83" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="584.83" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.25</text>
+<line x1="690.00" y1="64.00" x2="690.00" y2="384.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="690.00" y1="384.00" x2="690.00" y2="388.00" stroke="#555555" stroke-width="0.8"/>
+<text x="690.00" y="399.50" font-size="9.5" fill="#222222" text-anchor="middle">0.30</text>
+<line x1="80.00" y1="64.00" x2="80.00" y2="384.00" stroke="#555555" stroke-width="1"/>
+<line x1="80.00" y1="384.00" x2="690.00" y2="384.00" stroke="#555555" stroke-width="1"/>
+<text x="385.00" y="418.50" font-size="10.5" fill="#222222" text-anchor="middle">p (bottom proportion)</text>
+<text x="49.84" y="224.00" font-size="10.5" fill="#222222" text-anchor="middle" transform="rotate(-90 49.84 224.00)">lift over random</text>
+<polygon points="80.00,78.55 101.03,165.98 122.07,207.89 143.10,244.03 164.14,269.64 185.17,286.36 206.21,297.17 227.24,307.74 248.28,318.89 269.31,327.54 290.34,333.52 311.38,337.80 332.41,341.18 353.45,343.87 374.48,346.21 395.52,348.18 416.55,349.98 437.59,351.58 458.62,352.93 479.66,354.22 500.69,355.75 521.72,357.04 542.76,358.23 563.79,359.33 584.83,360.25 605.86,361.12 626.90,361.92 647.93,362.66 668.97,363.27 690.00,363.76 690.00,364.45 668.97,364.03 647.93,363.47 626.90,362.81 605.86,362.11 584.83,361.33 563.79,360.44 542.76,359.44 521.72,358.31 500.69,357.09 479.66,355.65 458.62,354.43 437.59,353.17 416.55,351.76 395.52,350.04 374.48,348.24 353.45,346.26 332.41,343.93 311.38,340.98 290.34,336.78 269.31,331.80 248.28,324.25 227.24,314.25 206.21,304.09 185.17,295.00 164.14,281.45 143.10,259.43 122.07,232.83 101.03,210.47 80.00,187.82" fill="#1f77b4" fill-opacity="0.22" stroke="none"/>
+<polyline points="80.00,137.22 101.03,190.75 122.07,222.51 143.10,252.10 164.14,275.55 185.17,288.60 206.21,299.39 227.24,311.31 248.28,321.31 269.31,329.60 290.34,335.94 311.38,338.96 332.41,341.87 353.45,344.96 374.48,347.47 395.52,349.30 416.55,350.77 437.59,351.91 458.62,353.19 479.66,354.59 500.69,356.04 521.72,357.47 542.76,358.57 563.79,359.64 584.83,360.69 605.86,361.63 626.90,362.39 647.93,363.02 668.97,363.65 690.00,364.14" fill="none" stroke="#1f77b4" stroke-width="1.8"/>
+<line x1="80.00" y1="369.45" x2="690.00" y2="369.45" stroke="#555555" stroke-width="1.0" stroke-dasharray="5,4"/>
+<rect x="454.00" y="65.00" width="116.60" height="21.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<line x1="460.00" y1="76.00" x2="476.00" y2="76.00" stroke="#1f77b4" stroke-width="2"/>
+<text x="481.00" y="80.00" font-size="10" fill="#222222">Lift over random</text>
+</svg>

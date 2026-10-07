@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="492" viewBox="0 0 640 492" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="320.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Weighted item disagreement, judge vs human audit (thesis Figure 4-4)</text>
+<text x="320.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">30 audited descriptions; the 12 of 25 checklist items with the largest disagreement</text>
+<line x1="79.40" y1="62.00" x2="79.40" y2="422.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="79.40" y1="422.00" x2="79.40" y2="426.00" stroke="#555555" stroke-width="0.8"/>
+<text x="79.40" y="437.50" font-size="9.5" fill="#222222" text-anchor="middle">0.00</text>
+<line x1="186.78" y1="62.00" x2="186.78" y2="422.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="186.78" y1="422.00" x2="186.78" y2="426.00" stroke="#555555" stroke-width="0.8"/>
+<text x="186.78" y="437.50" font-size="9.5" fill="#222222" text-anchor="middle">0.01</text>
+<line x1="294.17" y1="62.00" x2="294.17" y2="422.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="294.17" y1="422.00" x2="294.17" y2="426.00" stroke="#555555" stroke-width="0.8"/>
+<text x="294.17" y="437.50" font-size="9.5" fill="#222222" text-anchor="middle">0.02</text>
+<line x1="401.55" y1="62.00" x2="401.55" y2="422.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="401.55" y1="422.00" x2="401.55" y2="426.00" stroke="#555555" stroke-width="0.8"/>
+<text x="401.55" y="437.50" font-size="9.5" fill="#222222" text-anchor="middle">0.03</text>
+<line x1="508.94" y1="62.00" x2="508.94" y2="422.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="508.94" y1="422.00" x2="508.94" y2="426.00" stroke="#555555" stroke-width="0.8"/>
+<text x="508.94" y="437.50" font-size="9.5" fill="#222222" text-anchor="middle">0.04</text>
+<line x1="79.40" y1="62.00" x2="79.40" y2="422.00" stroke="#555555" stroke-width="1"/>
+<line x1="79.40" y1="422.00" x2="600.00" y2="422.00" stroke="#555555" stroke-width="1"/>
+<text x="339.70" y="456.50" font-size="10.5" fill="#222222" text-anchor="middle">Weighted item disagreement rate (0-1)</text>
+<rect x="79.40" y="68.00" width="433.83" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="80.50" font-size="10" fill="#222222" text-anchor="end">Gemma c15</text>
+<text x="517.23" y="80.50" font-size="9" fill="#222222">0.040</text>
+<rect x="79.40" y="98.00" width="390.88" height="18.00" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="110.50" font-size="10" fill="#222222" text-anchor="end">Qwen c8</text>
+<text x="474.28" y="110.50" font-size="9" fill="#222222">0.036</text>
+<rect x="79.40" y="128.00" width="390.88" height="18.00" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="140.50" font-size="10" fill="#222222" text-anchor="end">Qwen c2</text>
+<text x="474.28" y="140.50" font-size="9" fill="#222222">0.036</text>
+<rect x="79.40" y="158.00" width="368.33" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="170.50" font-size="10" fill="#222222" text-anchor="end">Gemma c1</text>
+<text x="451.73" y="170.50" font-size="9" fill="#222222">0.034</text>
+<rect x="79.40" y="188.00" width="341.48" height="18.00" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="200.50" font-size="10" fill="#222222" text-anchor="end">Qwen c1</text>
+<text x="424.88" y="200.50" font-size="9" fill="#222222">0.032</text>
+<rect x="79.40" y="218.00" width="341.48" height="18.00" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="230.50" font-size="10" fill="#222222" text-anchor="end">Qwen c4</text>
+<text x="424.88" y="230.50" font-size="9" fill="#222222">0.032</text>
+<rect x="79.40" y="248.00" width="325.38" height="18.00" fill="#2f77b4" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="260.50" font-size="10" fill="#222222" text-anchor="end">Qwen c3</text>
+<text x="408.78" y="260.50" font-size="9" fill="#222222">0.030</text>
+<rect x="79.40" y="278.00" width="293.16" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="290.50" font-size="10" fill="#222222" text-anchor="end">Gemma c3</text>
+<text x="376.56" y="290.50" font-size="9" fill="#222222">0.027</text>
+<rect x="79.40" y="308.00" width="293.16" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="320.50" font-size="10" fill="#222222" text-anchor="end">Gemma c8</text>
+<text x="376.56" y="320.50" font-size="9" fill="#222222">0.027</text>
+<rect x="79.40" y="338.00" width="259.87" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="350.50" font-size="10" fill="#222222" text-anchor="end">Gemma c5</text>
+<text x="343.27" y="350.50" font-size="9" fill="#222222">0.024</text>
+<rect x="79.40" y="368.00" width="259.87" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="380.50" font-size="10" fill="#222222" text-anchor="end">Gemma c2</text>
+<text x="343.27" y="380.50" font-size="9" fill="#222222">0.024</text>
+<rect x="79.40" y="398.00" width="259.87" height="18.00" fill="#f28e2b" stroke="#ffffff" stroke-width="0.6"/>
+<text x="71.40" y="410.50" font-size="10" fill="#222222" text-anchor="end">Gemma c7</text>
+<text x="343.27" y="410.50" font-size="9" fill="#222222">0.024</text>
+<line x1="79.40" y1="62.00" x2="79.40" y2="422.00" stroke="#777777" stroke-width="1.0" stroke-dasharray="4,3"/>
+<rect x="474.00" y="378.00" width="68.60" height="38.00" fill="#ffffff" stroke="#cccccc" stroke-width="1.0" fill-opacity="0.85"/>
+<rect x="480.00" y="384.00" width="14.00" height="9.00" fill="#2f77b4" fill-opacity="0.75"/>
+<text x="501.00" y="393.00" font-size="10" fill="#222222">Qwen</text>
+<rect x="480.00" y="401.00" width="14.00" height="9.00" fill="#f28e2b" fill-opacity="0.75"/>
+<text x="501.00" y="410.00" font-size="10" fill="#222222">Gemma</text>
+</svg>

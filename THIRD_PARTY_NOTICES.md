@@ -34,6 +34,9 @@ Copyright (c) 2024 WangX; see the `LICENSE` file in the same folder.
 - Gemma-3-4B-IT generated the context-aware descriptions and the CLO and MET
   estimates. Qwen3-VL-32B-Instruct and Gemma-3-27B-IT produced the LLM-judge
   scores.
+- nomic-ai/nomic-embed-text-v2-moe (with its model code nomic-ai/nomic-bert-2048)
+  compared the two judge checklists. `bootstrap_data.sh --with-nomic` and
+  `--with-fashionclip` download this model and FashionCLIP for local use.
 
 The model weights are not included. The outputs listed above are provided as
 research data. Use of these models is subject to their own licenses and terms
@@ -45,7 +48,10 @@ The reference documents used during data construction (ASHRAE
 clothing-insulation references, the 2024 Adult Compendium of Physical
 Activities, McIntyre (1978) and SSRN 5357611) and the upstream paper are cited
 in the manuscript but are not redistributed here. See
-`reproduction/docs/public_release_cleanup.md`.
+`reproduction/docs/public_release_cleanup.md`. `bootstrap_data.sh
+--with-compendium` downloads the Compendium from its official site
+(pacompendium.com) for local use; the scripts write only activity codes, MET
+values and counts derived from it.
 
 ## Python packages
 

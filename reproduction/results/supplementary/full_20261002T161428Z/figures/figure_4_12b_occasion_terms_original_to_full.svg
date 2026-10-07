@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="708" height="372" viewBox="0 0 708 372" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="354.15" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Occasion terms improved by the context-aware description (thesis Figure 4-12 (b))</text>
+<text x="354.15" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z; top 8 of 129 terms with at least 20 observations (835 distinct terms)</text>
+<line x1="87.20" y1="62.00" x2="87.20" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="87.20" y1="302.00" x2="87.20" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="87.20" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.00</text>
+<line x1="208.26" y1="62.00" x2="208.26" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="208.26" y1="302.00" x2="208.26" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="208.26" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.05</text>
+<line x1="329.33" y1="62.00" x2="329.33" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="329.33" y1="302.00" x2="329.33" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="329.33" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.10</text>
+<line x1="450.39" y1="62.00" x2="450.39" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="450.39" y1="302.00" x2="450.39" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="450.39" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.15</text>
+<line x1="571.45" y1="62.00" x2="571.45" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="571.45" y1="302.00" x2="571.45" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="571.45" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.20</text>
+<line x1="87.20" y1="62.00" x2="87.20" y2="302.00" stroke="#555555" stroke-width="1"/>
+<line x1="87.20" y1="302.00" x2="668.30" y2="302.00" stroke="#555555" stroke-width="1"/>
+<text x="377.75" y="336.50" font-size="10.5" fill="#222222" text-anchor="middle">ΔHit@10 (Full − Original)</text>
+<rect x="87.20" y="68.00" width="484.25" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="80.50" font-size="10" fill="#222222" text-anchor="end">Campus</text>
+<text x="575.45" y="80.50" font-size="9" fill="#222222">+0.200</text>
+<rect x="87.20" y="98.00" width="484.25" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="110.50" font-size="10" fill="#222222" text-anchor="end">Party</text>
+<text x="575.45" y="110.50" font-size="9" fill="#222222">+0.200</text>
+<rect x="87.20" y="128.00" width="363.19" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="140.50" font-size="10" fill="#222222" text-anchor="end">Art Museum</text>
+<text x="454.39" y="140.50" font-size="9" fill="#222222">+0.150</text>
+<rect x="87.20" y="158.00" width="308.16" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="170.50" font-size="10" fill="#222222" text-anchor="end">Escape</text>
+<text x="399.36" y="170.50" font-size="9" fill="#222222">+0.127</text>
+<rect x="87.20" y="188.00" width="242.13" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="200.50" font-size="10" fill="#222222" text-anchor="end">afternoon out</text>
+<text x="333.33" y="200.50" font-size="9" fill="#222222">+0.100</text>
+<rect x="87.20" y="218.00" width="242.13" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="230.50" font-size="10" fill="#222222" text-anchor="end">Explorer</text>
+<text x="333.33" y="230.50" font-size="9" fill="#222222">+0.100</text>
+<rect x="87.20" y="248.00" width="242.13" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="260.50" font-size="10" fill="#222222" text-anchor="end">Concert</text>
+<text x="333.33" y="260.50" font-size="9" fill="#222222">+0.100</text>
+<rect x="87.20" y="278.00" width="242.13" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="79.20" y="290.50" font-size="10" fill="#222222" text-anchor="end">Night</text>
+<text x="333.33" y="290.50" font-size="9" fill="#222222">+0.100</text>
+<line x1="87.20" y1="62.00" x2="87.20" y2="302.00" stroke="#777777" stroke-width="1.0" stroke-dasharray="4,3"/>
+</svg>

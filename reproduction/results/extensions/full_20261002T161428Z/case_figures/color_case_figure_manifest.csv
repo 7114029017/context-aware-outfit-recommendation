@@ -1,0 +1,11 @@
+figure,set_id,target_item_id,category,query_color,seed,shown_seed,condition,rank,five_seed_mean_rank,color_problem,alt_advantage,case_wrong_color_mode,top5_item_ids,top5_dominant_colors
+4-14,174710752,141212383,dress (all-body),gray,1,yes,Original,31,23.2,1,5,black,179962753 | 86502666 | 193021423 | 159084171 | 188948651,black | black | black | black | black
+4-14,174710752,141212383,dress (all-body),gray,1,yes,Full,36,16.2,0,-3,black,143222301 | 177849963 | 200206633 | 88932849 | 191646414,gray | gray | black | gray | gray
+4-14,174710752,141212383,dress (all-body),gray,2,,Original,1,23.2,0,-1,black,141212383 | 126810749 | 189401835 | 146649572 | 88932849,gray | gray | black | black | gray
+4-14,174710752,141212383,dress (all-body),gray,2,,Full,1,16.2,0,-1,black,141212383 | 126810749 | 189401835 | 88932849 | 146649572,gray | gray | black | gray | black
+4-14,174710752,141212383,dress (all-body),gray,3,,Original,7,23.2,1,4,black,152542463 | 189401835 | 188565273 | 144873888 | 93467050,white | black | black | black | black
+4-14,174710752,141212383,dress (all-body),gray,3,,Full,1,16.2,0,-1,black,141212383 | 126810749 | 188565273 | 159084171 | 184009379,gray | gray | black | black | gray
+4-14,174710752,141212383,dress (all-body),gray,4,,Original,32,23.2,1,5,black,105607313 | 70921117 | 126241663 | 146649572 | 165356710,black | black | black | black | black
+4-14,174710752,141212383,dress (all-body),gray,4,,Full,17,16.2,0,1,black,88932849 | 159084171 | 153417658 | 146649572 | 154203183,gray | black | gray | black | black
+4-14,174710752,141212383,dress (all-body),gray,5,,Original,45,23.2,1,5,black,151009561 | 87832508 | 185787629 | 112871050 | 200206633,black | black | black | black | black
+4-14,174710752,141212383,dress (all-body),gray,5,,Full,26,16.2,1,3,black,77770612 | 112871050 | 157367139 | 86502666 | 200206633,black | black | gray | black | black

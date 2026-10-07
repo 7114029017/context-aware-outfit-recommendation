@@ -1,8 +1,9 @@
 """Shared paths and helpers for the supplementary analyses.
 
 The supplementary scripts only read files that are already in the repository or
-downloaded by reproduction/scripts/bootstrap_data.sh. They load no model, use no
-GPU and do not modify the official run's results.
+downloaded by reproduction/scripts/bootstrap_data.sh. They use no GPU and do not
+modify the official run's results; only checklist_coverage.py loads a model (a
+text embedding model, on the CPU).
 """
 from __future__ import annotations
 
@@ -23,6 +24,7 @@ GENERATED = D01 / "generated_descriptions" / "01_生成結果_generation_results
 WOS_JSONL = (D01 / "generated_descriptions" / "02_三因子拆分_wos_factor_split"
              / "wos_split_results_v5_merged_retry_round3.jsonl")
 TEMPERATURE_DIR = D01 / "clo_met_temperature" / "temperature_results"
+CLO_RESULTS = D01 / "clo_met_temperature" / "CLO_results"
 MET_CANDIDATES = D01 / "clo_met_temperature" / "MET_reference" / "adult_activity_compendium_sorted_2024.json"
 CONTEXT_FEATURES = D02 / "fashionclip_data" / "encoded_NewoutfitUrlTitle_en_fashionClip.pkl"
 CASE_TABLES = D03 / "04_情境子集與三因子分析" / "圖表_figures_tables" / "tables"

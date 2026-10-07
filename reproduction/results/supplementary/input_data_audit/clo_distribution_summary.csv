@@ -1,0 +1,16 @@
+statistic,value,thesis_table_d3,same_at_4_decimals
+count,35140,35140,yes
+mean,1.0066,1.0066,yes
+std,0.5586,0.5586,yes
+min,0.0000,0.0000,yes
+q1,0.6300,0.6300,yes
+median,0.9300,0.9300,yes
+q3,1.2125,1.2125,yes
+max,5.2000,5.2000,yes
+iqr,0.5825,0.5825,yes
+iqr_lower_bound,-0.2437,-0.2437,yes
+iqr_upper_bound,2.0862,2.0862,yes
+n_outliers,1726,1726,yes
+count_train,16995,,
+count_test,15145,,
+count_valid,3000,,

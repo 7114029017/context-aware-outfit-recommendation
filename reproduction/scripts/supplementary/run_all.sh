@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
-# Run the supplementary analyses: CPU only, a few seconds, no model is loaded.
+# Run the supplementary analyses: CPU only, under a minute; only the checklist coverage check loads a model.
 # Usage: bash reproduction/scripts/supplementary/run_all.sh [--run-root PATH | --official]
 #                                                           [--polyvore-root PATH] [--out-dir DIR]
 # Without --run-root or --official, the newest full_* folder under reproduction/runs/
 # is analyzed (its RUN_STATUS must be PASSED), or the official run included in the
 # repository if there is none.
-# Output: run_analyses/, input_data_audit/ and paper_value_checks/ under --out-dir,
-# or under <run folder>/supplementary/ for a run folder. For the official run the
-# default is reproduction/results/supplementary/, with the run analyses in
-# full_20261002T161428Z/. A full run (reproduce_all.sh --fresh) calls this script
-# after its RUN_STATUS has become PASSED.
+# Output: run_analyses/, input_data_audit/, paper_value_checks/, judge_audit_checks/,
+# met_reference_check/ and checklist_coverage/ under --out-dir, or under
+# <run folder>/supplementary/ for a run folder. For the official run the default is
+# reproduction/results/supplementary/, with the run analyses in full_20261002T161428Z/.
+# The last two are SKIPPED when their download is missing (bootstrap_data.sh
+# --with-compendium, --with-nomic). A full run (reproduce_all.sh --fresh) calls this
+# script after its RUN_STATUS has become PASSED.
 set -Eeuo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RUNS="$(cd "$HERE/../.." && pwd)/runs"
@@ -24,7 +26,7 @@ while [[ $# -gt 0 ]]; do
     --official) OFFICIAL=1; shift ;;
     --polyvore-root) DATA_ARGS+=("$1" "${2:?--polyvore-root needs a path}"); shift 2 ;;
     --out-dir) OUT_DIR="${2:?--out-dir needs a path}"; shift 2 ;;
-    -h|--help) sed -n '2,12p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,14p' "$0"; exit 0 ;;
     *) echo "[ERROR] unknown argument: $1" >&2; exit 2 ;;
   esac
 done
@@ -43,16 +45,16 @@ else
   RUN_ARGS=(--run-root "$RUN_ROOT")
   OUT_DIR="${OUT_DIR:-$RUN_ROOT/supplementary}"
 fi
-RUN_OUT=()
-AUDIT_OUT=()
-CHECK_OUT=()
-if [[ -n "$OUT_DIR" ]]; then
-  RUN_OUT=(--out-dir "$OUT_DIR/run_analyses")
-  AUDIT_OUT=(--out-dir "$OUT_DIR/input_data_audit")
-  CHECK_OUT=(--out-dir "$OUT_DIR/paper_value_checks")
-fi
+run_py() {  # script, output folder under --out-dir, other arguments
+  local script="$1" folder="$2"
+  shift 2
+  if [[ -n "$OUT_DIR" ]]; then
+    set -- "$@" --out-dir "$OUT_DIR/$folder"
+  fi
+  "$PYTHON" "$HERE/$script.py" "$@" ${DATA_ARGS[@]+"${DATA_ARGS[@]}"}
+}
 # The run analyses go first: they stop this script if the run has not PASSED.
-"$PYTHON" "$HERE/official_run_analyses.py" "${RUN_ARGS[@]}" ${RUN_OUT[@]+"${RUN_OUT[@]}"} \
-  ${DATA_ARGS[@]+"${DATA_ARGS[@]}"}
-"$PYTHON" "$HERE/input_data_audit.py" ${AUDIT_OUT[@]+"${AUDIT_OUT[@]}"} ${DATA_ARGS[@]+"${DATA_ARGS[@]}"}
-"$PYTHON" "$HERE/paper_value_checks.py" ${CHECK_OUT[@]+"${CHECK_OUT[@]}"} ${DATA_ARGS[@]+"${DATA_ARGS[@]}"}
+run_py official_run_analyses run_analyses "${RUN_ARGS[@]}"
+for script in input_data_audit paper_value_checks judge_audit_checks met_reference_check checklist_coverage; do
+  run_py "$script" "$script"
+done

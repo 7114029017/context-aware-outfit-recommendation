@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="675" height="372" viewBox="0 0 675 372" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="337.52" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Style terms improved by the context-aware description (thesis Figure 4-13 (b))</text>
+<text x="337.52" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z; top 8 of 232 terms with at least 20 observations (3360 distinct terms)</text>
+<line x1="194.20" y1="62.00" x2="194.20" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="194.20" y1="302.00" x2="194.20" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="194.20" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.0</text>
+<line x1="316.66" y1="62.00" x2="316.66" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="316.66" y1="302.00" x2="316.66" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="316.66" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.1</text>
+<line x1="439.11" y1="62.00" x2="439.11" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="439.11" y1="302.00" x2="439.11" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="439.11" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.2</text>
+<line x1="561.57" y1="62.00" x2="561.57" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="561.57" y1="302.00" x2="561.57" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="561.57" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.3</text>
+<line x1="194.20" y1="62.00" x2="194.20" y2="302.00" stroke="#555555" stroke-width="1"/>
+<line x1="194.20" y1="302.00" x2="635.04" y2="302.00" stroke="#555555" stroke-width="1"/>
+<text x="414.62" y="336.50" font-size="10.5" fill="#222222" text-anchor="middle">ΔHit@10 (Full − Original)</text>
+<rect x="194.20" y="68.00" width="367.37" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="80.50" font-size="10" fill="#222222" text-anchor="end">Effortless red romance</text>
+<text x="565.57" y="80.50" font-size="9" fill="#222222">+0.300</text>
+<rect x="194.20" y="98.00" width="244.91" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="110.50" font-size="10" fill="#222222" text-anchor="end">Pop of Red</text>
+<text x="443.11" y="110.50" font-size="9" fill="#222222">+0.200</text>
+<rect x="194.20" y="128.00" width="244.91" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="140.50" font-size="10" fill="#222222" text-anchor="end">breezy sandals</text>
+<text x="443.11" y="140.50" font-size="9" fill="#222222">+0.200</text>
+<rect x="194.20" y="158.00" width="244.91" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="170.50" font-size="10" fill="#222222" text-anchor="end">delicate sparkle</text>
+<text x="443.11" y="170.50" font-size="9" fill="#222222">+0.200</text>
+<rect x="194.20" y="188.00" width="204.09" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="200.50" font-size="10" fill="#222222" text-anchor="end">Delicate Jewelry</text>
+<text x="402.29" y="200.50" font-size="9" fill="#222222">+0.167</text>
+<rect x="194.20" y="218.00" width="204.09" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="230.50" font-size="10" fill="#222222" text-anchor="end">Gladiator Sandals</text>
+<text x="402.29" y="230.50" font-size="9" fill="#222222">+0.167</text>
+<rect x="194.20" y="248.00" width="183.68" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="260.50" font-size="10" fill="#222222" text-anchor="end">Effortless Art Museum Chic</text>
+<text x="381.88" y="260.50" font-size="9" fill="#222222">+0.150</text>
+<rect x="194.20" y="278.00" width="183.68" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="186.20" y="290.50" font-size="10" fill="#222222" text-anchor="end">Effortless Summer Wedding Style</text>
+<text x="381.88" y="290.50" font-size="9" fill="#222222">+0.150</text>
+<line x1="194.20" y1="62.00" x2="194.20" y2="302.00" stroke="#777777" stroke-width="1.0" stroke-dasharray="4,3"/>
+</svg>

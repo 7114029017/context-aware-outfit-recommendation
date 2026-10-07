@@ -120,7 +120,7 @@ different run ID. The initial status is RUNNING; check RUN_STATUS.txt.
 | chapter4/ | Twenty-table overview, 112 scoped numeric rows, JSON evidence |
 | reproduction_summary.md, reproduction_summary.json | Final cross-module summary; present only after full completion |
 | README.txt | Original entrypoint's final output pointers; present only after completion |
-| supplementary/run_analyses/, supplementary/input_data_audit/, supplementary/paper_value_checks/ | Supplementary analyses, run after PASSED (CPU only, outside the 35 units; they never change RUN_STATUS) |
+| supplementary/run_analyses/, input_data_audit/, paper_value_checks/, judge_audit_checks/, met_reference_check/, checklist_coverage/ | Supplementary analyses, run after PASSED (CPU only, outside the 35 units; they never change RUN_STATUS) |
 | extensions/ | Extension analyses, run after PASSED (outside the 35 units; they never change RUN_STATUS); step status in extensions/EXTENSIONS_STATUS.txt |
 
 The 35 training units run in series. Some historical sources are incomplete,
@@ -157,7 +157,7 @@ if [[ "${codes[0]}" -eq 0 && "${codes[1]}" -eq 0 ]] &&
     echo "[WARN] scientific run PASSED, but the final terminal summary could not be rendered." >&2
     echo "[WARN] inspect the saved CSV/JSON outputs under: $RUN_ROOT" >&2
   fi
-  # Supplementary analyses: CPU only, a few seconds. They read this run's saved
+  # Supplementary analyses: CPU only, under a minute. They read this run's saved
   # outputs and the fixed input data, and never change RUN_STATUS.txt.
   supplementary=(bash "$REPRO_SCRIPTS/supplementary/run_all.sh" --run-root "$RUN_ROOT"
                  --out-dir "$RUN_ROOT/supplementary")

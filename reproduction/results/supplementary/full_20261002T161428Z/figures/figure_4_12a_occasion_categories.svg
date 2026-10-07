@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="372" viewBox="0 0 640 372" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="320.00" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Categories most sensitive to occasion information (thesis Figure 4-12 (a))</text>
+<text x="320.00" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Run full_20261002T161428Z, fair subset, five seeds pooled; target categories</text>
+<line x1="214.65" y1="62.00" x2="214.65" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="214.65" y1="302.00" x2="214.65" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="214.65" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">-0.010</text>
+<line x1="350.84" y1="62.00" x2="350.84" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="350.84" y1="302.00" x2="350.84" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="350.84" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">-0.005</text>
+<line x1="487.03" y1="62.00" x2="487.03" y2="302.00" stroke="#e3e3e3" stroke-width="0.8"/>
+<line x1="487.03" y1="302.00" x2="487.03" y2="306.00" stroke="#555555" stroke-width="0.8"/>
+<text x="487.03" y="317.50" font-size="9.5" fill="#222222" text-anchor="middle">0.000</text>
+<line x1="154.80" y1="62.00" x2="154.80" y2="302.00" stroke="#555555" stroke-width="1"/>
+<line x1="154.80" y1="302.00" x2="600.00" y2="302.00" stroke="#555555" stroke-width="1"/>
+<text x="377.40" y="336.50" font-size="10.5" fill="#222222" text-anchor="middle">ΔHit@10 (Full − No-Occasion)</text>
+<rect x="487.03" y="68.00" width="41.17" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="80.50" font-size="10" fill="#222222" text-anchor="end">clutch (bags)</text>
+<text x="532.19" y="80.50" font-size="9" fill="#222222">+0.002</text>
+<rect x="487.03" y="98.00" width="11.57" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="110.50" font-size="10" fill="#222222" text-anchor="end">earrings (jewellery)</text>
+<text x="502.59" y="110.50" font-size="9" fill="#222222">+0.000</text>
+<rect x="487.03" y="128.00" width="0.00" height="18.00" fill="#2166AC" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="140.50" font-size="10" fill="#222222" text-anchor="end">sunglasses (accessories)</text>
+<text x="491.03" y="140.50" font-size="9" fill="#222222">+0.000</text>
+<rect x="463.80" y="158.00" width="23.23" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="170.50" font-size="10" fill="#222222" text-anchor="end">pump (shoes)</text>
+<text x="491.03" y="170.50" font-size="9" fill="#222222">-0.001</text>
+<rect x="354.56" y="188.00" width="132.46" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="200.50" font-size="10" fill="#222222" text-anchor="end">necklace (jewellery)</text>
+<text x="491.03" y="200.50" font-size="9" fill="#222222">-0.005</text>
+<rect x="349.40" y="218.00" width="137.62" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="230.50" font-size="10" fill="#222222" text-anchor="end">heels (shoes)</text>
+<text x="491.03" y="230.50" font-size="9" fill="#222222">-0.005</text>
+<rect x="327.68" y="248.00" width="159.34" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="260.50" font-size="10" fill="#222222" text-anchor="end">dress (all-body)</text>
+<text x="491.03" y="260.50" font-size="9" fill="#222222">-0.006</text>
+<rect x="169.16" y="278.00" width="317.87" height="18.00" fill="#D6604D" stroke="#ffffff" stroke-width="0.6"/>
+<text x="146.80" y="290.50" font-size="10" fill="#222222" text-anchor="end">purse (bags)</text>
+<text x="491.03" y="290.50" font-size="9" fill="#222222">-0.012</text>
+<line x1="487.03" y1="62.00" x2="487.03" y2="302.00" stroke="#777777" stroke-width="1.0" stroke-dasharray="4,3"/>
+</svg>
