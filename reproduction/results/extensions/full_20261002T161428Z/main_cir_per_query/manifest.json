@@ -1,0 +1,218 @@
+{
+ "run": "full_20261002T161428Z",
+ "status": "passed",
+ "units": [
+  {
+   "unit": "original_seed1",
+   "seed": 1,
+   "variant": "outfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "1b90df6dc9ff90d46612d6f75bea717bee3324a1a66ab23861e3f790ee22f33a",
+   "detail_sha256": "8988688a1109e9721e24c981092848c5377fcb048afffc1936ad7f829b605696",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.014176780152507786",
+    "recall_at_3": "0.03436795188486736",
+    "recall_at_5": "0.048544732037375145",
+    "recall_at_10": "0.07958328858339599",
+    "recall_at_30": "0.16518096874664376",
+    "recall_at_50": "0.23090967672645257"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "original_seed2",
+   "seed": 2,
+   "variant": "outfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "95c92b6176b9533dfb1657d3ddf1c3f4c0dadb6fb361f5f44b1305c187b168e9",
+   "detail_sha256": "02f06b03b0829fdd2a3bbb8af4774b4714f54cc6b3a0bd8915e123ac7923e889",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.013854580603587154",
+    "recall_at_3": "0.031468155944581674",
+    "recall_at_5": "0.04693373429277199",
+    "recall_at_10": "0.0766834926431103",
+    "recall_at_30": "0.16636236709268606",
+    "recall_at_50": "0.2280098807861669"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "original_seed3",
+   "seed": 3,
+   "variant": "outfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "713c28fba4df49c536853771736d2c026b4ec8b2f57e7c1faa94c30e59cc0ae1",
+   "detail_sha256": "da61369ae8986d36944b10571d9998256787927d4b928c8e939254bea250384e",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.013639780904306734",
+    "recall_at_3": "0.033293953388465254",
+    "recall_at_5": "0.047900332939533885",
+    "recall_at_10": "0.07743529159059177",
+    "recall_at_30": "0.16679196649124692",
+    "recall_at_50": "0.22736548168832563"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "original_seed4",
+   "seed": 4,
+   "variant": "outfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "2833368f7b624ecc50d3ebe6ba8d14518cfbf110aa4a338c462fcf6439f6169a",
+   "detail_sha256": "6e8c4ec88a587ab0cb6362263fc50496011f30b33e0a166b22101943f0185b11",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.013102781656105681",
+    "recall_at_3": "0.03340135323810547",
+    "recall_at_5": "0.048115132638814305",
+    "recall_at_10": "0.07893888948555472",
+    "recall_at_30": "0.1688325636344109",
+    "recall_at_50": "0.22983567823005047"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "original_seed5",
+   "seed": 5,
+   "variant": "outfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "627886117acd9c209f0cd5dc09ef8fb76292816b514849fcfc7da9af0f547ab5",
+   "detail_sha256": "0f1eba389ad6d6746f6c07d6605ff8203127f50fd27a66fc356d9f6bb3c231ab",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.014284180002147998",
+    "recall_at_3": "0.03415315218558694",
+    "recall_at_5": "0.0490817312855762",
+    "recall_at_10": "0.07829449038771345",
+    "recall_at_30": "0.1746321555149823",
+    "recall_at_50": "0.23552787026098163"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "context_seed1",
+   "seed": 1,
+   "variant": "NewoutfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "858200398832f15a3d0160f58be7012340e207aa9981af0477c43b3f5f0101e7",
+   "detail_sha256": "b4110eddd52694f7f77a471929266d722d5d6db2f3fb0b4bb9b9a1e5af5dc384",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.015895177746751154",
+    "recall_at_3": "0.03898614541939641",
+    "recall_at_5": "0.056277521211470304",
+    "recall_at_10": "0.08967887444957577",
+    "recall_at_30": "0.18590913972720438",
+    "recall_at_50": "0.25324884545161636"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "context_seed2",
+   "seed": 2,
+   "variant": "NewoutfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "6adc8f7dfe658fc224b7887ffdf741f64d2c0ff4239d1e146e8445877abe9382",
+   "detail_sha256": "6cd1a3753f64fa1910343daf5f8d046711105ed0545d4683083d797171a7213f",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.013532381054666523",
+    "recall_at_3": "0.036945548276232414",
+    "recall_at_5": "0.056492320910750723",
+    "recall_at_10": "0.09440446783374504",
+    "recall_at_30": "0.18773493717108797",
+    "recall_at_50": "0.2548598431962195"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "context_seed3",
+   "seed": 3,
+   "variant": "NewoutfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "17dd26d3090510f00a70d542c4747dbfb594c91e8c3e53d47f53bc157b2bc465",
+   "detail_sha256": "a0486f646d183282373817b2a0c7060bcd5df1f358ba0cdd8b0dc15b02ef90b3",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.016217377295671787",
+    "recall_at_3": "0.03640854902803136",
+    "recall_at_5": "0.05574052196326925",
+    "recall_at_10": "0.09376006873590377",
+    "recall_at_30": "0.1913865320588551",
+    "recall_at_50": "0.25228224680485445"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "context_seed4",
+   "seed": 4,
+   "variant": "NewoutfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "272a9721716001fd3baec289d3edc592411320206b87e61f087468f05cc29230",
+   "detail_sha256": "ffab105e162a8c5c4a7a855cb4bc091685ff651f1408fa35729929723619068b",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.013210181505745893",
+    "recall_at_3": "0.035334550531629254",
+    "recall_at_5": "0.05412952421866609",
+    "recall_at_10": "0.09182687144237998",
+    "recall_at_30": "0.18590913972720438",
+    "recall_at_50": "0.25002684996241004"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  },
+  {
+   "unit": "context_seed5",
+   "seed": 5,
+   "variant": "NewoutfitUrlTitle",
+   "device": "cuda",
+   "queries": 9311,
+   "cir_checkpoint_sha256": "98d24fe747a222ca3c95d4594ef812364656d721e69e77bb76534f93735330a2",
+   "detail_sha256": "70d55023c0953f6460fccb5c644ed053a9e5c44edae538931c43986b86d7822c",
+   "hits_equal_ranks": true,
+   "subset_ids": null,
+   "recalls": {
+    "recall_at_1": "0.016646976694232627",
+    "recall_at_3": "0.03812694662227473",
+    "recall_at_5": "0.05735151970787241",
+    "recall_at_10": "0.09386746858554398",
+    "recall_at_30": "0.19149393190849534",
+    "recall_at_50": "0.2558264418429814"
+   },
+   "recalls_equal_stored": true,
+   "hits_average_to_recalls": true
+  }
+ ],
+ "torch": "2.9.1+cu130",
+ "cuda_device": "NVIDIA GB10"
+}

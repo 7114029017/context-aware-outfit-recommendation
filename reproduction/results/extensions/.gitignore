@@ -1,4 +1,5 @@
-# Not committed: model checkpoints, large row-level files (A31, OR recall, reliability T18 layout) and logs with
+# Not committed: model checkpoints, large row-level files (A31, OR recall, reliability T18 layout, the
+# per-query files of the 10 main units, about 19 MB; their ranks and hits are in text_length/A07) and logs with
 # local paths.
 *.pt
 *.log
@@ -6,3 +7,4 @@ logs/
 A31_second_model_two_tower_or_rowlevel.csv
 or_recall_rowlevel.csv
 reliability_required_fields.csv
+detail_cir_main.csv

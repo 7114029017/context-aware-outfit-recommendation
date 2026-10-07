@@ -1,0 +1,6 @@
+error_type,original,proposed
+accessory-led retrieval failure,4662,4686
+context metadata incomplete,968,988
+general retrieval error,412,408
+high-confidence semantic mismatch,2102,1925
+low-style ambiguity,427,468

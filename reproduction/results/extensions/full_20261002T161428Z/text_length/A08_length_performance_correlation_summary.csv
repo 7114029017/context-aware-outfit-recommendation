@@ -1,0 +1,13 @@
+scope,x,y,n,pearson_r,pearson_p,spearman_r,spearman_p,practical_effect_size,interpretation_hint
+seed_row_level,original_query_len_tokens,hit10_delta,46555,-0.019300,0.000031,-0.021422,0.000004,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+seed_row_level,original_query_len_tokens,rank_improvement,46555,-0.015784,0.000660,-0.014847,0.001358,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+seed_row_level,generated_query_len_tokens,hit10_delta,46555,0.013916,0.002677,0.014570,0.001668,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+seed_row_level,generated_query_len_tokens,rank_improvement,46555,0.038809,0.000000,0.032924,0.000000,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+seed_row_level,length_delta_tokens,hit10_delta,46555,0.022015,0.000002,0.022397,0.000001,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+seed_row_level,length_delta_tokens,rank_improvement,46555,0.040361,0.000000,0.034988,0.000000,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+pair_mean_across_seeds,original_query_len_tokens,hit10_delta,9311,-0.029794,0.004038,-0.029649,0.004221,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+pair_mean_across_seeds,original_query_len_tokens,rank_improvement,9311,-0.017786,0.086136,-0.013948,0.178383,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+pair_mean_across_seeds,generated_query_len_tokens,hit10_delta,9311,0.021482,0.038183,0.028245,0.006418,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+pair_mean_across_seeds,generated_query_len_tokens,rank_improvement,9311,0.043731,0.000024,0.037074,0.000346,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+pair_mean_across_seeds,length_delta_tokens,hit10_delta,9311,0.033985,0.001039,0.036916,0.000367,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.
+pair_mean_across_seeds,length_delta_tokens,rank_improvement,9311,0.045481,0.000011,0.037630,0.000281,negligible,Large N can make tiny correlations statistically significant; use effect size plus bucket/matched checks.

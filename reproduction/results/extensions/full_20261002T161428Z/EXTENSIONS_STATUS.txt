@@ -1,9 +1,6 @@
-text_length:    SKIPPED (--skip-gpu; needs the GPU)
 counterfactual: PASSED
 two_tower:      SKIPPED (--skip-gpu; needs the GPU)
 color:          PASSED
-reliability:    SKIPPED (--skip-gpu; needs the GPU)
-text_swap:      SKIPPED (--skip-gpu; needs the GPU)
 figures:        PASSED
 outfit_generation: PASSED
 validate_length: PASSED
@@ -12,3 +9,6 @@ validate_reliability_labels: PASSED
 validate_outfit_generation: PASSED
 validate_reliability: SKIPPED (--skip-gpu; needs the GPU)
 validate_text_swap: SKIPPED (--skip-gpu; needs the GPU)
+text_length:    PASSED
+reliability:    PASSED
+text_swap:      PASSED

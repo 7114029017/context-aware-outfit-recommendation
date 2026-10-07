@@ -1,0 +1,185 @@
+{
+ "run": "full_20261002T161428Z",
+ "device": "cuda",
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "status": "complete",
+ "subset_ids": null,
+ "evaluated": [
+  {
+   "seed": 1,
+   "model": "original",
+   "text": "original"
+  },
+  {
+   "seed": 1,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 1,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 1,
+   "model": "context",
+   "text": "context"
+  },
+  {
+   "seed": 2,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 2,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 3,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 3,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 4,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 4,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 5,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 5,
+   "model": "context",
+   "text": "original"
+  }
+ ],
+ "seconds": 2857,
+ "torch": "2.9.1+cu130",
+ "cuda_device": "NVIDIA GB10",
+ "texts": {
+  "original": "encoded_outfitUrlTitle_en_fashionClip.pkl",
+  "context": "encoded_NewoutfitUrlTitle_en_fashionClip.pkl"
+ },
+ "checkpoints": {
+  "original_seed1": {
+   "cp": {
+    "path": "<run>/main/original_seed1/cp_best_ckpt.pt",
+    "sha256": "138c1b356312d8cca12aab49f38413fe9b016b051b10b04fd145290a31418307"
+   },
+   "cir": {
+    "path": "<run>/main/original_seed1/cir_best_ckpt.pt",
+    "sha256": "1b90df6dc9ff90d46612d6f75bea717bee3324a1a66ab23861e3f790ee22f33a"
+   }
+  },
+  "context_seed1": {
+   "cp": {
+    "path": "<run>/main/context_seed1/cp_best_ckpt.pt",
+    "sha256": "9846188106b7a6decf40e6623ddd1df4b3002f55a1d3cc8c43ce0b7f8590d1d6"
+   },
+   "cir": {
+    "path": "<run>/main/context_seed1/cir_best_ckpt.pt",
+    "sha256": "858200398832f15a3d0160f58be7012340e207aa9981af0477c43b3f5f0101e7"
+   }
+  },
+  "original_seed2": {
+   "cp": {
+    "path": "<run>/main/original_seed2/cp_best_ckpt.pt",
+    "sha256": "a09c4e9a7197ff8f1c6715aa0a3e5cdec1748e294fc1171690f3550eecbc00b0"
+   },
+   "cir": {
+    "path": "<run>/main/original_seed2/cir_best_ckpt.pt",
+    "sha256": "95c92b6176b9533dfb1657d3ddf1c3f4c0dadb6fb361f5f44b1305c187b168e9"
+   }
+  },
+  "context_seed2": {
+   "cp": {
+    "path": "<run>/main/context_seed2/cp_best_ckpt.pt",
+    "sha256": "858dea6baebdb6b02c18cc6ac6733e92428ef8d57c1912b6dfb263dadcc7397a"
+   },
+   "cir": {
+    "path": "<run>/main/context_seed2/cir_best_ckpt.pt",
+    "sha256": "6adc8f7dfe658fc224b7887ffdf741f64d2c0ff4239d1e146e8445877abe9382"
+   }
+  },
+  "original_seed3": {
+   "cp": {
+    "path": "<run>/main/original_seed3/cp_best_ckpt.pt",
+    "sha256": "17370a518fe6ee5a2eacb0bc21a62e87075be3125425bc49fdd8d82f343a4436"
+   },
+   "cir": {
+    "path": "<run>/main/original_seed3/cir_best_ckpt.pt",
+    "sha256": "713c28fba4df49c536853771736d2c026b4ec8b2f57e7c1faa94c30e59cc0ae1"
+   }
+  },
+  "context_seed3": {
+   "cp": {
+    "path": "<run>/main/context_seed3/cp_best_ckpt.pt",
+    "sha256": "37ef96455da31b6ba4f5e089b977d5c41fee14a2eeca58c83f4c1d2f24e374a2"
+   },
+   "cir": {
+    "path": "<run>/main/context_seed3/cir_best_ckpt.pt",
+    "sha256": "17dd26d3090510f00a70d542c4747dbfb594c91e8c3e53d47f53bc157b2bc465"
+   }
+  },
+  "original_seed4": {
+   "cp": {
+    "path": "<run>/main/original_seed4/cp_best_ckpt.pt",
+    "sha256": "b02b5cfa0923704b93db300efb8df28a062bee4625f46783b7880e9104765323"
+   },
+   "cir": {
+    "path": "<run>/main/original_seed4/cir_best_ckpt.pt",
+    "sha256": "2833368f7b624ecc50d3ebe6ba8d14518cfbf110aa4a338c462fcf6439f6169a"
+   }
+  },
+  "context_seed4": {
+   "cp": {
+    "path": "<run>/main/context_seed4/cp_best_ckpt.pt",
+    "sha256": "43915eb585974f8c1b83522a0de22b2962c5852b12deea04b16a01c59ff11c35"
+   },
+   "cir": {
+    "path": "<run>/main/context_seed4/cir_best_ckpt.pt",
+    "sha256": "272a9721716001fd3baec289d3edc592411320206b87e61f087468f05cc29230"
+   }
+  },
+  "original_seed5": {
+   "cp": {
+    "path": "<run>/main/original_seed5/cp_best_ckpt.pt",
+    "sha256": "5657e8aac172b0812c655776323862a3b7dab6a92dc53ecd6d12f5689f56bad7"
+   },
+   "cir": {
+    "path": "<run>/main/original_seed5/cir_best_ckpt.pt",
+    "sha256": "627886117acd9c209f0cd5dc09ef8fb76292816b514849fcfc7da9af0f547ab5"
+   }
+  },
+  "context_seed5": {
+   "cp": {
+    "path": "<run>/main/context_seed5/cp_best_ckpt.pt",
+    "sha256": "b5ad069b153e19da57cbf92729f4144af7c5b14c5036205d4c5526437ed0d857"
+   },
+   "cir": {
+    "path": "<run>/main/context_seed5/cir_best_ckpt.pt",
+    "sha256": "98d24fe747a222ca3c95d4594ef812364656d721e69e77bb76534f93735330a2"
+   }
+  }
+ },
+ "a14_equal": null
+}

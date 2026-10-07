@@ -1,0 +1,17 @@
+run_tag,subgroup_type,subgroup,n,hit10,avg_confidence,high_conf_error_rate,median_rank
+original,weather_group,cold,5264,0.079787,0.725371,0.227014,225.0
+original,weather_group,warm,4047,0.079071,0.721887,0.224117,231.0
+original,occasion_group,casual,1444,0.074792,0.729667,0.231994,240.5
+original,occasion_group,formal,1121,0.091882,0.722737,0.198037,201.0
+original,style_group,high-style,7199,0.076538,0.722306,0.223503,234.0
+original,style_group,low-style,2112,0.089489,0.729141,0.233428,200.0
+original,category_group,accessory-led,6621,0.075970,0.722252,0.219906,232.0
+original,category_group,clothing-led,2690,0.088104,0.727805,0.240149,206.0
+proposed,weather_group,cold,5264,0.088526,0.718223,0.206497,194.0
+proposed,weather_group,warm,4047,0.091426,0.720392,0.207067,194.0
+proposed,occasion_group,casual,1444,0.079640,0.719484,0.204986,200.0
+proposed,occasion_group,formal,1121,0.099911,0.714234,0.198930,172.0
+proposed,style_group,high-style,7199,0.088207,0.720014,0.210029,202.0
+proposed,style_group,low-style,2112,0.095170,0.716276,0.195549,173.0
+proposed,category_group,accessory-led,6621,0.084428,0.718395,0.207824,204.0
+proposed,category_group,clothing-led,2690,0.102974,0.721065,0.204089,169.0

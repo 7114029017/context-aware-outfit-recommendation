@@ -78,9 +78,66 @@ public, so its extension outputs were produced once on the maintainer's
 machine and committed to `results/extensions/full_20261002T161428Z/` (command:
 `run_all.sh --run-root <official run folder> --out-dir
 reproduction/results/extensions/full_20261002T161428Z --figures-dir <local
-folder> --skip-gpu --validate`). The GPU steps (`text_length`, `two_tower`,
-`reliability`, `text_swap`) and the GPU validations have not been run yet;
-their outputs will be added to the same folder.
+folder> --skip-gpu --validate`). The GPU steps `text_length`, `reliability` and
+`text_swap` were run on 2026-10-07 and 08 on the GB10 (`--steps
+text_length,reliability,text_swap`, 69 min). `two_tower` and the GPU
+validations have not been run yet; their outputs will be added to the same
+folder.
+
+**Text length (Table 5; thesis Tables 4-4, 4-5).** The 10 main CIR checkpoints
+evaluated again on the GPU with per-query output (`main_cir_per_query/`): all
+10 reproduce the run's stored recalls exactly, and the per-query hits average
+to them. The length analysis (`text_length/`, A07-A10 layout):
+
+| Value | Official run | Manuscript (2025 models) |
+|---|---:|---:|
+| Query-target pairs | 9,311 | 9,311 |
+| Pearson r, length difference vs ΔHit@10 (pair means) | 0.033985 (p = 0.0010) | 0.027647 (p = 0.0076) |
+| Pearson r, length difference vs rank improvement | 0.045481 (p < 0.0001) | 0.043384 (p < 0.0001) |
+| Pairs within five tokens | 3,014 | 3,014 |
+| ΔHit@10 within five tokens (Full − Original) | +0.0081 | +0.0106 |
+
+The correlations stay negligible in size (significant only because N is
+large), and every matched-length group still improves (A10: +0.0127, +0.0161,
++0.0084, +0.0081 and +0.0081 for differences of at most 0, 1, 2, 3 and 5
+tokens), so the manuscript's conclusion holds; its numbers change.
+
+**Reliability (2025 notebook P04: table T18, figures F12-F16).** The run's
+seed-1 Original and Context models, GPU with float16 autocast as in P04
+(`reliability/`; the 40 MB file in the T18 layout is not committed):
+
+| Model | Hit@1 | Hit@10 | Median rank | High-conf. error | ECE | Brier | 2025 (Hit@10, ECE, Brier) |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Original | 0.0142 | 0.0795 | 228 | 0.2258 | 0.6444 | 0.5089 | 0.0780, 0.6423, 0.5050 |
+| Context | 0.0159 | 0.0898 | 194 | 0.2067 | 0.6294 | 0.4964 | 0.0871, 0.6314, 0.4973 |
+
+As in 2025, the Context model has the higher Hit@10, the lower ECE and Brier
+score, fewer high-confidence errors, and a higher Hit@10 in all eight
+subgroups (in 2025 the low-style gain was only +0.0005). Both models remain far from
+calibrated (ECE above 0.6). P04 has its own evaluation loop: on the same models
+and candidate pools its Hit@1 equals the run's Recall@1, its ranks equal the
+evaluator's in 83% of the queries (never more than 4 apart), and its Hit@10
+differs by one query per model, because P04 converts the candidate embeddings
+to float32 before the cosine similarity while the evaluator keeps them in
+float16.
+
+**Text swap (2025 sweep).** Each main model of seeds 1-5 evaluated with the
+other outfit text on the GPU (`text_swap/`); the seed-1 combinations with the
+model's own text, evaluated again as a check, equal the stored results. Mean ±
+SD over the five seeds:
+
+| Model | Text | AUC | FITB | R@10 | R@50 |
+|---|---|---:|---:|---:|---:|
+| Original | original titles | 0.9268 ± 0.0040 | 0.6357 ± 0.0035 | 0.0782 ± 0.0012 | 0.2303 ± 0.0032 |
+| Original | context-aware | 0.9338 ± 0.0041 | 0.6418 ± 0.0037 | 0.0818 ± 0.0024 | 0.2360 ± 0.0019 |
+| Context | original titles | 0.9061 ± 0.0020 | 0.6179 ± 0.0013 | 0.0711 ± 0.0019 | 0.2136 ± 0.0023 |
+| Context | context-aware | 0.9456 ± 0.0010 | 0.6481 ± 0.0029 | 0.0927 ± 0.0020 | 0.2532 ± 0.0023 |
+
+The context-aware descriptions help even the model trained on the original
+titles (AUC +0.0070, Recall@10 +0.0036, positive in all five seeds), and the
+Context model depends on them: given the original titles it falls below the
+Original model (AUC 0.9061, Recall@10 0.0711). The 2025 values of the sweep
+are not preserved.
 
 **Counterfactual (Tables 4 and 9).** Same 24 pairs, the official run's Context
 models of seeds 1-5, CPU. Mean ± SD over the seeds (`table9_seeds_mean_sd.csv`;

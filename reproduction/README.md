@@ -768,13 +768,13 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 
 | 延伸分析 | 稿件 | 需要 | 正式 run 的結果 |
 |---|---|---|---|
-| `text_length` | Table 5「Text length」 | GPU，約 20 分鐘 | 尚未執行（需安排 GPU） |
+| `text_length` | Table 5「Text length」 | GPU，約 20 分鐘 | `results/extensions/full_20261002T161428Z/text_length/`（10 個主實驗模型的逐題結果在 `main_cir_per_query/`） |
 | `counterfactual` | Table 4、Table 9 | `--with-fashionclip`；CPU 約 1 分鐘 | `results/extensions/full_20261002T161428Z/counterfactual/`（5 個 seed） |
 | `two_tower` | Table 8 | GPU，1.5～3 小時 | 尚未執行（需安排 GPU） |
 | `color` | 5.5 節色彩分析 | `--with-images`；CPU 幾秒 | `results/extensions/full_20261002T161428Z/color_analysis/` |
 | `figures` | 附錄圖 A1～A3、論文圖 4-14（顏色偏移案例）、2025 年反事實範例圖 F34a、F34b | `--with-images`；CPU 幾秒 | 圖只在本機；內容（商品 ID、名次、顏色）在 `case_figures/` 的三個 manifest |
-| `reliability` | 2025 年可靠度分析（P04：表 T18、圖 F12～F16；稿件沒用） | GPU，約 5 分鐘 | 尚未執行（需安排 GPU）；標註部分已驗證，見 `validation/reliability_labels/` |
-| `text_swap` | 2025 年文字互換評估（`CP_evaluate.py`、`CIR_evaluate.py --sweep`；稿件沒用） | GPU，約 45 分鐘 | 尚未執行（需安排 GPU） |
+| `reliability` | 2025 年可靠度分析（P04：表 T18、圖 F12～F16；稿件沒用） | GPU，約 5 分鐘 | `results/extensions/full_20261002T161428Z/reliability/` |
+| `text_swap` | 2025 年文字互換評估（`CP_evaluate.py`、`CIR_evaluate.py --sweep`；稿件沒用） | GPU，約 45 分鐘 | `results/extensions/full_20261002T161428Z/text_swap/` |
 | `outfit_generation` | 2025 年虛擬試穿示範的逐步選品（P02，不含試穿；稿件沒用） | `--with-images`、`--with-fashionclip`；CPU 約 2 分鐘 | `results/extensions/full_20261002T161428Z/outfit_generation/` |
 
 run 資料夾中的結果在 `extensions/`，各步驟的狀態在 `extensions/EXTENSIONS_STATUS.txt`；

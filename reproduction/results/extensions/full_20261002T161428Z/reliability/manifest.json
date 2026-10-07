@@ -1,0 +1,56 @@
+{
+ "mode": "run",
+ "polyvore_queries": 9311,
+ "labels_equal_archived_t18": true,
+ "a16_equal_archived": true,
+ "archived_t18_sha256": "c57e0bf9eda77e11ef58916d35e88fda8e72f3ac3e0404a5dd3f6a7280286b86",
+ "device": "cuda",
+ "precision": "float16 autocast",
+ "threads": 4,
+ "max_queries": null,
+ "status": "complete",
+ "run": "full_20261002T161428Z",
+ "seconds": 78,
+ "torch": "2.9.1+cu130",
+ "cuda_device": "NVIDIA GB10",
+ "models": {
+  "original": {
+   "checkpoint": "<run>/main/original_seed1/cir_best_ckpt.pt",
+   "sha256": "1b90df6dc9ff90d46612d6f75bea717bee3324a1a66ab23861e3f790ee22f33a"
+  },
+  "proposed": {
+   "checkpoint": "<run>/main/context_seed1/cir_best_ckpt.pt",
+   "sha256": "858200398832f15a3d0160f58be7012340e207aa9981af0477c43b3f5f0101e7"
+  }
+ },
+ "queries": {
+  "original": 9311,
+  "proposed": 9311
+ },
+ "performance": {
+  "original": {
+   "n": 9311,
+   "Hit@1": 0.014176780152507786,
+   "Hit@10": 0.07947588873375577,
+   "Median Rank": 228.0,
+   "Mean Rank": 463.3648372892278,
+   "Avg Confidence": 0.7238566887430368,
+   "Error Rate": 0.9205241112662442,
+   "High-conf Error Rate": 0.22575448394372247,
+   "ECE": 0.6443808000092811,
+   "Brier Score": 0.5088548261808244
+  },
+  "proposed": {
+   "n": 9311,
+   "Hit@1": 0.015895177746751154,
+   "Hit@10": 0.08978627429921598,
+   "Median Rank": 194.0,
+   "Mean Rank": 433.30061217914295,
+   "Avg Confidence": 0.7191661927745996,
+   "Error Rate": 0.9102137257007841,
+   "High-conf Error Rate": 0.20674471055740523,
+   "ECE": 0.6293799184753838,
+   "Brier Score": 0.49642723122584237
+  }
+ }
+}
