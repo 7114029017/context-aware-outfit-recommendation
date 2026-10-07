@@ -25,6 +25,22 @@ the counterfactual analysis used the 2025 seed-1 model).
 
 See `table2_text_fields.csv` (missing values, mean / median / max words, mean tokens).
 
+## Table 5, target clues
+
+`categories.csv` lists 34 category IDs more than once, 16 of them with different
+labels. The 2025 programs keep the first occurrence; the frozen pipeline's secondary step
+(`secondary/target_clue/`) keeps the last one. With the 2025 rule the six counts equal the archived table
+A03 and the manuscript: yes. Fine-category labels of the 80 archived
+examples (A04): 80 match the 2025 rule, 40 the last-occurrence rule.
+
+| Metric | 2025 (A03) | Recomputed, 2025 rule | Last occurrence (pipeline) |
+|---|---:|---:|---:|
+| fine-category match in the generated description | 419 (4.50%) | 419 (4.50%) | 549 (5.90%) |
+| fine- or main-category match in the generated description | 454 (4.88%) | 454 (4.88%) | 560 (6.01%) |
+| target-item token overlap, generated description | 1030 (11.06%) | 1030 (11.06%) | 999 (10.73%) |
+| target-item bigram overlap, generated description | 81 (0.87%) | 81 (0.87%) | 81 (0.87%) |
+| target-item token overlap, original text | 1155 (12.40%) | 1155 (12.40%) | 1132 (12.16%) |
+
 ## Table 5, proxy values
 
 See `table5_proxy_values.csv`. Counts: CLO > 4: 20; MET = 1.0: 25786; MET > 10: 8; temperature < 0 °C: 257; temperature < -20 °C: 51.

@@ -26,6 +26,7 @@ TEMPERATURE_DIR = D01 / "clo_met_temperature" / "temperature_results"
 MET_CANDIDATES = D01 / "clo_met_temperature" / "MET_reference" / "adult_activity_compendium_sorted_2024.json"
 CONTEXT_FEATURES = D02 / "fashionclip_data" / "encoded_NewoutfitUrlTitle_en_fashionClip.pkl"
 CASE_TABLES = D03 / "04_情境子集與三因子分析" / "圖表_figures_tables" / "tables"
+TARGET_CLUE = D03 / "02_目標單品線索檢查"
 TWO_TOWER_SEEDS = D03 / "05_第二模型驗證" / "圖表_figures_tables" / "tables" / "A30_second_model_two_tower_seed_summary.csv"
 COUNTERFACTUAL = D03 / "06_反事實情境敏感度"
 SPLITS = ("train", "valid", "test")

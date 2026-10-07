@@ -1,0 +1,7 @@
+metric,description,count_2025_A03,percent_2025_A03,count_first_occurrence,percent_first_occurrence,count_last_occurrence,percent_last_occurrence
+audited_unique_main_cir_queries,CIR query-target pairs,9311,100.00,9311,100.00,9311,100.00
+generated_fine_category_lexical_match,fine-category match in the generated description,419,4.50,419,4.50,549,5.90
+generated_any_category_lexical_match,fine- or main-category match in the generated description,454,4.88,454,4.88,560,6.01
+generated_target_item_distinctive_token_overlap,"target-item token overlap, generated description",1030,11.06,1030,11.06,999,10.73
+generated_target_item_distinctive_bigram_overlap,"target-item bigram overlap, generated description",81,0.87,81,0.87,81,0.87
+original_target_item_distinctive_token_overlap,"target-item token overlap, original text",1155,12.40,1155,12.40,1132,12.16
