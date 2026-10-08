@@ -610,12 +610,20 @@ def items(lay: Layout) -> list[dict]:
         if bad:
             return bad
         picked = ", ".join(x["pair_id"] for x in rows(f))
-        m = re.search(r"the same rule on the archived A46 selects (\S+) and (\S+) ", text(lay.ext / "logs" / "figures.log"))
-        if m is None:
-            return result("MISSING", "the check of P16's rule on the archived A46 is not in logs/figures.log", f)
-        ok = {m.group(1), m.group(2)} == {"CF04", "CF09"}
+        if lay.official:  # the committed results leave out logs/ (results/extensions/.gitignore): apply the rule here
+            sys.path.append(str(HERE / "extensions"))
+            import case_figures
+            a46 = case_figures.COUNTERFACTUAL_DIR / "A46_counterfactual_context_manual_review_sheet.csv"
+            archived = [x["pair_id"] for x in case_figures.select_examples(case_figures.read_csv(a46))]
+        else:
+            log = text(lay.ext / "logs" / "figures.log")
+            m = re.search(r"the same rule on the archived A46 selects (\S+) and (\S+) ", log)
+            if m is None:
+                return result("MISSING", "the check of P16's rule on the archived A46 is not in logs/figures.log", f)
+            archived = list(m.groups())
+        ok = set(archived) == {"CF04", "CF09"}
         return result("DIFFERS" if ok else "FAIL", f"P16's rule selects {picked} from the run's seed-1 results; on the "
-                      f"archived A46 it selects {m.group(1)} and {m.group(2)} (2025 figures: CF04, CF09); figures "
+                      f"archived A46 it selects {archived[0]} and {archived[1]} (2025 figures: CF04, CF09); figures "
                       "local only", f)
     add(35, "Counterfactual example figures (not in the manuscript)", "反事實範例圖（論文沒用）", "2025 F34a, F34b",
         "computed from the run's models", c35)
