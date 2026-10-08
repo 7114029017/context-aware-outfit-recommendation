@@ -195,8 +195,11 @@ def table5(lay: ri.Layout) -> list[str]:
     ties = rows(lay.s("judge_audit_checks") / "bottom_p_tie_orders.csv")
     if ties:
         t = ties[0]
-        out.append(f"  {pad('Judge 一致性', 14)}最低 5% 重疊 {t['intersection_numpy_argsort']} 筆（稿件 {t['thesis_table_4_7']}，差在同分"
-                   f"排序；同分可能的範圍 {t['smallest_over_tie_orders']}-{t['largest_over_tie_orders']}）")
+        if t["intersection_numpy_argsort"] == t["thesis_table_4_7"]:
+            out.append(f"  {pad('Judge 一致性', 14)}最低 5% 重疊 {t['intersection_numpy_argsort']} 筆（與稿件相同）")
+        else:
+            out.append(f"  {pad('Judge 一致性', 14)}最低 5% 重疊 {t['intersection_numpy_argsort']} 筆（稿件 {t['thesis_table_4_7']}，"
+                       f"差在同分排序；同分可能的範圍 {t['smallest_over_tie_orders']}-{t['largest_over_tie_orders']}）")
     pr = {r["judge"]: r for r in rows(lay.paths["secondary"] / "judge" / "prompt_robustness_summary.csv")
           if r["variant"] == "P0-R2"}
     if pr:

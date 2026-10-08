@@ -393,6 +393,10 @@ def items(lay: Layout) -> list[dict]:
         r = rows(ties)
         inside = all(x["thesis_within_tie_range"] == "yes" for x in r)
         col = lambda key: ", ".join(x[key] for x in r)  # noqa: E731
+        # numpy's argsort orders the tied scores by CPU type: as in 2025 on x86, differently on the GB10 (README 0.8)
+        if t19_same and all(x["intersection_numpy_argsort"] == x["thesis_table_4_7"] for x in r):
+            return result("PASS", "T19 (correlations, QWK) equal to the archived T19 within 1e-12: yes; bottom 5/10/20% "
+                          f"overlaps {col('intersection_numpy_argsort')} equal to thesis Table 4-7", ties, t19)
         return result("DIFFERS" if t19_same and inside else "FAIL",
                       f"T19 (correlations, QWK) equal to the archived T19 within 1e-12: {'yes' if t19_same else 'NO'}; "
                       f"bottom 5/10/20% overlaps {col('intersection_numpy_argsort')} (thesis Table 4-7 "
@@ -410,6 +414,10 @@ def items(lay: Layout) -> list[dict]:
         if not curve or m is None:
             return result("MISSING", f"{lay.where(f)} or bottom_p_curve_tie_range.csv not found")
         inside = sum(1 for x in curve if x["thesis_within_tie_range"] == "yes")
+        if all(float(m.group(i)) == 0 for i in range(1, 7)):  # tied scores ordered as in 2025, see c19
+            return result("PASS", "curves and bootstrap bands equal to thesis Figure 4-3 (largest difference 0.0000 over "
+                          "the 30 values of p; the thesis values are read from the archived SVG)", f,
+                          lay.s("judge_audit_checks") / "bottom_p_curve_tie_range.csv")
         return result("DIFFERS" if inside == len(curve) else "FAIL",
                       f"curves within {max(float(m.group(i)) for i in (1, 4)):.4f} of thesis Figure 4-3 and the "
                       f"bootstrap bands within {max(float(m.group(i)) for i in (2, 3, 5, 6)):.4f}; at {inside} of "
