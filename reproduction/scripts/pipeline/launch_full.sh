@@ -16,9 +16,11 @@ This starts the entire 10-main + 25 fair-subset ablation training pipeline.
 No --check-only mode: use bash reproduction/scripts/check.sh to preflight.
 After the run has PASSED, run_analyses.sh writes the supplementary analyses
 to <run-id>/supplementary/, the extension analyses and the checks of the ported
-code to <run-id>/extensions/ (about 4.5 hours, 3.5 of them on the GPU), the
-comparison with the official run, and the status of all 46 reproduction items
-to <run-id>/ITEMS_STATUS.md. None of them changes RUN_STATUS.
+code to <run-id>/extensions/ (about 4 hours, most of them on the GPU), the
+comparison with the official run, the status of all 46 reproduction items to
+<run-id>/ITEMS_STATUS.md, and shows the final summary (<run-id>/FINAL_SUMMARY.txt:
+the manuscript's tables, the conclusions, the comparison, the 46 items and the
+acceptance). None of them changes RUN_STATUS.
 
 All outputs for this new execution are stored within a single run directory:
   <output-base>/<run-id>/
@@ -104,7 +106,7 @@ different run ID. The initial status is RUNNING; check RUN_STATUS.txt.
 | RUN_STATUS.txt | RUNNING / PASSED / FAILED; check before using final results |
 | started_utc.txt, finished_utc.txt | UTC execution timestamps |
 | logs/full_console.log | Complete command-line output, including failures |
-| logs/final_terminal_summary.txt | Final terminal summary; present only after PASSED |
+| logs/final_terminal_summary.txt | Summary of the 35 training units (thesis tables 4-11 to 4-16, checklist); present only after PASSED |
 | logs/analyses.log | Output of every analysis after the 35 units (run_analyses.sh); present only after PASSED |
 | logs/supplementary.log, extensions.log, comparison.log, items.log | Output of each analysis step |
 | environment/ | Python, CUDA, GPU and eight feature checks |
@@ -125,6 +127,7 @@ different run ID. The initial status is RUNNING; check RUN_STATUS.txt.
 | extensions/ | Extension analyses and the checks of the ported code, run after PASSED (outside the 35 units; they never change RUN_STATUS); step status in extensions/EXTENSIONS_STATUS.txt |
 | official_comparison.txt, official_comparison.json | Comparison with the official run (IDENTICAL / CONSISTENT / NOT CONSISTENT) |
 | ITEMS_STATUS.md, ITEMS_STATUS.json | Status of each of the 46 reproduction items, with the evidence |
+| FINAL_SUMMARY.txt | The final summary shown at the end: the manuscript's tables, the conclusions, the comparison, the 46 items, the acceptance |
 
 The 35 training units run in series. Some historical sources are incomplete,
 so a finished run must NOT claim exact reproduction of all published tables.
@@ -151,13 +154,13 @@ if [[ "${codes[0]}" -eq 0 && "${codes[1]}" -eq 0 ]] &&
    [[ -f "$RUN_ROOT/reproduction_summary.json" ]] &&
    [[ -f "$RUN_ROOT/chapter4/chapter4_report.json" ]]; then
   printf '%s\n' "PASSED" > "$RUN_ROOT/RUN_STATUS.txt"
-  echo "[PASSED] single-run reproduction complete: $RUN_ROOT"
-  echo "[READ] $RUN_ROOT/INDEX.md"
-  echo
-  # Keep the final terminal summary with the run, not only on screen.
-  if ! python3 "$REPRO_SCRIPTS/show_reproduction_summary.py" --run-root "$RUN_ROOT" |
-       tee "$RUN_ROOT/logs/final_terminal_summary.txt"; then
-    echo "[WARN] scientific run PASSED, but the final terminal summary could not be rendered." >&2
+  echo "[PASSED] the 35 training units are complete: $RUN_ROOT"
+  # The training summary is kept with the run; its tables are shown again in the final summary at the end.
+  if python3 "$REPRO_SCRIPTS/show_reproduction_summary.py" --run-root "$RUN_ROOT" \
+       > "$RUN_ROOT/logs/final_terminal_summary.txt" 2>&1; then
+    echo "[PASSED] training summary saved: $RUN_ROOT/logs/final_terminal_summary.txt"
+  else
+    echo "[WARN] scientific run PASSED, but the training summary could not be rendered." >&2
     echo "[WARN] inspect the saved CSV/JSON outputs under: $RUN_ROOT" >&2
   fi
   # Every analysis after the 35 units (reproduction/docs/extensions.md, supplementary_analyses.md):
@@ -168,12 +171,9 @@ if [[ "${codes[0]}" -eq 0 && "${codes[1]}" -eq 0 ]] &&
   if [[ -n "$POLYVORE_ROOT" ]]; then
     analyses+=(--polyvore-root "$POLYVORE_ROOT")
   fi
-  echo
-  echo "[ANALYSES] running every analysis after the 35 units (about 4.5 hours, 3.5 of them on the GPU)"
-  if "${analyses[@]}" 2>&1 | tee "$RUN_ROOT/logs/analyses.log"; then
-    echo "[ANALYSES] all items reproduced or explained: $RUN_ROOT/ITEMS_STATUS.md"
-  else
-    echo "[WARN] scientific run PASSED, but an analysis item is MISSING or FAIL; see $RUN_ROOT/ITEMS_STATUS.md" >&2
+  echo "[ANALYSES] every analysis after the 35 units follows (about 4 hours); the final summary comes at the end"
+  if ! "${analyses[@]}" 2>&1 | tee "$RUN_ROOT/logs/analyses.log"; then
+    echo "[WARN] scientific run PASSED, but the acceptance of the analyses did not pass; see $RUN_ROOT/FINAL_SUMMARY.txt" >&2
     echo "[WARN] after fixing the cause, rerun: ${analyses[*]}" >&2
   fi
 else

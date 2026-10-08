@@ -143,7 +143,7 @@ ensure_optional_downloads() {
   [[ -n "$nomic_model" && -d "$nomic_model" && -n "$nomic_code" && -d "$nomic_code" ]] || flags+=(--with-nomic)
   [[ -n "$compendium" && -f "$compendium" ]] || flags+=(--with-compendium)
   command -v pdftotext >/dev/null 2>&1 ||
-    echo "[DOWNLOADS] pdftotext (poppler-utils) is not installed: the MET reference check (item 5) will be SKIPPED" >&2
+    echo "[DOWNLOADS] pdftotext (poppler-utils) is not installed: the MET reference check (the 457-entry MET candidate list) will be SKIPPED" >&2
   if [[ ${#flags[@]} -eq 0 ]]; then
     echo "[DOWNLOADS] the optional inputs of the analyses are present (images, FashionCLIP, Nomic, Compendium)"
     return 0

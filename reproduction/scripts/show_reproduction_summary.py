@@ -354,7 +354,13 @@ def main() -> None:
     cudnn_version = str(torch_runtime.get("cudnn_version", "not_available"))
 
     branch = git_value("branch", "--show-current")
-    artifact_commit = git_value("rev-parse", "HEAD")
+    run_status = Path(paths["result_root"]) / "git_status_start.txt"
+    if not args.reference and run_status.is_file() and read_text(run_status).startswith("## "):
+        branch = read_text(run_status).splitlines()[0][3:].split("...")[0]  # the branch the run started from
+    run_commit = Path(paths["result_root"]) / "git_commit.txt"
+    artifact_commit = (read_text(run_commit) if not args.reference and run_commit.is_file()
+                       else git_value("rev-parse", "HEAD"))
+    release_tag = git_value("describe", "--tags", "--exact-match", artifact_commit)
     official_id = (read_json(OFFICIAL_MANIFEST).get("official_run_id", "not_available")
                    if OFFICIAL_MANIFEST.is_file() else "not_available")
     if args.reference:
@@ -381,7 +387,11 @@ def main() -> None:
         ["5", "PASS", "Automatic Table 4-11 / 4-12 / ablation outputs",
          "printed above; machine-readable main/, ablation/, chapter4/ outputs are preserved"],
         ["6", "PASS", "Tested README + one-command flow",
-         f"README: reproduction/README.md | command: bash reproduction/scripts/reproduce_all.sh --fresh | official clean-room run {official_id} (fresh clone, README section 0 only) PASSED, bit-identical to two earlier full runs | docs/clean_room_acceptance.md"],
+         f"README: reproduction/README.md | command: bash reproduction/scripts/reproduce_all.sh --fresh | "
+         + (f"official clean-room run {official_id} (fresh clone, README section 0 only) PASSED, bit-identical to two "
+            "earlier full runs | docs/clean_room_acceptance.md" if args.reference else
+            f"this run {Path(paths['result_root']).name} PASSED; the analyses, the comparison with the official run "
+            f"{official_id} and the final summary follow (FINAL_SUMMARY.txt)")],
         ["7", "PASS", "Python / PyTorch / CUDA / major packages",
          f"Python {python_version} | PyTorch {torch_version} | CUDA {cuda_version} | cuDNN {cudnn_version} | details: {display_path(paths['environment'])}"],
         ["8", "PARTIAL", "Hyperparameter tuning provenance",
@@ -389,7 +399,8 @@ def main() -> None:
         ["9", "PASS*", "Standardized decoder reason + impact",
          "standardized decoder implementation (torch.nn.TransformerDecoderLayer) because the historical DecoderLayerWithCrossAttn definition is missing; numerical reproduction supported, historical source-exact recovery NOT claimed | docs/standardized_decoder.md"],
         ["10", "READY", "GitHub final artifact / public release",
-         f"branch: {branch} | artifact commit: {artifact_commit} | fixed GitHub Release: v1.0.0-tors-reproduction (no DOI)"],
+         f"branch: {branch} | artifact commit: {artifact_commit} | release tag at this commit: "
+         f"{release_tag if release_tag and release_tag != 'not_available' else 'none'} (no DOI)"],
     ]
     for number, status, request, evidence in checklist:
         print(f"[{status}] {number}. {request}")
@@ -398,7 +409,7 @@ def main() -> None:
     print("Checklist interpretation")
     print("- Items 1-7 and 9 have concrete 2026 reproduction evidence; item 9 keeps its stated source-provenance caveat.")
     print("- Item 8 remains PARTIAL because missing historical tuning trials/candidate ranges are not fabricated.")
-    print("- Item 10 is READY as a fixed artifact commit; the manuscript cites the GitHub Release v1.0.0-tors-reproduction.")
+    print("- Item 10 is READY as a fixed artifact commit; the release tag that contains it is listed in the repository README.")
     print("- This checklist is printed so the reviewer does not need to manually search the repository for the ten requested items.")
     print()
     print(f"Results root: {paths['result_root']}")

@@ -1,7 +1,7 @@
 # Known limitations
 
 Everything this artifact cannot reproduce source-exactly, or whose historical
-source was not preserved (2026-09-30 guideline, section 十 item 9). For each
+source was not preserved (the advisor's follow-up guideline of 2026-09-30 asks for this list). For each
 item: what is missing or not exact, what the artifact does instead, and where
 the evidence is.
 
@@ -81,10 +81,12 @@ from the official run (`supplementary_analyses.md`, `extensions.md`).
   reference result set (`results/SHA256SUMS.txt`) and keep their original
   wording for the same reason.
 
-## Publication items still pending
+## Publication
 
 The fixed GitHub release `v1.0.0-tors-reproduction` was published on
-2026-10-07; the manuscript's Artifact Availability statement should link to
-it. No DOI is used. Third-party terms are listed in `THIRD_PARTY_NOTICES.md` at
+2026-10-07. A new official run made with one command (the 35 training units and
+every analysis after them) is followed by the release
+`v1.1.0-tors-reproduction`, which the manuscript's Artifact Availability
+statement should cite. No DOI is used. Third-party terms are listed in `THIRD_PARTY_NOTICES.md` at
 the repository root; the public-release changes are listed in
 `public_release_cleanup.md`.

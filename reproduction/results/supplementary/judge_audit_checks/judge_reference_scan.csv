@@ -72,6 +72,7 @@ reproduction: other scripts,reproduction/scripts/run_analyses.sh,searched,,no_ju
 "reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/run_fair_subset_single_seed.py,searched,,no_judge_artifact_reference_found
 "reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/run_full_single_seed_training.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/run_single_seed_smoke_training.py,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/show_final_summary.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/show_reproduction_summary.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/smoke_test.sh,searched,,no_judge_artifact_reference_found
 "reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/standard_decoder.py,searched,,no_judge_artifact_reference_found

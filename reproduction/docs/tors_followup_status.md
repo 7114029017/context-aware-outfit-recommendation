@@ -100,4 +100,4 @@
 
 - ⚠️ 老師確認：子集名稱、4.5 類別與情境子集分析是否用正式 run 重算、舊 checkpoint 分析（Two-Tower、反事實、個案）在稿件中的標示方式。
 - 📝 修訂稿：依對帳表修正。
-- 公開發佈：固定 Release `v1.0.0-tors-reproduction` 與論文的 Artifact Availability statement（不使用 DOI；`docs/tors_compliance.md` A1／A2／A10）。
+- 公開發佈：Release `v1.0.0-tors-reproduction` 已於 2026-10-07 發布。接著以單一指令（35 組訓練加上訓練以外的全部分析）重跑一次新的正式 run，驗收後發布 `v1.1.0-tors-reproduction`；論文的 Artifact Availability statement 改引用該 Release（不使用 DOI；`docs/tors_compliance.md` A1／A2／A10）。

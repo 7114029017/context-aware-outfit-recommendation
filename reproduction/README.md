@@ -31,11 +31,12 @@
 「接手者只看本 README，能否從乾淨環境完成一次新的 35-unit reproduction」，請不要複製舊的
 `.venv-repro`、`_external/` 或 `reproduction/runs/`。
 
-稿件引用的固定版本是 Release 標籤：
+這個版本是新正式 run 開跑用的候選版標籤：
 
-`v1.0.0-tors-reproduction`
+`v1.1.0-rc1-tors-reproduction`
 
-`main` 是之後可能繼續更新的分支。完整重現的啟動程式開始訓練前會檢查兩件事：
+新正式 run 驗收通過、結果收進 repository 後，發布 Release `v1.1.0-tors-reproduction`（修訂稿引用的
+版本）；在那之前已發布的版本是 `v1.0.0-tors-reproduction`。`main` 是之後可能繼續更新的分支。完整重現的啟動程式開始訓練前會檢查兩件事：
 目前在 `main` 分支或 `v*-tors-reproduction` 標籤上，以及學姊原始研究資料夾 01～03 的
 每個檔案都與 `reproduction/environment/archived_sources_manifest.json` 記錄的大小和
 SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先單獨檢查。
@@ -50,16 +51,16 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
 | Git | `git` 與 Git LFS（Ubuntu／Debian：`sudo apt install git-lfs`） |
 | 網路 | github.com（含 Git LFS）、pypi.org、download.pytorch.org、huggingface.co |
 | 磁碟 | 至少 20 GB：repo 與特徵檔約 5 GB、Python 環境約 5 GB、Polyvore metadata 約 140 MB、一次完整 run 約 2 GB，訓練期間另有暫存檔；延伸分析與補充分析用的圖片、FashionCLIP 與 Nomic 模型另需約 5.5 GB（0.4） |
-| 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片、FashionCLIP 與 Nomic 模型約 3 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的延伸分析約 3～4 小時 |
+| 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片、FashionCLIP 與 Nomic 模型約 3 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的全部分析約 4 小時 15 分 |
 
 `sudo` 只有安裝系統套件與 0.6 的清除快取指令（選用）需要。
 
-### 0.1 Clone 稿件引用的 Release
+### 0.1 Clone 這個版本
 
     cd /path/to/your/workspace
 
     git clone \
-      --branch v1.0.0-tors-reproduction \
+      --branch v1.1.0-rc1-tors-reproduction \
       https://github.com/7114029017/context-aware-outfit-recommendation.git
 
     cd context-aware-outfit-recommendation
@@ -68,7 +69,7 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
     git rev-parse HEAD
     git status --short
 
-預期 `git describe --tags` 顯示 `v1.0.0-tors-reproduction`（Git 會提示目前是 detached
+預期 `git describe --tags` 顯示 `v1.1.0-rc1-tors-reproduction`（Git 會提示目前是 detached
 HEAD，這是正常的），`git status --short` 沒有輸出。開始完整重現前，tracked working tree
 不應有自行修改的學姊原始研究程式。
 請用 `git clone`：Release 頁面的原始碼壓縮檔不是 git repository，也不含 Git LFS 的
@@ -249,10 +250,11 @@ NVIDIA GB10 這類 CPU／GPU 共用記憶體的機器：CUDA 只把真正空閒�
 - 共 10 main + 25 公平子集消融 = **35 training units**；
 - 後續 secondary analyses、Chapter 4 report、statistics、
   `THESIS_TABLES_SUMMARY.md` 與 final reproduction summary；
-- 狀態成為 `PASSED` 之後，由 `scripts/run_analyses.sh` 執行訓練以外的所有項目（約 4.5 小時，
-  其中 GPU 約 3.5 小時；都不改變 `RUN_STATUS.txt`）：補充分析（`supplementary/`）、延伸分析與
+- 狀態成為 `PASSED` 之後，由 `scripts/run_analyses.sh` 執行訓練以外的所有項目（GB10 上實測約
+  4 小時 15 分，大部分在 GPU 上；都不改變 `RUN_STATUS.txt`）：補充分析（`supplementary/`）、延伸分析與
   移植程式對 2025 年輸出的驗證（`extensions/`）、與正式 run 的比對（`official_comparison.txt`），
-  最後把 46 個分析項目逐項的狀態與證據寫進 run 資料夾的 `ITEMS_STATUS.md`（見 §0.8）。
+  最後把 46 個分析項目逐項的狀態與證據寫進 run 資料夾的 `ITEMS_STATUS.md`，並在畫面最後顯示最終摘要
+  `FINAL_SUMMARY.txt`（見 §0.8）。
 
 所以**只要執行這一個指令，就會跑完所有項目**。色彩分析、個案圖、反事實分析、檢核表涵蓋度
 與 MET 對照表需要 0.4 的選用下載（Polyvore 圖片、FashionCLIP、Nomic、Compendium，
@@ -309,17 +311,22 @@ reproduction artifact / environment 的可追查問題。
     test -f "$RUN/chapter4/THESIS_TABLES_SUMMARY.md" && echo "table report OK"
     test -f "$RUN/logs/final_terminal_summary.txt" && echo "terminal summary OK"
 
-可重新顯示 terminal 摘要（只讀檔案）：
+跑完時畫面最後顯示的是最終摘要，同時存成 `$RUN/FINAL_SUMMARY.txt`。依序列出：run 的版本、時間與
+環境；稿件表 6～9 的數字（照稿件的欄位排列）與表 5 的重點數字；七條結論；與正式 run 的比對；
+46 個分析項目（直接列出項目名稱）；最後一行是驗收結果。可重新顯示（只讀檔案）：
 
-    python3 reproduction/scripts/show_reproduction_summary.py \
-      --run-root "$RUN"
+    python3 reproduction/scripts/show_final_summary.py --run-root "$RUN"
 
-摘要列出主實驗（表 4-11、4-12）的五 seed 平均與碩論值、R@1 與 R@3 的檢定、公平子集消融的
-五 seed 摘要、Weather / Occasion 的方向比較、第四章 20 張表的涵蓋數，以及一份固定的 10 項
-證據位置清單（指導老師 2026-09-22 的檢查清單）。逐表的來源與限制在
-`chapter4/THESIS_TABLES_SUMMARY.md`。
+35 組訓練完成時另存一份訓練摘要 `logs/final_terminal_summary.txt`，畫面上只顯示三行：主實驗
+（表 4-11、4-12）的五 seed 平均與碩論值、R@1 與 R@3 的檢定、公平子集消融的五 seed 摘要、
+Weather / Occasion 的方向比較、第四章 20 張表的涵蓋數，以及一份固定的 10 項證據位置清單
+（指導老師 2026-09-22 的檢查清單）。可重新顯示：
 
-**與正式 run 比對（驗收標準）。** terminal 摘要拿碩論的數字對照；驗收要確認的是你的 run
+    python3 reproduction/scripts/show_reproduction_summary.py --run-root "$RUN"
+
+逐表的來源與限制在 `chapter4/THESIS_TABLES_SUMMARY.md`。
+
+**與正式 run 比對（驗收標準）。** 訓練摘要拿碩論的數字對照；驗收要確認的是你的 run
 與正式 run `full_20261002T161428Z` 的結論是否一致。`PASSED` 之後流程已自動比對一次（0.7），
 報告在 `$RUN/official_comparison.txt`；要單獨重跑時：
 
@@ -359,18 +366,21 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 
 | 狀態 | 意思 |
 |---|---|
-| `PASS` | 重新計算，且與對照值相同：2025 年保存的輸出、碩論或稿件；35 個 training units 與其統計則以正式 run 為準（它是修訂稿唯一的數值來源） |
-| `DIFFERS` | 重新計算，計算本身經過檢查，但數值與稿件中 2025 年的值不同，原因是模型重新訓練或同分樣本的排序。依據欄寫出原因與檢查方式，例如移植的程式用學姊保存的 2025 年模型重算，得到存檔的結果 |
-| `REUSED` | 無法重新產生的輸入資料（LLM 生成的描述與估計、三因子標註），沿用保存的檔案，並核對 SHA-256 |
-| `NOT_REPRODUCIBLE` | 2025 年的步驟沒有任何紀錄（第 4 項 CLO 離群值的重新推論） |
+| `PASS` | 重新計算，且與學姊專案 2025 年的值相同（保存的輸出、碩論或原稿件） |
+| `DIFFERS` | 重新計算，計算本身經過檢查，但數值與學姊 2025 年的值不同，原因是模型重新訓練或同分樣本的排序。依據欄寫出原因與檢查方式，例如移植的程式用學姊保存的 2025 年模型重算，得到存檔的結果 |
+| `REUSED` | 無法重新產生的輸入資料（LLM 生成的描述與估計、三因子標註、特徵檔），沿用保存的檔案，並核對 SHA-256 |
+| `NOT_REPRODUCIBLE` | 2025 年的步驟沒有任何紀錄（CLO 離群值的重新推論，稿件 3.2.1 節） |
 | `SKIPPED` | 缺少選用下載，或加了 `--skip-gpu`，該步驟沒有執行 |
 | `MISSING`、`FAIL` | 應有的輸出不存在，或計算的檢查不成立。請保留 run 資料夾並回報 |
 
 稿件的敘述若在重新訓練的模型上不成立（例如某類別的改善方向），會寫在依據欄，不判為 `FAIL`。
-正式 run 的報告在 `results/ITEMS_STATUS.md`：PASS 29、DIFFERS 13、REUSED 3、NOT_REPRODUCIBLE 1，
-結尾為 `COMPLETE`。有 GPU 且做了 0.4 的選用下載時，你的報告也應為 `COMPLETE`（沒有 `MISSING`、
-`FAIL` 或 `SKIPPED`）；各項的數值可與 `results/ITEMS_STATUS.md` 對照，不同硬體下 DIFFERS
-項目的數值會略有不同。
+正式 run 的報告在 `results/ITEMS_STATUS.md`：PASS 19、DIFFERS 22、REUSED 4、NOT_REPRODUCIBLE 1，
+結尾為 `COMPLETE`。DIFFERS 的 22 項中，20 項是重新訓練的結果：35 個 units 與其統計（表 6、表 7
+與相關檢定），以及用重新訓練的模型算出的分析（文字長度、Two-Tower、反事實、5.5 節的類別、子集、
+個案與色彩分析、附錄圖等）；另外 2 項是同分樣本的排序（Judge 一致性、低分重疊的敏感度曲線）。
+表 6、表 7 的數值，修訂稿已改用正式 run 的結果。報告與最後的摘要都直接列出項目名稱。
+有 GPU 且做了 0.4 的選用下載時，你的報告也應為 `COMPLETE`（沒有 `MISSING`、`FAIL` 或 `SKIPPED`）；
+各項的數值可與 `results/ITEMS_STATUS.md` 對照，不同硬體下 DIFFERS 項目的數值會略有不同。
 
 **完整結果在哪裡。** 完整統計在 run 目錄的檔案裡（路徑相對於 `$RUN`；表號與稿件的對照見 §11）：
 
@@ -387,6 +397,7 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | 延伸分析：文字長度、反事實分析（表 4、9）、Two-Tower（表 8）、色彩分析、附錄圖 A1～A3 與論文圖 4-14、可靠度、文字互換、逐步選品，以及移植程式對 2025 年輸出的檢查 | `extensions/`（各步驟狀態在 `extensions/EXTENSIONS_STATUS.txt`；見 §11） |
 | 與正式 run 的比對 | `official_comparison.txt`、`official_comparison.json` |
 | 46 個項目的逐項狀態與證據 | `ITEMS_STATUS.md`、`ITEMS_STATUS.json` |
+| 最終摘要（跑完時畫面最後顯示的內容） | `FINAL_SUMMARY.txt` |
 | 所有輸出的索引 | `INDEX.md` |
 
 正式 run 的同一批檔案已收錄在 repository，數值整理在 `docs/expected_results.md`。
@@ -401,7 +412,7 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | `ablation/runs/<variant>_seed<N>/` | `results/raw/full_20261002T161428Z/ablation/<variant>_seed<N>/` |
 | `supplementary/` | `results/supplementary/`（`run_analyses/` 收錄為 `full_20261002T161428Z/`；見 §11） |
 | `extensions/` | `results/extensions/full_20261002T161428Z/`（見 §11） |
-| `ITEMS_STATUS.md`、`ITEMS_STATUS.json` | `results/ITEMS_STATUS.md`、`results/ITEMS_STATUS.json` |
+| `ITEMS_STATUS.md`、`ITEMS_STATUS.json`、`FINAL_SUMMARY.txt` | `results/ITEMS_STATUS.md`、`results/ITEMS_STATUS.json`、`results/FINAL_SUMMARY.txt` |
 
 補充分析、延伸分析、比對與逐項報告在 `PASSED` 之後由 `scripts/run_analyses.sh` 自動執行，
 不改變 `RUN_STATUS.txt`：若有項目為 `MISSING` 或 `FAIL`，terminal 會顯示 `[WARN]` 與重跑指令
@@ -494,12 +505,14 @@ Frozen senior baseline：
 | `splits/` | 固定 main IDs 與重建的公平子集 IDs |
 | `prompts/` | 可保存的 semantic prompt 與 Judge C/C* checklists |
 | `scripts/` | check、smoke、full reproduction、統計與比對程式 |
+| `scripts/run_analyses.sh` | 35 組訓練之後的所有分析、與正式 run 的比對、逐項報告（`report_items.py`）與最終摘要（`show_final_summary.py`），見 §11 |
 | `scripts/supplementary/` | 補充分析程式（35 組訓練完成後執行，見 §11） |
 | `scripts/extensions/` | 延伸分析程式（35 組訓練完成後執行，見 §11 與 `docs/extensions.md`） |
 | `results/raw/` | 正式 run 與 reference run 的 seed-level results |
 | `results/summary/` | 正式 run 與 reference run 的 summary、第四章比較與 statistics |
 | `results/supplementary/` | 補充分析的輸出（見 §11） |
 | `results/extensions/` | 正式 run 的延伸分析輸出（見 §11） |
+| `results/ITEMS_STATUS.md`、`results/FINAL_SUMMARY.txt` | 正式 run 的 46 個分析項目逐項狀態與最終摘要（見 §0.8） |
 | `results/tuning.csv` | 可恢復的 final-setting tuning provenance |
 | `docs/` | provenance、expected results、稿件對帳表、TORS compliance 與限制 |
 | `runs/` | 新執行產物；Git ignored。以 `check_` / `smoke_` / `full_` 區分執行模式 |
@@ -661,15 +674,17 @@ Smoke test 只用小型 subset（context、seed 1、200 筆 train 與 100 筆 va
 6. five-seed summary 與 post-hoc statistics；
 7. 狀態成為 `PASSED` 之後，由 `scripts/run_analyses.sh` 執行訓練以外的所有項目（見 §11）：
    補充分析（只用 CPU）；延伸分析與移植程式的檢查（文字長度、Two-Tower、可靠度與文字互換用
-   GPU，其餘用 CPU）；與正式 run 的比對；46 個項目的逐項報告 `ITEMS_STATUS.md`。
+   GPU，其餘用 CPU）；與正式 run 的比對；46 個項目的逐項報告 `ITEMS_STATUS.md`；最後在畫面顯示
+   最終摘要 `FINAL_SUMMARY.txt`。
 
 輸出位於 `reproduction/runs/full_<UTC timestamp>/`（可用 `--run-id`、`--output-base` 改變）。
-若完成為 `PASSED`，最後會從該次 run 的 `main/summary/`、`ablation/summary/`、`statistics/`、
-`chapter4/` 自動顯示 terminal 摘要，並存成 `logs/final_terminal_summary.txt`，接著執行步驟 7：
-結果在 `supplementary/`、`extensions/`、`official_comparison.txt` 與 `ITEMS_STATUS.md`，
-全部輸出記錄在 `logs/analyses.log`（各段另有 `logs/supplementary.log`、`logs/extensions.log`、
-`logs/comparison.log`、`logs/items.log`）。摘要顯示或步驟 7 失敗都不會改變已完成訓練的
-`RUN_STATUS.txt`；原始 CSV / JSON 仍是權威結果。跑完後依 §0.8 檢查比對結果與 `ITEMS_STATUS.md`。
+若完成為 `PASSED`，從該次 run 的 `main/summary/`、`ablation/summary/`、`statistics/`、`chapter4/`
+產生訓練摘要，存成 `logs/final_terminal_summary.txt`（畫面只顯示三行），接著執行步驟 7：
+結果在 `supplementary/`、`extensions/`、`official_comparison.txt`、`ITEMS_STATUS.md` 與
+`FINAL_SUMMARY.txt`（畫面最後顯示的最終摘要），全部輸出記錄在 `logs/analyses.log`（各段另有
+`logs/supplementary.log`、`logs/extensions.log`、`logs/comparison.log`、`logs/items.log`）。
+摘要或步驟 7 失敗都不會改變已完成訓練的 `RUN_STATUS.txt`；原始 CSV / JSON 仍是權威結果。
+跑完後看最終摘要最後一行的驗收結果，細節依 §0.8 檢查。
 
 完整流程也會產生一份**表 4-1～表 4-20 的逐表來源報告**：
 
@@ -745,6 +760,10 @@ Main reproduction 的 16 個 paper-comparison means（正式 run 主實驗 Origi
 run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）：
 
 `docs/manuscript_reconciliation/reconciliation.md`
+
+對帳表的稿件數值取自碩論終稿與 TORS 投稿稿 v4（2025 年的數字；兩份 PDF 沒有收錄在公開版），用來列出
+修稿時要更新的地方。修訂稿已依它把表 6、表 7 與摘要改成正式 run 的數字，所以表中標示「更新數字」的
+項目，多數在修訂稿中已經更新。
 
 稿件數值轉錄於 `docs/manuscript_reconciliation/manuscript_values.csv`；
 對帳表以正式 run 為來源，由下列指令產生：
@@ -829,10 +848,12 @@ run 資料夾中的結果在 `extensions/`，各步驟的狀態在 `extensions/E
 
     bash reproduction/scripts/run_analyses.sh --run-root "$RUN" [--out-dir DIR] [--figures-dir DIR] [--skip-gpu]
 
-最後一步 `scripts/report_items.py` 寫出 `ITEMS_STATUS.md`（狀態定義見 §0.8），有項目為 `MISSING`
-或 `FAIL` 時結束碼為 1。正式 run 的報告 `results/ITEMS_STATUS.md` 由收錄的結果產生：
+接著 `scripts/report_items.py` 寫出 `ITEMS_STATUS.md`（狀態定義見 §0.8），最後
+`scripts/show_final_summary.py` 在畫面最後顯示最終摘要並存成 `FINAL_SUMMARY.txt`；有項目為 `MISSING`
+或 `FAIL`、或驗收沒有通過時，結束碼為 1。正式 run 的報告與摘要由收錄的結果產生：
 
     python3 reproduction/scripts/report_items.py --official
+    python3 reproduction/scripts/show_final_summary.py --official
 
 ## 12. Hyperparameter tuning provenance
 
@@ -930,8 +951,9 @@ SHA-256 記錄（`compare_with_official_run.py --checkpoints` 可核對你的 ru
 
 `docs/tors_followup_status.md`
 
-Repository artifact 已完成核心 reproduction evidence 整理。稿件引用的固定版本是 GitHub
-Release `v1.0.0-tors-reproduction`（不使用 DOI）。公開版的整理見
+Repository artifact 已完成核心 reproduction evidence 整理。已發布的固定版本是 GitHub Release
+`v1.0.0-tors-reproduction`（2026-10-07，不使用 DOI）；以單一指令重跑的新正式 run 驗收後發布
+`v1.1.0-tors-reproduction`，修訂稿改引用該版本。公開版的整理見
 `docs/public_release_cleanup.md`，第三方條款見根目錄 `THIRD_PARTY_NOTICES.md`。
 A7（超參數調整紀錄）維持 `PARTIAL`，見 §12。
 

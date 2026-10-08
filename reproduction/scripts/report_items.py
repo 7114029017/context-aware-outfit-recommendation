@@ -9,11 +9,13 @@ statistics, the supplementary analyses (reproduction/scripts/supplementary/) and
 the check of the ported code on the preserved 2025 models and data (extensions/run_all.sh --validate). The
 states:
 
-- PASS: recomputed and equal to its reference (the archived 2025 output, the thesis or the manuscript; for
-  the 35 units and their statistics, the official run, which is the numeric source of the revised manuscript);
-- DIFFERS: recomputed, with the computation checked, but the values differ from the 2025 values in the
-  manuscript (retrained models, or the order of tied scores); the evidence gives the reason and the check;
-- REUSED: input data that cannot be regenerated (LLM outputs, human judgments) and is used as preserved;
+- PASS: recomputed and equal to the 2025 values of the senior student's project (the archived outputs, the
+  thesis or the original manuscript);
+- DIFFERS: recomputed, with the computation checked, but the values differ from the 2025 values because the
+  models were retrained or because tied scores are ordered differently; the evidence gives the reason and the
+  check (the revised manuscript already reports the official run's Tables 6 and 7);
+- REUSED: input data that cannot be regenerated (LLM outputs, the feature files) and is used as preserved,
+  with its SHA-256 checked;
 - NOT_REPRODUCIBLE: no record of the 2025 step exists;
 - SKIPPED: an optional download or the GPU was missing, so the step did not run;
 - MISSING / FAIL: an expected output is missing, or a check of the computation does not hold (a manuscript
@@ -49,7 +51,19 @@ WOS = D01 / "generated_descriptions" / "02_三因子拆分_wos_factor_split" / "
 SUPP_NAMES = ("input_data_audit", "dataset_tables_check", "counterfactual_pairs_check", "paper_value_checks",
               "judge_audit_checks", "met_reference_check", "checklist_coverage")
 TABLE1 = {"train outfits": "16995", "validation outfits": "3000", "test outfits": "15145", "all outfits": "35140",
-          "CP test pairs": "30290", "FITB questions": "15145", "CIR evaluable queries": "9311"}  # manuscript Table 1
+          "CP test pairs": "30290", "FITB questions": "15145", "CIR evaluable queries": "9311",
+          "generated descriptions": "35140", "CIR excluded queries (no 3,000-item pool)": "5834",
+          "original text records": "68306"}  # manuscript Table 1
+TABLE2 = {"original": ("34", "0.10", "4.82", "5.00", "25", "4.90", "21.88"),
+          "generated": ("0", "0.00", "10.08", "10.00", "27", "11.60", "0.00")}  # manuscript Table 2
+TABLE2_COLUMNS = ("missing", "missing_percent", "mean_words", "median_words", "max_words", "mean_tokens",
+                  "at_most_3_words_percent")
+TABLE5_PROXY = {"CLO": ("0.93", "0.63", "1.21", "0.25", "2.07", "5.20"), "MET": ("1.00", "1.00", "1.30", "1.00", "1.50"),
+                "temperature reference (°C)": ("22.9", "19.9", "24.5", "13.5", "27.1")}  # Table 5: median, Q1, Q3, P5, P95, max
+TABLE5_COUNTS = "CLO > 4: 20; MET = 1.0: 25786; MET > 10: 8; temperature < 0 °C: 257; temperature < -20 °C: 51"
+TABLE5_PROMPT = {("Qwen3-VL", "mean_abs_diff"): "0.0048", ("Gemma-3", "mean_abs_diff"): "0.0461",
+                 ("Qwen3-VL", "within_0_05_rate"): "0.973", ("Gemma-3", "within_0_10_rate"): "0.893"}  # P0-R2
+TABLE5_AUDIT = {"qwen": ("0.7242", "0.6667", "0.2273"), "gemma": ("0.6818", "0.6566", "0.2212")}  # human, model, MAE
 TABLE8_MANUSCRIPT = {"cp_test_auc": "+0.0378", "cp_test_fitb_acc": "-0.0077", "recall@10": "+0.0102",
                      "recall@30": "+0.0153", "recall@50": "+0.0170", "mean_rank": "-28.89", "median_rank": "-31.4"}
 T19_ARCHIVED = (REPO / "03_實驗與結果_experiments_results" / "00_控制檢查與附加稽核" / "圖表_figures_tables" / "tables" /
@@ -218,7 +232,7 @@ def items(lay: Layout) -> list[dict]:
         return result("REUSED" if listed and same == listed else "FAIL",
                       f"{n:,} generated descriptions (LLM output, used as preserved); SHA-256 equal to the archived "
                       f"sources manifest: {same} of {listed} file", GENERATED)
-    add(2, "Context-aware descriptions", "情境描述 35,140 筆", "Methods, Table 2", "input data", c2)
+    add(2, "Context-aware descriptions", "情境描述 35,140 筆（LLM 生成）", "Methods, Table 2", "input data", c2)
 
     def c3():
         folder = D01 / "clo_met_temperature" / "temperature_results"
@@ -226,14 +240,14 @@ def items(lay: Layout) -> list[dict]:
         return result("REUSED" if listed and same == listed else "FAIL",
                       f"LLM estimates of CLO and MET, used as preserved; SHA-256 equal to the archived sources manifest: "
                       f"{same} of {listed} files", folder)
-    add(3, "CLO / MET estimates", "CLO／MET 估計", "Table 5", "input data", c3)
+    add(3, "CLO / MET estimates", "CLO／MET 估計（LLM 估計）", "Table 5", "input data", c3)
 
     def c4():
         clo = {r["statistic"]: r["value"] for r in rows(lay.s("input_data_audit") / "clo_distribution_summary.csv")}
         outliers = next((v for k, v in clo.items() if "outlier" in k and "count" not in k), clo.get("outliers", "?"))
         return result("NOT_REPRODUCIBLE", f"no record of the re-inference; {outliers} values above the IQR bound remain",
                       lay.s("input_data_audit") / "clo_distribution_summary.csv")
-    add(4, "CLO outlier re-inference", "CLO 離群值重新推論", "manuscript line 144", "not reproducible", c4)
+    add(4, "CLO outlier re-inference", "CLO 離群值重新推論（稿件 3.2.1 節）", "manuscript 3.2.1", "not reproducible", c4)
 
     def c5():
         f = lay.s("met_reference_check") / "summary.md"
@@ -242,7 +256,7 @@ def items(lay: Layout) -> list[dict]:
         ok = found(f, r"457 entries\. Same activity codes in the same order as the preserved list: yes")
         return result("PASS" if ok else "FAIL", "457 entries rebuilt from the official Compendium, same codes and order"
                       if ok else "rebuilt list differs", f)
-    add(5, "MET candidate list (457)", "MET 候選清單 457 筆", "manuscript line 150; thesis Tables 3-1, 3-2",
+    add(5, "MET candidate list (457)", "MET 候選清單 457 筆（稿件 3.2.2 節）", "manuscript 3.2.2; thesis Tables 3-1, 3-2",
         "public data, rebuilt by rule", c5)
 
     def c6():
@@ -258,16 +272,17 @@ def items(lay: Layout) -> list[dict]:
         return result("REUSED" if listed and same == listed else "FAIL",
                       f"{n:,} annotated descriptions (the split program and prompt were not preserved); SHA-256 equal "
                       f"to the archived sources manifest: {same} of {listed} file", WOS)
-    add(7, "Weather / occasion / style annotation", "天氣／場合／風格標註", "Table 3", "input data", c7)
+    add(7, "Weather / occasion / style annotation", "天氣／場合／風格標註（表 3）", "Table 3", "input data", c7)
 
     def c8():
         feat = json.loads(text(lay.features)) if lay.features.is_file() else {}
         enc = rows(lay.ext / "counterfactual" / "encoder_check.csv")
         cos = min((float(r["cosine_stored_vs_live"]) for r in enc), default=None)
         ok = feat.get("all_features_ok") and feat.get("n_ok") == 8
-        ev = f"{feat.get('n_ok', 0)} of 8 feature files verified by SHA-256"
+        ev = (f"used as preserved (the extraction program and model versions were not kept); {feat.get('n_ok', 0)} "
+              "of 8 feature files verified by SHA-256")
         ev += f"; FashionCLIP re-encodes 24 stored descriptions (min cosine {cos:.6f})" if cos is not None else ""
-        return result("PASS" if ok else "FAIL", ev, lay.features)
+        return result("REUSED" if ok else "FAIL", ev, lay.features)
     add(8, "Eight feature files", "8 個特徵檔", "Methods", "input data, verified", c8)
 
     def c9():
@@ -285,7 +300,7 @@ def items(lay: Layout) -> list[dict]:
         ok = found(f, r"counterfactual description\): 24/24")
         return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
                       "24 of 24 pairs regenerated identically (P16 sampling)", f)
-    add(10, "Counterfactual pairs (24)", "反事實配對 24 組", "Table 4", "regenerated by rule", c10)
+    add(10, "Counterfactual pairs (24)", "反事實配對 24 組（表 4）", "Table 4", "regenerated by rule", c10)
 
     # 二、資料檢查
     def c11():
@@ -293,8 +308,8 @@ def items(lay: Layout) -> list[dict]:
         got = {r["quantity"]: r["value"] for r in rows(f)}
         same = sum(1 for k, v in TABLE1.items() if got.get(k) == v)
         return result("PASS" if same == len(TABLE1) else ("MISSING" if not got else "FAIL"),
-                      f"{same} of {len(TABLE1)} manuscript values equal", f)
-    add(11, "Dataset scale (Table 1)", "資料規模", "Table 1", "recomputed from public data", c11)
+                      f"{same} of {len(TABLE1)} values of manuscript Table 1 equal", f)
+    add(11, "Dataset scale (Table 1)", "資料規模（表 1）", "Table 1", "recomputed from public data", c11)
 
     def c12():
         f = lay.s("input_data_audit") / "category_threshold_check.csv"
@@ -306,32 +321,42 @@ def items(lay: Layout) -> list[dict]:
         return result("PASS" if ok else ("MISSING" if not r else "FAIL"),
                       f"{len(cats)} evaluated categories, {questions:,} queries, {male} male-labelled (thesis 5.2 "
                       "claim corrected: the threshold does not filter training data)", f)
-    add(12, "3,000-item category threshold", "男裝類別的 3,000 件門檻", "thesis 5.2", "recomputed", c12)
+    add(12, "3,000-item category threshold", "男裝類別的 3,000 件門檻（碩論 5.2 節）", "thesis 5.2", "recomputed", c12)
 
     def c13():
         f = lay.s("dataset_tables_check") / "summary.md"
         ok = found(f, r"All 471 values equal the archived tables")
         return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
                       "471 of 471 values equal T00, T01, A01, A02, A12, A13", f)
-    add(13, "Dataset tables (not in the manuscript)", "資料集額外統計", "2025 T00, T01, A01, A02, A12, A13",
+    add(13, "Dataset tables (not in the manuscript)", "資料集額外統計（論文沒用）", "2025 T00, T01, A01, A02, A12, A13",
         "recomputed", c13)
 
     def c14():
         f = lay.s("paper_value_checks") / "table2_text_fields.csv"
         r = {x["text"].split()[0]: x for x in rows(f)}
-        ok = (r.get("original", {}).get("missing") == "34" and r.get("original", {}).get("mean_words") == "4.82"
-              and r.get("generated", {}).get("mean_words") == "10.08")
-        return result("PASS" if ok else ("MISSING" if not r else "FAIL"),
-                      "missing 34, mean words 4.82 and 10.08 as in the manuscript", f)
-    add(14, "Text fields (Table 2)", "文字比較", "Table 2", "recomputed from input data", c14)
+        same = sum(1 for t, values in TABLE2.items() for c, v in zip(TABLE2_COLUMNS, values)
+                   if r.get(t, {}).get(c) == v)
+        total = sum(len(v) for v in TABLE2.values())
+        return result("PASS" if same == total else ("MISSING" if not r else "FAIL"),
+                      f"{same} of {total} values of manuscript Table 2 equal (missing 34, mean words 4.82 and 10.08, "
+                      "...)", f)
+    add(14, "Text fields (Table 2)", "原始文字與情境描述的比較（表 2）", "Table 2", "recomputed from input data", c14)
 
     def c15():
         f = lay.paths["secondary"] / "environment_proxy" / "table_4_3_paper_field_comparison.csv"
         r = rows(f)
         same = sum(1 for x in r if x["paper_display_match"] == "True")
-        return result("PASS" if r and same == len(r) else ("MISSING" if not r else "FAIL"),
-                      f"{same} of {len(r)} displayed values equal (thesis Table 4-3)", f)
-    add(15, "Proxy distributions (Table 5)", "代理值分布", "Table 5; thesis Table 4-3", "recomputed from input data",
+        proxy = {x["variable"]: x for x in rows(lay.s("paper_value_checks") / "table5_proxy_values.csv")}
+        cols = ("median", "q1", "q3", "p5", "p95", "max")
+        m_same = sum(1 for k, values in TABLE5_PROXY.items() for c, v in zip(cols, values) if proxy.get(k, {}).get(c) == v)
+        m_total = sum(len(v) for v in TABLE5_PROXY.values()) + 5
+        m_same += 5 if found(lay.s("paper_value_checks") / "summary.md", re.escape(TABLE5_COUNTS)) else 0
+        ok = r and same == len(r) and m_same == m_total
+        return result("PASS" if ok else ("MISSING" if not r else "FAIL"),
+                      f"{same} of {len(r)} displayed values equal (thesis Table 4-3); {m_same} of {m_total} values of the "
+                      "manuscript's Table 5 row equal (quantiles and counts)", f,
+                      lay.s("paper_value_checks") / "table5_proxy_values.csv")
+    add(15, "Proxy distributions (Table 5)", "代理值分布（表 5）", "Table 5; thesis Table 4-3", "recomputed from input data",
         c15)
 
     def c16():
@@ -340,7 +365,7 @@ def items(lay: Layout) -> list[dict]:
         same = sum(1 for x in r if x["same_at_4_decimals"] == "yes")
         return result("PASS" if r and same == len(r) else ("MISSING" if not r else "FAIL"),
                       f"{same} of {len(r)} statistics of thesis Table D-3 equal", f)
-    add(16, "CLO distribution (thesis D-3, D-4)", "CLO 分布摘要", "thesis Table D-3, Figure D-4", "recomputed", c16)
+    add(16, "CLO distribution (thesis D-3, D-4)", "CLO 分布摘要（碩論表 D-3）", "thesis Table D-3, Figure D-4", "recomputed", c16)
 
     def c17():
         f = lay.s("paper_value_checks") / "table5_target_clues.csv"
@@ -348,14 +373,14 @@ def items(lay: Layout) -> list[dict]:
         same = sum(1 for x in r if x["count_first_occurrence"] == x["count_2025_A03"])
         return result("PASS" if r and same == len(r) else ("MISSING" if not r else "FAIL"),
                       f"{same} of {len(r)} counts equal A03 and the manuscript (4.50%, 4.88%, 11.06%, 0.87%, 12.40%)", f)
-    add(17, "Target clues (Table 5)", "目標線索", "Table 5; thesis Table 4-6", "recomputed from input data", c17)
+    add(17, "Target clues (Table 5)", "目標線索（表 5）", "Table 5; thesis Table 4-6", "recomputed from input data", c17)
 
     def c18():
         f = lay.s("judge_audit_checks") / "summary.md"
         ok = found(f, r"Mean and SD equal the 2025 table T19 to all digits: yes\. The 100 bars equal the thesis figure")
         return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
                       "means and SDs equal T19; the histogram equals thesis Figure 4-1", f)
-    add(18, "Judge score distribution", "Judge 分數分布", "thesis Figure 4-1, 4.2.4", "statistics recomputed", c18)
+    add(18, "Judge score distribution", "Judge 分數分布（碩論圖 4-1）", "thesis Figure 4-1, 4.2.4", "statistics recomputed", c18)
 
     def c19():
         t19 = lay.paths["secondary"] / "judge" / "T19_recomputed.csv"
@@ -375,7 +400,7 @@ def items(lay: Layout) -> list[dict]:
                       f"is a possible order ({', '.join(x['smallest_over_tie_orders'] + '-' + x['largest_over_tie_orders'] for x in r)}; "
                       f"medians of random orders {col('random_orders_median')}): {'yes' if inside else 'NO'}",
                       ties, t19)
-    add(19, "Judge agreement (Table 5)", "Judge 一致性", "Table 5; thesis Table 4-7", "statistics recomputed", c19)
+    add(19, "Judge agreement (Table 5)", "Judge 一致性（表 5）", "Table 5; thesis Table 4-7", "statistics recomputed", c19)
 
     def c20():
         f = lay.s("judge_audit_checks") / "summary.md"
@@ -391,7 +416,7 @@ def items(lay: Layout) -> list[dict]:
                       f"{len(curve)} values of p "
                       "the thesis curve is a possible order of the tied scores", f,
                       lay.s("judge_audit_checks") / "bottom_p_curve_tie_range.csv")
-    add(20, "Bottom-p sensitivity curve", "低分重疊的敏感度曲線", "thesis Figure 4-3", "statistics recomputed", c20)
+    add(20, "Bottom-p sensitivity curve", "低分重疊的敏感度曲線（碩論圖 4-3）", "thesis Figure 4-3", "statistics recomputed", c20)
 
     def c21():
         f = lay.s("checklist_coverage") / "summary.md"
@@ -399,7 +424,7 @@ def items(lay: Layout) -> list[dict]:
             return result("SKIPPED", "needs bootstrap_data.sh --with-nomic")
         ok = found(f, r"Coverage table, 51 values of tau x 10 columns, at the six decimals printed in 2025: identical")
         return result("PASS" if ok else "FAIL", "coverage table equal to the 2025 notebook output (51 x 10 values)", f)
-    add(21, "Checklist concept coverage", "兩份檢核表的概念涵蓋", "thesis Figure 4-2", "recomputed", c21)
+    add(21, "Checklist concept coverage", "兩份檢核表的概念涵蓋（碩論圖 4-2）", "thesis Figure 4-2", "recomputed", c21)
 
     def c22():
         f = lay.s("judge_audit_checks") / "judge_reference_scan.csv"
@@ -415,25 +440,39 @@ def items(lay: Layout) -> list[dict]:
         f = lay.paths["secondary"] / "judge" / "table_4_8_paper_field_comparison.csv"
         r = rows(f)
         same = sum(1 for x in r if x["paper_display_match"] == "True")
-        return result("PASS" if r and same == len(r) else ("MISSING" if not r else "FAIL"),
-                      f"{same} of {len(r)} displayed values equal (thesis Table 4-8)", f)
-    add(23, "Prompt robustness (Table 5)", "Prompt 穩健性", "Table 5; thesis Table 4-8", "statistics recomputed", c23)
+        pr = {x["judge"]: x for x in rows(lay.paths["secondary"] / "judge" / "prompt_robustness_summary.csv")
+              if x["variant"] == "P0-R2"}
+        m_same = sum(1 for (j, c), v in TABLE5_PROMPT.items() if j in pr and f"{float(pr[j][c]):.{len(v) - 2}f}" == v)
+        ok = r and same == len(r) and m_same == len(TABLE5_PROMPT)
+        return result("PASS" if ok else ("MISSING" if not r else "FAIL"),
+                      f"{same} of {len(r)} displayed values equal (thesis Table 4-8); {m_same} of {len(TABLE5_PROMPT)} "
+                      "values of the manuscript's Table 5 row equal", f)
+    add(23, "Prompt robustness (Table 5)", "Prompt 穩健性（表 5）", "Table 5; thesis Table 4-8", "statistics recomputed", c23)
 
     def c24():
         f = lay.paths["chapter4"] / "chapter4_table_overview.csv"
         r = {x["table"]: x["result"] for x in rows(f)}
         ok = r.get("4-9") == r.get("4-10") == "archived_human_audit_reanalysis_exact"
+        audit = {x["checklist"]: x for x in rows(lay.s("judge_audit_checks") / "audit_score_metrics.csv")}
+        m_same = sum(1 for j, values in TABLE5_AUDIT.items() for c, v in zip(("human_mean", "model_mean", "mae"), values)
+                     if audit.get(j, {}).get(c) == v)
+        matrix = json.loads(text(lay.paths["secondary"] / "remaining_reproduction_matrix.json") or "{}")
+        sel = next((m for m in matrix.get("modules", []) if m.get("module") == "human_audit"), {})
+        sel_ok = sel.get("status") == "exact" and "selection match=True" in sel.get("evidence", "")
+        ok = ok and m_same == 6 and sel_ok
         return result("PASS" if ok else ("MISSING" if not r else "FAIL"),
-                      "thesis Tables 4-9 and 4-10 recomputed exactly from the 750 judgments",
+                      "thesis Tables 4-9 and 4-10 recomputed exactly from the 750 judgments; the stratified seed-42 "
+                      f"selection of the 30 cases regenerated: {'yes' if sel_ok else 'NO'}; {m_same} of 6 values of the "
+                      "manuscript's Table 5 row equal (human and model means, MAE)",
                       f, lay.paths["secondary"] / "human_audit" / "T30_recomputed.csv")
-    add(24, "Human audit (Table 5)", "人工稽核", "Table 5; thesis Tables 4-9, 4-10", "statistics recomputed", c24)
+    add(24, "Human audit (Table 5)", "人工稽核（表 5）", "Table 5; thesis Tables 4-9, 4-10", "statistics recomputed", c24)
 
     def c25():
         f = lay.s("judge_audit_checks") / "summary.md"
         ok = found(f, r"Equal to the archived T31 in all 11 compared columns and the order of the 25 rows: yes")
         return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
                       "25 rows equal T31 in value and order", f)
-    add(25, "Human-audit item disagreement", "人工稽核的逐項分歧", "manuscript line 514; thesis Figure 4-4",
+    add(25, "Human-audit item disagreement", "人工稽核的逐項分歧（碩論圖 4-4）", "manuscript 6.2; thesis Figure 4-4",
         "statistics recomputed", c25)
 
     def c26():
@@ -449,37 +488,44 @@ def items(lay: Layout) -> list[dict]:
                       f"{len(units)} main CIR units re-evaluated, recalls equal to the run's ({manifest.get('status')}); "
                       f"ΔHit@10 within five tokens {m.group(1) if m else '?'} (manuscript +0.0106, which the archived "
                       "2025 rows give again through the same code)", lay.ext / "text_length")
-    add(26, "Text length (Table 5)", "文字長度", "Table 5; thesis Tables 4-4, 4-5", "computed from the run's models",
+    add(26, "Text length (Table 5)", "文字長度（表 5）", "Table 5; thesis Tables 4-4, 4-5", "computed from the run's models",
         c26, ports=("validate_length",))
 
     # 三、模型訓練
+    def manuscript_run() -> tuple[str, str]:
+        """Retrained, so the values differ from 2025; the revised manuscript reports the official run's values."""
+        note = "; retrained, so the values differ from the 2025 values; the revised manuscript already reports the "
+        if lay.official:
+            return "DIFFERS", note + "official run's values"
+        if lay.comparison is not None and lay.comparison.is_file():
+            verdict = json.loads(text(lay.comparison)).get("verdict", "?")
+            return ("FAIL" if verdict == "NOT CONSISTENT" else "DIFFERS",
+                    note + f"official run's values; comparison with the official run: {verdict}")
+        return "MISSING", "; the comparison with the official run (official_comparison.json) was not found"
+
     def c27():
         main = [s for fam, s in lay.units if fam == "main"]
         ok = len(main) == 10 and all(s == "passed" for s in main)
-        if lay.official:
-            note, consistent = "; the official run, the numeric source of the revised manuscript", True
-        elif lay.comparison is not None and lay.comparison.is_file():
-            verdict = json.loads(text(lay.comparison)).get("verdict", "?")
-            note, consistent = f"; comparison with the official run (README 0.8): {verdict}", verdict != "NOT CONSISTENT"
-        else:
-            note, consistent = "; the comparison with the official run was not found", True
-        return result("PASS" if ok and consistent else "FAIL",
-                      f"{sum(s == 'passed' for s in main)} of 10 main units passed{note}", lay.paths["main"])
-    add(27, "Main experiment (Table 6)", "主實驗", "Table 6", "retrained", c27)
+        state, note = manuscript_run()
+        return result(state if ok else "FAIL", f"{sum(s == 'passed' for s in main)} of 10 main units passed{note} "
+                      "(docs/manuscript_reconciliation/)", lay.paths["main"])
+    add(27, "Main experiment (Table 6)", "主實驗（表 6）", "Table 6", "retrained", c27)
 
     def c28():
         abl = [s for fam, s in lay.units if fam != "main"]  # status passed_candidate_source: the rebuilt subset
         ok = len(abl) == 25 and all(s.startswith("passed") for s in abl)
-        return result("PASS" if ok else "FAIL", f"{sum(s.startswith('passed') for s in abl)} of 25 fair-subset units "
-                      "passed", lay.paths["ablation"])
-    add(28, "Fair-subset ablation (Table 7)", "公平子集消融", "Table 7", "retrained", c28)
+        state, note = manuscript_run()
+        return result(state if ok else "FAIL", f"{sum(s.startswith('passed') for s in abl)} of 25 fair-subset units "
+                      f"passed{note}", lay.paths["ablation"])
+    add(28, "Fair-subset ablation (Table 7)", "公平子集消融（表 7）", "Table 7", "retrained", c28)
 
     def c29():
         f = lay.paths["stats"] / "main_paired_bh_8metrics.csv"
         ok = len(rows(f)) == 8 and (lay.paths["ablation"] / "T07_stage2_factor_contribution_ratio.csv").is_file()
-        return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
-                      "8 metrics with mean, SD, CI, BH p and dz; ablation tables T02-T07, T10, T11", f)
-    add(29, "Statistics of Tables 6 and 7", "表 6、7 的統計", "Tables 6, 7", "computed from the run", c29)
+        state, note = manuscript_run()
+        return result(state if ok else ("MISSING" if not f.is_file() else "FAIL"),
+                      f"8 metrics with mean, SD, CI, BH p and dz; ablation tables T02-T07, T10, T11{note}", f)
+    add(29, "Statistics of Tables 6 and 7", "表 6、7 的統計檢定", "Tables 6, 7", "computed from the run", c29)
 
     def c30():
         latest = recon.Latest(lay.run_id, lay.paths)
@@ -490,7 +536,8 @@ def items(lay: Layout) -> list[dict]:
             held.append(bool(ok))
         return result("PASS" if held and all(held) else "FAIL", f"{sum(held)} of {len(held)} required conclusions "
                       "(R01-R07) hold", lay.paths["stats"])
-    add(30, "The seven required conclusions", "老師要求保留的 7 條結論", "guideline section 九", "computed from the run",
+    add(30, "The seven required conclusions", "必須成立的 7 條結論（R01～R07）",
+        "abstract, 5.2, 5.3 (R01-R07 in docs/manuscript_reconciliation/)", "computed from the run",
         c30)
 
     # 四、統計與結論
@@ -498,16 +545,21 @@ def items(lay: Layout) -> list[dict]:
         f = ra / "fair_subset_factor_effects.csv"
         ok = f.is_file() and (ra / "figures" / "figure_4_7_factor_contribution.svg").is_file() and \
             found(ra / "summary.md", r"Mean differences and p-values of the four comparisons equal the run's table T02 \(20 rows\): yes")
-        return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
-                      "factor effects equal the run's T02; thesis Figure 4-7 from T07 (CIR shares not defined)", f)
-    add(31, "Ablation statistics, Figure 4-7", "消融補充統計", "thesis Figure 4-7", "computed from the run", c31)
+        return result("DIFFERS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
+                      "factor effects equal the run's T02; thesis Figure 4-7 from T07 (CIR shares not defined); "
+                      "computed from the retrained units, so the values differ from 2025", f)
+    add(31, "Ablation statistics, Figure 4-7", "消融的因素貢獻（碩論圖 4-7）", "thesis Figure 4-7", "computed from the run", c31)
 
     def c32():
         f = ra / "main_statistical_rigor.csv"
-        ok = found(ra / "summary.md", r"main_statistical_rigor.csv` equal the run's statistics table main_paired_bh_8metrics.csv: yes")
-        return result("PASS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
-                      "A14 for the run; t-test values equal the run's statistics; Wilcoxon p = 0.0625 (five seeds)", f)
-    add(32, "Wilcoxon tests (A14; not in the manuscript)", "Wilcoxon 檢定", "2025 A14", "computed from the run", c32)
+        s32 = text(ra / "summary.md")
+        ok = "main_statistical_rigor.csv` equal the run's statistics table main_paired_bh_8metrics.csv: yes" in s32
+        m = re.search(r"\| CP auc \| [0-9.]+ \| [0-9.]+ \| ([-0-9.]+) \[.*?\| ([-0-9.]+), ", s32)
+        auc = f"; CP AUC difference {float(m.group(1)):+.4f} (2025 A14 {float(m.group(2)):+.4f})" if m else ""
+        return result("DIFFERS" if ok else ("MISSING" if not f.is_file() else "FAIL"),
+                      "A14 for the run; t-test values equal the run's statistics; Wilcoxon p = 0.0625 (five seeds)"
+                      f"{auc}", f)
+    add(32, "Wilcoxon tests (A14; not in the manuscript)", "Wilcoxon 檢定（論文沒用）", "2025 A14", "computed from the run", c32)
 
     # 五、其他實驗
     # Items computed with the retrained models differ from the manuscript in value. FAIL is kept for a computation
@@ -524,7 +576,7 @@ def items(lay: Layout) -> list[dict]:
         return result("DIFFERS" if len(r) == 7 else "FAIL",
                       f"10 models retrained; {same_sign} of {len(r)} differences in the manuscript's direction "
                       f"(CP AUC {auc}, manuscript +0.0378)", f)
-    add(33, "Two-Tower (Table 8)", "Two-Tower", "Table 8", "retrained", c33, ports=("validate_two_tower",))
+    add(33, "Two-Tower (Table 8)", "Two-Tower（表 8）", "Table 8", "retrained", c33, ports=("validate_two_tower",))
 
     def c34():
         f = lay.ext / "counterfactual" / "table9_seeds_mean_sd.csv"
@@ -542,7 +594,7 @@ def items(lay: Layout) -> list[dict]:
                       f"Context models of 5 seeds; overall rank change {r.get('Overall', {}).get('mean_rank_change', '?')} "
                       f"(manuscript +17.0, one 2025 model); Style the largest change: {'yes' if style_largest else 'no'}; "
                       f"{check}", f)
-    add(34, "Counterfactual analysis (Table 9)", "反事實分析", "Tables 4, 9", "computed from the run's models", c34)
+    add(34, "Counterfactual analysis (Table 9)", "反事實分析（表 9）", "Tables 4, 9", "computed from the run's models", c34)
 
     def c35():
         f = lay.ext / "case_figures" / "counterfactual_figure_manifest.csv"
@@ -554,10 +606,10 @@ def items(lay: Layout) -> list[dict]:
         if m is None:
             return result("MISSING", "the check of P16's rule on the archived A46 is not in logs/figures.log", f)
         ok = {m.group(1), m.group(2)} == {"CF04", "CF09"}
-        return result("PASS" if ok else "FAIL", f"P16's rule selects {picked} from the run's seed-1 results; on the "
+        return result("DIFFERS" if ok else "FAIL", f"P16's rule selects {picked} from the run's seed-1 results; on the "
                       f"archived A46 it selects {m.group(1)} and {m.group(2)} (2025 figures: CF04, CF09); figures "
                       "local only", f)
-    add(35, "Counterfactual example figures (not in the manuscript)", "反事實範例圖", "2025 F34a, F34b",
+    add(35, "Counterfactual example figures (not in the manuscript)", "反事實範例圖（論文沒用）", "2025 F34a, F34b",
         "computed from the run's models", c35)
 
     def c36():
@@ -566,9 +618,22 @@ def items(lay: Layout) -> list[dict]:
         if bad:
             return bad
         ok = found(f, r"equal the run's stored results: yes")
-        return result("PASS" if ok else "FAIL", "main models of 5 seeds with the other text; the re-evaluated "
-                      "matching-text combinations equal the run's results", f)
-    add(36, "Text swap (not in the manuscript)", "文字互換評估", "2025 sweep", "computed from the run's models", c36,
+
+        def swap(path: Path) -> str:
+            r = rows(path)
+            auc = lambda model, txt: [float(x["auc"]) for x in r if x["model"] == model and x["text"] == txt]  # noqa: E731
+            if not r:
+                return "?"
+            gains = [a - b for a, b in zip(auc("original", "context"), auc("original", "original"))]
+            swapped = auc("context", "original")
+            return f"{sum(gains) / len(gains):+.4f}, {sum(swapped) / len(swapped):.4f}"
+        old = lay.ext / "validation" / "text_swap_2025_checkpoints" / "text_swap_results.csv"
+        ref = f" (2025 checkpoints {swap(old)})" if old.is_file() else ""
+        return result("DIFFERS" if ok else "FAIL", "main models of 5 seeds with the other text; the re-evaluated "
+                      "matching-text combinations equal the run's results; AUC gain of the Original models with the "
+                      "context-aware text, AUC of the Context models with the original titles: "
+                      f"{swap(lay.ext / 'text_swap' / 'text_swap_results.csv')}{ref}", f)
+    add(36, "Text swap (not in the manuscript)", "文字互換評估（論文沒用）", "2025 sweep", "computed from the run's models", c36,
         ports=("validate_text_swap",))
 
     def c37():
@@ -578,9 +643,19 @@ def items(lay: Layout) -> list[dict]:
             return bad
         m = json.loads(text(f))
         ok = m.get("status") == "complete" and m.get("labels_equal_archived_t18") and m.get("a16_equal_archived")
-        return result("PASS" if ok else "FAIL", "labels of 9,311 queries equal T18 and A16; seed-1 models evaluated "
-                      f"({m.get('device')}, {m.get('precision')})", f.parent)
-    add(37, "Reliability analysis (not in the manuscript)", "可靠度／校準分析", "2025 P04: T18, F12-F16, A16",
+
+        def perf(path: Path) -> str:
+            r = {x["run_tag"]: x for x in rows(path)}
+            if set(r) < {"original", "proposed"}:
+                return "?"
+            return ", ".join(f"{k} {float(r['original'][c]):.4f}/{float(r['proposed'][c]):.4f}"
+                             for k, c in (("Hit@10", "Hit@10"), ("ECE", "ECE"), ("Brier", "Brier Score")))
+        old = lay.ext / "validation" / "reliability_2025_seed1" / "performance.csv"
+        ref = f" (2025 models: {perf(old)})" if old.is_file() else ""
+        return result("DIFFERS" if ok else "FAIL", "labels of 9,311 queries equal T18 and A16; seed-1 models evaluated "
+                      f"({m.get('device')}, {m.get('precision')}), Original/Context "
+                      f"{perf(f.parent / 'performance.csv')}{ref}", f.parent)
+    add(37, "Reliability analysis (not in the manuscript)", "可靠度／校準分析（論文沒用）", "2025 P04: T18, F12-F16, A16",
         "computed from the run's models", c37, ports=("validate_reliability_labels", "validate_reliability"))
 
     # 六、質性分析 (fair subset; the 2025 ablation models and query rows are not preserved, so the counts are what
@@ -594,11 +669,10 @@ def items(lay: Layout) -> list[dict]:
         d = {x["fine_category"]: float(x["delta_hit10"]) for x in r}
         top = max(d, key=d.get)
         sun = d.get("sunglasses", float("nan"))
-        state = ("PASS" if top == "dress" and sun < 0 else "DIFFERS") if counts else "FAIL"
-        return result(state, f"observations per category equal T15: {'yes' if counts else 'NO'}; largest gain {top} "
+        return result("DIFFERS" if counts else "FAIL", f"observations per category equal T15: {'yes' if counts else 'NO'}; largest gain {top} "
                       f"({d[top]:+.4f}); sunglasses {sun:+.4f} (manuscript: dress, bag and shoe gain most, sunglasses "
                       "declines slightly)", f)
-    add(38, "Category improvement (Figure 4)", "類別改善", "Figure 4; thesis Figure 4-8", "computed from the run", c38)
+    add(38, "Category improvement (Figure 4)", "類別改善（圖 4）", "Figure 4; thesis Figure 4-8", "computed from the run", c38)
 
     def c39():
         f = ra / "factor_category_effects.csv"
@@ -612,7 +686,7 @@ def items(lay: Layout) -> list[dict]:
                       f"observations per category in the four comparisons equal T15: {'yes' if counts else 'NO'}; "
                       f"terms of the six 2025 term figures again in the run's top 8: {', '.join(again)} of 8",
                       f, ra / "factor_term_effects.csv")
-    add(39, "Factor effects by category and term", "各因素對類別與詞彙的影響", "thesis Figures 4-11 to 4-13",
+    add(39, "Factor effects by category and term", "各因素對類別與詞彙的影響（碩論圖 4-11～4-13）", "thesis Figures 4-11 to 4-13",
         "computed from the run", c39)
 
     def c40():
@@ -623,10 +697,9 @@ def items(lay: Layout) -> list[dict]:
         counts = found(ra / "summary.md", r"Observations per subset equal the 2025 table T12: yes")
         deltas = [float(x["delta_hit10"]) for x in r if x.get("delta_hit10")]
         positive = sum(1 for d in deltas if d > 0)
-        state = ("PASS" if positive == len(deltas) else "DIFFERS") if counts else "FAIL"
-        return result(state, f"observations per subset equal T12: {'yes' if counts else 'NO'}; {positive} of "
+        return result("DIFFERS" if counts else "FAIL", f"observations per subset equal T12: {'yes' if counts else 'NO'}; {positive} of "
                       f"{len(deltas)} subset differences positive (manuscript: all)", f)
-    add(40, "Context subsets, Hit@10", "情境子集的 Hit@10", "manuscript 5.5; thesis Figure 4-9", "computed from the run",
+    add(40, "Context subsets, Hit@10", "情境子集的 Hit@10（5.5 節）", "manuscript 5.5; thesis Figure 4-9", "computed from the run",
         c40)
 
     def c41():
@@ -640,7 +713,7 @@ def items(lay: Layout) -> list[dict]:
         return result("DIFFERS" if counts else "FAIL",
                       f"T12 recomputed; observations of all 13 rows equal: {'yes' if counts else 'NO'}; the median rank "
                       f"improves in {better} of {len(r)} rows (2025: {better_2025} of 13)", f)
-    add(41, "Context subsets, median rank", "情境子集的中位名次改善", "thesis Figure 4-10, T12", "computed from the run",
+    add(41, "Context subsets, median rank", "情境子集的中位名次（碩論圖 4-10）", "thesis Figure 4-10, T12", "computed from the run",
         c41)
 
     def c42():
@@ -657,7 +730,7 @@ def items(lay: Layout) -> list[dict]:
         return result("DIFFERS", "five-seed mean ranks " + "; ".join(f"{c} {mine[c]} (manuscript {CASES_MANUSCRIPT[c]})"
                                                                       for c in mine)
                       + f"; {sum(holds)} of 4 directions of Section 5.5 hold", f)
-    add(42, "Case ranks", "個案名次", "manuscript 5.5", "computed from the run", c42)
+    add(42, "Case ranks", "個案名次（5.5 節）", "manuscript 5.5", "computed from the run", c42)
 
     def c43():
         f = lay.ext / "color_analysis" / "summary.md"
@@ -671,7 +744,7 @@ def items(lay: Layout) -> list[dict]:
                       f"comparable rows {m.group(1) if m else '?'} over {m.group(2) if m else '?'} cases (P03 printed 745 "
                       f"over 149 in 2025); solved under Full: rows {s['row']['solved_n']}/{s['row']['denominator']}, "
                       f"cases {s['case']['solved_n']}/{s['case']['denominator']} (manuscript 39/89, 5/15)", f)
-    add(43, "Color-shift analysis", "色彩分析", "manuscript 5.5; thesis Table 4-19", "computed from the run + images", c43)
+    add(43, "Color-shift analysis", "色彩分析（5.5 節）", "manuscript 5.5; thesis Table 4-19", "computed from the run + images", c43)
 
     def c44():
         f = lay.ext / "case_figures" / "color_case_figure_manifest.csv"
@@ -685,7 +758,7 @@ def items(lay: Layout) -> list[dict]:
         return result("DIFFERS", f"seed {o.get('seed', '?')}: the Original top 5 has {black} of 5 black items, the Full "
                       f"top 5 {gray} of 5 gray; target rank {o.get('rank', '?')} -> {full.get('rank', '?')} (thesis: all "
                       "five black, gray items in front, 27 -> 36); figure local only", f)
-    add(44, "Gray color-shift case figure", "灰色的顏色偏移個案圖", "thesis Figure 4-14", "computed from the run + images",
+    add(44, "Gray color-shift case figure", "灰色的顏色偏移個案圖（碩論圖 4-14）", "thesis Figure 4-14", "computed from the run + images",
         c44)
 
     def c45():
@@ -717,11 +790,11 @@ def items(lay: Layout) -> list[dict]:
             picks.setdefault(x["setting"], []).append(x["item_id"])
         same = sum(a == b for k, v in P02_PICKS.items() for a, b in zip(v, picks.get(k, [])))
         total = sum(len(v) for v in P02_PICKS.values())
-        return result("PASS" if same == total else "DIFFERS",
+        return result("DIFFERS",
                       f"{sum(len(v) for v in picks.values())} generation steps with the run's Context seed-1 model; "
                       f"{same} of {total} picks equal to P02's (2025 model); the try-on images are not reproduced "
                       "(FastFit and the person photo are not part of the handoff)", f)
-    add(46, "Outfit generation of the try-on demo (not in the manuscript)", "虛擬試穿示範（選品）", "2025 P02",
+    add(46, "Outfit generation of the try-on demo (not in the manuscript)", "虛擬試穿示範的逐步選品（論文沒用）", "2025 P02",
         "computed from the run's models", c46, ports=("validate_outfit_generation",))
     return out
 
@@ -757,13 +830,13 @@ def main() -> None:
     lines = [f"# Reproduction items: {lay.run_id}", "",
              f"Generated by `reproduction/scripts/report_items.py` from "
              f"{'the committed results of the official run' if args.official else 'the run folder'}. "
-             "States: PASS (recomputed and equal to its reference: the archived 2025 output, the thesis or the "
-             "manuscript; for the 35 units and their statistics, the official run, the numeric source of the revised "
-             "manuscript), DIFFERS (recomputed with the computation checked, but the values differ from the 2025 "
-             "values in the manuscript: retrained models or the order of tied scores; the evidence gives the reason "
-             "and the check), REUSED (preserved input data that cannot be regenerated), NOT_REPRODUCIBLE, SKIPPED "
-             "(download or GPU missing), MISSING / FAIL (an output is missing or a check of the computation does "
-             "not hold).", "",
+             "States: PASS (recomputed and equal to the 2025 values of the senior student's project: the archived "
+             "outputs, the thesis or the original manuscript), DIFFERS (recomputed with the computation checked, but "
+             "the values differ from the 2025 values because the models were retrained or because tied scores are "
+             "ordered differently; the evidence gives the reason and the check; the revised manuscript already "
+             "reports the official run's Tables 6 and 7), REUSED (preserved input data that cannot be regenerated, SHA-256 checked), NOT_REPRODUCIBLE, "
+             "SKIPPED (download or GPU missing), MISSING / FAIL (an output is missing or a check of the computation "
+             "does not hold).", "",
              f"**Verdict: {verdict}** — " + ", ".join(f"{s} {counts[s]}" for s in STATES if counts[s]) + ".", "",
              "| # | Item | 項目 | Manuscript / thesis | How | State | Evidence |", "|---:|---|---|---|---|---|---|"]
     for r in result_rows:
