@@ -1,0 +1,225 @@
+{
+ "run": null,
+ "device": "cuda",
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "status": "complete",
+ "subset_ids": null,
+ "evaluated": [
+  {
+   "seed": 1,
+   "model": "original",
+   "text": "original"
+  },
+  {
+   "seed": 1,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 1,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 1,
+   "model": "context",
+   "text": "context"
+  },
+  {
+   "seed": 2,
+   "model": "original",
+   "text": "original"
+  },
+  {
+   "seed": 2,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 2,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 2,
+   "model": "context",
+   "text": "context"
+  },
+  {
+   "seed": 3,
+   "model": "original",
+   "text": "original"
+  },
+  {
+   "seed": 3,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 3,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 3,
+   "model": "context",
+   "text": "context"
+  },
+  {
+   "seed": 4,
+   "model": "original",
+   "text": "original"
+  },
+  {
+   "seed": 4,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 4,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 4,
+   "model": "context",
+   "text": "context"
+  },
+  {
+   "seed": 5,
+   "model": "original",
+   "text": "original"
+  },
+  {
+   "seed": 5,
+   "model": "original",
+   "text": "context"
+  },
+  {
+   "seed": 5,
+   "model": "context",
+   "text": "original"
+  },
+  {
+   "seed": 5,
+   "model": "context",
+   "text": "context"
+  }
+ ],
+ "seconds": 4729,
+ "torch": "2.9.1+cu130",
+ "cuda_device": "NVIDIA GB10",
+ "texts": {
+  "original": "encoded_outfitUrlTitle_en_fashionClip.pkl",
+  "context": "encoded_NewoutfitUrlTitle_en_fashionClip.pkl"
+ },
+ "checkpoints": {
+  "original_seed1": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed1/ckpt.pt",
+    "sha256": "df4fde5aada1cdde0b735c6ba1f12e10f87e2d59174eb3630a26f203e03151bf"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed1/ckpt.pt",
+    "sha256": "30a7c4c573bc598cab1d64ff7b876800611fa4361794f56a548fbbb5080f8b41"
+   }
+  },
+  "context_seed1": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed1/ckpt.pt",
+    "sha256": "759da64527f1f7a9f3c6e33a6bcbe63844bfdd575408f5ed4b1e6f6f09920512"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed1/ckpt.pt",
+    "sha256": "0fe754a09b382abcc5b040fe8b57a31f9cacb5ecc1a41dbe2ceb22bb19b5565b"
+   }
+  },
+  "original_seed2": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed2/ckpt.pt",
+    "sha256": "9d88300fed19e1b6d4ebd03153b56382826070770cae429298feb69383bd88b9"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed2/ckpt.pt",
+    "sha256": "bf1b745b3920b5e25906a38fc0edeaea4d612f66dee15319acb72b2547992518"
+   }
+  },
+  "context_seed2": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed2/ckpt.pt",
+    "sha256": "363bb2521cf519113f4700e4a34683ddb4412619ae301c0c4074472b9ae439dd"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed2/ckpt.pt",
+    "sha256": "31a483d470d2db60cb9019e9879f5f81e96e0e5e8a20bb1ae75f88892efb1719"
+   }
+  },
+  "original_seed3": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed3/ckpt.pt",
+    "sha256": "327677f01d5b687ef28636ab2f8c3b9c8dd7d2ffcb3d657ba303a040e62d278d"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed3/ckpt.pt",
+    "sha256": "71eae20f111350a69a41e7e04014a7e231bec44bb0a49cde7cc5d9d160f0b714"
+   }
+  },
+  "context_seed3": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed3/ckpt.pt",
+    "sha256": "6e5ecdab734fe9f6612987ad4d758c282f4472932cf8c1576fc86317a7bbb238"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed3/ckpt.pt",
+    "sha256": "76a4fc4e2760de20b310e5e5bace98467ae2062bb396ffede1107d114a659d8f"
+   }
+  },
+  "original_seed4": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed4/ckpt.pt",
+    "sha256": "09aee4eadec6c4b8031a0c1a404e5ee6c38f003d48011cdb3c447e267fff14be"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed4/ckpt.pt",
+    "sha256": "52b2b954a3a200e1750a816fce44845a0a01b350ca083c75f5129494b2ec4412"
+   }
+  },
+  "context_seed4": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed4/ckpt.pt",
+    "sha256": "0409475fd549e14f11b86e2dc30684918509b4d41c4233bd20b2a9005f8725bd"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed4/ckpt.pt",
+    "sha256": "5bb0e9fdc7d1149065ebcb7c23d6f4c94eb45e3d847a44d3d3e432959a3c4006"
+   }
+  },
+  "original_seed5": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_old_seed5/ckpt.pt",
+    "sha256": "3d91d84d858f89b95085b11bebcdc81dacd69eb54831e59ea0e270677c3e5d56"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_old_seed5/ckpt.pt",
+    "sha256": "85140aed6923ebbdf935098e20b123fb97f0e812ac04a72900fb637ba6a97a54"
+   }
+  },
+  "context_seed5": {
+   "cp": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cp_new_seed5/ckpt.pt",
+    "sha256": "52f0174548e0fd2a35f6126065c976ccd3f51fe8681d2db508e56c5e750a9f43"
+   },
+   "cir": {
+    "path": "02_模型訓練和驗證_model_training_validation/main_hybrid_attention_checkpoints/cir_new_seed5/ckpt.pt",
+    "sha256": "e8a6a480d2809ead69babd58fc096c4e9ba8ca475c9e44d1d455671edd38a06a"
+   }
+  }
+ },
+ "a14_equal": false
+}

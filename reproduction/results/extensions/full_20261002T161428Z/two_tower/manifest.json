@@ -1,0 +1,20 @@
+{
+ "mode": "train",
+ "device": "cuda",
+ "torch": "2.9.1+cu130",
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "cuda_device": "NVIDIA GB10",
+ "features": {
+  "img_feats_fashionClip.pkl": "aa4859f4440e6c96b11314da30435907cf029460352318ba639a8ab41699efce",
+  "encoded_title_description_distiluse-base-multilingual-cased-v2.pkl": "9e425f7e62aed5828d39cf64d4647b973d278f4579c39fccc8011c8660b201c4",
+  "encoded_category_distiluse-base-multilingual-cased-v2.pkl": "03cb9b3d81c09f54867b00ea7c4c7bd1ccbc842555e19f757288a29f9f0537b8",
+  "encoded_outfitUrlTitle_en_fashionClip.pkl": "fb74f2c5638c175f897d07dcde5e825359127b42b330fe28783b8f50b21494a6",
+  "encoded_NewoutfitUrlTitle_en_fashionClip.pkl": "f4d731433ef9182e16518ac7757d3aad530b362a807e0196fd79c4fa6db21ebb"
+ }
+}

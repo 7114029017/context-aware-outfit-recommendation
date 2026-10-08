@@ -1,0 +1,3 @@
+run_tag,queries,archived_queries,matched,rank_equal,largest_rank_difference,hit10_equal,top1_equal,top10_list_equal,largest_confidence_difference,high_conf_error_flag_equal,error_type_equal
+original,9311,9311,9311,7575,5,9311,9298,8859,0.004991,9304,9304
+proposed,9311,9311,9311,7636,5,9310,9301,8836,0.004997,9309,9308

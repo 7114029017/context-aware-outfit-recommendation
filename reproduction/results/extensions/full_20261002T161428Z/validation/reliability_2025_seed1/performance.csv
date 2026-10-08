@@ -1,0 +1,4 @@
+run_tag,model_name,n,Hit@1,Hit@10,Median Rank,Mean Rank,Avg Confidence,Error Rate,High-conf Error Rate,ECE,Brier Score
+original,Original CIR / outfitUrlTitle,9311,0.013855,0.077972,230.000000,463.327462,0.720274,0.922028,0.219633,0.642302,0.504972
+proposed,Proposed CIR / NewoutfitUrlTitle,9311,0.015251,0.087209,205.000000,441.766620,0.718557,0.912791,0.206530,0.631349,0.497282
+Δ proposed - original,,,+0.001396,+0.009236,-25.000000,-21.560842,-0.001717,-0.009236,-0.013103,-0.010953,-0.007690

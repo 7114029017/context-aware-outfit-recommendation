@@ -1,0 +1,33 @@
+{
+  "variant": "context_aware_description",
+  "seed": 3,
+  "pipeline": "CP binary compatibility pretraining -> OR retrieval fine-tuning",
+  "checkpoint_selection": "CP and OR checkpoints selected by validation FITB accuracy; train up to 100 epochs without early stopping",
+  "text_feature_file": "encoded_NewoutfitUrlTitle_en_fashionClip.pkl",
+  "seed_summary": {
+    "variant": "context_aware_description",
+    "seed": 3,
+    "cp_best_epoch": 21,
+    "cp_best_valid_fitb_acc": 0.5523333333333333,
+    "cp_valid_auc_at_best_fitb": 0.9330421111111111,
+    "cp_test_auc": 0.9116100388006724,
+    "cp_test_fitb_acc": 0.527236711786068,
+    "or_best_epoch": 2,
+    "or_best_valid_fitb_acc": 0.634,
+    "or_test_fitb_acc": 0.6095741168702542,
+    "cp_checkpoint_sha256": "c79b92ee5e25396b43aa801b6b5f89d7a4bac5a227568ddcad1d25e828574f10",
+    "or_checkpoint_sha256": "e919292b3071d6298cdcfd2031b9a2aa68b789a25cdafb85662c3dafc4bdf14b",
+    "training_seconds": 366.5,
+    "test_fitb_questions": 15145,
+    "or_recall_evaluable_pairs": 9311,
+    "or_recall_skipped_questions": 5834,
+    "mean_rank": 568.561808613468,
+    "median_rank": 328.0,
+    "recall@1": 0.0074105896251745245,
+    "recall@3": 0.016324777145311997,
+    "recall@5": 0.025990763612930942,
+    "recall@10": 0.048544732037375145,
+    "recall@30": 0.10933304693373429,
+    "recall@50": 0.15916657716679197
+  }
+}

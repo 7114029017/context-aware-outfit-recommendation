@@ -770,7 +770,7 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 |---|---|---|---|
 | `text_length` | Table 5「Text length」 | GPU，約 20 分鐘 | `results/extensions/full_20261002T161428Z/text_length/`（10 個主實驗模型的逐題結果在 `main_cir_per_query/`） |
 | `counterfactual` | Table 4、Table 9 | `--with-fashionclip`；CPU 約 1 分鐘 | `results/extensions/full_20261002T161428Z/counterfactual/`（5 個 seed） |
-| `two_tower` | Table 8 | GPU，1.5～3 小時 | 尚未執行（需安排 GPU） |
+| `two_tower` | Table 8 | GPU，1.5～3 小時（GB10 上約 63 分鐘） | `results/extensions/full_20261002T161428Z/two_tower/`（模型檔只放本機） |
 | `color` | 5.5 節色彩分析 | `--with-images`；CPU 幾秒 | `results/extensions/full_20261002T161428Z/color_analysis/` |
 | `figures` | 附錄圖 A1～A3、論文圖 4-14（顏色偏移案例）、2025 年反事實範例圖 F34a、F34b | `--with-images`；CPU 幾秒 | 圖只在本機；內容（商品 ID、名次、顏色）在 `case_figures/` 的三個 manifest |
 | `reliability` | 2025 年可靠度分析（P04：表 T18、圖 F12～F16；稿件沒用） | GPU，約 5 分鐘 | `results/extensions/full_20261002T161428Z/reliability/` |

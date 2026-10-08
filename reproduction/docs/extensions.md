@@ -68,7 +68,9 @@ Run with `--validate` on 2026-10-07; outputs in
 | Figures F34a and F34b: P16's selection rule (cell 9) on the archived review sheet A46 | selects the 2025 pairs CF04 and CF09 |
 | Reliability labels: P04's query labels and P12's range checks (A16) on the 9,311 queries, without a model | all 16 label fields of the archived T18 equal for 9,311 of 9,311 queries; A16 equal; with the archived scores, the label, error-type, risk and log columns regenerate the 41 MB T18 file byte for byte; the metric code gives P04's printed performance table (18 values at six decimals) |
 | Reliability: the preserved 2025 seed-1 models evaluated on the CPU (`validation/reliability_2025_seed1_cpu_check/`) | against the archived T18, per model: Hit@10 equal in 9,310 of 9,311 queries, top-1 item in 9,294, ranks in 7,342 and 7,387 (never more than 8 apart), confidences within 0.0054; Hit@1 and median rank as printed by P04, Hit@10 one query lower, ECE and Brier within 0.0002 (float32 on the CPU; P04 ran on CUDA with float16 autocast, so the step itself runs on the GPU) |
+| Reliability: the same models on the GPU with float16 autocast, as P04 ran (`validation/reliability_2025_seed1/`) | Hit@10 equal in 9,311 and 9,310 of 9,311 queries, top-1 item in 9,298 and 9,301, ranks in 7,575 and 7,636 (never more than 5 apart); for the Original model Hit@1, Hit@10, median rank and error rate as printed by P04, ECE and Brier within 0.00001; the remaining differences come from the different GPU |
 | Outfit generation: the preserved 2025 `cir_new_seed1` on the CPU | 6 of 6 picks equal to P02's printed output; scores within 0.0001 |
+| Text swap: the 20 preserved 2025 main checkpoints with both texts on the GPU (`validation/text_swap_2025_checkpoints/`) | the matching-text means are within 0.0001 of the archived A14 (4 of the 10 identical: CP AUC of both models, Recall@10 of the Original models, Recall@50 of the Context models), so the preserved checkpoints are those behind the 2025 main results; the lost 2025 sweep is recovered: the context-aware text raises the Original model's AUC by 0.0064 (5/5 seeds), and the Context model given the original titles drops to AUC 0.9059, the pattern of the official run |
 | Text swap: the official run's seed-1 models with the swapped texts, on the fair-subset outfits, on the CPU (`--subset-ids`) | both evaluators run end to end for both combinations (8 min); a plumbing test, not compared with stored results |
 
 ## Results for the official run
@@ -78,11 +80,10 @@ public, so its extension outputs were produced once on the maintainer's
 machine and committed to `results/extensions/full_20261002T161428Z/` (command:
 `run_all.sh --run-root <official run folder> --out-dir
 reproduction/results/extensions/full_20261002T161428Z --figures-dir <local
-folder> --skip-gpu --validate`). The GPU steps `text_length`, `reliability` and
-`text_swap` were run on 2026-10-07 and 08 on the GB10 (`--steps
-text_length,reliability,text_swap`, 69 min). `two_tower` and the GPU
-validations have not been run yet; their outputs will be added to the same
-folder.
+folder> --skip-gpu --validate`). The GPU steps were run afterwards on the GB10:
+`text_length`, `reliability` and `text_swap` on 2026-10-07 and 08 (69 min),
+then `two_tower` on 2026-10-08 (63 min), followed by the GPU validations
+`validate_reliability` and `validate_text_swap` (80 min).
 
 **Text length (Table 5; thesis Tables 4-4, 4-5).** The 10 main CIR checkpoints
 evaluated again on the GPU with per-query output (`main_cir_per_query/`): all
@@ -121,6 +122,26 @@ differs by one query per model, because P04 converts the candidate embeddings
 to float32 before the cosine similarity while the evaluator keeps them in
 float16.
 
+**Two-Tower (Table 8).** The 10 Two-Tower models (original text and
+context-aware description, seeds 1-5) retrained with the code of notebook P15
+on the GPU (`two_tower/`; the model files and the row-level A31 stay local).
+Mean ± SD and the paired difference (Context-aware minus Original) with its
+95% CI:
+
+| Metric | Original | Context-aware | Difference [95% CI] | Manuscript |
+|---|---:|---:|---:|---:|
+| CP AUC | 0.8803 ± 0.0031 | 0.9119 ± 0.0048 | +0.0316 [0.0224, 0.0409] | +0.0378 |
+| CP FITB | 0.5440 ± 0.0051 | 0.5331 ± 0.0034 | -0.0109 [-0.0196, -0.0022] | -0.0077 |
+| Recall@10 | 0.0387 ± 0.0024 | 0.0470 ± 0.0014 | +0.0083 [0.0040, 0.0126] | +0.0102 |
+| Recall@30 | 0.0937 ± 0.0037 | 0.1117 ± 0.0032 | +0.0180 [0.0112, 0.0248] | +0.0153 |
+| Recall@50 | 0.1379 ± 0.0039 | 0.1605 ± 0.0022 | +0.0226 [0.0169, 0.0283] | +0.0170 |
+| Mean rank | 611.0 ± 10.6 | 573.3 ± 3.5 | -37.7 [-51.1, -24.4] | -28.89 |
+| Median rank | 372.8 ± 10.6 | 328.8 ± 4.5 | -44.0 [-58.6, -29.4] | -31.4 |
+
+Every difference has the manuscript's direction. The FITB decrease, whose
+interval contained zero in the manuscript ([-0.0180, 0.0025]), now excludes
+it.
+
 **Text swap (2025 sweep).** Each main model of seeds 1-5 evaluated with the
 other outfit text on the GPU (`text_swap/`); the seed-1 combinations with the
 model's own text, evaluated again as a check, equal the stored results. Mean ±
@@ -136,8 +157,9 @@ SD over the five seeds:
 The context-aware descriptions help even the model trained on the original
 titles (AUC +0.0070, Recall@10 +0.0036, positive in all five seeds), and the
 Context model depends on them: given the original titles it falls below the
-Original model (AUC 0.9061, Recall@10 0.0711). The 2025 values of the sweep
-are not preserved.
+Original model (AUC 0.9061, Recall@10 0.0711). The 2025 sweep, whose files were
+lost, was recomputed from the preserved 2025 checkpoints and shows the same
+pattern (validation table above).
 
 **Counterfactual (Tables 4 and 9).** Same 24 pairs, the official run's Context
 models of seeds 1-5, CPU. Mean ± SD over the seeds (`table9_seeds_mean_sd.csv`;

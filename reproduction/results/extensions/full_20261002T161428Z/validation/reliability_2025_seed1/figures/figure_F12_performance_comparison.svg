@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="951" height="190" viewBox="0 0 951 190" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="475.30" y="24.00" font-size="14" fill="#222222" text-anchor="middle" font-weight="bold">Performance Comparison: Original vs Proposed</text>
+<text x="475.30" y="42.00" font-size="10.5" fill="#555555" text-anchor="middle">Preserved 2025 checkpoints, seed 1</text>
+<rect x="20.00" y="66.00" width="910.60" height="25.00" fill="#f0f0f0"/>
+<text x="31.00" y="82.00" font-size="10" fill="#222222" font-weight="bold">n</text>
+<text x="78.60" y="82.00" font-size="10" fill="#222222" font-weight="bold">Hit@1</text>
+<text x="130.80" y="82.00" font-size="10" fill="#222222" font-weight="bold">Hit@10</text>
+<text x="187.60" y="82.00" font-size="10" fill="#222222" font-weight="bold">Median Rank</text>
+<text x="278.20" y="82.00" font-size="10" fill="#222222" font-weight="bold">Mean Rank</text>
+<text x="358.80" y="82.00" font-size="10" fill="#222222" font-weight="bold">Avg Confidence</text>
+<text x="464.00" y="82.00" font-size="10" fill="#222222" font-weight="bold">Error Rate</text>
+<text x="538.00" y="82.00" font-size="10" fill="#222222" font-weight="bold">High-conf Error Rate</text>
+<text x="668.60" y="82.00" font-size="10" fill="#222222" font-weight="bold">ECE</text>
+<text x="726.20" y="82.00" font-size="10" fill="#222222" font-weight="bold">Brier Score</text>
+<text x="806.60" y="82.00" font-size="10" fill="#222222" font-weight="bold">run_tag</text>
+<line x1="20.00" y1="91.00" x2="930.60" y2="91.00" stroke="#555555" stroke-width="1"/>
+<text x="31.00" y="107.00" font-size="10" fill="#222222">9311</text>
+<text x="78.60" y="107.00" font-size="10" fill="#222222">1.39%</text>
+<text x="130.80" y="107.00" font-size="10" fill="#222222">7.80%</text>
+<text x="187.60" y="107.00" font-size="10" fill="#222222">230.000</text>
+<text x="278.20" y="107.00" font-size="10" fill="#222222">463.327</text>
+<text x="358.80" y="107.00" font-size="10" fill="#222222">0.720</text>
+<text x="464.00" y="107.00" font-size="10" fill="#222222">92.20%</text>
+<text x="538.00" y="107.00" font-size="10" fill="#222222">21.96%</text>
+<text x="668.60" y="107.00" font-size="10" fill="#222222">0.642</text>
+<text x="726.20" y="107.00" font-size="10" fill="#222222">0.505</text>
+<text x="806.60" y="107.00" font-size="10" fill="#222222">original</text>
+<line x1="20.00" y1="116.00" x2="930.60" y2="116.00" stroke="#cccccc" stroke-width="0.8"/>
+<text x="31.00" y="132.00" font-size="10" fill="#222222">9311</text>
+<text x="78.60" y="132.00" font-size="10" fill="#222222">1.53%</text>
+<text x="130.80" y="132.00" font-size="10" fill="#222222">8.72%</text>
+<text x="187.60" y="132.00" font-size="10" fill="#222222">205.000</text>
+<text x="278.20" y="132.00" font-size="10" fill="#222222">441.767</text>
+<text x="358.80" y="132.00" font-size="10" fill="#222222">0.719</text>
+<text x="464.00" y="132.00" font-size="10" fill="#222222">91.28%</text>
+<text x="538.00" y="132.00" font-size="10" fill="#222222">20.65%</text>
+<text x="668.60" y="132.00" font-size="10" fill="#222222">0.631</text>
+<text x="726.20" y="132.00" font-size="10" fill="#222222">0.497</text>
+<text x="806.60" y="132.00" font-size="10" fill="#222222">proposed</text>
+<line x1="20.00" y1="141.00" x2="930.60" y2="141.00" stroke="#cccccc" stroke-width="0.8"/>
+<text x="31.00" y="157.00" font-size="10" fill="#222222"></text>
+<text x="78.60" y="157.00" font-size="10" fill="#222222">0.14%</text>
+<text x="130.80" y="157.00" font-size="10" fill="#222222">0.92%</text>
+<text x="187.60" y="157.00" font-size="10" fill="#222222">-25.000</text>
+<text x="278.20" y="157.00" font-size="10" fill="#222222">-21.561</text>
+<text x="358.80" y="157.00" font-size="10" fill="#222222">-0.002</text>
+<text x="464.00" y="157.00" font-size="10" fill="#222222">-0.92%</text>
+<text x="538.00" y="157.00" font-size="10" fill="#222222">-1.31%</text>
+<text x="668.60" y="157.00" font-size="10" fill="#222222">-0.011</text>
+<text x="726.20" y="157.00" font-size="10" fill="#222222">-0.008</text>
+<text x="806.60" y="157.00" font-size="10" fill="#222222">Δ proposed - original</text>
+<line x1="20.00" y1="166.00" x2="930.60" y2="166.00" stroke="#cccccc" stroke-width="0.8"/>
+<line x1="20.00" y1="66.00" x2="930.60" y2="66.00" stroke="#555555" stroke-width="1"/>
+<line x1="20.00" y1="166.00" x2="930.60" y2="166.00" stroke="#555555" stroke-width="1"/>
+</svg>

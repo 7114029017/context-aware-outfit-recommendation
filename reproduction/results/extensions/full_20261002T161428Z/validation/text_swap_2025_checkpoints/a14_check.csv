@@ -1,0 +1,11 @@
+task,metric,model,mean,a14_mean,std,a14_std,equal
+CP,auc,original,0.929165,0.929165,0.001302,0.001302,yes
+CP,auc,context,0.945370,0.945370,0.001250,0.001251,NO
+CP,fitb_acc,original,0.637438,0.637412,0.003522,0.003674,NO
+CP,fitb_acc,context,0.647725,0.647752,0.002062,0.002114,NO
+CIR,recall_at_10,original,0.077972,0.077972,0.000945,0.000967,NO
+CIR,recall_at_10,context,0.092128,0.092085,0.003538,0.003459,NO
+CIR,recall_at_30,original,0.167651,0.167694,0.004490,0.004539,NO
+CIR,recall_at_30,context,0.187434,0.187391,0.003683,0.003832,NO
+CIR,recall_at_50,original,0.230416,0.230330,0.003589,0.003465,NO
+CIR,recall_at_50,context,0.251788,0.251788,0.003831,0.003778,NO

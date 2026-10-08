@@ -19,6 +19,7 @@
 # Two-Tower checkpoints, the 2025 counterfactual model and labels A16/T18 (CPU, about 5 min), the
 # 2025 outfit-generation picks (CPU, about 2 min), and with a GPU the 2025 reliability table T18
 # (about 5 min) and the 20 preserved main checkpoints with both texts against A14 (about 75 min).
+# Single checks: list them in --steps with --validate, e.g. --validate --steps validate_text_swap.
 # A step whose GPU or download is missing is SKIPPED; a failing step does not stop the others.
 # DIR (default RUN/extensions) receives the outputs, logs/<step>.log and EXTENSIONS_STATUS.txt (a step
 # run again replaces its line; the lines of the other steps are kept).
@@ -43,7 +44,7 @@ while [[ $# -gt 0 ]]; do
     --steps) STEPS="${2:?--steps needs a list}"; shift 2 ;;
     --skip-gpu) SKIP_GPU=1; shift ;;
     --validate) VALIDATE=1; shift ;;
-    -h|--help) sed -n '2,25p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,26p' "$0"; exit 0 ;;
     *) echo "[ERROR] unknown argument: $1" >&2; exit 2 ;;
   esac
 done
@@ -150,24 +151,35 @@ if wanted outfit_generation && images_or_skip outfit_generation && fashionclip_o
   run_step outfit_generation "$PYTHON" outfit_generation.py --run-root "$RUN_ROOT" \
     --out-dir "$OUT_DIR/outfit_generation" --figures-dir "$FIGURES_DIR" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
 fi
+checked() {  # with --validate: every check, or only the checks named in --steps if it names any
+  [[ ",$STEPS," == *",validate_"* ]] || return 0
+  wanted "$1"
+}
 if [[ "$VALIDATE" -eq 1 ]]; then
-  run_step validate_length "$PYTHON" length_analysis.py \
-    --rowlevel "$(cd "$REPRO/.." && pwd)/03_實驗與結果_experiments_results/01_文字長度影響分析/A07_length_performance_rowlevel_cir.csv" \
-    --out-dir "$OUT_DIR/validation/text_length_2025_A07" --label "2025 A07"
-  run_step validate_two_tower "$PYTHON" two_tower.py --evaluate-preserved \
-    --out-dir "$OUT_DIR/validation/two_tower_preserved_checkpoints" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
-  run_step validate_reliability_labels "$PYTHON" reliability_analysis.py --labels-only \
-    --out-dir "$OUT_DIR/validation/reliability_labels" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
-  if images_or_skip validate_outfit_generation && fashionclip_or_skip validate_outfit_generation; then
+  if checked validate_length; then
+    run_step validate_length "$PYTHON" length_analysis.py \
+      --rowlevel "$(cd "$REPRO/.." && pwd)/03_實驗與結果_experiments_results/01_文字長度影響分析/A07_length_performance_rowlevel_cir.csv" \
+      --out-dir "$OUT_DIR/validation/text_length_2025_A07" --label "2025 A07"
+  fi
+  if checked validate_two_tower; then
+    run_step validate_two_tower "$PYTHON" two_tower.py --evaluate-preserved \
+      --out-dir "$OUT_DIR/validation/two_tower_preserved_checkpoints" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
+  fi
+  if checked validate_reliability_labels; then
+    run_step validate_reliability_labels "$PYTHON" reliability_analysis.py --labels-only \
+      --out-dir "$OUT_DIR/validation/reliability_labels" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
+  fi
+  if checked validate_outfit_generation && images_or_skip validate_outfit_generation &&
+     fashionclip_or_skip validate_outfit_generation; then
     run_step validate_outfit_generation "$PYTHON" outfit_generation.py --validate-2025 \
       --out-dir "$OUT_DIR/validation/outfit_generation_2025" --figures-dir "$FIGURES_DIR" \
       ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
   fi
-  if gpu_or_skip validate_reliability; then
+  if checked validate_reliability && gpu_or_skip validate_reliability; then
     run_step validate_reliability "$PYTHON" reliability_analysis.py --validate-2025 \
       --out-dir "$OUT_DIR/validation/reliability_2025_seed1" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
   fi
-  if gpu_or_skip validate_text_swap; then
+  if checked validate_text_swap && gpu_or_skip validate_text_swap; then
     run_step validate_text_swap "$PYTHON" text_swap.py --checkpoints-2025 \
       --out-dir "$OUT_DIR/validation/text_swap_2025_checkpoints" ${POLYVORE_ARGS[@]+"${POLYVORE_ARGS[@]}"}
   fi

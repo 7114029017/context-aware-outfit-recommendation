@@ -1,0 +1,4 @@
+set_id,target_item_id,model_output_top1_id,original_top1_id,rank,original_rank,rank_change_vs_original,confidence,original_confidence,fine_category,weather_group,occasion_group,style_group,category_group,error_type
+225335811,209968775,208781029,167531330,1169,2059,-890,0.999917,0.676088,sweater,warm,casual,high-style,clothing-led,high-confidence semantic mismatch
+171635689,115008621,204673385,204673385,243,71,172,0.999910,0.998449,trench coat,warm,unknown,high-style,clothing-led,high-confidence semantic mismatch
+218563429,195968209,208930654,208930654,1099,2399,-1300,0.999857,0.984637,ring,cold,unknown,high-style,accessory-led,high-confidence semantic mismatch
