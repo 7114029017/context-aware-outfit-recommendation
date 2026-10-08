@@ -89,6 +89,9 @@
 
 - **Python 版本**：必須是 3.12。
 - **GPU**：若不是 NVIDIA GB10，訓練結果不會逐位元相同。與正式 run 比對時判定為 `CONSISTENT` 是正常的（README 0.8）。
+- **Windows 電腦**：在 WSL2 的 Ubuntu 24.04 裡照上面的步驟操作，repository 要 clone 在 WSL 的 Linux 檔案系統（README 0.0）。
+  原生 Windows 不支援，`reproduction/scripts/` 的腳本會說明後停止。用 Git for Windows clone v1.0.0 時，換行會被改成
+  CRLF，01～03 的 SHA-256 檢查會失敗；`next-release` 起由 `.gitattributes` 關閉換行轉換。
 - **完整訓練的版本檢查**：只有 `main` 分支或 `v*-tors-reproduction` 標籤能開始完整訓練。從 `next-release` 只能做
   `reproduce_all.sh --analyses-only <run>`。
 - **重做舊正式 run 的分析**：需要舊電腦上的 run 資料夾（含 70 個 checkpoint，見第 7 節）：

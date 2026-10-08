@@ -26,6 +26,7 @@
 # Exit status 1 if a step FAILED.
 set -Eeuo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/../_common.sh"
 REPRO="$(cd "$HERE/../.." && pwd)"
 PYTHON="${PYTHON:-python3}"
 RUN_ROOT=""

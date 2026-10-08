@@ -1,1 +1,7 @@
+# No line-ending conversion: every file is checked out byte for byte as committed, on every
+# platform. Git for Windows (core.autocrlf=true by default) would otherwise check out LF files
+# as CRLF, and the SHA-256 checks of folders 01-03 and of reproduction/results would fail.
+* -text
+# Shell scripts are committed and checked out with LF, also when edited on Windows.
+*.sh text eol=lf
 *.pkl filter=lfs diff=lfs merge=lfs -text

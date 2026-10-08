@@ -16,6 +16,7 @@
 # here changes RUN_STATUS.txt. Exit status 1 if an item is MISSING or FAIL or the acceptance does not pass.
 set -Eeuo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/_common.sh"
 PYTHON="${PYTHON:-python3}"
 RUN_ROOT=""
 OUT_DIR=""

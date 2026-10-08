@@ -28,10 +28,11 @@ What the release contains:
   `reproduction/docs/public_release_cleanup.md`.
 
 Reproducing the 35 training units (10 main units and 25 fair-subset ablation
-units, seeds 1–5) needs Linux, Git LFS, Python 3.12 (required by the pinned
-packages), an NVIDIA GPU that runs CUDA 13.0 PyTorch, and about 20 GB of disk,
-plus 5.5 GB for the extension and supplementary analyses (requirements:
-`reproduction/README.md` §0.0):
+units, seeds 1–5) needs Linux (on Windows, WSL2; native Windows is not
+supported), Git LFS, Python 3.12 (required by the pinned packages), an NVIDIA
+GPU that runs CUDA 13.0 PyTorch, and about 20 GB of disk, plus 5.5 GB for the
+extension and supplementary analyses (requirements: `reproduction/README.md`
+§0.0):
 
     git clone --branch v1.0.0-tors-reproduction \
       https://github.com/7114029017/context-aware-outfit-recommendation.git

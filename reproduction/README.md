@@ -48,7 +48,7 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
 
 | 項目 | 需求 |
 |---|---|
-| 作業系統 | Linux。正式 run 在 aarch64 的 NVIDIA GB10 上執行 |
+| 作業系統 | Linux。Windows 請在 WSL2 裡執行（見本表下方）。正式 run 在 aarch64 的 NVIDIA GB10 上執行 |
 | GPU | NVIDIA GPU，驅動需能執行 CUDA 13.0 版的 PyTorch（可用 `nvidia-smi` 確認）。訓練使用一張 GPU（`cuda:0`）；有多張 GPU 時用 `CUDA_VISIBLE_DEVICES` 指定。GB10 的 GPU 與 CPU 共用約 120 GB 記憶體；峰值 GPU 記憶體用量沒有記錄 |
 | Python | **必須是 3.12**（正式 run 為 3.12.3），並含 venv 模組（Ubuntu／Debian：`sudo apt install python3.12-venv`）。其他版本無法安裝固定的套件版本：`scipy==1.18.1` 需要 3.12 以上，`numpy==2.0.2` 沒有 3.13 的套件 |
 | Git | `git` 與 Git LFS（Ubuntu／Debian：`sudo apt install git-lfs`） |
@@ -57,6 +57,21 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
 | 時間 | clone 與 Git LFS 約 3 分鐘、安裝套件約 2 分鐘、下載資料與預檢各數秒（含圖片、FashionCLIP 與 Nomic 模型約 3 分鐘）、smoke test 約 40 秒；完整 35 組訓練在 GB10 上約 50～55 小時，之後的全部分析約 4 小時 15 分 |
 
 `sudo` 只有安裝系統套件與 0.6 的清除快取指令（選用）需要。
+
+**Windows**：請在 WSL2 的 Ubuntu 24.04 裡照本節操作。不支援原生 Windows（Git Bash、MSYS2、Cygwin），
+在原生 Windows 上執行 `reproduction/scripts/` 的腳本會顯示說明後停止。原因是：學姊的訓練程式在模組
+最外層建立 DataLoader 的 worker，Windows 的 spawn 啟動方式會出錯；腳本呼叫 `python3`；Python 在
+Windows 寫出的是 CRLF 換行，輸出的 SHA-256 比對因此不符。
+
+- 安裝：在 PowerShell 執行 `wsl --install -d Ubuntu-24.04`。Ubuntu 24.04 的 `python3` 就是 3.12。
+- GPU：WSL 使用 Windows 端的 NVIDIA 驅動，不要在 WSL 裡另外安裝 GPU 驅動。在 WSL 裡執行
+  `nvidia-smi` 應看得到 GPU。
+- 在 WSL 的 Linux 檔案系統（例如 `~/`）clone，不要放在 `/mnt/c/` 底下，跨檔案系統讀寫很慢。
+- 不要用 Windows 的 Git clone 後再拿到 WSL 使用。Git for Windows 預設 `core.autocrlf=true`，checkout
+  時會把換行改成 CRLF；v1.0.0 沒有防止這件事的設定，0.5 的 SHA-256 檢查（例如 01～03）會失敗。
+  `next-release` 起由 `.gitattributes` 關閉換行轉換。若一定要在 Windows 端 clone，請加
+  `-c core.longpaths=true`（repository 最長的路徑有 143 個字元，clone 的位置較深時會出現
+  `Filename too long`）；clone v1.0.0 時再加 `-c core.autocrlf=false`。
 
 ### 0.1 Clone 稿件引用的 Release
 

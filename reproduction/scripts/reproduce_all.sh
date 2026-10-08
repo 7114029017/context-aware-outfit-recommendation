@@ -2,6 +2,7 @@
 set -Eeuo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/_common.sh"
 ROOT="$(cd "$HERE/../.." && pwd)"
 DEFAULT_COMPLETED_RUN="$ROOT/_reproduction_runs/full_20260921T175217Z"
 REUSE_RUN=""

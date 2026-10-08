@@ -14,6 +14,7 @@
 # script after its RUN_STATUS has become PASSED.
 set -Eeuo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/../_common.sh"
 RUNS="$(cd "$HERE/../.." && pwd)/runs"
 PYTHON="${PYTHON:-python3}"
 RUN_ROOT=""
