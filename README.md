@@ -42,15 +42,19 @@ plus 5.5 GB for the extension and supplementary analyses (requirements:
                                     # MET Compendium for the analyses after the 35 units
     bash reproduction/scripts/check.sh            # preflight
     bash reproduction/scripts/reproduce_all.sh --fresh
-    python3 reproduction/scripts/compare_with_official_run.py --run-root reproduction/runs/<full_run>
+                                    # the 35 units, then every analysis, the comparison with the
+                                    # official run and the 46-item report <run>/ITEMS_STATUS.md
 
 Use `git clone`: the source-code archives on the release page are not git
 repositories and do not contain the Git LFS feature files. The full run took
 55:07:40 on an NVIDIA GB10; run it inside tmux with the venv activated. The
 step-by-step guide, expected outputs and acceptance criteria are in
 `reproduction/README.md` (in Chinese, with all commands). A run passes when
-`RUN_STATUS.txt` is `PASSED` and the comparison reports `IDENTICAL` or
-`CONSISTENT`.
+`RUN_STATUS.txt` is `PASSED` and the comparison with the official run
+(`<run>/official_comparison.txt`, written at the end) reports `IDENTICAL` or
+`CONSISTENT`. `<run>/ITEMS_STATUS.md` gives the state and evidence of each of the
+46 analysis items; `reproduce_all.sh --analyses-only <run>` redoes all analyses of
+a completed run without retraining.
 
 Official run and results:
 
@@ -75,6 +79,8 @@ Official run and results:
   and 9, the color analysis, Figures A1-A3 and thesis Figure 4-14):
   `reproduction/docs/extensions.md`; results for the official run in
   `reproduction/results/extensions/`.
+- The state and evidence of each of the 46 analysis items of the official run:
+  `reproduction/results/ITEMS_STATUS.md`.
 
 Version provenance: the official run was executed from commit `b9bf5aa` of the
 original development repository, which is not public. This repository contains
@@ -152,6 +158,8 @@ repo 文件中的 reference run 則指較早的 `reference_20260921T175217Z`。
 檢核清單涵蓋度、人工稽核題項、MET 對照表、CLO 分布等）也由補充分析重新計算，見
 `reproduction/docs/supplementary_analyses.md`。稿件中原本使用學姊保存輸出的分析（文字長度、表 4、8、9、
 色彩分析、附錄圖與論文圖 4-14），由延伸分析以 run 自己的模型重做，見 `reproduction/docs/extensions.md`。
+46 個分析項目的逐項狀態與證據在 `reproduction/results/ITEMS_STATUS.md`；新的完整 run 會產生自己的
+`ITEMS_STATUS.md`。
 
 授權：本 repository 撰寫的程式與文件採用 MIT License（`LICENSE`），第三方元件依其原本條款
 （`THIRD_PARTY_NOTICES.md`）。引用方式見 `CITATION.cff`。

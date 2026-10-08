@@ -30,6 +30,21 @@ Many descriptions share a score, so which ones fall in the lowest p% depends on 
 pipeline's recomputation of Table 4-7. The curve and the band are computed with the same ordering.
 Largest difference from the thesis figure (the archived SVG F19), over the 30 values of p: jaccard 0.0122, jaccard_lo 0.0024, jaccard_hi 0.0026, f1 0.0156, f1_lo 0.0032, f1_hi 0.0034.
 
+### Ties at the cut-offs of Table 4-7 (added by this reproduction)
+
+`bottom_p_tie_orders.csv`: how many scores are tied at each judge's cut-off, the smallest and largest
+intersection over every order of those ties, and the intersections of 2,000 random orders of the ties (seed 123).
+
+| p | Lowest k | Tied at the cut-off (A, B) | numpy argsort | Thesis | Any order of the ties | Random orders: median [2.5%, 97.5%] |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0.05 | 1,757 | 330, 1,246 | 669 | 668 | 545 to 917 | 668 [653, 682] |
+| 0.10 | 3,514 | 2,378, 844 | 1,338 | 1,323 | 1,269 to 1,605 | 1,333 [1,320, 1,346] |
+| 0.20 | 7,028 | 4,745, 3,431 | 2,877 | 2,833 | 2,503 to 3,566 | 2,843 [2,817, 2,870] |
+
+Every thesis value lies within the range of the tie orders: yes. So does the F1 curve of the thesis figure (F19) at 30 of 30 values of p
+(`bottom_p_curve_tie_range.csv`). The differences from the thesis come from the order of the tied scores
+(numpy's default sort is not stable; the order depends on the input), not from the scores.
+
 ## Item disagreement between judge and human audit (2025 table T31, thesis Figure 4-4; P06 cell 10)
 
 30 audited descriptions (A36), 750 human answers (A38). `item_disagreement.csv`,

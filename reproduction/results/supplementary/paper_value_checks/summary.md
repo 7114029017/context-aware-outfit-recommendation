@@ -2,8 +2,9 @@
 
 Computed by `reproduction/scripts/supplementary/paper_value_checks.py`. Tables 6 and 7 come from the
 official run and are produced by the reproduction pipeline; the values here do not come from the 35
-training units. Table 8 and Table 9 use preserved 2025 outputs (the Two-Tower model was not retrained;
-the counterfactual analysis used the 2025 seed-1 model).
+training units. Table 8 and Table 9 are recomputed from the preserved 2025 outputs that the manuscript
+reports (the 2025 Two-Tower models and the 2025 seed-1 counterfactual model); the same analyses with the
+official run's models, the Two-Tower models retrained, are in `results/extensions/full_20261002T161428Z/`.
 
 ## Table 1
 

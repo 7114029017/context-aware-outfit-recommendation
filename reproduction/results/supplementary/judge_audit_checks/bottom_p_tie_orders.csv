@@ -1,0 +1,4 @@
+p,k,tied_at_cutoff_A,tied_at_cutoff_B,intersection_numpy_argsort,thesis_table_4_7,smallest_over_tie_orders,largest_over_tie_orders,random_orders_median,random_orders_2.5%,random_orders_97.5%,random_orders_min,random_orders_max,thesis_within_tie_range
+0.05,1757,330,1246,669,668,545,917,668,653,682,642,692,yes
+0.1,3514,2378,844,1338,1323,1269,1605,1333,1320,1346,1314,1356,yes
+0.2,7028,4745,3431,2877,2833,2503,3566,2843,2817,2870,2804,2888,yes

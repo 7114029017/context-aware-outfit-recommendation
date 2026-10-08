@@ -19,11 +19,16 @@ against the notebook's archived outputs (section "Validation").
 
 ## Running them
 
-A full run (`reproduce_all.sh --fresh`) runs them after it has PASSED and writes
+A full run (`reproduce_all.sh --fresh`) runs them after it has PASSED, through
+`scripts/run_analyses.sh` and with `--validate`, and writes
 `<run folder>/extensions/`, with the status of each step in
-`extensions/EXTENSIONS_STATUS.txt` and the console output in
-`logs/extensions.log`. A failed step prints a warning; the run stays PASSED. To
-run them by hand, for example after a failure:
+`extensions/EXTENSIONS_STATUS.txt`, the step logs in `extensions/logs/` and the
+console output in `logs/extensions.log`. A failed step prints a warning; the run
+stays PASSED. `run_analyses.sh` then lists every item with its state and evidence
+in `ITEMS_STATUS.md` (README 0.8), where each item computed here also shows the
+check of its port. `reproduce_all.sh --analyses-only RUN` repeats all of this for
+a completed run without retraining. To run the extension steps alone, for
+example after a failure:
 
     bash reproduction/scripts/extensions/run_all.sh --run-root RUN [--steps LIST] [--skip-gpu] [--validate]
 

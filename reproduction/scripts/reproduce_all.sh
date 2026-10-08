@@ -6,13 +6,18 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 DEFAULT_COMPLETED_RUN="$ROOT/_reproduction_runs/full_20260921T175217Z"
 REUSE_RUN=""
 FORCE_FRESH=0
+ANALYSES_RUN=""
+NO_DOWNLOADS=0
 PASSTHRU=()
+LAUNCH_ONLY=()
+ANALYSES_ARGS=()
+POLYVORE_ROOT=""
 
 usage() {
   cat <<'HELP'
 Usage:
-  bash reproduction/scripts/reproduce_all.sh [--fresh] [--reuse-reference PATH]
-                                              [launch_full options...]
+  bash reproduction/scripts/reproduce_all.sh [--fresh | --analyses-only RUN | --reuse-reference PATH]
+                                              [--no-optional-downloads] [launch_full options...]
 
 Default behavior:
   - If the preserved local completed reference run exists at
@@ -26,7 +31,22 @@ Default behavior:
 Options:
   --fresh
       Force a brand-new full training run even if the completed local
-      reference run is available.
+      reference run is available. After the run has PASSED, every analysis
+      runs as well (run_analyses.sh): the supplementary and extension
+      analyses, the checks of the ported code, the comparison with the
+      official run and the status of the 46 reproduction items in
+      <run>/ITEMS_STATUS.md. One command reproduces every item.
+
+  --analyses-only RUN
+      Skip training and redo every analysis of the completed (PASSED) full
+      run RUN with run_analyses.sh. Also accepts --out-dir DIR (default RUN),
+      --figures-dir DIR and --skip-gpu.
+
+  --no-optional-downloads
+      Do not fetch the optional inputs of the analyses (Polyvore images,
+      FashionCLIP, Nomic, Compendium). By default they are downloaded with
+      bootstrap_data.sh before the run starts when they are missing (about
+      5 GB); without them the items that need them are SKIPPED.
 
   --reuse-reference PATH
       Verify and reuse a specific completed local full-run directory.
@@ -49,6 +69,30 @@ while [[ $# -gt 0 ]]; do
       FORCE_FRESH=1
       shift
       ;;
+    --analyses-only)
+      [[ $# -ge 2 ]] || { echo "[ERROR] --analyses-only requires RUN" >&2; exit 2; }
+      ANALYSES_RUN="$2"
+      shift 2
+      ;;
+    --no-optional-downloads)
+      NO_DOWNLOADS=1
+      shift
+      ;;
+    --out-dir|--figures-dir)
+      [[ $# -ge 2 ]] || { echo "[ERROR] $1 requires a path" >&2; exit 2; }
+      ANALYSES_ARGS+=("$1" "$2")
+      shift 2
+      ;;
+    --skip-gpu)
+      ANALYSES_ARGS+=("$1")
+      shift
+      ;;
+    --polyvore-root)
+      [[ $# -ge 2 ]] || { echo "[ERROR] --polyvore-root requires a path" >&2; exit 2; }
+      POLYVORE_ROOT="$2"
+      PASSTHRU+=("$1" "$2")
+      shift 2
+      ;;
     --reuse-reference)
       [[ $# -ge 2 ]] || { echo "[ERROR] --reuse-reference requires PATH" >&2; exit 2; }
       REUSE_RUN="$2"
@@ -62,6 +106,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     *)
       PASSTHRU+=("$1")
+      LAUNCH_ONLY+=("$1")
       shift
       ;;
   esac
@@ -70,6 +115,58 @@ done
 if [[ "$FORCE_FRESH" -eq 1 && -n "$REUSE_RUN" ]]; then
   echo "[ERROR] choose --fresh OR --reuse-reference, not both" >&2
   exit 2
+fi
+if [[ -n "$ANALYSES_RUN" && ( "$FORCE_FRESH" -eq 1 || -n "$REUSE_RUN" ) ]]; then
+  echo "[ERROR] --analyses-only cannot be combined with --fresh or --reuse-reference" >&2
+  exit 2
+fi
+if [[ -n "$ANALYSES_RUN" && ${#LAUNCH_ONLY[@]} -gt 0 ]]; then
+  echo "[ERROR] --analyses-only does not train; these options do not apply: ${LAUNCH_ONLY[*]}" >&2
+  exit 2
+fi
+if [[ ${#ANALYSES_ARGS[@]} -gt 0 && -z "$ANALYSES_RUN" ]]; then
+  echo "[ERROR] --out-dir, --figures-dir and --skip-gpu belong to --analyses-only" >&2
+  exit 2
+fi
+
+# The optional inputs of the analyses after the 35 units (all items of ITEMS_STATUS.md).
+ensure_optional_downloads() {
+  local local_dir="$ROOT/reproduction/.local" poly fclip nomic_model nomic_code compendium
+  poly="${POLYVORE_ROOT:-$(cat "$local_dir/polyvore_root.txt" 2>/dev/null || true)}"
+  fclip="$(cat "$local_dir/fashionclip_root.txt" 2>/dev/null || true)"
+  nomic_model="$(cat "$local_dir/nomic_model_root.txt" 2>/dev/null || true)"
+  nomic_code="$(cat "$local_dir/nomic_code_root.txt" 2>/dev/null || true)"
+  compendium="$(cat "$local_dir/compendium_pdf.txt" 2>/dev/null || true)"
+  local flags=()
+  [[ -n "$poly" && -f "$poly/images/.complete" ]] || flags+=(--with-images)
+  [[ -n "$fclip" && -f "$fclip/model.safetensors" ]] || flags+=(--with-fashionclip)
+  [[ -n "$nomic_model" && -d "$nomic_model" && -n "$nomic_code" && -d "$nomic_code" ]] || flags+=(--with-nomic)
+  [[ -n "$compendium" && -f "$compendium" ]] || flags+=(--with-compendium)
+  command -v pdftotext >/dev/null 2>&1 ||
+    echo "[DOWNLOADS] pdftotext (poppler-utils) is not installed: the MET reference check (item 5) will be SKIPPED" >&2
+  if [[ ${#flags[@]} -eq 0 ]]; then
+    echo "[DOWNLOADS] the optional inputs of the analyses are present (images, FashionCLIP, Nomic, Compendium)"
+    return 0
+  fi
+  if [[ "$NO_DOWNLOADS" -eq 1 ]]; then
+    echo "[DOWNLOADS] missing: ${flags[*]}; --no-optional-downloads was given, so the items that need them will be SKIPPED" >&2
+    return 0
+  fi
+  echo "[DOWNLOADS] fetching the optional inputs of the analyses: ${flags[*]}"
+  if ! bash "$HERE/bootstrap_data.sh" ${poly:+"$poly"} "${flags[@]}"; then
+    echo "[DOWNLOADS] the download failed; nothing was started. Fix the cause and run the same command again," >&2
+    echo "[DOWNLOADS] or add --no-optional-downloads (the items that need these inputs are then SKIPPED)." >&2
+    exit 5
+  fi
+}
+
+if [[ -n "$ANALYSES_RUN" ]]; then
+  [[ "$(cat "$ANALYSES_RUN/RUN_STATUS.txt" 2>/dev/null)" == "PASSED" ]] ||
+    { echo "[ERROR] $ANALYSES_RUN is not a completed full run (its RUN_STATUS.txt is not PASSED)" >&2; exit 2; }
+  ensure_optional_downloads
+  analyses=(bash "$HERE/run_analyses.sh" --run-root "$ANALYSES_RUN")
+  [[ -n "$POLYVORE_ROOT" ]] && analyses+=(--polyvore-root "$POLYVORE_ROOT")
+  exec "${analyses[@]}" ${ANALYSES_ARGS[@]+"${ANALYSES_ARGS[@]}"}
 fi
 
 verify_and_reuse() {
@@ -129,4 +226,5 @@ if [[ "$FORCE_FRESH" -eq 0 ]]; then
   echo "[INFO] launching a brand-new full 35-unit reproduction."
 fi
 
-exec bash "$HERE/pipeline/launch_full.sh" "${PASSTHRU[@]}"
+ensure_optional_downloads
+exec bash "$HERE/pipeline/launch_full.sh" ${PASSTHRU[@]+"${PASSTHRU[@]}"}

@@ -15,6 +15,10 @@ of the same data, with the computation copied from the 2025 programs, and writes
   overlap of the two judges' lowest-scored p% for p = 1% to 30% with 95% bootstrap bands (B = 500,
   seed 123; thesis Figure 4-3; P05 cell 3: sensitivity_point_estimate, bootstrap_bands);
   the histogram and the curves are compared with the archived SVG figures F17 and F19;
+- bottom_p_tie_orders.csv and bottom_p_curve_tie_range.csv: for the three cut-offs of thesis Table 4-7,
+  the smallest and largest intersection over every order of the scores tied at the cut-off and the
+  intersections of 2,000 random orders of the ties (seed 123), and for the F1 curve of Figure 4-3 the
+  same range at each p, against the thesis values (added by this reproduction);
 - judge_quantile_confusion.csv and figures/figure_F18_quantile_confusion.svg: the 10 x 10 confusion
   matrix of the two judges' score deciles behind the QWK of table T19 (the 2025 figure F18; P05 cell 3);
 - figures/figure_F20_prompt_robustness.svg: the mean absolute score difference of the three prompt
@@ -63,6 +67,7 @@ SCRIPTS = REPRO / "scripts"
 P_GRID = np.arange(0.01, 0.301, 0.01)
 N_BOOT, SEED_BAND, CI_LO, CI_HI = 500, 123, 0.025, 0.975
 TABLE_4_7 = {0.05: (668, 0.2347, 0.3802), 0.10: (1323, 0.2319, 0.3765), 0.20: (2833, 0.2524, 0.4031)}
+TIE_DRAWS, TIE_SEED = 2000, 123  # random orders of the tied scores (added)
 THESIS_MEANS = {"A(Qwen)": (0.828, 0.142), "B(Gemma)": (0.960, 0.089)}  # thesis Section 4.2.4
 # P06 cell 9
 QWEN_COLOR, GEMMA_COLOR = "#2f77b4", "#f28e2b"
@@ -173,6 +178,37 @@ def bootstrap_bands(xa, xb, p_grid, n_boot=500, seed=123, qlo=0.025, qhi=0.975):
     return ((np.quantile(jacc_mat, qlo, axis=0), np.quantile(jacc_mat, qhi, axis=0)),
             (np.quantile(f1_mat, qlo, axis=0), np.quantile(f1_mat, qhi, axis=0)),
             (np.quantile(lift_mat, qlo, axis=0), np.quantile(lift_mat, qhi, axis=0)))
+
+
+# ---------------------------------------------------------------- ties at the Table 4-7 cut-offs (added)
+def tie_range(xa, xb, k):
+    """Smallest and largest intersection of the two judges' lowest-k sets over every order of the scores
+    tied at each judge's cut-off. A tied description that one judge must pick can fall where the other judge
+    surely picks it, surely leaves it out, or is tied too; the extremes fill these cells greedily."""
+    def split(x):
+        cut = np.sort(x)[k - 1]
+        return np.where(x < cut, 0, np.where(x == cut, 1, 2)), k - int(np.count_nonzero(x < cut))
+    (ca, need_a), (cb, need_b) = split(xa), split(xb)
+    n = np.zeros((3, 3), dtype=int)  # rows: judge A below / at / above its cut-off; columns: judge B
+    np.add.at(n, (ca, cb), 1)
+    a_s, b_s = min(need_a, n[1, 0]), min(need_b, n[0, 1])
+    largest = n[0, 0] + a_s + b_s + min(need_a - a_s, need_b - b_s, n[1, 1])
+    a_rest, b_rest = need_a - min(need_a, n[1, 2]), need_b - min(need_b, n[2, 1])
+    a_t, b_t = min(a_rest, n[1, 1]), min(b_rest, n[1, 1])
+    smallest = n[0, 0] + (a_rest - a_t) + (b_rest - b_t) + max(0, a_t + b_t - n[1, 1])
+    return int(smallest), int(largest)
+
+
+def random_tie_orders(xa, xb, k, draws, seed):
+    """Intersections of the lowest-k sets when the tied scores are put in a random order."""
+    rng = np.random.default_rng(seed)
+    out = np.empty(draws, dtype=int)
+    for d in range(draws):
+        pa, pb = rng.permutation(len(xa)), rng.permutation(len(xb))
+        low_a = pa[np.argsort(xa[pa], kind="stable")[:k]]
+        low_b = pb[np.argsort(xb[pb], kind="stable")[:k]]
+        out[d] = np.intersect1d(low_a, low_b).size
+    return out
 
 
 # ---------------------------------------------------------------- archived matplotlib SVG figures
@@ -490,6 +526,31 @@ def main() -> None:
         t = int(round(p * 100)) - 1
         k = int(np.ceil(len(ids) * P_GRID[t]))  # as in sensitivity_point_estimate
         table_4_7.append((p, round(f_point[t] * k), paper_inter, j_point[t], paper_j, f_point[t], paper_f1))
+    tie_columns = ["p", "k", "tied_at_cutoff_A", "tied_at_cutoff_B", "intersection_numpy_argsort", "thesis_table_4_7",
+                   "smallest_over_tie_orders", "largest_over_tie_orders", "random_orders_median",
+                   "random_orders_2.5%", "random_orders_97.5%", "random_orders_min", "random_orders_max",
+                   "thesis_within_tie_range"]
+    tie_rows = []
+    for p, (paper_inter, *_) in TABLE_4_7.items():
+        k = int(np.ceil(len(ids) * p))  # as in the pipeline's recomputation of Table 4-7
+        tied = [int(np.count_nonzero(x == np.sort(x)[k - 1])) for x in (xa, xb)]
+        smallest, largest = tie_range(xa, xb, k)
+        draws = random_tie_orders(xa, xb, k, TIE_DRAWS, TIE_SEED)
+        lo, med, hi = (int(round(v)) for v in np.percentile(draws, [2.5, 50, 97.5]))
+        tie_rows.append([p, k, *tied, np.intersect1d(np.argsort(xa)[:k], np.argsort(xb)[:k]).size, paper_inter,
+                         smallest, largest, med, lo, hi, int(draws.min()), int(draws.max()),
+                         "yes" if smallest <= paper_inter <= largest else "no"])
+    write_csv(out / "bottom_p_tie_orders.csv", tie_columns, tie_rows)
+    curve_rows = []  # the thesis F1 curve (F19, read from the SVG to about 0.001) against the same ranges
+    for t, p in enumerate(P_GRID):
+        k = int(np.ceil(len(ids) * p))
+        smallest, largest = tie_range(xa, xb, k)
+        curve_rows.append([repr(float(p)), k, repr(float(f_point[t])), repr(f19["f1"][t]), repr(smallest / k),
+                           repr(largest / k), "yes" if smallest / k - 0.001 <= f19["f1"][t] <= largest / k + 0.001
+                           else "no"])
+    write_csv(out / "bottom_p_curve_tie_range.csv", ["p", "k", "f1", "f1_thesis_figure", "f1_smallest_over_tie_orders",
+                                                     "f1_largest_over_tie_orders", "thesis_within_tie_range"],
+              curve_rows)
 
     # ---------------------------------------------------------------- Figure 4-4 (T31)
     checklists = {"qwen": read_json(QWEN_CSTAR)["checklist"], "gemma": read_json(GEMMA_CSTAR)["checklist"]}
@@ -634,6 +695,24 @@ def main() -> None:
         "pipeline's recomputation of Table 4-7. The curve and the band are computed with the same ordering.",
         "Largest difference from the thesis figure (the archived SVG F19), over the 30 values of p: "
         + ", ".join(f"{k} {v:.4f}" for k, v in f19_diff.items()) + ".",
+        "",
+        "### Ties at the cut-offs of Table 4-7 (added by this reproduction)",
+        "",
+        "`bottom_p_tie_orders.csv`: how many scores are tied at each judge's cut-off, the smallest and largest",
+        "intersection over every order of those ties, and the intersections of "
+        f"{TIE_DRAWS:,} random orders of the ties (seed {TIE_SEED}).",
+        "",
+        "| p | Lowest k | Tied at the cut-off (A, B) | numpy argsort | Thesis | Any order of the ties | "
+        "Random orders: median [2.5%, 97.5%] |",
+        "|---:|---:|---:|---:|---:|---:|---:|",
+        *[f"| {r[0]:.2f} | {r[1]:,} | {r[2]:,}, {r[3]:,} | {r[4]:,} | {r[5]:,} | {r[6]:,} to {r[7]:,} | "
+          f"{r[8]:,} [{r[9]:,}, {r[10]:,}] |" for r in tie_rows],
+        "",
+        "Every thesis value lies within the range of the tie orders: "
+        f"{'yes' if all(r[-1] == 'yes' for r in tie_rows) else 'NO'}. So does the F1 curve of the thesis figure "
+        f"(F19) at {sum(r[-1] == 'yes' for r in curve_rows)} of {len(curve_rows)} values of p",
+        "(`bottom_p_curve_tie_range.csv`). The differences from the thesis come from the order of the tied scores",
+        "(numpy's default sort is not stable; the order depends on the input), not from the scores.",
         "",
         "## Item disagreement between judge and human audit (2025 table T31, thesis Figure 4-4; P06 cell 10)",
         "",

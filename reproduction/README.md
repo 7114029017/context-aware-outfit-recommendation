@@ -249,10 +249,20 @@ NVIDIA GB10 這類 CPU／GPU 共用記憶體的機器：CUDA 只把真正空閒�
 - 共 10 main + 25 公平子集消融 = **35 training units**；
 - 後續 secondary analyses、Chapter 4 report、statistics、
   `THESIS_TABLES_SUMMARY.md` 與 final reproduction summary；
-- 狀態成為 `PASSED` 之後，再執行補充分析（只用 CPU，一分鐘內；不改變 `RUN_STATUS.txt`），
-  結果在 run 資料夾的 `supplementary/`（見 §11）；
-- 接著執行延伸分析：用這次 run 的模型重做文字長度、反事實分析、Two-Tower、色彩分析與附錄圖
-  （GPU 約 3～4 小時；同樣不改變 `RUN_STATUS.txt`），結果在 `extensions/`（見 §11）。
+- 狀態成為 `PASSED` 之後，由 `scripts/run_analyses.sh` 執行訓練以外的所有項目（約 4.5 小時，
+  其中 GPU 約 3.5 小時；都不改變 `RUN_STATUS.txt`）：補充分析（`supplementary/`）、延伸分析與
+  移植程式對 2025 年輸出的驗證（`extensions/`）、與正式 run 的比對（`official_comparison.txt`），
+  最後把 46 個分析項目逐項的狀態與證據寫進 run 資料夾的 `ITEMS_STATUS.md`（見 §0.8）。
+
+所以**只要執行這一個指令，就會跑完所有項目**。色彩分析、個案圖、反事實分析、檢核表涵蓋度
+與 MET 對照表需要 0.4 的選用下載（Polyvore 圖片、FashionCLIP、Nomic、Compendium，
+約 5 GB）；`reproduce_all.sh` 開始前會檢查，缺少的會先用 `bootstrap_data.sh` 自動下載
+（不想下載可加 `--no-optional-downloads`，這些項目會標為 SKIPPED）。MET 對照表另外需要系統的
+`pdftotext`（poppler-utils）。
+
+已有一個完成（`PASSED`）的 run，只想重做訓練以外的分析時（不重新訓練）：
+
+    bash reproduction/scripts/reproduce_all.sh --analyses-only reproduction/runs/full_<UTC timestamp> [--out-dir DIR] [--skip-gpu]
 
 開始時會顯示 `[RUN ROOT]`（這次 run 的資料夾，預設為
 `reproduction/runs/full_<UTC timestamp>/`）與 `[LIVE LOG]`。要看進度，另開一個 terminal：
@@ -310,7 +320,8 @@ reproduction artifact / environment 的可追查問題。
 `chapter4/THESIS_TABLES_SUMMARY.md`。
 
 **與正式 run 比對（驗收標準）。** terminal 摘要拿碩論的數字對照；驗收要確認的是你的 run
-與正式 run `full_20261002T161428Z` 的結論是否一致：
+與正式 run `full_20261002T161428Z` 的結論是否一致。`PASSED` 之後流程已自動比對一次（0.7），
+報告在 `$RUN/official_comparison.txt`；要單獨重跑時：
 
     python3 reproduction/scripts/compare_with_official_run.py --run-root "$RUN"
 
@@ -342,6 +353,25 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 加 `--checkpoints` 會再核對 70 個 checkpoint 的 SHA-256。報告同時存成
 `$RUN/official_comparison.txt` 與 `$RUN/official_comparison.json`。
 
+**46 個項目的逐項狀態。** 流程最後由 `scripts/report_items.py` 把學姊專案的 46 個分析項目
+（依資料準備、資料檢查、模型訓練、統計與結論、其他實驗、質性分析排列）逐項判定，寫成
+`$RUN/ITEMS_STATUS.md`（同內容的 `ITEMS_STATUS.json`）。每項列出狀態、依據與證據檔案：
+
+| 狀態 | 意思 |
+|---|---|
+| `PASS` | 重新計算，且與對照值相同：2025 年保存的輸出、碩論或稿件；35 個 training units 與其統計則以正式 run 為準（它是修訂稿唯一的數值來源） |
+| `DIFFERS` | 重新計算，計算本身經過檢查，但數值與稿件中 2025 年的值不同，原因是模型重新訓練或同分樣本的排序。依據欄寫出原因與檢查方式，例如移植的程式用學姊保存的 2025 年模型重算，得到存檔的結果 |
+| `REUSED` | 無法重新產生的輸入資料（LLM 生成的描述與估計、三因子標註），沿用保存的檔案，並核對 SHA-256 |
+| `NOT_REPRODUCIBLE` | 2025 年的步驟沒有任何紀錄（第 4 項 CLO 離群值的重新推論） |
+| `SKIPPED` | 缺少選用下載，或加了 `--skip-gpu`，該步驟沒有執行 |
+| `MISSING`、`FAIL` | 應有的輸出不存在，或計算的檢查不成立。請保留 run 資料夾並回報 |
+
+稿件的敘述若在重新訓練的模型上不成立（例如某類別的改善方向），會寫在依據欄，不判為 `FAIL`。
+正式 run 的報告在 `results/ITEMS_STATUS.md`：PASS 29、DIFFERS 13、REUSED 3、NOT_REPRODUCIBLE 1，
+結尾為 `COMPLETE`。有 GPU 且做了 0.4 的選用下載時，你的報告也應為 `COMPLETE`（沒有 `MISSING`、
+`FAIL` 或 `SKIPPED`）；各項的數值可與 `results/ITEMS_STATUS.md` 對照，不同硬體下 DIFFERS
+項目的數值會略有不同。
+
 **完整結果在哪裡。** 完整統計在 run 目錄的檔案裡（路徑相對於 `$RUN`；表號與稿件的對照見 §11）：
 
 | 內容 | 檔案 |
@@ -353,8 +383,10 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | 消融的 95% CI、p 值、Cohen's dz | `ablation/summary/T10_stage2_cp_seed_detail.csv`、`ablation/summary/T11_stage2_cir_seed_detail.csv` |
 | 每個 seed 的結果 | `main/<variant>_seed<N>/evaluation/results_cp.csv`、`results_cir.csv`；`ablation/summary/fresh_25unit_metrics.csv` |
 | 第四章 20 張表的來源與限制 | `chapter4/THESIS_TABLES_SUMMARY.md` |
-| 補充分析：類別、情境子集、因子與詞彙的效果（論文圖 4-8～4-13）、個案名次、因子效果、BH 族群、輸入資料稽核（含表 D-3、5.2 節的類別門檻）、稿件 Table 1、2、5、8、9 的重算、評分者與人工稽核（圖 4-1～4-4）、MET 對照表（表 3-1） | `supplementary/`（見 §11） |
-| 延伸分析：文字長度、反事實分析（表 4、9）、Two-Tower（表 8）、色彩分析、附錄圖 A1～A3 與論文圖 4-14 | `extensions/`（各步驟狀態在 `extensions/EXTENSIONS_STATUS.txt`；見 §11） |
+| 補充分析：類別、情境子集、因子與詞彙的效果（論文圖 4-8～4-13）、個案名次、因子效果、BH 族群、輸入資料稽核（含表 D-3、5.2 節的類別門檻）、反事實配對的重新抽樣（Table 4）、稿件 Table 1、2、5、8、9 的重算、評分者與人工稽核（圖 4-1～4-4）、MET 對照表（表 3-1） | `supplementary/`（見 §11） |
+| 延伸分析：文字長度、反事實分析（表 4、9）、Two-Tower（表 8）、色彩分析、附錄圖 A1～A3 與論文圖 4-14、可靠度、文字互換、逐步選品，以及移植程式對 2025 年輸出的檢查 | `extensions/`（各步驟狀態在 `extensions/EXTENSIONS_STATUS.txt`；見 §11） |
+| 與正式 run 的比對 | `official_comparison.txt`、`official_comparison.json` |
+| 46 個項目的逐項狀態與證據 | `ITEMS_STATUS.md`、`ITEMS_STATUS.json` |
 | 所有輸出的索引 | `INDEX.md` |
 
 正式 run 的同一批檔案已收錄在 repository，數值整理在 `docs/expected_results.md`。
@@ -369,9 +401,11 @@ R02、R03 取決於 Recall@1 的 BH 校正後 p 值（正式 run 為 0.0947）�
 | `ablation/runs/<variant>_seed<N>/` | `results/raw/full_20261002T161428Z/ablation/<variant>_seed<N>/` |
 | `supplementary/` | `results/supplementary/`（`run_analyses/` 收錄為 `full_20261002T161428Z/`；見 §11） |
 | `extensions/` | `results/extensions/full_20261002T161428Z/`（見 §11） |
+| `ITEMS_STATUS.md`、`ITEMS_STATUS.json` | `results/ITEMS_STATUS.md`、`results/ITEMS_STATUS.json` |
 
-補充分析與延伸分析在 `PASSED` 之後自動執行，不屬於驗收條件：若失敗，terminal 會顯示
-`[WARN]` 與重跑指令，`RUN_STATUS.txt` 仍是 `PASSED`（見 §11）。
+補充分析、延伸分析、比對與逐項報告在 `PASSED` 之後由 `scripts/run_analyses.sh` 自動執行，
+不改變 `RUN_STATUS.txt`：若有項目為 `MISSING` 或 `FAIL`，terminal 會顯示 `[WARN]` 與重跑指令
+（也可以用 0.7 的 `--analyses-only`），`RUN_STATUS.txt` 仍是 `PASSED`（見 §11）。
 
 ### 0.9 目前 clean-room 驗證狀態
 
@@ -625,16 +659,17 @@ Smoke test 只用小型 subset（context、seed 1、200 筆 train 與 100 筆 va
 4. preserved-output secondary analysis；
 5. Chapter 4 comparison report；
 6. five-seed summary 與 post-hoc statistics；
-7. 狀態成為 `PASSED` 之後的補充分析（只用 CPU，見 §11）；
-8. 延伸分析（文字長度與 Two-Tower 用 GPU，其餘用 CPU，見 §11）。
+7. 狀態成為 `PASSED` 之後，由 `scripts/run_analyses.sh` 執行訓練以外的所有項目（見 §11）：
+   補充分析（只用 CPU）；延伸分析與移植程式的檢查（文字長度、Two-Tower、可靠度與文字互換用
+   GPU，其餘用 CPU）；與正式 run 的比對；46 個項目的逐項報告 `ITEMS_STATUS.md`。
 
 輸出位於 `reproduction/runs/full_<UTC timestamp>/`（可用 `--run-id`、`--output-base` 改變）。
 若完成為 `PASSED`，最後會從該次 run 的 `main/summary/`、`ablation/summary/`、`statistics/`、
-`chapter4/` 自動顯示 terminal 摘要，並存成 `logs/final_terminal_summary.txt`，接著執行補充
-分析（結果在 `supplementary/`，輸出記錄在 `logs/supplementary.log`）與延伸分析（結果在
-`extensions/`，輸出記錄在 `logs/extensions.log`）。摘要顯示、補充分析或延伸分析失敗都不會
-改變已完成訓練的 `RUN_STATUS.txt`；原始 CSV / JSON 仍是權威結果。跑完後依 §0.8 與正式 run
-比對。
+`chapter4/` 自動顯示 terminal 摘要，並存成 `logs/final_terminal_summary.txt`，接著執行步驟 7：
+結果在 `supplementary/`、`extensions/`、`official_comparison.txt` 與 `ITEMS_STATUS.md`，
+全部輸出記錄在 `logs/analyses.log`（各段另有 `logs/supplementary.log`、`logs/extensions.log`、
+`logs/comparison.log`、`logs/items.log`）。摘要顯示或步驟 7 失敗都不會改變已完成訓練的
+`RUN_STATUS.txt`；原始 CSV / JSON 仍是權威結果。跑完後依 §0.8 檢查比對結果與 `ITEMS_STATUS.md`。
 
 完整流程也會產生一份**表 4-1～表 4-20 的逐表來源報告**：
 
@@ -729,10 +764,11 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 | `run_analyses/` | 由該 run 的逐題結果計算：類別、情境子集、因子與詞彙的效果（表 T12～T17，論文圖 4-7～4-13，2025 年圖 F03、F04）、個案名次、因子效果（表 T08、T09）、BH 族群的敏感度分析、主實驗的 Wilcoxon 檢定（表 A14） | `results/supplementary/full_20261002T161428Z/` |
 | `input_data_audit/` | 輸入資料稽核，含 CLO 分布（表 D-3、圖 D-4）與類別門檻（5.2 節），與 run 無關 | `results/supplementary/input_data_audit/` |
 | `paper_value_checks/` | 稿件 Table 1、2、5、8、9 的重算，與 run 無關 | `results/supplementary/paper_value_checks/` |
-| `judge_audit_checks/` | 評分者分數分布、低分樣本敏感度、人工稽核的題項分歧與分數（圖 4-1、4-3、4-4，表 T30、T31、A41，2025 年圖 F18、F20、F30～F32）與評分結果未進入訓練的程式掃描（表 A05、A06），與 run 無關 | `results/supplementary/judge_audit_checks/` |
+| `judge_audit_checks/` | 評分者分數分布、低分樣本敏感度（含表 4-7 與圖 4-3 的同分排序範圍）、人工稽核的題項分歧與分數（圖 4-1、4-3、4-4，表 T30、T31、A41，2025 年圖 F18、F20、F30～F32）與評分結果未進入訓練的程式掃描（表 A05、A06），與 run 無關 | `results/supplementary/judge_audit_checks/` |
 | `met_reference_check/` | 由官方 Compendium 依論文規則重建 457 筆 MET 對照表（表 3-1），與 run 無關；需要 `--with-compendium` | `results/supplementary/met_reference_check/` |
 | `checklist_coverage/` | 兩組檢核清單的概念涵蓋度（圖 4-2），與 run 無關；需要 `--with-nomic` | `results/supplementary/checklist_coverage/` |
 | `dataset_tables_check/` | 2025 年資料表 T00、T01、A01、A02、A12、A13 的重算（471 個數值），與 run 無關 | `results/supplementary/dataset_tables_check/` |
+| `counterfactual_pairs_check/` | 依 2025 年 P16 的抽樣程式重新抽出 24 組反事實配對（稿件 Table 4），與存檔 A44 比對，與 run 無關 | `results/supplementary/counterfactual_pairs_check/` |
 
 執行時的輸出記錄在 `logs/supplementary.log`。正式 run 執行時流程還沒有這一步，右欄的檔案
 是之後用同一套程式從正式 run 的輸出算出的。§0.8 的判定為 `IDENTICAL` 時，你的
@@ -743,7 +779,7 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
     diff -r "$RUN/supplementary/run_analyses" reproduction/results/supplementary/full_20261002T161428Z
     diff -r "$RUN/supplementary/input_data_audit" reproduction/results/supplementary/input_data_audit
     diff -r "$RUN/supplementary/paper_value_checks" reproduction/results/supplementary/paper_value_checks
-    for d in judge_audit_checks met_reference_check checklist_coverage dataset_tables_check; do
+    for d in judge_audit_checks met_reference_check checklist_coverage dataset_tables_check counterfactual_pairs_check; do
       diff -r "$RUN/supplementary/$d" "reproduction/results/supplementary/$d"
     done
 
@@ -778,13 +814,25 @@ run ID 與程式位置，並標示需保留、更新數字或改寫的敘述）�
 | `outfit_generation` | 2025 年虛擬試穿示範的逐步選品（P02，不含試穿；稿件沒用） | `--with-images`、`--with-fashionclip`；CPU 約 2 分鐘 | `results/extensions/full_20261002T161428Z/outfit_generation/` |
 
 run 資料夾中的結果在 `extensions/`，各步驟的狀態在 `extensions/EXTENSIONS_STATUS.txt`；
-缺少 GPU 或下載檔的步驟會標為 `SKIPPED`，其他步驟照常執行。單獨執行或重跑（例如修正失敗原因後）：
+缺少 GPU 或下載檔的步驟會標為 `SKIPPED`，其他步驟照常執行。完整流程會加 `--validate`（見下）。
+單獨執行或重跑（例如修正失敗原因後）：
 
     bash reproduction/scripts/extensions/run_all.sh --run-root "$RUN" [--steps text_length,two_tower] [--skip-gpu] [--validate]
 
 `--validate` 另外用學姊保存的輸出檢查移植的程式（CPU 約 10 分鐘；有 GPU 時另外約 5 分鐘重算
 表 T18、約 75 分鐘用學姊的 20 個主實驗 checkpoint 重算文字互換）。驗證結果、正式 run 的數值與
 仍無法重做的項目，見 `docs/extensions.md`。
+
+**單一指令與逐項報告。** 上面的補充分析、延伸分析（含 `--validate`）、與正式 run 的比對與逐項報告
+由 `scripts/run_analyses.sh` 依序執行；`reproduce_all.sh --fresh` 在 `PASSED` 之後呼叫它，
+`reproduce_all.sh --analyses-only RUN` 對已完成的 run 重做（不重新訓練，見 0.7）。也可以直接執行：
+
+    bash reproduction/scripts/run_analyses.sh --run-root "$RUN" [--out-dir DIR] [--figures-dir DIR] [--skip-gpu]
+
+最後一步 `scripts/report_items.py` 寫出 `ITEMS_STATUS.md`（狀態定義見 §0.8），有項目為 `MISSING`
+或 `FAIL` 時結束碼為 1。正式 run 的報告 `results/ITEMS_STATUS.md` 由收錄的結果產生：
+
+    python3 reproduction/scripts/report_items.py --official
 
 ## 12. Hyperparameter tuning provenance
 

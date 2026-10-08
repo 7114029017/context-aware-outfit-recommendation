@@ -2,12 +2,13 @@
 
 These analyses answer questions raised when the TORS manuscript and the thesis
 were checked against this repository. They are not part of the 35 training
-units: a full run (`reproduce_all.sh --fresh`) runs them after its
-`RUN_STATUS.txt` has become `PASSED`, and a failure here does not change that
-status. They read files that are already in the repository, in the run folder,
-or downloaded by `scripts/bootstrap_data.sh`; they use no GPU and never modify
-any run's results, and only the checklist coverage check (section 6) loads a
-model, a text embedding model on the CPU. The manuscript's formal results remain
+units: a full run (`reproduce_all.sh --fresh`) runs them, through
+`scripts/run_analyses.sh`, after its `RUN_STATUS.txt` has become `PASSED`, and
+a failure here does not change that status. They read files that are already
+in the repository, in the run folder, or downloaded by
+`scripts/bootstrap_data.sh`; they use no GPU and never modify any run's
+results, and only the checklist coverage check (section 6) loads a model, a
+text embedding model on the CPU. The manuscript's formal results remain
 those in `results/summary/full_20261002T161428Z/`.
 
 A full run writes them to its own folder:
@@ -21,6 +22,7 @@ A full run writes them to its own folder:
 | `supplementary/met_reference_check/` | Section 5, independent of the run; needs `bootstrap_data.sh --with-compendium` | `results/supplementary/met_reference_check/` |
 | `supplementary/checklist_coverage/` | Section 6, independent of the run; needs `bootstrap_data.sh --with-nomic` | `results/supplementary/checklist_coverage/` |
 | `supplementary/dataset_tables_check/` | Section 7, independent of the run | `results/supplementary/dataset_tables_check/` |
+| `supplementary/counterfactual_pairs_check/` | Section 8, independent of the run | `results/supplementary/counterfactual_pairs_check/` |
 | `logs/supplementary.log` | Console output | — |
 
 Without its download, section 5 or 6 prints `SKIPPED` and writes nothing. The
@@ -31,7 +33,7 @@ run's except for the run name in `run_analyses/summary.md` and in the figure
 subtitles; when it reports `CONSISTENT`, the values in `run_analyses/` differ
 slightly. The other folders do not depend on the run and should be identical.
 
-To run the seven scripts by hand (under a minute on a CPU), for example after the
+To run the eight scripts by hand (under a minute on a CPU), for example after the
 step failed during a run:
 
     bash reproduction/scripts/supplementary/run_all.sh [--run-root PATH | --official] [--out-dir DIR]
@@ -178,7 +180,8 @@ data, with the code of the 2025 notebooks P05 (cell 3) and P06 (cell 10):
 | Output | Thesis | Check |
 |---|---|---|
 | `judge_score_diagnostics.csv`, `judge_score_histogram.csv`, `figures/figure_4_1_judge_score_histogram.svg` | Figure 4-1, the means ± SDs of Section 4.2.4 | Means and SDs equal T19 to all digits; the 100 bars equal the archived SVG of the thesis figure (F17), which bins both judges on [0, 1] (the notebook's own PNG binned each judge on its own range; the program that redrew it is not preserved) |
-| `bottom_p_sensitivity_band.csv`, `figures/figure_4_3_bottom_p_overlap_band.svg`, `figures/bottom_p_lift_band.svg` | Figure 4-3 | p = 1% to 30%, bootstrap B = 500, seed 123. Many descriptions share a score, so the lowest p% depends on how `numpy.argsort` orders ties: the curves differ from the archived figure (F19) by at most 0.012 (Jaccard) and 0.016 (F1), the bands by at most 0.0034, and the intersections of Table 4-7 by 1, 15 and 44 descriptions, as in the pipeline |
+| `bottom_p_sensitivity_band.csv`, `figures/figure_4_3_bottom_p_overlap_band.svg`, `figures/bottom_p_lift_band.svg` | Figure 4-3 | p = 1% to 30%, bootstrap B = 500, seed 123. Many descriptions share a score, so the lowest p% depends on how `numpy.argsort` orders ties: the curves differ from the archived figure (F19) by at most 0.012 (Jaccard) and 0.016 (F1), the bands by at most 0.0034, and the intersections of Table 4-7 by 1, 15 and 44 descriptions, as in the pipeline (next row) |
+| `bottom_p_tie_orders.csv`, `bottom_p_curve_tie_range.csv` (added by this reproduction) | Table 4-7, Figure 4-3 | For each cut-off: the scores tied at it, the smallest and largest intersection over every order of the ties, and 2,000 random orders of the ties (seed 123). The thesis intersections 668, 1,323 and 2,833 lie within 545-917, 1,269-1,605 and 2,503-3,566, near the medians of the random orders (668, 1,333, 2,843), and the thesis F1 curve lies within the range at all 30 values of p: the differences come from the order of the tied scores, not from the scores |
 | `item_disagreement.csv`, `figures/figure_4_4_item_disagreement.svg` | Figure 4-4, table T31 | All 25 rows equal the archived T31 in all compared columns and in order |
 | `audit_score_metrics.csv`, `audit_sample_scores.csv`, `figures/figure_F30_audit_sampling_coverage.svg`, `figure_F31_audit_error_metrics.svg`, `figure_F32_audit_score_scatter.svg` | 2025 tables T30 and A41, figures F30-F32: the weighted human score of each audited description and checklist against the judge's score (P06 cell 10) | Both tables equal the archived ones (A41: 30 descriptions) |
 | `judge_quantile_confusion.csv`, `figures/figure_F18_quantile_confusion.svg` | 2025 figure F18: the decile confusion matrix of the two judges behind the QWK of table T19 (P05 cell 3) | — |
@@ -243,3 +246,22 @@ same statistics. Two inputs differ in kind from 2025: the CIR scope follows the
 rule of the archived evaluator (the 2025 per-query files are not preserved), and
 the fair subset is the reconstruction used by the official run. All 471
 compared values equal the archived tables (`comparison.csv`).
+
+## 8. Counterfactual pairs
+
+Script: `scripts/supplementary/counterfactual_pairs_check.py`.
+Output: `results/supplementary/counterfactual_pairs_check/`; `supplementary/counterfactual_pairs_check/` in a run folder.
+
+Draws the 24 counterfactual pairs of manuscript Table 4 again with the code of
+notebook P16 (cells 1 and 3,
+`03_實驗與結果_experiments_results/06_反事實情境敏感度/source_programs/`): four
+queries for each of six directions (warm to cold, cold to warm, formal to
+casual, casual to formal, high to low style, low to high style), drawn with
+numpy's `default_rng(42)` and balanced over clothing-led and accessory-led
+targets; the counterfactual description is the description without the factor
+(the W/O/S annotation's `title_ablation`) joined with a fixed phrase. P16 took
+the 9,311 main CIR queries from the 2025 seed-1 per-query file, which is not
+preserved; the same queries are taken from the seed-1 rows of the archived A07
+(their ranks are not used by the selection). All 24 pairs equal the archived
+A44 in pair id, set, factor, direction, target item and counterfactual
+description (`regenerated_pairs.csv`, `summary.md`).
