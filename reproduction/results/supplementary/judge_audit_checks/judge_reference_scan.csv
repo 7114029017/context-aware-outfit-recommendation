@@ -31,6 +31,9 @@ reproduction: other scripts,reproduction/scripts/build_manuscript_reconciliation
 reproduction: other scripts,reproduction/scripts/build_thesis_tables_summary.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/build_zenodo_package.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/check.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/cleanroom/cleanroom_launch.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/cleanroom/cleanroom_monitor.sh,searched,,no_judge_artifact_reference_found
+reproduction: other scripts,reproduction/scripts/cleanroom/cleanroom_setup.sh,searched,,no_judge_artifact_reference_found
 "reproduction: 35 units (training, evaluation, statistics)",reproduction/scripts/compare_main_results.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/compare_with_official_run.py,searched,,no_judge_artifact_reference_found
 reproduction: other scripts,reproduction/scripts/extensions/_ext.py,searched,,no_judge_artifact_reference_found

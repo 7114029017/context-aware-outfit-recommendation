@@ -84,9 +84,10 @@ from the official run (`supplementary_analyses.md`, `extensions.md`).
 ## Publication
 
 The fixed GitHub release `v1.0.0-tors-reproduction` was published on
-2026-10-07. A new official run made with one command (the 35 training units and
-every analysis after them) is followed by the release
-`v1.1.0-tors-reproduction`, which the manuscript's Artifact Availability
-statement should cite. No DOI is used. Third-party terms are listed in `THIRD_PARTY_NOTICES.md` at
+2026-10-07, and the manuscript's Artifact Availability statement should cite
+it. Following the advisor's decision of 2026-10-08, the data preparation (the
+generated descriptions, CLO / MET, the W/O/S annotation, the features, the judge
+scores and the human audit) is redone instead of reused, before a new official
+run and the next release (`handoff_status.md`). No DOI is used. Third-party terms are listed in `THIRD_PARTY_NOTICES.md` at
 the repository root; the public-release changes are listed in
 `public_release_cleanup.md`.

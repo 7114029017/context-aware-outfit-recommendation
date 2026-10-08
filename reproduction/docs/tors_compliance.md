@@ -7,7 +7,7 @@ unresolved.
 | Item | Status | Evidence / remaining work |
 |---|---|---|
 | A1 Public GitHub repository | PUBLIC; RELEASED | https://github.com/7114029017/context-aware-outfit-recommendation; the release `v1.0.0-tors-reproduction` was published on 2026-10-07 and checked without logging in (release page, source archives, the eight Git LFS files, a clone of the tag); Polyvore images and third-party documents are not redistributed (`docs/public_release_cleanup.md`, `THIRD_PARTY_NOTICES.md`) |
-| A2 Fixed Release / preservation / DOI | RELEASED | GitHub Release `v1.0.0-tors-reproduction` (2026-10-07). A new official run made with one command (training and every analysis) is followed by the release `v1.1.0-tors-reproduction`. No DOI is used |
+| A2 Fixed Release / preservation / DOI | RELEASED | GitHub Release `v1.0.0-tors-reproduction` (2026-10-07). Following the advisor's decision of 2026-10-08, the data preparation is redone and a new official run made with one command precedes the next release (`docs/handoff_status.md`). No DOI is used |
 | A3 End-to-end README | COMPLETE FOR CURRENT ARTIFACT | `reproduction/README.md` documents bootstrap, environment, check, smoke, verified reuse, fresh full run, outputs and provenance limits; one command also runs every analysis after the 35 units and reports each of the 46 analysis items (`ITEMS_STATUS.md`, `FINAL_SUMMARY.txt`) |
 | A4 Environment specification | COMPLETE FOR 2026 REPRODUCTION; HISTORICAL PARTIAL | `reproduction/environment/`; exact 2025 runtime identity is not established |
 | A5 Experiment configs | COMPLETE WITH DOCUMENTED PROVENANCE LIMITS | `reproduction/configs/` |
@@ -15,7 +15,7 @@ unresolved.
 | A7 Hyperparameter tuning provenance | PARTIAL | Main-model settings fully sourced to the upstream paper and code (`docs/hyperparameter_tuning.md`, four-category `results/tuning.csv`); no tuning search evidenced; second-model selection rationale not recorded |
 | A8 Reproduction scripts | IMPLEMENTED + VERIFIED | Official clean-room run `full_20261002T161428Z` from a fresh clone following the README finished PASSED (`clean_room_acceptance.md`); it is bit-identical to the reference run and to the post-restructure run `full_20260924T102513Z` |
 | A9 Seed-level raw and summary results | COMPLETE | Official run in `results/raw/full_20261002T161428Z/` and `results/summary/full_20261002T161428Z/` with `seed_index.csv` and `final_reference_manifest.json`; earlier reference evidence kept |
-| A10 Artifact Availability statement | MANUSCRIPT UPDATE | The manuscript statement should cite the GitHub release (`v1.1.0-tors-reproduction` after the new official run) and its official run ID, not a commit of an earlier repository |
+| A10 Artifact Availability statement | MANUSCRIPT UPDATE | The manuscript statement should cite the GitHub release and its official run ID (now `v1.0.0-tors-reproduction` and `full_20261002T161428Z`), not a commit of an earlier repository |
 
 ## Completed reference full reproduction
 
@@ -95,7 +95,7 @@ reproduction artifact are preserved.
 | Python / PyTorch / CUDA / package versions | COMPLETE FOR 2026 REPRODUCTION | `reproduction/environment/` |
 | Hyperparameter tuning explanation | PARTIAL | Every setting classified as fixed by literature/upstream code, validation-selected (checkpoint epoch only), history missing, or supplementary (none); second-model rationale not recorded |
 | Standardized decoder explanation | COMPLETE WITH LIMITATION | Standardized decoder implementation (`torch.nn.TransformerDecoderLayer`) is documented in `docs/standardized_decoder.md`; historical `DecoderLayerWithCrossAttn` behavior remains unrecovered |
-| Public GitHub final version | COMPLETE | Release `v1.0.0-tors-reproduction` published on 2026-10-07; `v1.1.0-tors-reproduction` follows the new official run |
+| Public GitHub final version | COMPLETE | Release `v1.0.0-tors-reproduction` published on 2026-10-07; the next release follows the redone data preparation and a new official run |
 
 The one-command terminal summary now also prints these ten requested items directly,
 including evidence paths and the honest `PARTIAL` states,

@@ -31,13 +31,16 @@
 「接手者只看本 README，能否從乾淨環境完成一次新的 35-unit reproduction」，請不要複製舊的
 `.venv-repro`、`_external/` 或 `reproduction/runs/`。
 
-這個版本是新正式 run 開跑用的候選版標籤：
+稿件目前引用的固定版本是 Release 標籤：
 
-`v1.1.0-rc1-tors-reproduction`
+`v1.0.0-tors-reproduction`
 
-新正式 run 驗收通過、結果收進 repository 後，發布 Release `v1.1.0-tors-reproduction`（修訂稿引用的
-版本）；在那之前已發布的版本是 `v1.0.0-tors-reproduction`。`main` 是之後可能繼續更新的分支。完整重現的啟動程式開始訓練前會檢查兩件事：
-目前在 `main` 分支或 `v*-tors-reproduction` 標籤上，以及學姊原始研究資料夾 01～03 的
+這份 README 屬於 v1.0.0 之後的開發分支 `next-release`（訓練以外的全部分析整合成一個指令、46 個分析
+項目的逐項報告與最終摘要），尚未發布。依指導老師 2026-10-08 的決定，下一步是依學姊的專案重做資料
+準備，再以單一指令產生新的正式 run 並發布新版本；目前的狀態與接續方式見 `docs/handoff_status.md`。
+`main` 是之後可能繼續更新的分支。完整重現的啟動程式開始訓練前會檢查兩件事：
+目前在 `main` 分支或 `v*-tors-reproduction` 標籤上（因此從 `next-release` 分支不能開始完整訓練，
+`--analyses-only` 不受限制），以及學姊原始研究資料夾 01～03 的
 每個檔案都與 `reproduction/environment/archived_sources_manifest.json` 記錄的大小和
 SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先單獨檢查。
 
@@ -55,12 +58,12 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
 
 `sudo` 只有安裝系統套件與 0.6 的清除快取指令（選用）需要。
 
-### 0.1 Clone 這個版本
+### 0.1 Clone 稿件引用的 Release
 
     cd /path/to/your/workspace
 
     git clone \
-      --branch v1.1.0-rc1-tors-reproduction \
+      --branch v1.0.0-tors-reproduction \
       https://github.com/7114029017/context-aware-outfit-recommendation.git
 
     cd context-aware-outfit-recommendation
@@ -69,7 +72,7 @@ SHA-256 一致。任一項不符就拒絕開始訓練；第二項可在 0.5 先�
     git rev-parse HEAD
     git status --short
 
-預期 `git describe --tags` 顯示 `v1.1.0-rc1-tors-reproduction`（Git 會提示目前是 detached
+預期 `git describe --tags` 顯示 `v1.0.0-tors-reproduction`（Git 會提示目前是 detached
 HEAD，這是正常的），`git status --short` 沒有輸出。開始完整重現前，tracked working tree
 不應有自行修改的學姊原始研究程式。
 請用 `git clone`：Release 頁面的原始碼壓縮檔不是 git repository，也不含 Git LFS 的
@@ -505,6 +508,7 @@ Frozen senior baseline：
 | `splits/` | 固定 main IDs 與重建的公平子集 IDs |
 | `prompts/` | 可保存的 semantic prompt 與 Judge C/C* checklists |
 | `scripts/` | check、smoke、full reproduction、統計與比對程式 |
+| `scripts/cleanroom/` | 在全新資料夾執行正式 run 的範本（setup、啟動與資源紀錄），見其中的 `README.md` |
 | `scripts/run_analyses.sh` | 35 組訓練之後的所有分析、與正式 run 的比對、逐項報告（`report_items.py`）與最終摘要（`show_final_summary.py`），見 §11 |
 | `scripts/supplementary/` | 補充分析程式（35 組訓練完成後執行，見 §11） |
 | `scripts/extensions/` | 延伸分析程式（35 組訓練完成後執行，見 §11 與 `docs/extensions.md`） |
@@ -952,8 +956,9 @@ SHA-256 記錄（`compare_with_official_run.py --checkpoints` 可核對你的 ru
 `docs/tors_followup_status.md`
 
 Repository artifact 已完成核心 reproduction evidence 整理。已發布的固定版本是 GitHub Release
-`v1.0.0-tors-reproduction`（2026-10-07，不使用 DOI）；以單一指令重跑的新正式 run 驗收後發布
-`v1.1.0-tors-reproduction`，修訂稿改引用該版本。公開版的整理見
+`v1.0.0-tors-reproduction`（2026-10-07，不使用 DOI），稿件目前引用它。v1.0.0 之後的開發在
+`next-release` 分支；依指導老師 2026-10-08 的決定，資料準備改為依學姊的專案重做，完成後以單一指令產生
+新的正式 run 並發布新版本（見 `docs/handoff_status.md`）。公開版的整理見
 `docs/public_release_cleanup.md`，第三方條款見根目錄 `THIRD_PARTY_NOTICES.md`。
 A7（超參數調整紀錄）維持 `PARTIAL`，見 §12。
 
@@ -977,6 +982,8 @@ A7（超參數調整紀錄）維持 `PARTIAL`，見 §12。
 保存與來源界線。
 
 ## 18. Handoff rule
+
+專案目前的狀態、待辦與換電腦後的接續方式見 `docs/handoff_status.md`。
 
 不要修改學姊 `01` 至 `03` 原始研究目錄來讓數字符合碩論或稿件。
 

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite it as below."
 type: software
 title: "Context-Aware Semantic Construction for Multimodal Outfit Recommendation: reproducibility artifact"
-version: v1.1.0-rc1-tors-reproduction
+version: v1.0.0-tors-reproduction
 repository-code: "https://github.com/7114029017/context-aware-outfit-recommendation"
 license: MIT
 authors:

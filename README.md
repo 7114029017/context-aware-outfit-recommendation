@@ -2,10 +2,11 @@
 
 Reproducibility artifact for the manuscript *Context-Aware Semantic Construction
 for Multimodal Outfit Recommendation* (submitted to ACM TORS). The version cited
-by the manuscript is the release **`v1.1.0-tors-reproduction`**, published after
-the acceptance of a new official run made with one command; this version is its
-release candidate **`v1.1.0-rc1-tors-reproduction`**. The release published
-before it is `v1.0.0-tors-reproduction`.
+by the manuscript is the release **`v1.0.0-tors-reproduction`**. The branch
+`next-release` holds the later development (one command for every analysis, an
+item-by-item report of the 46 analysis items and a final summary); following the
+advisor's decision of 2026-10-08, the data preparation is being redone before a
+new official run and release (`reproduction/docs/handoff_status.md`).
 
 **Polyvore images are not redistributed due to third-party rights.** The
 repository provides the instructions and scripts for obtaining the Polyvore
@@ -32,7 +33,7 @@ packages), an NVIDIA GPU that runs CUDA 13.0 PyTorch, and about 20 GB of disk,
 plus 5.5 GB for the extension and supplementary analyses (requirements:
 `reproduction/README.md` §0.0):
 
-    git clone --branch v1.1.0-rc1-tors-reproduction \
+    git clone --branch v1.0.0-tors-reproduction \
       https://github.com/7114029017/context-aware-outfit-recommendation.git
     cd context-aware-outfit-recommendation
     git lfs install && git lfs pull        # eight precomputed feature files
@@ -146,7 +147,7 @@ repo 文件中的 reference run 則指較早的 `reference_20260921T175217Z`。
 
 ## 版本來源
 
-論文引用的固定版本是 Release `v1.1.0-tors-reproduction`：以單一指令重跑的新正式 run 驗收後發布，這個版本是它的候選版 `v1.1.0-rc1-tors-reproduction`；在那之前已發布的版本是 `v1.0.0-tors-reproduction`。v1.0.0 之後只加入訓練以外的分析、逐項報告與最終摘要，設定、資料切分、訓練、評估與統計程式都沒有改動。重現期間的開發在另一個原始
+論文引用的固定版本是 Release `v1.0.0-tors-reproduction`。v1.0.0 之後的開發在 `next-release` 分支：只加入訓練以外的分析、逐項報告與最終摘要，設定、資料切分、訓練、評估與統計程式都沒有改動。依指導老師 2026-10-08 的決定，下一步是依學姊的專案重做資料準備（見 `reproduction/docs/handoff_status.md`）。重現期間的開發在另一個原始
 開發 repository 進行（不公開），正式 run 的紀錄和文件中出現的 commit 編號（例如正式 run 的
 `b9bf5aa`、frozen baseline `7a5cc9c`）與 repository 網址，指的都是那個 repository。
 
